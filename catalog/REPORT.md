@@ -2,7 +2,7 @@
 
 Generated 2026-09-04 on branch `catalog-expansion` by `tools/gen_presets.py` from `catalog/*.json` (134 source files) plus the ShortcutMapper import.
 
-**160 entries** (109 apps, 47 sites, 4 systems), **22,622 actions**. Validator: 0 errors. Rust gate (`apps_catalog_chords_parse`): every chord parses. Column check: 0 Mac chords in Windows columns and vice versa.
+**160 entries** (109 apps, 47 sites, 4 systems), **22,622 actions**. Validator: 0 errors. QA: 60/60 sampled shortcuts matched their sources across four rounds. Rust gate (`apps_catalog_chords_parse`): every chord parses. Column check: 0 Mac chords in Windows columns and vice versa.
 
 ## Quality checks
 
@@ -11,7 +11,7 @@ Generated 2026-09-04 on branch `catalog-expansion` by `tools/gen_presets.py` fro
 | 1 | google_docs, vscode, chrome | 15/15 sampled shortcuts match the source; counts consistent |
 | 2 | excel, final_cut_pro, teams | 15/15 match; two Final Cut sections match row-for-row |
 | 3 | ableton_live, godot, canva | 15/15 match; one vendor typo silently normalised in canva (Option+P on the Windows tab) |
-| 4 | acrobat, paint_net, outlook_web | QA4_PLACEHOLDER |
+| 4 | acrobat, paint_net, outlook_web | 15/15 match; Acrobat diffed section-by-section with no gaps; one undocumented omission in outlook_web (Invite Attendees = N, same key as an existing action) |
 
 ## Entries
 
@@ -286,6 +286,8 @@ Count = actions in the generated catalog. Twins (`<id>_web`) are browser version
 - `jira` (11): This is Jira Cloud (Atlassian cloud), the list shown in Jira's own "?" (Shift+/) shortcuts dialog: Global shortcuts, Navigating work items, and Work item action
 
 ## Caveats worth a human look
+
+- **Fn shortcuts** (macOS Globe key) are included in the `mac` column: Control Center Fn+C, Notification Center Fn+N, Quick Note Fn+Q, Dictation Fn+D, Show Desktop Fn+H, Fn+arrow navigation, and app-specific Fn alternates in Office, FL Studio and others. The engine can send them on macOS (Phase 5); Windows rejects them. Serif (Affinity) restructured its docs, so its Fn rows could not be re-sourced.
 
 - **Capture One**: no default shortcut list is published anywhere; the 94 actions are every shortcut stated in prose across the help center.
 - **SOLIDWORKS**: only the partial list SOLIDWORKS publishes; the full default set is only printable from Tools > Customize in-product.
