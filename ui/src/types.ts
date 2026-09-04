@@ -109,63 +109,13 @@ export interface EngineMsg {
   mods?: Mods;
 }
 
-export const MODULES = ["TUNE", "LEFT_TOUCH", "RIGHT_TOUCH"] as const;
-export const GESTURES = ["CW", "CCW", "PRESS", "DOUBLE_TAP", "SWIPE_LEFT", "SWIPE_RIGHT", "SWIPE_UP", "SWIPE_DOWN"] as const;
 export const FUNCTION_KEYS = ["F13", "F14", "F15", "F16", "F17", "F18", "F19", "F20", "F21", "F22", "F23", "F24"] as const;
 export const MODS: Mods[] = ["none", "shift", "ctrl", "alt", "ctrl_shift"];
-
-export function moduleLabel(m: string): string {
-  return MODULE_LABEL[m] ?? m;
-}
-export function gestureLabel(g: string): string {
-  return GESTURE_LABEL[g] ?? g;
-}
-/** Dial rotation only exists on the Tune. */
-export function gesturesFor(module: string): readonly string[] {
-  return module === "TUNE" ? GESTURES : GESTURES.filter((g) => g !== "CW" && g !== "CCW");
-}
+export { MODULES, GESTURES, moduleLabel, gestureLabel, gesturesFor, eventLabel, eventSortKey, parseEvent, makeEvent, fingerOptions, takesFingers, fingersLabel, nayaBehavior } from "./events";
 
 export interface WindowInfo {
   exe: string;
   title: string;
-}
-
-const MODULE_LABEL: Record<string, string> = {
-  TUNE: "Tune",
-  LEFT_TOUCH: "Left Touch",
-  RIGHT_TOUCH: "Right Touch",
-};
-const GESTURE_LABEL: Record<string, string> = {
-  CW: "Clockwise",
-  CCW: "Counterclockwise",
-  PRESS: "Tap",
-  TAP: "Tap (alt)",
-  DOUBLE_TAP: "Double tap",
-  SWIPE_LEFT: "Swipe left",
-  SWIPE_RIGHT: "Swipe right",
-  SWIPE_UP: "Swipe up",
-  SWIPE_DOWN: "Swipe down",
-};
-
-/** `TUNE_SWIPE_LEFT` -> ["Tune", "Swipe left"] */
-export function eventLabel(id: string): [string, string] {
-  for (const m of Object.keys(MODULE_LABEL)) {
-    if (id.startsWith(m + "_")) {
-      const g = id.slice(m.length + 1);
-      return [MODULE_LABEL[m], GESTURE_LABEL[g] ?? g];
-    }
-  }
-  return [id, ""];
-}
-
-/** Stable display order: module, then dial, press, taps, swipes. */
-const GESTURE_ORDER = Object.keys(GESTURE_LABEL);
-const MODULE_ORDER = Object.keys(MODULE_LABEL);
-export function eventSortKey(id: string): number {
-  const [m, g] = eventLabel(id);
-  const mi = MODULE_ORDER.findIndex((k) => MODULE_LABEL[k] === m);
-  const gi = GESTURE_ORDER.findIndex((k) => GESTURE_LABEL[k] === g);
-  return (mi < 0 ? 9 : mi) * 100 + (gi < 0 ? 99 : gi);
 }
 
 const MEDIA_LABEL: Record<MediaKey, string> = {

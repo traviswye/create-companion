@@ -1,18 +1,25 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-import { save } from "@tauri-apps/plugin-dialog";
+import { open } from "@tauri-apps/plugin-dialog";
 import { api } from "./api";
 import {
   eventSortKey,
+  fingerOptions,
+  fingersLabel,
   FUNCTION_KEYS,
   gestureLabel,
   gesturesFor,
+  makeEvent,
   MODS,
   MODULES,
   moduleLabel,
+  nayaBehavior,
+  parseEvent,
+  takesFingers,
   transportLabel,
   type Mods,
   type TransportCode,
 } from "./types";
+import type { GestureId, ModuleId } from "./events";
 
 export interface Learned {
   key: string;
@@ -28,15 +35,16 @@ const MOD_LABEL: Record<Mods, string> = {
   ctrl_shift: "Ctrl + Shift +",
 };
 
+const NAYA_MODS: Record<Mods, string[]> = { none: [], shift: ["LSHIFT"], ctrl: ["LCTRL"], alt: ["LALT"], ctrl_shift: ["LCTRL", "LSHIFT"] };
+
 /** Naya-style chord token, the vocabulary OpenFlow's encoder speaks. */
 function nayaChord(t: TransportCode): string {
-  const m: Record<Mods, string[]> = { none: [], shift: ["LSHIFT"], ctrl: ["LCTRL"], alt: ["LALT"], ctrl_shift: ["LCTRL", "LSHIFT"] };
-  return [...m[t.mods ?? "none"], t.key].join(" + ");
+  return [...NAYA_MODS[t.mods ?? "none"], t.key].join(" + ");
 }
 
-function hidUsage(key: string): string {
-  const n = Number(key.slice(1)); // F13 -> 0x68
-  return "0x" + (0x68 + (n - 13)).toString(16);
+/** An OpenFlow module-profile action for one transport code. */
+function nayaAction(t: TransportCode): { actionType: string; actionCode: string } {
+  return (t.mods ?? "none") === "none" ? { actionType: "key", actionCode: t.key } : { actionType: "shortcut_alias", actionCode: nayaChord(t) };
 }
 
 function KeySelect({ value, onChange }: { value: string; onChange: (v: string) => void }) {
@@ -63,9 +71,25 @@ function ModSelect({ value, onChange }: { value: Mods; onChange: (v: Mods) => vo
   );
 }
 
+function FingerSelect({ gesture, value, onChange }: { gesture: GestureId; value: number | null; onChange: (v: number | null) => void }) {
+  if (!takesFingers(gesture)) return <span className="muted">dial</span>;
+  const opts = fingerOptions(gesture);
+  return (
+    <select value={value ?? ""} onChange={(e) => onChange(e.target.value === "" ? null : Number(e.target.value))} title="How many fingers the module was flashed for. Blank = any count (needed for export).">
+      <option value="">any fingers</option>
+      {opts.map((n) => (
+        <option key={n} value={n}>
+          {fingersLabel(n)}
+        </option>
+      ))}
+    </select>
+  );
+}
+
 export function Inputs(props: {
   transport: Record<string, TransportCode>;
   onChange: (t: Record<string, TransportCode>) => void;
+  onRename: (from: string, to: string) => void;
   engineConnected: boolean;
   learned: Learned | null;
 }) {
@@ -76,17 +100,24 @@ export function Inputs(props: {
     armedRef.current = v;
     setArmedState(v);
   };
-  const [newModule, setNewModule] = useState<string>("TUNE");
-  const [newGesture, setNewGesture] = useState<string>("PRESS");
+  const [newModule, setNewModule] = useState<ModuleId>("TUNE");
+  const [newGesture, setNewGesture] = useState<GestureId>("TAP");
+  const [newFingers, setNewFingers] = useState<number | null>(1);
   const [newKey, setNewKey] = useState<string>("F13");
   const [newMods, setNewMods] = useState<Mods>("none");
-  const [msg, setMsg] = useState<string | null>(null);
+  const [msg, setMsg] = useState<{ text: string; ok: boolean } | null>(null);
 
+  const codeKey = (c: TransportCode) => `${c.mods ?? "none"}+${c.key}`;
   const used = useMemo(() => {
     const m = new Map<string, string>();
     for (const ev of events) m.set(codeKey(props.transport[ev]), ev);
     return m;
   }, [events, props.transport]);
+
+  const describe = (ev: string) => {
+    const p = parseEvent(ev);
+    return p ? `${moduleLabel(p.module)} / ${gestureLabel(p.gesture)}${p.fingers ? ` (${fingersLabel(p.fingers)})` : ""}` : ev;
+  };
 
   // A learned key arrives: fill the row that was armed when Learn was clicked.
   useEffect(() => {
@@ -96,26 +127,35 @@ export function Inputs(props: {
     if (target === "new") {
       setNewKey(code.key);
       setNewMods(code.mods ?? "none");
+      setMsg({ text: `Learned ${transportLabel(code)} — press Add to keep it`, ok: true });
     } else {
       setCode(target, code);
+      setMsg({ text: `Learned ${transportLabel(code)} for ${describe(target)}`, ok: true });
     }
     setArmed(null);
-    setMsg(`Learned ${transportLabel(code)}${target === "new" ? " — press Add to keep it" : ""}`);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [props.learned?.seq]);
-
-  function codeKey(c: TransportCode) {
-    return `${c.mods ?? "none"}+${c.key}`;
-  }
 
   function setCode(ev: string, code: TransportCode) {
     const owner = used.get(codeKey(code));
     if (owner && owner !== ev) {
-      setMsg(`${transportLabel(code)} is already used by ${moduleLabel(owner.split("_")[0] === "TUNE" ? "TUNE" : owner.startsWith("LEFT") ? "LEFT_TOUCH" : "RIGHT_TOUCH")} / ${gestureLabel(owner.replace(/^(TUNE|LEFT_TOUCH|RIGHT_TOUCH)_/, ""))}.`);
+      setMsg({ text: `${transportLabel(code)} is already used by ${describe(owner)}.`, ok: false });
       return;
     }
     setMsg(null);
     props.onChange({ ...props.transport, [ev]: code });
+  }
+
+  function setFingers(ev: string, fingers: number | null) {
+    const p = parseEvent(ev);
+    if (!p) return;
+    const to = makeEvent(p.module, p.gesture, fingers);
+    if (to !== ev && props.transport[to]) {
+      setMsg({ text: `${describe(to)} already exists.`, ok: false });
+      return;
+    }
+    setMsg(null);
+    props.onRename(ev, to);
   }
 
   function remove(ev: string) {
@@ -125,14 +165,14 @@ export function Inputs(props: {
   }
 
   function add() {
-    const ev = `${newModule}_${newGesture}`;
+    const ev = makeEvent(newModule, newGesture, newFingers);
     if (props.transport[ev]) {
-      setMsg(`${moduleLabel(newModule)} / ${gestureLabel(newGesture)} already has a key. Edit it in the list.`);
+      setMsg({ text: `${describe(ev)} already has a key. Edit it in the list.`, ok: false });
       return;
     }
     const code: TransportCode = { key: newKey, mods: newMods };
     if (used.has(codeKey(code))) {
-      setMsg(`${transportLabel(code)} is already used. Pick another key or modifier.`);
+      setMsg({ text: `${transportLabel(code)} is already used by ${describe(used.get(codeKey(code))!)}.`, ok: false });
       return;
     }
     setMsg(null);
@@ -150,43 +190,64 @@ export function Inputs(props: {
       setArmed(target);
       setMsg(null);
     } catch (e) {
-      setMsg(`Learn needs the engine running: ${e}`);
+      setMsg({ text: `Learn needs the engine running: ${e}`, ok: false });
     }
   }
 
-  async function exportJson() {
-    const path = await save({ defaultPath: "create-companion-inputs.json", filters: [{ name: "JSON", extensions: ["json"] }] });
-    if (!path) return;
-    const modules = MODULES.map((m) => ({
-      module: m,
-      gestures: events
-        .filter((ev) => ev.startsWith(m + "_"))
-        .map((ev) => {
-          const t = props.transport[ev];
-          const mods: Record<Mods, string[]> = { none: [], shift: ["LSHIFT"], ctrl: ["LCTRL"], alt: ["LALT"], ctrl_shift: ["LCTRL", "LSHIFT"] };
-          return {
-            event: ev,
-            gesture: ev.slice(m.length + 1),
-            key: t.key,
-            hid_usage: hidUsage(t.key),
-            modifiers: mods[t.mods ?? "none"],
-            chord: nayaChord(t),
-          };
-        }),
-    })).filter((m) => m.gestures.length > 0);
-    const doc = {
-      format: "create-companion-inputs",
-      version: 1,
-      exported: new Date().toISOString(),
-      note: "Flash each gesture on the module so it sends `chord`. Produced by Create Companion; importable into OpenFlow module profiles.",
-      modules,
-    };
-    try {
-      await api.writeTextFile(path, JSON.stringify(doc, null, 2) + "\n");
-      setMsg(`Exported ${path}`);
-    } catch (e) {
-      setMsg(`Export failed: ${e}`);
+  /**
+   * One OpenFlow module profile per module (`openflow.module-profile` v1):
+   * discrete gestures become `key` / `shortcut_alias` actions; the dial and
+   * scroll axes become a `value` pair with `split` halves.
+   */
+  async function exportProfiles() {
+    const dir = await open({ directory: true, multiple: false, title: "Folder for the module profile files" });
+    if (typeof dir !== "string") return;
+    const written: string[] = [];
+    const skipped: string[] = [];
+    for (const module of MODULES) {
+      const evs = events.filter((ev) => parseEvent(ev)?.module === module);
+      if (evs.length === 0) continue;
+      const bindings: Record<string, { actionType: string; actionCode: string; split?: Record<string, { actionType: string; actionCode: string }> }> = {};
+      for (const ev of evs) {
+        const nb = nayaBehavior(ev);
+        if (!nb) {
+          skipped.push(`${describe(ev)}: set a finger count first`);
+          continue;
+        }
+        const action = nayaAction(props.transport[ev]);
+        if (nb.half) {
+          const pair = (bindings[nb.behavior] ??= { actionType: "value", actionCode: "", split: {} });
+          pair.split![nb.half] = action;
+          const minus = pair.split!["-"]?.actionCode ?? "";
+          const plus = pair.split!["+"]?.actionCode ?? "";
+          pair.actionCode = `${minus} - ${plus}`;
+        } else {
+          bindings[nb.behavior] = action;
+        }
+      }
+      for (const [b, v] of Object.entries(bindings)) {
+        if (v.split && (!v.split["-"] || !v.split["+"])) skipped.push(`${b}: only one direction is bound (exported as is)`);
+      }
+      if (Object.keys(bindings).length === 0) continue;
+      const doc = {
+        format: "openflow.module-profile",
+        version: 1,
+        moduleType: module === "TUNE" ? "TUNE" : "TOUCH",
+        name: `Create Companion ${moduleLabel(module)}`,
+        bindings,
+      };
+      const file = `${dir.replace(/[\\/]+$/, "")}\\create-companion-${module.toLowerCase().replace("_", "-")}.json`;
+      try {
+        await api.writeTextFile(file, JSON.stringify(doc, null, 2) + "\n");
+        written.push(file.split(/[\\/]/).pop()!);
+      } catch (e) {
+        skipped.push(`${moduleLabel(module)}: ${e}`);
+      }
     }
+    setMsg({
+      text: `${written.length ? `Exported ${written.join(", ")} to ${dir}` : "Nothing exported"}${skipped.length ? ` · ${skipped.join("; ")}` : ""}`,
+      ok: written.length > 0,
+    });
   }
 
   return (
@@ -194,11 +255,15 @@ export function Inputs(props: {
       <div className="detect idle">
         <span>
           Each gesture is flashed on the module (with OpenFlow) to send one key. List the same keys here; only these are intercepted, every other key passes
-          through. Use a modifier to keep two modules apart, e.g. Tune on plain keys, Left Touch on Shift.
+          through. Use a modifier to keep two modules apart, e.g. Tune on plain keys, Left Touch on Shift. Set the finger count to export a module profile.
         </span>
       </div>
 
-      {msg && <div className={"detect " + (msg.startsWith("Learned") || msg.startsWith("Exported") ? "" : "idle")}><span className={msg.startsWith("Learned") || msg.startsWith("Exported") ? "big" : "error"}>{msg}</span></div>}
+      {msg && (
+        <div className={"detect " + (msg.ok ? "" : "idle")}>
+          <span className={msg.ok ? "big" : "error"}>{msg.text}</span>
+        </div>
+      )}
       {armed && (
         <div className="detect">
           <span className="big">Listening…</span>
@@ -210,91 +275,107 @@ export function Inputs(props: {
         <h2>
           Inputs
           <span className="spacer" />
-          <button className="ghost" onClick={exportJson} title="Save a JSON file with every gesture and the chord to flash on the module">
+          <button className="ghost" onClick={exportProfiles} title="Write one openflow.module-profile JSON per module, ready for OpenFlow's Import">
             Export for OpenFlow…
           </button>
         </h2>
         <div className="tablewrap">
-        <table className="map">
-          <thead>
-            <tr>
-              <th style={{ width: "30%" }}>Gesture</th>
-              <th>Sends</th>
-              <th style={{ width: 150 }}></th>
-            </tr>
-          </thead>
-          <tbody>
-            {events.map((ev) => {
-              const t = props.transport[ev];
-              const m = ev.startsWith("TUNE_") ? "TUNE" : ev.startsWith("LEFT_TOUCH_") ? "LEFT_TOUCH" : "RIGHT_TOUCH";
-              const g = ev.slice(m.length + 1);
-              return (
-                <tr key={ev} className={armed === ev ? "flash" : ""}>
-                  <td className="ev">
-                    <div>{gestureLabel(g)}</div>
-                    <div className="module">{moduleLabel(m)}</div>
-                  </td>
-                  <td>
-                    <div className="inline" style={{ display: "flex", gap: 8, alignItems: "center" }}>
-                      <ModSelect value={t.mods ?? "none"} onChange={(mods) => setCode(ev, { ...t, mods })} />
-                      <KeySelect value={t.key} onChange={(key) => setCode(ev, { ...t, key })} />
-                      <kbd>{transportLabel(t)}</kbd>
-                    </div>
-                  </td>
-                  <td className="actions">
-                    <button className={"ghost " + (armed === ev ? "primary" : "")} disabled={!props.engineConnected && armed !== ev} onClick={() => toggleLearn(ev)} title="Press the gesture on the module; the key it sends fills this row">
-                      {armed === ev ? "Waiting…" : "Learn"}
-                    </button>
-                    <button className="ghost" title="Remove this input" onClick={() => remove(ev)}>
-                      ✕
-                    </button>
-                  </td>
-                </tr>
-              );
-            })}
-            <tr>
-              <td className="ev">
-                <div style={{ display: "flex", gap: 6 }}>
-                  <select
-                    value={newModule}
-                    onChange={(e) => {
-                      setNewModule(e.target.value);
-                      if (!gesturesFor(e.target.value).includes(newGesture)) setNewGesture("PRESS");
-                    }}
-                  >
-                    {MODULES.map((m) => (
-                      <option key={m} value={m}>
-                        {moduleLabel(m)}
-                      </option>
-                    ))}
-                  </select>
-                  <select value={newGesture} onChange={(e) => setNewGesture(e.target.value)}>
-                    {gesturesFor(newModule).map((g) => (
-                      <option key={g} value={g} disabled={!!props.transport[`${newModule}_${g}`]}>
-                        {gestureLabel(g)}
-                      </option>
-                    ))}
-                  </select>
-                </div>
-              </td>
-              <td>
-                <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
-                  <ModSelect value={newMods} onChange={setNewMods} />
-                  <KeySelect value={newKey} onChange={setNewKey} />
-                  <kbd>{transportLabel({ key: newKey, mods: newMods })}</kbd>
-                </div>
-              </td>
-              <td className="actions">
-                <button className={"ghost " + (armed === "new" ? "primary" : "")} disabled={!props.engineConnected && armed !== "new"} onClick={() => toggleLearn("new")}>
-                  {armed === "new" ? "Waiting…" : "Learn"}
-                </button>
-                <button className="primary" onClick={add}>
-                  Add
-                </button>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+          <table className="map">
+            <thead>
+              <tr>
+                <th style={{ width: "24%" }}>Gesture</th>
+                <th style={{ width: 130 }}>Fingers</th>
+                <th>Sends</th>
+                <th style={{ width: 150 }}></th>
+              </tr>
+            </thead>
+            <tbody>
+              {events.map((ev) => {
+                const t = props.transport[ev];
+                const p = parseEvent(ev);
+                if (!p) return null;
+                return (
+                  <tr key={ev} className={armed === ev ? "flash" : ""}>
+                    <td className="ev">
+                      <div>{gestureLabel(p.gesture)}</div>
+                      <div className="module">{moduleLabel(p.module)}</div>
+                    </td>
+                    <td>
+                      <FingerSelect gesture={p.gesture} value={p.fingers} onChange={(n) => setFingers(ev, n)} />
+                    </td>
+                    <td>
+                      <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
+                        <ModSelect value={t.mods ?? "none"} onChange={(mods) => setCode(ev, { ...t, mods })} />
+                        <KeySelect value={t.key} onChange={(key) => setCode(ev, { ...t, key })} />
+                        <kbd>{transportLabel(t)}</kbd>
+                      </div>
+                    </td>
+                    <td className="actions">
+                      <button className={"ghost " + (armed === ev ? "primary" : "")} disabled={!props.engineConnected && armed !== ev} onClick={() => toggleLearn(ev)} title="Press the gesture on the module; the key it sends fills this row">
+                        {armed === ev ? "Waiting…" : "Learn"}
+                      </button>
+                      <button className="ghost" title="Remove this input" onClick={() => remove(ev)}>
+                        ✕
+                      </button>
+                    </td>
+                  </tr>
+                );
+              })}
+              <tr>
+                <td className="ev">
+                  <div style={{ display: "flex", gap: 6 }}>
+                    <select
+                      value={newModule}
+                      onChange={(e) => {
+                        const m = e.target.value as ModuleId;
+                        setNewModule(m);
+                        if (!gesturesFor(m).includes(newGesture)) setNewGesture("TAP");
+                      }}
+                    >
+                      {MODULES.map((m) => (
+                        <option key={m} value={m}>
+                          {moduleLabel(m)}
+                        </option>
+                      ))}
+                    </select>
+                    <select
+                      value={newGesture}
+                      onChange={(e) => {
+                        const g = e.target.value as GestureId;
+                        setNewGesture(g);
+                        const opts = fingerOptions(g);
+                        setNewFingers(opts.length === 0 ? null : newFingers && opts.includes(newFingers) ? newFingers : opts[0]);
+                      }}
+                    >
+                      {gesturesFor(newModule).map((g) => (
+                        <option key={g} value={g}>
+                          {gestureLabel(g)}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+                </td>
+                <td>
+                  <FingerSelect gesture={newGesture} value={newFingers} onChange={setNewFingers} />
+                </td>
+                <td>
+                  <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
+                    <ModSelect value={newMods} onChange={setNewMods} />
+                    <KeySelect value={newKey} onChange={setNewKey} />
+                    <kbd>{transportLabel({ key: newKey, mods: newMods })}</kbd>
+                  </div>
+                </td>
+                <td className="actions">
+                  <button className={"ghost " + (armed === "new" ? "primary" : "")} disabled={!props.engineConnected && armed !== "new"} onClick={() => toggleLearn("new")}>
+                    {armed === "new" ? "Waiting…" : "Learn"}
+                  </button>
+                  <button className="primary" onClick={add} disabled={!!props.transport[makeEvent(newModule, newGesture, newFingers)]} title={props.transport[makeEvent(newModule, newGesture, newFingers)] ? "This gesture already has a key" : ""}>
+                    Add
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </>

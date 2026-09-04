@@ -143,6 +143,31 @@ export default function App() {
     setSave({ kind: "dirty" });
   }
 
+  /** Rename an event everywhere: transport row and every profile's binding. */
+  function renameEvent(from: string, to: string) {
+    if (from === to) return;
+    setCfg((c) => {
+      if (!c) return c;
+      const ren = (b: Record<string, Binding>) => {
+        if (!(from in b)) return b;
+        const { [from]: moved, ...rest } = b;
+        return { ...rest, [to]: moved };
+      };
+      const transport = { ...c.transport };
+      if (from in transport) {
+        transport[to] = transport[from];
+        delete transport[from];
+      }
+      return {
+        ...c,
+        transport,
+        default_profile: { ...c.default_profile, bindings: ren(c.default_profile.bindings) },
+        profiles: c.profiles.map((p) => ({ ...p, bindings: ren(p.bindings) })),
+      };
+    });
+    setSave({ kind: "dirty" });
+  }
+
   const events = useMemo(() => (cfg ? Object.keys(cfg.transport).sort((a, b) => eventSortKey(a) - eventSortKey(b)) : []), [cfg]);
 
   /** The catalog entry that corresponds to the selected profile, if any. */
@@ -372,7 +397,7 @@ export default function App() {
               </span>
             </div>
             <div className="content">
-              <Inputs transport={cfg.transport} onChange={setTransport} engineConnected={engine.connected} learned={learned} />
+              <Inputs transport={cfg.transport} onChange={setTransport} onRename={renameEvent} engineConnected={engine.connected} learned={learned} />
             </div>
           </>
         ) : (

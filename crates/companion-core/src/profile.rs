@@ -180,11 +180,20 @@ impl ProfileResolver {
 
     /// Look up the binding for an event: the app profile's binding if it has
     /// one, otherwise the default profile's (so an app profile only needs to
-    /// override the events it cares about).
+    /// override the events it cares about). A binding without a finger count
+    /// serves every count of that gesture, so `TUNE_SWIPE_LEFT_3F` falls back
+    /// to `TUNE_SWIPE_LEFT`.
     pub fn binding(&self, ctx: &AppContext, ev: SemanticEvent) -> Option<&Binding> {
-        self.resolve(ctx)
-            .binding(ev)
+        let app = self.resolve(ctx);
+        let any = ev.without_fingers();
+        app.binding(ev)
+            .or_else(|| (ev.fingers.is_some()).then(|| app.binding(any)).flatten())
             .or_else(|| self.default.binding(ev))
+            .or_else(|| {
+                (ev.fingers.is_some())
+                    .then(|| self.default.binding(any))
+                    .flatten()
+            })
     }
 
     /// True if any profile needs the window title; the platform layer only
@@ -224,7 +233,7 @@ mod tests {
 
     fn resolver() -> ProfileResolver {
         let cw = SemanticEvent::new(Module::Tune, Gesture::Cw);
-        let press = SemanticEvent::new(Module::Tune, Gesture::Press);
+        let press = SemanticEvent::with_fingers(Module::Tune, Gesture::Tap, 1);
         let default = Profile {
             name: "Default".into(),
             bindings: HashMap::from([
@@ -300,7 +309,7 @@ mod tests {
     #[test]
     fn app_profile_falls_back_to_default_for_unbound_events() {
         let r = resolver();
-        let press = SemanticEvent::new(Module::Tune, Gesture::Press);
+        let press = SemanticEvent::with_fingers(Module::Tune, Gesture::Tap, 1);
         assert!(matches!(
             r.binding(&win("chrome.exe"), press).unwrap().action,
             Action::Media {
@@ -329,6 +338,28 @@ mod tests {
         assert_eq!(r.resolve(&other).name, "Default");
         // No title available -> exe-only profile.
         assert_eq!(r.resolve(&win("chrome.exe")).name, "Chrome");
+    }
+
+    #[test]
+    fn finger_less_binding_serves_any_finger_count() {
+        let r = resolver();
+        let any: SemanticEvent = "TUNE_SWIPE_LEFT".parse().unwrap();
+        let three: SemanticEvent = "TUNE_SWIPE_LEFT_3F".parse().unwrap();
+        let mut default = r.default.clone();
+        default.bindings.insert(any, keys("Alt+Left"));
+        let r = ProfileResolver::new(default, r.apps.clone());
+        assert!(matches!(
+            r.binding(&win("explorer.exe"), three).unwrap().action,
+            Action::Keys { .. }
+        ));
+        // A finger-specific binding wins over the any-count one.
+        let mut d2 = r.default.clone();
+        d2.bindings.insert(three, keys("Ctrl+Left"));
+        let r2 = ProfileResolver::new(d2, vec![]);
+        match &r2.binding(&win("x.exe"), three).unwrap().action {
+            Action::Keys { chord } => assert_eq!(chord.0, "Ctrl+Left"),
+            other => panic!("{other:?}"),
+        }
     }
 
     #[test]

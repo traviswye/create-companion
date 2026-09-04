@@ -38,12 +38,15 @@ cargo run -- --allow-injected  # treat synthetic F-keys as transport (testing wi
   a recorded shortcut, media, scroll, launch. Add an application from the running windows or by
   window title for websites. Edits autosave and the engine applies them live. Turn the dial
   while it is open and the detected input is shown with a one-click edit. **Inputs** (pinned at the
-  bottom of the list) edits which key each module gesture sends, with a Learn button that captures
-  the next F13–F24 press and an "Export for OpenFlow…" JSON of the gesture-to-key table to flash on
-  the module. The window is not resident; close it and only the engine remains.
+  bottom of the list) edits which key each module gesture sends, per gesture and finger count, with
+  a Learn button that captures the next F13–F24 press and an "Export for OpenFlow…" that writes
+  one `openflow.module-profile` file per module, ready for OpenFlow's Import. The window is not resident; close it and only the engine remains.
 - **Logs**: `%LOCALAPPDATA%\NayaCompanion\logs\companion.log.<date>` (and stderr in debug
   builds). `RUST_LOG=debug` shows every decoded event; otherwise `[engine] log_level` applies.
 - Only F-keys listed under `[transport]` (the Inputs screen) are intercepted. Everything else passes through.
+- **Event names** are `<MODULE>_<GESTURE>[_<n>F]`: `TUNE_CW`, `TUNE_TAP_1F`, `LEFT_TOUCH_SWIPE_UP_3F`.
+  A name without a finger count (`TUNE_SWIPE_LEFT`) is an any-count default; a finger-specific
+  binding wins over it. `TUNE_PRESS` is accepted as the old spelling of `TUNE_TAP_1F`.
 - **Modules side by side**: the whole keyboard is one USB device, so a Tune and a Touch sending the
   same bare F-key cannot be told apart. Give each module its own modifier namespace when flashing
   (Tune on plain keys, Left Touch on Shift+F-keys, Right Touch on Ctrl+F-keys); the engine keys its

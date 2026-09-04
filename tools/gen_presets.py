@@ -137,7 +137,7 @@ DEFAULT_PROFILE = {
     "bindings": [
         ("TUNE_CW", "Volume up", media("volume_up"), "light"),
         ("TUNE_CCW", "Volume down", media("volume_down"), "light"),
-        ("TUNE_PRESS", "Mute", media("mute"), None),
+        ("TUNE_TAP_1F", "Mute", media("mute"), None),
         ("TUNE_SWIPE_LEFT", "Previous track", media("previous_track"), None),
         ("TUNE_SWIPE_RIGHT", "Next track", media("next_track"), None),
         ("TUNE_SWIPE_UP", "Play / pause", media("play_pause"), None),
@@ -157,7 +157,7 @@ PROFILES = [
         "bindings": [
             ("TUNE_CW", "Next tab", keys("Ctrl+Tab"), None),
             ("TUNE_CCW", "Previous tab", keys("Ctrl+Shift+Tab"), None),
-            ("TUNE_PRESS", "New tab", keys("Ctrl+T"), None),
+            ("TUNE_TAP_1F", "New tab", keys("Ctrl+T"), None),
             ("TUNE_SWIPE_LEFT", "Back", keys("Alt+Left"), None),
             ("TUNE_SWIPE_RIGHT", "Forward", keys("Alt+Right"), None),
             ("TUNE_SWIPE_UP", "Zoom in", keys("Ctrl+="), None),
@@ -170,7 +170,7 @@ PROFILES = [
         "bindings": [
             ("TUNE_CW", "Seek forward 5 s", keys("Right"), "medium"),
             ("TUNE_CCW", "Seek back 5 s", keys("Left"), "medium"),
-            ("TUNE_PRESS", "Play / pause", keys("K"), None),
+            ("TUNE_TAP_1F", "Play / pause", keys("K"), None),
             ("TUNE_SWIPE_LEFT", "Previous video", keys("Shift+P"), None),
             ("TUNE_SWIPE_RIGHT", "Next video", keys("Shift+N"), None),
             ("TUNE_SWIPE_UP", "Playback speed up", keys("Shift+."), None),
@@ -191,7 +191,7 @@ PROFILES = [
         "bindings": [
             ("TUNE_CW", "Newer command (history)", keys("Down"), None),
             ("TUNE_CCW", "Older command (history)", keys("Up"), None),
-            ("TUNE_PRESS", "Clear line", keys("Esc"), None),
+            ("TUNE_TAP_1F", "Clear line", keys("Esc"), None),
             ("TUNE_SWIPE_LEFT", "Previous tab", keys("Ctrl+Shift+Tab"), None),
             ("TUNE_SWIPE_RIGHT", "Next tab", keys("Ctrl+Tab"), None),
             ("TUNE_SWIPE_UP", "Font bigger", keys("Ctrl+="), None),
@@ -209,7 +209,7 @@ PROFILES = [
         "bindings": [
             ("TUNE_CW", "Increase Brush Size", keys("]"), "medium"),
             ("TUNE_CCW", "Decrease Brush Size", keys("["), "medium"),
-            ("TUNE_PRESS", "Brush Tool", keys("B"), None),
+            ("TUNE_TAP_1F", "Brush Tool", keys("B"), None),
             ("TUNE_SWIPE_LEFT", "Undo", keys("Ctrl+Z"), None),
             ("TUNE_SWIPE_RIGHT", "Redo", keys("Ctrl+Shift+Z"), None),
             ("TUNE_SWIPE_UP", "Increase Brush Hardness", keys("Shift+]"), None),
@@ -223,7 +223,7 @@ PROFILES = [
         "bindings": [
             ("TUNE_CW", "Next Photo in Filmstrip", keys("Right"), None),
             ("TUNE_CCW", "Previous Photo in Filmstrip", keys("Left"), None),
-            ("TUNE_PRESS", "Toggle Zoom View", keys("Z"), None),
+            ("TUNE_TAP_1F", "Toggle Zoom View", keys("Z"), None),
             ("TUNE_SWIPE_LEFT", "Undo", keys("Ctrl+Z"), None),
             ("TUNE_SWIPE_RIGHT", "Redo", keys("Ctrl+Y"), None),
             ("TUNE_SWIPE_UP", "Flag as pick", keys("P"), None),
@@ -236,7 +236,7 @@ PROFILES = [
         "bindings": [
             ("TUNE_CW", "Step forward one frame", keys("Right"), "medium"),
             ("TUNE_CCW", "Step back one frame", keys("Left"), "medium"),
-            ("TUNE_PRESS", "Play / stop", keys("Space"), None),
+            ("TUNE_TAP_1F", "Play / stop", keys("Space"), None),
             ("TUNE_SWIPE_LEFT", "Step back five frames", keys("Shift+Left"), None),
             ("TUNE_SWIPE_RIGHT", "Step forward five frames", keys("Shift+Right"), None),
             ("TUNE_SWIPE_UP", "Zoom in timeline", keys("="), None),
@@ -254,7 +254,7 @@ PROFILES = [
         "bindings": [
             ("TUNE_CW", "Next frame", keys("Right"), "medium"),
             ("TUNE_CCW", "Previous frame", keys("Left"), "medium"),
-            ("TUNE_PRESS", "Play / stop", keys("Space"), None),
+            ("TUNE_TAP_1F", "Play / stop", keys("Space"), None),
             ("TUNE_SWIPE_LEFT", "Back one second", keys("Shift+Left"), None),
             ("TUNE_SWIPE_RIGHT", "Forward one second", keys("Shift+Right"), None),
             ("TUNE_SWIPE_UP", "Zoom in timeline", keys("Ctrl+="), None),
@@ -272,7 +272,7 @@ PROFILES = [
         "bindings": [
             ("TUNE_CW", "Zoom in", scroll("up"), "light"),
             ("TUNE_CCW", "Zoom out", scroll("down"), "light"),
-            ("TUNE_PRESS", "Fit view", keys("F6"), None),
+            ("TUNE_TAP_1F", "Fit view", keys("F6"), None),
             ("TUNE_SWIPE_LEFT", "Undo", keys("Ctrl+Z"), None),
             ("TUNE_SWIPE_RIGHT", "Redo", keys("Ctrl+Y"), None),
         ],
@@ -287,7 +287,7 @@ PROFILES = [
         "bindings": [
             ("TUNE_CW", "Next frame", keys("Right"), "medium"),
             ("TUNE_CCW", "Previous frame", keys("Left"), "medium"),
-            ("TUNE_PRESS", "Play animation", keys("Space"), None),
+            ("TUNE_TAP_1F", "Play animation", keys("Space"), None),
             ("TUNE_SWIPE_LEFT", "Undo", keys("Ctrl+Z"), None),
             ("TUNE_SWIPE_RIGHT", "Redo", keys("Ctrl+Shift+Z"), None),
             ("TUNE_SWIPE_UP", "Jump to next keyframe", keys("Up"), None),
@@ -300,7 +300,7 @@ PROFILES = [
         "bindings": [
             ("TUNE_CW", "Next editor tab", keys("Ctrl+PageDown"), None),
             ("TUNE_CCW", "Previous editor tab", keys("Ctrl+PageUp"), None),
-            ("TUNE_PRESS", "Command palette", keys("Ctrl+Shift+P"), None),
+            ("TUNE_TAP_1F", "Command palette", keys("Ctrl+Shift+P"), None),
             ("TUNE_SWIPE_LEFT", "Go back", keys("Alt+Left"), None),
             ("TUNE_SWIPE_RIGHT", "Go forward", keys("Alt+Right"), None),
             ("TUNE_SWIPE_UP", "Previous problem", keys("Shift+F8"), None),
@@ -314,7 +314,7 @@ PROFILES = [
         "bindings": [
             ("TUNE_CW", "Next channel", keys("Alt+Down"), None),
             ("TUNE_CCW", "Previous channel", keys("Alt+Up"), None),
-            ("TUNE_PRESS", "Toggle mute", keys("Ctrl+Shift+M"), None),
+            ("TUNE_TAP_1F", "Toggle mute", keys("Ctrl+Shift+M"), None),
             ("TUNE_SWIPE_LEFT", "Previous server", keys("Ctrl+Alt+Up"), None),
             ("TUNE_SWIPE_RIGHT", "Next server", keys("Ctrl+Alt+Down"), None),
             ("TUNE_SWIPE_UP", "Toggle deafen", keys("Ctrl+Shift+D"), None),
@@ -330,7 +330,7 @@ PROFILES = [
         "bindings": [
             ("TUNE_CW", "Volume up (app)", keys("Ctrl+Up"), "light"),
             ("TUNE_CCW", "Volume down (app)", keys("Ctrl+Down"), "light"),
-            ("TUNE_PRESS", "Play / pause", keys("Space"), None),
+            ("TUNE_TAP_1F", "Play / pause", keys("Space"), None),
             ("TUNE_SWIPE_LEFT", "Previous track", keys("Ctrl+Left"), None),
             ("TUNE_SWIPE_RIGHT", "Next track", keys("Ctrl+Right"), None),
             ("TUNE_SWIPE_UP", "Save to Liked Songs", keys("Alt+Shift+B"), None),
@@ -517,7 +517,7 @@ log_level = "info"
 [transport]
 TUNE_CW = { key = "F24" }
 TUNE_CCW = { key = "F23" }
-TUNE_PRESS = { key = "F22" }
+TUNE_TAP_1F = { key = "F22" }
 TUNE_SWIPE_LEFT = { key = "F20" }
 TUNE_SWIPE_RIGHT = { key = "F19" }
 TUNE_SWIPE_UP = { key = "F18" }

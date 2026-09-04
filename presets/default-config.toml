@@ -18,7 +18,7 @@ log_level = "info"
 [transport]
 TUNE_CW = { key = "F24" }
 TUNE_CCW = { key = "F23" }
-TUNE_PRESS = { key = "F22" }
+TUNE_TAP_1F = { key = "F22" }
 TUNE_SWIPE_LEFT = { key = "F20" }
 TUNE_SWIPE_RIGHT = { key = "F19" }
 TUNE_SWIPE_UP = { key = "F18" }
@@ -39,7 +39,7 @@ name = "Volume down"
 action = { type = "media", key = "volume_down" }
 accel = "light"
 
-[default_profile.bindings.TUNE_PRESS]
+[default_profile.bindings.TUNE_TAP_1F]
 name = "Mute"
 action = { type = "media", key = "mute" }
 
@@ -72,7 +72,7 @@ action = { type = "keys", chord = "Ctrl+Tab" }
 name = "Previous tab"
 action = { type = "keys", chord = "Ctrl+Shift+Tab" }
 
-[profiles.bindings.TUNE_PRESS]
+[profiles.bindings.TUNE_TAP_1F]
 name = "New tab"
 action = { type = "keys", chord = "Ctrl+T" }
 
@@ -107,7 +107,7 @@ name = "Seek back 5 s"
 action = { type = "keys", chord = "Left" }
 accel = "medium"
 
-[profiles.bindings.TUNE_PRESS]
+[profiles.bindings.TUNE_TAP_1F]
 name = "Play / pause"
 action = { type = "keys", chord = "K" }
 
@@ -140,7 +140,7 @@ action = { type = "keys", chord = "Down" }
 name = "Older command (history)"
 action = { type = "keys", chord = "Up" }
 
-[profiles.bindings.TUNE_PRESS]
+[profiles.bindings.TUNE_TAP_1F]
 name = "Clear line"
 action = { type = "keys", chord = "Esc" }
 
@@ -175,7 +175,7 @@ name = "Decrease Brush Size"
 action = { type = "keys", chord = "[" }
 accel = "medium"
 
-[profiles.bindings.TUNE_PRESS]
+[profiles.bindings.TUNE_TAP_1F]
 name = "Brush Tool"
 action = { type = "keys", chord = "B" }
 
@@ -208,7 +208,7 @@ action = { type = "keys", chord = "Right" }
 name = "Previous Photo in Filmstrip"
 action = { type = "keys", chord = "Left" }
 
-[profiles.bindings.TUNE_PRESS]
+[profiles.bindings.TUNE_TAP_1F]
 name = "Toggle Zoom View"
 action = { type = "keys", chord = "Z" }
 
@@ -243,7 +243,7 @@ name = "Step back one frame"
 action = { type = "keys", chord = "Left" }
 accel = "medium"
 
-[profiles.bindings.TUNE_PRESS]
+[profiles.bindings.TUNE_TAP_1F]
 name = "Play / stop"
 action = { type = "keys", chord = "Space" }
 
@@ -278,7 +278,7 @@ name = "Previous frame"
 action = { type = "keys", chord = "Left" }
 accel = "medium"
 
-[profiles.bindings.TUNE_PRESS]
+[profiles.bindings.TUNE_TAP_1F]
 name = "Play / stop"
 action = { type = "keys", chord = "Space" }
 
@@ -313,7 +313,7 @@ name = "Zoom out"
 action = { type = "scroll", direction = "down", lines = 1 }
 accel = "light"
 
-[profiles.bindings.TUNE_PRESS]
+[profiles.bindings.TUNE_TAP_1F]
 name = "Fit view"
 action = { type = "keys", chord = "F6" }
 
@@ -340,7 +340,7 @@ name = "Previous frame"
 action = { type = "keys", chord = "Left" }
 accel = "medium"
 
-[profiles.bindings.TUNE_PRESS]
+[profiles.bindings.TUNE_TAP_1F]
 name = "Play animation"
 action = { type = "keys", chord = "Space" }
 
@@ -373,7 +373,7 @@ action = { type = "keys", chord = "Ctrl+PageDown" }
 name = "Previous editor tab"
 action = { type = "keys", chord = "Ctrl+PageUp" }
 
-[profiles.bindings.TUNE_PRESS]
+[profiles.bindings.TUNE_TAP_1F]
 name = "Command palette"
 action = { type = "keys", chord = "Ctrl+Shift+P" }
 
@@ -406,7 +406,7 @@ action = { type = "keys", chord = "Alt+Down" }
 name = "Previous channel"
 action = { type = "keys", chord = "Alt+Up" }
 
-[profiles.bindings.TUNE_PRESS]
+[profiles.bindings.TUNE_TAP_1F]
 name = "Toggle mute"
 action = { type = "keys", chord = "Ctrl+Shift+M" }
 
@@ -437,7 +437,7 @@ name = "Volume down (app)"
 action = { type = "keys", chord = "Ctrl+Down" }
 accel = "light"
 
-[profiles.bindings.TUNE_PRESS]
+[profiles.bindings.TUNE_TAP_1F]
 name = "Play / pause"
 action = { type = "keys", chord = "Space" }
 
