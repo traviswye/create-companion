@@ -1,0 +1,2228 @@
+{
+  "id": "acrobat",
+  "name": "Adobe Acrobat",
+  "kind": "app",
+  "category": "Productivity",
+  "match": {
+    "windows_exe": [
+      "Acrobat.exe",
+      "AcroRd32.exe"
+    ],
+    "macos_bundle": [
+      "com.adobe.Acrobat.Pro",
+      "com.adobe.Reader"
+    ],
+    "window_title": []
+  },
+  "sources": [
+    "https://helpx.adobe.com/acrobat/using/keyboard-shortcuts.html",
+    "https://helpx.adobe.com/acrobat/desktop/get-started/preferences-and-settings/keyboard-shortcuts.html"
+  ],
+  "note": "Covers Acrobat on desktop (Reader and Pro), current version as of the Sep 23, 2025 update to Adobe's page (helpx.adobe.com/acrobat/using/keyboard-shortcuts.html redirects to the desktop keyboard-shortcuts article). Where the vendor lists two interchangeable keys for one action (e.g. 'Spacebar or Enter', 'Home or Shift+Ctrl+Home'), only the first-listed key is recorded here; the alternate performs the same action. '~' (Open Output Preview) is recorded as the backtick key since '~' itself is not an expressible key in this grammar. Skipped as not expressible: the Dynamic Zoom and temporary-Zoom-out tool selections (a bare Shift/Ctrl/Option modifier with no key), 'control+click' to open a context menu on macOS (mouse), and the numpad-specific 'Enter (keypad)' form-field shortcut. The Windows/macOS terminology-equivalents table at the end of the page (Alt=Option, This PC=[disk name], etc.) is not a shortcut list and is not included.",
+  "actions": [
+    {
+      "name": "Move focus to the next tool in the global toolbar",
+      "context": "Tools pane",
+      "windows": {
+        "type": "keys",
+        "chord": "Tab"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Tab"
+      }
+    },
+    {
+      "name": "Move focus to the previous tool in the global toolbar",
+      "context": "Tools pane",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Tab"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Tab"
+      }
+    },
+    {
+      "name": "Expand the tool in focus",
+      "context": "Tools pane",
+      "windows": {
+        "type": "keys",
+        "chord": "Space"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Space"
+      }
+    },
+    {
+      "name": "Close the open tool (close button in focus)",
+      "context": "Tools pane",
+      "windows": {
+        "type": "keys",
+        "chord": "Space"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Space"
+      }
+    },
+    {
+      "name": "Move focus to the View more option in the All tools pane",
+      "context": "Tools pane",
+      "windows": {
+        "type": "keys",
+        "chord": "Tab"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Tab"
+      }
+    },
+    {
+      "name": "Navigate to the next touchpoint within the All tools pane",
+      "context": "Tools pane",
+      "windows": {
+        "type": "keys",
+        "chord": "Down"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Down"
+      }
+    },
+    {
+      "name": "Navigate to the previous touchpoint within the All tools pane",
+      "context": "Tools pane",
+      "windows": {
+        "type": "keys",
+        "chord": "Up"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Up"
+      }
+    },
+    {
+      "name": "Open a touchpoint in focus in the open tool",
+      "context": "Tools pane",
+      "windows": {
+        "type": "keys",
+        "chord": "Space"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Space"
+      }
+    },
+    {
+      "name": "Expand or collapse View more when in focus",
+      "context": "Tools pane",
+      "windows": {
+        "type": "keys",
+        "chord": "Space"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Space"
+      }
+    },
+    {
+      "name": "Expand or collapse View less when in focus",
+      "context": "Tools pane",
+      "windows": {
+        "type": "keys",
+        "chord": "Space"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Space"
+      }
+    },
+    {
+      "name": "Close the All tools pane",
+      "context": "Tools pane",
+      "windows": {
+        "type": "keys",
+        "chord": "Esc"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Esc"
+      }
+    },
+    {
+      "name": "Hand tool (temporary selection)",
+      "context": "Tool selection",
+      "windows": {
+        "type": "keys",
+        "chord": "Space"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Space"
+      }
+    },
+    {
+      "name": "Pan (Hand) tool",
+      "context": "Tool selection",
+      "windows": {
+        "type": "keys",
+        "chord": "H"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "H"
+      }
+    },
+    {
+      "name": "Select tool",
+      "context": "Tool selection",
+      "windows": {
+        "type": "keys",
+        "chord": "V"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "V"
+      }
+    },
+    {
+      "name": "Marquee Zoom tool",
+      "context": "Tool selection",
+      "windows": {
+        "type": "keys",
+        "chord": "Z"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Z"
+      }
+    },
+    {
+      "name": "Cycle through zoom tools: Marquee Zoom, Dynamic Zoom, Loupe",
+      "context": "Tool selection",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Z"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Z"
+      }
+    },
+    {
+      "name": "Zoom In tool (temporary selection)",
+      "context": "Tool selection",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Space"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Space"
+      }
+    },
+    {
+      "name": "Select Object tool",
+      "context": "Tool selection",
+      "windows": {
+        "type": "keys",
+        "chord": "R"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "R"
+      }
+    },
+    {
+      "name": "Edit Object tool",
+      "context": "Tool selection",
+      "windows": {
+        "type": "keys",
+        "chord": "O"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "O"
+      }
+    },
+    {
+      "name": "Enter/Exit Forms editing",
+      "context": "Tool selection",
+      "windows": {
+        "type": "keys",
+        "chord": "A"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "A"
+      }
+    },
+    {
+      "name": "Crop tool",
+      "context": "Tool selection",
+      "windows": {
+        "type": "keys",
+        "chord": "C"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "C"
+      }
+    },
+    {
+      "name": "Link tool",
+      "context": "Tool selection",
+      "windows": {
+        "type": "keys",
+        "chord": "L"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "L"
+      }
+    },
+    {
+      "name": "Text Field tool",
+      "context": "Tool selection",
+      "windows": {
+        "type": "keys",
+        "chord": "F"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "F"
+      }
+    },
+    {
+      "name": "Cycle through tools in forms authoring mode: Text Field, Check Box, Radio Button, List Box, Dropdown Box, Button, Digital Signature, Barcode",
+      "context": "Tool selection",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+F"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+F"
+      }
+    },
+    {
+      "name": "Use 3D tool",
+      "context": "Tool selection",
+      "windows": {
+        "type": "keys",
+        "chord": "M"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "M"
+      }
+    },
+    {
+      "name": "Cycle through Multimedia tools: 3D object, SWF, Sound, Video",
+      "context": "Tool selection",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+M"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+M"
+      }
+    },
+    {
+      "name": "Edit text",
+      "context": "Tool selection",
+      "windows": {
+        "type": "keys",
+        "chord": "T"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "T"
+      }
+    },
+    {
+      "name": "Redact",
+      "context": "Tool selection",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Y"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Y"
+      }
+    },
+    {
+      "name": "Cycle through Touch Up tools: Touch Up Text, Touch Up Reading Order, Touch Up Object",
+      "context": "Tool selection",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+T"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+T"
+      }
+    },
+    {
+      "name": "JavaScript Debugger",
+      "context": "Tool selection",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+J"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+J"
+      }
+    },
+    {
+      "name": "Insert blank pages tool",
+      "context": "Tool selection",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+T"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+T"
+      }
+    },
+    {
+      "name": "Insert files",
+      "context": "Tool selection",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+I"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+I"
+      }
+    },
+    {
+      "name": "Delete pages",
+      "context": "Tool selection",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+D"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+D"
+      }
+    },
+    {
+      "name": "Open Output Preview",
+      "context": "Tool selection",
+      "windows": {
+        "type": "keys",
+        "chord": "`"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "`"
+      }
+    },
+    {
+      "name": "Touch Up Reading Order tool (or return focus to dialog box if already selected)",
+      "context": "Tool selection",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+U"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+U"
+      }
+    },
+    {
+      "name": "Move focus to the next item among Document pane, Task panes, Message bar, and Navigation bar",
+      "context": "Task panes",
+      "windows": {
+        "type": "keys",
+        "chord": "F6"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "F6"
+      }
+    },
+    {
+      "name": "Move focus to the previous item among Document pane, Task panes, Message bar, and Navigation bar",
+      "context": "Task panes",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+F6"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+F6"
+      }
+    },
+    {
+      "name": "Move focus to the next panel in the Task pane",
+      "context": "Task panes",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Tab"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Tab"
+      }
+    },
+    {
+      "name": "Move focus to the previous panel in the Task pane",
+      "context": "Task panes",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Tab"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+Tab"
+      }
+    },
+    {
+      "name": "Navigate to the next panel and panel control within an open Task pane",
+      "context": "Task panes",
+      "windows": {
+        "type": "keys",
+        "chord": "Tab"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Tab"
+      }
+    },
+    {
+      "name": "Navigate to the previous panel and panel control within an open Task pane",
+      "context": "Task panes",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Tab"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Tab"
+      }
+    },
+    {
+      "name": "Navigate to the next command button within a panel",
+      "context": "Task panes",
+      "windows": {
+        "type": "keys",
+        "chord": "Down"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Down"
+      }
+    },
+    {
+      "name": "Navigate to the previous command button within a panel",
+      "context": "Task panes",
+      "windows": {
+        "type": "keys",
+        "chord": "Up"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Up"
+      }
+    },
+    {
+      "name": "Expand or collapse panel in focus",
+      "context": "Task panes",
+      "windows": {
+        "type": "keys",
+        "chord": "Space"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Space"
+      }
+    },
+    {
+      "name": "Open or close the Task pane",
+      "context": "Task panes",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+F4"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+F4"
+      }
+    },
+    {
+      "name": "Close the pane that lists the tasks of an action",
+      "context": "Task panes",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+F4"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+F4"
+      }
+    },
+    {
+      "name": "Open the menu and move focus to the first menu option (command with submenu or flyout)",
+      "context": "Task panes",
+      "windows": {
+        "type": "keys",
+        "chord": "Space"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Space"
+      }
+    },
+    {
+      "name": "Move focus back to the parent command button with a submenu or flyout",
+      "context": "Task panes",
+      "windows": {
+        "type": "keys",
+        "chord": "Esc"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Esc"
+      }
+    },
+    {
+      "name": "Run the command in focus",
+      "context": "Task panes",
+      "windows": {
+        "type": "keys",
+        "chord": "Space"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Space"
+      }
+    },
+    {
+      "name": "Navigate to the next item in the active panel (Create/Edit Action or Custom Tool dialogs)",
+      "context": "Task panes",
+      "windows": {
+        "type": "keys",
+        "chord": "Tab"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Tab"
+      }
+    },
+    {
+      "name": "Navigate to the previous item in the active panel (Create/Edit Action or Custom Tool dialogs)",
+      "context": "Task panes",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Tab"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Tab"
+      }
+    },
+    {
+      "name": "Select Add a comment tool",
+      "context": "Comments",
+      "windows": {
+        "type": "keys",
+        "chord": "S"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "S"
+      }
+    },
+    {
+      "name": "Use Add a stamp tool",
+      "context": "Comments",
+      "windows": {
+        "type": "keys",
+        "chord": "K"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "K"
+      }
+    },
+    {
+      "name": "Select current highlighting tool",
+      "context": "Comments",
+      "windows": {
+        "type": "keys",
+        "chord": "U"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "U"
+      }
+    },
+    {
+      "name": "Cycle through Highlight, Underline, and Strikethrough text tools",
+      "context": "Comments",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+U"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+U"
+      }
+    },
+    {
+      "name": "Current drawing markup tool",
+      "context": "Comments",
+      "windows": {
+        "type": "keys",
+        "chord": "D"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "D"
+      }
+    },
+    {
+      "name": "Cycle through the drawing markup tools",
+      "context": "Comments",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+D"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+D"
+      }
+    },
+    {
+      "name": "Select Cloud tool",
+      "context": "Comments",
+      "windows": {
+        "type": "keys",
+        "chord": "Q"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Q"
+      }
+    },
+    {
+      "name": "Select Add text comment tool",
+      "context": "Comments",
+      "windows": {
+        "type": "keys",
+        "chord": "X"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "X"
+      }
+    },
+    {
+      "name": "Cycle through Add a stamp, Attach file, and Sound Recorder",
+      "context": "Comments",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+J"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+J"
+      }
+    },
+    {
+      "name": "Move focus to the next comment or form field",
+      "context": "Comments",
+      "windows": {
+        "type": "keys",
+        "chord": "Tab"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Tab"
+      }
+    },
+    {
+      "name": "Move focus to the previous comment or form field",
+      "context": "Comments",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Tab"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Tab"
+      }
+    },
+    {
+      "name": "Add a checkmark in the Comments list for the selected comment",
+      "context": "Comments",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+K"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+K"
+      }
+    },
+    {
+      "name": "Open pop-up note (or text field in the Comments list) for comment in focus",
+      "context": "Comments",
+      "windows": {
+        "type": "keys",
+        "chord": "Enter"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Enter"
+      }
+    },
+    {
+      "name": "Reply to the comment in focus in the Comments list",
+      "context": "Comments",
+      "windows": {
+        "type": "keys",
+        "chord": "R"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "R"
+      }
+    },
+    {
+      "name": "Close or exit pop-up (or text field) for the comment that has focus",
+      "context": "Comments",
+      "windows": {
+        "type": "keys",
+        "chord": "Esc"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Esc"
+      }
+    },
+    {
+      "name": "Go to previous screen",
+      "context": "Page navigation",
+      "windows": {
+        "type": "keys",
+        "chord": "PageUp"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "PageUp"
+      }
+    },
+    {
+      "name": "Go to next screen",
+      "context": "Page navigation",
+      "windows": {
+        "type": "keys",
+        "chord": "PageDown"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "PageDown"
+      }
+    },
+    {
+      "name": "Go to first page",
+      "context": "Page navigation",
+      "windows": {
+        "type": "keys",
+        "chord": "Home"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Home"
+      }
+    },
+    {
+      "name": "Go to last page",
+      "context": "Page navigation",
+      "windows": {
+        "type": "keys",
+        "chord": "End"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "End"
+      }
+    },
+    {
+      "name": "Go to previous page",
+      "context": "Page navigation",
+      "windows": {
+        "type": "keys",
+        "chord": "Left"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Left"
+      }
+    },
+    {
+      "name": "Go to next page",
+      "context": "Page navigation",
+      "windows": {
+        "type": "keys",
+        "chord": "Right"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Right"
+      }
+    },
+    {
+      "name": "Go to page",
+      "context": "Page navigation",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+N"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+N"
+      }
+    },
+    {
+      "name": "Previous open document",
+      "context": "Page navigation",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+F6"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+F6"
+      }
+    },
+    {
+      "name": "Next open document",
+      "context": "Page navigation",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+F6"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+F6"
+      }
+    },
+    {
+      "name": "Scroll up",
+      "context": "Page navigation",
+      "windows": {
+        "type": "keys",
+        "chord": "Up"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Up"
+      }
+    },
+    {
+      "name": "Scroll down",
+      "context": "Page navigation",
+      "windows": {
+        "type": "keys",
+        "chord": "Down"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Down"
+      }
+    },
+    {
+      "name": "Scroll (when Hand tool is selected)",
+      "context": "Page navigation",
+      "windows": {
+        "type": "keys",
+        "chord": "Space"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Space"
+      }
+    },
+    {
+      "name": "Zoom in",
+      "context": "Page navigation",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+="
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+="
+      }
+    },
+    {
+      "name": "Zoom out",
+      "context": "Page navigation",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+-"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+-"
+      }
+    },
+    {
+      "name": "Toggle between editing and previewing your form",
+      "context": "Forms",
+      "windows": {
+        "type": "keys",
+        "chord": "P"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "P"
+      }
+    },
+    {
+      "name": "Toggle guides On and Off",
+      "context": "Forms",
+      "windows": {
+        "type": "keys",
+        "chord": "G"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "G"
+      }
+    },
+    {
+      "name": "Align selected fields left",
+      "context": "Forms",
+      "windows": {
+        "type": "keys",
+        "chord": "L"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "L"
+      }
+    },
+    {
+      "name": "Align selected fields right",
+      "context": "Forms",
+      "windows": {
+        "type": "keys",
+        "chord": "R"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "R"
+      }
+    },
+    {
+      "name": "Align selected fields top",
+      "context": "Forms",
+      "windows": {
+        "type": "keys",
+        "chord": "T"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "T"
+      }
+    },
+    {
+      "name": "Align selected fields bottom",
+      "context": "Forms",
+      "windows": {
+        "type": "keys",
+        "chord": "B"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "B"
+      }
+    },
+    {
+      "name": "Align selected fields horizontal",
+      "context": "Forms",
+      "windows": {
+        "type": "keys",
+        "chord": "H"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "H"
+      }
+    },
+    {
+      "name": "Align selected fields vertical",
+      "context": "Forms",
+      "windows": {
+        "type": "keys",
+        "chord": "V"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "V"
+      }
+    },
+    {
+      "name": "Center fields horizontally",
+      "context": "Forms",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+H"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+H"
+      }
+    },
+    {
+      "name": "Center fields vertically",
+      "context": "Forms",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+V"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+V"
+      }
+    },
+    {
+      "name": "Highlight fields",
+      "context": "Forms",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+L"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+L"
+      }
+    },
+    {
+      "name": "Show Tab Order",
+      "context": "Forms",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+N"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+N"
+      }
+    },
+    {
+      "name": "Document JavaScripts",
+      "context": "Forms",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+D"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+D"
+      }
+    },
+    {
+      "name": "Move focus to the next row in the file list",
+      "context": "Portfolios",
+      "windows": {
+        "type": "keys",
+        "chord": "Down"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Down"
+      }
+    },
+    {
+      "name": "Move focus to the previous row in the file list",
+      "context": "Portfolios",
+      "windows": {
+        "type": "keys",
+        "chord": "Up"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Up"
+      }
+    },
+    {
+      "name": "Navigate one level up from within a folder (body of file list)",
+      "context": "Portfolios",
+      "windows": {
+        "type": "keys",
+        "chord": "Backspace"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Delete"
+      }
+    },
+    {
+      "name": "Press the Go Back button in a folder when it has focus",
+      "context": "Portfolios",
+      "windows": {
+        "type": "keys",
+        "chord": "Enter"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Enter"
+      }
+    },
+    {
+      "name": "Navigate to a subfolder, or open an attachment in Preview mode (row in focus)",
+      "context": "Portfolios",
+      "windows": {
+        "type": "keys",
+        "chord": "Enter"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Enter"
+      }
+    },
+    {
+      "name": "Move to the first row in the file list",
+      "context": "Portfolios",
+      "windows": {
+        "type": "keys",
+        "chord": "Home"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Home"
+      }
+    },
+    {
+      "name": "Move to the last row in the file list",
+      "context": "Portfolios",
+      "windows": {
+        "type": "keys",
+        "chord": "End"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "End"
+      }
+    },
+    {
+      "name": "Move up one screen of rows in the file list",
+      "context": "Portfolios",
+      "windows": {
+        "type": "keys",
+        "chord": "PageUp"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "PageUp"
+      }
+    },
+    {
+      "name": "Move down one screen of rows in the file list",
+      "context": "Portfolios",
+      "windows": {
+        "type": "keys",
+        "chord": "PageDown"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "PageDown"
+      }
+    },
+    {
+      "name": "Select or deselect all files",
+      "context": "Portfolios",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+A"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+A"
+      }
+    },
+    {
+      "name": "Extend the selection by adding the row above",
+      "context": "Portfolios",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Up"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Up"
+      }
+    },
+    {
+      "name": "Extend the selection by adding the row below",
+      "context": "Portfolios",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Down"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Down"
+      }
+    },
+    {
+      "name": "Change whether the row with focus is in the selection",
+      "context": "Portfolios",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Space"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Space"
+      }
+    },
+    {
+      "name": "Move focus up one row without changing the selection",
+      "context": "Portfolios",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Up"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Up"
+      }
+    },
+    {
+      "name": "Move focus down one row without changing the selection",
+      "context": "Portfolios",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Down"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Down"
+      }
+    },
+    {
+      "name": "Invoke the Menu (press F6 first to move focus to the hamburger menu)",
+      "context": "General navigation",
+      "windows": {
+        "type": "keys",
+        "chord": "Space"
+      }
+    },
+    {
+      "name": "Execute the Acrobat > Hide Others option",
+      "context": "General navigation",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+T"
+      }
+    },
+    {
+      "name": "Move focus to the toolbar in the browser and Home view in the application",
+      "context": "General navigation",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+F8"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+F8"
+      }
+    },
+    {
+      "name": "Navigate through other controls in the top bar: Home, Tools, Document",
+      "context": "General navigation",
+      "windows": {
+        "type": "keys",
+        "chord": "Right"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Right"
+      }
+    },
+    {
+      "name": "Select a highlighted control in the top bar",
+      "context": "General navigation",
+      "windows": {
+        "type": "keys",
+        "chord": "Enter"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Enter"
+      }
+    },
+    {
+      "name": "Move to the next open document tab",
+      "context": "General navigation",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Tab"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Tab"
+      }
+    },
+    {
+      "name": "Move to the previous open document tab",
+      "context": "General navigation",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Tab"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Tab"
+      }
+    },
+    {
+      "name": "Move to next open document window (focus on document pane)",
+      "context": "General navigation",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+F6"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+F6"
+      }
+    },
+    {
+      "name": "Move to the previous open document window (focus on document pane)",
+      "context": "General navigation",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+F6"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+F6"
+      }
+    },
+    {
+      "name": "Close current document",
+      "context": "General navigation",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+F4"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+F4"
+      }
+    },
+    {
+      "name": "Close all open documents",
+      "context": "General navigation",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+W"
+      }
+    },
+    {
+      "name": "Move focus to the next comment, link, or form field in the document pane",
+      "context": "General navigation",
+      "windows": {
+        "type": "keys",
+        "chord": "Tab"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Tab"
+      }
+    },
+    {
+      "name": "Move focus to the document pane",
+      "context": "General navigation",
+      "windows": {
+        "type": "keys",
+        "chord": "F5"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "F5"
+      }
+    },
+    {
+      "name": "Move focus to the previous comment, link, or form field in the document pane",
+      "context": "General navigation",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Tab"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Tab"
+      }
+    },
+    {
+      "name": "Activate selected tool, item (movie clip or bookmark), or command",
+      "context": "General navigation",
+      "windows": {
+        "type": "keys",
+        "chord": "Space"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Space"
+      }
+    },
+    {
+      "name": "Open context menu (press F6 first to move focus to the desired menu)",
+      "context": "General navigation",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Tab",
+          "Shift+F10"
+        ]
+      }
+    },
+    {
+      "name": "Close context menu",
+      "context": "General navigation",
+      "windows": {
+        "type": "keys",
+        "chord": "F10"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Esc"
+      }
+    },
+    {
+      "name": "Return to Hand tool or Select tool",
+      "context": "General navigation",
+      "windows": {
+        "type": "keys",
+        "chord": "Esc"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Esc"
+      }
+    },
+    {
+      "name": "Move focus to the next tab in a tabbed dialog box",
+      "context": "General navigation",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Tab"
+      }
+    },
+    {
+      "name": "Find in document",
+      "context": "General navigation",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+F"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+F"
+      }
+    },
+    {
+      "name": "Move to the next search result and highlight it in the document",
+      "context": "General navigation",
+      "windows": {
+        "type": "keys",
+        "chord": "F3"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+G"
+      }
+    },
+    {
+      "name": "Search the previous document (Search results displaying multiple files)",
+      "context": "General navigation",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+Left"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+Left"
+      }
+    },
+    {
+      "name": "Search the next document (Search results displaying multiple files)",
+      "context": "General navigation",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+Right"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+Right"
+      }
+    },
+    {
+      "name": "Select text (with Select tool selected)",
+      "context": "General navigation",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Right"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Right"
+      }
+    },
+    {
+      "name": "Select the next word (with Select tool selected)",
+      "context": "General navigation",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Right"
+      }
+    },
+    {
+      "name": "Increase the value of a slider",
+      "context": "General navigation",
+      "windows": {
+        "type": "keys",
+        "chord": "Right"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Right"
+      }
+    },
+    {
+      "name": "Decrease the value of a slider",
+      "context": "General navigation",
+      "windows": {
+        "type": "keys",
+        "chord": "Left"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Left"
+      }
+    },
+    {
+      "name": "Open and move focus to the navigation pane",
+      "context": "Navigation panels",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+F5"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+F5"
+      }
+    },
+    {
+      "name": "Move focus among the document, message bar, and navigation panels",
+      "context": "Navigation panels",
+      "windows": {
+        "type": "keys",
+        "chord": "F6"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "F6"
+      }
+    },
+    {
+      "name": "Move focus to the previous pane or panel",
+      "context": "Navigation panels",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+F6"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+F6"
+      }
+    },
+    {
+      "name": "Move among the elements of the active navigation panel",
+      "context": "Navigation panels",
+      "windows": {
+        "type": "keys",
+        "chord": "Tab"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Tab"
+      }
+    },
+    {
+      "name": "Move to the previous navigation panel and make it active (focus on panel button)",
+      "context": "Navigation panels",
+      "windows": {
+        "type": "keys",
+        "chord": "Up"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Up"
+      }
+    },
+    {
+      "name": "Move to the next navigation panel and make it active (focus on panel button)",
+      "context": "Navigation panels",
+      "windows": {
+        "type": "keys",
+        "chord": "Down"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Down"
+      }
+    },
+    {
+      "name": "Move to next navigation panel and make it active (focus anywhere in the navigation pane)",
+      "context": "Navigation panels",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Tab"
+      }
+    },
+    {
+      "name": "Select or deselect a file in the file list (open/close Context pane)",
+      "context": "Navigation panels",
+      "windows": {
+        "type": "keys",
+        "chord": "Space"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Space"
+      }
+    },
+    {
+      "name": "Select or deselect a To Do card (open/close Context pane)",
+      "context": "Navigation panels",
+      "windows": {
+        "type": "keys",
+        "chord": "Space"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Space"
+      }
+    },
+    {
+      "name": "Open selected file in the file list",
+      "context": "Navigation panels",
+      "windows": {
+        "type": "keys",
+        "chord": "Enter"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Enter"
+      }
+    },
+    {
+      "name": "Open selected To Do card",
+      "context": "Navigation panels",
+      "windows": {
+        "type": "keys",
+        "chord": "Enter"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Enter"
+      }
+    },
+    {
+      "name": "Move focus to the next file row for selecting a single row",
+      "context": "Navigation panels",
+      "windows": {
+        "type": "keys",
+        "chord": "Down"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Down"
+      }
+    },
+    {
+      "name": "Move focus to the previous file row for selecting a single row",
+      "context": "Navigation panels",
+      "windows": {
+        "type": "keys",
+        "chord": "Up"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Up"
+      }
+    },
+    {
+      "name": "Extend the selection by adding the row above",
+      "context": "Navigation panels",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Up"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Up"
+      }
+    },
+    {
+      "name": "Extend the selection by adding the row below",
+      "context": "Navigation panels",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Down"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Down"
+      }
+    },
+    {
+      "name": "Move focus up one row without changing the selection",
+      "context": "Navigation panels",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Up"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Up"
+      }
+    },
+    {
+      "name": "Move focus down one row without changing the selection",
+      "context": "Navigation panels",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Down"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Down"
+      }
+    },
+    {
+      "name": "Expand the current bookmark (focus on Bookmarks panel)",
+      "context": "Navigation panels",
+      "windows": {
+        "type": "keys",
+        "chord": "Right"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Right"
+      }
+    },
+    {
+      "name": "Collapse the current bookmark (focus on Bookmarks panel)",
+      "context": "Navigation panels",
+      "windows": {
+        "type": "keys",
+        "chord": "Left"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Left"
+      }
+    },
+    {
+      "name": "Expand all bookmarks",
+      "context": "Navigation panels",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+8"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+8"
+      }
+    },
+    {
+      "name": "Collapse selected bookmark",
+      "context": "Navigation panels",
+      "windows": {
+        "type": "keys",
+        "chord": "/"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "/"
+      }
+    },
+    {
+      "name": "Move focus to the next item in the navigation panel",
+      "context": "Navigation panels",
+      "windows": {
+        "type": "keys",
+        "chord": "Down"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Down"
+      }
+    },
+    {
+      "name": "Move focus to the previous item in a navigation panel",
+      "context": "Navigation panels",
+      "windows": {
+        "type": "keys",
+        "chord": "Up"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Up"
+      }
+    },
+    {
+      "name": "Open Acrobat user guide",
+      "context": "Help window",
+      "windows": {
+        "type": "keys",
+        "chord": "F1"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "F1"
+      }
+    },
+    {
+      "name": "Close Acrobat user guide",
+      "context": "Help window",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+W"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+W"
+      }
+    },
+    {
+      "name": "Move back to the previously opened topic",
+      "context": "Help window",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Left"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Left"
+      }
+    },
+    {
+      "name": "Move forward to the next topic",
+      "context": "Help window",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Right"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Right"
+      }
+    },
+    {
+      "name": "Move to the next pane",
+      "context": "Help window",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Tab"
+      }
+    },
+    {
+      "name": "Move to the previous pane",
+      "context": "Help window",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Tab"
+      }
+    },
+    {
+      "name": "Move focus to the next link within a pane",
+      "context": "Help window",
+      "windows": {
+        "type": "keys",
+        "chord": "Tab"
+      }
+    },
+    {
+      "name": "Move focus to the previous link within a pane",
+      "context": "Help window",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Tab"
+      }
+    },
+    {
+      "name": "Activate highlighted link",
+      "context": "Help window",
+      "windows": {
+        "type": "keys",
+        "chord": "Enter"
+      }
+    },
+    {
+      "name": "Print Help topic",
+      "context": "Help window",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+P"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+P"
+      }
+    },
+    {
+      "name": "Edit Tag",
+      "context": "Accessibility",
+      "windows": {
+        "type": "keys",
+        "chord": "F2"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "F2"
+      }
+    },
+    {
+      "name": "Change reading settings for the current document",
+      "context": "Accessibility",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+5"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+5"
+      }
+    },
+    {
+      "name": "Reflow a tagged PDF, and return to normal view",
+      "context": "Accessibility",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+4"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+4"
+      }
+    },
+    {
+      "name": "Activate and deactivate Read out loud",
+      "context": "Accessibility",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Y"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+Y"
+      }
+    },
+    {
+      "name": "Read only the current page out loud",
+      "context": "Accessibility",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+V"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+V"
+      }
+    },
+    {
+      "name": "Read out loud the whole document",
+      "context": "Accessibility",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+B"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+B"
+      }
+    },
+    {
+      "name": "Pause reading out loud",
+      "context": "Accessibility",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+C"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+C"
+      }
+    },
+    {
+      "name": "Stop reading out loud",
+      "context": "Accessibility",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+E"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+E"
+      }
+    },
+    {
+      "name": "Enter typing and move to next field",
+      "context": "Form fields",
+      "windows": {
+        "type": "keys",
+        "chord": "Tab"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Tab"
+      }
+    },
+    {
+      "name": "Select previous Radio button in a group",
+      "context": "Form fields",
+      "windows": {
+        "type": "keys",
+        "chord": "Up"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Up"
+      }
+    },
+    {
+      "name": "Select next Radio button",
+      "context": "Form fields",
+      "windows": {
+        "type": "keys",
+        "chord": "Down"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Down"
+      }
+    },
+    {
+      "name": "Reject and deselect form field",
+      "context": "Form fields",
+      "windows": {
+        "type": "keys",
+        "chord": "Esc"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Esc"
+      }
+    },
+    {
+      "name": "Exit full screen mode",
+      "context": "Form fields",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Esc",
+          "Esc"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Esc",
+          "Esc"
+        ]
+      }
+    },
+    {
+      "name": "Accept typing and deselect field (single-line Text field)",
+      "context": "Form fields",
+      "windows": {
+        "type": "keys",
+        "chord": "Enter"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Enter"
+      }
+    },
+    {
+      "name": "Create paragraph return in the same form field (multiline Text field)",
+      "context": "Form fields",
+      "windows": {
+        "type": "keys",
+        "chord": "Enter"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Enter"
+      }
+    },
+    {
+      "name": "Turn the Checkbox on or off",
+      "context": "Form fields",
+      "windows": {
+        "type": "keys",
+        "chord": "Enter"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Enter"
+      }
+    },
+    {
+      "name": "Insert tab into Text field",
+      "context": "Form fields",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Tab"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Tab"
+      }
+    }
+  ],
+  "defaults": {
+    "TUNE_CW": {
+      "name": "Go to next page",
+      "action": {
+        "type": "keys",
+        "chord": "Right"
+      }
+    },
+    "TUNE_CCW": {
+      "name": "Go to previous page",
+      "action": {
+        "type": "keys",
+        "chord": "Left"
+      }
+    },
+    "TUNE_TAP_1F": {
+      "name": "Find in document",
+      "action": {
+        "type": "keys",
+        "chord": "Ctrl+F"
+      }
+    }
+  }
+}

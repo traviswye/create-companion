@@ -13,9 +13,12 @@
     "window_title": []
   },
   "sources": [
-    "https://github.com/waldobronchart/ShortcutMapper"
+    "https://github.com/waldobronchart/ShortcutMapper",
+    "https://helpx.adobe.com/photoshop/using/default-keyboard-shortcuts.html",
+    "https://web.archive.org/web/20250609071355/https://helpx.adobe.com/photoshop/using/default-keyboard-shortcuts.html",
+    "https://web.archive.org/web/20210507021520/https://helpx.adobe.com/photoshop/using/default-keyboard-shortcuts.html"
   ],
-  "note": "Default bindings hand-authored 2026-09-04; the full shortcut list comes from the ShortcutMapper import in reference/app-shortcuts.json",
+  "note": "Default bindings hand-authored 2026-09-04; the full shortcut list comes from the ShortcutMapper import in reference/app-shortcuts.json. Every row of Adobe's own \"Default keyboard shortcuts\" page (helpx.adobe.com/photoshop/using/default-keyboard-shortcuts.html) that the chord grammar can express is added on top of that, with Adobe's Result column as the name and their table heading as the context (\"\" for the app-wide Popular shortcuts and search rows, \"Tools\" for Select tools, \"Camera Raw dialog\" for Use the Camera Raw dialog box, and so on). Adobe retired that URL in 2026 - it now redirects to a stub that only tells you to open Edit > Keyboard Shortcuts - so the tables were read from the last captures of the page itself on the Internet Archive, both of which are listed in sources; the 2022-2025 captures carry an Adobe CMS defect in which 18 of the panel and dialog sections render the Popular shortcuts table instead of their own, so those 18 sections (Panels, Adjustment layers, Animation panel, Brush panel, Clone Source, Color, History, Info, Layer Comps, Paths, Swatches, Puppet Warp, Refine Edge, Filter Gallery, Black-and-White dialog, Transforming selections, Editing paths, Slicing and optimizing) come from the last correct capture and the rest from the last capture before the page was retired. Left out because the grammar cannot express them: every mouse and stylus row (click, double-click, right-click, drag, spacebar-drag, scroll), \"hold key while dragging\" rows, rows whose key is only a held modifier (Change Cancel to Reset = Alt, Distort = Control), Caps Lock, the opacity/flow \"number keys\" and \"0-9\" rows, ranges written as prose (Ctrl + 1 - 5), and the shifted punctuation Adobe prints as a glyph ({ } < > ~), which the grammar has no spelling for - so Increase/Decrease Brush Hardness keep the Shift+] / Shift+[ form already in this file. Rows that list a comma-separated set of keys (the arrow keys for nudging, \"Left Arrow, Page Up\") are left out rather than guessed at, as are rows where one alternative carries a modifier and the other does not (\"Shift + Up Arrow/Down Arrow\", \"L or Ctrl + ]\"), because Adobe's wording does not say whether the modifier distributes. Where a row lists genuine alternatives that all parse (\"] / [\", \"Delete or Backspace\") it becomes one action per key with the chord in parentheses after the name. Names already present in this file are not re-added.",
   "actions": [
     {
       "name": "Increase Brush Size",
@@ -99,6 +102,3526 @@
       "mac": {
         "type": "keys",
         "chord": "Shift+["
+      }
+    },
+    {
+      "name": "Free Transform",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+T"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+T"
+      }
+    },
+    {
+      "name": "Deselect selections",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+D"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+D"
+      }
+    },
+    {
+      "name": "Undo last command",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Z"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Z"
+      }
+    },
+    {
+      "name": "Default Foreground/Background colors",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "D"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "D"
+      }
+    },
+    {
+      "name": "Switch Foreground/Background colors",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "X"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "X"
+      }
+    },
+    {
+      "name": "New layer via copy",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+J"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+J"
+      }
+    },
+    {
+      "name": "New layer via cut",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Ctrl+J"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+J"
+      }
+    },
+    {
+      "name": "Close all open documents other than the current document",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+P"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+P"
+      }
+    },
+    {
+      "name": "Cancel any modal dialog window (including the Start Workspace)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Esc"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Esc"
+      }
+    },
+    {
+      "name": "Selects the first edit field of the toolbar",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Enter"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Enter"
+      }
+    },
+    {
+      "name": "Navigate between fields",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Tab"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Tab"
+      }
+    },
+    {
+      "name": "Navigate between fields in the opposite direction",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Tab"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Tab"
+      }
+    },
+    {
+      "name": "Start Help",
+      "context": "Function keys",
+      "windows": {
+        "type": "keys",
+        "chord": "F1"
+      }
+    },
+    {
+      "name": "Undo/Redo",
+      "context": "Function keys",
+      "mac": {
+        "type": "keys",
+        "chord": "F1"
+      }
+    },
+    {
+      "name": "Cut",
+      "context": "Function keys",
+      "windows": {
+        "type": "keys",
+        "chord": "F2"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "F2"
+      }
+    },
+    {
+      "name": "Copy",
+      "context": "Function keys",
+      "windows": {
+        "type": "keys",
+        "chord": "F3"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "F3"
+      }
+    },
+    {
+      "name": "Paste",
+      "context": "Function keys",
+      "windows": {
+        "type": "keys",
+        "chord": "F4"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "F4"
+      }
+    },
+    {
+      "name": "Show/Hide Brush panel",
+      "context": "Function keys",
+      "windows": {
+        "type": "keys",
+        "chord": "F5"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "F5"
+      }
+    },
+    {
+      "name": "Show/Hide Color panel",
+      "context": "Function keys",
+      "windows": {
+        "type": "keys",
+        "chord": "F6"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "F6"
+      }
+    },
+    {
+      "name": "Show/Hide Layers panel",
+      "context": "Function keys",
+      "windows": {
+        "type": "keys",
+        "chord": "F7"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "F7"
+      }
+    },
+    {
+      "name": "Show/Hide Info panel",
+      "context": "Function keys",
+      "windows": {
+        "type": "keys",
+        "chord": "F8"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "F8"
+      }
+    },
+    {
+      "name": "Show/Hide Actions panel",
+      "context": "Function keys",
+      "windows": {
+        "type": "keys",
+        "chord": "F9"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+F9"
+      }
+    },
+    {
+      "name": "Revert",
+      "context": "Function keys",
+      "windows": {
+        "type": "keys",
+        "chord": "F12"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "F12"
+      }
+    },
+    {
+      "name": "Fill",
+      "context": "Function keys",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+F5"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+F5"
+      }
+    },
+    {
+      "name": "Feather Selection",
+      "context": "Function keys",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+F6"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+F6"
+      }
+    },
+    {
+      "name": "Inverse Selection",
+      "context": "Function keys",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+F7"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+F7"
+      }
+    },
+    {
+      "name": "Move tool, Artboard tool",
+      "context": "Tools",
+      "windows": {
+        "type": "keys",
+        "chord": "V"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "V"
+      }
+    },
+    {
+      "name": "Rectangular Marquee tool, Elliptical Marquee tool",
+      "context": "Tools",
+      "windows": {
+        "type": "keys",
+        "chord": "M"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "M"
+      }
+    },
+    {
+      "name": "Lasso tool, Polygonal Lasso tool, Magnetic Lasso tool",
+      "context": "Tools",
+      "windows": {
+        "type": "keys",
+        "chord": "L"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "L"
+      }
+    },
+    {
+      "name": "Object Selection tool, Quick Selection tool, Magic Wand tool",
+      "context": "Tools",
+      "windows": {
+        "type": "keys",
+        "chord": "W"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "W"
+      }
+    },
+    {
+      "name": "Crop tool, Perspective Crop tool, Slice tool, Slice Select tool",
+      "context": "Tools",
+      "windows": {
+        "type": "keys",
+        "chord": "C"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "C"
+      }
+    },
+    {
+      "name": "Eyedropper tool, Color Sampler tool, Ruler tool, Note tool",
+      "context": "Tools",
+      "windows": {
+        "type": "keys",
+        "chord": "I"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "I"
+      }
+    },
+    {
+      "name": "Frame tool",
+      "context": "Tools",
+      "windows": {
+        "type": "keys",
+        "chord": "K"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "K"
+      }
+    },
+    {
+      "name": "Eyedropper tool, 3D Material Eyedropper tool (ADD), Color Sampler tool, Ruler tool, Note tool, Count tool",
+      "context": "Tools",
+      "windows": {
+        "type": "keys",
+        "chord": "I"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "I"
+      }
+    },
+    {
+      "name": "Spot Healing Brush tool, Healing Brush tool, Patch tool, Red Eye tool, Content-Aware Move tool, Red Eye tool",
+      "context": "Tools",
+      "windows": {
+        "type": "keys",
+        "chord": "J"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "J"
+      }
+    },
+    {
+      "name": "Brush tool, Pencil tool, Color Replacement tool, Mixer Brush tool",
+      "context": "Tools",
+      "windows": {
+        "type": "keys",
+        "chord": "B"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "B"
+      }
+    },
+    {
+      "name": "Clone Stamp tool, Pattern Stamp tool",
+      "context": "Tools",
+      "windows": {
+        "type": "keys",
+        "chord": "S"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "S"
+      }
+    },
+    {
+      "name": "History Brush tool, Art History Brush tool",
+      "context": "Tools",
+      "windows": {
+        "type": "keys",
+        "chord": "Y"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Y"
+      }
+    },
+    {
+      "name": "Eraser tool, Background Eraser tool, Magic Eraser tool",
+      "context": "Tools",
+      "windows": {
+        "type": "keys",
+        "chord": "E"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "E"
+      }
+    },
+    {
+      "name": "Gradient tool, Paint Bucket tool, 3D Material Drop tool",
+      "context": "Tools",
+      "windows": {
+        "type": "keys",
+        "chord": "G"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "G"
+      }
+    },
+    {
+      "name": "Dodge tool, Burn tool, Sponge tool",
+      "context": "Tools",
+      "windows": {
+        "type": "keys",
+        "chord": "O"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "O"
+      }
+    },
+    {
+      "name": "Pen tool, Freeform Pen tool, Curvature Pen tool",
+      "context": "Tools",
+      "windows": {
+        "type": "keys",
+        "chord": "P"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "P"
+      }
+    },
+    {
+      "name": "Horizontal Type tool, Vertical Type tool, Horizontal Type mask tool, Vertical Type mask tool",
+      "context": "Tools",
+      "windows": {
+        "type": "keys",
+        "chord": "T"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "T"
+      }
+    },
+    {
+      "name": "Path Selection tool, Direct Selection tool",
+      "context": "Tools",
+      "windows": {
+        "type": "keys",
+        "chord": "A"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "A"
+      }
+    },
+    {
+      "name": "Rectangle tool, Ellipse tool, Polygon tool, Line tool, Custom Shape tool",
+      "context": "Tools",
+      "windows": {
+        "type": "keys",
+        "chord": "U"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "U"
+      }
+    },
+    {
+      "name": "Hand tool",
+      "context": "Tools",
+      "windows": {
+        "type": "keys",
+        "chord": "H"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "H"
+      }
+    },
+    {
+      "name": "Rotate View tool",
+      "context": "Tools",
+      "windows": {
+        "type": "keys",
+        "chord": "R"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "R"
+      }
+    },
+    {
+      "name": "Zoom tool, Liquify",
+      "context": "Tools",
+      "windows": {
+        "type": "keys",
+        "chord": "Z"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Z"
+      }
+    },
+    {
+      "name": "Default Foreground/Background colors",
+      "context": "Tools",
+      "windows": {
+        "type": "keys",
+        "chord": "D"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "D"
+      }
+    },
+    {
+      "name": "Switch Foreground/Background colors",
+      "context": "Tools",
+      "windows": {
+        "type": "keys",
+        "chord": "X"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "X"
+      }
+    },
+    {
+      "name": "Toggle Standard/Quick Mask modes",
+      "context": "Tools",
+      "windows": {
+        "type": "keys",
+        "chord": "Q"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Q"
+      }
+    },
+    {
+      "name": "Artboard tool",
+      "context": "Tools",
+      "windows": {
+        "type": "keys",
+        "chord": "V"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "V"
+      }
+    },
+    {
+      "name": "Toggle Preserve Transparency",
+      "context": "Tools",
+      "windows": {
+        "type": "keys",
+        "chord": "/"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "/"
+      }
+    },
+    {
+      "name": "Previous Brush",
+      "context": "Tools",
+      "windows": {
+        "type": "keys",
+        "chord": ","
+      },
+      "mac": {
+        "type": "keys",
+        "chord": ","
+      }
+    },
+    {
+      "name": "Next Brush",
+      "context": "Tools",
+      "windows": {
+        "type": "keys",
+        "chord": "."
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "."
+      }
+    },
+    {
+      "name": "Cycle through open documents",
+      "context": "Viewing images",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Tab"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Tab"
+      }
+    },
+    {
+      "name": "Switch to previous document",
+      "context": "Viewing images",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Ctrl+Tab"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+`"
+      }
+    },
+    {
+      "name": "Close a file in Photoshop and open Bridge",
+      "context": "Viewing images",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Ctrl+W"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+W"
+      }
+    },
+    {
+      "name": "Toggle between Standard mode and Quick Mask mode",
+      "context": "Viewing images",
+      "windows": {
+        "type": "keys",
+        "chord": "Q"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Q"
+      }
+    },
+    {
+      "name": "Toggle (forward) between Standard screen mode, Full screen mode with menu bar, and Full screen mode",
+      "context": "Viewing images",
+      "windows": {
+        "type": "keys",
+        "chord": "F"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "F"
+      }
+    },
+    {
+      "name": "Toggle (backward) between Standard screen mode, Full screen mode with menu bar, and Full screen mode",
+      "context": "Viewing images",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+F"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+F"
+      }
+    },
+    {
+      "name": "Switch to Hand tool (when not in text-edit mode)",
+      "context": "Viewing images",
+      "windows": {
+        "type": "keys",
+        "chord": "Space"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Space"
+      }
+    },
+    {
+      "name": "Switch to Zoom In tool",
+      "context": "Viewing images",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Space"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Space"
+      }
+    },
+    {
+      "name": "Switch to Zoom Out tool",
+      "context": "Viewing images",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Space"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Space"
+      }
+    },
+    {
+      "name": "Scroll up or down 1 screen (PageUp)",
+      "context": "Viewing images",
+      "windows": {
+        "type": "keys",
+        "chord": "PageUp"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "PageUp"
+      }
+    },
+    {
+      "name": "Scroll up or down 1 screen (PageDown)",
+      "context": "Viewing images",
+      "windows": {
+        "type": "keys",
+        "chord": "PageDown"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "PageDown"
+      }
+    },
+    {
+      "name": "Scroll up or down 10 units (Shift+PageUp)",
+      "context": "Viewing images",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+PageUp"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+PageUp"
+      }
+    },
+    {
+      "name": "Scroll up or down 10 units (Shift+PageDown)",
+      "context": "Viewing images",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+PageDown"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+PageDown"
+      }
+    },
+    {
+      "name": "Move view to upper-left corner or lower-right corner (Home)",
+      "context": "Viewing images",
+      "windows": {
+        "type": "keys",
+        "chord": "Home"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Home"
+      }
+    },
+    {
+      "name": "Move view to upper-left corner or lower-right corner (End)",
+      "context": "Viewing images",
+      "windows": {
+        "type": "keys",
+        "chord": "End"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "End"
+      }
+    },
+    {
+      "name": "Toggle layer mask on/off as rubylith (layer mask must be selected)",
+      "context": "Viewing images",
+      "windows": {
+        "type": "keys",
+        "chord": "\\"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "\\"
+      }
+    },
+    {
+      "name": "Cancel completely",
+      "context": "Puppet Warp",
+      "windows": {
+        "type": "keys",
+        "chord": "Esc"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Esc"
+      }
+    },
+    {
+      "name": "Undo last pin adjustment",
+      "context": "Puppet Warp",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Z"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Z"
+      }
+    },
+    {
+      "name": "Select all pins",
+      "context": "Puppet Warp",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+A"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+A"
+      }
+    },
+    {
+      "name": "Deselect all pins",
+      "context": "Puppet Warp",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+D"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+D"
+      }
+    },
+    {
+      "name": "Temporarily hide pins",
+      "context": "Puppet Warp",
+      "windows": {
+        "type": "keys",
+        "chord": "H"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "H"
+      }
+    },
+    {
+      "name": "Open the Select and Mask workspace",
+      "context": "Refine Edge",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+R"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+R"
+      }
+    },
+    {
+      "name": "Cycle (forward) through preview modes",
+      "context": "Refine Edge",
+      "windows": {
+        "type": "keys",
+        "chord": "F"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "F"
+      }
+    },
+    {
+      "name": "Cycle (backward) through preview modes",
+      "context": "Refine Edge",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+F"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+F"
+      }
+    },
+    {
+      "name": "Toggle between original image and selection preview",
+      "context": "Refine Edge",
+      "windows": {
+        "type": "keys",
+        "chord": "X"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "X"
+      }
+    },
+    {
+      "name": "Toggle between original selection and refined version",
+      "context": "Refine Edge",
+      "windows": {
+        "type": "keys",
+        "chord": "P"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "P"
+      }
+    },
+    {
+      "name": "Toggle radius preview on and off",
+      "context": "Refine Edge",
+      "windows": {
+        "type": "keys",
+        "chord": "J"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "J"
+      }
+    },
+    {
+      "name": "Reapply last-used filter",
+      "context": "Filter Gallery",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+F"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Cmd+F"
+      }
+    },
+    {
+      "name": "Undo/Redo",
+      "context": "Filter Gallery",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Z"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Z"
+      }
+    },
+    {
+      "name": "Step forward",
+      "context": "Filter Gallery",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Z"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+Z"
+      }
+    },
+    {
+      "name": "Step backward",
+      "context": "Filter Gallery",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Z"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+Z"
+      }
+    },
+    {
+      "name": "Forward Warp tool",
+      "context": "Liquify",
+      "windows": {
+        "type": "keys",
+        "chord": "W"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "W"
+      }
+    },
+    {
+      "name": "Reconstruct tool",
+      "context": "Liquify",
+      "windows": {
+        "type": "keys",
+        "chord": "R"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "R"
+      }
+    },
+    {
+      "name": "Twirl Clockwise tool",
+      "context": "Liquify",
+      "windows": {
+        "type": "keys",
+        "chord": "C"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "C"
+      }
+    },
+    {
+      "name": "Pucker tool",
+      "context": "Liquify",
+      "windows": {
+        "type": "keys",
+        "chord": "S"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "S"
+      }
+    },
+    {
+      "name": "Bloat tool",
+      "context": "Liquify",
+      "windows": {
+        "type": "keys",
+        "chord": "B"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "B"
+      }
+    },
+    {
+      "name": "Push Left tool",
+      "context": "Liquify",
+      "windows": {
+        "type": "keys",
+        "chord": "O"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "O"
+      }
+    },
+    {
+      "name": "Freeze Mask tool",
+      "context": "Liquify",
+      "windows": {
+        "type": "keys",
+        "chord": "F"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "F"
+      }
+    },
+    {
+      "name": "Thaw Mask tool",
+      "context": "Liquify",
+      "windows": {
+        "type": "keys",
+        "chord": "D"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "D"
+      }
+    },
+    {
+      "name": "Smooth tool",
+      "context": "Liquify",
+      "windows": {
+        "type": "keys",
+        "chord": "E"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "E"
+      }
+    },
+    {
+      "name": "Face tool",
+      "context": "Liquify",
+      "windows": {
+        "type": "keys",
+        "chord": "A"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "A"
+      }
+    },
+    {
+      "name": "Hand tool",
+      "context": "Liquify",
+      "windows": {
+        "type": "keys",
+        "chord": "H"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "H"
+      }
+    },
+    {
+      "name": "Zoom tool",
+      "context": "Liquify",
+      "windows": {
+        "type": "keys",
+        "chord": "Z"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Z"
+      }
+    },
+    {
+      "name": "Liquify filter",
+      "context": "Liquify",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Ctrl+X"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+X"
+      }
+    },
+    {
+      "name": "Cycle through controls on right from top",
+      "context": "Liquify",
+      "windows": {
+        "type": "keys",
+        "chord": "Tab"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Tab"
+      }
+    },
+    {
+      "name": "Cycle through controls on right from bottom",
+      "context": "Liquify",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Tab"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Tab"
+      }
+    },
+    {
+      "name": "Zoom 2x (temporary)",
+      "context": "Vanishing Point",
+      "windows": {
+        "type": "keys",
+        "chord": "X"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "X"
+      }
+    },
+    {
+      "name": "Zoom in",
+      "context": "Vanishing Point",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl++"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd++"
+      }
+    },
+    {
+      "name": "Zoom out",
+      "context": "Vanishing Point",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+-"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+-"
+      }
+    },
+    {
+      "name": "Increase brush size (Brush, Stamp tools)",
+      "context": "Vanishing Point",
+      "windows": {
+        "type": "keys",
+        "chord": "]"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "]"
+      }
+    },
+    {
+      "name": "Decrease brush size (Brush, Stamp tools)",
+      "context": "Vanishing Point",
+      "windows": {
+        "type": "keys",
+        "chord": "["
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "["
+      }
+    },
+    {
+      "name": "Increase brush hardness (Brush, Stamp tools)",
+      "context": "Vanishing Point",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+]"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+]"
+      }
+    },
+    {
+      "name": "Decrease brush hardness (Brush, Stamp tools)",
+      "context": "Vanishing Point",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+["
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+["
+      }
+    },
+    {
+      "name": "Undo last action",
+      "context": "Vanishing Point",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Z"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Z"
+      }
+    },
+    {
+      "name": "Redo last action",
+      "context": "Vanishing Point",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Z"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+Z"
+      }
+    },
+    {
+      "name": "Deselect all",
+      "context": "Vanishing Point",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+D"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+D"
+      }
+    },
+    {
+      "name": "Hide selection and planes",
+      "context": "Vanishing Point",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+H"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+H"
+      }
+    },
+    {
+      "name": "Copy",
+      "context": "Vanishing Point",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+C"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+C"
+      }
+    },
+    {
+      "name": "Paste",
+      "context": "Vanishing Point",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+V"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+V"
+      }
+    },
+    {
+      "name": "Repeat last duplicate and move",
+      "context": "Vanishing Point",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+T"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+T"
+      }
+    },
+    {
+      "name": "Create a floating selection from the current selection",
+      "context": "Vanishing Point",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+T"
+      }
+    },
+    {
+      "name": "Delete last node while creating plane",
+      "context": "Vanishing Point",
+      "windows": {
+        "type": "keys",
+        "chord": "Backspace"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Delete"
+      }
+    },
+    {
+      "name": "Zoom tool",
+      "context": "Camera Raw dialog",
+      "windows": {
+        "type": "keys",
+        "chord": "Z"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Z"
+      }
+    },
+    {
+      "name": "Hand tool",
+      "context": "Camera Raw dialog",
+      "windows": {
+        "type": "keys",
+        "chord": "H"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "H"
+      }
+    },
+    {
+      "name": "White Balance tool",
+      "context": "Camera Raw dialog",
+      "windows": {
+        "type": "keys",
+        "chord": "I"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "I"
+      }
+    },
+    {
+      "name": "Color Sampler tool",
+      "context": "Camera Raw dialog",
+      "windows": {
+        "type": "keys",
+        "chord": "S"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "S"
+      }
+    },
+    {
+      "name": "Crop tool",
+      "context": "Camera Raw dialog",
+      "windows": {
+        "type": "keys",
+        "chord": "C"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "C"
+      }
+    },
+    {
+      "name": "Straighten tool",
+      "context": "Camera Raw dialog",
+      "windows": {
+        "type": "keys",
+        "chord": "A"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "A"
+      }
+    },
+    {
+      "name": "Spot Removal tool",
+      "context": "Camera Raw dialog",
+      "windows": {
+        "type": "keys",
+        "chord": "B"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "B"
+      }
+    },
+    {
+      "name": "Red Eye Removal tool",
+      "context": "Camera Raw dialog",
+      "windows": {
+        "type": "keys",
+        "chord": "E"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "E"
+      }
+    },
+    {
+      "name": "Basic panel",
+      "context": "Camera Raw dialog",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+1"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+1"
+      }
+    },
+    {
+      "name": "Tone Curve panel",
+      "context": "Camera Raw dialog",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+2"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+2"
+      }
+    },
+    {
+      "name": "Detail panel",
+      "context": "Camera Raw dialog",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+3"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+3"
+      }
+    },
+    {
+      "name": "HSL/Grayscale panel",
+      "context": "Camera Raw dialog",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+4"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+4"
+      }
+    },
+    {
+      "name": "Split Toning panel",
+      "context": "Camera Raw dialog",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+5"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+5"
+      }
+    },
+    {
+      "name": "Lens Corrections panel",
+      "context": "Camera Raw dialog",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+6"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+6"
+      }
+    },
+    {
+      "name": "Camera Calibration panel",
+      "context": "Camera Raw dialog",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+7"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+7"
+      }
+    },
+    {
+      "name": "Presets panel",
+      "context": "Camera Raw dialog",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+9"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+9"
+      }
+    },
+    {
+      "name": "Open Snapshots panel",
+      "context": "Camera Raw dialog",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+9"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+9"
+      }
+    },
+    {
+      "name": "Parametric Curve Targeted Adjustment tool",
+      "context": "Camera Raw dialog",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Shift+T"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+Shift+T"
+      }
+    },
+    {
+      "name": "Hue Targeted Adjustment tool",
+      "context": "Camera Raw dialog",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Shift+H"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+Shift+H"
+      }
+    },
+    {
+      "name": "Saturation Targeted Adjustment tool",
+      "context": "Camera Raw dialog",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Shift+S"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+Shift+S"
+      }
+    },
+    {
+      "name": "Luminance Targeted Adjustment tool",
+      "context": "Camera Raw dialog",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Shift+L"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+Shift+L"
+      }
+    },
+    {
+      "name": "Grayscale Mix Targeted Adjustment tool",
+      "context": "Camera Raw dialog",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Shift+G"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+Shift+G"
+      }
+    },
+    {
+      "name": "Last-used Targeted Adjustment tool",
+      "context": "Camera Raw dialog",
+      "windows": {
+        "type": "keys",
+        "chord": "T"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "T"
+      }
+    },
+    {
+      "name": "Adjustment Brush tool",
+      "context": "Camera Raw dialog",
+      "windows": {
+        "type": "keys",
+        "chord": "K"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "K"
+      }
+    },
+    {
+      "name": "Graduated Filter tool",
+      "context": "Camera Raw dialog",
+      "windows": {
+        "type": "keys",
+        "chord": "G"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "G"
+      }
+    },
+    {
+      "name": "Increase/decrease brush size (])",
+      "context": "Camera Raw dialog",
+      "windows": {
+        "type": "keys",
+        "chord": "]"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "]"
+      }
+    },
+    {
+      "name": "Increase/decrease brush size ([)",
+      "context": "Camera Raw dialog",
+      "windows": {
+        "type": "keys",
+        "chord": "["
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "["
+      }
+    },
+    {
+      "name": "Increase/decrease brush feather (Shift+])",
+      "context": "Camera Raw dialog",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+]"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+]"
+      }
+    },
+    {
+      "name": "Increase/decrease brush feather (Shift+[)",
+      "context": "Camera Raw dialog",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+["
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+["
+      }
+    },
+    {
+      "name": "Increase/decrease Adjustment Brush tool flow in increments of 10 (=)",
+      "context": "Camera Raw dialog",
+      "windows": {
+        "type": "keys",
+        "chord": "="
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "="
+      }
+    },
+    {
+      "name": "Increase/decrease Adjustment Brush tool flow in increments of 10 (-)",
+      "context": "Camera Raw dialog",
+      "windows": {
+        "type": "keys",
+        "chord": "-"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "-"
+      }
+    },
+    {
+      "name": "Increase/decrease temporary Adjustment Brush tool size (Alt+])",
+      "context": "Camera Raw dialog",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+]"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+]"
+      }
+    },
+    {
+      "name": "Increase/decrease temporary Adjustment Brush tool size (Alt+[)",
+      "context": "Camera Raw dialog",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+["
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+["
+      }
+    },
+    {
+      "name": "Increase/decrease temporary Adjustment Brush tool feather (Alt+Shift+])",
+      "context": "Camera Raw dialog",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+]"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+]"
+      }
+    },
+    {
+      "name": "Increase/decrease temporary Adjustment Brush tool feather (Alt+Shift+[)",
+      "context": "Camera Raw dialog",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+["
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+["
+      }
+    },
+    {
+      "name": "Increase/decrease temporary Adjustment Brush tool flow in increments of 10 (Alt+=)",
+      "context": "Camera Raw dialog",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+="
+      }
+    },
+    {
+      "name": "Increase/decrease temporary Adjustment Brush tool flow in increments of 10 (Alt+-)",
+      "context": "Camera Raw dialog",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+-"
+      }
+    },
+    {
+      "name": "Switch to New mode from Add or Erase mode of the Adjustment Brush tool or the Graduated Filter",
+      "context": "Camera Raw dialog",
+      "windows": {
+        "type": "keys",
+        "chord": "N"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "N"
+      }
+    },
+    {
+      "name": "Toggle Auto Mask for Adjustment Brush tool",
+      "context": "Camera Raw dialog",
+      "windows": {
+        "type": "keys",
+        "chord": "M"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "M"
+      }
+    },
+    {
+      "name": "Toggle Show Mask for Adjustment Brush tool",
+      "context": "Camera Raw dialog",
+      "windows": {
+        "type": "keys",
+        "chord": "Y"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Y"
+      }
+    },
+    {
+      "name": "Toggle pins for Adjustment Brush tool",
+      "context": "Camera Raw dialog",
+      "windows": {
+        "type": "keys",
+        "chord": "V"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "V"
+      }
+    },
+    {
+      "name": "Toggle overlay for Graduated Filter, Spot Removal tool, or Red Eye Removal tool",
+      "context": "Camera Raw dialog",
+      "windows": {
+        "type": "keys",
+        "chord": "V"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "V"
+      }
+    },
+    {
+      "name": "Zoom in",
+      "context": "Camera Raw dialog",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl++"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd++"
+      }
+    },
+    {
+      "name": "Zoom out",
+      "context": "Camera Raw dialog",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+-"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+-"
+      }
+    },
+    {
+      "name": "Toggle preview",
+      "context": "Camera Raw dialog",
+      "windows": {
+        "type": "keys",
+        "chord": "P"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "P"
+      }
+    },
+    {
+      "name": "Full screen mode",
+      "context": "Camera Raw dialog",
+      "windows": {
+        "type": "keys",
+        "chord": "F"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "F"
+      }
+    },
+    {
+      "name": "Open selected images in Camera Raw dialog box from Bridge",
+      "context": "Camera Raw dialog",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+R"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+R"
+      }
+    },
+    {
+      "name": "Highlight clipping warning",
+      "context": "Camera Raw dialog",
+      "windows": {
+        "type": "keys",
+        "chord": "O"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "O"
+      }
+    },
+    {
+      "name": "Shadows clipping warning",
+      "context": "Camera Raw dialog",
+      "windows": {
+        "type": "keys",
+        "chord": "U"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "U"
+      }
+    },
+    {
+      "name": "(Filmstrip mode) Increase/decrease rating (Ctrl+.)",
+      "context": "Camera Raw dialog",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+."
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+."
+      }
+    },
+    {
+      "name": "(Filmstrip mode) Increase/decrease rating (Ctrl+,)",
+      "context": "Camera Raw dialog",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+,"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+,"
+      }
+    },
+    {
+      "name": "(Filmstrip mode) Add red label",
+      "context": "Camera Raw dialog",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+6"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+6"
+      }
+    },
+    {
+      "name": "(Filmstrip mode) Add yellow label",
+      "context": "Camera Raw dialog",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+7"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+7"
+      }
+    },
+    {
+      "name": "(Filmstrip mode) Add green label",
+      "context": "Camera Raw dialog",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+8"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+8"
+      }
+    },
+    {
+      "name": "(Filmstrip mode) Add blue label",
+      "context": "Camera Raw dialog",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+9"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+9"
+      }
+    },
+    {
+      "name": "(Filmstrip mode) Add purple label",
+      "context": "Camera Raw dialog",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+0"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+0"
+      }
+    },
+    {
+      "name": "Camera Raw preferences",
+      "context": "Camera Raw dialog",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+K"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+K"
+      }
+    },
+    {
+      "name": "Open the Black-and-White dialog box",
+      "context": "Black-and-White dialog",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Ctrl+Alt+B"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+Alt+B"
+      }
+    },
+    {
+      "name": "Increase/decrease selected value by 1% (Up)",
+      "context": "Black-and-White dialog",
+      "windows": {
+        "type": "keys",
+        "chord": "Up"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Up"
+      }
+    },
+    {
+      "name": "Increase/decrease selected value by 1% (Down)",
+      "context": "Black-and-White dialog",
+      "windows": {
+        "type": "keys",
+        "chord": "Down"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Down"
+      }
+    },
+    {
+      "name": "Increase/decrease selected value by 10% (Shift+Up)",
+      "context": "Black-and-White dialog",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Up"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Up"
+      }
+    },
+    {
+      "name": "Increase/decrease selected value by 10% (Shift+Down)",
+      "context": "Black-and-White dialog",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Down"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Down"
+      }
+    },
+    {
+      "name": "Open the Curves dialog box",
+      "context": "Curves",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+M"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+M"
+      }
+    },
+    {
+      "name": "Select next point on the curve",
+      "context": "Curves",
+      "windows": {
+        "type": "keys",
+        "chord": "+"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "+"
+      }
+    },
+    {
+      "name": "Select the previous point on the curve",
+      "context": "Curves",
+      "windows": {
+        "type": "keys",
+        "chord": "-"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "-"
+      }
+    },
+    {
+      "name": "Deselect a point",
+      "context": "Curves",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+D"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+D"
+      }
+    },
+    {
+      "name": "Toggle crop shield off and on",
+      "context": "Selecting and moving objects",
+      "windows": {
+        "type": "keys",
+        "chord": "/"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "/"
+      }
+    },
+    {
+      "name": "Apply",
+      "context": "Transforming selections, selection borders, and paths",
+      "windows": {
+        "type": "keys",
+        "chord": "Enter"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Enter"
+      }
+    },
+    {
+      "name": "Free transform with duplicate data",
+      "context": "Transforming selections, selection borders, and paths",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+T"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+T"
+      }
+    },
+    {
+      "name": "Transform again with duplicate data",
+      "context": "Transforming selections, selection borders, and paths",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Alt+T"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+Alt+T"
+      }
+    },
+    {
+      "name": "Cycle through blending modes (Shift++)",
+      "context": "Painting",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift++"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift++"
+      }
+    },
+    {
+      "name": "Cycle through blending modes (Shift+-)",
+      "context": "Painting",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+-"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+-"
+      }
+    },
+    {
+      "name": "Fill with foreground or background color (Alt+Backspace)",
+      "context": "Painting",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Backspace"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Delete"
+      }
+    },
+    {
+      "name": "Fill with foreground or background color (Ctrl+Backspace)",
+      "context": "Painting",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Backspace"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Delete"
+      }
+    },
+    {
+      "name": "Fill from history",
+      "context": "Painting",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Backspace"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+Delete"
+      }
+    },
+    {
+      "name": "Displays Fill dialog box",
+      "context": "Painting",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Backspace"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Delete"
+      }
+    },
+    {
+      "name": "Lock transparent pixels on/off",
+      "context": "Painting",
+      "windows": {
+        "type": "keys",
+        "chord": "/"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "/"
+      }
+    },
+    {
+      "name": "Cycle through blending modes (Shift++)",
+      "context": "Blending modes",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift++"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift++"
+      }
+    },
+    {
+      "name": "Cycle through blending modes (Shift+-)",
+      "context": "Blending modes",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+-"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+-"
+      }
+    },
+    {
+      "name": "Normal",
+      "context": "Blending modes",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+N"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Alt+N"
+      }
+    },
+    {
+      "name": "Dissolve",
+      "context": "Blending modes",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+I"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Alt+I"
+      }
+    },
+    {
+      "name": "Behind (Brush tool only)",
+      "context": "Blending modes",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+Q"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Alt+Q"
+      }
+    },
+    {
+      "name": "Clear (Brush tool only)",
+      "context": "Blending modes",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+R"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Alt+R"
+      }
+    },
+    {
+      "name": "Darken",
+      "context": "Blending modes",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+K"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Alt+K"
+      }
+    },
+    {
+      "name": "Multiply",
+      "context": "Blending modes",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+M"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Alt+M"
+      }
+    },
+    {
+      "name": "Color Burn",
+      "context": "Blending modes",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+B"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Alt+B"
+      }
+    },
+    {
+      "name": "Linear Burn",
+      "context": "Blending modes",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+A"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Alt+A"
+      }
+    },
+    {
+      "name": "Lighten",
+      "context": "Blending modes",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+G"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Alt+G"
+      }
+    },
+    {
+      "name": "Screen",
+      "context": "Blending modes",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+S"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Alt+S"
+      }
+    },
+    {
+      "name": "Color Dodge",
+      "context": "Blending modes",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+D"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Alt+D"
+      }
+    },
+    {
+      "name": "Linear Dodge",
+      "context": "Blending modes",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+W"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Alt+W"
+      }
+    },
+    {
+      "name": "Overlay",
+      "context": "Blending modes",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+O"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Alt+O"
+      }
+    },
+    {
+      "name": "Soft Light",
+      "context": "Blending modes",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+F"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Alt+F"
+      }
+    },
+    {
+      "name": "Hard Light",
+      "context": "Blending modes",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+H"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Alt+H"
+      }
+    },
+    {
+      "name": "Vivid Light",
+      "context": "Blending modes",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+V"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Alt+V"
+      }
+    },
+    {
+      "name": "Linear Light",
+      "context": "Blending modes",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+J"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Alt+J"
+      }
+    },
+    {
+      "name": "Pin Light",
+      "context": "Blending modes",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+Z"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Alt+Z"
+      }
+    },
+    {
+      "name": "Hard Mix",
+      "context": "Blending modes",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+L"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Alt+L"
+      }
+    },
+    {
+      "name": "Difference",
+      "context": "Blending modes",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+E"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Alt+E"
+      }
+    },
+    {
+      "name": "Exclusion",
+      "context": "Blending modes",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+X"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Alt+X"
+      }
+    },
+    {
+      "name": "Hue",
+      "context": "Blending modes",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+U"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Alt+U"
+      }
+    },
+    {
+      "name": "Saturation",
+      "context": "Blending modes",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+T"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Alt+T"
+      }
+    },
+    {
+      "name": "Color",
+      "context": "Blending modes",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+C"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Alt+C"
+      }
+    },
+    {
+      "name": "Luminosity",
+      "context": "Blending modes",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+Y"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Alt+Y"
+      }
+    },
+    {
+      "name": "Set blending mode to Threshold for bitmap images, Normal for all other images",
+      "context": "Blending modes",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+N"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Alt+N"
+      }
+    },
+    {
+      "name": "Show/Hide selection on selected type",
+      "context": "Selecting and editing text",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+H"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+H"
+      }
+    },
+    {
+      "name": "Choose 100% horizontal scale",
+      "context": "Formatting type",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+X"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+X"
+      }
+    },
+    {
+      "name": "Choose 100% vertical scale",
+      "context": "Formatting type",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Alt+X"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+Alt+X"
+      }
+    },
+    {
+      "name": "Choose Auto leading",
+      "context": "Formatting type",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Alt+A"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+Alt+A"
+      }
+    },
+    {
+      "name": "Choose 0 for tracking",
+      "context": "Formatting type",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Q"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Ctrl+Shift+Q"
+      }
+    },
+    {
+      "name": "Justify paragraph, left aligns last line",
+      "context": "Formatting type",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+J"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+J"
+      }
+    },
+    {
+      "name": "Justify paragraph, justifies all",
+      "context": "Formatting type",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+F"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+F"
+      }
+    },
+    {
+      "name": "Toggle paragraph hyphenation on/off",
+      "context": "Formatting type",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Alt+H"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Ctrl+Shift+Alt+H"
+      }
+    },
+    {
+      "name": "Toggle single/every-line composer on/off",
+      "context": "Formatting type",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Alt+T"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+Alt+T"
+      }
+    },
+    {
+      "name": "Decrease or increase leading 1 point or pixel (Alt+Down)",
+      "context": "Formatting type",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Down"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Down"
+      }
+    },
+    {
+      "name": "Decrease or increase leading 1 point or pixel (Alt+Up)",
+      "context": "Formatting type",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Up"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Up"
+      }
+    },
+    {
+      "name": "Decrease or increase baseline shift 1 point or pixel (Shift+Alt+Down)",
+      "context": "Formatting type",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+Down"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Alt+Down"
+      }
+    },
+    {
+      "name": "Decrease or increase baseline shift 1 point or pixel (Shift+Alt+Up)",
+      "context": "Formatting type",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+Up"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Alt+Up"
+      }
+    },
+    {
+      "name": "Decrease or increase kerning/tracking 20/1000 ems (Alt+Left)",
+      "context": "Formatting type",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Left"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Left"
+      }
+    },
+    {
+      "name": "Decrease or increase kerning/tracking 20/1000 ems (Alt+Right)",
+      "context": "Formatting type",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Right"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Right"
+      }
+    },
+    {
+      "name": "Apply value and keep text box active",
+      "context": "Panels",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Enter"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Enter"
+      }
+    },
+    {
+      "name": "Show/Hide all panels",
+      "context": "Panels",
+      "windows": {
+        "type": "keys",
+        "chord": "Tab"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Tab"
+      }
+    },
+    {
+      "name": "Show/Hide all panels except the toolbox and options bar",
+      "context": "Panels",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Tab"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Tab"
+      }
+    },
+    {
+      "name": "Increase/decrease selected values by 10 (Shift+Up)",
+      "context": "Panels",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Up"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Up"
+      }
+    },
+    {
+      "name": "Increase/decrease selected values by 10 (Shift+Down)",
+      "context": "Panels",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Down"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Down"
+      }
+    },
+    {
+      "name": "Choose composite channel for adjustment",
+      "context": "Adjustment layers",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+2"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+2"
+      }
+    },
+    {
+      "name": "Toggle airbrush option",
+      "context": "Brush panel",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+P"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Alt+P"
+      }
+    },
+    {
+      "name": "Select composite channel",
+      "context": "Channels panel",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+2"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+2"
+      }
+    },
+    {
+      "name": "Scale (increase or reduce size) Clone Source (Alt+Shift+[)",
+      "context": "Clone Source panel",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+["
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+["
+      }
+    },
+    {
+      "name": "Scale (increase or reduce size) Clone Source (Alt+Shift+])",
+      "context": "Clone Source panel",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+]"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+]"
+      }
+    },
+    {
+      "name": "Step forward through image states",
+      "context": "History panel",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Z"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+Z"
+      }
+    },
+    {
+      "name": "Step backward through image states",
+      "context": "History panel",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Z"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+Z"
+      }
+    },
+    {
+      "name": "New layer",
+      "context": "Layers panel",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+N"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+N"
+      }
+    },
+    {
+      "name": "New layer via copy",
+      "context": "Layers panel",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+J"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+J"
+      }
+    },
+    {
+      "name": "New layer via cut",
+      "context": "Layers panel",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Ctrl+J"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+J"
+      }
+    },
+    {
+      "name": "Group layers",
+      "context": "Layers panel",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+G"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+G"
+      }
+    },
+    {
+      "name": "Ungroup layers",
+      "context": "Layers panel",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+G"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+G"
+      }
+    },
+    {
+      "name": "Create/release clipping mask",
+      "context": "Layers panel",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+G"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+G"
+      }
+    },
+    {
+      "name": "Select all layers",
+      "context": "Layers panel",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+A"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+A"
+      }
+    },
+    {
+      "name": "Merge visible layers",
+      "context": "Layers panel",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+E"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+E"
+      }
+    },
+    {
+      "name": "Select top layer",
+      "context": "Layers panel",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+."
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+."
+      }
+    },
+    {
+      "name": "Select bottom layer",
+      "context": "Layers panel",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+,"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+,"
+      }
+    },
+    {
+      "name": "Add to layer selection in Layers panel (Shift+Alt+[)",
+      "context": "Layers panel",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+["
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Alt+["
+      }
+    },
+    {
+      "name": "Add to layer selection in Layers panel (Shift+Alt+])",
+      "context": "Layers panel",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+]"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Alt+]"
+      }
+    },
+    {
+      "name": "Select next layer down/up (Alt+[)",
+      "context": "Layers panel",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+["
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+["
+      }
+    },
+    {
+      "name": "Select next layer down/up (Alt+])",
+      "context": "Layers panel",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+]"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+]"
+      }
+    },
+    {
+      "name": "Move target layer down/up (Ctrl+[)",
+      "context": "Layers panel",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+["
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+["
+      }
+    },
+    {
+      "name": "Move target layer down/up (Ctrl+])",
+      "context": "Layers panel",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+]"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+]"
+      }
+    },
+    {
+      "name": "Merge a copy of all visible layers into target layer",
+      "context": "Layers panel",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Alt+E"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+Alt+E"
+      }
+    },
+    {
+      "name": "Move layer to bottom or top (Ctrl+Shift+[)",
+      "context": "Layers panel",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+["
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+["
+      }
+    },
+    {
+      "name": "Move layer to bottom or top (Ctrl+Shift+])",
+      "context": "Layers panel",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+]"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+]"
+      }
+    },
+    {
+      "name": "Toggle lock transparency for target layer, or last applied lock",
+      "context": "Layers panel",
+      "windows": {
+        "type": "keys",
+        "chord": "/"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "/"
+      }
+    },
+    {
+      "name": "Hide path",
+      "context": "Paths panel",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+H"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+H"
+      }
+    },
+    {
+      "name": "Fit in window",
+      "context": "Extract and Pattern Maker",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+0"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+0"
+      }
+    },
+    {
+      "name": "Zoom in",
+      "context": "Extract and Pattern Maker",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl++"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd++"
+      }
+    },
+    {
+      "name": "Zoom out",
+      "context": "Extract and Pattern Maker",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+-"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+-"
+      }
+    },
+    {
+      "name": "Cycle through controls on right from top",
+      "context": "Extract and Pattern Maker",
+      "windows": {
+        "type": "keys",
+        "chord": "Tab"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Tab"
+      }
+    },
+    {
+      "name": "Cycle through controls on right from bottom",
+      "context": "Extract and Pattern Maker",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Tab"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Tab"
+      }
+    },
+    {
+      "name": "Temporarily activate Hand tool",
+      "context": "Extract and Pattern Maker",
+      "windows": {
+        "type": "keys",
+        "chord": "Space"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Space"
+      }
+    },
+    {
+      "name": "Edge Highlighter tool",
+      "context": "Extract and Pattern Maker",
+      "windows": {
+        "type": "keys",
+        "chord": "B"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "B"
+      }
+    },
+    {
+      "name": "Fill tool",
+      "context": "Extract and Pattern Maker",
+      "windows": {
+        "type": "keys",
+        "chord": "G"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "G"
+      }
+    },
+    {
+      "name": "Eyedropper tool",
+      "context": "Extract and Pattern Maker",
+      "windows": {
+        "type": "keys",
+        "chord": "I"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "I"
+      }
+    },
+    {
+      "name": "Cleanup tool",
+      "context": "Extract and Pattern Maker",
+      "windows": {
+        "type": "keys",
+        "chord": "C"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "C"
+      }
+    },
+    {
+      "name": "Edge Touchup tool",
+      "context": "Extract and Pattern Maker",
+      "windows": {
+        "type": "keys",
+        "chord": "T"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "T"
+      }
+    },
+    {
+      "name": "Remove current highlight",
+      "context": "Extract and Pattern Maker",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Delete"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Delete"
+      }
+    },
+    {
+      "name": "Highlight entire image",
+      "context": "Extract and Pattern Maker",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Delete"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Delete"
+      }
+    },
+    {
+      "name": "Toggle Show menu options in preview between Original and Extracted",
+      "context": "Extract and Pattern Maker",
+      "windows": {
+        "type": "keys",
+        "chord": "X"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "X"
+      }
+    },
+    {
+      "name": "Enable Cleanup and Edge Touchup tools before preview",
+      "context": "Extract and Pattern Maker",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+X"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+X"
+      }
+    },
+    {
+      "name": "Cycle through Display menu in preview from top to bottom",
+      "context": "Extract and Pattern Maker",
+      "windows": {
+        "type": "keys",
+        "chord": "F"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "F"
+      }
+    },
+    {
+      "name": "Cycle through Display menu in preview from bottom to top",
+      "context": "Extract and Pattern Maker",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+F"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+F"
+      }
+    },
+    {
+      "name": "Delete current selection",
+      "context": "Extract and Pattern Maker",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+D"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+D"
+      }
+    },
+    {
+      "name": "Undo a selection move",
+      "context": "Extract and Pattern Maker",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Z"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Z"
+      }
+    },
+    {
+      "name": "Generate or generate again",
+      "context": "Extract and Pattern Maker",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+G"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+G"
+      }
+    },
+    {
+      "name": "Toggle view: original/generated pattern",
+      "context": "Extract and Pattern Maker",
+      "windows": {
+        "type": "keys",
+        "chord": "X"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "X"
+      }
+    },
+    {
+      "name": "Go to first tile in Tile History",
+      "context": "Extract and Pattern Maker",
+      "windows": {
+        "type": "keys",
+        "chord": "Home"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Home"
+      }
+    },
+    {
+      "name": "Go to last tile in Tile History",
+      "context": "Extract and Pattern Maker",
+      "windows": {
+        "type": "keys",
+        "chord": "End"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "End"
+      }
+    },
+    {
+      "name": "Delete current tile from Tile History",
+      "context": "Extract and Pattern Maker",
+      "windows": {
+        "type": "keys",
+        "chord": "Delete"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Delete"
+      }
+    },
+    {
+      "name": "Search across Photoshop UI, Help & Learn content, and Adobe Stock assets",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+F"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+F"
       }
     }
   ],

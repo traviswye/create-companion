@@ -1,0 +1,444 @@
+{
+  "id": "musicbee",
+  "name": "MusicBee",
+  "kind": "app",
+  "category": "Music",
+  "match": {
+    "windows_exe": [
+      "MusicBee.exe"
+    ],
+    "macos_bundle": [],
+    "window_title": []
+  },
+  "sources": [
+    "https://musicbee.fandom.com/wiki/Hotkeys"
+  ],
+  "note": "Windows only; there is no official macOS build. MusicBee offers 150+ assignable hotkey commands, but only the ones listed here are bound by default on install (per the wiki, up-to-date with MusicBee 3.0.5903); the rest are unbound until the user assigns them in Preferences > Hotkeys, so they are not listed, matching the convention used for Obsidian's unbound commands. 'Global' context means the hotkey fires even when MusicBee is not the focused window. Skipped as not expressible: 'Multimedia: Stop' (no generic media-stop key in this grammar's media key set), and the eight half-star rating adjustments ('0.5 stars Up/Down' for both Now Playing and Selected Tracks) which are bound to the numpad NumPlus/NumMinus keys, not expressible per the chord grammar.",
+  "actions": [
+    {
+      "name": "Edit: Amend Clicked Column",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F2"
+      }
+    },
+    {
+      "name": "Edit: Configure MusicBee Preferences",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+O"
+      }
+    },
+    {
+      "name": "Edit: Copy Tags and Artwork Only",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+C"
+      }
+    },
+    {
+      "name": "Edit: Custom Search",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+F"
+      }
+    },
+    {
+      "name": "Edit: Edit Tags",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Enter"
+      }
+    },
+    {
+      "name": "Edit: Paste Copied Tags",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+V"
+      }
+    },
+    {
+      "name": "Edit: Select All",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+A"
+      }
+    },
+    {
+      "name": "File: Remove (Delete)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Delete"
+      }
+    },
+    {
+      "name": "File: Remove (Hard Delete)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Delete"
+      }
+    },
+    {
+      "name": "File: Rescan/Add Files",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Insert"
+      }
+    },
+    {
+      "name": "General: Refresh",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F5"
+      }
+    },
+    {
+      "name": "Multimedia: Next",
+      "context": "Global",
+      "windows": {
+        "type": "media",
+        "key": "next_track"
+      }
+    },
+    {
+      "name": "Multimedia: Play/Pause",
+      "context": "Global",
+      "windows": {
+        "type": "media",
+        "key": "play_pause"
+      }
+    },
+    {
+      "name": "Multimedia: Previous",
+      "context": "Global",
+      "windows": {
+        "type": "media",
+        "key": "previous_track"
+      }
+    },
+    {
+      "name": "Now Playing: Start/End Bookmark",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+D"
+      }
+    },
+    {
+      "name": "Playback: Play Next Track",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+N"
+      }
+    },
+    {
+      "name": "Playback: Play Now",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Enter"
+      }
+    },
+    {
+      "name": "Playback: Play/Pause",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+P"
+      }
+    },
+    {
+      "name": "Playback: Previous Track",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+B"
+      }
+    },
+    {
+      "name": "Playback: Queue Last",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Enter"
+      }
+    },
+    {
+      "name": "Playback: Queue Next",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Enter"
+      }
+    },
+    {
+      "name": "Playback: Stop",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+S"
+      }
+    },
+    {
+      "name": "Player: Volume Down",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Down"
+      }
+    },
+    {
+      "name": "Player: Volume Mute On/Off",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+V"
+      }
+    },
+    {
+      "name": "Player: Volume Up",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Up"
+      }
+    },
+    {
+      "name": "Rating Now Playing: 0 stars",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+0"
+      }
+    },
+    {
+      "name": "Rating Now Playing: 1 star",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+1"
+      }
+    },
+    {
+      "name": "Rating Now Playing: 2 stars",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+2"
+      }
+    },
+    {
+      "name": "Rating Now Playing: 3 stars",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+3"
+      }
+    },
+    {
+      "name": "Rating Now Playing: 4 stars",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+4"
+      }
+    },
+    {
+      "name": "Rating Now Playing: 5 stars",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+5"
+      }
+    },
+    {
+      "name": "Rating Now Playing: Unrated",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+-"
+      }
+    },
+    {
+      "name": "Rating Selected Tracks: 0 stars",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+0"
+      }
+    },
+    {
+      "name": "Rating Selected Tracks: 1 star",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+1"
+      }
+    },
+    {
+      "name": "Rating Selected Tracks: 2 stars",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+2"
+      }
+    },
+    {
+      "name": "Rating Selected Tracks: 3 stars",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+3"
+      }
+    },
+    {
+      "name": "Rating Selected Tracks: 4 stars",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+4"
+      }
+    },
+    {
+      "name": "Rating Selected Tracks: 5 stars",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+5"
+      }
+    },
+    {
+      "name": "Rating Selected Tracks: Unrated",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+-"
+      }
+    },
+    {
+      "name": "Tabs: Close Tab",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+W"
+      }
+    },
+    {
+      "name": "Tabs: Create New Tab",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+T"
+      }
+    },
+    {
+      "name": "Tools: Analyze Volume",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+V"
+      }
+    },
+    {
+      "name": "Tools: Auto-Organize Files",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+R"
+      }
+    },
+    {
+      "name": "Tools: Auto-Tag by Album",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+T"
+      }
+    },
+    {
+      "name": "Tools: Auto-Tag by Track - Update Tags",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+L"
+      }
+    },
+    {
+      "name": "Tools: Rip CD",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+R"
+      }
+    },
+    {
+      "name": "View: Show Now Playing Assistant",
+      "context": "Global",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+J"
+      }
+    },
+    {
+      "name": "View: Show Now Playing Track Finder",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+F"
+      }
+    },
+    {
+      "name": "View: Show Tag Manager",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+E"
+      }
+    },
+    {
+      "name": "View: Show Visualizer Full Screen",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F11"
+      }
+    }
+  ],
+  "defaults": {
+    "TUNE_CW": {
+      "name": "Player: Volume Up",
+      "action": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Up"
+      },
+      "accel": "light"
+    },
+    "TUNE_CCW": {
+      "name": "Player: Volume Down",
+      "action": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Down"
+      },
+      "accel": "light"
+    },
+    "TUNE_TAP_1F": {
+      "name": "Multimedia: Play/Pause",
+      "action": {
+        "type": "media",
+        "key": "play_pause"
+      }
+    }
+  }
+}

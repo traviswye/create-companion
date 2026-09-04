@@ -1,0 +1,76 @@
+{
+  "id": "youtube_music",
+  "name": "YouTube Music",
+  "kind": "site",
+  "category": "Music",
+  "match": {
+    "windows_exe": [
+      "chrome.exe",
+      "msedge.exe",
+      "firefox.exe",
+      "brave.exe",
+      "vivaldi.exe"
+    ],
+    "macos_bundle": [
+      "com.google.Chrome",
+      "com.microsoft.edgemac",
+      "org.mozilla.firefox",
+      "com.brave.Browser",
+      "com.apple.Safari"
+    ],
+    "window_title": [
+      "YouTube Music"
+    ]
+  },
+  "sources": [
+    "https://music.youtube.com (in-app \"Keyboard shortcuts\" dialog, opened with Shift+/)"
+  ],
+  "note": "https://support.google.com/youtubemusic/answer/9092720, the URL Google's own community threads point to for this topic, returns a 404 (\"this page doesn't exist in YouTube Music Help\"); there is no live Google Support article for YouTube Music web-player shortcuts, only a 2018 community cheat-sheet thread. The complete, current list was instead read from the web player's own \"Keyboard shortcuts\" dialog (Shift+/). Where the dialog lists an alternate binding for the same action ('Play/Pause': Space or ;), the first-listed binding is used here and the alternate is noted per action. 'Go to Home/Explore/Library/Settings' are two-key presses (no modifier) and use type \"sequence\", matching the existing gmail.json convention. Not expressible, so left out: none — every row in the dialog maps to the grammar.",
+  "actions": [
+    { "name": "Play/Pause", "context": "", "windows": { "type": "keys", "chord": "Space" }, "mac": { "type": "keys", "chord": "Space" } },
+    { "name": "Next song", "context": "", "windows": { "type": "keys", "chord": "J" }, "mac": { "type": "keys", "chord": "J" } },
+    { "name": "Previous song", "context": "", "windows": { "type": "keys", "chord": "K" }, "mac": { "type": "keys", "chord": "K" } },
+    { "name": "Forward 10s", "context": "", "windows": { "type": "keys", "chord": "L" }, "mac": { "type": "keys", "chord": "L" } },
+    { "name": "Back 10s", "context": "", "windows": { "type": "keys", "chord": "H" }, "mac": { "type": "keys", "chord": "H" } },
+    { "name": "Forward 1s", "context": "", "windows": { "type": "keys", "chord": "Shift+L" }, "mac": { "type": "keys", "chord": "Shift+L" } },
+    { "name": "Back 1s", "context": "", "windows": { "type": "keys", "chord": "Shift+H" }, "mac": { "type": "keys", "chord": "Shift+H" } },
+    { "name": "Shuffle queue", "context": "", "windows": { "type": "keys", "chord": "S" }, "mac": { "type": "keys", "chord": "S" } },
+    { "name": "Toggle repeat", "context": "", "windows": { "type": "keys", "chord": "R" }, "mac": { "type": "keys", "chord": "R" } },
+    { "name": "Go to Home", "context": "", "windows": { "type": "sequence", "chords": ["G", "H"] }, "mac": { "type": "sequence", "chords": ["G", "H"] } },
+    { "name": "Go to Explore", "context": "", "windows": { "type": "sequence", "chords": ["G", "E"] }, "mac": { "type": "sequence", "chords": ["G", "E"] } },
+    { "name": "Go to Library", "context": "", "windows": { "type": "sequence", "chords": ["G", "L"] }, "mac": { "type": "sequence", "chords": ["G", "L"] } },
+    { "name": "Go to Settings", "context": "", "windows": { "type": "sequence", "chords": ["G", ","] }, "mac": { "type": "sequence", "chords": ["G", ","] } },
+    { "name": "Search", "context": "", "windows": { "type": "keys", "chord": "/" }, "mac": { "type": "keys", "chord": "/" } },
+    { "name": "Increase volume", "context": "", "windows": { "type": "keys", "chord": "=" }, "mac": { "type": "keys", "chord": "=" } },
+    { "name": "Decrease volume", "context": "", "windows": { "type": "keys", "chord": "-" }, "mac": { "type": "keys", "chord": "-" } },
+    { "name": "Toggle mute", "context": "", "windows": { "type": "keys", "chord": "M" }, "mac": { "type": "keys", "chord": "M" } },
+    { "name": "Toggle queue/expanded player", "context": "", "windows": { "type": "keys", "chord": "Q" }, "mac": { "type": "keys", "chord": "Q" } },
+    { "name": "Toggle full screen", "context": "", "windows": { "type": "keys", "chord": "F" }, "mac": { "type": "keys", "chord": "F" } },
+    { "name": "Like current song", "context": "", "windows": { "type": "keys", "chord": "Plus" }, "mac": { "type": "keys", "chord": "Plus" } },
+    { "name": "Dislike current song", "context": "", "windows": { "type": "keys", "chord": "-" }, "mac": { "type": "keys", "chord": "-" } }
+  ],
+  "defaults": {
+    "TUNE_CW": {
+      "name": "Forward 10s",
+      "action": { "type": "keys", "chord": "L" },
+      "accel": "medium"
+    },
+    "TUNE_CCW": {
+      "name": "Back 10s",
+      "action": { "type": "keys", "chord": "H" },
+      "accel": "medium"
+    },
+    "TUNE_TAP_1F": {
+      "name": "Play/Pause",
+      "action": { "type": "keys", "chord": "Space" }
+    },
+    "TUNE_SWIPE_LEFT": {
+      "name": "Previous song",
+      "action": { "type": "keys", "chord": "K" }
+    },
+    "TUNE_SWIPE_RIGHT": {
+      "name": "Next song",
+      "action": { "type": "keys", "chord": "J" }
+    }
+  }
+}

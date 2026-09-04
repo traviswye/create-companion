@@ -1,0 +1,67 @@
+{
+  "id": "steam",
+  "name": "Steam",
+  "kind": "app",
+  "category": "Games",
+  "match": {
+    "windows_exe": [
+      "steam.exe"
+    ],
+    "macos_bundle": [
+      "com.valvesoftware.steam"
+    ],
+    "window_title": []
+  },
+  "sources": [
+    "https://help.steampowered.com/en/faqs/view/3978-072C-18DF-FBF9",
+    "https://help.steampowered.com/en/faqs/view/3725-76D3-3F31-FB63"
+  ],
+  "note": "Steam Support does not publish a dedicated 'Steam client keyboard shortcuts' article (the FAQ id given in the task, 1B3B-6D0D-7C4D-8AC9, 404s); the three shortcuts here are the only ones Valve documents in prose across its official FAQ articles: the Steam Community Overlay's open key (Shift+Tab, from the 'Steam Community Overlay' article), its screenshot key (F12, same article), and the Big Picture mode fullscreen toggle (Alt+Enter, from the 'Steam's Big Picture mode' article). Per-game developer-console shortcuts (~) and Steam Deck/controller button chords are out of scope (not Steam-client keyboard shortcuts). Big Picture mode's on-screen navigation is designed for a controller and has no other documented keyboard bindings.",
+  "actions": [
+    {
+      "name": "Open the Steam Community overlay in-game",
+      "context": "In-game overlay",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Tab"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Tab"
+      }
+    },
+    {
+      "name": "Take a screenshot (requires the overlay)",
+      "context": "In-game overlay",
+      "windows": {
+        "type": "keys",
+        "chord": "F12"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "F12"
+      }
+    },
+    {
+      "name": "Toggle Big Picture mode full-screen",
+      "context": "Big Picture mode",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Enter"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Enter"
+      }
+    }
+  ],
+  "defaults": {
+    "TUNE_TAP_1F": {
+      "name": "Open the Steam Community overlay in-game",
+      "action": {
+        "type": "keys",
+        "chord": "Shift+Tab"
+      }
+    }
+  }
+}

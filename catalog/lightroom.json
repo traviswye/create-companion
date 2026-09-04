@@ -15,9 +15,10 @@
     "window_title": []
   },
   "sources": [
-    "https://github.com/waldobronchart/ShortcutMapper"
+    "https://github.com/waldobronchart/ShortcutMapper",
+    "https://helpx.adobe.com/lightroom-classic/help/keyboard-shortcuts.html"
   ],
-  "note": "Default bindings hand-authored 2026-09-04; the full shortcut list comes from the ShortcutMapper import in reference/app-shortcuts.json",
+  "note": "This profile covers Adobe Lightroom Classic as well as Lightroom: the match rules list both Lightroom.exe and LightroomClassic.exe, so there is no separate lightroom_classic entry. Default bindings hand-authored 2026-09-04; the full shortcut list comes from the ShortcutMapper import in reference/app-shortcuts.json, and every row of Adobe's own \"Keyboard shortcuts for Lightroom Classic\" help page (last updated Oct 29, 2025) has been merged in on top of it. The context is the Adobe section's module when the section names one - Book module, Library module (the \"comparing photos\" and \"metadata and keywords\" tables), Develop module, Slideshow module, Print module, Map module, Web module - plus Secondary window for the second-monitor table; the app-wide tables (working with panels, navigating modules, changing views and screen modes, managing photos and catalogs, rating and filtering photos, working with collections, using Help) get an empty context. Adobe rows that pack two commands into one line with a slash are split into two actions (Go back / Go forward, Zoom in / Zoom out, Increase / Decrease brush size, Copy / Paste metadata, and so on), keeping Adobe's wording for each half. Rows that list a run of keys or alternative keys for one command become one action per key with that key's Windows chord in parentheses after the name: the panel-opening digit ranges (Ctrl+Shift+0-5, Ctrl+0-9, Ctrl+1-7), star ratings 1-5, colour labels 6-9, the keyword-set Alt+1-9 row, and the alternative keys for Switch to Loupe view, Switch to Grid view, Switch from Grid to Loupe view, Delete selected photo(s), Deselect all photos and Toggle between Loupe and 1:1 Zoom preview. Left out because the chord grammar cannot express them: every mouse row (Toggle solo mode, Open a new panel without closing soloed panel, Open/close all panels, Select multiple folders or collections, Select multiple discrete/contiguous photos, Open multiple filters in the Filter bar, Reset a slider, Reset a group of sliders, Toggle Auto Sync, Crop from center of photo, Temporarily switch from brush A or B to Eraser, Paint a horizontal or vertical line, Increase/decrease Amount, Hide current module shortcuts); \"Cycle through variations of Generative Remove\", which Adobe writes only as \"Alt + Side arrow keys\"; and the macOS-only \"Open Spelling dialog box\" (Command + :), whose colon is not a key the grammar admits. Adobe's \"Page Up / Page Down on full-size keyboard\" rows are kept as PageUp / PageDown. Rows Adobe marks n/a on one platform are emitted for the other platform only (Redo (Windows only), Previous screen mode, E-mail photos). The enhance and merge rows (Headless enhance, Open enhance dialog box, HDR merge, Headless HDR merge, Pano merge, Headless pano merge) keep the literal Control key Adobe documents for macOS rather than substituting Command.",
   "actions": [
     {
       "name": "Next Photo in Filmstrip",
@@ -101,6 +102,4514 @@
       "mac": {
         "type": "keys",
         "chord": "X"
+      }
+    },
+    {
+      "name": "Show/hide side panels",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Tab"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Tab"
+      }
+    },
+    {
+      "name": "Show/hide all panels",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Tab"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Tab"
+      }
+    },
+    {
+      "name": "Show/hide toolbar",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "T"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "T"
+      }
+    },
+    {
+      "name": "Show/hide Module Picker",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F5"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "F5"
+      }
+    },
+    {
+      "name": "Show/hide Filmstrip",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F6"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "F6"
+      }
+    },
+    {
+      "name": "Show/hide left panels",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F7"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "F7"
+      }
+    },
+    {
+      "name": "Show/hide right panels",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F8"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "F8"
+      }
+    },
+    {
+      "name": "Open/close left panels, top to bottom (Ctrl+Shift+0)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+0"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Ctrl+0"
+      }
+    },
+    {
+      "name": "Open/close left panels, top to bottom (Ctrl+Shift+1)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+1"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Ctrl+1"
+      }
+    },
+    {
+      "name": "Open/close left panels, top to bottom (Ctrl+Shift+2)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+2"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Ctrl+2"
+      }
+    },
+    {
+      "name": "Open/close left panels, top to bottom (Ctrl+Shift+3)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+3"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Ctrl+3"
+      }
+    },
+    {
+      "name": "Open/close left panels, top to bottom (Ctrl+Shift+4)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+4"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Ctrl+4"
+      }
+    },
+    {
+      "name": "Open/close left panels, top to bottom (Ctrl+Shift+5)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+5"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Ctrl+5"
+      }
+    },
+    {
+      "name": "Open/close right panels, Library and Develop modules, top to bottom (Ctrl+0)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+0"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+0"
+      }
+    },
+    {
+      "name": "Open/close right panels, Library and Develop modules, top to bottom (Ctrl+1)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+1"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+1"
+      }
+    },
+    {
+      "name": "Open/close right panels, Library and Develop modules, top to bottom (Ctrl+2)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+2"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+2"
+      }
+    },
+    {
+      "name": "Open/close right panels, Library and Develop modules, top to bottom (Ctrl+3)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+3"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+3"
+      }
+    },
+    {
+      "name": "Open/close right panels, Library and Develop modules, top to bottom (Ctrl+4)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+4"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+4"
+      }
+    },
+    {
+      "name": "Open/close right panels, Library and Develop modules, top to bottom (Ctrl+5)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+5"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+5"
+      }
+    },
+    {
+      "name": "Open/close right panels, Library and Develop modules, top to bottom (Ctrl+6)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+6"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+6"
+      }
+    },
+    {
+      "name": "Open/close right panels, Library and Develop modules, top to bottom (Ctrl+7)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+7"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+7"
+      }
+    },
+    {
+      "name": "Open/close right panels, Library and Develop modules, top to bottom (Ctrl+8)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+8"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+8"
+      }
+    },
+    {
+      "name": "Open/close right panels, Library and Develop modules, top to bottom (Ctrl+9)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+9"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+9"
+      }
+    },
+    {
+      "name": "Open/close right panels, Slideshow, Print, and Web modules, top to bottom (Ctrl+1)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+1"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+1"
+      }
+    },
+    {
+      "name": "Open/close right panels, Slideshow, Print, and Web modules, top to bottom (Ctrl+2)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+2"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+2"
+      }
+    },
+    {
+      "name": "Open/close right panels, Slideshow, Print, and Web modules, top to bottom (Ctrl+3)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+3"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+3"
+      }
+    },
+    {
+      "name": "Open/close right panels, Slideshow, Print, and Web modules, top to bottom (Ctrl+4)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+4"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+4"
+      }
+    },
+    {
+      "name": "Open/close right panels, Slideshow, Print, and Web modules, top to bottom (Ctrl+5)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+5"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+5"
+      }
+    },
+    {
+      "name": "Open/close right panels, Slideshow, Print, and Web modules, top to bottom (Ctrl+6)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+6"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+6"
+      }
+    },
+    {
+      "name": "Open/close right panels, Slideshow, Print, and Web modules, top to bottom (Ctrl+7)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+7"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+7"
+      }
+    },
+    {
+      "name": "Redo (Windows only)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Y"
+      }
+    },
+    {
+      "name": "Go to Library module",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+1"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+1"
+      }
+    },
+    {
+      "name": "Go to Develop module",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+2"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+2"
+      }
+    },
+    {
+      "name": "Go to Map module",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+3"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+3"
+      }
+    },
+    {
+      "name": "Go to Book module",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+4"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+4"
+      }
+    },
+    {
+      "name": "Go to Slideshow module",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+5"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+5"
+      }
+    },
+    {
+      "name": "Go to Print module",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+6"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+6"
+      }
+    },
+    {
+      "name": "Go to Web module",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+7"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+7"
+      }
+    },
+    {
+      "name": "Go back",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Left"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+Left"
+      }
+    },
+    {
+      "name": "Go forward",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Right"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+Right"
+      }
+    },
+    {
+      "name": "Go back to previous module",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Up"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+Up"
+      }
+    },
+    {
+      "name": "Double page view",
+      "context": "Book module",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+R"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+R"
+      }
+    },
+    {
+      "name": "Multi-page view",
+      "context": "Book module",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+E"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+E"
+      }
+    },
+    {
+      "name": "Next view mode",
+      "context": "Book module",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+="
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+="
+      }
+    },
+    {
+      "name": "Previous view mode",
+      "context": "Book module",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+-"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+-"
+      }
+    },
+    {
+      "name": "Single page view",
+      "context": "Book module",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+T"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+T"
+      }
+    },
+    {
+      "name": "Zoomed single-page view",
+      "context": "Book module",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+U"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+U"
+      }
+    },
+    {
+      "name": "Create Saved Book",
+      "context": "Book module",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+S"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+S"
+      }
+    },
+    {
+      "name": "Update Metadata captions",
+      "context": "Book module",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+M"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+M"
+      }
+    },
+    {
+      "name": "Copy Book layout",
+      "context": "Book module",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+C"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+C"
+      }
+    },
+    {
+      "name": "Paste Layout",
+      "context": "Book module",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+V"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+V"
+      }
+    },
+    {
+      "name": "Remove Page",
+      "context": "Book module",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Backspace"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+Backspace"
+      }
+    },
+    {
+      "name": "Select photo cells",
+      "context": "Book module",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Alt+A"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+Alt+A"
+      }
+    },
+    {
+      "name": "Select text cells",
+      "context": "Book module",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+A"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+A"
+      }
+    },
+    {
+      "name": "Show / Hide Filter Text",
+      "context": "Book module",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+H"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+H"
+      }
+    },
+    {
+      "name": "Show / Hide text safe area",
+      "context": "Book module",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+U"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+U"
+      }
+    },
+    {
+      "name": "Enter Library Loupe view",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "E"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "E"
+      }
+    },
+    {
+      "name": "Enter Library Grid view",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "G"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "G"
+      }
+    },
+    {
+      "name": "Enter Library Compare view",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "C"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "C"
+      }
+    },
+    {
+      "name": "Enter Library Survey view",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "N"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "N"
+      }
+    },
+    {
+      "name": "Open selected photo in the Develop module",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "D"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "D"
+      }
+    },
+    {
+      "name": "Cycle forward through Lights Out modes",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "L"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "L"
+      }
+    },
+    {
+      "name": "Cycle backward through Lights Out modes",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+L"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+L"
+      }
+    },
+    {
+      "name": "Toggle Lights Dim mode",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+L"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+L"
+      }
+    },
+    {
+      "name": "Cycle screen modes",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "F"
+      }
+    },
+    {
+      "name": "Previous screen mode",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+F"
+      }
+    },
+    {
+      "name": "Switch between Normal and full-screen, hide panels",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+F"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+F"
+      }
+    },
+    {
+      "name": "Go to Normal screen mode",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+F"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+F"
+      }
+    },
+    {
+      "name": "Cycle info overlay",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "I"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "I"
+      }
+    },
+    {
+      "name": "Show/hide info overlay",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+I"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+I"
+      }
+    },
+    {
+      "name": "Open Reference view",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+R"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+R"
+      }
+    },
+    {
+      "name": "Enable loupe overlay in the Library",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+O"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+O"
+      }
+    },
+    {
+      "name": "Enable and choose loupe overlay in the Library",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Alt+O"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+Alt+O"
+      }
+    },
+    {
+      "name": "Show Grid view styles",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+X"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+X"
+      }
+    },
+    {
+      "name": "Zoom to 100",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+0"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+0"
+      }
+    },
+    {
+      "name": "Open People View in the Library module",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "O"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "O"
+      }
+    },
+    {
+      "name": "Toggle HDR view",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+H"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+H"
+      }
+    },
+    {
+      "name": "Open secondary window",
+      "context": "Secondary window",
+      "windows": {
+        "type": "keys",
+        "chord": "F11"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+F11"
+      }
+    },
+    {
+      "name": "Enter Grid view",
+      "context": "Secondary window",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+G"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+G"
+      }
+    },
+    {
+      "name": "Enter normal Loupe view",
+      "context": "Secondary window",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+E"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+E"
+      }
+    },
+    {
+      "name": "Enter locked Loupe view",
+      "context": "Secondary window",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Enter"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+Enter"
+      }
+    },
+    {
+      "name": "Enter Compare view",
+      "context": "Secondary window",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+C"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+C"
+      }
+    },
+    {
+      "name": "Enter Survey view",
+      "context": "Secondary window",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+N"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+N"
+      }
+    },
+    {
+      "name": "Enter Slideshow view",
+      "context": "Secondary window",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Shift+Enter"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+Shift+Enter"
+      }
+    },
+    {
+      "name": "Enter full-screen mode (requires a second monitor)",
+      "context": "Secondary window",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+F11"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+F11"
+      }
+    },
+    {
+      "name": "Show/hide Filter bar",
+      "context": "Secondary window",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+\\"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+\\"
+      }
+    },
+    {
+      "name": "Zoom in",
+      "context": "Secondary window",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+="
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+="
+      }
+    },
+    {
+      "name": "Zoom out",
+      "context": "Secondary window",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+-"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+-"
+      }
+    },
+    {
+      "name": "Import photos from disk",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+I"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+I"
+      }
+    },
+    {
+      "name": "Open catalog",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+O"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+O"
+      }
+    },
+    {
+      "name": "Open Preferences",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+,"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+,"
+      }
+    },
+    {
+      "name": "Open Catalog Settings",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+,"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+,"
+      }
+    },
+    {
+      "name": "Create new subfolder (segmented tethered capture)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+T"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+T"
+      }
+    },
+    {
+      "name": "Hide/show tether capture bar",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+T"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+T"
+      }
+    },
+    {
+      "name": "Create a new folder in the Library module",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+N"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+N"
+      }
+    },
+    {
+      "name": "Create virtual copy (Library and Develop module only)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+'"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+'"
+      }
+    },
+    {
+      "name": "Show in Explorer/Finder (Library and Develop module only)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+R"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+R"
+      }
+    },
+    {
+      "name": "Go to next photo in the Filmstrip",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Right"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Right"
+      }
+    },
+    {
+      "name": "Go to previous photo in the Filmstrip",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Left"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Left"
+      }
+    },
+    {
+      "name": "Rename photo (in Library module)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F2"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "F2"
+      }
+    },
+    {
+      "name": "Delete selected photo(s)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Delete"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Delete"
+      }
+    },
+    {
+      "name": "Delete selected photo(s) (Backspace)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Backspace"
+      }
+    },
+    {
+      "name": "Remove selected photo(s) from catalog",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Backspace"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Delete"
+      }
+    },
+    {
+      "name": "Delete selected photo(s) and move to Recycling Bin (Windows) or Trash (macOS)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Shift+Backspace"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+Shift+Delete"
+      }
+    },
+    {
+      "name": "Delete rejected photo(s)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Backspace"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Delete"
+      }
+    },
+    {
+      "name": "Edit in Photoshop",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+E"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+E"
+      }
+    },
+    {
+      "name": "Open in other editor",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+E"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+E"
+      }
+    },
+    {
+      "name": "Export selected photo(s)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+E"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+E"
+      }
+    },
+    {
+      "name": "Export with previous settings",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Shift+E"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+Shift+E"
+      }
+    },
+    {
+      "name": "Open plug-in manager",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Shift+,"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+Shift+,"
+      }
+    },
+    {
+      "name": "Print selected photo",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+P"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+P"
+      }
+    },
+    {
+      "name": "Open Page Setup dialog box",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+P"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+P"
+      }
+    },
+    {
+      "name": "Go to the next image",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Right"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Right"
+      }
+    },
+    {
+      "name": "Go to the previous image",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Left"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Left"
+      }
+    },
+    {
+      "name": "Tethered capture",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F12"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "F12"
+      }
+    },
+    {
+      "name": "Headless enhance",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Shift+I"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Shift+I"
+      }
+    },
+    {
+      "name": "Open enhance dialog box",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+I"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+I"
+      }
+    },
+    {
+      "name": "HDR merge",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+H"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+H"
+      }
+    },
+    {
+      "name": "Headless HDR merge",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+H"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+H"
+      }
+    },
+    {
+      "name": "Pano merge",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+M"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+M"
+      }
+    },
+    {
+      "name": "Headless pano merge",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+M"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+M"
+      }
+    },
+    {
+      "name": "Open as Smart Object in Photoshop",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+X"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+X"
+      }
+    },
+    {
+      "name": "E-mail photos",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+M"
+      }
+    },
+    {
+      "name": "Switch to Loupe view",
+      "context": "Library module",
+      "windows": {
+        "type": "keys",
+        "chord": "E"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "E"
+      }
+    },
+    {
+      "name": "Switch to Loupe view (Enter)",
+      "context": "Library module",
+      "windows": {
+        "type": "keys",
+        "chord": "Enter"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Enter"
+      }
+    },
+    {
+      "name": "Switch to Grid view",
+      "context": "Library module",
+      "windows": {
+        "type": "keys",
+        "chord": "G"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "G"
+      }
+    },
+    {
+      "name": "Switch to Grid view (Esc)",
+      "context": "Library module",
+      "windows": {
+        "type": "keys",
+        "chord": "Esc"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Esc"
+      }
+    },
+    {
+      "name": "Switch to Compare view",
+      "context": "Library module",
+      "windows": {
+        "type": "keys",
+        "chord": "C"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "C"
+      }
+    },
+    {
+      "name": "Switch to Survey view",
+      "context": "Library module",
+      "windows": {
+        "type": "keys",
+        "chord": "N"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "N"
+      }
+    },
+    {
+      "name": "Switch from Grid to Loupe view",
+      "context": "Library module",
+      "windows": {
+        "type": "keys",
+        "chord": "Space"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Space"
+      }
+    },
+    {
+      "name": "Switch from Grid to Loupe view (E)",
+      "context": "Library module",
+      "windows": {
+        "type": "keys",
+        "chord": "E"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "E"
+      }
+    },
+    {
+      "name": "Swap select and candidate photos in Compare view",
+      "context": "Library module",
+      "windows": {
+        "type": "keys",
+        "chord": "Down"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Down"
+      }
+    },
+    {
+      "name": "Make next photos select and candidate in Compare view",
+      "context": "Library module",
+      "windows": {
+        "type": "keys",
+        "chord": "Up"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Up"
+      }
+    },
+    {
+      "name": "Zoom in, Loupe view",
+      "context": "Library module",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+="
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+="
+      }
+    },
+    {
+      "name": "Zoom out, Loupe view",
+      "context": "Library module",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+-"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+-"
+      }
+    },
+    {
+      "name": "Scroll up zoomed photo in Loupe view (also works in Develop and Web modules)",
+      "context": "Library module",
+      "windows": {
+        "type": "keys",
+        "chord": "PageUp"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "PageUp"
+      }
+    },
+    {
+      "name": "Scroll down zoomed photo in Loupe view (also works in Develop and Web modules)",
+      "context": "Library module",
+      "windows": {
+        "type": "keys",
+        "chord": "PageDown"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "PageDown"
+      }
+    },
+    {
+      "name": "Go to beginning of Grid view",
+      "context": "Library module",
+      "windows": {
+        "type": "keys",
+        "chord": "Home"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Home"
+      }
+    },
+    {
+      "name": "Go to end of Grid view",
+      "context": "Library module",
+      "windows": {
+        "type": "keys",
+        "chord": "End"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "End"
+      }
+    },
+    {
+      "name": "Play impromptu slide show",
+      "context": "Library module",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Enter"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Enter"
+      }
+    },
+    {
+      "name": "Rotate photo right (clockwise)",
+      "context": "Library module",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+]"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+]"
+      }
+    },
+    {
+      "name": "Rotate photo left (counterclockwise)",
+      "context": "Library module",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+["
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+["
+      }
+    },
+    {
+      "name": "Increase Grid thumbnail size",
+      "context": "Library module",
+      "windows": {
+        "type": "keys",
+        "chord": "="
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "="
+      }
+    },
+    {
+      "name": "Decrease Grid thumbnail size",
+      "context": "Library module",
+      "windows": {
+        "type": "keys",
+        "chord": "-"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "-"
+      }
+    },
+    {
+      "name": "Scroll up Grid thumbnails",
+      "context": "Library module",
+      "windows": {
+        "type": "keys",
+        "chord": "PageUp"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "PageUp"
+      }
+    },
+    {
+      "name": "Scroll down Grid thumbnails",
+      "context": "Library module",
+      "windows": {
+        "type": "keys",
+        "chord": "PageDown"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "PageDown"
+      }
+    },
+    {
+      "name": "Toggle cell extras",
+      "context": "Library module",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+H"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+H"
+      }
+    },
+    {
+      "name": "Show/hide badges",
+      "context": "Library module",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Shift+H"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+Shift+H"
+      }
+    },
+    {
+      "name": "Cycle Grid views",
+      "context": "Library module",
+      "windows": {
+        "type": "keys",
+        "chord": "J"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "J"
+      }
+    },
+    {
+      "name": "Open Library view options",
+      "context": "Library module",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+J"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+J"
+      }
+    },
+    {
+      "name": "Select all photos",
+      "context": "Library module",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+A"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+A"
+      }
+    },
+    {
+      "name": "Deselect all photos",
+      "context": "Library module",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+D"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+D"
+      }
+    },
+    {
+      "name": "Deselect all photos (Cmd+Shift+A)",
+      "context": "Library module",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+A"
+      }
+    },
+    {
+      "name": "Select only active photo",
+      "context": "Library module",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+D"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+D"
+      }
+    },
+    {
+      "name": "Deselect active photo",
+      "context": "Library module",
+      "windows": {
+        "type": "keys",
+        "chord": "/"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "/"
+      }
+    },
+    {
+      "name": "Add previous photo to selection",
+      "context": "Library module",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Left"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Left"
+      }
+    },
+    {
+      "name": "Add next photo to selection",
+      "context": "Library module",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Right"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Right"
+      }
+    },
+    {
+      "name": "Select flagged photos",
+      "context": "Library module",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+A"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+A"
+      }
+    },
+    {
+      "name": "Deselect unflagged photos",
+      "context": "Library module",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Shift+D"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+Shift+D"
+      }
+    },
+    {
+      "name": "Group into stack",
+      "context": "Library module",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+G"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+G"
+      }
+    },
+    {
+      "name": "Unstack",
+      "context": "Library module",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+G"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+G"
+      }
+    },
+    {
+      "name": "Toggle stack",
+      "context": "Library module",
+      "windows": {
+        "type": "keys",
+        "chord": "S"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "S"
+      }
+    },
+    {
+      "name": "Move to top of stack",
+      "context": "Library module",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+S"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+S"
+      }
+    },
+    {
+      "name": "Move up in stack",
+      "context": "Library module",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+["
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+["
+      }
+    },
+    {
+      "name": "Move down in stack",
+      "context": "Library module",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+]"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+]"
+      }
+    },
+    {
+      "name": "Set star rating (1)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "1"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "1"
+      }
+    },
+    {
+      "name": "Set star rating (2)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "2"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "2"
+      }
+    },
+    {
+      "name": "Set star rating (3)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "3"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "3"
+      }
+    },
+    {
+      "name": "Set star rating (4)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "4"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "4"
+      }
+    },
+    {
+      "name": "Set star rating (5)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "5"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "5"
+      }
+    },
+    {
+      "name": "Set star rating and go to next photo (Shift+1)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+1"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+1"
+      }
+    },
+    {
+      "name": "Set star rating and go to next photo (Shift+2)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+2"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+2"
+      }
+    },
+    {
+      "name": "Set star rating and go to next photo (Shift+3)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+3"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+3"
+      }
+    },
+    {
+      "name": "Set star rating and go to next photo (Shift+4)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+4"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+4"
+      }
+    },
+    {
+      "name": "Set star rating and go to next photo (Shift+5)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+5"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+5"
+      }
+    },
+    {
+      "name": "Remove star rating",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "0"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "0"
+      }
+    },
+    {
+      "name": "Remove star rating and go to next photo",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+0"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+0"
+      }
+    },
+    {
+      "name": "Increase rating by one star",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "]"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "]"
+      }
+    },
+    {
+      "name": "Decrease rating by one star",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "["
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "["
+      }
+    },
+    {
+      "name": "Assign a red label",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "6"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "6"
+      }
+    },
+    {
+      "name": "Assign a yellow label",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "7"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "7"
+      }
+    },
+    {
+      "name": "Assign a green label",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "8"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "8"
+      }
+    },
+    {
+      "name": "Assign a blue label",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "9"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "9"
+      }
+    },
+    {
+      "name": "Assign a color label and go to next photo (Shift+6)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+6"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+6"
+      }
+    },
+    {
+      "name": "Assign a color label and go to next photo (Shift+7)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+7"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+7"
+      }
+    },
+    {
+      "name": "Assign a color label and go to next photo (Shift+8)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+8"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+8"
+      }
+    },
+    {
+      "name": "Assign a color label and go to next photo (Shift+9)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+9"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+9"
+      }
+    },
+    {
+      "name": "Flag photo as a pick",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "P"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "P"
+      }
+    },
+    {
+      "name": "Flag photo as a pick and go to next photo",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+P"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+P"
+      }
+    },
+    {
+      "name": "Flag photo as a reject",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "X"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "X"
+      }
+    },
+    {
+      "name": "Flag photo as a reject and go to next photo",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+X"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+X"
+      }
+    },
+    {
+      "name": "Unflag photo",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "U"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "U"
+      }
+    },
+    {
+      "name": "Unflag photo and go to next photo",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+U"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+U"
+      }
+    },
+    {
+      "name": "Increase flag status",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Up"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Up"
+      }
+    },
+    {
+      "name": "Decrease flag status",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Down"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Down"
+      }
+    },
+    {
+      "name": "Cycle flag settings",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "`"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "`"
+      }
+    },
+    {
+      "name": "Refine photos",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+R"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+R"
+      }
+    },
+    {
+      "name": "Show/hide Library Filter bar",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "\\"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "\\"
+      }
+    },
+    {
+      "name": "Toggle filters on/off",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+L"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+L"
+      }
+    },
+    {
+      "name": "Find photo in the Library module",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+F"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+F"
+      }
+    },
+    {
+      "name": "Create a new collection in the Library module",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+N"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+N"
+      }
+    },
+    {
+      "name": "Add to Quick Collection",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "B"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "B"
+      }
+    },
+    {
+      "name": "Add to Quick Collection and go to next photo",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+B"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+B"
+      }
+    },
+    {
+      "name": "Show Quick Collection",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+B"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+B"
+      }
+    },
+    {
+      "name": "Save Quick Collection",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+B"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+B"
+      }
+    },
+    {
+      "name": "Clear Quick Collection",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+B"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+B"
+      }
+    },
+    {
+      "name": "Set as target collection",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Shift+B"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+Shift+B"
+      }
+    },
+    {
+      "name": "Add keywords",
+      "context": "Library module",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+K"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+K"
+      }
+    },
+    {
+      "name": "Edit keywords",
+      "context": "Library module",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+K"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+K"
+      }
+    },
+    {
+      "name": "Set a keyword shortcut",
+      "context": "Library module",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Shift+K"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+Shift+K"
+      }
+    },
+    {
+      "name": "Add/remove keyword shortcut from selected photo",
+      "context": "Library module",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+K"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+K"
+      }
+    },
+    {
+      "name": "Enable painting",
+      "context": "Library module",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+K"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+K"
+      }
+    },
+    {
+      "name": "Add a keyword from a keyword set to selected photo (Alt+1)",
+      "context": "Library module",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+1"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+1"
+      }
+    },
+    {
+      "name": "Add a keyword from a keyword set to selected photo (Alt+2)",
+      "context": "Library module",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+2"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+2"
+      }
+    },
+    {
+      "name": "Add a keyword from a keyword set to selected photo (Alt+3)",
+      "context": "Library module",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+3"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+3"
+      }
+    },
+    {
+      "name": "Add a keyword from a keyword set to selected photo (Alt+4)",
+      "context": "Library module",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+4"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+4"
+      }
+    },
+    {
+      "name": "Add a keyword from a keyword set to selected photo (Alt+5)",
+      "context": "Library module",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+5"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+5"
+      }
+    },
+    {
+      "name": "Add a keyword from a keyword set to selected photo (Alt+6)",
+      "context": "Library module",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+6"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+6"
+      }
+    },
+    {
+      "name": "Add a keyword from a keyword set to selected photo (Alt+7)",
+      "context": "Library module",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+7"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+7"
+      }
+    },
+    {
+      "name": "Add a keyword from a keyword set to selected photo (Alt+8)",
+      "context": "Library module",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+8"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+8"
+      }
+    },
+    {
+      "name": "Add a keyword from a keyword set to selected photo (Alt+9)",
+      "context": "Library module",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+9"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+9"
+      }
+    },
+    {
+      "name": "Cycle forward through keyword sets",
+      "context": "Library module",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+0"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+0"
+      }
+    },
+    {
+      "name": "Cycle backward through keyword sets",
+      "context": "Library module",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+0"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+0"
+      }
+    },
+    {
+      "name": "Copy metadata",
+      "context": "Library module",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Shift+C"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+Shift+C"
+      }
+    },
+    {
+      "name": "Paste metadata",
+      "context": "Library module",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Shift+V"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+Shift+V"
+      }
+    },
+    {
+      "name": "Save metadata to file",
+      "context": "Library module",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+S"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+S"
+      }
+    },
+    {
+      "name": "Check spelling",
+      "context": "Library module",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+;"
+      }
+    },
+    {
+      "name": "Open Character palette",
+      "context": "Library module",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+T"
+      }
+    },
+    {
+      "name": "Visual Search",
+      "context": "Library module",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Shift+F"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+Shift+F"
+      }
+    },
+    {
+      "name": "Edit Face name",
+      "context": "Library module",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+O"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+O"
+      }
+    },
+    {
+      "name": "Toggle 'Use Generative AI'",
+      "context": "Develop module",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+G"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+G"
+      }
+    },
+    {
+      "name": "Toggle Detect Aware",
+      "context": "Develop module",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+O"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+O"
+      }
+    },
+    {
+      "name": "Convert to grayscale",
+      "context": "Develop module",
+      "windows": {
+        "type": "keys",
+        "chord": "V"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "V"
+      }
+    },
+    {
+      "name": "Auto tone",
+      "context": "Develop module",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+U"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+U"
+      }
+    },
+    {
+      "name": "Auto white balance",
+      "context": "Develop module",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+U"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+U"
+      }
+    },
+    {
+      "name": "Edit in Photoshop",
+      "context": "Develop module",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+E"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+E"
+      }
+    },
+    {
+      "name": "Copy Develop settings",
+      "context": "Develop module",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+C"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+C"
+      }
+    },
+    {
+      "name": "Paste Develop settings",
+      "context": "Develop module",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+V"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+V"
+      }
+    },
+    {
+      "name": "Paste settings from previous photo",
+      "context": "Develop module",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+V"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+V"
+      }
+    },
+    {
+      "name": "Copy After settings to Before",
+      "context": "Develop module",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Shift+Left"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+Shift+Left"
+      }
+    },
+    {
+      "name": "Copy Before settings to After",
+      "context": "Develop module",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Shift+Right"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+Shift+Right"
+      }
+    },
+    {
+      "name": "Swap Before and After settings",
+      "context": "Develop module",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Shift+Up"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+Shift+Up"
+      }
+    },
+    {
+      "name": "Increase selected slider in small increments",
+      "context": "Develop module",
+      "windows": {
+        "type": "keys",
+        "chord": "Up"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Up"
+      }
+    },
+    {
+      "name": "Increase selected slider in small increments (Plus)",
+      "context": "Develop module",
+      "windows": {
+        "type": "keys",
+        "chord": "Plus"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Plus"
+      }
+    },
+    {
+      "name": "Decrease selected slider in small increments",
+      "context": "Develop module",
+      "windows": {
+        "type": "keys",
+        "chord": "Down"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Down"
+      }
+    },
+    {
+      "name": "Decrease selected slider in small increments (-)",
+      "context": "Develop module",
+      "windows": {
+        "type": "keys",
+        "chord": "-"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "-"
+      }
+    },
+    {
+      "name": "Increase selected slider in larger increments",
+      "context": "Develop module",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Up"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Up"
+      }
+    },
+    {
+      "name": "Increase selected slider in larger increments (Shift+Plus)",
+      "context": "Develop module",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Plus"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Plus"
+      }
+    },
+    {
+      "name": "Decrease selected slider in larger increments",
+      "context": "Develop module",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Down"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Down"
+      }
+    },
+    {
+      "name": "Decrease selected slider in larger increments (Shift+-)",
+      "context": "Develop module",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+-"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+-"
+      }
+    },
+    {
+      "name": "Cycle through Basic panel settings (forward)",
+      "context": "Develop module",
+      "windows": {
+        "type": "keys",
+        "chord": "."
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "."
+      }
+    },
+    {
+      "name": "Cycle through Basic panel settings (backward)",
+      "context": "Develop module",
+      "windows": {
+        "type": "keys",
+        "chord": ","
+      },
+      "mac": {
+        "type": "keys",
+        "chord": ","
+      }
+    },
+    {
+      "name": "Reset all settings",
+      "context": "Develop module",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+R"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+R"
+      }
+    },
+    {
+      "name": "Sync settings",
+      "context": "Develop module",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+S"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+S"
+      }
+    },
+    {
+      "name": "Sync settings bypassing Synchronize Settings dialog box",
+      "context": "Develop module",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+S"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+S"
+      }
+    },
+    {
+      "name": "Enable Auto Sync",
+      "context": "Develop module",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Shift+A"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+Shift+A"
+      }
+    },
+    {
+      "name": "Match total exposures",
+      "context": "Develop module",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Shift+M"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+Shift+M"
+      }
+    },
+    {
+      "name": "Select White Balance tool (from any module)",
+      "context": "Develop module",
+      "windows": {
+        "type": "keys",
+        "chord": "W"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "W"
+      }
+    },
+    {
+      "name": "Select the Crop tool (from any module)",
+      "context": "Develop module",
+      "windows": {
+        "type": "keys",
+        "chord": "R"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "R"
+      }
+    },
+    {
+      "name": "Constrain aspect ratio when Crop tool is selected",
+      "context": "Develop module",
+      "windows": {
+        "type": "keys",
+        "chord": "A"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "A"
+      }
+    },
+    {
+      "name": "Crop to same aspect ratio as previous crop",
+      "context": "Develop module",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+A"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+A"
+      }
+    },
+    {
+      "name": "Cycle Crop grid overlay",
+      "context": "Develop module",
+      "windows": {
+        "type": "keys",
+        "chord": "O"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "O"
+      }
+    },
+    {
+      "name": "Cycle Crop grid overlay orientation",
+      "context": "Develop module",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+O"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+O"
+      }
+    },
+    {
+      "name": "Switch crop between portrait and landscape orientation",
+      "context": "Develop module",
+      "windows": {
+        "type": "keys",
+        "chord": "X"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "X"
+      }
+    },
+    {
+      "name": "Reset crop",
+      "context": "Develop module",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+R"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+R"
+      }
+    },
+    {
+      "name": "Select the Guided Upright tool (also works in the Library module when a photo is selected)",
+      "context": "Develop module",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+T"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+T"
+      }
+    },
+    {
+      "name": "Select the Spot Removal tool",
+      "context": "Develop module",
+      "windows": {
+        "type": "keys",
+        "chord": "Q"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Q"
+      }
+    },
+    {
+      "name": "Toggle Brush between Clone and Heal modes when Spot Removal tool is selected",
+      "context": "Develop module",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+T"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+T"
+      }
+    },
+    {
+      "name": "Select the Adjustment Brush tool (from any module)",
+      "context": "Develop module",
+      "windows": {
+        "type": "keys",
+        "chord": "K"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "K"
+      }
+    },
+    {
+      "name": "Select the Graduated Filter tool",
+      "context": "Develop module",
+      "windows": {
+        "type": "keys",
+        "chord": "M"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "M"
+      }
+    },
+    {
+      "name": "Toggle Mask between Edit and Brush modes when the Graduated Filter or Radial Filter is selected",
+      "context": "Develop module",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+T"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+T"
+      }
+    },
+    {
+      "name": "Increase brush size",
+      "context": "Develop module",
+      "windows": {
+        "type": "keys",
+        "chord": "]"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "]"
+      }
+    },
+    {
+      "name": "Decrease brush size",
+      "context": "Develop module",
+      "windows": {
+        "type": "keys",
+        "chord": "["
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "["
+      }
+    },
+    {
+      "name": "Increase brush feathering",
+      "context": "Develop module",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+]"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+]"
+      }
+    },
+    {
+      "name": "Decrease brush feathering",
+      "context": "Develop module",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+["
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+["
+      }
+    },
+    {
+      "name": "Switch between local adjustment brush A and B",
+      "context": "Develop module",
+      "windows": {
+        "type": "keys",
+        "chord": "/"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "/"
+      }
+    },
+    {
+      "name": "Show/hide local adjustment pin",
+      "context": "Develop module",
+      "windows": {
+        "type": "keys",
+        "chord": "H"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "H"
+      }
+    },
+    {
+      "name": "Show/hide local adjustment mask overlay",
+      "context": "Develop module",
+      "windows": {
+        "type": "keys",
+        "chord": "O"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "O"
+      }
+    },
+    {
+      "name": "Cycle local adjustment mask overlay colors",
+      "context": "Develop module",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+O"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+O"
+      }
+    },
+    {
+      "name": "Select Targeted Adjustment tool to apply a Tone Curve adjustment",
+      "context": "Develop module",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Shift+T"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+Shift+T"
+      }
+    },
+    {
+      "name": "Select Targeted Adjustment tool to apply a Hue adjustment",
+      "context": "Develop module",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Shift+H"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+Shift+H"
+      }
+    },
+    {
+      "name": "Select Targeted Adjustment tool to apply a Saturation adjustment",
+      "context": "Develop module",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Shift+S"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+Shift+S"
+      }
+    },
+    {
+      "name": "Select Targeted Adjustment tool to apply a Luminance adjustment",
+      "context": "Develop module",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Shift+L"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+Shift+L"
+      }
+    },
+    {
+      "name": "Select Targeted Adjustment tool to apply a Grayscale Mix adjustment",
+      "context": "Develop module",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Shift+G"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+Shift+G"
+      }
+    },
+    {
+      "name": "Deselect Targeted Adjustment tool",
+      "context": "Develop module",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Shift+N"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+Shift+N"
+      }
+    },
+    {
+      "name": "Show clipping",
+      "context": "Develop module",
+      "windows": {
+        "type": "keys",
+        "chord": "J"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "J"
+      }
+    },
+    {
+      "name": "Rotate photo right (clockwise)",
+      "context": "Develop module",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+]"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+]"
+      }
+    },
+    {
+      "name": "Rotate photo left (counterclockwise)",
+      "context": "Develop module",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+["
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+["
+      }
+    },
+    {
+      "name": "Toggle between Loupe and 1:1 Zoom preview",
+      "context": "Develop module",
+      "windows": {
+        "type": "keys",
+        "chord": "Space"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Space"
+      }
+    },
+    {
+      "name": "Toggle between Loupe and 1:1 Zoom preview (Z)",
+      "context": "Develop module",
+      "windows": {
+        "type": "keys",
+        "chord": "Z"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Z"
+      }
+    },
+    {
+      "name": "Zoom in",
+      "context": "Develop module",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+="
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+="
+      }
+    },
+    {
+      "name": "Zoom out",
+      "context": "Develop module",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+-"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+-"
+      }
+    },
+    {
+      "name": "Play impromptu slide show",
+      "context": "Develop module",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Enter"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Enter"
+      }
+    },
+    {
+      "name": "View Before and After left/right",
+      "context": "Develop module",
+      "windows": {
+        "type": "keys",
+        "chord": "Y"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Y"
+      }
+    },
+    {
+      "name": "View Before and After top/bottom",
+      "context": "Develop module",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Y"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Y"
+      }
+    },
+    {
+      "name": "View Before and After in a split screen",
+      "context": "Develop module",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Y"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Y"
+      }
+    },
+    {
+      "name": "View Before only",
+      "context": "Develop module",
+      "windows": {
+        "type": "keys",
+        "chord": "\\"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "\\"
+      }
+    },
+    {
+      "name": "Create a new snapshot",
+      "context": "Develop module",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+N"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+N"
+      }
+    },
+    {
+      "name": "Create a new preset",
+      "context": "Develop module",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+N"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+N"
+      }
+    },
+    {
+      "name": "Create a new preset folder",
+      "context": "Develop module",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+N"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+N"
+      }
+    },
+    {
+      "name": "Open Develop view options",
+      "context": "Develop module",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+J"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+J"
+      }
+    },
+    {
+      "name": "Create a Radial filter",
+      "context": "Develop module",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+M"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+M"
+      }
+    },
+    {
+      "name": "Create a Luminance filter",
+      "context": "Develop module",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Q"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Q"
+      }
+    },
+    {
+      "name": "Crop to original",
+      "context": "Develop module",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Shift+R"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+Shift+R"
+      }
+    },
+    {
+      "name": "Create a color range",
+      "context": "Develop module",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+J"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+J"
+      }
+    },
+    {
+      "name": "Cycle Overlay mode in Crop / Masking",
+      "context": "Develop module",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+O"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+O"
+      }
+    },
+    {
+      "name": "Lock Zoom position in Develop or Library",
+      "context": "Develop module",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+="
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+="
+      }
+    },
+    {
+      "name": "Open / close Masking",
+      "context": "Develop module",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+W"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+W"
+      }
+    },
+    {
+      "name": "Hide / unhide Gamut destination warning in Soft Proofing",
+      "context": "Develop module",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+S"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+S"
+      }
+    },
+    {
+      "name": "Expand / collapse soft proofing",
+      "context": "Develop module",
+      "windows": {
+        "type": "keys",
+        "chord": "S"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "S"
+      }
+    },
+    {
+      "name": "Never show overlay / pins in Develop",
+      "context": "Develop module",
+      "windows": {
+        "type": "keys",
+        "chord": "H"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "H"
+      }
+    },
+    {
+      "name": "Always show overlay / pins in Develop",
+      "context": "Develop module",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+H"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+H"
+      }
+    },
+    {
+      "name": "Cycle through transform options",
+      "context": "Develop module",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Tab"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Tab"
+      }
+    },
+    {
+      "name": "Copy a Mask",
+      "context": "Develop module",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+C"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+C"
+      }
+    },
+    {
+      "name": "Play slide show",
+      "context": "Slideshow module",
+      "windows": {
+        "type": "keys",
+        "chord": "Enter"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Enter"
+      }
+    },
+    {
+      "name": "Play impromptu slide show",
+      "context": "Slideshow module",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Enter"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Enter"
+      }
+    },
+    {
+      "name": "Pause slide show",
+      "context": "Slideshow module",
+      "windows": {
+        "type": "keys",
+        "chord": "Space"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Space"
+      }
+    },
+    {
+      "name": "Preview slide show",
+      "context": "Slideshow module",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Enter"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Enter"
+      }
+    },
+    {
+      "name": "End slide show",
+      "context": "Slideshow module",
+      "windows": {
+        "type": "keys",
+        "chord": "Esc"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Esc"
+      }
+    },
+    {
+      "name": "Go to next slide",
+      "context": "Slideshow module",
+      "windows": {
+        "type": "keys",
+        "chord": "Right"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Right"
+      }
+    },
+    {
+      "name": "Go to previous slide",
+      "context": "Slideshow module",
+      "windows": {
+        "type": "keys",
+        "chord": "Left"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Left"
+      }
+    },
+    {
+      "name": "Rotate photo right (clockwise)",
+      "context": "Slideshow module",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+]"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+]"
+      }
+    },
+    {
+      "name": "Rotate photo left (counterclockwise)",
+      "context": "Slideshow module",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+["
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+["
+      }
+    },
+    {
+      "name": "Show/hide guides",
+      "context": "Slideshow module",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+H"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+H"
+      }
+    },
+    {
+      "name": "Export PDF slide show",
+      "context": "Slideshow module",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+J"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+J"
+      }
+    },
+    {
+      "name": "Export JPEG slide show",
+      "context": "Slideshow module",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+J"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+J"
+      }
+    },
+    {
+      "name": "Export video slide show",
+      "context": "Slideshow module",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+J"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+J"
+      }
+    },
+    {
+      "name": "Create a new slide show template",
+      "context": "Slideshow module",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+N"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+N"
+      }
+    },
+    {
+      "name": "Create a new slide show template folder",
+      "context": "Slideshow module",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+N"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+N"
+      }
+    },
+    {
+      "name": "Save slide show settings",
+      "context": "Slideshow module",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+S"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+S"
+      }
+    },
+    {
+      "name": "Play all",
+      "context": "Slideshow module",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Right"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+Enter"
+      }
+    },
+    {
+      "name": "Previous menu",
+      "context": "Slideshow module",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Left"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Left"
+      }
+    },
+    {
+      "name": "Next menu",
+      "context": "Slideshow module",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Right"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Right"
+      }
+    },
+    {
+      "name": "Print",
+      "context": "Print module",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+P"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+P"
+      }
+    },
+    {
+      "name": "Print one copy",
+      "context": "Print module",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+P"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+P"
+      }
+    },
+    {
+      "name": "Open Page Setup dialog box",
+      "context": "Print module",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+P"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+P"
+      }
+    },
+    {
+      "name": "Open Print Settings dialog box",
+      "context": "Print module",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Shift+P"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+Shift+P"
+      }
+    },
+    {
+      "name": "Go to first page",
+      "context": "Print module",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Left"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+Left"
+      }
+    },
+    {
+      "name": "Go to last page",
+      "context": "Print module",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Right"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+Right"
+      }
+    },
+    {
+      "name": "Go to previous page",
+      "context": "Print module",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Left"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Left"
+      }
+    },
+    {
+      "name": "Go to next page",
+      "context": "Print module",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Right"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Right"
+      }
+    },
+    {
+      "name": "Show/hide guides",
+      "context": "Print module",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+H"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+H"
+      }
+    },
+    {
+      "name": "Show/hide rulers",
+      "context": "Print module",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+R"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+R"
+      }
+    },
+    {
+      "name": "Show/hide page bleed",
+      "context": "Print module",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+J"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+J"
+      }
+    },
+    {
+      "name": "Show/hide margins and gutters",
+      "context": "Print module",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+M"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+M"
+      }
+    },
+    {
+      "name": "Show/hide image cells",
+      "context": "Print module",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+K"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+K"
+      }
+    },
+    {
+      "name": "Show/hide dimensions",
+      "context": "Print module",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+U"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+U"
+      }
+    },
+    {
+      "name": "Play impromptu slide show",
+      "context": "Print module",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Enter"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Enter"
+      }
+    },
+    {
+      "name": "Rotate photo right (clockwise)",
+      "context": "Print module",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+]"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+]"
+      }
+    },
+    {
+      "name": "Rotate photo left (counterclockwise)",
+      "context": "Print module",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+["
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+["
+      }
+    },
+    {
+      "name": "Create a new print template",
+      "context": "Print module",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+N"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+N"
+      }
+    },
+    {
+      "name": "Create a new print template folder",
+      "context": "Print module",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+N"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+N"
+      }
+    },
+    {
+      "name": "Save print settings",
+      "context": "Print module",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+S"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+S"
+      }
+    },
+    {
+      "name": "Show Guides",
+      "context": "Print module",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+G"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+G"
+      }
+    },
+    {
+      "name": "Next Track in Tracklog",
+      "context": "Map module",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+T"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+T"
+      }
+    },
+    {
+      "name": "Previous Track in Tracklog",
+      "context": "Map module",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Shift+T"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+Shift+T"
+      }
+    },
+    {
+      "name": "Search",
+      "context": "Map module",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+F"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+F"
+      }
+    },
+    {
+      "name": "Delete All Location data",
+      "context": "Map module",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Backspace"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Delete"
+      }
+    },
+    {
+      "name": "Change to Dark Map style",
+      "context": "Map module",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+6"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+6"
+      }
+    },
+    {
+      "name": "Change to Hybrid Map style",
+      "context": "Map module",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+1"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+1"
+      }
+    },
+    {
+      "name": "Change to Light Map style",
+      "context": "Map module",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+5"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+5"
+      }
+    },
+    {
+      "name": "Lock Pins on Map",
+      "context": "Map module",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+K"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+K"
+      }
+    },
+    {
+      "name": "Change to Road Map style",
+      "context": "Map module",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+2"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+2"
+      }
+    },
+    {
+      "name": "Change to Satellite Map style",
+      "context": "Map module",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+3"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+3"
+      }
+    },
+    {
+      "name": "Change to Terrain Map style",
+      "context": "Map module",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+4"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+4"
+      }
+    },
+    {
+      "name": "Show / Hide map info",
+      "context": "Map module",
+      "windows": {
+        "type": "keys",
+        "chord": "I"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "I"
+      }
+    },
+    {
+      "name": "Show / Hide Location preset overlay",
+      "context": "Map module",
+      "windows": {
+        "type": "keys",
+        "chord": "O"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "O"
+      }
+    },
+    {
+      "name": "Reload web gallery",
+      "context": "Web module",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+R"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+R"
+      }
+    },
+    {
+      "name": "Preview in browser",
+      "context": "Web module",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+P"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+P"
+      }
+    },
+    {
+      "name": "Play impromptu slide show",
+      "context": "Web module",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Enter"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Enter"
+      }
+    },
+    {
+      "name": "Export web gallery",
+      "context": "Web module",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+J"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+J"
+      }
+    },
+    {
+      "name": "Create a new web gallery template",
+      "context": "Web module",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+N"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+N"
+      }
+    },
+    {
+      "name": "Create a new web gallery template folder",
+      "context": "Web module",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+N"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+N"
+      }
+    },
+    {
+      "name": "Save web gallery settings",
+      "context": "Web module",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+S"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+S"
+      }
+    },
+    {
+      "name": "Open advance settings panel",
+      "context": "Web module",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Alt+/"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+Alt+/"
+      }
+    },
+    {
+      "name": "Display current module shortcuts",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+/"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+/"
+      }
+    },
+    {
+      "name": "Go to current module Help",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+/"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+Shift+/"
+      }
+    },
+    {
+      "name": "Open Community Help",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F1"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "F1"
       }
     }
   ],

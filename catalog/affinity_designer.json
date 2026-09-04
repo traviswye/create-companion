@@ -1,0 +1,2649 @@
+{
+  "id": "affinity_designer",
+  "name": "Affinity Designer 2",
+  "kind": "app",
+  "category": "Creative",
+  "match": {
+    "windows_exe": [
+      "Designer.exe"
+    ],
+    "macos_bundle": [
+      "com.seriflabs.affinitydesigner2"
+    ],
+    "window_title": []
+  },
+  "sources": [
+    "https://affinity.help/designer2/en-US.lproj/pages/Workspace/shortcuts.html",
+    "https://affinity.help/designer2/en-US.lproj/pages/Workspace/customizingShortcuts.html"
+  ],
+  "note": "Every row of Serif's \"Keyboard shortcuts\" page in the Affinity Designer 2 help. The context is the page's category with the trailing word \"shortcuts\" removed (Operations, File, Tools, Edit, Object control, Painting, Text, View, Selection, Workspace, Blend mode, Misc, macOS), plus the table's own qualifier where it has one, so the same tool name can appear under Tools (General and Designer Persona) and under Tools (Pixel Persona only). The page holds a Windows and a macOS variant of every row in the same HTML and picks one at load time; the web build's stylesheet only ever draws the macOS glyphs, so the Windows chords here are read from the Windows variant's own markup, in which Serif's Command tag is the Ctrl key. The page's \"macOS shortcuts\" table is emitted as macOS only, and the one row whose macOS form uses Control while sitting outside the per-platform markup (Delete from insertion point to end of paragraph) is treated as macOS only too; rows Serif gives only in the Windows variant (Home/End text navigation, Delete character to right of insertion point, Delete from insertion point to end of word) keep a Windows chord alone. Rows that document a set of keys - the arrow keys for nudging, [ and ] for stroke width - become one action per key with the chord repeated in parentheses. Left out because the chord grammar cannot express them: everything using a drag, a click, the mouse scroll wheel (view rotation, vertical and horizontal scrolling, the four Hot key zoom rows), Caps Lock, and the opacity/strength rows Serif writes as a run of numeric keys (\"4=40%, 43=43%\"). The whole \"Shape Building\" table is left out because Serif documents it on the numeric keypad only, as is the Fn-key row (Emoji & Symbols). \"Setting brush properties on page\" and \"Setting brush hardness and flow\" are sentences rather than chords. \"Erase with Pixel Tool\" and \"Edit line or brush strokes as you draw/paint\" are left out because Serif's markup prints a bare modifier with no key. \"Justify Left\" is left out because Serif writes its key as the pipe character, which the grammar has no spelling for. Where Serif writes the key as \"+\" (the macOS form of Zoom In) it is kept as Plus rather than guessed at.",
+  "actions": [
+    {
+      "name": "Cycle Selection Box",
+      "context": "Operations",
+      "windows": {
+        "type": "keys",
+        "chord": "."
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "."
+      }
+    },
+    {
+      "name": "Set Selection Box",
+      "context": "Operations",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+."
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+."
+      }
+    },
+    {
+      "name": "Decrease/increase shape's/curve's stroke width by percentage ([)",
+      "context": "Operations",
+      "windows": {
+        "type": "keys",
+        "chord": "["
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "["
+      }
+    },
+    {
+      "name": "Decrease/increase shape's/curve's stroke width by percentage (])",
+      "context": "Operations",
+      "windows": {
+        "type": "keys",
+        "chord": "]"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "]"
+      }
+    },
+    {
+      "name": "Decrease/increase shape's/curve's stroke width by absolute values (Shift+[)",
+      "context": "Operations",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+["
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+["
+      }
+    },
+    {
+      "name": "Decrease/increase shape's/curve's stroke width by absolute values (Shift+])",
+      "context": "Operations",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+]"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+]"
+      }
+    },
+    {
+      "name": "Switch between Stroke/Fill (or Foreground/Background) color selectors (Color and Swatches panels)",
+      "context": "Operations",
+      "windows": {
+        "type": "keys",
+        "chord": "X"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "X"
+      }
+    },
+    {
+      "name": "Swap Stroke/Fill (or Foreground/Background) color selectors",
+      "context": "Operations",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+X"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+X"
+      }
+    },
+    {
+      "name": "Set Stroke/Fill (or Foreground/Background) color selectors and any vector objects that are selected to black and white, respectively",
+      "context": "Operations",
+      "windows": {
+        "type": "keys",
+        "chord": "D"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "D"
+      }
+    },
+    {
+      "name": "Set No fill on Stroke/Fill (or Foreground/Background) color selectors",
+      "context": "Operations",
+      "windows": {
+        "type": "keys",
+        "chord": "/"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "/"
+      }
+    },
+    {
+      "name": "Fill with Foreground Color (Pixel Persona only)",
+      "context": "Operations",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Backspace"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Backspace"
+      }
+    },
+    {
+      "name": "Fill with Background Color (Pixel Persona only)",
+      "context": "Operations",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Backspace"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Backspace"
+      }
+    },
+    {
+      "name": "Toggle Snapping",
+      "context": "Operations",
+      "windows": {
+        "type": "keys",
+        "chord": ";"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": ";"
+      }
+    },
+    {
+      "name": "Select next node on a curve",
+      "context": "Operations (Curve editing with Node Tool)",
+      "windows": {
+        "type": "keys",
+        "chord": "]"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "]"
+      }
+    },
+    {
+      "name": "Select previous node on a curve",
+      "context": "Operations (Curve editing with Node Tool)",
+      "windows": {
+        "type": "keys",
+        "chord": "["
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "["
+      }
+    },
+    {
+      "name": "Delete a node (retaining curve's geometry)",
+      "context": "Operations (Curve editing with Node Tool)",
+      "windows": {
+        "type": "keys",
+        "chord": "Backspace"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Backspace"
+      }
+    },
+    {
+      "name": "Delete a node (for 'best-fitting' reshaped curve)",
+      "context": "Operations (Curve editing with Node Tool)",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Backspace"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Backspace"
+      }
+    },
+    {
+      "name": "Cancel a sizing, moving, or creating operation",
+      "context": "Operations (Transforming)",
+      "windows": {
+        "type": "keys",
+        "chord": "Esc"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Esc"
+      }
+    },
+    {
+      "name": "Nudge (Left)",
+      "context": "Operations (Transforming)",
+      "windows": {
+        "type": "keys",
+        "chord": "Left"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Left"
+      }
+    },
+    {
+      "name": "Nudge (Right)",
+      "context": "Operations (Transforming)",
+      "windows": {
+        "type": "keys",
+        "chord": "Right"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Right"
+      }
+    },
+    {
+      "name": "Nudge (Up)",
+      "context": "Operations (Transforming)",
+      "windows": {
+        "type": "keys",
+        "chord": "Up"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Up"
+      }
+    },
+    {
+      "name": "Nudge (Down)",
+      "context": "Operations (Transforming)",
+      "windows": {
+        "type": "keys",
+        "chord": "Down"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Down"
+      }
+    },
+    {
+      "name": "Nudge (by modified distance) (Shift+Left)",
+      "context": "Operations (Transforming)",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Left"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Left"
+      }
+    },
+    {
+      "name": "Nudge (by modified distance) (Shift+Right)",
+      "context": "Operations (Transforming)",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Right"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Right"
+      }
+    },
+    {
+      "name": "Nudge (by modified distance) (Shift+Up)",
+      "context": "Operations (Transforming)",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Up"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Up"
+      }
+    },
+    {
+      "name": "Nudge (by modified distance) (Shift+Down)",
+      "context": "Operations (Transforming)",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Down"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Down"
+      }
+    },
+    {
+      "name": "Apply mesh warp",
+      "context": "Operations (Warping)",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+G"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+G"
+      }
+    },
+    {
+      "name": "Create symbol",
+      "context": "Operations (Symbols)",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+K"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+K"
+      }
+    },
+    {
+      "name": "New Document",
+      "context": "File",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+N"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+N"
+      }
+    },
+    {
+      "name": "New from Clipboard",
+      "context": "File",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Shift+N"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+Cmd+N"
+      }
+    },
+    {
+      "name": "Open Document",
+      "context": "File",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+O"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+O"
+      }
+    },
+    {
+      "name": "Close Document/Close App (when no documents open)",
+      "context": "File",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+W"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+W"
+      }
+    },
+    {
+      "name": "Close All Documents",
+      "context": "File",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+W"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+W"
+      }
+    },
+    {
+      "name": "Switch Document/View",
+      "context": "File",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Tab"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Tab"
+      }
+    },
+    {
+      "name": "Save",
+      "context": "File",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+S"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+S"
+      }
+    },
+    {
+      "name": "Save As",
+      "context": "File",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+S"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+S"
+      }
+    },
+    {
+      "name": "Export",
+      "context": "File",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Shift+S"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+Cmd+S"
+      }
+    },
+    {
+      "name": "Document Setup",
+      "context": "File",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+P"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+P"
+      }
+    },
+    {
+      "name": "Print",
+      "context": "File",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+P"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+P"
+      }
+    },
+    {
+      "name": "Move Tool",
+      "context": "Tools (General and Designer Persona)",
+      "windows": {
+        "type": "keys",
+        "chord": "V"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "V"
+      }
+    },
+    {
+      "name": "Node Tool",
+      "context": "Tools (General and Designer Persona)",
+      "windows": {
+        "type": "keys",
+        "chord": "A"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "A"
+      }
+    },
+    {
+      "name": "Point Transform Tool",
+      "context": "Tools (General and Designer Persona)",
+      "windows": {
+        "type": "keys",
+        "chord": "F"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "F"
+      }
+    },
+    {
+      "name": "Contour Tool",
+      "context": "Tools (General and Designer Persona)",
+      "windows": {
+        "type": "keys",
+        "chord": "O"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "O"
+      }
+    },
+    {
+      "name": "Corner Tool",
+      "context": "Tools (General and Designer Persona)",
+      "windows": {
+        "type": "keys",
+        "chord": "C"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "C"
+      }
+    },
+    {
+      "name": "Pen Tool",
+      "context": "Tools (General and Designer Persona)",
+      "windows": {
+        "type": "keys",
+        "chord": "P"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "P"
+      }
+    },
+    {
+      "name": "Pencil Tool",
+      "context": "Tools (General and Designer Persona)",
+      "windows": {
+        "type": "keys",
+        "chord": "N"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "N"
+      }
+    },
+    {
+      "name": "Stroke Width Tool",
+      "context": "Tools (General and Designer Persona)",
+      "windows": {
+        "type": "keys",
+        "chord": "W"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "W"
+      }
+    },
+    {
+      "name": "Knife Tool",
+      "context": "Tools (General and Designer Persona)",
+      "windows": {
+        "type": "keys",
+        "chord": "K"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "K"
+      }
+    },
+    {
+      "name": "Vector Brush Tool",
+      "context": "Tools (General and Designer Persona)",
+      "windows": {
+        "type": "keys",
+        "chord": "B"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "B"
+      }
+    },
+    {
+      "name": "Gradient Tool",
+      "context": "Tools (General and Designer Persona)",
+      "windows": {
+        "type": "keys",
+        "chord": "G"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "G"
+      }
+    },
+    {
+      "name": "Transparency Tool",
+      "context": "Tools (General and Designer Persona)",
+      "windows": {
+        "type": "keys",
+        "chord": "Y"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Y"
+      }
+    },
+    {
+      "name": "Vector Flood Fill Tool",
+      "context": "Tools (General and Designer Persona)",
+      "windows": {
+        "type": "keys",
+        "chord": "R"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "R"
+      }
+    },
+    {
+      "name": "Rectangle, Ellipse, and Rounded Rectangle tools cycle",
+      "context": "Tools (General and Designer Persona)",
+      "windows": {
+        "type": "keys",
+        "chord": "M"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "M"
+      }
+    },
+    {
+      "name": "Shape Builder Tool",
+      "context": "Tools (General and Designer Persona)",
+      "windows": {
+        "type": "keys",
+        "chord": "S"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "S"
+      }
+    },
+    {
+      "name": "Artistic and Frame text tools cycle",
+      "context": "Tools (General and Designer Persona)",
+      "windows": {
+        "type": "keys",
+        "chord": "T"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "T"
+      }
+    },
+    {
+      "name": "Color Picker Tool",
+      "context": "Tools (General and Designer Persona)",
+      "windows": {
+        "type": "keys",
+        "chord": "I"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "I"
+      }
+    },
+    {
+      "name": "View Tool",
+      "context": "Tools (General and Designer Persona)",
+      "windows": {
+        "type": "keys",
+        "chord": "H"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "H"
+      }
+    },
+    {
+      "name": "Zoom Tool",
+      "context": "Tools (General and Designer Persona)",
+      "windows": {
+        "type": "keys",
+        "chord": "Z"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Z"
+      }
+    },
+    {
+      "name": "Move Tool",
+      "context": "Tools (Pixel Persona only)",
+      "windows": {
+        "type": "keys",
+        "chord": "V"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "V"
+      }
+    },
+    {
+      "name": "Marquee Selection Tools cycle",
+      "context": "Tools (Pixel Persona only)",
+      "windows": {
+        "type": "keys",
+        "chord": "M"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "M"
+      }
+    },
+    {
+      "name": "Freehand Selection Tool",
+      "context": "Tools (Pixel Persona only)",
+      "windows": {
+        "type": "keys",
+        "chord": "L"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "L"
+      }
+    },
+    {
+      "name": "Selection Brush Tool",
+      "context": "Tools (Pixel Persona only)",
+      "windows": {
+        "type": "keys",
+        "chord": "W"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "W"
+      }
+    },
+    {
+      "name": "Pixel Tool",
+      "context": "Tools (Pixel Persona only)",
+      "windows": {
+        "type": "keys",
+        "chord": "Y"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Y"
+      }
+    },
+    {
+      "name": "Paint Brush Tool",
+      "context": "Tools (Pixel Persona only)",
+      "windows": {
+        "type": "keys",
+        "chord": "B"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "B"
+      }
+    },
+    {
+      "name": "Erase Brush Tool",
+      "context": "Tools (Pixel Persona only)",
+      "windows": {
+        "type": "keys",
+        "chord": "E"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "E"
+      }
+    },
+    {
+      "name": "Flood Fill Tool",
+      "context": "Tools (Pixel Persona only)",
+      "windows": {
+        "type": "keys",
+        "chord": "G"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "G"
+      }
+    },
+    {
+      "name": "Dodge and Burn Brush Tools cycle",
+      "context": "Tools (Pixel Persona only)",
+      "windows": {
+        "type": "keys",
+        "chord": "O"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "O"
+      }
+    },
+    {
+      "name": "Color Picker Tool",
+      "context": "Tools (Pixel Persona only)",
+      "windows": {
+        "type": "keys",
+        "chord": "I"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "I"
+      }
+    },
+    {
+      "name": "View Tool",
+      "context": "Tools (Pixel Persona only)",
+      "windows": {
+        "type": "keys",
+        "chord": "H"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "H"
+      }
+    },
+    {
+      "name": "Zoom Tool",
+      "context": "Tools (Pixel Persona only)",
+      "windows": {
+        "type": "keys",
+        "chord": "Z"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Z"
+      }
+    },
+    {
+      "name": "Slice Tool",
+      "context": "Tools (Export Persona only)",
+      "windows": {
+        "type": "keys",
+        "chord": "S"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "S"
+      }
+    },
+    {
+      "name": "Slice Selection Tool",
+      "context": "Tools (Export Persona only)",
+      "windows": {
+        "type": "keys",
+        "chord": "L"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "L"
+      }
+    },
+    {
+      "name": "Undo",
+      "context": "Edit",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Z"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Z"
+      }
+    },
+    {
+      "name": "Redo",
+      "context": "Edit",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Z"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+Z"
+      }
+    },
+    {
+      "name": "Paste Style",
+      "context": "Edit",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+V"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+V"
+      }
+    },
+    {
+      "name": "Paste FX",
+      "context": "Edit",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+V"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Cmd+V"
+      }
+    },
+    {
+      "name": "Paste Inside",
+      "context": "Edit",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+V"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+V"
+      }
+    },
+    {
+      "name": "Paste without Format",
+      "context": "Edit",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Shift+V"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+Cmd+V"
+      }
+    },
+    {
+      "name": "Group",
+      "context": "Object control",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+G"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+G"
+      }
+    },
+    {
+      "name": "Ungroup",
+      "context": "Object control",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+G"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+G"
+      }
+    },
+    {
+      "name": "Duplicate",
+      "context": "Object control",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+J"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+J"
+      }
+    },
+    {
+      "name": "Move to Front",
+      "context": "Object control",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+]"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+]"
+      }
+    },
+    {
+      "name": "Move Forward One",
+      "context": "Object control",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+]"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+]"
+      }
+    },
+    {
+      "name": "Move to Back",
+      "context": "Object control",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+["
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+["
+      }
+    },
+    {
+      "name": "Move Back One",
+      "context": "Object control",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+["
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+["
+      }
+    },
+    {
+      "name": "Move Inside",
+      "context": "Object control",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+G"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+G"
+      }
+    },
+    {
+      "name": "Move Outside",
+      "context": "Object control",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Shift+G"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+Cmd+G"
+      }
+    },
+    {
+      "name": "Show All",
+      "context": "Object control",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Shift+H"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Cmd+H"
+      }
+    },
+    {
+      "name": "Select All on Current Layer",
+      "context": "Object control",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+A"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+A"
+      }
+    },
+    {
+      "name": "Lock",
+      "context": "Object control",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+L"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+L"
+      }
+    },
+    {
+      "name": "Unlock",
+      "context": "Object control",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+L"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+L"
+      }
+    },
+    {
+      "name": "Unlock All",
+      "context": "Object control",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Shift+L"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Cmd+L"
+      }
+    },
+    {
+      "name": "New Pixel Layer",
+      "context": "Object control",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+N"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+N"
+      }
+    },
+    {
+      "name": "Rename Layer",
+      "context": "Object control",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+R"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+R"
+      }
+    },
+    {
+      "name": "Convert to Curves",
+      "context": "Object control",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Enter"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Enter"
+      }
+    },
+    {
+      "name": "Decrease/increase brush width ([)",
+      "context": "Painting",
+      "windows": {
+        "type": "keys",
+        "chord": "["
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "["
+      }
+    },
+    {
+      "name": "Decrease/increase brush width (])",
+      "context": "Painting",
+      "windows": {
+        "type": "keys",
+        "chord": "]"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "]"
+      }
+    },
+    {
+      "name": "Rotate brush nozzle anti-clockwise/clockwise (Pixel Persona only) (Left)",
+      "context": "Painting",
+      "windows": {
+        "type": "keys",
+        "chord": "Left"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Left"
+      }
+    },
+    {
+      "name": "Rotate brush nozzle anti-clockwise/clockwise (Pixel Persona only) (Right)",
+      "context": "Painting",
+      "windows": {
+        "type": "keys",
+        "chord": "Right"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Right"
+      }
+    },
+    {
+      "name": "Show Character panel",
+      "context": "Text",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+T"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+T"
+      }
+    },
+    {
+      "name": "Show Typography panel",
+      "context": "Text",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+T"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+T"
+      }
+    },
+    {
+      "name": "Spelling Options",
+      "context": "Text",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+;"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+;"
+      }
+    },
+    {
+      "name": "Moves insertion point one character left",
+      "context": "Text (Navigation)",
+      "windows": {
+        "type": "keys",
+        "chord": "Left"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Left"
+      }
+    },
+    {
+      "name": "Moves insertion point one character right",
+      "context": "Text (Navigation)",
+      "windows": {
+        "type": "keys",
+        "chord": "Right"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Right"
+      }
+    },
+    {
+      "name": "Moves insertion point to start of word",
+      "context": "Text (Navigation)",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Left"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Left"
+      }
+    },
+    {
+      "name": "Moves insertion point to end of word",
+      "context": "Text (Navigation)",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Right"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Right"
+      }
+    },
+    {
+      "name": "Moves insertion point to start of line",
+      "context": "Text (Navigation)",
+      "windows": {
+        "type": "keys",
+        "chord": "Home"
+      }
+    },
+    {
+      "name": "Moves insertion point to end of line",
+      "context": "Text (Navigation)",
+      "windows": {
+        "type": "keys",
+        "chord": "End"
+      }
+    },
+    {
+      "name": "Moves insertion point to start of text frame",
+      "context": "Text (Navigation)",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Home"
+      }
+    },
+    {
+      "name": "Moves insertion point to end of text frame",
+      "context": "Text (Navigation)",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+End"
+      }
+    },
+    {
+      "name": "Moves insertion point to start of current paragraph",
+      "context": "Text (Navigation)",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Up"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Up"
+      }
+    },
+    {
+      "name": "Moves insertion point to start of next paragraph",
+      "context": "Text (Navigation)",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Down"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Down"
+      }
+    },
+    {
+      "name": "Delete character to left of insertion point",
+      "context": "Text (Deleting)",
+      "windows": {
+        "type": "keys",
+        "chord": "Backspace"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Backspace"
+      }
+    },
+    {
+      "name": "Delete character to right of insertion point",
+      "context": "Text (Deleting)",
+      "windows": {
+        "type": "keys",
+        "chord": "Delete"
+      }
+    },
+    {
+      "name": "Delete from insertion point to start of word",
+      "context": "Text (Deleting)",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Backspace"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Backspace"
+      }
+    },
+    {
+      "name": "Delete from insertion point to end of word",
+      "context": "Text (Deleting)",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Delete"
+      }
+    },
+    {
+      "name": "Delete from insertion point to start of line",
+      "context": "Text (Deleting)",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Backspace"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Backspace"
+      }
+    },
+    {
+      "name": "Delete from insertion point to end of paragraph",
+      "context": "Text (Deleting)",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+K"
+      }
+    },
+    {
+      "name": "Bigger text",
+      "context": "Text (Formatting)",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+."
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+."
+      }
+    },
+    {
+      "name": "Smaller text",
+      "context": "Text (Formatting)",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+,"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+,"
+      }
+    },
+    {
+      "name": "Precise bigger text",
+      "context": "Text (Formatting)",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Shift+."
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+Cmd+."
+      }
+    },
+    {
+      "name": "Precise smaller text",
+      "context": "Text (Formatting)",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Shift+,"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+Cmd+,"
+      }
+    },
+    {
+      "name": "Bold",
+      "context": "Text (Formatting)",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+B"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+B"
+      }
+    },
+    {
+      "name": "Italic",
+      "context": "Text (Formatting)",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+I"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+I"
+      }
+    },
+    {
+      "name": "Underline",
+      "context": "Text (Formatting)",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+U"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+U"
+      }
+    },
+    {
+      "name": "Superscript",
+      "context": "Text (Formatting)",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+="
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Cmd+Plus"
+      }
+    },
+    {
+      "name": "Subscript",
+      "context": "Text (Formatting)",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+-"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Cmd+-"
+      }
+    },
+    {
+      "name": "Align Left",
+      "context": "Text (Formatting)",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+L"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+L"
+      }
+    },
+    {
+      "name": "Align Center",
+      "context": "Text (Formatting)",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+C"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+C"
+      }
+    },
+    {
+      "name": "Align Right",
+      "context": "Text (Formatting)",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+R"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+R"
+      }
+    },
+    {
+      "name": "Tighten (Spacing, 10‰ decrement)",
+      "context": "Text (Typography)",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Left"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Left"
+      }
+    },
+    {
+      "name": "Loosen (Spacing, 10‰ increment)",
+      "context": "Text (Typography)",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Right"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Right"
+      }
+    },
+    {
+      "name": "Tighten More (Spacing, 50‰ decrement)",
+      "context": "Text (Typography)",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+Left"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+Left"
+      }
+    },
+    {
+      "name": "Loosen More (Spacing, 50‰ increment)",
+      "context": "Text (Typography)",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+Right"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+Right"
+      }
+    },
+    {
+      "name": "Raise Baseline",
+      "context": "Text (Typography)",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+Up"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+Up"
+      }
+    },
+    {
+      "name": "Lower Baseline",
+      "context": "Text (Typography)",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+Down"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+Down"
+      }
+    },
+    {
+      "name": "Precise Raise Baseline",
+      "context": "Text (Typography)",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Shift+Up"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+Cmd+Up"
+      }
+    },
+    {
+      "name": "Precise Lower Baseline",
+      "context": "Text (Typography)",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Shift+Down"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+Cmd+Down"
+      }
+    },
+    {
+      "name": "Increase Paragraph Leading",
+      "context": "Text (Typography)",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Down"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Down"
+      }
+    },
+    {
+      "name": "Decrease Paragraph Leading",
+      "context": "Text (Typography)",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Up"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Up"
+      }
+    },
+    {
+      "name": "Precise Increase Paragraph Leading",
+      "context": "Text (Typography)",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Down"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+Down"
+      }
+    },
+    {
+      "name": "Precise Decrease Paragraph Leading",
+      "context": "Text (Typography)",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Up"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+Up"
+      }
+    },
+    {
+      "name": "Line Break",
+      "context": "Text (Special characters)",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Enter"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Enter"
+      }
+    },
+    {
+      "name": "Non-Breaking Space",
+      "context": "Text (Special characters)",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Space"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Space"
+      }
+    },
+    {
+      "name": "Soft Hyphen",
+      "context": "Text (Special characters)",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+-"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+-"
+      }
+    },
+    {
+      "name": "Non-Breaking Hyphen",
+      "context": "Text (Special characters)",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+-"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+-"
+      }
+    },
+    {
+      "name": "En Dash",
+      "context": "Text (Special characters)",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+-"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+-"
+      }
+    },
+    {
+      "name": "Em Dash",
+      "context": "Text (Special characters)",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+-"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+-"
+      }
+    },
+    {
+      "name": "Toggle Unicode",
+      "context": "Text (Special characters)",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+U"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+U"
+      }
+    },
+    {
+      "name": "Reset document view rotation",
+      "context": "View",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Shift+R"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Cmd+R"
+      }
+    },
+    {
+      "name": "Zoom In",
+      "context": "View",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+="
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Plus"
+      }
+    },
+    {
+      "name": "Zoom Out",
+      "context": "View",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+-"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+-"
+      }
+    },
+    {
+      "name": "Zoom to Fit",
+      "context": "View",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+0"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+0"
+      }
+    },
+    {
+      "name": "Zoom to Width",
+      "context": "View",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+0"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+0"
+      }
+    },
+    {
+      "name": "Zoom to Selection",
+      "context": "View",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+0"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+0"
+      }
+    },
+    {
+      "name": "(Zoom to) 100%",
+      "context": "View",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+1"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+1"
+      }
+    },
+    {
+      "name": "(Zoom to) 200%",
+      "context": "View",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+2"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+2"
+      }
+    },
+    {
+      "name": "(Zoom to) 400%",
+      "context": "View",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+3"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+3"
+      }
+    },
+    {
+      "name": "(Zoom to) 800%",
+      "context": "View",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+4"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+4"
+      }
+    },
+    {
+      "name": "(Zoom to) Actual Size",
+      "context": "View",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+8"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+8"
+      }
+    },
+    {
+      "name": "(Zoom to) Pixel Size",
+      "context": "View",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+9"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+9"
+      }
+    },
+    {
+      "name": "Hot key panning",
+      "context": "View",
+      "windows": {
+        "type": "keys",
+        "chord": "Space"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Space"
+      }
+    },
+    {
+      "name": "Show Rulers",
+      "context": "View",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+R"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+R"
+      }
+    },
+    {
+      "name": "Show Guides",
+      "context": "View",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+;"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+;"
+      }
+    },
+    {
+      "name": "Show Grid",
+      "context": "View",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+'"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+'"
+      }
+    },
+    {
+      "name": "Grid Plane cycle",
+      "context": "View",
+      "windows": {
+        "type": "keys",
+        "chord": "'"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "'"
+      }
+    },
+    {
+      "name": "Pixel view mode",
+      "context": "View",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Y"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+Y"
+      }
+    },
+    {
+      "name": "Pixel (Retina) view mode",
+      "context": "View",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Shift+Y"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+Cmd+Y"
+      }
+    },
+    {
+      "name": "Last used wireframe mode (Outline or X-ray) toggle",
+      "context": "View",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Y"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Y"
+      }
+    },
+    {
+      "name": "Toggle Split View",
+      "context": "View",
+      "windows": {
+        "type": "keys",
+        "chord": ","
+      },
+      "mac": {
+        "type": "keys",
+        "chord": ","
+      }
+    },
+    {
+      "name": "Switch to Next View",
+      "context": "View",
+      "windows": {
+        "type": "keys",
+        "chord": "`"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+`"
+      }
+    },
+    {
+      "name": "Clip to Canvas",
+      "context": "View",
+      "windows": {
+        "type": "keys",
+        "chord": "\\"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "\\"
+      }
+    },
+    {
+      "name": "Select All",
+      "context": "Selection",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+A"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+A"
+      }
+    },
+    {
+      "name": "Deselect",
+      "context": "Selection",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+D"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+D"
+      }
+    },
+    {
+      "name": "Invert Pixel Selection",
+      "context": "Selection",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+I"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+I"
+      }
+    },
+    {
+      "name": "Select Next",
+      "context": "Selection",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+]"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+]"
+      }
+    },
+    {
+      "name": "Select Previous",
+      "context": "Selection",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+["
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+["
+      }
+    },
+    {
+      "name": "Select Parent",
+      "context": "Selection",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Up"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Up"
+      }
+    },
+    {
+      "name": "Nudge selection (Left)",
+      "context": "Selection",
+      "windows": {
+        "type": "keys",
+        "chord": "Left"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Left"
+      }
+    },
+    {
+      "name": "Nudge selection (Right)",
+      "context": "Selection",
+      "windows": {
+        "type": "keys",
+        "chord": "Right"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Right"
+      }
+    },
+    {
+      "name": "Nudge selection (Up)",
+      "context": "Selection",
+      "windows": {
+        "type": "keys",
+        "chord": "Up"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Up"
+      }
+    },
+    {
+      "name": "Nudge selection (Down)",
+      "context": "Selection",
+      "windows": {
+        "type": "keys",
+        "chord": "Down"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Down"
+      }
+    },
+    {
+      "name": "Modified nudge selection (Shift+Left)",
+      "context": "Selection",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Left"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Left"
+      }
+    },
+    {
+      "name": "Modified nudge selection (Shift+Right)",
+      "context": "Selection",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Right"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Right"
+      }
+    },
+    {
+      "name": "Modified nudge selection (Shift+Up)",
+      "context": "Selection",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Up"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Up"
+      }
+    },
+    {
+      "name": "Modified nudge selection (Shift+Down)",
+      "context": "Selection",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Down"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Down"
+      }
+    },
+    {
+      "name": "Show/Hide Studio",
+      "context": "Workspace",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+H"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+H"
+      }
+    },
+    {
+      "name": "Show/Hide Toolbar",
+      "context": "Workspace",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+T"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+T"
+      }
+    },
+    {
+      "name": "Toggle UI",
+      "context": "Workspace",
+      "windows": {
+        "type": "keys",
+        "chord": "Tab"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Tab"
+      }
+    },
+    {
+      "name": "Next Blend Mode",
+      "context": "Blend mode",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+="
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+="
+      }
+    },
+    {
+      "name": "Previous Blend Mode",
+      "context": "Blend mode",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+-"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+-"
+      }
+    },
+    {
+      "name": "Normal",
+      "context": "Blend mode",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+N"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+N"
+      }
+    },
+    {
+      "name": "Darken",
+      "context": "Blend mode",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+K"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+K"
+      }
+    },
+    {
+      "name": "Multiply",
+      "context": "Blend mode",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+M"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+M"
+      }
+    },
+    {
+      "name": "Color Burn",
+      "context": "Blend mode",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+B"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+B"
+      }
+    },
+    {
+      "name": "Linear Burn",
+      "context": "Blend mode",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+A"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+A"
+      }
+    },
+    {
+      "name": "Lighten",
+      "context": "Blend mode",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+G"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+G"
+      }
+    },
+    {
+      "name": "Screen",
+      "context": "Blend mode",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+S"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+S"
+      }
+    },
+    {
+      "name": "Color Dodge",
+      "context": "Blend mode",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+D"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+D"
+      }
+    },
+    {
+      "name": "Add",
+      "context": "Blend mode",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+W"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+W"
+      }
+    },
+    {
+      "name": "Overlay",
+      "context": "Blend mode",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+O"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+O"
+      }
+    },
+    {
+      "name": "Soft Light",
+      "context": "Blend mode",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+F"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+F"
+      }
+    },
+    {
+      "name": "Hard Light",
+      "context": "Blend mode",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+H"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+H"
+      }
+    },
+    {
+      "name": "Vivid Light",
+      "context": "Blend mode",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+V"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+V"
+      }
+    },
+    {
+      "name": "Linear Light",
+      "context": "Blend mode",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+J"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+J"
+      }
+    },
+    {
+      "name": "Pin Light",
+      "context": "Blend mode",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+Z"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+Z"
+      }
+    },
+    {
+      "name": "Hard Mix",
+      "context": "Blend mode",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+L"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+L"
+      }
+    },
+    {
+      "name": "Difference",
+      "context": "Blend mode",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+E"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+E"
+      }
+    },
+    {
+      "name": "Exclusion",
+      "context": "Blend mode",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+X"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+X"
+      }
+    },
+    {
+      "name": "Hue",
+      "context": "Blend mode",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+U"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+U"
+      }
+    },
+    {
+      "name": "Saturation",
+      "context": "Blend mode",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+T"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+T"
+      }
+    },
+    {
+      "name": "Color",
+      "context": "Blend mode",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+C"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+C"
+      }
+    },
+    {
+      "name": "Luminosity",
+      "context": "Blend mode",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+Y"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+Y"
+      }
+    },
+    {
+      "name": "Settings (or Preferences)",
+      "context": "Misc",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+,"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+,"
+      }
+    },
+    {
+      "name": "Curves (Adjustment)",
+      "context": "Misc",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+M"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+M"
+      }
+    },
+    {
+      "name": "Black and White (Adjustment)",
+      "context": "Misc",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Shift+B"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+Cmd+B"
+      }
+    },
+    {
+      "name": "Toggle Full Screen",
+      "context": "macOS",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Cmd+F"
+      }
+    },
+    {
+      "name": "Hide Workspace",
+      "context": "macOS",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+H"
+      }
+    },
+    {
+      "name": "Hide Others (apps)",
+      "context": "macOS",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+H"
+      }
+    }
+  ],
+  "defaults": {
+    "TUNE_CW": {
+      "name": "Zoom In",
+      "action": {
+        "type": "keys",
+        "chord": "Ctrl+="
+      },
+      "accel": "light"
+    },
+    "TUNE_CCW": {
+      "name": "Zoom Out",
+      "action": {
+        "type": "keys",
+        "chord": "Ctrl+-"
+      },
+      "accel": "light"
+    },
+    "TUNE_TAP_1F": {
+      "name": "Toggle UI",
+      "action": {
+        "type": "keys",
+        "chord": "Tab"
+      }
+    },
+    "TUNE_SWIPE_LEFT": {
+      "name": "Undo",
+      "action": {
+        "type": "keys",
+        "chord": "Ctrl+Z"
+      }
+    },
+    "TUNE_SWIPE_RIGHT": {
+      "name": "Redo",
+      "action": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Z"
+      }
+    }
+  }
+}

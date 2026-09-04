@@ -1,0 +1,63 @@
+{
+  "id": "hulu",
+  "name": "Hulu",
+  "kind": "site",
+  "category": "Video",
+  "match": {
+    "windows_exe": [
+      "chrome.exe",
+      "msedge.exe",
+      "firefox.exe",
+      "brave.exe",
+      "vivaldi.exe"
+    ],
+    "macos_bundle": [
+      "com.google.Chrome",
+      "com.microsoft.edgemac",
+      "org.mozilla.firefox",
+      "com.brave.Browser",
+      "com.apple.Safari"
+    ],
+    "window_title": [
+      "Hulu"
+    ]
+  },
+  "sources": [
+    "https://help.hulu.com/article/hulu-keyboard-controls"
+  ],
+  "note": "From the Help Center article \"Using keyboard controls to navigate Hulu.com\". The article states the Left/Right and Up/Down arrows each do double duty depending on which control has focus (volume button vs. playback bar) but never states which direction raises/lowers volume; this file assigns Up/Down to volume (increase/decrease) and Left/Right to rewind/fast-forward, the standard pairing used by every other player in this catalog, to avoid two redundant, ambiguous entries for the same two arrow pairs. Not expressible, so left out: none — every control in the article maps to the grammar.",
+  "actions": [
+    { "name": "Navigate to next content, button, or link", "context": "", "windows": { "type": "keys", "chord": "Tab" }, "mac": { "type": "keys", "chord": "Tab" } },
+    { "name": "Navigate to previous content, button, or link", "context": "", "windows": { "type": "keys", "chord": "Shift+Tab" }, "mac": { "type": "keys", "chord": "Shift+Tab" } },
+    { "name": "Select content, button, or link", "context": "", "windows": { "type": "keys", "chord": "Enter" }, "mac": { "type": "keys", "chord": "Enter" } },
+    { "name": "Scroll up on the page", "context": "", "windows": { "type": "keys", "chord": "Up" }, "mac": { "type": "keys", "chord": "Up" } },
+    { "name": "Scroll down on the page", "context": "", "windows": { "type": "keys", "chord": "Down" }, "mac": { "type": "keys", "chord": "Down" } },
+    { "name": "Jump to next section of the page", "context": "", "windows": { "type": "keys", "chord": "Space" }, "mac": { "type": "keys", "chord": "Space" } },
+    { "name": "Open the player controls, then move to the next option", "context": "Playback", "windows": { "type": "keys", "chord": "Tab" }, "mac": { "type": "keys", "chord": "Tab" } },
+    { "name": "Navigate to the previous option within the playback screen", "context": "Playback", "windows": { "type": "keys", "chord": "Shift+Tab" }, "mac": { "type": "keys", "chord": "Shift+Tab" } },
+    { "name": "Select button", "context": "Playback", "windows": { "type": "keys", "chord": "Enter" }, "mac": { "type": "keys", "chord": "Enter" } },
+    { "name": "Pause or play the video", "context": "Playback", "windows": { "type": "keys", "chord": "Space" }, "mac": { "type": "keys", "chord": "Space" } },
+    { "name": "Minimize the video and enter Picture-in-Picture mode", "context": "Playback", "windows": { "type": "keys", "chord": "Esc" }, "mac": { "type": "keys", "chord": "Esc" } },
+    { "name": "Enter Full Screen Mode", "context": "Playback", "windows": { "type": "keys", "chord": "F" }, "mac": { "type": "keys", "chord": "F" } },
+    { "name": "Rewind the video", "context": "Playback bar focused", "windows": { "type": "keys", "chord": "Left" }, "mac": { "type": "keys", "chord": "Left" } },
+    { "name": "Fast-forward the video", "context": "Playback bar focused", "windows": { "type": "keys", "chord": "Right" }, "mac": { "type": "keys", "chord": "Right" } },
+    { "name": "Increase volume", "context": "Volume control focused", "windows": { "type": "keys", "chord": "Up" }, "mac": { "type": "keys", "chord": "Up" } },
+    { "name": "Decrease volume", "context": "Volume control focused", "windows": { "type": "keys", "chord": "Down" }, "mac": { "type": "keys", "chord": "Down" } }
+  ],
+  "defaults": {
+    "TUNE_CW": {
+      "name": "Fast-forward the video",
+      "action": { "type": "keys", "chord": "Right" },
+      "accel": "medium"
+    },
+    "TUNE_CCW": {
+      "name": "Rewind the video",
+      "action": { "type": "keys", "chord": "Left" },
+      "accel": "medium"
+    },
+    "TUNE_TAP_1F": {
+      "name": "Pause or play the video",
+      "action": { "type": "keys", "chord": "Space" }
+    }
+  }
+}

@@ -52,6 +52,14 @@ cargo run -- --allow-injected  # treat synthetic F-keys as transport (testing wi
   (Tune on plain keys, Left Touch on Shift+F-keys, Right Touch on Ctrl+F-keys); the engine keys its
   transport table on key plus modifier and releases the modifier before sending the mapped chord.
 
+### Catalog
+
+`catalog/<id>.json` holds one file per application, website or system: match rules, the complete
+documented shortcut list, and default Tune bindings. `tools/gen_presets.py` merges them (plus the
+ShortcutMapper import) into `presets/apps.json`; `tools/validate_catalog.py` checks every file and a
+Rust test parses every chord. Currently 160 entries and 22,579 actions; see `catalog/README.md`
+for the format and `catalog/REPORT.md` for per-entry counts and caveats.
+
 ### Bundled profiles
 
 Every profile binds the dial (CW / CCW / press) and the four Tune swipes.

@@ -1,0 +1,150 @@
+{
+  "id": "outlook_web",
+  "name": "Outlook on the web",
+  "kind": "site",
+  "category": "Communication",
+  "match": {
+    "windows_exe": [
+      "chrome.exe",
+      "msedge.exe",
+      "firefox.exe",
+      "brave.exe",
+      "vivaldi.exe"
+    ],
+    "macos_bundle": [
+      "com.google.Chrome",
+      "com.microsoft.edgemac",
+      "org.mozilla.firefox",
+      "com.brave.Browser",
+      "com.apple.Safari"
+    ],
+    "window_title": [
+      "Outlook"
+    ]
+  },
+  "sources": [
+    "https://support.microsoft.com/en-us/office/keyboard-shortcuts-for-outlook-3cdeb221-7ae5-4c1d-8c1d-9e63216c1efd"
+  ],
+  "note": "\"Outlook on the web\" tab only (the New Outlook and Classic Outlook desktop tabs on this same page are already covered by catalog/outlook.json). That tab's shortcuts refer to the 'Outlook' keyboard-shortcut scheme within Outlook on the web/Outlook.com (the page notes you can instead opt into Outlook.com-, Yahoo Mail-, or Gmail-style shortcuts under Settings > General > Accessibility; those alternate schemes are not covered here) and are presented as a single list with no separate macOS column, so only `windows` is populated per action and it applies across desktop browsers/OSes as documented. Where the article lists two equivalent bindings for one action (e.g. 'Ctrl+Shift+F or Shift+F'), the first-listed binding is used here. Section headings from the article ('Message and reading list', 'Message list', 'Reading list', 'Calendar', 'Calendar forms', 'People') are used as `context` since they describe distinct panes/modes, not just headings. The article's own 'Go to the calendar' (Ctrl+Shift+2) row is repeated verbatim under both Frequently used and Calendar in the source and is listed once here. Omitted because the grammar cannot express them, are undocumented ('No shortcut'), or are mouse/pointer-only: the accent-mark and special-character Alt-numpad tables, 'Switch view to include today', 'Navigate to the previous/next pane', a second 'Move to a different region' row, 'Switch to three-day view', and 'List view'.",
+  "actions": [
+    { "name": "Create a new message or calendar event", "context": "", "windows": { "type": "keys", "chord": "N" } },
+    { "name": "Open the selected message in a new window", "context": "", "windows": { "type": "keys", "chord": "Shift+Enter" } },
+    { "name": "Move the message to the Archive folder", "context": "", "windows": { "type": "keys", "chord": "E" } },
+    { "name": "Delete message or item", "context": "", "windows": { "type": "keys", "chord": "Delete" } },
+    { "name": "Forward message", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Shift+F" } },
+    { "name": "Go to the calendar", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Shift+2" } },
+    { "name": "Select the Reply All option", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Shift+R" } },
+    { "name": "Reply to email message", "context": "", "windows": { "type": "keys", "chord": "Ctrl+R" } },
+    { "name": "Send email message", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Enter" } },
+    { "name": "Use search", "context": "", "windows": { "type": "keys", "chord": "Alt+Q" } },
+    { "name": "Open split buttons", "context": "", "windows": { "type": "keys", "chord": "Alt+Down" } },
+
+    { "name": "Copy your selection to the clipboard", "context": "Edit text", "windows": { "type": "keys", "chord": "Ctrl+C" } },
+    { "name": "Cut the text you selected", "context": "Edit text", "windows": { "type": "keys", "chord": "Ctrl+X" } },
+    { "name": "Delete selected text or characters to the left of the cursor", "context": "Edit text", "windows": { "type": "keys", "chord": "Backspace" } },
+    { "name": "Delete the word to the left of the cursor", "context": "Edit text", "windows": { "type": "keys", "chord": "Ctrl+Backspace" } },
+    { "name": "Insert a hyperlink", "context": "Edit text", "windows": { "type": "keys", "chord": "Ctrl+K" } },
+    { "name": "Paste content from the clipboard", "context": "Edit text", "windows": { "type": "keys", "chord": "Ctrl+V" } },
+    { "name": "Repeat the most recent action", "context": "Edit text", "windows": { "type": "keys", "chord": "Ctrl+Y" } },
+    { "name": "Reverse the most recent action", "context": "Edit text", "windows": { "type": "keys", "chord": "Ctrl+Z" } },
+    { "name": "Switch between inserting and overwriting text", "context": "Edit text", "windows": { "type": "keys", "chord": "Insert" } },
+
+    { "name": "Apply bold formatting", "context": "Format text", "windows": { "type": "keys", "chord": "Ctrl+B" } },
+    { "name": "Apply italic formatting", "context": "Format text", "windows": { "type": "keys", "chord": "Ctrl+I" } },
+    { "name": "Underline text", "context": "Format text", "windows": { "type": "keys", "chord": "Ctrl+U" } },
+
+    { "name": "Collapse the selected section", "context": "Folder pane", "windows": { "type": "keys", "chord": "Left" } },
+    { "name": "Expand the selected section", "context": "Folder pane", "windows": { "type": "keys", "chord": "Right" } },
+
+    { "name": "Delete the selected message", "context": "Message and reading list", "windows": { "type": "keys", "chord": "Delete" } },
+    { "name": "Mark the selected conversation or message as read", "context": "Message and reading list", "windows": { "type": "keys", "chord": "Ctrl+Q" } },
+    { "name": "Mark the selected conversation or message as unread", "context": "Message and reading list", "windows": { "type": "keys", "chord": "Ctrl+U" } },
+    { "name": "Permanently delete the selected message or item", "context": "Message and reading list", "windows": { "type": "keys", "chord": "Shift+Delete" } },
+    { "name": "Flag a message or mark a flagged message as complete", "context": "Message and reading list", "windows": { "type": "keys", "chord": "Insert" } },
+    { "name": "Cancel a search", "context": "Message and reading list", "windows": { "type": "keys", "chord": "Esc" } },
+
+    { "name": "Select the current and next message", "context": "Message list", "windows": { "type": "keys", "chord": "Shift+Down" } },
+    { "name": "Select the current and previous message", "context": "Message list", "windows": { "type": "keys", "chord": "Shift+Up" } },
+    { "name": "Select the first message in the folder", "context": "Message list", "windows": { "type": "keys", "chord": "Home" } },
+
+    { "name": "Close a new message", "context": "Reading list", "windows": { "type": "keys", "chord": "Esc" } },
+    { "name": "Create a new message", "context": "Reading list", "windows": { "type": "keys", "chord": "N" } },
+    { "name": "Forward a selected message", "context": "Reading list", "windows": { "type": "keys", "chord": "Ctrl+Shift+F" } },
+    { "name": "Go to the bottom of a conversation or message", "context": "Reading list", "windows": { "type": "keys", "chord": "End" } },
+    { "name": "Go to the top of a conversation or message", "context": "Reading list", "windows": { "type": "keys", "chord": "Home" } },
+    { "name": "Move down one page for longer messages", "context": "Reading list", "windows": { "type": "keys", "chord": "PageDown" } },
+    { "name": "Move up one page for longer messages", "context": "Reading list", "windows": { "type": "keys", "chord": "PageUp" } },
+    { "name": "Reply to the selected message", "context": "Reading list", "windows": { "type": "keys", "chord": "Ctrl+R" } },
+    { "name": "Reply to all recipients", "context": "Reading list", "windows": { "type": "keys", "chord": "Ctrl+Shift+R" } },
+    { "name": "Send a message", "context": "Reading list", "windows": { "type": "keys", "chord": "Ctrl+Enter" } },
+
+    { "name": "Create a new calendar item", "context": "Calendar", "windows": { "type": "keys", "chord": "N" } },
+    { "name": "Open the selected item", "context": "Calendar", "windows": { "type": "keys", "chord": "Enter" } },
+    { "name": "Delete the selected item", "context": "Calendar", "windows": { "type": "keys", "chord": "Delete" } },
+    { "name": "Move to the previous day (Day view)", "context": "Calendar", "windows": { "type": "keys", "chord": "Ctrl+Alt+Left" } },
+    { "name": "Move to the previous week (Week/Work Week view)", "context": "Calendar", "windows": { "type": "keys", "chord": "Alt+Down" } },
+    { "name": "Move to the previous month (Month view)", "context": "Calendar", "windows": { "type": "keys", "chord": "Alt+PageDown" } },
+    { "name": "Move to the next day (Day view)", "context": "Calendar", "windows": { "type": "keys", "chord": "Ctrl+Alt+Right" } },
+    { "name": "Move to the next week (Week/Work Week view)", "context": "Calendar", "windows": { "type": "keys", "chord": "Alt+Up" } },
+    { "name": "Move to the next month (Month view)", "context": "Calendar", "windows": { "type": "keys", "chord": "Alt+PageUp" } },
+    { "name": "Move to a different region in the calendar", "context": "Calendar", "windows": { "type": "keys", "chord": "Ctrl+F6" } },
+    { "name": "Move to the next event or area in the current view", "context": "Calendar", "windows": { "type": "keys", "chord": "Tab" } },
+    { "name": "Move to a previous event or area in the current view", "context": "Calendar", "windows": { "type": "keys", "chord": "Shift+Tab" } },
+    { "name": "Go to the next time period", "context": "Calendar", "windows": { "type": "keys", "chord": "Shift+Right" } },
+    { "name": "Go to the previous time period", "context": "Calendar", "windows": { "type": "keys", "chord": "Shift+Left" } },
+    { "name": "Go to today", "context": "Calendar", "windows": { "type": "keys", "chord": "Alt+Shift+Y" } },
+    { "name": "Switch to Day view", "context": "Calendar", "windows": { "type": "keys", "chord": "Shift+Alt+1" } },
+    { "name": "Switch to Work week view", "context": "Calendar", "windows": { "type": "keys", "chord": "Shift+Alt+2" } },
+    { "name": "Switch to full Week view", "context": "Calendar", "windows": { "type": "keys", "chord": "Shift+Alt+3" } },
+    { "name": "Switch to Month view", "context": "Calendar", "windows": { "type": "keys", "chord": "Shift+Alt+4" } },
+
+    { "name": "Save an appointment", "context": "Calendar forms", "windows": { "type": "keys", "chord": "Ctrl+S" } },
+    { "name": "Send a meeting", "context": "Calendar forms", "windows": { "type": "keys", "chord": "Ctrl+Enter" } },
+
+    { "name": "Go to Mail", "context": "People", "windows": { "type": "keys", "chord": "Ctrl+Shift+1" } },
+    { "name": "Go to Calendar", "context": "People", "windows": { "type": "keys", "chord": "Ctrl+Shift+2" } },
+    { "name": "Go to Copilot", "context": "People", "windows": { "type": "keys", "chord": "Ctrl+Shift+3" } },
+    { "name": "Go to People", "context": "People", "windows": { "type": "keys", "chord": "Ctrl+Shift+4" } },
+    { "name": "Delete a contact or contact list", "context": "People", "windows": { "type": "keys", "chord": "Delete" } },
+    { "name": "Create a contact", "context": "People", "windows": { "type": "keys", "chord": "Shift+N" } },
+    { "name": "Search for a contact", "context": "People", "windows": { "type": "keys", "chord": "Alt+Q" } },
+    { "name": "Dismiss changes while editing a contact", "context": "People", "windows": { "type": "keys", "chord": "Esc" } },
+    { "name": "Save a contact or contact list", "context": "People", "windows": { "type": "keys", "chord": "Ctrl+S" } },
+    { "name": "Select all contacts or contact lists", "context": "People", "windows": { "type": "keys", "chord": "Ctrl+A" } },
+    { "name": "Unselect all contacts or contact lists", "context": "People", "windows": { "type": "keys", "chord": "Esc" } },
+    { "name": "Edit a contact or contact list", "context": "People", "windows": { "type": "keys", "chord": "Shift+E" } },
+    { "name": "Move down in the contact or hub list", "context": "People", "windows": { "type": "keys", "chord": "Down" } },
+    { "name": "Move up in the contact or hub list", "context": "People", "windows": { "type": "keys", "chord": "Up" } },
+    { "name": "Create a contact list", "context": "People", "windows": { "type": "keys", "chord": "Shift+L" } },
+    { "name": "Display the list of People keyboard shortcuts", "context": "People", "windows": { "type": "keys", "chord": "Shift+/" } },
+    { "name": "Move the focus to the ribbon", "context": "People", "windows": { "type": "keys", "chord": "Alt+." } },
+    { "name": "Move the focus to the Home tab", "context": "People", "windows": { "type": "keys", "chord": "Alt+H" } },
+    { "name": "Move the focus to the View tab", "context": "People", "windows": { "type": "keys", "chord": "Alt+V" } },
+    { "name": "Move forward to the next area, button, link, or option", "context": "People", "windows": { "type": "keys", "chord": "Tab" } },
+    { "name": "Move backward to the previous area, button, or link", "context": "People", "windows": { "type": "keys", "chord": "Shift+Tab" } },
+    { "name": "Select additional contacts (already have one selected)", "context": "People", "windows": { "type": "sequence", "chords": ["Shift+Down", "Space"] } },
+    { "name": "Move down between options in a menu", "context": "People — menu focused", "windows": { "type": "keys", "chord": "Down" } },
+    { "name": "Move up between options in a menu", "context": "People — menu focused", "windows": { "type": "keys", "chord": "Up" } },
+    { "name": "Select or clear the checkbox for a contact or option", "context": "People", "windows": { "type": "keys", "chord": "Space" } },
+    { "name": "Clear all selections and refresh the page", "context": "People", "windows": { "type": "keys", "chord": "Shift+F5" } },
+    { "name": "Activate a button or link or open a menu", "context": "People", "windows": { "type": "keys", "chord": "Enter" } },
+    { "name": "Open the context menu when a contact is selected", "context": "People", "windows": { "type": "keys", "chord": "Shift+F10" } },
+    { "name": "Close a dialog box", "context": "People", "windows": { "type": "keys", "chord": "Esc" } }
+  ],
+  "defaults": {
+    "TUNE_CW": {
+      "name": "Select the current and next message",
+      "action": { "type": "keys", "chord": "Shift+Down" },
+      "accel": "light"
+    },
+    "TUNE_CCW": {
+      "name": "Select the current and previous message",
+      "action": { "type": "keys", "chord": "Shift+Up" },
+      "accel": "light"
+    },
+    "TUNE_TAP_1F": {
+      "name": "Create a new message or calendar event",
+      "action": { "type": "keys", "chord": "N" }
+    }
+  }
+}
