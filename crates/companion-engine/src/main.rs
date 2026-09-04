@@ -14,6 +14,7 @@
 #![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
 
 mod config_store;
+mod ipc;
 mod paths;
 mod pipeline;
 #[cfg(windows)]
@@ -124,9 +125,22 @@ fn main() -> Result<()> {
         tracing::warn!("could not apply start_at_login: {e}");
     }
 
-    // Channels: hook -> worker (bounded, hook never blocks), tray/watcher -> worker.
+    // Channels: hook -> worker (bounded, hook never blocks), tray/watcher -> worker,
+    // worker -> IPC clients (the configuration UI).
     let (ev_tx, ev_rx) = crossbeam_channel::bounded(64);
     let (ctrl_tx, ctrl_rx) = crossbeam_channel::unbounded::<Control>();
+    let (ipc_tx, ipc_rx) = crossbeam_channel::unbounded::<ipc::IpcMessage>();
+    if let Err(e) = ipc::start(
+        ipc_rx,
+        ipc::IpcMessage::Hello {
+            version: env!("CARGO_PKG_VERSION").into(),
+            config: config_path.display().to_string(),
+        },
+    ) {
+        tracing::warn!(
+            "IPC server unavailable, the configuration UI will not see live status: {e:#}"
+        );
+    }
 
     hook::set_allow_injected(args.allow_injected);
     let mut kb_hook = KeyboardHook::new(ev_tx);
@@ -159,6 +173,7 @@ fn main() -> Result<()> {
                     foreground_app,
                     foreground_title,
                     hook::set_reserved,
+                    ipc_tx,
                     SendInputSink,
                 )
             })
@@ -193,6 +208,7 @@ fn main() -> Result<()> {
             message_loop::run(|| {
                 for action in tray.poll() {
                     match action {
+                        TrayAction::OpenUi => open_ui(&config_path),
                         TrayAction::OpenConfigFile => open_path(&config_path),
                         TrayAction::OpenConfigFolder => {
                             if let Some(dir) = config_path.parent() {
@@ -247,6 +263,28 @@ fn main() -> Result<()> {
     kb_hook.stop();
     tracing::info!("naya-companion stopped");
     Ok(())
+}
+
+/// Launch the configuration UI (`naya-companion-ui.exe` next to this binary).
+/// Falls back to opening the config file when the UI is not installed.
+#[cfg(windows)]
+fn open_ui(config_path: &std::path::Path) {
+    let ui = std::env::current_exe()
+        .ok()
+        .and_then(|p| p.parent().map(|d| d.join("naya-companion-ui.exe")));
+    match ui {
+        Some(exe) if exe.exists() => {
+            if let Err(e) = std::process::Command::new(&exe).spawn() {
+                tracing::warn!("could not start {}: {e}", exe.display());
+            }
+        }
+        _ => {
+            tracing::info!(
+                "configuration UI not found next to the engine; opening the config file"
+            );
+            open_path(config_path);
+        }
+    }
 }
 
 #[cfg(windows)]

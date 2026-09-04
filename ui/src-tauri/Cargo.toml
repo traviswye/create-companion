@@ -1,0 +1,31 @@
+[package]
+name = "naya-companion-ui"
+description = "Configuration window for Naya Companion (not resident; the engine is naya-companion)"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[lib]
+name = "naya_companion_ui_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[features]
+# Enabled by `cargo tauri build`; pass `--features custom-protocol` to plain
+# `cargo build --release` so the window serves the bundled frontend instead
+# of the dev server.
+custom-protocol = ["tauri/custom-protocol"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+companion-core.workspace = true
+companion-platform.workspace = true
+tauri = { version = "2", features = [] }
+tauri-plugin-dialog = "2"
+serde.workspace = true
+serde_json.workspace = true
+anyhow.workspace = true
+dirs = "6"
+interprocess = "2"

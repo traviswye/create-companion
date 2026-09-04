@@ -10,7 +10,8 @@ pub mod instance;
 pub mod message_loop;
 
 pub use foreground::{
-    current as foreground_app, current_title as foreground_title, foreground_exe,
+    current as foreground_app, current_title as foreground_title, foreground_exe, visible_windows,
+    VisibleWindow,
 };
 pub use hook::KeyboardHook;
 pub use input::SendInputSink;

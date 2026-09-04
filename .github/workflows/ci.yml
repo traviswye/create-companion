@@ -33,5 +33,17 @@ jobs:
       - run: cargo clippy --all-targets -- -D warnings
         # macOS platform code lands in Phase 5; until then the engine only builds on Windows.
         continue-on-error: ${{ matrix.os == 'macos-latest' }}
-      - run: cargo test --workspace
+      - run: cargo test
         continue-on-error: ${{ matrix.os == 'macos-latest' }}
+      # Configuration UI (Tauri): frontend first, then the Rust shell that embeds it.
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: ui/package-lock.json
+      - run: npm ci
+        working-directory: ui
+      - run: npm run build
+        working-directory: ui
+      - run: cargo build --release -p naya-companion-ui --features naya-companion-ui/custom-protocol
+        if: matrix.os == 'windows-latest'

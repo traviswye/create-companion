@@ -10,8 +10,9 @@ into per-application actions (Chrome: switch tabs, Photoshop: brush size, deskto
 
 ## Status
 
-Phase 1 complete (Windows). The Tune is flashed once with F24 = clockwise, F23 = counterclockwise,
-F22 = one-finger tap; everything else is configured on the host.
+Phases 0–2 complete (Windows): engine + tray + configuration window. The Tune is flashed once
+(F24 = clockwise, F23 = counterclockwise, F22 = tap, F17–F20 = swipes); everything else is
+configured on the host.
 
 ## Run
 
@@ -25,8 +26,13 @@ cargo run -- --allow-injected  # treat synthetic F-keys as transport (testing wi
 
 - **Config**: `%APPDATA%\NayaCompanion\config.toml`. Edit and save; the engine reloads within
   a second. A file that fails to parse is logged and ignored, the previous config stays active.
-- **Tray menu**: active profile and last action, open config file/folder, reload, pause, start at
-  login, quit.
+- **Tray menu**: active profile and last action, **Open configuration...** (the UI), edit config
+  file, open folder, reload, pause, start at login, quit.
+- **Configuration window** (`naya-companion-ui.exe`, Tauri): pick a profile, click an action to
+  change it (search the catalog, record a shortcut, media, scroll, launch), set acceleration, add an
+  application from the running windows or by title for websites. Edits autosave and the engine
+  applies them live. Turn the dial while it is open and the detected input is shown with a
+  one-click edit. The window is not resident; close it and only the engine remains.
 - **Logs**: `%LOCALAPPDATA%\NayaCompanion\logs\companion.log.<date>` (and stderr in debug
   builds). `RUST_LOG=debug` shows every decoded event; otherwise `[engine] log_level` applies.
 - Only F-keys listed under `[transport]` are intercepted. Everything else passes through.
@@ -69,11 +75,17 @@ Your live config is written once, on first run; to pick up new bundled profiles 
 | `crates/companion-platform` | Win32 implementation: low-level keyboard hook + foreground watch, `SendInput` executor, autostart, single instance, message loop. macOS later. |
 | `crates/companion-engine` | The `naya-companion` binary: pipeline thread, config watcher, tray, logging. |
 | `presets/` | Generated action catalog and the default config (`tools/gen_presets.py`). |
+| `ui/` | Configuration window: Tauri 2 shell (`ui/src-tauri`) + Vite/React frontend (`ui/src`). |
 
 ## Develop
 
 ```powershell
-cargo test
+cargo test                       # engine + core (the UI crate is not a default member)
 cargo clippy --all-targets
 cargo fmt --all
+cd ui; npm install; npm run tauri dev     # UI with hot reload (needs the engine running for live status)
+cd ui; npm run build; cd ..; cargo build --release -p naya-companion -p naya-companion-ui --features naya-companion-ui/custom-protocol
 ```
+
+The engine looks for `naya-companion-ui.exe` next to itself, so build both into the same `target`
+directory (as above) or install them side by side.

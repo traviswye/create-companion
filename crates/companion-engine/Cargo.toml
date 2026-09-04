@@ -21,6 +21,12 @@ crossbeam-channel.workspace = true
 ctrlc.workspace = true
 notify = "8"
 dirs = "6"
+serde.workspace = true
+serde_json.workspace = true
+interprocess = "2"
 
 [target.'cfg(windows)'.dependencies]
 tray-icon = "0.24"
+
+[build-dependencies]
+embed-manifest = "1"

@@ -155,12 +155,14 @@ Goal: one Tune firmware mapping behaves differently in two apps.
 - [x] 2026-09-04 follow-up: swipes flashed (F17–F20) → every profile binds the four Tune swipes; new Terminal (Windows Terminal / PowerShell / cmd) and YouTube profiles; `match.window_title` substring rule for website profiles (title read only at event time, most-specific match wins). 12 app profiles.
 - Deferred: `docs/flash-once.md`; macOS CI job allowed to fail until Phase 5.
 
-### Phase 2 — Configuration UI (Tauri 2)
-- [ ] `ui/` scaffold; IPC client to engine. Engine exposes `get_config`, `set_config`, `status`, `subscribe_events` (for Detect Input).
-- [ ] Screens: profile list (add app from `apps.json`, a running process, or browse for an exe), mapping table, searchable action picker with the scope's categories, custom shortcut recorder, acceleration selector.
-- [ ] Detect Input: UI subscribes to the engine's event stream, shows `Detected: Tune / Clockwise`.
-- [ ] Save writes TOML; the engine's watcher reloads; UI shows "applied".
-- [ ] UI process exits on window close; tray "Open Configuration" relaunches it.
+### Phase 2 — Configuration UI (Tauri 2) — DONE 2026-09-04
+- [x] `ui/` Tauri 2 + Vite + React/TS app, `naya-companion-ui.exe`. Non-resident: it is a plain window that exits on close. Workspace member but not a default member (needs `ui/dist`); build with `cd ui && npm run tauri build` or `cargo build -p naya-companion-ui` after `npm run build`.
+- [x] Engine IPC (`crates/companion-engine/src/ipc.rs`): named pipe `NayaCompanion.sock` broadcasting newline-delimited JSON — `hello`, `status`, `event`, `config_applied`, `config_rejected`. The UI only listens; config edits go through the file, which the engine hot-reloads.
+- [x] Tray: "Open configuration..." launches the UI next to the engine exe (falls back to opening the TOML).
+- [x] Screens: profile list (Default + apps, live profile marked), match rules editor (exe / title / bundle chips), mapping table for every transport event with inherited-from-Default display, acceleration selector, searchable action picker (217-entry catalog by category, keyboard shortcut recorder + typed chord validated by the core parser, media, scroll, launch / command, do-nothing, use-default), add application (running windows via `visible_windows()`, browse for exe, title-contains for websites), remove profile.
+- [x] Detect Input: live `event` messages show "Detected: Tune / Clockwise in Browser → Ctrl+Tab" with a one-click "Change for <profile>" and a row flash.
+- [x] Save: autosave 600 ms after the last edit, atomic write, engine reloads; status shows "Saved · applied by engine ✓" when `config_applied` arrives, or the engine's rejection message.
+- Deferred: transport (which F-key per gesture) is edited in the TOML for now; macOS bundle ids are editable but untested.
 
 ### Phase 3 — Tune enhancements
 - [ ] `accel.rs` curves + per-mapping multiplier; repeat-count executor.

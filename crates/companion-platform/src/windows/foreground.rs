@@ -7,14 +7,15 @@
 use crate::PlatformError;
 use companion_core::profile::AppIdentity;
 use std::sync::RwLock;
-use windows::Win32::Foundation::{CloseHandle, HWND};
+use windows::core::BOOL;
+use windows::Win32::Foundation::{CloseHandle, HWND, LPARAM};
 use windows::Win32::System::Threading::{
     OpenProcess, QueryFullProcessImageNameW, PROCESS_NAME_WIN32, PROCESS_QUERY_LIMITED_INFORMATION,
 };
 use windows::Win32::UI::Accessibility::{SetWinEventHook, UnhookWinEvent, HWINEVENTHOOK};
 use windows::Win32::UI::WindowsAndMessaging::{
-    GetForegroundWindow, GetWindowTextW, GetWindowThreadProcessId, EVENT_SYSTEM_FOREGROUND,
-    WINEVENT_OUTOFCONTEXT, WINEVENT_SKIPOWNPROCESS,
+    EnumWindows, GetForegroundWindow, GetWindowTextW, GetWindowThreadProcessId, IsWindowVisible,
+    EVENT_SYSTEM_FOREGROUND, WINEVENT_OUTOFCONTEXT, WINEVENT_SKIPOWNPROCESS,
 };
 
 static CURRENT: RwLock<Option<AppIdentity>> = RwLock::new(None);
@@ -81,6 +82,38 @@ pub fn current_title() -> Option<String> {
         }
         Some(String::from_utf16_lossy(&buf[..n as usize]))
     }
+}
+
+/// A top-level window the user can see: its owning executable and title.
+#[derive(Debug, Clone, PartialEq, Eq)]
+pub struct VisibleWindow {
+    pub exe: String,
+    pub title: String,
+}
+
+/// Enumerate visible, titled top-level windows (for "add application" pickers).
+pub fn visible_windows() -> Vec<VisibleWindow> {
+    unsafe extern "system" fn cb(hwnd: HWND, lparam: LPARAM) -> BOOL {
+        // SAFETY: lparam is the Vec we passed below; the callback runs synchronously.
+        let out = unsafe { &mut *(lparam.0 as *mut Vec<VisibleWindow>) };
+        if unsafe { IsWindowVisible(hwnd) }.as_bool() {
+            let mut buf = [0u16; 512];
+            let n = unsafe { GetWindowTextW(hwnd, &mut buf) };
+            if n > 0 {
+                let title = String::from_utf16_lossy(&buf[..n as usize]);
+                if let Ok(Some(AppIdentity::WindowsExe(exe))) = exe_for_hwnd(hwnd) {
+                    out.push(VisibleWindow { exe, title });
+                }
+            }
+        }
+        BOOL(1)
+    }
+    let mut out: Vec<VisibleWindow> = Vec::new();
+    // SAFETY: standard EnumWindows with a pointer to a live Vec.
+    unsafe {
+        let _ = EnumWindows(Some(cb), LPARAM(&mut out as *mut _ as isize));
+    }
+    out
 }
 
 fn set_current(id: Option<AppIdentity>) {

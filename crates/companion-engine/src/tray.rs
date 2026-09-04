@@ -5,7 +5,8 @@
 //! Active: Photoshop          (disabled, informational)
 //! Last: TUNE_CW -> ]         (disabled, informational)
 //! ---
-//! Open configuration file
+//! Open configuration...        (launches naya-companion-ui)
+//! Edit configuration file
 //! Open configuration folder
 //! Reload configuration
 //! [ ] Pause companion
@@ -21,6 +22,7 @@ use tray_icon::{Icon, TrayIcon, TrayIconBuilder};
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
 pub enum TrayAction {
+    OpenUi,
     OpenConfigFile,
     OpenConfigFolder,
     Reload,
@@ -39,6 +41,7 @@ pub struct Tray {
 }
 
 struct Ids {
+    open_ui: MenuId,
     open_file: MenuId,
     open_folder: MenuId,
     reload: MenuId,
@@ -80,7 +83,8 @@ impl Tray {
     pub fn new(autostart_enabled: bool) -> Result<Self> {
         let active = MenuItem::new("Active: —", false, None);
         let last = MenuItem::new("Last: —", false, None);
-        let open_file = MenuItem::new("Open configuration file", true, None);
+        let open_ui = MenuItem::new("Open configuration...", true, None);
+        let open_file = MenuItem::new("Edit configuration file", true, None);
         let open_folder = MenuItem::new("Open configuration folder", true, None);
         let reload = MenuItem::new("Reload configuration", true, None);
         let pause = CheckMenuItem::new("Pause companion", true, false, None);
@@ -92,6 +96,7 @@ impl Tray {
             &active,
             &last,
             &PredefinedMenuItem::separator(),
+            &open_ui,
             &open_file,
             &open_folder,
             &reload,
@@ -112,6 +117,7 @@ impl Tray {
         Ok(Self {
             icon,
             ids: Ids {
+                open_ui: open_ui.id().clone(),
                 open_file: open_file.id().clone(),
                 open_folder: open_folder.id().clone(),
                 reload: reload.id().clone(),
@@ -151,7 +157,9 @@ impl Tray {
             .try_iter()
             .filter_map(|ev| {
                 let id = ev.id();
-                Some(if *id == self.ids.open_file {
+                Some(if *id == self.ids.open_ui {
+                    TrayAction::OpenUi
+                } else if *id == self.ids.open_file {
                     TrayAction::OpenConfigFile
                 } else if *id == self.ids.open_folder {
                     TrayAction::OpenConfigFolder

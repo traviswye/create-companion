@@ -3,6 +3,7 @@
 //! [`Engine`] holds the decision logic and is OS-free so it can be unit-tested
 //! with a mock sink. [`run`] wraps it in the worker thread's loop.
 
+use crate::ipc::IpcMessage;
 use anyhow::{Context, Result};
 use companion_core::accel::{AccelCurve, RotaryState};
 use companion_core::action::Action;
@@ -172,16 +173,28 @@ pub fn run(
     foreground: impl Fn() -> Option<AppIdentity>,
     foreground_title: impl Fn() -> Option<String>,
     on_table_change: impl Fn(&TransportTable),
+    ipc: crossbeam_channel::Sender<IpcMessage>,
     mut sink: impl ActionSink,
 ) -> Result<()> {
     let mut engine = Engine::new(&cfg)?;
     on_table_change(engine.table());
+    let _ = ipc.send(IpcMessage::Status {
+        profile: engine.profile_name(&AppContext::default()).to_owned(),
+        paused: false,
+    });
 
     let update = |f: &dyn Fn(&mut Status)| {
-        if let Ok(mut s) = status.lock() {
-            f(&mut s);
-        }
+        let snapshot = match status.lock() {
+            Ok(mut s) => {
+                f(&mut s);
+                Some((s.profile.clone(), s.paused))
+            }
+            Err(_) => None,
+        };
         on_status();
+        if let Some((profile, paused)) = snapshot {
+            let _ = ipc.send(IpcMessage::Status { profile, paused });
+        }
     };
 
     let mut last_app: Option<AppIdentity> = None;
@@ -201,8 +214,14 @@ pub fn run(
                                 transport_codes = engine.table().len(),
                                 "configuration applied"
                             );
+                            let _ = ipc.send(IpcMessage::ConfigApplied);
                         }
-                        Err(e) => tracing::warn!("config rejected, keeping previous: {e:#}"),
+                        Err(e) => {
+                            tracing::warn!("config rejected, keeping previous: {e:#}");
+                            let _ = ipc.send(IpcMessage::ConfigRejected {
+                                error: format!("{e:#}"),
+                            });
+                        }
                     }
                 }
                 Ok(Control::SetPaused(p)) => {
@@ -237,6 +256,12 @@ pub fn run(
                         Err(e) => tracing::warn!(event = %h.event, profile = %h.profile, %action, "execute failed: {e}"),
                     }
                     let ev_name = h.event.to_string();
+                    let _ = ipc.send(IpcMessage::Event {
+                        event: ev_name.clone(),
+                        profile: h.profile.clone(),
+                        action: action.clone(),
+                        repeat: h.repeat,
+                    });
                     update(&|s| {
                         s.last_event = Some(ev_name.clone());
                         s.last_action = Some(action.clone());

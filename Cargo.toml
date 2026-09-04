@@ -4,6 +4,14 @@ members = [
     "crates/companion-core",
     "crates/companion-platform",
     "crates/companion-engine",
+    "ui/src-tauri",
+]
+# The Tauri UI needs the built frontend (ui/dist) to compile, so plain
+# `cargo build` / `cargo test` skip it. Build it with `npm run tauri build` in ui/.
+default-members = [
+    "crates/companion-core",
+    "crates/companion-platform",
+    "crates/companion-engine",
 ]
 
 [workspace.package]
@@ -17,6 +25,7 @@ companion-core = { path = "crates/companion-core" }
 companion-platform = { path = "crates/companion-platform" }
 
 serde = { version = "1", features = ["derive"] }
+serde_json = "1"
 toml = "0.8"
 thiserror = "2"
 anyhow = "1"
