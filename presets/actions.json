@@ -14,7 +14,7 @@
    },
    "mac": {
     "type": "keys",
-    "chord": "Win+D"
+    "chord": "Cmd+D"
    }
   },
   {
@@ -27,7 +27,7 @@
    },
    "mac": {
     "type": "keys",
-    "chord": "Shift+Win+W"
+    "chord": "Shift+Cmd+W"
    }
   },
   {
@@ -40,7 +40,7 @@
    },
    "mac": {
     "type": "keys",
-    "chord": "Win+W"
+    "chord": "Cmd+W"
    }
   },
   {
@@ -53,7 +53,7 @@
    },
    "mac": {
     "type": "keys",
-    "chord": "Win+G"
+    "chord": "Cmd+G"
    }
   },
   {
@@ -66,7 +66,7 @@
    },
    "mac": {
     "type": "keys",
-    "chord": "Shift+Win+G"
+    "chord": "Shift+Cmd+G"
    }
   },
   {
@@ -79,7 +79,7 @@
    },
    "mac": {
     "type": "keys",
-    "chord": "Win+["
+    "chord": "Cmd+["
    }
   },
   {
@@ -92,7 +92,7 @@
    },
    "mac": {
     "type": "keys",
-    "chord": "Win+]"
+    "chord": "Cmd+]"
    }
   },
   {
@@ -105,7 +105,7 @@
    },
    "mac": {
     "type": "keys",
-    "chord": "Win+T"
+    "chord": "Cmd+T"
    }
   },
   {
@@ -118,7 +118,7 @@
    },
    "mac": {
     "type": "keys",
-    "chord": "Win+N"
+    "chord": "Cmd+N"
    }
   },
   {
@@ -157,7 +157,7 @@
    },
    "mac": {
     "type": "keys",
-    "chord": "Win+R"
+    "chord": "Cmd+R"
    }
   },
   {
@@ -170,7 +170,7 @@
    },
    "mac": {
     "type": "keys",
-    "chord": "Shift+Win+T"
+    "chord": "Shift+Cmd+T"
    }
   },
   {
@@ -183,7 +183,7 @@
    },
    "mac": {
     "type": "keys",
-    "chord": "Win+0"
+    "chord": "Cmd+0"
    }
   },
   {
@@ -196,7 +196,7 @@
    },
    "mac": {
     "type": "keys",
-    "chord": "Win+="
+    "chord": "Cmd+="
    }
   },
   {
@@ -209,7 +209,7 @@
    },
    "mac": {
     "type": "keys",
-    "chord": "Win+-"
+    "chord": "Cmd+-"
    }
   },
   {
@@ -235,7 +235,7 @@
    },
    "mac": {
     "type": "keys",
-    "chord": "Shift+Win+G"
+    "chord": "Shift+Cmd+G"
    }
   },
   {
@@ -248,7 +248,7 @@
    },
    "mac": {
     "type": "keys",
-    "chord": "Shift+Win+N"
+    "chord": "Shift+Cmd+N"
    }
   },
   {
@@ -261,7 +261,7 @@
    },
    "mac": {
     "type": "keys",
-    "chord": "Alt+Win+Backspace"
+    "chord": "Alt+Cmd+Backspace"
    }
   },
   {
@@ -274,7 +274,7 @@
    },
    "mac": {
     "type": "keys",
-    "chord": "Win+R"
+    "chord": "Cmd+R"
    }
   },
   {
@@ -447,7 +447,7 @@
    },
    "mac": {
     "type": "keys",
-    "chord": "Shift+Win+4"
+    "chord": "Shift+Cmd+4"
    }
   },
   {
@@ -469,7 +469,7 @@
    },
    "mac": {
     "type": "keys",
-    "chord": "Win+W"
+    "chord": "Cmd+W"
    }
   },
   {
@@ -482,7 +482,7 @@
    },
    "mac": {
     "type": "keys",
-    "chord": "Win+Q"
+    "chord": "Cmd+Q"
    }
   },
   {
@@ -508,7 +508,7 @@
    },
    "mac": {
     "type": "keys",
-    "chord": "Shift+Win+`"
+    "chord": "Shift+Cmd+`"
    }
   },
   {
@@ -521,7 +521,7 @@
    },
    "mac": {
     "type": "keys",
-    "chord": "Shift+Win+`"
+    "chord": "Shift+Cmd+`"
    }
   },
   {
@@ -534,7 +534,7 @@
    },
    "mac": {
     "type": "keys",
-    "chord": "Win+`"
+    "chord": "Cmd+`"
    }
   },
   {
@@ -547,7 +547,7 @@
    },
    "mac": {
     "type": "keys",
-    "chord": "Ctrl+Win+Space"
+    "chord": "Ctrl+Cmd+Space"
    }
   },
   {
@@ -560,7 +560,7 @@
    },
    "mac": {
     "type": "keys",
-    "chord": "Alt+Win+H"
+    "chord": "Alt+Cmd+H"
    }
   },
   {
@@ -573,7 +573,7 @@
    },
    "mac": {
     "type": "keys",
-    "chord": "Ctrl+Win+Q"
+    "chord": "Ctrl+Cmd+Q"
    }
   },
   {
@@ -595,7 +595,7 @@
    },
    "mac": {
     "type": "keys",
-    "chord": "Alt+Win+M"
+    "chord": "Alt+Cmd+M"
    }
   },
   {
@@ -608,7 +608,7 @@
    },
    "mac": {
     "type": "keys",
-    "chord": "Win+M"
+    "chord": "Cmd+M"
    }
   },
   {
@@ -657,7 +657,7 @@
    },
    "mac": {
     "type": "keys",
-    "chord": "Shift+Win+5"
+    "chord": "Shift+Cmd+5"
    }
   },
   {
@@ -670,7 +670,7 @@
    },
    "mac": {
     "type": "keys",
-    "chord": "Win+,"
+    "chord": "Cmd+,"
    }
   },
   {
@@ -683,7 +683,7 @@
    },
    "mac": {
     "type": "keys",
-    "chord": "Win+R"
+    "chord": "Cmd+R"
    }
   },
   {
@@ -709,7 +709,7 @@
    },
    "mac": {
     "type": "keys",
-    "chord": "Win+Tab"
+    "chord": "Cmd+Tab"
    }
   },
   {
@@ -722,7 +722,7 @@
    },
    "mac": {
     "type": "keys",
-    "chord": "Shift+Win+Tab"
+    "chord": "Shift+Cmd+Tab"
    }
   },
   {
@@ -774,7 +774,7 @@
    },
    "mac": {
     "type": "keys",
-    "chord": "Win+Tab"
+    "chord": "Cmd+Tab"
    }
   },
   {
@@ -787,7 +787,7 @@
    },
    "mac": {
     "type": "keys",
-    "chord": "Shift+Win+Tab"
+    "chord": "Shift+Cmd+Tab"
    }
   },
   {
@@ -809,7 +809,7 @@
    },
    "mac": {
     "type": "keys",
-    "chord": "Shift+Win+3"
+    "chord": "Shift+Cmd+3"
    }
   },
   {
@@ -835,7 +835,7 @@
    },
    "mac": {
     "type": "keys",
-    "chord": "Ctrl+Win+F"
+    "chord": "Ctrl+Cmd+F"
    }
   },
   {
@@ -848,7 +848,7 @@
    },
    "mac": {
     "type": "keys",
-    "chord": "Win+V"
+    "chord": "Cmd+V"
    }
   },
   {
@@ -861,7 +861,7 @@
    },
    "mac": {
     "type": "keys",
-    "chord": "Win+Down"
+    "chord": "Cmd+Down"
    }
   },
   {
@@ -887,7 +887,7 @@
    },
    "mac": {
     "type": "keys",
-    "chord": "Win+End"
+    "chord": "Cmd+End"
    }
   },
   {
@@ -900,7 +900,7 @@
    },
    "mac": {
     "type": "keys",
-    "chord": "Win+Home"
+    "chord": "Cmd+Home"
    }
   },
   {
@@ -913,7 +913,7 @@
    },
    "mac": {
     "type": "keys",
-    "chord": "Win+Up"
+    "chord": "Cmd+Up"
    }
   },
   {
@@ -939,7 +939,7 @@
    },
    "mac": {
     "type": "keys",
-    "chord": "Alt+Win+M"
+    "chord": "Alt+Cmd+M"
    }
   },
   {
@@ -952,7 +952,7 @@
    },
    "mac": {
     "type": "keys",
-    "chord": "Win+B"
+    "chord": "Cmd+B"
    }
   },
   {
@@ -965,7 +965,7 @@
    },
    "mac": {
     "type": "keys",
-    "chord": "Win+C"
+    "chord": "Cmd+C"
    }
   },
   {
@@ -978,7 +978,7 @@
    },
    "mac": {
     "type": "keys",
-    "chord": "Win+C"
+    "chord": "Cmd+C"
    }
   },
   {
@@ -991,7 +991,7 @@
    },
    "mac": {
     "type": "keys",
-    "chord": "Win+X"
+    "chord": "Cmd+X"
    }
   },
   {
@@ -1004,7 +1004,7 @@
    },
    "mac": {
     "type": "keys",
-    "chord": "Win+X"
+    "chord": "Cmd+X"
    }
   },
   {
@@ -1173,7 +1173,7 @@
    },
    "mac": {
     "type": "keys",
-    "chord": "Win+F"
+    "chord": "Cmd+F"
    }
   },
   {
@@ -1186,7 +1186,7 @@
    },
    "mac": {
     "type": "keys",
-    "chord": "Win+Down"
+    "chord": "Cmd+Down"
    }
   },
   {
@@ -1199,7 +1199,7 @@
    },
    "mac": {
     "type": "keys",
-    "chord": "Win+Up"
+    "chord": "Cmd+Up"
    }
   },
   {
@@ -1212,7 +1212,7 @@
    },
    "mac": {
     "type": "keys",
-    "chord": "Win+I"
+    "chord": "Cmd+I"
    }
   },
   {
@@ -1225,7 +1225,7 @@
    },
    "mac": {
     "type": "keys",
-    "chord": "Win+Right"
+    "chord": "Cmd+Right"
    }
   },
   {
@@ -1290,7 +1290,7 @@
    },
    "mac": {
     "type": "keys",
-    "chord": "Win+Left"
+    "chord": "Cmd+Left"
    }
   },
   {
@@ -1303,7 +1303,7 @@
    },
    "mac": {
     "type": "keys",
-    "chord": "Win+V"
+    "chord": "Cmd+V"
    }
   },
   {
@@ -1316,7 +1316,7 @@
    },
    "mac": {
     "type": "keys",
-    "chord": "Shift+Win+V"
+    "chord": "Shift+Cmd+V"
    }
   },
   {
@@ -1329,7 +1329,7 @@
    },
    "mac": {
     "type": "keys",
-    "chord": "Win+P"
+    "chord": "Cmd+P"
    }
   },
   {
@@ -1342,7 +1342,7 @@
    },
    "mac": {
     "type": "keys",
-    "chord": "Shift+Win+Z"
+    "chord": "Shift+Cmd+Z"
    }
   },
   {
@@ -1355,7 +1355,7 @@
    },
    "mac": {
     "type": "keys",
-    "chord": "Win+S"
+    "chord": "Cmd+S"
    }
   },
   {
@@ -1368,7 +1368,7 @@
    },
    "mac": {
     "type": "keys",
-    "chord": "Shift+Win+S"
+    "chord": "Shift+Cmd+S"
    }
   },
   {
@@ -1381,7 +1381,7 @@
    },
    "mac": {
     "type": "keys",
-    "chord": "Win+A"
+    "chord": "Cmd+A"
    }
   },
   {
@@ -1394,7 +1394,7 @@
    },
    "mac": {
     "type": "keys",
-    "chord": "Win+A"
+    "chord": "Cmd+A"
    }
   },
   {
@@ -1407,7 +1407,7 @@
    },
    "mac": {
     "type": "keys",
-    "chord": "Shift+Win+Down"
+    "chord": "Shift+Cmd+Down"
    }
   },
   {
@@ -1420,7 +1420,7 @@
    },
    "mac": {
     "type": "keys",
-    "chord": "Shift+Win+Right"
+    "chord": "Shift+Cmd+Right"
    }
   },
   {
@@ -1433,7 +1433,7 @@
    },
    "mac": {
     "type": "keys",
-    "chord": "Shift+Win+Up"
+    "chord": "Shift+Cmd+Up"
    }
   },
   {
@@ -1446,7 +1446,7 @@
    },
    "mac": {
     "type": "keys",
-    "chord": "Shift+Win+Left"
+    "chord": "Shift+Cmd+Left"
    }
   },
   {
@@ -1459,7 +1459,7 @@
    },
    "mac": {
     "type": "keys",
-    "chord": "Shift+Win+X"
+    "chord": "Shift+Cmd+X"
    }
   },
   {
@@ -1732,7 +1732,7 @@
    },
    "mac": {
     "type": "keys",
-    "chord": "Win+U"
+    "chord": "Cmd+U"
    }
   },
   {
@@ -1745,7 +1745,7 @@
    },
    "mac": {
     "type": "keys",
-    "chord": "Win+Z"
+    "chord": "Cmd+Z"
    }
   },
   {
@@ -1758,7 +1758,7 @@
    },
    "mac": {
     "type": "keys",
-    "chord": "Win+E"
+    "chord": "Cmd+E"
    }
   },
   {
@@ -1771,7 +1771,7 @@
    },
    "mac": {
     "type": "keys",
-    "chord": "Alt+Win+Up"
+    "chord": "Alt+Cmd+Up"
    }
   },
   {
@@ -1784,7 +1784,7 @@
    },
    "mac": {
     "type": "keys",
-    "chord": "Alt+Win+Up"
+    "chord": "Alt+Cmd+Up"
    }
   },
   {
@@ -1797,7 +1797,7 @@
    },
    "mac": {
     "type": "keys",
-    "chord": "Alt+Win+Down"
+    "chord": "Alt+Cmd+Down"
    }
   },
   {
@@ -1810,7 +1810,7 @@
    },
    "mac": {
     "type": "keys",
-    "chord": "Alt+Win+Down"
+    "chord": "Alt+Cmd+Down"
    }
   },
   {
@@ -1849,7 +1849,7 @@
    },
    "mac": {
     "type": "keys",
-    "chord": "Win+D"
+    "chord": "Cmd+D"
    }
   },
   {
@@ -1862,7 +1862,7 @@
    },
    "mac": {
     "type": "keys",
-    "chord": "Win+W"
+    "chord": "Cmd+W"
    }
   },
   {
@@ -1875,7 +1875,7 @@
    },
    "mac": {
     "type": "keys",
-    "chord": "Shift+Win+P"
+    "chord": "Shift+Cmd+P"
    }
   },
   {
@@ -1940,7 +1940,7 @@
    },
    "mac": {
     "type": "keys",
-    "chord": "Win+U"
+    "chord": "Cmd+U"
    }
   },
   {
@@ -1966,7 +1966,7 @@
    },
    "mac": {
     "type": "keys",
-    "chord": "Shift+Win+K"
+    "chord": "Shift+Cmd+K"
    }
   },
   {
@@ -1992,7 +1992,7 @@
    },
    "mac": {
     "type": "keys",
-    "chord": "Win+L"
+    "chord": "Cmd+L"
    }
   },
   {
@@ -2005,7 +2005,7 @@
    },
    "mac": {
     "type": "keys",
-    "chord": "Alt+Win+F"
+    "chord": "Alt+Cmd+F"
    }
   },
   {
@@ -2044,7 +2044,7 @@
    },
    "mac": {
     "type": "keys",
-    "chord": "Win+1"
+    "chord": "Cmd+1"
    }
   },
   {
@@ -2057,7 +2057,7 @@
    },
    "mac": {
     "type": "keys",
-    "chord": "Win+2"
+    "chord": "Cmd+2"
    }
   },
   {
@@ -2070,7 +2070,7 @@
    },
    "mac": {
     "type": "keys",
-    "chord": "Win+3"
+    "chord": "Cmd+3"
    }
   },
   {
@@ -2096,7 +2096,7 @@
    },
    "mac": {
     "type": "keys",
-    "chord": "Shift+Win+\\"
+    "chord": "Shift+Cmd+\\"
    }
   },
   {
@@ -2122,7 +2122,7 @@
    },
    "mac": {
     "type": "keys",
-    "chord": "Win+P"
+    "chord": "Cmd+P"
    }
   },
   {
@@ -2135,7 +2135,7 @@
    },
    "mac": {
     "type": "keys",
-    "chord": "Win+G"
+    "chord": "Cmd+G"
    }
   },
   {
@@ -2174,7 +2174,7 @@
    },
    "mac": {
     "type": "keys",
-    "chord": "Win+]"
+    "chord": "Cmd+]"
    }
   },
   {
@@ -2187,7 +2187,7 @@
    },
    "mac": {
     "type": "keys",
-    "chord": "Shift+Win+Enter"
+    "chord": "Shift+Cmd+Enter"
    }
   },
   {
@@ -2200,7 +2200,7 @@
    },
    "mac": {
     "type": "keys",
-    "chord": "Win+Enter"
+    "chord": "Cmd+Enter"
    }
   },
   {
@@ -2213,7 +2213,7 @@
    },
    "mac": {
     "type": "keys",
-    "chord": "Shift+Win+PageUp"
+    "chord": "Shift+Cmd+PageUp"
    }
   },
   {
@@ -2226,7 +2226,7 @@
    },
    "mac": {
     "type": "keys",
-    "chord": "Shift+Win+PageDown"
+    "chord": "Shift+Cmd+PageDown"
    }
   },
   {
@@ -2265,7 +2265,7 @@
    },
    "mac": {
     "type": "keys",
-    "chord": "Win+D"
+    "chord": "Cmd+D"
    }
   },
   {
@@ -2291,7 +2291,7 @@
    },
    "mac": {
     "type": "keys",
-    "chord": "Win+N"
+    "chord": "Cmd+N"
    }
   },
   {
@@ -2304,7 +2304,7 @@
    },
    "mac": {
     "type": "keys",
-    "chord": "Win+O"
+    "chord": "Cmd+O"
    }
   },
   {
@@ -2317,7 +2317,7 @@
    },
    "mac": {
     "type": "keys",
-    "chord": "Shift+Win+V"
+    "chord": "Shift+Cmd+V"
    }
   },
   {
@@ -2356,7 +2356,7 @@
    },
    "mac": {
     "type": "keys",
-    "chord": "Win+["
+    "chord": "Cmd+["
    }
   },
   {
@@ -2408,7 +2408,7 @@
    },
    "mac": {
     "type": "keys",
-    "chord": "Shift+Win+L"
+    "chord": "Shift+Cmd+L"
    }
   },
   {
@@ -2421,7 +2421,7 @@
    },
    "mac": {
     "type": "keys",
-    "chord": "Shift+Win+L"
+    "chord": "Shift+Cmd+L"
    }
   },
   {
@@ -2434,7 +2434,7 @@
    },
    "mac": {
     "type": "keys",
-    "chord": "Shift+Win+E"
+    "chord": "Shift+Cmd+E"
    }
   },
   {
@@ -2447,7 +2447,7 @@
    },
    "mac": {
     "type": "keys",
-    "chord": "Shift+Win+X"
+    "chord": "Shift+Cmd+X"
    }
   },
   {
@@ -2460,7 +2460,7 @@
    },
    "mac": {
     "type": "keys",
-    "chord": "Shift+Win+M"
+    "chord": "Shift+Cmd+M"
    }
   },
   {
@@ -2486,7 +2486,7 @@
    },
    "mac": {
     "type": "keys",
-    "chord": "Shift+Win+F"
+    "chord": "Shift+Cmd+F"
    }
   },
   {
@@ -2499,7 +2499,7 @@
    },
    "mac": {
     "type": "keys",
-    "chord": "Shift+Win+G"
+    "chord": "Shift+Cmd+G"
    }
   },
   {
@@ -2512,7 +2512,7 @@
    },
    "mac": {
     "type": "keys",
-    "chord": "Shift+Win+O"
+    "chord": "Shift+Cmd+O"
    }
   },
   {
@@ -2525,7 +2525,7 @@
    },
    "mac": {
     "type": "keys",
-    "chord": "Ctrl+Shift+Win+Left"
+    "chord": "Ctrl+Shift+Cmd+Left"
    }
   },
   {
@@ -2538,7 +2538,7 @@
    },
    "mac": {
     "type": "keys",
-    "chord": "Win+\\"
+    "chord": "Cmd+\\"
    }
   },
   {
@@ -2603,7 +2603,7 @@
    },
    "mac": {
     "type": "keys",
-    "chord": "Win+."
+    "chord": "Cmd+."
    }
   },
   {
@@ -2616,7 +2616,7 @@
    },
    "mac": {
     "type": "keys",
-    "chord": "Shift+Win+D"
+    "chord": "Shift+Cmd+D"
    }
   },
   {
@@ -2629,7 +2629,7 @@
    },
    "mac": {
     "type": "keys",
-    "chord": "Shift+Win+U"
+    "chord": "Shift+Cmd+U"
    }
   },
   {
@@ -2694,7 +2694,7 @@
    },
    "mac": {
     "type": "keys",
-    "chord": "Win+/"
+    "chord": "Cmd+/"
    }
   },
   {
@@ -2707,7 +2707,7 @@
    },
    "mac": {
     "type": "keys",
-    "chord": "Win+/"
+    "chord": "Cmd+/"
    }
   },
   {
@@ -2720,7 +2720,7 @@
    },
    "mac": {
     "type": "keys",
-    "chord": "Win+B"
+    "chord": "Cmd+B"
    }
   },
   {
@@ -2746,7 +2746,7 @@
    },
    "mac": {
     "type": "keys",
-    "chord": "Win+`"
+    "chord": "Cmd+`"
    }
   },
   {
@@ -2798,7 +2798,7 @@
    },
    "mac": {
     "type": "keys",
-    "chord": "Alt+Win+]"
+    "chord": "Alt+Cmd+]"
    }
   }
  ]

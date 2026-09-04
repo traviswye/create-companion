@@ -99,10 +99,13 @@ SM_CATEGORY = {
 }
 
 
-def translate(chord: str) -> str | None:
+def translate(chord: str, mac: bool = False) -> str | None:
+    """Naya token chord -> our chord grammar. On macOS LGUI is the Command key."""
     out = []
     for tok in (t.strip() for t in chord.split("+")):
-        if tok in TOKENS:
+        if mac and tok in ("LGUI", "RGUI"):
+            out.append("Cmd")
+        elif tok in TOKENS:
             out.append(TOKENS[tok])
         elif re.fullmatch(r"[A-Z]", tok):
             out.append(tok)
@@ -112,11 +115,12 @@ def translate(chord: str) -> str | None:
             out.append(tok)
         else:
             return None  # KP_*, CLICK, consumer keys: not a plain chord
-    mods = [t for t in out if t in ("Ctrl", "Shift", "Alt", "Win")]
-    keys_ = [t for t in out if t not in ("Ctrl", "Shift", "Alt", "Win")]
+    mod_names = ("Ctrl", "Shift", "Alt", "Win", "Cmd")
+    mods = [t for t in out if t in mod_names]
+    keys_ = [t for t in out if t not in mod_names]
     if len(keys_) != 1:
         return None
-    order = {"Ctrl": 0, "Shift": 1, "Alt": 2, "Win": 3}
+    order = {"Ctrl": 0, "Shift": 1, "Alt": 2, "Win": 3, "Cmd": 3}
     return "+".join(sorted(set(mods), key=order.get) + keys_)
 
 
@@ -144,7 +148,7 @@ def build_catalog() -> list[dict]:
         win = translate(a["win"]["chord"])
         if not win:
             continue
-        mac = translate(a["mac"]["chord"]) if "mac" in a else None
+        mac = translate(a["mac"]["chord"], mac=True) if "mac" in a else None
         ident = f"{ctx.replace('-', '_')}.{a['action'].lower()}"
         if ident in seen:
             continue
@@ -280,7 +284,7 @@ def build_apps(generic: list[dict], files: dict[str, dict]) -> list[dict]:
         rows = []
         for action_name, a in src["actions"].items():
             win = translate(a["windows"]["chord"]) if "windows" in a else None
-            mac = translate(a["mac"]["chord"]) if "mac" in a else None
+            mac = translate(a["mac"]["chord"], mac=True) if "mac" in a else None
             if not win and not mac:
                 continue
             ctx = a.get("context", "")
