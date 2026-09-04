@@ -15,6 +15,13 @@ use std::time::Duration;
 use tauri::{AppHandle, Emitter, Manager};
 
 const ACTIONS_CATALOG: &str = include_str!("../../../presets/actions.json");
+const APPS_CATALOG: &str = include_str!("../../../presets/apps.json");
+
+/// Per-application catalog: match rules, the app's own shortcuts, defaults.
+#[tauri::command]
+fn app_catalog() -> Result<serde_json::Value, String> {
+    serde_json::from_str(APPS_CATALOG).map_err(err)
+}
 const SOCKET_NAME: &str = "NayaCompanion.sock";
 
 /// Last known engine state, so a webview that subscribes after the pipe
@@ -86,12 +93,57 @@ fn load_config() -> Result<Loaded, String> {
         created = true;
     }
     let text = std::fs::read_to_string(&path).map_err(err)?;
-    let cfg = Config::from_toml(&text).map_err(|e| format!("{e:#}"))?;
+    let mut cfg = Config::from_toml(&text).map_err(|e| format!("{e:#}"))?;
+    backfill_names(&mut cfg);
     Ok(Loaded {
         path: path.display().to_string(),
         config: serde_json::to_value(&cfg).map_err(err)?,
         created,
     })
+}
+
+/// Configs written before bindings had a `name` get the bundled default's
+/// label wherever the action is still the default one.
+fn backfill_names(cfg: &mut Config) {
+    let Ok(defaults) = Config::from_toml(DEFAULT_CONFIG_TOML) else {
+        return;
+    };
+    let fill = |p: &mut companion_core::profile::Profile, d: &companion_core::profile::Profile| {
+        for (ev, b) in p.bindings.iter_mut() {
+            if b.name.is_none() {
+                if let Some(db) = d.bindings.get(ev) {
+                    if db.action == b.action {
+                        b.name = db.name.clone();
+                    }
+                }
+            }
+        }
+    };
+    fill(&mut cfg.default_profile, &defaults.default_profile);
+    for p in cfg.profiles.iter_mut() {
+        // Same name, or (older configs) a shared executable / bundle id with
+        // the same kind of title rule -- "Photoshop" vs "Adobe Photoshop".
+        let by_name = defaults
+            .profiles
+            .iter()
+            .find(|d| d.name.eq_ignore_ascii_case(&p.name));
+        let by_app = defaults.profiles.iter().find(|d| {
+            d.app_match.has_title_rule() == p.app_match.has_title_rule()
+                && (d.app_match.windows_exe.iter().any(|e| {
+                    p.app_match
+                        .windows_exe
+                        .iter()
+                        .any(|x| x.eq_ignore_ascii_case(e))
+                }) || d
+                    .app_match
+                    .macos_bundle
+                    .iter()
+                    .any(|b| p.app_match.macos_bundle.contains(b)))
+        });
+        if let Some(d) = by_name.or(by_app) {
+            fill(p, d);
+        }
+    }
 }
 
 /// Validate and write the config atomically. The engine's watcher applies it.
@@ -232,6 +284,7 @@ pub fn run() {
             save_config,
             default_config,
             action_catalog,
+            app_catalog,
             running_windows,
             validate_chord,
             open_config_folder,

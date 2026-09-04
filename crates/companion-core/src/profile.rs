@@ -106,16 +106,38 @@ pub struct Binding {
     pub action: Action,
     #[serde(default)]
     pub accel: AccelPreset,
+    /// Plain-English label shown in the UI ("Increase Brush Size"); the
+    /// action itself holds the chord. Optional for custom shortcuts.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub name: Option<String>,
 }
 
-#[derive(Debug, Clone, Default, PartialEq, Eq, Serialize, Deserialize)]
+fn default_true() -> bool {
+    true
+}
+
+#[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
 pub struct Profile {
     /// Human-readable name shown in the UI.
     pub name: String,
+    /// Disabled profiles keep their bindings but never match (the UI's star).
+    #[serde(default = "default_true")]
+    pub enabled: bool,
     #[serde(default, rename = "match")]
     pub app_match: AppMatch,
     #[serde(default)]
     pub bindings: HashMap<SemanticEvent, Binding>,
+}
+
+impl Default for Profile {
+    fn default() -> Self {
+        Self {
+            name: String::new(),
+            enabled: true,
+            app_match: AppMatch::default(),
+            bindings: HashMap::new(),
+        }
+    }
 }
 
 impl Profile {
@@ -142,7 +164,7 @@ impl ProfileResolver {
     pub fn resolve(&self, ctx: &AppContext) -> &Profile {
         let mut best: Option<&Profile> = None;
         for p in &self.apps {
-            if !p.app_match.matches(ctx) {
+            if !p.enabled || !p.app_match.matches(ctx) {
                 continue;
             }
             match best {
@@ -192,6 +214,7 @@ mod tests {
                 chord: KeyChord(s.into()),
             },
             accel: AccelPreset::None,
+            name: None,
         }
     }
 
@@ -212,6 +235,7 @@ mod tests {
                             key: MediaKey::VolumeUp,
                         },
                         accel: AccelPreset::Light,
+                        name: None,
                     },
                 ),
                 (
@@ -221,6 +245,7 @@ mod tests {
                             key: MediaKey::Mute,
                         },
                         accel: AccelPreset::None,
+                        name: None,
                     },
                 ),
             ]),
@@ -228,6 +253,7 @@ mod tests {
         };
         let chrome = Profile {
             name: "Chrome".into(),
+            enabled: true,
             app_match: AppMatch {
                 windows_exe: vec!["chrome.exe".into(), "msedge.exe".into()],
                 macos_bundle: vec!["com.google.Chrome".into()],
@@ -237,6 +263,7 @@ mod tests {
         };
         let youtube = Profile {
             name: "YouTube".into(),
+            enabled: true,
             app_match: AppMatch {
                 windows_exe: vec!["chrome.exe".into()],
                 macos_bundle: vec![],
@@ -302,6 +329,15 @@ mod tests {
         assert_eq!(r.resolve(&other).name, "Default");
         // No title available -> exe-only profile.
         assert_eq!(r.resolve(&win("chrome.exe")).name, "Chrome");
+    }
+
+    #[test]
+    fn disabled_profile_is_skipped_but_kept() {
+        let mut r = resolver();
+        r.apps[0].enabled = false;
+        assert_eq!(r.resolve(&win("chrome.exe")).name, "Default");
+        assert_eq!(r.app_profiles()[0].name, "Chrome");
+        assert!(!r.app_profiles()[0].bindings.is_empty());
     }
 
     #[test]

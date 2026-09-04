@@ -120,8 +120,8 @@ kbd {
 .chip-add input { padding: 3px 8px; font-size: 12px; width: 170px; }
 
 table.map { width: 100%; border-collapse: collapse; }
-table.map th { text-align: left; font-size: 12px; color: var(--muted); font-weight: 500; padding: 8px 16px; border-bottom: 1px solid var(--line); }
-table.map td { padding: 10px 16px; border-bottom: 1px solid var(--line); vertical-align: middle; }
+table.map th { text-align: left; font-size: 12px; color: var(--muted); font-weight: 500; padding: 8px 12px; border-bottom: 1px solid var(--line); }
+table.map td { padding: 10px 12px; border-bottom: 1px solid var(--line); vertical-align: middle; }
 table.map tr:last-child td { border-bottom: 0; }
 table.map tr.flash td { background: var(--accent-soft); transition: background .2s; }
 table.map .ev .module { color: var(--muted); font-size: 12px; }
@@ -161,3 +161,22 @@ table.map .actions { white-space: nowrap; text-align: right; }
 .recorder.armed { border-color: var(--accent); background: var(--accent-soft); }
 .error { color: var(--err); font-size: 12px; }
 .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
+/* ---- nav: search, tabs, stars, pinned add ---- */
+.nav-tools { padding: 6px 12px 8px; display: grid; gap: 8px; }
+.nav-tools input { width: 100%; padding: 6px 10px; font-size: 13px; }
+.seg { display: grid; grid-template-columns: 1fr 1fr; background: var(--panel-2); border: 1px solid var(--line); border-radius: 8px; padding: 2px; }
+.seg button { border: 0; background: transparent; padding: 4px 6px; font-size: 12px; border-radius: 6px; }
+.seg button.on { background: var(--panel); box-shadow: 0 1px 2px rgba(0,0,0,.12); }
+.star { border: 0; background: transparent; padding: 0 4px; font-size: 15px; line-height: 1; color: var(--muted); cursor: pointer; }
+.star.on { color: var(--accent); }
+.star:hover { color: var(--accent); }
+.profile-item.dim .name { color: var(--muted); }
+.nav-empty { padding: 14px 12px; font-size: 12px; color: var(--muted); }
+.nav-add { padding: 8px 12px; border-top: 1px solid var(--line); }
+.nav-add button { width: 100%; }
+table.map .keys { white-space: nowrap; }
+table.map .name-muted { color: var(--muted); }
+table.map td.action { min-width: 120px; }
+.card { overflow-x: auto; }
+table.map .ev > div:first-child { white-space: nowrap; }

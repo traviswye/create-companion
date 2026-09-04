@@ -1,6 +1,6 @@
 {
  "_meta": {
-  "source": "tools/gen_presets.py from docs/reference/action-chords.json",
+  "source": "tools/gen_presets.py from reference/action-chords.json",
   "count": 217
  },
  "actions": [

@@ -1,7 +1,7 @@
 //! System tray icon and menu (scope §15).
 //!
 //! ```text
-//! Naya Companion
+//! Create Companion
 //! Active: Photoshop          (disabled, informational)
 //! Last: TUNE_CW -> ]         (disabled, informational)
 //! ---
@@ -109,7 +109,7 @@ impl Tray {
 
         let icon = TrayIconBuilder::new()
             .with_menu(Box::new(menu))
-            .with_tooltip("Naya Companion")
+            .with_tooltip("Create Companion")
             .with_icon(make_icon()?)
             .build()
             .context("creating tray icon")?;

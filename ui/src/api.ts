@@ -1,6 +1,6 @@
 import { invoke } from "@tauri-apps/api/core";
 import { listen, type UnlistenFn } from "@tauri-apps/api/event";
-import type { CatalogEntry, Config, EngineMsg, WindowInfo } from "./types";
+import type { AppEntry, CatalogEntry, Config, EngineMsg, WindowInfo } from "./types";
 
 export interface Loaded {
   path: string;
@@ -15,6 +15,10 @@ export const api = {
   actionCatalog: async () => {
     const v = await invoke<{ actions: CatalogEntry[] }>("action_catalog");
     return v.actions;
+  },
+  appCatalog: async () => {
+    const v = await invoke<{ apps: AppEntry[] }>("app_catalog");
+    return v.apps;
   },
   runningWindows: () => invoke<WindowInfo[]>("running_windows"),
   validateChord: (chord: string) => invoke<string>("validate_chord", { chord }),

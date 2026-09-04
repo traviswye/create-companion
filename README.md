@@ -1,4 +1,6 @@
-# Naya Companion
+# Create Companion
+
+(Repository and binaries keep the `naya-companion` name; the product is **Create Companion**, after the Naya Create keyboard.)
 
 Lightweight always-on host engine for the Naya Create's Tune and Touch modules. The keyboard is
 flashed **once** so module gestures emit F17–F24; the companion swallows those keys and turns them
@@ -28,11 +30,15 @@ cargo run -- --allow-injected  # treat synthetic F-keys as transport (testing wi
   a second. A file that fails to parse is logged and ignored, the previous config stays active.
 - **Tray menu**: active profile and last action, **Open configuration...** (the UI), edit config
   file, open folder, reload, pause, start at login, quit.
-- **Configuration window** (`naya-companion-ui.exe`, Tauri): pick a profile, click an action to
-  change it (search the catalog, record a shortcut, media, scroll, launch), set acceleration, add an
-  application from the running windows or by title for websites. Edits autosave and the engine
-  applies them live. Turn the dial while it is open and the detected input is shown with a
-  one-click edit. The window is not resident; close it and only the engine remains.
+- **Configuration window** (`naya-companion-ui.exe`, Tauri): the left column lists **Active**
+  profiles and everything **Available** in the catalog (29 apps and sites, 4,969 imported
+  shortcuts), with a search box; the star activates an app with its default mappings or disables
+  a profile while keeping its mappings. Each mapping shows the plain-English **Action** and the
+  **Keys** it sends. Click an action to change it: the app's own shortcuts, the generic catalog,
+  a recorded shortcut, media, scroll, launch. Add an application from the running windows or by
+  window title for websites. Edits autosave and the engine applies them live. Turn the dial
+  while it is open and the detected input is shown with a one-click edit. The window is not
+  resident; close it and only the engine remains.
 - **Logs**: `%LOCALAPPDATA%\NayaCompanion\logs\companion.log.<date>` (and stderr in debug
   builds). `RUST_LOG=debug` shows every decoded event; otherwise `[engine] log_level` applies.
 - Only F-keys listed under `[transport]` are intercepted. Everything else passes through.
@@ -62,7 +68,10 @@ executables. A title rule always beats an executable-only rule, so YouTube wins 
 YouTube tab is active. Titles are read from the foreground window only at the moment a dial event
 arrives, only when some profile has a title rule, and are never logged or stored.
 
-Regenerate the bundled presets with `python tools/gen_presets.py` (reads `reference/action-chords.json`, a snapshot from the NayaOS project; see `reference/ATTRIBUTION.md`).
+Regenerate the bundled presets with `python tools/gen_presets.py`. It reads `reference/action-chords.json`
+(NayaOS action vocabulary) and `reference/app-shortcuts.json` (ShortcutMapper, MIT; 20 apps) and writes
+`presets/actions.json` (generic catalog), `presets/apps.json` (per-app catalog with match rules, shortcuts
+and defaults) and `presets/default-config.toml`. See `reference/ATTRIBUTION.md`.
 Your live config is written once, on first run; to pick up new bundled profiles either delete
 `%APPDATA%\NayaCompanion\config.toml` and restart, or copy the pieces you want from
 `cargo run -- --print-config`.

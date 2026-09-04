@@ -1,12 +1,15 @@
 #!/usr/bin/env python3
-"""Generate the bundled presets from the NayaOS reference data.
+"""Generate the bundled presets from the reference data.
 
-Outputs (checked in, regenerate when the reference data changes):
-  presets/actions.json         action catalog for the Phase 2 picker
+Outputs (checked in, regenerate when the reference data or the tables below change):
+  presets/actions.json         generic action catalog (browser / system / text / ...)
+  presets/apps.json            per-application catalog: match rules, the app's own
+                               shortcuts (from ShortcutMapper), and default bindings
   presets/default-config.toml  first-run config embedded in the engine
 
 Sources (reference/, a snapshot of NayaOS docs/reference; see reference/ATTRIBUTION.md):
   action-chords.json   NayaFlow's action vocabulary with per-platform chords
+  app-shortcuts.json   ShortcutMapper import: 5,311 shortcuts across 20 apps (MIT)
 """
 from __future__ import annotations
 
@@ -65,6 +68,12 @@ def translate(chord: str) -> str | None:
     return "+".join(sorted(set(mods), key=order.get) + keys_)
 
 
+def slug(s: str) -> str:
+    return re.sub(r"[^a-z0-9]+", "_", s.lower()).strip("_")
+
+
+# ---- generic catalog --------------------------------------------------------
+
 def build_catalog() -> list[dict]:
     data = json.loads((REF / "action-chords.json").read_text(encoding="utf-8"))["actions"]
     catalog: list[dict] = []
@@ -108,8 +117,8 @@ def build_catalog() -> list[dict]:
     return catalog
 
 
-# ---- default profiles -------------------------------------------------------
-# Each binding: (event, action, accel).
+# ---- applications -----------------------------------------------------------
+# Hand-authored apps. Bindings: (event, name, action, accel).
 
 def keys(chord: str) -> dict:
     return {"type": "keys", "chord": chord}
@@ -126,13 +135,13 @@ def scroll(direction: str) -> dict:
 DEFAULT_PROFILE = {
     "name": "Default",
     "bindings": [
-        ("TUNE_CW", media("volume_up"), "light"),
-        ("TUNE_CCW", media("volume_down"), "light"),
-        ("TUNE_PRESS", media("mute"), None),
-        ("TUNE_SWIPE_LEFT", media("previous_track"), None),
-        ("TUNE_SWIPE_RIGHT", media("next_track"), None),
-        ("TUNE_SWIPE_UP", media("play_pause"), None),
-        ("TUNE_SWIPE_DOWN", keys("Win+Tab"), None),          # Task view
+        ("TUNE_CW", "Volume up", media("volume_up"), "light"),
+        ("TUNE_CCW", "Volume down", media("volume_down"), "light"),
+        ("TUNE_PRESS", "Mute", media("mute"), None),
+        ("TUNE_SWIPE_LEFT", "Previous track", media("previous_track"), None),
+        ("TUNE_SWIPE_RIGHT", "Next track", media("next_track"), None),
+        ("TUNE_SWIPE_UP", "Play / pause", media("play_pause"), None),
+        ("TUNE_SWIPE_DOWN", "Task view", keys("Win+Tab"), None),
     ],
 }
 
@@ -140,178 +149,321 @@ BROWSER_EXE = ["chrome.exe", "msedge.exe", "firefox.exe", "brave.exe", "vivaldi.
 BROWSER_BUNDLE = ["com.google.Chrome", "com.microsoft.edgemac", "org.mozilla.firefox",
                   "com.brave.Browser", "com.apple.Safari"]
 
-# Order matters only for ties; a profile with a window_title rule always beats
-# an exe-only profile for the same app, so YouTube can sit after Browser.
+# id, name, kind, match, bindings. Order = order in the default config.
 PROFILES = [
     {
-        "name": "Browser",
-        "windows_exe": BROWSER_EXE,
-        "macos_bundle": BROWSER_BUNDLE,
+        "id": "browser", "name": "Browser", "kind": "app",
+        "windows_exe": BROWSER_EXE, "macos_bundle": BROWSER_BUNDLE,
         "bindings": [
-            ("TUNE_CW", keys("Ctrl+Tab"), None),
-            ("TUNE_CCW", keys("Ctrl+Shift+Tab"), None),
-            ("TUNE_PRESS", keys("Ctrl+T"), None),
-            ("TUNE_SWIPE_LEFT", keys("Alt+Left"), None),      # Back
-            ("TUNE_SWIPE_RIGHT", keys("Alt+Right"), None),    # Forward
-            ("TUNE_SWIPE_UP", keys("Ctrl+="), None),          # Zoom in
-            ("TUNE_SWIPE_DOWN", keys("Ctrl+-"), None),        # Zoom out
+            ("TUNE_CW", "Next tab", keys("Ctrl+Tab"), None),
+            ("TUNE_CCW", "Previous tab", keys("Ctrl+Shift+Tab"), None),
+            ("TUNE_PRESS", "New tab", keys("Ctrl+T"), None),
+            ("TUNE_SWIPE_LEFT", "Back", keys("Alt+Left"), None),
+            ("TUNE_SWIPE_RIGHT", "Forward", keys("Alt+Right"), None),
+            ("TUNE_SWIPE_UP", "Zoom in", keys("Ctrl+="), None),
+            ("TUNE_SWIPE_DOWN", "Zoom out", keys("Ctrl+-"), None),
         ],
     },
     {
-        "name": "YouTube",
-        "windows_exe": BROWSER_EXE,
-        "macos_bundle": BROWSER_BUNDLE,
-        "window_title": ["YouTube"],
+        "id": "youtube", "name": "YouTube", "kind": "site",
+        "windows_exe": BROWSER_EXE, "macos_bundle": BROWSER_BUNDLE, "window_title": ["YouTube"],
         "bindings": [
-            ("TUNE_CW", keys("Right"), "medium"),             # Seek +5 s (fast turn: more)
-            ("TUNE_CCW", keys("Left"), "medium"),             # Seek -5 s
-            ("TUNE_PRESS", keys("K"), None),                  # Play / pause
-            ("TUNE_SWIPE_LEFT", keys("Shift+P"), None),       # Previous video
-            ("TUNE_SWIPE_RIGHT", keys("Shift+N"), None),      # Next video
-            ("TUNE_SWIPE_UP", keys("Shift+."), None),         # Playback speed up
-            ("TUNE_SWIPE_DOWN", keys("Shift+,"), None),       # Playback speed down
+            ("TUNE_CW", "Seek forward 5 s", keys("Right"), "medium"),
+            ("TUNE_CCW", "Seek back 5 s", keys("Left"), "medium"),
+            ("TUNE_PRESS", "Play / pause", keys("K"), None),
+            ("TUNE_SWIPE_LEFT", "Previous video", keys("Shift+P"), None),
+            ("TUNE_SWIPE_RIGHT", "Next video", keys("Shift+N"), None),
+            ("TUNE_SWIPE_UP", "Playback speed up", keys("Shift+."), None),
+            ("TUNE_SWIPE_DOWN", "Playback speed down", keys("Shift+,"), None),
+        ],
+        "actions": [
+            ("Seek forward 10 s", keys("L")), ("Seek back 10 s", keys("J")),
+            ("Mute", keys("M")), ("Fullscreen", keys("F")), ("Captions", keys("C")),
+            ("Theater mode", keys("T")), ("Miniplayer", keys("I")),
+            ("Frame forward (paused)", keys(".")), ("Frame back (paused)", keys(",")),
         ],
     },
     {
-        "name": "Terminal",
-        # Windows Terminal, PowerShell 5/7, cmd, and legacy console windows.
+        "id": "terminal", "name": "Terminal", "kind": "app",
         "windows_exe": ["WindowsTerminal.exe", "powershell.exe", "pwsh.exe", "cmd.exe",
                         "conhost.exe", "OpenConsole.exe"],
         "macos_bundle": ["com.apple.Terminal", "com.googlecode.iterm2"],
         "bindings": [
-            ("TUNE_CW", keys("Down"), None),                  # Newer command in history
-            ("TUNE_CCW", keys("Up"), None),                   # Older command in history
-            ("TUNE_PRESS", keys("Esc"), None),                # Clear the current line
-            ("TUNE_SWIPE_LEFT", keys("Ctrl+Shift+Tab"), None),  # Previous tab (Windows Terminal)
-            ("TUNE_SWIPE_RIGHT", keys("Ctrl+Tab"), None),       # Next tab
-            ("TUNE_SWIPE_UP", keys("Ctrl+="), None),          # Font bigger
-            ("TUNE_SWIPE_DOWN", keys("Ctrl+-"), None),        # Font smaller
+            ("TUNE_CW", "Newer command (history)", keys("Down"), None),
+            ("TUNE_CCW", "Older command (history)", keys("Up"), None),
+            ("TUNE_PRESS", "Clear line", keys("Esc"), None),
+            ("TUNE_SWIPE_LEFT", "Previous tab", keys("Ctrl+Shift+Tab"), None),
+            ("TUNE_SWIPE_RIGHT", "Next tab", keys("Ctrl+Tab"), None),
+            ("TUNE_SWIPE_UP", "Font bigger", keys("Ctrl+="), None),
+            ("TUNE_SWIPE_DOWN", "Font smaller", keys("Ctrl+-"), None),
+        ],
+        "actions": [
+            ("New tab", keys("Ctrl+Shift+T")), ("Close tab", keys("Ctrl+Shift+W")),
+            ("Find", keys("Ctrl+Shift+F")), ("Command palette", keys("Ctrl+Shift+P")),
+            ("Split pane", keys("Alt+Shift+D")), ("Cancel command", keys("Ctrl+C")),
         ],
     },
     {
-        "name": "Photoshop",
-        "windows_exe": ["Photoshop.exe"],
-        "macos_bundle": ["com.adobe.Photoshop"],
+        "id": "photoshop", "name": "Adobe Photoshop", "kind": "app",
+        "windows_exe": ["Photoshop.exe"], "macos_bundle": ["com.adobe.Photoshop"],
         "bindings": [
-            ("TUNE_CW", keys("]"), "medium"),                 # Increase Brush Size
-            ("TUNE_CCW", keys("["), "medium"),                # Decrease Brush Size
-            ("TUNE_PRESS", keys("B"), None),                  # Brush Tool
-            ("TUNE_SWIPE_LEFT", keys("Ctrl+Z"), None),        # Undo
-            ("TUNE_SWIPE_RIGHT", keys("Ctrl+Shift+Z"), None), # Redo
-            ("TUNE_SWIPE_UP", keys("Shift+]"), None),         # Increase Brush Hardness
-            ("TUNE_SWIPE_DOWN", keys("Shift+["), None),       # Decrease Brush Hardness
+            ("TUNE_CW", "Increase Brush Size", keys("]"), "medium"),
+            ("TUNE_CCW", "Decrease Brush Size", keys("["), "medium"),
+            ("TUNE_PRESS", "Brush Tool", keys("B"), None),
+            ("TUNE_SWIPE_LEFT", "Undo", keys("Ctrl+Z"), None),
+            ("TUNE_SWIPE_RIGHT", "Redo", keys("Ctrl+Shift+Z"), None),
+            ("TUNE_SWIPE_UP", "Increase Brush Hardness", keys("Shift+]"), None),
+            ("TUNE_SWIPE_DOWN", "Decrease Brush Hardness", keys("Shift+["), None),
         ],
     },
     {
-        "name": "Lightroom",
+        "id": "lightroom", "name": "Adobe Lightroom", "kind": "app",
         "windows_exe": ["Lightroom.exe", "LightroomClassic.exe"],
         "macos_bundle": ["com.adobe.LightroomClassicCC7", "com.adobe.lightroomCC"],
         "bindings": [
-            ("TUNE_CW", keys("Right"), None),                 # Next Photo in Filmstrip
-            ("TUNE_CCW", keys("Left"), None),                 # Previous Photo in Filmstrip
-            ("TUNE_PRESS", keys("Z"), None),                  # Toggle Zoom View
-            ("TUNE_SWIPE_LEFT", keys("Ctrl+Z"), None),        # Undo
-            ("TUNE_SWIPE_RIGHT", keys("Ctrl+Y"), None),       # Redo
-            ("TUNE_SWIPE_UP", keys("P"), None),               # Flag as pick
-            ("TUNE_SWIPE_DOWN", keys("X"), None),             # Flag as reject
+            ("TUNE_CW", "Next Photo in Filmstrip", keys("Right"), None),
+            ("TUNE_CCW", "Previous Photo in Filmstrip", keys("Left"), None),
+            ("TUNE_PRESS", "Toggle Zoom View", keys("Z"), None),
+            ("TUNE_SWIPE_LEFT", "Undo", keys("Ctrl+Z"), None),
+            ("TUNE_SWIPE_RIGHT", "Redo", keys("Ctrl+Y"), None),
+            ("TUNE_SWIPE_UP", "Flag as pick", keys("P"), None),
+            ("TUNE_SWIPE_DOWN", "Flag as reject", keys("X"), None),
         ],
     },
     {
-        "name": "Premiere Pro",
-        "windows_exe": ["Adobe Premiere Pro.exe"],
-        "macos_bundle": ["com.adobe.PremierePro.CC"],
+        "id": "premiere", "name": "Adobe Premiere Pro", "kind": "app",
+        "windows_exe": ["Adobe Premiere Pro.exe"], "macos_bundle": ["com.adobe.PremierePro.CC"],
         "bindings": [
-            ("TUNE_CW", keys("Right"), "medium"),             # Step forward one frame
-            ("TUNE_CCW", keys("Left"), "medium"),             # Step back one frame
-            ("TUNE_PRESS", keys("Space"), None),              # Play / stop
-            ("TUNE_SWIPE_LEFT", keys("Shift+Left"), None),    # Step back five frames
-            ("TUNE_SWIPE_RIGHT", keys("Shift+Right"), None),  # Step forward five frames
-            ("TUNE_SWIPE_UP", keys("="), None),               # Zoom in timeline
-            ("TUNE_SWIPE_DOWN", keys("-"), None),             # Zoom out timeline
+            ("TUNE_CW", "Step forward one frame", keys("Right"), "medium"),
+            ("TUNE_CCW", "Step back one frame", keys("Left"), "medium"),
+            ("TUNE_PRESS", "Play / stop", keys("Space"), None),
+            ("TUNE_SWIPE_LEFT", "Step back five frames", keys("Shift+Left"), None),
+            ("TUNE_SWIPE_RIGHT", "Step forward five frames", keys("Shift+Right"), None),
+            ("TUNE_SWIPE_UP", "Zoom in timeline", keys("="), None),
+            ("TUNE_SWIPE_DOWN", "Zoom out timeline", keys("-"), None),
+        ],
+        "actions": [
+            ("Add marker", keys("M")), ("Ripple delete", keys("Shift+Delete")),
+            ("Razor at playhead", keys("Ctrl+K")), ("Go to in point", keys("Shift+I")),
+            ("Go to out point", keys("Shift+O")), ("Undo", keys("Ctrl+Z")), ("Redo", keys("Ctrl+Shift+Z")),
         ],
     },
     {
-        "name": "DaVinci Resolve",
-        "windows_exe": ["Resolve.exe"],
-        "macos_bundle": ["com.blackmagic-design.DaVinciResolve"],
+        "id": "resolve", "name": "DaVinci Resolve", "kind": "app",
+        "windows_exe": ["Resolve.exe"], "macos_bundle": ["com.blackmagic-design.DaVinciResolve"],
         "bindings": [
-            ("TUNE_CW", keys("Right"), "medium"),
-            ("TUNE_CCW", keys("Left"), "medium"),
-            ("TUNE_PRESS", keys("Space"), None),
-            ("TUNE_SWIPE_LEFT", keys("Shift+Left"), None),    # Back one second
-            ("TUNE_SWIPE_RIGHT", keys("Shift+Right"), None),  # Forward one second
-            ("TUNE_SWIPE_UP", keys("Ctrl+="), None),          # Zoom in timeline
-            ("TUNE_SWIPE_DOWN", keys("Ctrl+-"), None),        # Zoom out timeline
+            ("TUNE_CW", "Next frame", keys("Right"), "medium"),
+            ("TUNE_CCW", "Previous frame", keys("Left"), "medium"),
+            ("TUNE_PRESS", "Play / stop", keys("Space"), None),
+            ("TUNE_SWIPE_LEFT", "Back one second", keys("Shift+Left"), None),
+            ("TUNE_SWIPE_RIGHT", "Forward one second", keys("Shift+Right"), None),
+            ("TUNE_SWIPE_UP", "Zoom in timeline", keys("Ctrl+="), None),
+            ("TUNE_SWIPE_DOWN", "Zoom out timeline", keys("Ctrl+-"), None),
+        ],
+        "actions": [
+            ("Add marker", keys("M")), ("Split clip", keys("Ctrl+\\")), ("Mark in", keys("I")),
+            ("Mark out", keys("O")), ("Undo", keys("Ctrl+Z")), ("Redo", keys("Ctrl+Shift+Z")),
+            ("Next edit", keys("Down")), ("Previous edit", keys("Up")),
         ],
     },
     {
-        "name": "Fusion 360",
-        "windows_exe": ["Fusion360.exe"],
-        "macos_bundle": ["com.autodesk.fusion360"],
+        "id": "fusion360", "name": "Autodesk Fusion 360", "kind": "app",
+        "windows_exe": ["Fusion360.exe"], "macos_bundle": ["com.autodesk.fusion360"],
         "bindings": [
-            ("TUNE_CW", scroll("up"), "light"),               # Zoom in
-            ("TUNE_CCW", scroll("down"), "light"),            # Zoom out
-            ("TUNE_PRESS", keys("F6"), None),                 # Fit view
-            ("TUNE_SWIPE_LEFT", keys("Ctrl+Z"), None),        # Undo
-            ("TUNE_SWIPE_RIGHT", keys("Ctrl+Y"), None),       # Redo
+            ("TUNE_CW", "Zoom in", scroll("up"), "light"),
+            ("TUNE_CCW", "Zoom out", scroll("down"), "light"),
+            ("TUNE_PRESS", "Fit view", keys("F6"), None),
+            ("TUNE_SWIPE_LEFT", "Undo", keys("Ctrl+Z"), None),
+            ("TUNE_SWIPE_RIGHT", "Redo", keys("Ctrl+Y"), None),
+        ],
+        "actions": [
+            ("Sketch", keys("S")), ("Extrude", keys("E")), ("Measure", keys("I")),
+            ("Hide / show", keys("V")), ("Display mode", keys("Ctrl+Alt+V")),
         ],
     },
     {
-        "name": "Blender",
-        "windows_exe": ["blender.exe"],
-        "macos_bundle": ["org.blenderfoundation.blender"],
+        "id": "blender", "name": "Blender", "kind": "app",
+        "windows_exe": ["blender.exe"], "macos_bundle": ["org.blenderfoundation.blender"],
         "bindings": [
-            ("TUNE_CW", keys("Right"), "medium"),             # Next frame
-            ("TUNE_CCW", keys("Left"), "medium"),             # Previous frame
-            ("TUNE_PRESS", keys("Space"), None),              # Play animation
-            ("TUNE_SWIPE_LEFT", keys("Ctrl+Z"), None),        # Undo
-            ("TUNE_SWIPE_RIGHT", keys("Ctrl+Shift+Z"), None), # Redo
-            ("TUNE_SWIPE_UP", keys("Up"), None),              # Jump to next keyframe
-            ("TUNE_SWIPE_DOWN", keys("Down"), None),          # Jump to previous keyframe
+            ("TUNE_CW", "Next frame", keys("Right"), "medium"),
+            ("TUNE_CCW", "Previous frame", keys("Left"), "medium"),
+            ("TUNE_PRESS", "Play animation", keys("Space"), None),
+            ("TUNE_SWIPE_LEFT", "Undo", keys("Ctrl+Z"), None),
+            ("TUNE_SWIPE_RIGHT", "Redo", keys("Ctrl+Shift+Z"), None),
+            ("TUNE_SWIPE_UP", "Jump to next keyframe", keys("Up"), None),
+            ("TUNE_SWIPE_DOWN", "Jump to previous keyframe", keys("Down"), None),
         ],
     },
     {
-        "name": "VS Code",
-        "windows_exe": ["Code.exe", "Code - Insiders.exe"],
-        "macos_bundle": ["com.microsoft.VSCode"],
+        "id": "vscode", "name": "VS Code", "kind": "app",
+        "windows_exe": ["Code.exe", "Code - Insiders.exe"], "macos_bundle": ["com.microsoft.VSCode"],
         "bindings": [
-            ("TUNE_CW", keys("Ctrl+PageDown"), None),         # Next editor tab
-            ("TUNE_CCW", keys("Ctrl+PageUp"), None),          # Previous editor tab
-            ("TUNE_PRESS", keys("Ctrl+Shift+P"), None),       # Command palette
-            ("TUNE_SWIPE_LEFT", keys("Alt+Left"), None),      # Go back
-            ("TUNE_SWIPE_RIGHT", keys("Alt+Right"), None),    # Go forward
-            ("TUNE_SWIPE_UP", keys("Shift+F8"), None),        # Previous problem
-            ("TUNE_SWIPE_DOWN", keys("F8"), None),            # Next problem
+            ("TUNE_CW", "Next editor tab", keys("Ctrl+PageDown"), None),
+            ("TUNE_CCW", "Previous editor tab", keys("Ctrl+PageUp"), None),
+            ("TUNE_PRESS", "Command palette", keys("Ctrl+Shift+P"), None),
+            ("TUNE_SWIPE_LEFT", "Go back", keys("Alt+Left"), None),
+            ("TUNE_SWIPE_RIGHT", "Go forward", keys("Alt+Right"), None),
+            ("TUNE_SWIPE_UP", "Previous problem", keys("Shift+F8"), None),
+            ("TUNE_SWIPE_DOWN", "Next problem", keys("F8"), None),
+        ],
+        "actions_from_category": "VS Code",
+    },
+    {
+        "id": "discord", "name": "Discord", "kind": "app",
+        "windows_exe": ["Discord.exe"], "macos_bundle": ["com.hnc.Discord"],
+        "bindings": [
+            ("TUNE_CW", "Next channel", keys("Alt+Down"), None),
+            ("TUNE_CCW", "Previous channel", keys("Alt+Up"), None),
+            ("TUNE_PRESS", "Toggle mute", keys("Ctrl+Shift+M"), None),
+            ("TUNE_SWIPE_LEFT", "Previous server", keys("Ctrl+Alt+Up"), None),
+            ("TUNE_SWIPE_RIGHT", "Next server", keys("Ctrl+Alt+Down"), None),
+            ("TUNE_SWIPE_UP", "Toggle deafen", keys("Ctrl+Shift+D"), None),
+        ],
+        "actions": [
+            ("Mark server read", keys("Shift+Esc")), ("Unread channel", keys("Alt+Shift+Down")),
+            ("Search", keys("Ctrl+K")), ("Answer call", keys("Ctrl+Enter")),
         ],
     },
     {
-        "name": "Discord",
-        "windows_exe": ["Discord.exe"],
-        "macos_bundle": ["com.hnc.Discord"],
+        "id": "spotify", "name": "Spotify", "kind": "app",
+        "windows_exe": ["Spotify.exe"], "macos_bundle": ["com.spotify.client"],
         "bindings": [
-            ("TUNE_CW", keys("Alt+Down"), None),              # Next channel
-            ("TUNE_CCW", keys("Alt+Up"), None),               # Previous channel
-            ("TUNE_PRESS", keys("Ctrl+Shift+M"), None),       # Toggle mute
-            ("TUNE_SWIPE_LEFT", keys("Ctrl+Alt+Up"), None),   # Previous server
-            ("TUNE_SWIPE_RIGHT", keys("Ctrl+Alt+Down"), None),  # Next server
-            ("TUNE_SWIPE_UP", keys("Ctrl+Shift+D"), None),    # Toggle deafen
+            ("TUNE_CW", "Volume up (app)", keys("Ctrl+Up"), "light"),
+            ("TUNE_CCW", "Volume down (app)", keys("Ctrl+Down"), "light"),
+            ("TUNE_PRESS", "Play / pause", keys("Space"), None),
+            ("TUNE_SWIPE_LEFT", "Previous track", keys("Ctrl+Left"), None),
+            ("TUNE_SWIPE_RIGHT", "Next track", keys("Ctrl+Right"), None),
+            ("TUNE_SWIPE_UP", "Save to Liked Songs", keys("Alt+Shift+B"), None),
         ],
-    },
-    {
-        "name": "Spotify",
-        "windows_exe": ["Spotify.exe"],
-        "macos_bundle": ["com.spotify.client"],
-        "bindings": [
-            ("TUNE_CW", keys("Ctrl+Up"), "light"),            # App volume up
-            ("TUNE_CCW", keys("Ctrl+Down"), "light"),         # App volume down
-            ("TUNE_PRESS", keys("Space"), None),              # Play / pause
-            ("TUNE_SWIPE_LEFT", keys("Ctrl+Left"), None),     # Previous track
-            ("TUNE_SWIPE_RIGHT", keys("Ctrl+Right"), None),   # Next track
-            ("TUNE_SWIPE_UP", keys("Alt+Shift+B"), None),     # Save to Liked Songs
+        "actions": [
+            ("Seek forward", keys("Shift+Right")), ("Seek back", keys("Shift+Left")),
+            ("Shuffle", keys("Ctrl+S")), ("Repeat", keys("Ctrl+R")), ("Search", keys("Ctrl+L")),
         ],
     },
 ]
 
+# ShortcutMapper app name -> (id, display name, match rules). Ids that also
+# appear in PROFILES get the shortcuts attached to that profile's app entry.
+SHORTCUTMAPPER_APPS = {
+    "Adobe After Effects": ("after_effects", "Adobe After Effects", ["AfterFX.exe"], ["com.adobe.AfterEffects"]),
+    "Adobe Illustrator": ("illustrator", "Adobe Illustrator", ["Illustrator.exe"], ["com.adobe.illustrator"]),
+    "Adobe Lightroom": ("lightroom", None, None, None),
+    "Adobe Photoshop": ("photoshop", None, None, None),
+    "Autodesk 3dsMax": ("3dsmax", "Autodesk 3ds Max", ["3dsmax.exe"], []),
+    "Autodesk Maya": ("maya", "Autodesk Maya", ["maya.exe"], ["com.autodesk.maya"]),
+    "Blender": ("blender", None, None, None),
+    "Euro Truck Simulator 2": ("ets2", "Euro Truck Simulator 2", ["eurotrucks2.exe"], ["com.scssoft.eurotrucks2"]),
+    "JetBrains AppCode": ("appcode", "JetBrains AppCode", [], ["com.jetbrains.AppCode"]),
+    "JetBrains CLion": ("clion", "JetBrains CLion", ["clion64.exe"], ["com.jetbrains.CLion"]),
+    "JetBrains IntelliJ IDEA": ("intellij", "JetBrains IntelliJ IDEA", ["idea64.exe"], ["com.jetbrains.intellij"]),
+    "JetBrains PhpStorm": ("phpstorm", "JetBrains PhpStorm", ["phpstorm64.exe"], ["com.jetbrains.PhpStorm"]),
+    "JetBrains PyCharm": ("pycharm", "JetBrains PyCharm", ["pycharm64.exe"], ["com.jetbrains.pycharm"]),
+    "JetBrains RubyMine": ("rubymine", "JetBrains RubyMine", ["rubymine64.exe"], ["com.jetbrains.rubymine"]),
+    "JetBrains WebStorm": ("webstorm", "JetBrains WebStorm", ["webstorm64.exe"], ["com.jetbrains.WebStorm"]),
+    "SideFx Houdini": ("houdini", "SideFX Houdini", ["houdini.exe", "houdinifx.exe"], ["com.sidefx.houdini"]),
+    "SketchUp": ("sketchup", "SketchUp", ["SketchUp.exe"], ["com.sketchup.SketchUp.2024"]),
+    "Sublime Text": ("sublime", "Sublime Text", ["sublime_text.exe"], ["com.sublimetext.4"]),
+    "The Foundry Nuke": ("nuke", "The Foundry Nuke", [], ["com.thefoundry.Nuke"]),
+    "Unity 3D": ("unity", "Unity", ["Unity.exe"], ["com.unity3d.UnityEditor5.x"]),
+}
+
+
+def context_rank(ctx: str) -> int:
+    c = ctx.lower()
+    if c in ("global context", "main ui", "houdini", "screen", "window"):
+        return 0
+    return 1
+
+
+def build_apps(catalog: list[dict]) -> list[dict]:
+    apps: dict[str, dict] = {}
+    for p in PROFILES:
+        entry = {
+            "id": p["id"],
+            "name": p["name"],
+            "kind": p["kind"],
+            "match": {
+                "windows_exe": p.get("windows_exe", []),
+                "macos_bundle": p.get("macos_bundle", []),
+                "window_title": p.get("window_title", []),
+            },
+            "defaults": {
+                ev: {"name": name, "action": action, **({"accel": accel} if accel else {})}
+                for ev, name, action, accel in p["bindings"]
+            },
+            "actions": [],
+        }
+        seen: set[str] = set()
+        # The default bindings are actions too, so the picker's app tab shows them.
+        for _ev, name, action, _accel in p["bindings"]:
+            aid = f"{p['id']}.{slug(name)}"
+            if aid not in seen:
+                seen.add(aid)
+                entry["actions"].append({"id": aid, "name": name, "context": "", "windows": action, "mac": action})
+        for name, action in p.get("actions", []):
+            aid = f"{p['id']}.{slug(name)}"
+            if aid not in seen:
+                seen.add(aid)
+                entry["actions"].append({"id": aid, "name": name, "context": "", "windows": action, "mac": action})
+        if cat := p.get("actions_from_category"):
+            for c in catalog:
+                if c["category"] == cat:
+                    aid = f"{p['id']}.{slug(c['name'])}"
+                    if aid not in seen:
+                        seen.add(aid)
+                        entry["actions"].append({"id": aid, "name": c["name"], "context": "", "windows": c["windows"], "mac": c.get("mac")})
+        apps[p["id"]] = entry
+
+    sm = json.loads((REF / "app-shortcuts.json").read_text(encoding="utf-8"))["apps"]
+    imported = 0
+    for sm_name, (aid, display, exes, bundles) in SHORTCUTMAPPER_APPS.items():
+        src = sm.get(sm_name)
+        if not src:
+            continue
+        if aid not in apps:
+            apps[aid] = {
+                "id": aid, "name": display, "kind": "app",
+                "match": {"windows_exe": exes, "macos_bundle": bundles, "window_title": []},
+                "defaults": {},
+                "actions": [],
+            }
+        entry = apps[aid]
+        seen = {a["id"] for a in entry["actions"]}
+        rows = []
+        for action_name, a in src["actions"].items():
+            win = translate(a["windows"]["chord"]) if "windows" in a else None
+            mac = translate(a["mac"]["chord"]) if "mac" in a else None
+            if not win and not mac:
+                continue
+            ctx = a.get("context", "")
+            base = f"{aid}.{slug(action_name)}"
+            ident = base
+            n = 2
+            while ident in seen:
+                ident = f"{base}_{slug(ctx) or n}"
+                if ident in seen:
+                    ident = f"{base}_{n}"
+                    n += 1
+            seen.add(ident)
+            row = {"id": ident, "name": action_name, "context": ctx}
+            if win:
+                row["windows"] = {"type": "keys", "chord": win}
+            if mac:
+                row["mac"] = {"type": "keys", "chord": mac}
+            rows.append(row)
+            imported += 1
+        rows.sort(key=lambda r: (context_rank(r["context"]), r["context"], r["name"]))
+        entry["actions"].extend(rows)
+        entry["source"] = "ShortcutMapper"
+
+    ordered = [apps[p["id"]] for p in PROFILES] + sorted(
+        (a for k, a in apps.items() if k not in {p["id"] for p in PROFILES}), key=lambda a: a["name"].lower()
+    )
+    print(f"apps.json: {len(ordered)} apps, {imported} ShortcutMapper shortcuts imported")
+    return ordered
+
+
+# ---- default config ---------------------------------------------------------
 
 def toml_str(s: str) -> str:
     return json.dumps(s)  # JSON string escaping is valid TOML basic-string escaping
@@ -335,8 +487,9 @@ def toml_inline(d: dict) -> str:
 
 def emit_bindings(prefix: str, bindings) -> list[str]:
     lines = []
-    for event, action, accel in bindings:
+    for event, name, action, accel in bindings:
         lines.append(f"[{prefix}.bindings.{event}]")
+        lines.append(f"name = {toml_str(name)}")
         lines.append(f"action = {toml_inline(action)}")
         if accel:
             lines.append(f"accel = {toml_str(accel)}")
@@ -344,7 +497,7 @@ def emit_bindings(prefix: str, bindings) -> list[str]:
     return lines
 
 
-HEADER = """# Naya Companion configuration
+HEADER = """# Create Companion configuration
 # Generated by tools/gen_presets.py -- edit freely; the engine reloads on save.
 #
 # transport:  which F-key the Tune/Touch firmware emits for each gesture.
@@ -352,7 +505,7 @@ HEADER = """# Naya Companion configuration
 # profiles:   per-application bindings, matched on the foreground executable
 #             (Windows) or bundle id (macOS), optionally narrowed by a
 #             window_title substring (websites). Unbound events fall back to
-#             default_profile.
+#             default_profile. enabled = false keeps a profile but never matches it.
 # accel:      none | light | medium | aggressive -- repeat count grows with dial speed.
 
 schema_version = 1
@@ -385,7 +538,8 @@ def build_default_config() -> str:
     for p in PROFILES:
         L.append("[[profiles]]")
         L.append(f"name = {toml_str(p['name'])}")
-        m = {"windows_exe": p["windows_exe"], "macos_bundle": p["macos_bundle"]}
+        L.append("enabled = true")
+        m = {"windows_exe": p.get("windows_exe", []), "macos_bundle": p.get("macos_bundle", [])}
         if p.get("window_title"):
             m["window_title"] = p["window_title"]
         L.append("match = " + toml_inline(m))
@@ -398,9 +552,14 @@ def main() -> int:
     OUT.mkdir(exist_ok=True)
     catalog = build_catalog()
     (OUT / "actions.json").write_text(
-        json.dumps({"_meta": {"source": "tools/gen_presets.py from docs/reference/action-chords.json",
+        json.dumps({"_meta": {"source": "tools/gen_presets.py from reference/action-chords.json",
                               "count": len(catalog)},
                     "actions": catalog}, indent=1) + "\n", encoding="utf-8")
+    apps = build_apps(catalog)
+    (OUT / "apps.json").write_text(
+        json.dumps({"_meta": {"source": "tools/gen_presets.py: hand-authored profiles + reference/app-shortcuts.json (ShortcutMapper, MIT)",
+                              "count": len(apps)},
+                    "apps": apps}, separators=(",", ":")) + "\n", encoding="utf-8")
     cfg = build_default_config()
     tomllib.loads(cfg)  # syntax check
     (OUT / "default-config.toml").write_text(cfg, encoding="utf-8", newline="\n")

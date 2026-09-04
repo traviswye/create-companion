@@ -9,6 +9,8 @@ import {
   transportLabel,
   type Accel,
   type Action,
+  type AppEntry,
+  type Binding,
   type CatalogEntry,
   type Config,
   type EngineMsg,
@@ -16,15 +18,45 @@ import {
 } from "./types";
 
 type SaveState = { kind: "idle" } | { kind: "dirty" } | { kind: "saving" } | { kind: "saved" } | { kind: "applied" } | { kind: "error"; msg: string };
+type NavTab = "active" | "available";
 
 const ACCELS: Accel[] = ["none", "light", "medium", "aggressive"];
 const DEFAULT = -1; // selected index for the default profile
+
+function isEnabled(p: Profile) {
+  return p.enabled !== false;
+}
+
+function matchText(p: { name: string; match: Profile["match"] }) {
+  return [p.name, ...p.match.windows_exe, ...p.match.window_title, ...p.match.macos_bundle].join(" ").toLowerCase();
+}
+
+/**
+ * Link a profile to its catalog entry: by name first, then by a shared
+ * executable or bundle id with the same kind of title rule (so "Photoshop"
+ * still finds "Adobe Photoshop", and Browser does not swallow YouTube).
+ */
+function catalogFor(apps: AppEntry[], p: Profile): AppEntry | undefined {
+  const byName = apps.find((a) => a.name.toLowerCase() === p.name.toLowerCase());
+  if (byName) return byName;
+  const exes = new Set(p.match.windows_exe.map((e) => e.toLowerCase()));
+  const bundles = new Set(p.match.macos_bundle);
+  const hasTitle = p.match.window_title.length > 0;
+  return apps.find(
+    (a) =>
+      a.match.window_title.length > 0 === hasTitle &&
+      (a.match.windows_exe.some((e) => exes.has(e.toLowerCase())) || a.match.macos_bundle.some((b) => bundles.has(b))),
+  );
+}
 
 export default function App() {
   const [cfg, setCfg] = useState<Config | null>(null);
   const [path, setPath] = useState("");
   const [catalog, setCatalog] = useState<CatalogEntry[]>([]);
+  const [apps, setApps] = useState<AppEntry[]>([]);
   const [sel, setSel] = useState<number>(DEFAULT);
+  const [navTab, setNavTab] = useState<NavTab>("active");
+  const [navQ, setNavQ] = useState("");
   const [save, setSave] = useState<SaveState>({ kind: "idle" });
   const [engine, setEngine] = useState<{ connected: boolean; profile?: string; paused?: boolean; version?: string }>({ connected: false });
   const [last, setLast] = useState<{ event: string; profile: string; action: string; at: number } | null>(null);
@@ -43,6 +75,7 @@ export default function App() {
       })
       .catch((e) => setLoadErr(String(e)));
     api.actionCatalog().then(setCatalog).catch(() => setCatalog([]));
+    api.appCatalog().then(setApps).catch(() => setApps([]));
   }, []);
 
   useEffect(() => {
@@ -101,6 +134,25 @@ export default function App() {
 
   const events = useMemo(() => (cfg ? Object.keys(cfg.transport).sort((a, b) => eventSortKey(a) - eventSortKey(b)) : []), [cfg]);
 
+  /** The catalog entry that corresponds to the selected profile, if any. */
+  const appEntry = useMemo(() => (profile && sel !== DEFAULT ? catalogFor(apps, profile) : undefined), [apps, profile, sel]);
+
+  // ---- nav lists ---------------------------------------------------------
+  const nav = useMemo(() => {
+    if (!cfg) return { active: [] as number[], disabled: [] as number[], available: [] as AppEntry[] };
+    const q = navQ.trim().toLowerCase();
+    const hit = (t: string) => !q || t.includes(q);
+    const active: number[] = [];
+    const disabled: number[] = [];
+    cfg.profiles.forEach((p, i) => {
+      if (!hit(matchText(p))) return;
+      (isEnabled(p) ? active : disabled).push(i);
+    });
+    const known = new Set(cfg.profiles.map((p) => catalogFor(apps, p)?.id).filter(Boolean));
+    const available = apps.filter((a) => !known.has(a.id)).filter((a) => hit(matchText(a)));
+    return { active, disabled, available };
+  }, [cfg, apps, navQ]);
+
   /** Apply an edit to the selected profile and schedule a save. */
   const update = useCallback(
     (fn: (p: Profile) => Profile, target: number = sel) => {
@@ -131,11 +183,15 @@ export default function App() {
     }, 600);
   }, [cfg, save.kind]);
 
-  function setBinding(ev: string, action: Action | null) {
+  function setBinding(ev: string, action: Action | null, name?: string) {
     update((p) => {
       const bindings = { ...p.bindings };
       if (action === null) delete bindings[ev];
-      else bindings[ev] = { action, accel: bindings[ev]?.accel ?? "none" };
+      else {
+        const b: Binding = { action, accel: bindings[ev]?.accel ?? "none" };
+        if (name) b.name = name;
+        bindings[ev] = b;
+      }
       return { ...p, bindings };
     });
     setPicker(null);
@@ -148,8 +204,19 @@ export default function App() {
   function addProfile(p: Profile) {
     setCfg((c) => (c ? { ...c, profiles: [...c.profiles, p] } : c));
     setSel(cfg ? cfg.profiles.length : 0);
+    setNavTab("active");
     setSave({ kind: "dirty" });
     setAdding(false);
+  }
+
+  /** Star an app from the catalog: create its profile with the bundled defaults. */
+  function activateApp(a: AppEntry) {
+    addProfile({ name: a.name, enabled: true, match: { ...a.match }, bindings: { ...a.defaults } });
+  }
+
+  function setEnabled(i: number, enabled: boolean) {
+    update((p) => ({ ...p, enabled }), i);
+    if (enabled) setSel(i);
   }
 
   function removeProfile(i: number) {
@@ -176,28 +243,90 @@ export default function App() {
 
   const isDefault = sel === DEFAULT;
   const liveName = engine.profile;
+  const selectedDisabled = !isDefault && !isEnabled(profile);
+
+  const ProfileRow = ({ i }: { i: number }) => {
+    const p = cfg.profiles[i];
+    const on = isEnabled(p);
+    return (
+      <div className={"profile-item " + (sel === i ? "active " : "") + (liveName === p.name ? "live " : "") + (on ? "" : "dim")} onClick={() => setSel(i)}>
+        <button
+          className={"star " + (on ? "on" : "")}
+          title={on ? "Disable this profile (keeps its mappings)" : "Enable this profile"}
+          onClick={(e) => {
+            e.stopPropagation();
+            setEnabled(i, !on);
+          }}
+        >
+          {on ? "★" : "☆"}
+        </button>
+        <span className="name">{p.name}</span>
+        {p.match.window_title.length > 0 && <span className="badge">site</span>}
+        {!on && Object.keys(p.bindings).length > 0 && <span className="badge">customized</span>}
+      </div>
+    );
+  };
 
   return (
     <div className="app">
       <aside className="sidebar">
         <div className="brand">
           <span className={"dot " + (engine.connected ? "on" : "")} title={engine.connected ? "Engine connected" : "Engine not running"} />
-          Naya Companion
+          Create Companion
+        </div>
+        <div className="nav-tools">
+          <input placeholder="Search apps and sites…" value={navQ} onChange={(e) => setNavQ(e.target.value)} />
+          <div className="seg">
+            <button className={navTab === "active" ? "on" : ""} onClick={() => setNavTab("active")}>
+              Active
+            </button>
+            <button className={navTab === "available" ? "on" : ""} onClick={() => setNavTab("available")}>
+              Available{nav.available.length + nav.disabled.length > 0 ? ` (${nav.available.length + nav.disabled.length})` : ""}
+            </button>
+          </div>
         </div>
         <div className="profiles">
-          <div className={"profile-item " + (isDefault ? "active " : "") + (liveName === cfg.default_profile.name ? "live" : "")} onClick={() => setSel(DEFAULT)}>
-            <span className="name">{cfg.default_profile.name}</span>
-            <span className="badge">fallback</span>
-          </div>
-          {cfg.profiles.map((p, i) => (
-            <div key={i} className={"profile-item " + (sel === i ? "active " : "") + (liveName === p.name ? "live" : "")} onClick={() => setSel(i)}>
-              <span className="name">{p.name}</span>
-              {p.match.window_title.length > 0 && <span className="badge">site</span>}
-            </div>
-          ))}
-          <div className="profile-item" onClick={() => setAdding(true)}>
-            <span className="name muted">＋ Add application</span>
-          </div>
+          {navTab === "active" && (
+            <>
+              <div className={"profile-item " + (isDefault ? "active " : "") + (liveName === cfg.default_profile.name ? "live" : "")} onClick={() => setSel(DEFAULT)}>
+                <span className="star on" title="Always active" style={{ cursor: "default" }}>
+                  ★
+                </span>
+                <span className="name">{cfg.default_profile.name}</span>
+                <span className="badge">fallback</span>
+              </div>
+              {nav.active.map((i) => (
+                <ProfileRow key={i} i={i} />
+              ))}
+              {nav.active.length === 0 && navQ && <div className="nav-empty">No active profile matches "{navQ}".</div>}
+            </>
+          )}
+          {navTab === "available" && (
+            <>
+              {nav.disabled.map((i) => (
+                <ProfileRow key={i} i={i} />
+              ))}
+              {nav.available.map((a) => (
+                <div key={a.id} className="profile-item dim" onClick={() => activateApp(a)} title="Click the star to activate with its default mappings">
+                  <button
+                    className="star"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      activateApp(a);
+                    }}
+                  >
+                    ☆
+                  </button>
+                  <span className="name">{a.name}</span>
+                  <span className="badge">{a.kind === "site" ? "site" : `${a.actions.length} shortcuts`}</span>
+                </div>
+              ))}
+              {nav.available.length + nav.disabled.length === 0 && <div className="nav-empty">{navQ ? `Nothing matches "${navQ}".` : "Everything in the catalog is active."}</div>}
+            </>
+          )}
+        </div>
+        <div className="nav-add">
+          <button onClick={() => setAdding(true)}>＋ Add application</button>
         </div>
         <div className="sidebar-foot">
           <div>
@@ -217,6 +346,11 @@ export default function App() {
           ) : (
             <input className="title" value={profile.name} onChange={(e) => update((p) => ({ ...p, name: e.target.value }))} />
           )}
+          {selectedDisabled && (
+            <button className="primary" onClick={() => setEnabled(sel, true)}>
+              ★ Enable
+            </button>
+          )}
           <span className={"save-state " + (save.kind === "applied" ? "applied" : save.kind === "error" ? "error" : "")}>
             {save.kind === "idle" && "Changes save automatically"}
             {save.kind === "dirty" && "Editing…"}
@@ -226,7 +360,7 @@ export default function App() {
             {save.kind === "error" && `Error: ${save.msg}`}
           </span>
           {!isDefault && (
-            <button onClick={() => removeProfile(sel)} title="Remove this profile">
+            <button onClick={() => removeProfile(sel)} title="Delete this profile and its mappings">
               Remove
             </button>
           )}
@@ -237,9 +371,7 @@ export default function App() {
             {last ? (
               <>
                 <span className="muted">Detected</span>
-                <span className="big">
-                  {eventLabel(last.event).join(" / ")}
-                </span>
+                <span className="big">{eventLabel(last.event).join(" / ")}</span>
                 <span className="muted">
                   in {last.profile} → {last.action}
                 </span>
@@ -253,6 +385,12 @@ export default function App() {
               </>
             )}
           </div>
+
+          {selectedDisabled && (
+            <div className="detect idle">
+              This profile is disabled: its mappings are kept but never used. Star it to enable.
+            </div>
+          )}
 
           {!isDefault && (
             <div className="card">
@@ -276,10 +414,11 @@ export default function App() {
             <table className="map">
               <thead>
                 <tr>
-                  <th style={{ width: "34%" }}>Input</th>
+                  <th style={{ width: "20%" }}>Input</th>
                   <th>Action</th>
-                  <th style={{ width: 130 }}>Acceleration</th>
-                  <th style={{ width: 110 }}></th>
+                  <th style={{ width: 130 }}>Keys</th>
+                  <th style={{ width: 110 }}>Acceleration</th>
+                  <th style={{ width: 90 }}></th>
                 </tr>
               </thead>
               <tbody>
@@ -287,7 +426,9 @@ export default function App() {
                   const [mod, gesture] = eventLabel(ev);
                   const b = profile.bindings[ev];
                   const inherited = !b && !isDefault ? cfg.default_profile.bindings[ev] : undefined;
+                  const shown = b ?? inherited;
                   const repeatable = b && (b.action.type === "keys" || b.action.type === "media" || b.action.type === "scroll");
+                  const actionName = shown ? shown.name ?? (shown.action.type === "keys" ? "Custom shortcut" : describeAction(shown.action)) : "Not bound";
                   return (
                     <tr key={ev} className={flash === ev ? "flash" : ""}>
                       <td className="ev">
@@ -297,7 +438,22 @@ export default function App() {
                         </div>
                       </td>
                       <td className="action" onClick={() => setPicker(ev)}>
-                        {b ? describeAction(b.action) : inherited ? <span className="inherit">Default: {describeAction(inherited.action)}</span> : <span className="inherit">Not bound</span>}
+                        {b ? (
+                          <span className={shown?.name ? "" : "name-muted"}>{actionName}</span>
+                        ) : (
+                          <span className="inherit">{inherited ? `Default: ${actionName}` : "Not bound"}</span>
+                        )}
+                      </td>
+                      <td className="keys">
+                        {!shown ? (
+                          <span className="muted">—</span>
+                        ) : shown.action.type === "keys" ? (
+                          <kbd>{shown.action.chord}</kbd>
+                        ) : shown.action.type === "sequence" ? (
+                          <kbd>{shown.action.chords.join(" , ")}</kbd>
+                        ) : (
+                          <span className="muted">{shown.action.type === "media" ? "media key" : shown.action.type === "scroll" ? `wheel ${shown.action.direction}` : shown.action.type}</span>
+                        )}
                       </td>
                       <td>
                         {b ? (
@@ -335,7 +491,17 @@ export default function App() {
         </div>
       </main>
 
-      {picker && <ActionPicker event={picker} current={profile.bindings[picker]?.action} catalog={catalog} onPick={(a) => setBinding(picker, a)} onClose={() => setPicker(null)} />}
+      {picker && (
+        <ActionPicker
+          event={picker}
+          current={profile.bindings[picker]}
+          catalog={catalog}
+          appName={appEntry?.name}
+          appActions={appEntry?.actions ?? []}
+          onPick={(a, name) => setBinding(picker, a, name)}
+          onClose={() => setPicker(null)}
+        />
+      )}
       {adding && <AddApp onAdd={addProfile} onClose={() => setAdding(false)} />}
     </div>
   );

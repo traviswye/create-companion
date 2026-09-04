@@ -416,6 +416,7 @@ mod tests {
                     chord: companion_core::action::KeyChord("Alt+Left".into()),
                 },
                 accel: Default::default(),
+                name: None,
             },
         );
         let mut engine = Engine::new(&cfg).unwrap();

@@ -163,6 +163,9 @@ Goal: one Tune firmware mapping behaves differently in two apps.
 - [x] Detect Input: live `event` messages show "Detected: Tune / Clockwise in Browser → Ctrl+Tab" with a one-click "Change for <profile>" and a row flash.
 - [x] Save: autosave 600 ms after the last edit, atomic write, engine reloads; status shows "Saved · applied by engine ✓" when `config_applied` arrives, or the engine's rejection message.
 - Deferred: transport (which F-key per gesture) is edited in the TOML for now; macOS bundle ids are editable but untested.
+- [x] 2026-09-04 review round: product renamed **Create Companion** (binaries/repo unchanged); nav has search + Active/Available tabs + star toggles (`Profile.enabled`, disabled profiles keep bindings and never match); Add application pinned; ShortcutMapper import → `presets/apps.json` (29 apps, 4,969 shortcuts) with per-app "<App> actions" tab in the picker; bindings carry a plain-English `name` and the table shows Action + Keys columns.
+- [ ] **Queued: website shortcut discovery.** Sites are matched by window title today (YouTube). Build a scraper / curated list of keyboard shortcuts for common sites (YouTube, Gmail, Google Docs, Figma, Notion, Twitch, Netflix, GitHub, Jira, Slack web…) into `presets/apps.json` as `kind = "site"` entries with `window_title` rules, so they show under Available.
+- [ ] Queued: transport editor in the UI; import/export of a single profile; per-profile "reset to bundled defaults".
 
 ### Phase 3 — Tune enhancements
 - [ ] `accel.rs` curves + per-mapping multiplier; repeat-count executor.

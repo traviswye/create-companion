@@ -32,6 +32,8 @@ export type Accel = "none" | "light" | "medium" | "aggressive";
 export interface Binding {
   action: Action;
   accel?: Accel;
+  /** Plain-English label ("Increase Brush Size"); the action holds the keys. */
+  name?: string;
 }
 
 export interface AppMatch {
@@ -42,8 +44,30 @@ export interface AppMatch {
 
 export interface Profile {
   name: string;
+  /** Unstarred profiles keep their bindings but never match. */
+  enabled?: boolean;
   match: AppMatch;
   bindings: Record<string, Binding>;
+}
+
+/** One shortcut an application exposes (presets/apps.json). */
+export interface AppAction {
+  id: string;
+  name: string;
+  context: string;
+  windows?: Action;
+  mac?: Action;
+}
+
+/** An application or website the catalog knows about (presets/apps.json). */
+export interface AppEntry {
+  id: string;
+  name: string;
+  kind: "app" | "site";
+  match: AppMatch;
+  defaults: Record<string, Binding>;
+  actions: AppAction[];
+  source?: string;
 }
 
 export interface Config {
