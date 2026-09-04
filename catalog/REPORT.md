@@ -2,7 +2,7 @@
 
 Generated 2026-09-04 on branch `catalog-expansion` by `tools/gen_presets.py` from `catalog/*.json` (134 source files) plus the ShortcutMapper import.
 
-**160 entries** (109 apps, 47 sites, 4 systems), **22,579 actions**. Validator: 0 errors. Rust gate (`apps_catalog_chords_parse`): every chord parses. Column check: 0 Mac chords in Windows columns and vice versa.
+**160 entries** (109 apps, 47 sites, 4 systems), **22,579 actions**. Validator: 0 errors. QA: 60/60 sampled shortcuts matched their sources across four rounds. Rust gate (`apps_catalog_chords_parse`): every chord parses. Column check: 0 Mac chords in Windows columns and vice versa.
 
 ## Quality checks
 
@@ -11,7 +11,7 @@ Generated 2026-09-04 on branch `catalog-expansion` by `tools/gen_presets.py` fro
 | 1 | google_docs, vscode, chrome | 15/15 sampled shortcuts match the source; counts consistent |
 | 2 | excel, final_cut_pro, teams | 15/15 match; two Final Cut sections match row-for-row |
 | 3 | ableton_live, godot, canva | 15/15 match; one vendor typo silently normalised in canva (Option+P on the Windows tab) |
-| 4 | acrobat, paint_net, outlook_web | QA4_PLACEHOLDER |
+| 4 | acrobat, paint_net, outlook_web | 15/15 match; Acrobat diffed section-by-section with no gaps; one undocumented omission in outlook_web (Invite Attendees = N, same key as an existing action) |
 
 ## Entries
 
