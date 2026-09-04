@@ -1,0 +1,4 @@
+# Keep the repo LF everywhere; Windows checkouts stay consistent with CI.
+* text=auto eol=lf
+*.png binary
+*.ico binary
