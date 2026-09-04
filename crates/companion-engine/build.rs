@@ -10,6 +10,15 @@ fn main() {
             let manifest =
                 new_manifest("NayaOS.NayaCompanion").active_code_page(ActiveCodePage::Utf8);
             embed_manifest(manifest).expect("embedding the Windows manifest");
+            // Product name / description shown by Task Manager and file properties.
+            let mut res = winresource::WindowsResource::new();
+            res.set("ProductName", "Create Companion")
+                .set("FileDescription", "Create Companion engine")
+                .set("CompanyName", "NayaOS")
+                .set("LegalCopyright", "MIT");
+            if let Err(e) = res.compile() {
+                println!("cargo:warning=version resource not embedded: {e}");
+            }
         }
     }
     println!("cargo:rerun-if-changed=build.rs");

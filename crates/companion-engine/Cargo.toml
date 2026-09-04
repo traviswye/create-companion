@@ -30,3 +30,4 @@ tray-icon = "0.24"
 
 [build-dependencies]
 embed-manifest = "1"
+winresource = "0.1"
