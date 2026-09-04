@@ -1,0 +1,142 @@
+{
+  "id": "plex",
+  "name": "Plex",
+  "kind": "app",
+  "category": "Video",
+  "match": {
+    "windows_exe": [
+      "Plex.exe"
+    ],
+    "macos_bundle": [
+      "tv.plex.desktop"
+    ],
+    "window_title": [
+      "Plex"
+    ]
+  },
+  "sources": [
+    "https://support.plex.tv/articles/configuration-and-usage-options/"
+  ],
+  "note": "Plex does not publish a dedicated 'Keyboard Shortcuts' support article for the Web App or the Windows/macOS desktop app. The only documented key chords are in the 'Controlling the App' section of 'Configuration and Usage Options', which covers window/navigation shortcuts for the Windows and macOS desktop app plus the multimedia keys (Play, Play/Pause, Pause, Stop, Previous, Next) it supports; the Stop media key has no equivalent in this catalog's media-key vocabulary and is omitted. Dedicated forward/back mouse buttons are mouse-only and omitted. The Plex Web App's playback bar (previous/skip back 10s/play-pause/skip forward 30s/next/etc., described in 'Plex Web App Player') is documented as mouse-driven UI only, with no specific keyboard chords given, so it is not included here to avoid inventing bindings.",
+  "actions": [
+    {
+      "name": "Fullscreen",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F11"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Ctrl+F"
+      }
+    },
+    {
+      "name": "Fullscreen (alternate)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Enter"
+      }
+    },
+    {
+      "name": "Back",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Left"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+["
+      }
+    },
+    {
+      "name": "Forward",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Right"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+]"
+      }
+    },
+    {
+      "name": "Preferences",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+,"
+      }
+    },
+    {
+      "name": "Quit",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Q"
+      }
+    },
+    {
+      "name": "Play / pause (media key)",
+      "context": "",
+      "windows": {
+        "type": "media",
+        "key": "play_pause"
+      },
+      "mac": {
+        "type": "media",
+        "key": "play_pause"
+      }
+    },
+    {
+      "name": "Previous (media key)",
+      "context": "",
+      "windows": {
+        "type": "media",
+        "key": "previous_track"
+      },
+      "mac": {
+        "type": "media",
+        "key": "previous_track"
+      }
+    },
+    {
+      "name": "Next (media key)",
+      "context": "",
+      "windows": {
+        "type": "media",
+        "key": "next_track"
+      },
+      "mac": {
+        "type": "media",
+        "key": "next_track"
+      }
+    }
+  ],
+  "defaults": {
+    "TUNE_TAP_1F": {
+      "name": "Play / pause",
+      "action": {
+        "type": "media",
+        "key": "play_pause"
+      }
+    },
+    "TUNE_SWIPE_LEFT": {
+      "name": "Previous",
+      "action": {
+        "type": "media",
+        "key": "previous_track"
+      }
+    },
+    "TUNE_SWIPE_RIGHT": {
+      "name": "Next",
+      "action": {
+        "type": "media",
+        "key": "next_track"
+      }
+    }
+  }
+}

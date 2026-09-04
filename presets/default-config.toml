@@ -396,7 +396,7 @@ action = { type = "keys", chord = "F8" }
 [[profiles]]
 name = "Discord"
 enabled = true
-match = { windows_exe = ["Discord.exe"], macos_bundle = ["com.hnc.Discord"] }
+match = { windows_exe = ["Discord.exe"], macos_bundle = ["com.hnc.Discord"], window_title = ["Discord"] }
 
 [profiles.bindings.TUNE_CW]
 name = "Next channel"
@@ -425,7 +425,7 @@ action = { type = "keys", chord = "Ctrl+Shift+D" }
 [[profiles]]
 name = "Spotify"
 enabled = true
-match = { windows_exe = ["Spotify.exe"], macos_bundle = ["com.spotify.client"] }
+match = { windows_exe = ["Spotify.exe"], macos_bundle = ["com.spotify.client"], window_title = ["Spotify"] }
 
 [profiles.bindings.TUNE_CW]
 name = "Volume up (app)"

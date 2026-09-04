@@ -1,0 +1,319 @@
+{
+  "id": "unreal_engine",
+  "name": "Unreal Engine",
+  "kind": "app",
+  "category": "Development",
+  "match": {
+    "windows_exe": [
+      "UnrealEditor.exe",
+      "UE4Editor.exe"
+    ],
+    "macos_bundle": [
+      "com.epicgames.UnrealEditor"
+    ],
+    "window_title": []
+  },
+  "sources": [
+    "https://dev.epicgames.com/documentation/en-us/unreal-engine/viewport-controls-in-unreal-engine",
+    "https://dev.epicgames.com/documentation/en-us/unreal-engine/viewport-modes-in-unreal-engine",
+    "https://dev.epicgames.com/documentation/en-us/unreal-engine/level-editor-in-unreal-engine",
+    "https://dev.epicgames.com/documentation/unreal-engine/selecting-actors-in-unreal-engine",
+    "https://dev.epicgames.com/documentation/unreal-engine/transforming-actors-in-unreal-engine",
+    "https://dev.epicgames.com/documentation/en-us/unreal-engine/blueprint-editor-cheat-sheet-in-unreal-engine",
+    "https://dev.epicgames.com/documentation/en-us/unreal-engine/unreal-editor-interface"
+  ],
+  "note": "From Epic's official Unreal Engine 5.8 documentation (Viewport Controls, Viewport Modes, Level Editor, Selecting Actors, Transforming Actors, Blueprint Editor Cheat Sheet, and Unreal Editor Interface pages). Mouse-only and mouse+modifier bindings are omitted throughout because the chord grammar cannot express them: marquee/click selection (LMB, Ctrl+LMB, Shift+LMB, Ctrl+Alt+LMB-drag), all camera look/orbit/pan/dolly controls that require holding LMB/RMB/MMB and dragging, the RMB-held WASD/QE fly-through controls, Alt+LMB-drag actor duplication, Alt+MMB pivot dragging, hover/drag pin actions in the Blueprint graph, and the Blueprint node-creation shortcuts that are a letter key plus a left-click on the graph (B, C, D, S, G, F, M, N, O, P + click). 'Arrow Keys move selected nodes' in the Blueprint editor is split into four directional entries. Actor-selection modifier+click combos (Ctrl+Click, Shift+Click in Outliner) are likewise mouse-driven and omitted.",
+  "actions": [
+    {
+      "name": "Focus on selected object",
+      "context": "Viewport Navigation",
+      "windows": { "type": "keys", "chord": "F" }
+    },
+    {
+      "name": "Toggle Game Mode (hide editor icons)",
+      "context": "Viewport Navigation",
+      "windows": { "type": "keys", "chord": "G" }
+    },
+    {
+      "name": "Toggle real-time viewport playback",
+      "context": "Viewport Navigation",
+      "windows": { "type": "keys", "chord": "Ctrl+R" }
+    },
+    {
+      "name": "Toggle immersive / full-screen mode",
+      "context": "Viewport Navigation",
+      "windows": { "type": "keys", "chord": "F11" }
+    },
+    {
+      "name": "Open Content Drawer",
+      "context": "General",
+      "windows": { "type": "keys", "chord": "Ctrl+Space" }
+    },
+    {
+      "name": "Open console command line",
+      "context": "General",
+      "windows": { "type": "keys", "chord": "`" }
+    },
+    {
+      "name": "Toggle between Move / Rotate / Scale gizmos",
+      "context": "Transform Tools",
+      "windows": { "type": "keys", "chord": "Space" }
+    },
+    {
+      "name": "Selection Tool (hide gizmo)",
+      "context": "Transform Tools",
+      "windows": { "type": "keys", "chord": "Q" }
+    },
+    {
+      "name": "Translate Tool",
+      "context": "Transform Tools",
+      "windows": { "type": "keys", "chord": "W" }
+    },
+    {
+      "name": "Rotate Tool",
+      "context": "Transform Tools",
+      "windows": { "type": "keys", "chord": "E" }
+    },
+    {
+      "name": "Scale Tool",
+      "context": "Transform Tools",
+      "windows": { "type": "keys", "chord": "R" }
+    },
+    {
+      "name": "View Mode: Wireframe",
+      "context": "Viewport Modes",
+      "windows": { "type": "keys", "chord": "Alt+2" }
+    },
+    {
+      "name": "View Mode: Unlit",
+      "context": "Viewport Modes",
+      "windows": { "type": "keys", "chord": "Alt+3" }
+    },
+    {
+      "name": "View Mode: Lit",
+      "context": "Viewport Modes",
+      "windows": { "type": "keys", "chord": "Alt+4" }
+    },
+    {
+      "name": "View Mode: Detail Lighting",
+      "context": "Viewport Modes",
+      "windows": { "type": "keys", "chord": "Alt+5" }
+    },
+    {
+      "name": "View Mode: Lighting Only",
+      "context": "Viewport Modes",
+      "windows": { "type": "keys", "chord": "Alt+6" }
+    },
+    {
+      "name": "View Mode: Light Complexity",
+      "context": "Viewport Modes",
+      "windows": { "type": "keys", "chord": "Alt+7" }
+    },
+    {
+      "name": "View Mode: Shader Complexity",
+      "context": "Viewport Modes",
+      "windows": { "type": "keys", "chord": "Alt+8" }
+    },
+    {
+      "name": "View Mode: Lightmap Density",
+      "context": "Viewport Modes",
+      "windows": { "type": "keys", "chord": "Alt+0" }
+    },
+    {
+      "name": "Toggle / enable Surface Snapping",
+      "context": "Actor Selection/Manipulation",
+      "windows": { "type": "keys", "chord": "Z" }
+    },
+    {
+      "name": "Toggle Translation/Rotation/Scale snapping (for current gizmo)",
+      "context": "Actor Selection/Manipulation",
+      "windows": { "type": "keys", "chord": "X" }
+    },
+    {
+      "name": "Toggle vertex snapping",
+      "context": "Actor Selection/Manipulation",
+      "windows": { "type": "keys", "chord": "V" }
+    },
+    {
+      "name": "Duplicate selected actor (in place)",
+      "context": "Actor Selection/Manipulation",
+      "windows": { "type": "keys", "chord": "Ctrl+W" }
+    },
+    {
+      "name": "Hide selected actor",
+      "context": "Actor Selection/Manipulation",
+      "windows": { "type": "keys", "chord": "H" }
+    },
+    {
+      "name": "Show all hidden actors",
+      "context": "Actor Selection/Manipulation",
+      "windows": { "type": "keys", "chord": "Ctrl+H" }
+    },
+    {
+      "name": "Select all actors with the same static mesh",
+      "context": "Actor Selection/Manipulation",
+      "windows": { "type": "keys", "chord": "Shift+E" }
+    },
+    {
+      "name": "Editor Mode: Select",
+      "context": "Editor Modes",
+      "windows": { "type": "keys", "chord": "Shift+1" }
+    },
+    {
+      "name": "Editor Mode: Landscape",
+      "context": "Editor Modes",
+      "windows": { "type": "keys", "chord": "Shift+2" }
+    },
+    {
+      "name": "Editor Mode: Foliage",
+      "context": "Editor Modes",
+      "windows": { "type": "keys", "chord": "Shift+3" }
+    },
+    {
+      "name": "Editor Mode: Mesh Paint",
+      "context": "Editor Modes",
+      "windows": { "type": "keys", "chord": "Shift+4" }
+    },
+    {
+      "name": "Editor Mode: Modeling",
+      "context": "Editor Modes",
+      "windows": { "type": "keys", "chord": "Shift+5" }
+    },
+    {
+      "name": "Editor Mode: Fracture",
+      "context": "Editor Modes",
+      "windows": { "type": "keys", "chord": "Shift+6" }
+    },
+    {
+      "name": "Editor Mode: Brush Editing",
+      "context": "Editor Modes",
+      "windows": { "type": "keys", "chord": "Shift+7" }
+    },
+    {
+      "name": "Editor Mode: Animation",
+      "context": "Editor Modes",
+      "windows": { "type": "keys", "chord": "Shift+8" }
+    },
+    {
+      "name": "Zoom graph to fit selection",
+      "context": "Blueprint Editor",
+      "windows": { "type": "keys", "chord": "Home" }
+    },
+    {
+      "name": "Go into child graph",
+      "context": "Blueprint Editor",
+      "windows": { "type": "keys", "chord": "PageDown" }
+    },
+    {
+      "name": "Go to parent graph",
+      "context": "Blueprint Editor",
+      "windows": { "type": "keys", "chord": "PageUp" }
+    },
+    {
+      "name": "Find in Content Browser",
+      "context": "Blueprint Editor",
+      "windows": { "type": "keys", "chord": "Ctrl+B" }
+    },
+    {
+      "name": "Save Blueprint",
+      "context": "Blueprint Editor",
+      "windows": { "type": "keys", "chord": "Ctrl+S" }
+    },
+    {
+      "name": "Redo",
+      "context": "Blueprint Editor",
+      "windows": { "type": "keys", "chord": "Ctrl+Y" }
+    },
+    {
+      "name": "Undo",
+      "context": "Blueprint Editor",
+      "windows": { "type": "keys", "chord": "Ctrl+Z" }
+    },
+    {
+      "name": "Find in this Blueprint",
+      "context": "Blueprint Editor",
+      "windows": { "type": "keys", "chord": "Ctrl+F" }
+    },
+    {
+      "name": "Find in any Blueprint",
+      "context": "Blueprint Editor",
+      "windows": { "type": "keys", "chord": "Ctrl+Shift+F" }
+    },
+    {
+      "name": "Compile the Blueprint",
+      "context": "Blueprint Editor",
+      "windows": { "type": "keys", "chord": "F7" }
+    },
+    {
+      "name": "Move selected node up",
+      "context": "Blueprint Editor",
+      "windows": { "type": "keys", "chord": "Up" }
+    },
+    {
+      "name": "Move selected node down",
+      "context": "Blueprint Editor",
+      "windows": { "type": "keys", "chord": "Down" }
+    },
+    {
+      "name": "Move selected node left",
+      "context": "Blueprint Editor",
+      "windows": { "type": "keys", "chord": "Left" }
+    },
+    {
+      "name": "Move selected node right",
+      "context": "Blueprint Editor",
+      "windows": { "type": "keys", "chord": "Right" }
+    },
+    {
+      "name": "Delete selected nodes",
+      "context": "Blueprint Editor",
+      "windows": { "type": "keys", "chord": "Delete" }
+    },
+    {
+      "name": "Rename node / edit comment",
+      "context": "Blueprint Editor",
+      "windows": { "type": "keys", "chord": "F2" }
+    },
+    {
+      "name": "Toggle breakpoint",
+      "context": "Blueprint Editor",
+      "windows": { "type": "keys", "chord": "F9" }
+    },
+    {
+      "name": "Clear all breakpoints",
+      "context": "Blueprint Editor",
+      "windows": { "type": "keys", "chord": "Ctrl+Shift+F9" }
+    },
+    {
+      "name": "Cut selection",
+      "context": "Blueprint Editor",
+      "windows": { "type": "keys", "chord": "Ctrl+X" }
+    },
+    {
+      "name": "Copy selection",
+      "context": "Blueprint Editor",
+      "windows": { "type": "keys", "chord": "Ctrl+C" }
+    },
+    {
+      "name": "Paste nodes",
+      "context": "Blueprint Editor",
+      "windows": { "type": "keys", "chord": "Ctrl+V" }
+    },
+    {
+      "name": "Duplicate selection",
+      "context": "Blueprint Editor",
+      "windows": { "type": "keys", "chord": "Ctrl+D" }
+    },
+    {
+      "name": "Add a comment around selection",
+      "context": "Blueprint Editor",
+      "windows": { "type": "keys", "chord": "C" }
+    }
+  ],
+  "defaults": {
+    "TUNE_TAP_1F": {
+      "name": "Focus on selected object",
+      "action": { "type": "keys", "chord": "F" }
+    }
+  }
+}

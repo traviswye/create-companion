@@ -1,0 +1,1108 @@
+{
+  "id": "krita",
+  "name": "Krita",
+  "kind": "app",
+  "category": "Creative",
+  "match": {
+    "windows_exe": [
+      "krita.exe"
+    ],
+    "macos_bundle": [
+      "org.kde.krita"
+    ],
+    "window_title": []
+  },
+  "sources": [
+    "https://docs.krita.org/en/reference_manual/main_menu/file_menu.html",
+    "https://docs.krita.org/en/reference_manual/main_menu/edit_menu.html",
+    "https://docs.krita.org/en/reference_manual/main_menu/view_menu.html",
+    "https://docs.krita.org/en/reference_manual/main_menu/image_menu.html",
+    "https://docs.krita.org/en/reference_manual/main_menu/layers_menu.html",
+    "https://docs.krita.org/en/reference_manual/main_menu/select_menu.html",
+    "https://docs.krita.org/en/reference_manual/main_menu/help_menu.html",
+    "https://docs.krita.org/en/reference_manual/blending_modes.html",
+    "https://docs.krita.org/en/reference_manual/tools/zoom.html",
+    "https://docs.krita.org/en/reference_manual/tools/freehand_brush.html",
+    "https://docs.krita.org/en/reference_manual/tools/line.html",
+    "https://docs.krita.org/en/reference_manual/tools/multibrush.html",
+    "https://docs.krita.org/en/reference_manual/tools/elliptical_select.html",
+    "https://docs.krita.org/en/reference_manual/tools/rectangular_select.html",
+    "https://docs.krita.org/en/reference_manual/tools/polygon.html",
+    "https://docs.krita.org/en/reference_manual/tools/path.html",
+    "https://docs.krita.org/en/reference_manual/tools/shape_edit.html",
+    "https://docs.krita.org/en/reference_manual/tools/shape_selection.html",
+    "https://docs.krita.org/en/reference_manual/tools/text.html",
+    "https://docs.krita.org/en/reference_manual/dockers/layers.html",
+    "https://docs.krita.org/en/reference_manual/dockers/advanced_color_selector.html",
+    "https://docs.krita.org/en/reference_manual/dockers/oncanvas_brush_editor.html",
+    "https://docs.krita.org/en/reference_manual/filters/adjust.html",
+    "https://docs.krita.org/en/reference_manual/preferences/canvas_only_mode.html",
+    "https://docs.krita.org/en/reference_manual/preferences/color_selector_settings.html",
+    "https://docs.krita.org/en/reference_manual/preferences/general_settings.html",
+    "https://docs.krita.org/en/reference_manual/preferences/shortcut_settings.html",
+    "https://docs.krita.org/en/reference_manual/layers_and_masks/paint_layers.html",
+    "https://docs.krita.org/en/reference_manual/layers_and_masks/vector_layers.html",
+    "https://docs.krita.org/en/user_manual/getting_started/navigation.html",
+    "https://docs.krita.org/en/user_manual/snapping.html",
+    "https://docs.krita.org/en/user_manual/soft_proofing.html",
+    "https://docs.krita.org/en/user_manual/introduction_from_other_software/introduction_from_photoshop.html"
+  ],
+  "note": "Krita's manual has no single default-shortcut table, so this list is assembled from the pages of the manual that state a default: the Main Menu pages (File, Edit, View, Image, Layer, Select, Help), the Blending Modes page, the Zoom / Freehand Brush / Line / Multibrush / Elliptical Selection / Rectangular Selection / Polygon / Path / Shape Edit / Shape Selection / Text tool pages, the Layers, Advanced Color Selector, Grids and Guides and On-Canvas Brush Editor docker pages, the Adjust filters page, the Canvas Only Mode, Color Selector Settings and General Settings preference pages, the Paint Layers and Vector Layers pages and the Navigation, Snapping, Soft Proofing and \"Introduction to Krita coming from Photoshop\" user-manual pages. The manual documents one set of chords and gives no separate Mac ones, so only `windows` is filled in. The 25 blending-mode chords are the Alt+Shift modifier plus a letter, as the Blending Modes page describes. Left out because the chord grammar cannot express them or because the source is ambiguous: every mouse and stylus binding (all the selection-tool Shift/Alt/Ctrl + click modes, Space + drag panning, Ctrl + Space zooming, Shift + Space rotation, the transform-tool mesh bindings, \"hold R and click\" to pick a layer); the duplicate keys documented for the same command (4 and 6 for canvas rotation alongside Ctrl+[ and Ctrl+], Ctrl+Shift+E under both Flatten Image and \"merges all layers\", Shift+S under both the snap pop-up and grid snapping); \"Next / Previous Blending Mode + and -\", where the page does not say whether the Alt+Shift modifier still applies; Shift+N, which the manual lists as one of \"the two shade selectors\" without saying which; and the Y key on the LUT Management docker, which is not given a command name.",
+  "actions": [
+    {
+      "name": "New",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+N"
+      }
+    },
+    {
+      "name": "Open...",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+O"
+      }
+    },
+    {
+      "name": "Save",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+S"
+      }
+    },
+    {
+      "name": "Save As...",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+S"
+      }
+    },
+    {
+      "name": "Save Incremental Version",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+S"
+      }
+    },
+    {
+      "name": "Save Incremental Backup",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F4"
+      }
+    },
+    {
+      "name": "Close",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+W"
+      }
+    },
+    {
+      "name": "Close All",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+W"
+      }
+    },
+    {
+      "name": "Quit",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Q"
+      }
+    },
+    {
+      "name": "Undo",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Z"
+      }
+    },
+    {
+      "name": "Redo",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Z"
+      }
+    },
+    {
+      "name": "Cut",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+X"
+      }
+    },
+    {
+      "name": "Copy",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+C"
+      }
+    },
+    {
+      "name": "Copy Merged",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+C"
+      }
+    },
+    {
+      "name": "Paste",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+V"
+      }
+    },
+    {
+      "name": "Paste at Cursor",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+V"
+      }
+    },
+    {
+      "name": "Paste into New Image",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+N"
+      }
+    },
+    {
+      "name": "Clear",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Delete"
+      }
+    },
+    {
+      "name": "Fill with Foreground Color",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Backspace"
+      }
+    },
+    {
+      "name": "Fill with Background Color",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Backspace"
+      }
+    },
+    {
+      "name": "Fill with Foreground Color (Opacity)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Backspace"
+      }
+    },
+    {
+      "name": "Fill with Background Color (Opacity)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Backspace"
+      }
+    },
+    {
+      "name": "Show Canvas Only",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Tab"
+      }
+    },
+    {
+      "name": "Full Screen mode",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+F"
+      }
+    },
+    {
+      "name": "Instant Preview Mode",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+L"
+      }
+    },
+    {
+      "name": "Soft Proofing",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Y"
+      }
+    },
+    {
+      "name": "Out of Gamut Warnings",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Y"
+      }
+    },
+    {
+      "name": "Mirror View",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "M"
+      }
+    },
+    {
+      "name": "Show Grid",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+'"
+      }
+    },
+    {
+      "name": "Scale to New Size...",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+I"
+      }
+    },
+    {
+      "name": "Resize Canvas...",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+C"
+      }
+    },
+    {
+      "name": "Flatten Image",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+E"
+      }
+    },
+    {
+      "name": "Select All",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+A"
+      }
+    },
+    {
+      "name": "Deselect",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+A"
+      }
+    },
+    {
+      "name": "Reselect",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+D"
+      }
+    },
+    {
+      "name": "Invert Selection",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+I"
+      }
+    },
+    {
+      "name": "Display Selection",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+H"
+      }
+    },
+    {
+      "name": "Feather Selection...",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+F6"
+      }
+    },
+    {
+      "name": "Krita Handbook",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F1"
+      }
+    },
+    {
+      "name": "Zoom In",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "+"
+      }
+    },
+    {
+      "name": "Zoom Out",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "-"
+      }
+    },
+    {
+      "name": "Reset Zoom to 100%",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "1"
+      }
+    },
+    {
+      "name": "Fit Page",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "2"
+      }
+    },
+    {
+      "name": "Fit Page Width",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "3"
+      }
+    },
+    {
+      "name": "Rotate Canvas Left",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+["
+      }
+    },
+    {
+      "name": "Rotate Canvas Right",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+]"
+      }
+    },
+    {
+      "name": "Reset Canvas Rotation",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "5"
+      }
+    },
+    {
+      "name": "Mirror View Around Cursor",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+M"
+      }
+    },
+    {
+      "name": "Search actions",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Enter"
+      }
+    },
+    {
+      "name": "Freehand Brush Tool",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "B"
+      }
+    },
+    {
+      "name": "Line Tool",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "V"
+      }
+    },
+    {
+      "name": "Multibrush Tool",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Q"
+      }
+    },
+    {
+      "name": "Elliptical Selection Tool",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "J"
+      }
+    },
+    {
+      "name": "Rectangular Selection Tool",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+R"
+      }
+    },
+    {
+      "name": "Move Tool",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "T"
+      }
+    },
+    {
+      "name": "Toggle Eraser Mode",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "E"
+      }
+    },
+    {
+      "name": "Snap to Assistants",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+L"
+      }
+    },
+    {
+      "name": "Brush Settings Editor",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F5"
+      }
+    },
+    {
+      "name": "Brush Presets",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F6"
+      }
+    },
+    {
+      "name": "Layer Properties",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F3"
+      }
+    },
+    {
+      "name": "Merge Layer Down",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+E"
+      }
+    },
+    {
+      "name": "Add New Paint Layer",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Insert"
+      }
+    },
+    {
+      "name": "Add New Vector Layer",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Insert"
+      }
+    },
+    {
+      "name": "Group Layer",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+G"
+      }
+    },
+    {
+      "name": "Quick Clipping Group",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+G"
+      }
+    },
+    {
+      "name": "Ungroup Layers",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+G"
+      }
+    },
+    {
+      "name": "Move Layer Up",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+PageUp"
+      }
+    },
+    {
+      "name": "Move Layer Down",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+PageDown"
+      }
+    },
+    {
+      "name": "Color History",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "H"
+      }
+    },
+    {
+      "name": "Common Colors",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "U"
+      }
+    },
+    {
+      "name": "Advanced Color Selector",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+I"
+      }
+    },
+    {
+      "name": "MyPaint Shade Selector",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+M"
+      }
+    },
+    {
+      "name": "Make Brush Color Darker",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "K"
+      }
+    },
+    {
+      "name": "Make Brush Color Lighter",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "L"
+      }
+    },
+    {
+      "name": "Show Tool Options in the toolbar",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "\\"
+      }
+    },
+    {
+      "name": "Snap Settings pop-up",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+S"
+      }
+    },
+    {
+      "name": "Levels",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+L"
+      }
+    },
+    {
+      "name": "Color Balance",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+B"
+      }
+    },
+    {
+      "name": "Desaturate",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+U"
+      }
+    },
+    {
+      "name": "Invert",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+I"
+      }
+    },
+    {
+      "name": "HSV Adjustment",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+U"
+      }
+    },
+    {
+      "name": "Linear Burn",
+      "context": "Blending modes",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+A"
+      }
+    },
+    {
+      "name": "Color Burn",
+      "context": "Blending modes",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+B"
+      }
+    },
+    {
+      "name": "Color",
+      "context": "Blending modes",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+C"
+      }
+    },
+    {
+      "name": "Color Dodge",
+      "context": "Blending modes",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+D"
+      }
+    },
+    {
+      "name": "Difference",
+      "context": "Blending modes",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+E"
+      }
+    },
+    {
+      "name": "Soft Light",
+      "context": "Blending modes",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+F"
+      }
+    },
+    {
+      "name": "Lighten",
+      "context": "Blending modes",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+G"
+      }
+    },
+    {
+      "name": "Hard Light",
+      "context": "Blending modes",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+H"
+      }
+    },
+    {
+      "name": "Dissolve",
+      "context": "Blending modes",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+I"
+      }
+    },
+    {
+      "name": "Linear Light",
+      "context": "Blending modes",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+J"
+      }
+    },
+    {
+      "name": "Darken",
+      "context": "Blending modes",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+K"
+      }
+    },
+    {
+      "name": "Hard Mix",
+      "context": "Blending modes",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+L"
+      }
+    },
+    {
+      "name": "Multiply",
+      "context": "Blending modes",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+M"
+      }
+    },
+    {
+      "name": "Normal",
+      "context": "Blending modes",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+N"
+      }
+    },
+    {
+      "name": "Overlay",
+      "context": "Blending modes",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+O"
+      }
+    },
+    {
+      "name": "Hard Overlay",
+      "context": "Blending modes",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+P"
+      }
+    },
+    {
+      "name": "Behind",
+      "context": "Blending modes",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+Q"
+      }
+    },
+    {
+      "name": "Screen",
+      "context": "Blending modes",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+S"
+      }
+    },
+    {
+      "name": "Saturation",
+      "context": "Blending modes",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+T"
+      }
+    },
+    {
+      "name": "Hue",
+      "context": "Blending modes",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+U"
+      }
+    },
+    {
+      "name": "Vivid Light",
+      "context": "Blending modes",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+V"
+      }
+    },
+    {
+      "name": "Exclusion",
+      "context": "Blending modes",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+W"
+      }
+    },
+    {
+      "name": "Linear Dodge",
+      "context": "Blending modes",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+X"
+      }
+    },
+    {
+      "name": "Luminosity",
+      "context": "Blending modes",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+Y"
+      }
+    },
+    {
+      "name": "Pin Light",
+      "context": "Blending modes",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+Z"
+      }
+    },
+    {
+      "name": "Save",
+      "context": "Text editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+S"
+      }
+    },
+    {
+      "name": "Close",
+      "context": "Text editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+W"
+      }
+    },
+    {
+      "name": "Undo",
+      "context": "Text editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Z"
+      }
+    },
+    {
+      "name": "Redo",
+      "context": "Text editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Z"
+      }
+    },
+    {
+      "name": "Cut",
+      "context": "Text editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+X"
+      }
+    },
+    {
+      "name": "Copy",
+      "context": "Text editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+C"
+      }
+    },
+    {
+      "name": "Paste",
+      "context": "Text editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+V"
+      }
+    },
+    {
+      "name": "Select all",
+      "context": "Text editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+A"
+      }
+    },
+    {
+      "name": "Deselect",
+      "context": "Text editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+A"
+      }
+    },
+    {
+      "name": "Find",
+      "context": "Text editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+F"
+      }
+    },
+    {
+      "name": "Find Next",
+      "context": "Text editor",
+      "windows": {
+        "type": "keys",
+        "chord": "F3"
+      }
+    },
+    {
+      "name": "Find Previous",
+      "context": "Text editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+F3"
+      }
+    },
+    {
+      "name": "Replace...",
+      "context": "Text editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+R"
+      }
+    },
+    {
+      "name": "Zoom Out",
+      "context": "Text editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+-"
+      }
+    },
+    {
+      "name": "Zoom In",
+      "context": "Text editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl++"
+      }
+    },
+    {
+      "name": "Undo the last clicked point",
+      "context": "Polygon tool",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Z"
+      }
+    },
+    {
+      "name": "Finish the polygon",
+      "context": "Polygon tool",
+      "windows": {
+        "type": "keys",
+        "chord": "Enter"
+      }
+    },
+    {
+      "name": "Remove the selected node",
+      "context": "Edit Shapes tool",
+      "windows": {
+        "type": "keys",
+        "chord": "Delete"
+      }
+    },
+    {
+      "name": "Enter the Edit Shapes tool",
+      "context": "Shape Selection tool",
+      "windows": {
+        "type": "keys",
+        "chord": "Enter"
+      }
+    },
+    {
+      "name": "Cancel the curve",
+      "context": "Path tool",
+      "windows": {
+        "type": "keys",
+        "chord": "Esc"
+      }
+    },
+    {
+      "name": "Finish drawing the curve",
+      "context": "Path tool",
+      "windows": {
+        "type": "keys",
+        "chord": "Enter"
+      }
+    }
+  ],
+  "defaults": {
+    "TUNE_CW": {
+      "name": "Zoom In",
+      "action": {
+        "type": "keys",
+        "chord": "+"
+      },
+      "accel": "light"
+    },
+    "TUNE_CCW": {
+      "name": "Zoom Out",
+      "action": {
+        "type": "keys",
+        "chord": "-"
+      },
+      "accel": "light"
+    },
+    "TUNE_TAP_1F": {
+      "name": "Fit Page",
+      "action": {
+        "type": "keys",
+        "chord": "2"
+      }
+    },
+    "TUNE_SWIPE_LEFT": {
+      "name": "Undo",
+      "action": {
+        "type": "keys",
+        "chord": "Ctrl+Z"
+      }
+    },
+    "TUNE_SWIPE_RIGHT": {
+      "name": "Redo",
+      "action": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Z"
+      }
+    }
+  }
+}

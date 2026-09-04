@@ -1,0 +1,1068 @@
+{
+  "id": "vlc",
+  "name": "VLC media player",
+  "kind": "app",
+  "category": "Video",
+  "match": {
+    "windows_exe": [
+      "vlc.exe"
+    ],
+    "macos_bundle": [
+      "org.videolan.vlc"
+    ],
+    "window_title": []
+  },
+  "sources": [
+    "https://wiki.videolan.org/QtHotkeys/"
+  ],
+  "note": "The VideoLAN wiki's Hotkeys table documents a single set of hotkeys for the Qt interface (Windows and Linux); it does not publish a separate macOS column, so no 'mac' chord is included here (VLC's native macOS build uses its own Cocoa menu shortcuts, which are not covered by this table). Skipped as not expressible by the chord grammar: 'Navigate menus (DVD)' (bound to the generic 'Arrows', not a specific key), 'Scale down/up subtitles text' (Ctrl+Mouse wheel, a scroll gesture), and 'History back' (the wiki table itself flags this row 'Please check this' as unverified).",
+  "actions": [
+    {
+      "name": "Toggle fullscreen",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F"
+      }
+    },
+    {
+      "name": "Leave fullscreen / close dialog",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "ESC"
+      }
+    },
+    {
+      "name": "Play / pause",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "space"
+      }
+    },
+    {
+      "name": "Faster",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "+"
+      }
+    },
+    {
+      "name": "Slower",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "-"
+      }
+    },
+    {
+      "name": "Normal rate",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "="
+      }
+    },
+    {
+      "name": "Faster (fine)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "]"
+      }
+    },
+    {
+      "name": "Slower (fine)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "["
+      }
+    },
+    {
+      "name": "Next track",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "N"
+      }
+    },
+    {
+      "name": "Previous track",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "P"
+      }
+    },
+    {
+      "name": "Stop",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "S"
+      }
+    },
+    {
+      "name": "Position / time",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "T"
+      }
+    },
+    {
+      "name": "Jump 5 seconds back",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Left"
+      }
+    },
+    {
+      "name": "Jump 5 seconds forward",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Right"
+      }
+    },
+    {
+      "name": "Jump 10 sec. back",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Left"
+      }
+    },
+    {
+      "name": "Jump 10 sec. forward",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Right"
+      }
+    },
+    {
+      "name": "Jump 1 minute back",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Left"
+      }
+    },
+    {
+      "name": "Jump 1 minute forward",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Right"
+      }
+    },
+    {
+      "name": "Jump 5 minutes back",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Left"
+      }
+    },
+    {
+      "name": "Jump 5 minutes forward",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Right"
+      }
+    },
+    {
+      "name": "Next frame",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "E"
+      }
+    },
+    {
+      "name": "Disc menu",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+M"
+      }
+    },
+    {
+      "name": "Title prev",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+O"
+      }
+    },
+    {
+      "name": "Title next",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+B"
+      }
+    },
+    {
+      "name": "Chapter prev",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+P"
+      }
+    },
+    {
+      "name": "Chapter next",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+N"
+      }
+    },
+    {
+      "name": "Quit",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Q"
+      }
+    },
+    {
+      "name": "Volume up",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Up"
+      }
+    },
+    {
+      "name": "Volume down",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Down"
+      }
+    },
+    {
+      "name": "Mute",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "M"
+      }
+    },
+    {
+      "name": "Subtitle delay up",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "H"
+      }
+    },
+    {
+      "name": "Subtitle delay down",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "G"
+      }
+    },
+    {
+      "name": "Subtitle sync / bookmark audio timestamp",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+H"
+      }
+    },
+    {
+      "name": "Subtitle sync / bookmark subtitle timestamp",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+J"
+      }
+    },
+    {
+      "name": "Subtitle sync / synchronize audio & subtitle timestamps",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+K"
+      }
+    },
+    {
+      "name": "Subtitle sync / reset audio & subtitle synchronization",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+K"
+      }
+    },
+    {
+      "name": "Audio delay up OR next subtitle-track (or none)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "K"
+      }
+    },
+    {
+      "name": "Audio delay down",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "J"
+      }
+    },
+    {
+      "name": "Cycle audio track",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "B"
+      }
+    },
+    {
+      "name": "Cycle audio device",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+A"
+      }
+    },
+    {
+      "name": "Cycle subtitle track in reverse order",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+V"
+      }
+    },
+    {
+      "name": "Cycle subtitle track",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "V"
+      }
+    },
+    {
+      "name": "Toggle subtitles",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+V"
+      }
+    },
+    {
+      "name": "Cycle next program Service ID",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "X"
+      }
+    },
+    {
+      "name": "Cycle previous program Service ID",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+X"
+      }
+    },
+    {
+      "name": "Cycle aspect ratio",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "A"
+      }
+    },
+    {
+      "name": "Cycle cropping ratio",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "C"
+      }
+    },
+    {
+      "name": "Toggle autoscaling / original video size",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "O"
+      }
+    },
+    {
+      "name": "Increase scale factor",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+O"
+      }
+    },
+    {
+      "name": "Decrease scale factor",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+O"
+      }
+    },
+    {
+      "name": "Toggle deinterlacing",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "D"
+      }
+    },
+    {
+      "name": "Cycle deinterlace modes",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+D"
+      }
+    },
+    {
+      "name": "Show controller in fullscreen",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "I"
+      }
+    },
+    {
+      "name": "Snapshot",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+S"
+      }
+    },
+    {
+      "name": "Record",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+R"
+      }
+    },
+    {
+      "name": "Zoom",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Z"
+      }
+    },
+    {
+      "name": "Un-zoom",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Z"
+      }
+    },
+    {
+      "name": "Wallpaper",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "W"
+      }
+    },
+    {
+      "name": "Crop one pixel from the top of the video",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+R"
+      }
+    },
+    {
+      "name": "Uncrop one pixel from the top of the video",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+R"
+      }
+    },
+    {
+      "name": "Crop one pixel from the left of the video",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+D"
+      }
+    },
+    {
+      "name": "Uncrop one pixel from the left of the video",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+D"
+      }
+    },
+    {
+      "name": "Crop one pixel from the bottom of the video",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+C"
+      }
+    },
+    {
+      "name": "Uncrop one pixel from the bottom of the video",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+C"
+      }
+    },
+    {
+      "name": "Crop one pixel from the right of the video",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+F"
+      }
+    },
+    {
+      "name": "Uncrop one pixel from the right of the video",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+F"
+      }
+    },
+    {
+      "name": "Random",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "R"
+      }
+    },
+    {
+      "name": "Normal / loop / repeat",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "L"
+      }
+    },
+    {
+      "name": "Zoom 1:4 (quarter)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+1"
+      }
+    },
+    {
+      "name": "Zoom 1:2 (half)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+2"
+      }
+    },
+    {
+      "name": "Zoom 1:1 (original)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+3"
+      }
+    },
+    {
+      "name": "Zoom 2:1 (double)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+4"
+      }
+    },
+    {
+      "name": "Set playlist bookmark 1",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+F1"
+      }
+    },
+    {
+      "name": "Set playlist bookmark 2",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+F2"
+      }
+    },
+    {
+      "name": "Set playlist bookmark 3",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+F3"
+      }
+    },
+    {
+      "name": "Set playlist bookmark 4",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+F4"
+      }
+    },
+    {
+      "name": "Set playlist bookmark 5",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+F5"
+      }
+    },
+    {
+      "name": "Set playlist bookmark 6",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+F6"
+      }
+    },
+    {
+      "name": "Set playlist bookmark 7",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+F7"
+      }
+    },
+    {
+      "name": "Set playlist bookmark 8",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+F8"
+      }
+    },
+    {
+      "name": "Set playlist bookmark 9",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+F9"
+      }
+    },
+    {
+      "name": "Set playlist bookmark 10",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+F10"
+      }
+    },
+    {
+      "name": "Play playlist bookmark 1",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F1"
+      }
+    },
+    {
+      "name": "Play playlist bookmark 2",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F2"
+      }
+    },
+    {
+      "name": "Play playlist bookmark 3",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F3"
+      }
+    },
+    {
+      "name": "Play playlist bookmark 4",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F4"
+      }
+    },
+    {
+      "name": "Play playlist bookmark 5",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F5"
+      }
+    },
+    {
+      "name": "Play playlist bookmark 6",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F6"
+      }
+    },
+    {
+      "name": "Play playlist bookmark 7",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F7"
+      }
+    },
+    {
+      "name": "Play playlist bookmark 8",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F8"
+      }
+    },
+    {
+      "name": "Play playlist bookmark 9",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F9"
+      }
+    },
+    {
+      "name": "Play playlist bookmark 10",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F10"
+      }
+    },
+    {
+      "name": "Clear the playlist",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+W"
+      }
+    },
+    {
+      "name": "Reset subtitles scale",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+0"
+      }
+    },
+    {
+      "name": "Advanced controls",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+A"
+      }
+    },
+    {
+      "name": "Bookmarks",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+B"
+      }
+    },
+    {
+      "name": "Open capture device",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+C"
+      }
+    },
+    {
+      "name": "Open disc",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+D"
+      }
+    },
+    {
+      "name": "Extended settings",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+E"
+      }
+    },
+    {
+      "name": "Open Folder / Directory",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+F"
+      }
+    },
+    {
+      "name": "Hide / show menus",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+H"
+      }
+    },
+    {
+      "name": "Media information",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+I"
+      }
+    },
+    {
+      "name": "Codecs information",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+J"
+      }
+    },
+    {
+      "name": "Hide / show playlist",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+L"
+      }
+    },
+    {
+      "name": "Messages",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+M"
+      }
+    },
+    {
+      "name": "Open network stream",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+N"
+      }
+    },
+    {
+      "name": "Open file",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+O"
+      }
+    },
+    {
+      "name": "Preferences",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+P"
+      }
+    },
+    {
+      "name": "Convert / Save",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+R"
+      }
+    },
+    {
+      "name": "Streaming",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+S"
+      }
+    },
+    {
+      "name": "Goto time",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+T"
+      }
+    },
+    {
+      "name": "Dock / undock playlist",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+U"
+      }
+    },
+    {
+      "name": "Paste location / paste MRL",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+V"
+      }
+    },
+    {
+      "name": "VLM configurator",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+W"
+      }
+    },
+    {
+      "name": "Load playlist",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+X"
+      }
+    },
+    {
+      "name": "Save playlist",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Y"
+      }
+    },
+    {
+      "name": "Audio menu",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+A"
+      }
+    },
+    {
+      "name": "Help menu",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+H"
+      }
+    },
+    {
+      "name": "View menu",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+I"
+      }
+    },
+    {
+      "name": "Playback menu",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+L"
+      }
+    },
+    {
+      "name": "Media menu",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+M"
+      }
+    },
+    {
+      "name": "Tools menu",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+S"
+      }
+    },
+    {
+      "name": "Subtitle menu",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+T"
+      }
+    },
+    {
+      "name": "Select menu entry (DVD)",
+      "context": "DVD menu",
+      "windows": {
+        "type": "keys",
+        "chord": "Enter"
+      }
+    },
+    {
+      "name": "Shrink the viewpoint of view (360° video)",
+      "context": "360° video",
+      "windows": {
+        "type": "keys",
+        "chord": "PageUp"
+      }
+    },
+    {
+      "name": "Expand the viewpoint of view (360° video)",
+      "context": "360° video",
+      "windows": {
+        "type": "keys",
+        "chord": "PageDown"
+      }
+    }
+  ],
+  "defaults": {
+    "TUNE_CW": {
+      "name": "Volume up",
+      "action": {
+        "type": "keys",
+        "chord": "Ctrl+Up"
+      },
+      "accel": "light"
+    },
+    "TUNE_CCW": {
+      "name": "Volume down",
+      "action": {
+        "type": "keys",
+        "chord": "Ctrl+Down"
+      },
+      "accel": "light"
+    },
+    "TUNE_TAP_1F": {
+      "name": "Play / pause",
+      "action": {
+        "type": "keys",
+        "chord": "Space"
+      }
+    },
+    "TUNE_SWIPE_LEFT": {
+      "name": "Previous track",
+      "action": {
+        "type": "keys",
+        "chord": "P"
+      }
+    },
+    "TUNE_SWIPE_RIGHT": {
+      "name": "Next track",
+      "action": {
+        "type": "keys",
+        "chord": "N"
+      }
+    }
+  }
+}

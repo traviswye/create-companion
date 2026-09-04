@@ -1,0 +1,854 @@
+{
+  "id": "zbrush",
+  "name": "Maxon ZBrush",
+  "kind": "app",
+  "category": "CAD / 3D",
+  "match": {
+    "windows_exe": [
+      "ZBrush.exe"
+    ],
+    "macos_bundle": [
+      "com.pixologic.zbrush"
+    ],
+    "window_title": []
+  },
+  "sources": [
+    "https://help.maxon.net/zbr/en-us/Content/html/user-guide/keyboard-shortcuts/shortcuts-by-category/shortcuts-by-category.html",
+    "https://help.maxon.net/zbr/en-us/Content/html/user-guide/keyboard-shortcuts/keyboard-shortcuts.html",
+    "https://docs.pixologic.com/user-guide/keyboard-shortcuts/shortcuts-by-category/"
+  ],
+  "note": "From the ZBrush user guide \"Shortcuts by Category\" page (the docs.pixologic.com pages now redirect to help.maxon.net/zbr). The page lists one set of keys and does not document separate Mac chords, so only `windows` is filled in. The section headings are used as context. Left out because the chord grammar cannot express them: every mouse and click-and-drag binding (the whole \"Edit mode Navigation\", \"Transpose\", \"Dynamesh\" and \"ZSpheres\" mouse sections, the Timeline key-frame mouse actions, \"Load selected item: Double-click on Lightbox thumbnail\", \"Assign custom hotkey Ctrl+Alt+click\", \"Move item to custom interface position Ctrl+Alt+drag\"); the hold-a-modifier bindings (\"Toggle ZAdd and ZSub: Alt\", \"Paint mask on object: Ctrl\", \"Reverse 2.5D brush effect: Alt\", \"Select Masking Brush: hold Ctrl while selecting\"); the \"~ + click\" / \"@ + click\" document-layer bindings; and \"Snapshot to Movie\", which is documented as Ctrl+Shift+! on US layouts and Shift+Ctrl+PageUp on UK layouts. The Transpose sub-headings \"Move mode - W\", \"Scale - E\" and \"Rotate - R\" repeat the Sculpting and Painting entries and are not listed twice. Multi-letter brush picks such as \"B - S - T\" are sequence actions.",
+  "actions": [
+    {
+      "name": "Open Project",
+      "context": "General Shortcuts",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+O"
+      }
+    },
+    {
+      "name": "Save Project",
+      "context": "General Shortcuts",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+S"
+      }
+    },
+    {
+      "name": "Undo",
+      "context": "General Shortcuts",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Z"
+      }
+    },
+    {
+      "name": "Redo",
+      "context": "General Shortcuts",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Ctrl+Z"
+      }
+    },
+    {
+      "name": "Tools",
+      "context": "General Shortcuts",
+      "windows": {
+        "type": "keys",
+        "chord": "F1"
+      }
+    },
+    {
+      "name": "Brushes",
+      "context": "General Shortcuts",
+      "windows": {
+        "type": "keys",
+        "chord": "F2"
+      }
+    },
+    {
+      "name": "Strokes",
+      "context": "General Shortcuts",
+      "windows": {
+        "type": "keys",
+        "chord": "F3"
+      }
+    },
+    {
+      "name": "Alphas",
+      "context": "General Shortcuts",
+      "windows": {
+        "type": "keys",
+        "chord": "F4"
+      }
+    },
+    {
+      "name": "Textures",
+      "context": "General Shortcuts",
+      "windows": {
+        "type": "keys",
+        "chord": "F5"
+      }
+    },
+    {
+      "name": "Materials",
+      "context": "General Shortcuts",
+      "windows": {
+        "type": "keys",
+        "chord": "F6"
+      }
+    },
+    {
+      "name": "Show QuickMenu",
+      "context": "General Shortcuts",
+      "windows": {
+        "type": "keys",
+        "chord": "Space"
+      }
+    },
+    {
+      "name": "Show/hide floating palettes",
+      "context": "General Shortcuts",
+      "windows": {
+        "type": "keys",
+        "chord": "Tab"
+      }
+    },
+    {
+      "name": "Projection Master",
+      "context": "General Shortcuts",
+      "windows": {
+        "type": "keys",
+        "chord": "G"
+      }
+    },
+    {
+      "name": "Show/hide Lightbox",
+      "context": "Lightbox and Spotlight",
+      "windows": {
+        "type": "keys",
+        "chord": ","
+      }
+    },
+    {
+      "name": "Turn on/off Spotlight",
+      "context": "Lightbox and Spotlight",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Z"
+      }
+    },
+    {
+      "name": "Show/hide Spotlight Dial",
+      "context": "Lightbox and Spotlight",
+      "windows": {
+        "type": "keys",
+        "chord": "Z"
+      }
+    },
+    {
+      "name": "Draw Size",
+      "context": "Sculpting and Painting",
+      "windows": {
+        "type": "keys",
+        "chord": "S"
+      }
+    },
+    {
+      "name": "Focal Shift",
+      "context": "Sculpting and Painting",
+      "windows": {
+        "type": "keys",
+        "chord": "O"
+      }
+    },
+    {
+      "name": "RGB Intensity",
+      "context": "Sculpting and Painting",
+      "windows": {
+        "type": "keys",
+        "chord": "I"
+      }
+    },
+    {
+      "name": "Z Intensity",
+      "context": "Sculpting and Painting",
+      "windows": {
+        "type": "keys",
+        "chord": "U"
+      }
+    },
+    {
+      "name": "Increase Draw Size by set units",
+      "context": "Sculpting and Painting",
+      "windows": {
+        "type": "keys",
+        "chord": "]"
+      }
+    },
+    {
+      "name": "Decrease Draw Size by set units",
+      "context": "Sculpting and Painting",
+      "windows": {
+        "type": "keys",
+        "chord": "["
+      }
+    },
+    {
+      "name": "Edit mode on/off",
+      "context": "Sculpting and Painting",
+      "windows": {
+        "type": "keys",
+        "chord": "T"
+      }
+    },
+    {
+      "name": "Draw",
+      "context": "Sculpting and Painting",
+      "windows": {
+        "type": "keys",
+        "chord": "Q"
+      }
+    },
+    {
+      "name": "Move",
+      "context": "Sculpting and Painting",
+      "windows": {
+        "type": "keys",
+        "chord": "W"
+      }
+    },
+    {
+      "name": "Scale",
+      "context": "Sculpting and Painting",
+      "windows": {
+        "type": "keys",
+        "chord": "E"
+      }
+    },
+    {
+      "name": "Rotate",
+      "context": "Sculpting and Painting",
+      "windows": {
+        "type": "keys",
+        "chord": "R"
+      }
+    },
+    {
+      "name": "Show Brush pop-up",
+      "context": "Sculpting Brushes",
+      "windows": {
+        "type": "keys",
+        "chord": "B"
+      }
+    },
+    {
+      "name": "Standard Brush",
+      "context": "Sculpting Brushes",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "B",
+          "S",
+          "T"
+        ]
+      }
+    },
+    {
+      "name": "Smooth Stronger",
+      "context": "Sculpting Brushes",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "B",
+          "S",
+          "S"
+        ]
+      }
+    },
+    {
+      "name": "Move Elastic",
+      "context": "Sculpting Brushes",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "B",
+          "M",
+          "E"
+        ]
+      }
+    },
+    {
+      "name": "MPolish",
+      "context": "Sculpting Brushes",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "B",
+          "M",
+          "P"
+        ]
+      }
+    },
+    {
+      "name": "ClipCurve",
+      "context": "Sculpting Brushes",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "B",
+          "C",
+          "C"
+        ]
+      }
+    },
+    {
+      "name": "ClayLine",
+      "context": "Sculpting Brushes",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "B",
+          "C",
+          "L"
+        ]
+      }
+    },
+    {
+      "name": "Show all meshes in brush",
+      "context": "Sculpting Brushes",
+      "windows": {
+        "type": "keys",
+        "chord": "M"
+      }
+    },
+    {
+      "name": "Select Color under cursor",
+      "context": "Color",
+      "windows": {
+        "type": "keys",
+        "chord": "C"
+      }
+    },
+    {
+      "name": "Switch Color",
+      "context": "Color",
+      "windows": {
+        "type": "keys",
+        "chord": "V"
+      }
+    },
+    {
+      "name": "Lazy mouse",
+      "context": "Stroke",
+      "windows": {
+        "type": "keys",
+        "chord": "L"
+      }
+    },
+    {
+      "name": "Replay Last Stroke",
+      "context": "Stroke",
+      "windows": {
+        "type": "keys",
+        "chord": "1"
+      }
+    },
+    {
+      "name": "Record Stroke",
+      "context": "Stroke",
+      "windows": {
+        "type": "keys",
+        "chord": "3"
+      }
+    },
+    {
+      "name": "Replay All Recorded Strokes",
+      "context": "Stroke",
+      "windows": {
+        "type": "keys",
+        "chord": "2"
+      }
+    },
+    {
+      "name": "Smooth curve",
+      "context": "Stroke",
+      "windows": {
+        "type": "keys",
+        "chord": "6"
+      }
+    },
+    {
+      "name": "Snapshot curve",
+      "context": "Stroke",
+      "windows": {
+        "type": "keys",
+        "chord": "5"
+      }
+    },
+    {
+      "name": "Save Tool",
+      "context": "3D Models",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Ctrl+T"
+      }
+    },
+    {
+      "name": "Fit Mesh to view",
+      "context": "3D Models",
+      "windows": {
+        "type": "keys",
+        "chord": "F"
+      }
+    },
+    {
+      "name": "Perspective",
+      "context": "3D Models",
+      "windows": {
+        "type": "keys",
+        "chord": "P"
+      }
+    },
+    {
+      "name": "Floor Grid",
+      "context": "3D Models",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+P"
+      }
+    },
+    {
+      "name": "Activate Symmetry",
+      "context": "3D Models",
+      "windows": {
+        "type": "keys",
+        "chord": "X"
+      }
+    },
+    {
+      "name": "Show/hide Polyframe & polygroups",
+      "context": "3D Models",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+F"
+      }
+    },
+    {
+      "name": "Point Selection Mode",
+      "context": "3D Models",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Ctrl+P"
+      }
+    },
+    {
+      "name": "Set Pivot Point",
+      "context": "3D Models",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+P"
+      }
+    },
+    {
+      "name": "Clear Pivot Point",
+      "context": "3D Models",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+P"
+      }
+    },
+    {
+      "name": "Snapshot a version to canvas",
+      "context": "3D Models",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+S"
+      }
+    },
+    {
+      "name": "List all SubTools",
+      "context": "SubTools",
+      "windows": {
+        "type": "keys",
+        "chord": "N"
+      }
+    },
+    {
+      "name": "Divide",
+      "context": "Geometry",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+D"
+      }
+    },
+    {
+      "name": "Lower Res",
+      "context": "Geometry",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+D"
+      }
+    },
+    {
+      "name": "Higher Res",
+      "context": "Geometry",
+      "windows": {
+        "type": "keys",
+        "chord": "D"
+      }
+    },
+    {
+      "name": "Edge Loop",
+      "context": "Geometry",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+E"
+      }
+    },
+    {
+      "name": "Toggle in/out of HD Sculpting mode",
+      "context": "HD Geometry",
+      "windows": {
+        "type": "keys",
+        "chord": "A"
+      }
+    },
+    {
+      "name": "Render all HD Geometry",
+      "context": "HD Geometry",
+      "windows": {
+        "type": "keys",
+        "chord": "A"
+      }
+    },
+    {
+      "name": "View Mask",
+      "context": "Masking",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+H"
+      }
+    },
+    {
+      "name": "Invert Mask",
+      "context": "Masking",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+I"
+      }
+    },
+    {
+      "name": "Mask All",
+      "context": "Masking",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+A"
+      }
+    },
+    {
+      "name": "Group Masked and Clear Mask",
+      "context": "Polygroups",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+W"
+      }
+    },
+    {
+      "name": "Grow mesh portion",
+      "context": "Partial Mesh Visibility & Clip Brushes",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+X"
+      }
+    },
+    {
+      "name": "Shrink mesh portion",
+      "context": "Partial Mesh Visibility & Clip Brushes",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+S"
+      }
+    },
+    {
+      "name": "Grow all mesh portion",
+      "context": "Partial Mesh Visibility & Clip Brushes",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+A"
+      }
+    },
+    {
+      "name": "Outer Ring visibility",
+      "context": "Partial Mesh Visibility & Clip Brushes",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+O"
+      }
+    },
+    {
+      "name": "Stencil On",
+      "context": "Stencil",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+H"
+      }
+    },
+    {
+      "name": "Hide/Show Stencil",
+      "context": "Stencil",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+H"
+      }
+    },
+    {
+      "name": "Coin Controller",
+      "context": "Stencil",
+      "windows": {
+        "type": "keys",
+        "chord": "Space"
+      }
+    },
+    {
+      "name": "Preview Adaptive Skin",
+      "context": "ZSpheres",
+      "windows": {
+        "type": "keys",
+        "chord": "A"
+      }
+    },
+    {
+      "name": "Activate ZSketch Edit mode",
+      "context": "ZSketch",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+A"
+      }
+    },
+    {
+      "name": "Preview Unified Skin",
+      "context": "ZSketch",
+      "windows": {
+        "type": "keys",
+        "chord": "A"
+      }
+    },
+    {
+      "name": "Crop And Fill",
+      "context": "Canvas and 2.5D",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Ctrl+F"
+      }
+    },
+    {
+      "name": "Grab Texture From Document",
+      "context": "Canvas and 2.5D",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Ctrl+G"
+      }
+    },
+    {
+      "name": "Clear Layer",
+      "context": "Document Layers",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+N"
+      }
+    },
+    {
+      "name": "Fill Layer",
+      "context": "Document Layers",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+F"
+      }
+    },
+    {
+      "name": "Bake Layer",
+      "context": "Document Layers",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+B"
+      }
+    },
+    {
+      "name": "Remove Marker",
+      "context": "Markers",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+M"
+      }
+    },
+    {
+      "name": "Actual Size",
+      "context": "Canvas Zoom",
+      "windows": {
+        "type": "keys",
+        "chord": "0"
+      }
+    },
+    {
+      "name": "Antialiased Half Size",
+      "context": "Canvas Zoom",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+0"
+      }
+    },
+    {
+      "name": "Zoom In",
+      "context": "Canvas Zoom",
+      "windows": {
+        "type": "keys",
+        "chord": "+"
+      }
+    },
+    {
+      "name": "Zoom Out",
+      "context": "Canvas Zoom",
+      "windows": {
+        "type": "keys",
+        "chord": "-"
+      }
+    },
+    {
+      "name": "Go to Previous Camera key frame",
+      "context": "Timeline",
+      "windows": {
+        "type": "keys",
+        "chord": "Left"
+      }
+    },
+    {
+      "name": "Go to Next Camera key frame",
+      "context": "Timeline",
+      "windows": {
+        "type": "keys",
+        "chord": "Right"
+      }
+    },
+    {
+      "name": "Stop the Timeline playing",
+      "context": "Timeline",
+      "windows": {
+        "type": "keys",
+        "chord": "Esc"
+      }
+    },
+    {
+      "name": "Best Preview Render (BPR)",
+      "context": "Render",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+R"
+      }
+    },
+    {
+      "name": "Render All",
+      "context": "Render",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Ctrl+R"
+      }
+    },
+    {
+      "name": "Cursor Selective Render",
+      "context": "Render",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+R"
+      }
+    },
+    {
+      "name": "Store Configuration File",
+      "context": "Custom UI and Configuration",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Ctrl+I"
+      }
+    },
+    {
+      "name": "Load User Interface Configuration File",
+      "context": "Custom UI and Configuration",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+L"
+      }
+    },
+    {
+      "name": "Save User Interface Configuration File",
+      "context": "Custom UI and Configuration",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Ctrl+Alt+I"
+      }
+    },
+    {
+      "name": "Load ZScript",
+      "context": "ZScripts",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Ctrl+L"
+      }
+    },
+    {
+      "name": "Reload ZScript",
+      "context": "ZScripts",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+U"
+      }
+    },
+    {
+      "name": "Show/Hide ZScript window",
+      "context": "ZScripts",
+      "windows": {
+        "type": "keys",
+        "chord": "H"
+      }
+    }
+  ],
+  "defaults": {
+    "TUNE_CW": {
+      "name": "Increase Draw Size by set units",
+      "action": {
+        "type": "keys",
+        "chord": "]"
+      },
+      "accel": "light"
+    },
+    "TUNE_CCW": {
+      "name": "Decrease Draw Size by set units",
+      "action": {
+        "type": "keys",
+        "chord": "["
+      },
+      "accel": "light"
+    },
+    "TUNE_TAP_1F": {
+      "name": "Fit Mesh to view",
+      "action": {
+        "type": "keys",
+        "chord": "F"
+      }
+    },
+    "TUNE_SWIPE_LEFT": {
+      "name": "Undo",
+      "action": {
+        "type": "keys",
+        "chord": "Ctrl+Z"
+      }
+    },
+    "TUNE_SWIPE_RIGHT": {
+      "name": "Redo",
+      "action": {
+        "type": "keys",
+        "chord": "Shift+Ctrl+Z"
+      }
+    }
+  }
+}

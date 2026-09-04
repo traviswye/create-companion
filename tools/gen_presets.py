@@ -47,6 +47,10 @@ CATEGORY = {
     "file-manager": "Files", "terminal": "Terminal",
 }
 
+BROWSER_EXE = ["chrome.exe", "msedge.exe", "firefox.exe", "brave.exe", "vivaldi.exe"]
+BROWSER_BUNDLE = ["com.google.Chrome", "com.microsoft.edgemac", "org.mozilla.firefox",
+                  "com.brave.Browser", "com.apple.Safari"]
+
 # Profiles that ship enabled in the first-run config, in this order.
 DEFAULT_CONFIG_PROFILES = [
     "browser", "youtube", "terminal", "photoshop", "lightroom", "premiere", "resolve",
@@ -241,6 +245,8 @@ def build_apps(generic: list[dict], files: dict[str, dict]) -> list[dict]:
         }
         if c.get("os"):
             entry["os"] = c["os"]
+        if c.get("title_required"):
+            entry["title_required"] = True
         # Defaults are actions too, so the picker's app tab shows them first.
         # They exist on the platforms the app matches on (a Mac-only app has
         # no Windows column).
@@ -304,6 +310,27 @@ def build_apps(generic: list[dict], files: dict[str, dict]) -> list[dict]:
 
     for e in apps.values():
         e.pop("_sink", None)
+
+    # An app that also runs in a browser: split into the desktop entry (matched
+    # on exe / bundle) and a site twin (matched on window title inside a browser)
+    # sharing the same actions and defaults. A desktop-exe rule combined with a
+    # title rule would otherwise never match inside Chrome.
+    twins = {}
+    for aid, e in list(apps.items()):
+        if e.get("title_required"):
+            continue  # the title narrows the desktop match (tmux inside a terminal); no twin
+        if e["kind"] == "app" and e["match"]["window_title"] and (e["match"]["windows_exe"] or e["match"]["macos_bundle"]):
+            twin = json.loads(json.dumps(e))
+            twin["id"] = f"{aid}_web"
+            twin["name"] = f"{e['name']} (web)"
+            twin["kind"] = "site"
+            twin["match"] = {"windows_exe": list(BROWSER_EXE), "macos_bundle": list(BROWSER_BUNDLE), "window_title": e["match"]["window_title"]}
+            for r in twin["actions"]:
+                r["id"] = r["id"].replace(f"{aid}.", f"{aid}_web.", 1)
+            twin["twin_of"] = aid
+            twins[twin["id"]] = twin
+            e["match"]["window_title"] = []
+    apps.update(twins)
 
     first = [apps[i] for i in DEFAULT_CONFIG_PROFILES if i in apps]
     rest = sorted((a for k, a in apps.items() if k not in DEFAULT_CONFIG_PROFILES), key=lambda a: a["name"].lower())

@@ -1,0 +1,933 @@
+{
+  "id": "apple_music",
+  "name": "Apple Music",
+  "kind": "app",
+  "category": "Music",
+  "match": {
+    "windows_exe": [
+      "AppleMusic.exe",
+      "iTunes.exe"
+    ],
+    "macos_bundle": [
+      "com.apple.Music"
+    ],
+    "window_title": []
+  },
+  "sources": [
+    "https://support.apple.com/guide/music/keyboard-shortcuts-mus1019/mac",
+    "https://support.apple.com/guide/music-windows/keyboard-shortcuts-mus1019/windows"
+  ],
+  "note": "Windows access keys are documented as sequential Alt-mnemonic presses (Alt, then two letters, one after another). They are encoded here as a sequence whose first chord holds Alt with the first letter and whose second chord is the bare second letter, since the chord grammar has no way to express a standalone modifier tap. 'Select or deselect all the songs in a list' (Command-click a checkbox), 'Switch between custom and maximum window sizes' (Option-click the green button), 'Change the song information columns' (Control-click a column heading), and 'Initiate a search in the iTunes Store' (type text, then press Option-Return) require a mouse click or free text entry and are not included. 'See more options when a visual effect is showing' (press ? then a shown key) is not a fixed chord and is omitted. 'Open Apple Music Help menu' on Mac is Command-? (Command-Shift-/), which the chord grammar cannot express since ? is not an allowed key, so only the Windows F1 binding is included for that action.",
+  "actions": [
+    {
+      "name": "Play or pause the selected song",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Space"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Space"
+      }
+    },
+    {
+      "name": "Play the currently selected song from the beginning",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Enter"
+      }
+    },
+    {
+      "name": "Move forward within a song",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Ctrl+Right"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+Right"
+      }
+    },
+    {
+      "name": "Move backward within a song",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Ctrl+Left"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+Left"
+      }
+    },
+    {
+      "name": "Stop playing the selected song",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+."
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+."
+      }
+    },
+    {
+      "name": "Play the next song in a list",
+      "context": "When a song is playing",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Right"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Right"
+      }
+    },
+    {
+      "name": "Play the previous song in a list",
+      "context": "When a song is playing",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Left"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Left"
+      }
+    },
+    {
+      "name": "Increase the volume",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Up"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Up"
+      }
+    },
+    {
+      "name": "Decrease the volume",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Down"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Down"
+      }
+    },
+    {
+      "name": "Show the currently playing song in the list",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+L"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+L"
+      }
+    },
+    {
+      "name": "Show the queue",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+U"
+      }
+    },
+    {
+      "name": "Play the next album in a list",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Right"
+      }
+    },
+    {
+      "name": "Play the previous album in a list",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Left"
+      }
+    },
+    {
+      "name": "Open the equalizer",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+E"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+E"
+      }
+    },
+    {
+      "name": "Go to the next chapter",
+      "context": "If available",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+Right"
+      }
+    },
+    {
+      "name": "Go to the last chapter",
+      "context": "If available",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+Left"
+      }
+    },
+    {
+      "name": "Stream an audio file at a specific URL to Music",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+U"
+      }
+    },
+    {
+      "name": "Open MiniPlayer",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Ctrl+M"
+      }
+    },
+    {
+      "name": "Open the Full Screen Player",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Ctrl+F"
+      }
+    },
+    {
+      "name": "Create a new playlist",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+N"
+      }
+    },
+    {
+      "name": "Create a playlist from a selection of songs",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+N"
+      }
+    },
+    {
+      "name": "Create a new Smart Playlist",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+N"
+      }
+    },
+    {
+      "name": "Start Genius Shuffle",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Space"
+      }
+    },
+    {
+      "name": "Refresh a Genius Playlist",
+      "context": "When the playlist is selected",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+R"
+      }
+    },
+    {
+      "name": "Delete the selected song from the playlist or library without confirming",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Delete"
+      }
+    },
+    {
+      "name": "Delete the selected song from your library and all playlists",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Delete"
+      }
+    },
+    {
+      "name": "Delete the selected song from the playlist or library",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Backspace"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Delete"
+      }
+    },
+    {
+      "name": "Add a file (import) to your library",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+O"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+O"
+      }
+    },
+    {
+      "name": "Show where a song file is located",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+R"
+      }
+    },
+    {
+      "name": "Select the search field",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+F"
+      }
+    },
+    {
+      "name": "Undo your last typing change while editing an item's information",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Z"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Z"
+      }
+    },
+    {
+      "name": "Cut the selected song's information or artwork",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+X"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+X"
+      }
+    },
+    {
+      "name": "Copy the selected song's information or artwork",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+C"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+C"
+      }
+    },
+    {
+      "name": "Paste the selected song's information or artwork",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+V"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+V"
+      }
+    },
+    {
+      "name": "Open the contextual menu for the selected item",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+F10"
+      }
+    },
+    {
+      "name": "Select all the songs in the list",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+A"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+A"
+      }
+    },
+    {
+      "name": "Show or hide the column browser",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+B"
+      }
+    },
+    {
+      "name": "Deselect all the songs in the list",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+A"
+      }
+    },
+    {
+      "name": "Open or close MiniPlayer",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+M"
+      }
+    },
+    {
+      "name": "Open or close Full Screen Player",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+F"
+      }
+    },
+    {
+      "name": "Show or hide the status bar",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+/"
+      }
+    },
+    {
+      "name": "Open the Info window for the selected song",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+I"
+      }
+    },
+    {
+      "name": "In the Info window, show the next song in the list",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+]"
+      }
+    },
+    {
+      "name": "In the Info window, show the previous song in the list",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+["
+      }
+    },
+    {
+      "name": "Open the View Options window for the selected source",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+J"
+      }
+    },
+    {
+      "name": "Turn the visualizer on or off",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+T"
+      }
+    },
+    {
+      "name": "Refresh Apple Music or iTunes Store",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+R"
+      }
+    },
+    {
+      "name": "Open the Music window",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+0"
+      }
+    },
+    {
+      "name": "Close the Music window",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+W"
+      }
+    },
+    {
+      "name": "Put the Music window in the Dock",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+M"
+      }
+    },
+    {
+      "name": "Hide the Music window",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+H"
+      }
+    },
+    {
+      "name": "Hide all other applications",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+H"
+      }
+    },
+    {
+      "name": "Go to the next page in the iTunes Store",
+      "context": "iTunes Store",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+]"
+      }
+    },
+    {
+      "name": "Go to the previous page in the iTunes Store",
+      "context": "iTunes Store",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+["
+      }
+    },
+    {
+      "name": "Reload the current page",
+      "context": "iTunes Store",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+R"
+      }
+    },
+    {
+      "name": "Go back to the previous screen",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Left"
+      }
+    },
+    {
+      "name": "Open Apple Music settings",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+,"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+,"
+      }
+    },
+    {
+      "name": "Open Apple Music Help menu",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F1"
+      }
+    },
+    {
+      "name": "Quit Music",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Q"
+      }
+    },
+    {
+      "name": "Eject a CD",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+E"
+      }
+    },
+    {
+      "name": "Select the Sidebar Actions button",
+      "context": "Access key (Windows)",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+M",
+          "M"
+        ]
+      }
+    },
+    {
+      "name": "Enter the search field",
+      "context": "Access key (Windows)",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+N",
+          "F"
+        ]
+      }
+    },
+    {
+      "name": "Open Home",
+      "context": "Access key (Windows)",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+N",
+          "H"
+        ]
+      }
+    },
+    {
+      "name": "Open New",
+      "context": "Access key (Windows)",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+N",
+          "B"
+        ]
+      }
+    },
+    {
+      "name": "Open Radio",
+      "context": "Access key (Windows)",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+N",
+          "R"
+        ]
+      }
+    },
+    {
+      "name": "Switch to the Recently Added library screen",
+      "context": "Access key (Windows)",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+N",
+          "N"
+        ]
+      }
+    },
+    {
+      "name": "Open your library to Artists",
+      "context": "Access key (Windows)",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+N",
+          "T"
+        ]
+      }
+    },
+    {
+      "name": "Open your library to Albums",
+      "context": "Access key (Windows)",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+N",
+          "A"
+        ]
+      }
+    },
+    {
+      "name": "Open your library to Songs",
+      "context": "Access key (Windows)",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+N",
+          "S"
+        ]
+      }
+    },
+    {
+      "name": "Open your library to Genres",
+      "context": "Access key (Windows)",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+N",
+          "G"
+        ]
+      }
+    },
+    {
+      "name": "Open your library to Compilations",
+      "context": "Access key (Windows)",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+N",
+          "O"
+        ]
+      }
+    },
+    {
+      "name": "Open your library to Composers",
+      "context": "Access key (Windows)",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+N",
+          "C"
+        ]
+      }
+    },
+    {
+      "name": "Open your library to Music Videos",
+      "context": "Access key (Windows)",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+N",
+          "M"
+        ]
+      }
+    },
+    {
+      "name": "Open your library to TV & Movies",
+      "context": "Access key (Windows)",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+N",
+          "V"
+        ]
+      }
+    },
+    {
+      "name": "Open your library to Made For You",
+      "context": "Access key (Windows)",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+N",
+          "Y"
+        ]
+      }
+    },
+    {
+      "name": "Open the iTunes Store",
+      "context": "Access key (Windows)",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+N",
+          "I"
+        ]
+      }
+    },
+    {
+      "name": "Open All Playlists",
+      "context": "Access key (Windows)",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+N",
+          "P"
+        ]
+      }
+    },
+    {
+      "name": "Open your account menu",
+      "context": "Access key (Windows)",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+N",
+          "U"
+        ]
+      }
+    },
+    {
+      "name": "Turn on shuffle",
+      "context": "Access key (Windows)",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+L",
+          "S"
+        ]
+      }
+    },
+    {
+      "name": "Go back to the previous song",
+      "context": "Access key (Windows)",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+L",
+          "B"
+        ]
+      }
+    },
+    {
+      "name": "Play or pause the song",
+      "context": "Access key (Windows)",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+L",
+          "P"
+        ]
+      }
+    },
+    {
+      "name": "Go to the next song",
+      "context": "Access key (Windows)",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+L",
+          "N"
+        ]
+      }
+    },
+    {
+      "name": "Repeat the current song or album",
+      "context": "Access key (Windows)",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+L",
+          "R"
+        ]
+      }
+    },
+    {
+      "name": "Change the volume",
+      "context": "Access key (Windows)",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+L",
+          "V"
+        ]
+      }
+    },
+    {
+      "name": "Open the AirPlay menu",
+      "context": "Access key (Windows)",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+L",
+          "A"
+        ]
+      }
+    },
+    {
+      "name": "Show or hide the lyrics",
+      "context": "Access key (Windows)",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+L",
+          "L"
+        ]
+      }
+    },
+    {
+      "name": "Show or hide the queue",
+      "context": "Access key (Windows)",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+L",
+          "Q"
+        ]
+      }
+    },
+    {
+      "name": "Filter the items",
+      "context": "Access key (Windows)",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+C",
+          "F"
+        ]
+      }
+    },
+    {
+      "name": "Sort the items",
+      "context": "Access key (Windows)",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+C",
+          "O"
+        ]
+      }
+    }
+  ],
+  "defaults": {
+    "TUNE_CW": {
+      "name": "Increase the volume",
+      "action": {
+        "type": "keys",
+        "chord": "Ctrl+Up"
+      },
+      "accel": "light"
+    },
+    "TUNE_CCW": {
+      "name": "Decrease the volume",
+      "action": {
+        "type": "keys",
+        "chord": "Ctrl+Down"
+      },
+      "accel": "light"
+    },
+    "TUNE_TAP_1F": {
+      "name": "Play or pause the selected song",
+      "action": {
+        "type": "keys",
+        "chord": "Ctrl+Space"
+      }
+    },
+    "TUNE_SWIPE_LEFT": {
+      "name": "Play the previous song in a list",
+      "action": {
+        "type": "keys",
+        "chord": "Ctrl+Left"
+      }
+    },
+    "TUNE_SWIPE_RIGHT": {
+      "name": "Play the next song in a list",
+      "action": {
+        "type": "keys",
+        "chord": "Ctrl+Right"
+      }
+    }
+  }
+}

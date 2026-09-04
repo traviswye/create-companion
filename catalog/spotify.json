@@ -10,45 +10,399 @@
     "macos_bundle": [
       "com.spotify.client"
     ],
-    "window_title": []
+    "window_title": [
+      "Spotify"
+    ]
   },
   "sources": [
     "https://support.spotify.com/us/article/keyboard-shortcuts/"
   ],
   "note": "The support article documents mouse-free in-app shortcuts only; it does not currently list media-key style shortcuts for seek or previous/next track, so none are included here.",
   "actions": [
-    { "name": "Open search", "context": "", "windows": { "type": "keys", "chord": "Ctrl+K" }, "mac": { "type": "keys", "chord": "Cmd+K" } },
-    { "name": "Open help", "context": "", "windows": { "type": "keys", "chord": "Ctrl+/" }, "mac": { "type": "keys", "chord": "Cmd+/" } },
-    { "name": "Like / dislike song", "context": "", "windows": { "type": "keys", "chord": "Alt+Shift+B" }, "mac": { "type": "keys", "chord": "Alt+Shift+B" } },
-    { "name": "Log out", "context": "", "windows": { "type": "keys", "chord": "Alt+Shift+F6" }, "mac": { "type": "keys", "chord": "Alt+Shift+F6" } },
-    { "name": "Select all", "context": "", "windows": { "type": "keys", "chord": "Ctrl+A" }, "mac": { "type": "keys", "chord": "Cmd+A" } },
-    { "name": "Filter", "context": "", "windows": { "type": "keys", "chord": "Ctrl+F" }, "mac": { "type": "keys", "chord": "Cmd+F" } },
-    { "name": "Play / pause", "context": "", "windows": { "type": "keys", "chord": "Space" }, "mac": { "type": "keys", "chord": "Space" } },
-    { "name": "Shuffle", "context": "", "windows": { "type": "keys", "chord": "Ctrl+S" }, "mac": { "type": "keys", "chord": "Alt+S" } },
-    { "name": "Repeat", "context": "", "windows": { "type": "keys", "chord": "Ctrl+R" }, "mac": { "type": "keys", "chord": "Alt+R" } },
-    { "name": "Go to Library", "context": "", "windows": { "type": "keys", "chord": "Alt+Shift+0" }, "mac": { "type": "keys", "chord": "Alt+Shift+0" } },
-    { "name": "Go to Playlists", "context": "", "windows": { "type": "keys", "chord": "Alt+Shift+1" }, "mac": { "type": "keys", "chord": "Alt+Shift+1" } },
-    { "name": "Go to Podcasts", "context": "", "windows": { "type": "keys", "chord": "Alt+Shift+2" }, "mac": { "type": "keys", "chord": "Alt+Shift+2" } },
-    { "name": "Go to Artists", "context": "", "windows": { "type": "keys", "chord": "Alt+Shift+3" }, "mac": { "type": "keys", "chord": "Alt+Shift+3" } },
-    { "name": "Go to Albums", "context": "", "windows": { "type": "keys", "chord": "Alt+Shift+4" }, "mac": { "type": "keys", "chord": "Alt+Shift+4" } },
-    { "name": "Go to Audiobooks", "context": "", "windows": { "type": "keys", "chord": "Alt+Shift+5" }, "mac": { "type": "keys", "chord": "Alt+Shift+5" } },
-    { "name": "Go to Home", "context": "", "windows": { "type": "keys", "chord": "Alt+Shift+H" }, "mac": { "type": "keys", "chord": "Alt+Shift+H" } },
-    { "name": "Go to Preferences", "context": "", "windows": { "type": "keys", "chord": "Ctrl+," }, "mac": { "type": "keys", "chord": "Cmd+," } },
-    { "name": "Go to Search", "context": "", "windows": { "type": "keys", "chord": "Ctrl+L" }, "mac": { "type": "keys", "chord": "Cmd+Shift+L" } },
-    { "name": "Go to Now Playing", "context": "", "windows": { "type": "keys", "chord": "Alt+Shift+J" }, "mac": { "type": "keys", "chord": "Alt+Shift+J" } },
-    { "name": "Go to Liked Songs", "context": "", "windows": { "type": "keys", "chord": "Alt+Shift+S" }, "mac": { "type": "keys", "chord": "Alt+Shift+S" } },
-    { "name": "Go to Made For You", "context": "", "windows": { "type": "keys", "chord": "Alt+Shift+M" }, "mac": { "type": "keys", "chord": "Alt+Shift+M" } },
-    { "name": "Go to New Releases", "context": "", "windows": { "type": "keys", "chord": "Alt+Shift+N" }, "mac": { "type": "keys", "chord": "Alt+Shift+N" } },
-    { "name": "Go to Charts", "context": "", "windows": { "type": "keys", "chord": "Alt+Shift+C" }, "mac": { "type": "keys", "chord": "Alt+Shift+C" } },
-    { "name": "Go to Queue", "context": "", "windows": { "type": "keys", "chord": "Alt+Shift+Q" }, "mac": { "type": "keys", "chord": "Alt+Shift+Q" } },
-    { "name": "Open context menu", "context": "", "windows": { "type": "keys", "chord": "Alt+J" }, "mac": { "type": "keys", "chord": "Alt+J" } },
-    { "name": "Toggle Now Playing view sidebar", "context": "", "windows": { "type": "keys", "chord": "Alt+Shift+R" }, "mac": { "type": "keys", "chord": "Alt+Shift+R" } },
-    { "name": "Toggle Your Library sidebar", "context": "", "windows": { "type": "keys", "chord": "Alt+Shift+L" }, "mac": { "type": "keys", "chord": "Alt+Shift+L" } },
-    { "name": "Mute / unmute", "context": "", "windows": { "type": "keys", "chord": "M" }, "mac": { "type": "keys", "chord": "M" } },
-    { "name": "Go to previous", "context": "", "windows": { "type": "keys", "chord": "Up" }, "mac": { "type": "keys", "chord": "Up" } },
-    { "name": "Go to next", "context": "", "windows": { "type": "keys", "chord": "Down" }, "mac": { "type": "keys", "chord": "Down" } },
-    { "name": "Add to Library", "context": "", "windows": { "type": "keys", "chord": "Left" }, "mac": { "type": "keys", "chord": "Left" } },
-    { "name": "Add to Queue", "context": "", "windows": { "type": "keys", "chord": "Right" }, "mac": { "type": "keys", "chord": "Right" } }
+    {
+      "name": "Open search",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+K"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+K"
+      }
+    },
+    {
+      "name": "Open help",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+/"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+/"
+      }
+    },
+    {
+      "name": "Like / dislike song",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+B"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+B"
+      }
+    },
+    {
+      "name": "Log out",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+F6"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+F6"
+      }
+    },
+    {
+      "name": "Select all",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+A"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+A"
+      }
+    },
+    {
+      "name": "Filter",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+F"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+F"
+      }
+    },
+    {
+      "name": "Play / pause",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Space"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Space"
+      }
+    },
+    {
+      "name": "Shuffle",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+S"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+S"
+      }
+    },
+    {
+      "name": "Repeat",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+R"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+R"
+      }
+    },
+    {
+      "name": "Go to Library",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+0"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+0"
+      }
+    },
+    {
+      "name": "Go to Playlists",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+1"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+1"
+      }
+    },
+    {
+      "name": "Go to Podcasts",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+2"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+2"
+      }
+    },
+    {
+      "name": "Go to Artists",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+3"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+3"
+      }
+    },
+    {
+      "name": "Go to Albums",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+4"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+4"
+      }
+    },
+    {
+      "name": "Go to Audiobooks",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+5"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+5"
+      }
+    },
+    {
+      "name": "Go to Home",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+H"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+H"
+      }
+    },
+    {
+      "name": "Go to Preferences",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+,"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+,"
+      }
+    },
+    {
+      "name": "Go to Search",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+L"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+L"
+      }
+    },
+    {
+      "name": "Go to Now Playing",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+J"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+J"
+      }
+    },
+    {
+      "name": "Go to Liked Songs",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+S"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+S"
+      }
+    },
+    {
+      "name": "Go to Made For You",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+M"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+M"
+      }
+    },
+    {
+      "name": "Go to New Releases",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+N"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+N"
+      }
+    },
+    {
+      "name": "Go to Charts",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+C"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+C"
+      }
+    },
+    {
+      "name": "Go to Queue",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+Q"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+Q"
+      }
+    },
+    {
+      "name": "Open context menu",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+J"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+J"
+      }
+    },
+    {
+      "name": "Toggle Now Playing view sidebar",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+R"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+R"
+      }
+    },
+    {
+      "name": "Toggle Your Library sidebar",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+L"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+L"
+      }
+    },
+    {
+      "name": "Mute / unmute",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "M"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "M"
+      }
+    },
+    {
+      "name": "Go to previous",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Up"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Up"
+      }
+    },
+    {
+      "name": "Go to next",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Down"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Down"
+      }
+    },
+    {
+      "name": "Add to Library",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Left"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Left"
+      }
+    },
+    {
+      "name": "Add to Queue",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Right"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Right"
+      }
+    }
   ],
   "defaults": {
     "TUNE_CW": {

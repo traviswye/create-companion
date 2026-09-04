@@ -1,0 +1,6217 @@
+{
+  "id": "logic_pro",
+  "name": "Logic Pro",
+  "kind": "app",
+  "category": "Music",
+  "match": {
+    "macos_bundle": [
+      "com.apple.logic10"
+    ],
+    "window_title": []
+  },
+  "sources": [
+    "https://help.apple.com/pdf/logicpromac/en_US/logic-pro-mac-user-guide.pdf",
+    "https://support.apple.com/guide/logicpro/global-commands-lgcp02bf31b6/mac",
+    "https://support.apple.com/guide/logicpro/key-commands-overview-lgcp32e85cd9/mac"
+  ],
+  "note": "Every row of the \"Key command tables\" section of Apple's Logic Pro User Guide for Mac (the \"Default keyboard shortcuts\" pages, read from Apple's own PDF of the guide). Apple splits the tables by area and each area name is used as the context: Global Commands, Global Control Surfaces Commands, Various Windows, Windows Showing Audio Files, Main Window Tracks and Various Editors, Various Editors, Views Showing Time Ruler, Views Showing Automation, Main Window Tracks, Live Loops Grid, Mixer, MIDI Environment, Piano Roll, Score Editor, Event Editor, Step Editor, Step Sequencer, Project Audio, Audio File Editor, Smart Tempo Editor, Sampler, Step Input Keyboard, Smart Controls and Tool Menu. The action name is Apple's own Function column, so it keeps Apple's wording exactly. Apple's table reflects the U.S. default key command preset. Logic Pro is macOS only, so only \"mac\" is filled in; Apple writes Control, Option and Command, which are written here as Ctrl, Alt and Cmd, and Apple's \"Delete (backspace)\" is written as Backspace while its \"Forward Delete\" is Delete. Left out: every row Apple marks with the numeric-keypad glyph (Record/Record Toggle, Play, Pause, Stop, Skip Cycle, Toggle Replace, Go to Marker Number 1-19, Recall Screenset 1-9 and 1x-9x, and the other keypad rows), because the grammar has no numpad keys; and the ten Control Surface Install Window rows whose \"shortcut\" is a modifier held while launching Logic Pro or while clicking a project in the Finder.",
+  "actions": [
+    {
+      "name": "Record",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "R"
+      }
+    },
+    {
+      "name": "Discard Recording and Return to Last Play Position",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+."
+      }
+    },
+    {
+      "name": "Record Into Cell",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+R"
+      }
+    },
+    {
+      "name": "Flashback Capture as Recording",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+R"
+      }
+    },
+    {
+      "name": "Play or Stop",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Space"
+      }
+    },
+    {
+      "name": "Preview Selection-Based Processing",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+Space"
+      }
+    },
+    {
+      "name": "Rewind",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": ","
+      }
+    },
+    {
+      "name": "Forward",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "."
+      }
+    },
+    {
+      "name": "Fast Rewind",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+,"
+      }
+    },
+    {
+      "name": "Fast Forward",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+."
+      }
+    },
+    {
+      "name": "Forward by Transient",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+."
+      }
+    },
+    {
+      "name": "Rewind by Transient",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+,"
+      }
+    },
+    {
+      "name": "Play from Left Window Edge",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Enter"
+      }
+    },
+    {
+      "name": "Go to Left Locator",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+,"
+      }
+    },
+    {
+      "name": "Go to Right Locator",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+."
+      }
+    },
+    {
+      "name": "Go to Position",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "/"
+      }
+    },
+    {
+      "name": "Set Punch In Locator by Playhead",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Cmd+I"
+      }
+    },
+    {
+      "name": "Set Punch In Locator by Rounded Playhead",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Shift+Cmd+I"
+      }
+    },
+    {
+      "name": "Set Punch Out Locator by Playhead",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Cmd+O"
+      }
+    },
+    {
+      "name": "Set Punch Out Locator Point by Rounded Playhead",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Shift+Cmd+O"
+      }
+    },
+    {
+      "name": "Set Locators/Loop by Regions/Events/Marquee and Enable Cycle/Loop",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+U"
+      }
+    },
+    {
+      "name": "Set Rounded Locators/Loop by Regions/Events/ Marquee and Enable Cycle/Loop",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "U"
+      }
+    },
+    {
+      "name": "Play from Selection",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Space"
+      }
+    },
+    {
+      "name": "Move Locators Forward by Cycle Length / Loop Forward by Loop Length",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+."
+      }
+    },
+    {
+      "name": "Move Locators Backwards by Cycle Length / Loop Backwards by Loop Length",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+,"
+      }
+    },
+    {
+      "name": "Double Cycle/Loop Length",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+Cmd+."
+      }
+    },
+    {
+      "name": "Halve Cycle/Loop Length",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+Cmd+,"
+      }
+    },
+    {
+      "name": "Go to Selection Start",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Home"
+      }
+    },
+    {
+      "name": "Go to Selection End",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+End"
+      }
+    },
+    {
+      "name": "Go to End of Last Region",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Enter"
+      }
+    },
+    {
+      "name": "Go to Beginning",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Enter"
+      }
+    },
+    {
+      "name": "Create Marker",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+'"
+      }
+    },
+    {
+      "name": "Create Marker Without Rounding",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+'"
+      }
+    },
+    {
+      "name": "Create Marker for Region/Marquee Selection",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+'"
+      }
+    },
+    {
+      "name": "Delete Marker",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Backspace"
+      }
+    },
+    {
+      "name": "Set Locators by Marker and Enable Cycle",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+C"
+      }
+    },
+    {
+      "name": "Set Locators by Previous Marker and Enable Cycle",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+,"
+      }
+    },
+    {
+      "name": "Set Locators by Next Marker and Enable Cycle",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+."
+      }
+    },
+    {
+      "name": "Go to Previous Marker and Set Locators",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+,"
+      }
+    },
+    {
+      "name": "Go to Next Marker and Set Locators",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+."
+      }
+    },
+    {
+      "name": "Go to Marker Number",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+/"
+      }
+    },
+    {
+      "name": "Rename Marker",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+'"
+      }
+    },
+    {
+      "name": "Toggle Cycle Mode",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "C"
+      }
+    },
+    {
+      "name": "Toggle Autopunch Mode",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Cmd+P"
+      }
+    },
+    {
+      "name": "Engage Solo Tracks (Channel Strips) of Selected Regions/Cells",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+S"
+      }
+    },
+    {
+      "name": "Clear/Recall Solo",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+S"
+      }
+    },
+    {
+      "name": "Mute Off for All",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+M"
+      }
+    },
+    {
+      "name": "Toggle Cycle Preview",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+C"
+      }
+    },
+    {
+      "name": "Toggle Metronome Click",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "K"
+      }
+    },
+    {
+      "name": "Toggle Count-in",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+K"
+      }
+    },
+    {
+      "name": "Region Inspector Float",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+R"
+      }
+    },
+    {
+      "name": "Open Settings",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+,"
+      }
+    },
+    {
+      "name": "Open Automation Settings",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+A"
+      }
+    },
+    {
+      "name": "Open Event List",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+7"
+      }
+    },
+    {
+      "name": "Open Main Window",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+1"
+      }
+    },
+    {
+      "name": "Open Mixer",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+2"
+      }
+    },
+    {
+      "name": "Open Score Editor",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+5"
+      }
+    },
+    {
+      "name": "Open Step Sequencer",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+3"
+      }
+    },
+    {
+      "name": "Open Transform",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+9"
+      }
+    },
+    {
+      "name": "Open Piano Roll",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+4"
+      }
+    },
+    {
+      "name": "Open Environment",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+0"
+      }
+    },
+    {
+      "name": "Open Project Audio",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+8"
+      }
+    },
+    {
+      "name": "Note Repeat",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Enter"
+      }
+    },
+    {
+      "name": "Spot Erase",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Backspace"
+      }
+    },
+    {
+      "name": "Open Audio File Editor",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+6"
+      }
+    },
+    {
+      "name": "Show/Hide Musical Typing",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+K"
+      }
+    },
+    {
+      "name": "Show/Hide Event Float",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+E"
+      }
+    },
+    {
+      "name": "Show/Hide Mixer",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "X"
+      }
+    },
+    {
+      "name": "Show/Hide Smart Controls",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "B"
+      }
+    },
+    {
+      "name": "Show/Hide Score Editor",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "N"
+      }
+    },
+    {
+      "name": "Show/Hide Staff Style Window",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Shift+S"
+      }
+    },
+    {
+      "name": "Show/Hide Score Sets Window",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Shift+I"
+      }
+    },
+    {
+      "name": "Show/Hide Piano Roll",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "P"
+      }
+    },
+    {
+      "name": "Show/Hide Step Input Keyboard",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+K"
+      }
+    },
+    {
+      "name": "Show/Hide Loop Browser",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "O"
+      }
+    },
+    {
+      "name": "Show/Hide Library",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Y"
+      }
+    },
+    {
+      "name": "Show/Hide Audio File Editor",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "W"
+      }
+    },
+    {
+      "name": "Show/Hide Quick Help",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+/"
+      }
+    },
+    {
+      "name": "Show Detailed Help",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+/"
+      }
+    },
+    {
+      "name": "Open in External Sample Editor",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+W"
+      }
+    },
+    {
+      "name": "Open Tempo List",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+T"
+      }
+    },
+    {
+      "name": "Open Key Command Assignments",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+K"
+      }
+    },
+    {
+      "name": "Show/Hide Colors",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+C"
+      }
+    },
+    {
+      "name": "Enter/Exit Full Screen",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Cmd+F"
+      }
+    },
+    {
+      "name": "Open Movie",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+O"
+      }
+    },
+    {
+      "name": "Toggle Selected Tracks or Channel Strips Automation Off/Read",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Cmd+O"
+      }
+    },
+    {
+      "name": "Toggle Selected Tracks or Channel Strips Automation Latch/Read",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Cmd+A"
+      }
+    },
+    {
+      "name": "Set All Tracks to Automation Off",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Cmd+O"
+      }
+    },
+    {
+      "name": "Set All Tracks to Automation Read",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Cmd+R"
+      }
+    },
+    {
+      "name": "Set All Tracks to Automation Touch",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Cmd+T"
+      }
+    },
+    {
+      "name": "Set All Tracks to Automation Latch",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Cmd+L"
+      }
+    },
+    {
+      "name": "Track Automation Event List",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Cmd+E"
+      }
+    },
+    {
+      "name": "Toggle Automation Quick Access",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Cmd+A"
+      }
+    },
+    {
+      "name": "Enable/Disable Groups",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+G"
+      }
+    },
+    {
+      "name": "Show/Hide Groups Window",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+G"
+      }
+    },
+    {
+      "name": "Create Group for Selected Channel Strips/Tracks",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Cmd+G"
+      }
+    },
+    {
+      "name": "Toggle Hide Group 1",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+1"
+      }
+    },
+    {
+      "name": "Toggle Hide Group 2",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+2"
+      }
+    },
+    {
+      "name": "Toggle Hide Group 3",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+3"
+      }
+    },
+    {
+      "name": "Toggle Hide Group 4",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+4"
+      }
+    },
+    {
+      "name": "Toggle Hide Group 5",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+5"
+      }
+    },
+    {
+      "name": "Toggle Hide Group 6",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+6"
+      }
+    },
+    {
+      "name": "Toggle Hide Group 7",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+7"
+      }
+    },
+    {
+      "name": "Toggle Hide Group 8",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+8"
+      }
+    },
+    {
+      "name": "Toggle Hide Group 9",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+9"
+      }
+    },
+    {
+      "name": "Close Window",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+W"
+      }
+    },
+    {
+      "name": "Cycle Through Windows",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+`"
+      }
+    },
+    {
+      "name": "Cycle Through Windows (counterclockwise)",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+`"
+      }
+    },
+    {
+      "name": "Select Previous Track",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Up"
+      }
+    },
+    {
+      "name": "Select Next Track",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Down"
+      }
+    },
+    {
+      "name": "Hide Logic Pro",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+H"
+      }
+    },
+    {
+      "name": "Hide Others",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+H"
+      }
+    },
+    {
+      "name": "Quit",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Q"
+      }
+    },
+    {
+      "name": "New Empty Project",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+N"
+      }
+    },
+    {
+      "name": "New from Template",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+N"
+      }
+    },
+    {
+      "name": "Open",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+O"
+      }
+    },
+    {
+      "name": "Project Settings",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+P"
+      }
+    },
+    {
+      "name": "Close Project",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+W"
+      }
+    },
+    {
+      "name": "Save",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+S"
+      }
+    },
+    {
+      "name": "Save Project as",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+S"
+      }
+    },
+    {
+      "name": "Print",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+P"
+      }
+    },
+    {
+      "name": "Import",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+I"
+      }
+    },
+    {
+      "name": "Export Selection as MIDI File",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+E"
+      }
+    },
+    {
+      "name": "Export Track as Audio File",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+E"
+      }
+    },
+    {
+      "name": "Export All Tracks as Audio Files",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+E"
+      }
+    },
+    {
+      "name": "Plug-in Undo",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Cmd+Z"
+      }
+    },
+    {
+      "name": "Plug-in Redo",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Cmd+Z"
+      }
+    },
+    {
+      "name": "Cycle Through Window Views",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Tab"
+      }
+    },
+    {
+      "name": "Cycle Through Window Views (counterclockwise)",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Tab"
+      }
+    },
+    {
+      "name": "Minimize Window",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+M"
+      }
+    },
+    {
+      "name": "Minimize All Windows",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+M"
+      }
+    },
+    {
+      "name": "Zoom Window",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Cmd+M"
+      }
+    },
+    {
+      "name": "Next Channel Strip Setting of Focused Track",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+]"
+      }
+    },
+    {
+      "name": "Previous Channel Strip Setting of Focused Track",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+["
+      }
+    },
+    {
+      "name": "Copy Channel Strip Setting",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+C"
+      }
+    },
+    {
+      "name": "Paste Channel Strip Setting",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+V"
+      }
+    },
+    {
+      "name": "Next Patch, Plug-in Setting or Sampler Instrument",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "]"
+      }
+    },
+    {
+      "name": "Previous Patch, Plug-in Setting or Sampler Instrument",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "["
+      }
+    },
+    {
+      "name": "Toggle Channel Strip Mute",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "M"
+      }
+    },
+    {
+      "name": "Toggle Channel Strip Solo",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "S"
+      }
+    },
+    {
+      "name": "Toggle Channel Strip Input Monitoring",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+I"
+      }
+    },
+    {
+      "name": "Toggle Channel Strip Format (mono/stereo)",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+S"
+      }
+    },
+    {
+      "name": "Show/Hide All Plug-in Windows",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "V"
+      }
+    },
+    {
+      "name": "Free Tempo Recording",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Cmd+R"
+      }
+    },
+    {
+      "name": "Set Nudge Value to Bar",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+M"
+      }
+    },
+    {
+      "name": "Set Nudge Value to Beat",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+B"
+      }
+    },
+    {
+      "name": "Set Nudge Value to Division",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+D"
+      }
+    },
+    {
+      "name": "Set Nudge Value to Tick",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+T"
+      }
+    },
+    {
+      "name": "Set Nudge Value to SMPTE Frame",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+F"
+      }
+    },
+    {
+      "name": "Set Nudge Value to 0.5 SMPTE Frame",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+H"
+      }
+    },
+    {
+      "name": "Set Nudge Value to Sample",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+S"
+      }
+    },
+    {
+      "name": "Set Nudge Value to 1 ms",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+1"
+      }
+    },
+    {
+      "name": "Set Nudge Value to 10 ms",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+0"
+      }
+    },
+    {
+      "name": "Sustain inserted notes",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "-"
+      }
+    },
+    {
+      "name": "Stop All Cells",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Enter"
+      }
+    },
+    {
+      "name": "Toggle Activation of All Tracks",
+      "context": "Global Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Shift+A"
+      }
+    },
+    {
+      "name": "Open Controller Assignments",
+      "context": "Global Control Surfaces Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+K"
+      }
+    },
+    {
+      "name": "Learn new Controller Assignment",
+      "context": "Global Control Surfaces Commands",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+L"
+      }
+    },
+    {
+      "name": "Undo",
+      "context": "Various Windows",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Z"
+      }
+    },
+    {
+      "name": "Redo",
+      "context": "Various Windows",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+Z"
+      }
+    },
+    {
+      "name": "Undo History",
+      "context": "Various Windows",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Cmd+Z"
+      }
+    },
+    {
+      "name": "Cut",
+      "context": "Various Windows",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+X"
+      }
+    },
+    {
+      "name": "Copy",
+      "context": "Various Windows",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+C"
+      }
+    },
+    {
+      "name": "Paste",
+      "context": "Various Windows",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+V"
+      }
+    },
+    {
+      "name": "Select All",
+      "context": "Various Windows",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+A"
+      }
+    },
+    {
+      "name": "Deselect All",
+      "context": "Various Windows",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+D"
+      }
+    },
+    {
+      "name": "Invert Selection",
+      "context": "Various Windows",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+I"
+      }
+    },
+    {
+      "name": "Show Tool Menu",
+      "context": "Various Windows",
+      "mac": {
+        "type": "keys",
+        "chord": "T"
+      }
+    },
+    {
+      "name": "Set Next Tool or Edit Mode",
+      "context": "Various Windows",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+PageDown"
+      }
+    },
+    {
+      "name": "Set Previous Tool or Edit Mode",
+      "context": "Various Windows",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+PageUp"
+      }
+    },
+    {
+      "name": "Zoom Horizontal Out",
+      "context": "Various Windows",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Left"
+      }
+    },
+    {
+      "name": "Zoom Horizontal In",
+      "context": "Various Windows",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Right"
+      }
+    },
+    {
+      "name": "Zoom Vertical Out",
+      "context": "Various Windows",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Up"
+      }
+    },
+    {
+      "name": "Zoom Vertical In",
+      "context": "Various Windows",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Down"
+      }
+    },
+    {
+      "name": "Recall Zoom 1",
+      "context": "Various Windows",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Cmd+1"
+      }
+    },
+    {
+      "name": "Recall Zoom 2",
+      "context": "Various Windows",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Cmd+2"
+      }
+    },
+    {
+      "name": "Recall Zoom 3",
+      "context": "Various Windows",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Cmd+3"
+      }
+    },
+    {
+      "name": "Save as Zoom 1",
+      "context": "Various Windows",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Shift+Cmd+1"
+      }
+    },
+    {
+      "name": "Save as Zoom 2",
+      "context": "Various Windows",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Shift+Cmd+2"
+      }
+    },
+    {
+      "name": "Save as Zoom 3",
+      "context": "Various Windows",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Shift+Cmd+3"
+      }
+    },
+    {
+      "name": "Zoom to Fit Locators, Store Navigation Snapshot",
+      "context": "Various Windows",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Z"
+      }
+    },
+    {
+      "name": "Toggle Zoom to Fit Selection or All Contents",
+      "context": "Various Windows",
+      "mac": {
+        "type": "keys",
+        "chord": "Z"
+      }
+    },
+    {
+      "name": "Store Navigation Snapshot",
+      "context": "Various Windows",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Z"
+      }
+    },
+    {
+      "name": "Navigation: Back",
+      "context": "Various Windows",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Z"
+      }
+    },
+    {
+      "name": "Navigation: Forward",
+      "context": "Various Windows",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+Z"
+      }
+    },
+    {
+      "name": "Toggle Zoom Focused Track or Row",
+      "context": "Various Windows",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Z"
+      }
+    },
+    {
+      "name": "Page Up",
+      "context": "Various Windows",
+      "mac": {
+        "type": "keys",
+        "chord": "PageUp"
+      }
+    },
+    {
+      "name": "Page Down",
+      "context": "Various Windows",
+      "mac": {
+        "type": "keys",
+        "chord": "PageDown"
+      }
+    },
+    {
+      "name": "Page Left",
+      "context": "Various Windows",
+      "mac": {
+        "type": "keys",
+        "chord": "Home"
+      }
+    },
+    {
+      "name": "Page Right",
+      "context": "Various Windows",
+      "mac": {
+        "type": "keys",
+        "chord": "End"
+      }
+    },
+    {
+      "name": "Catch Playhead Position",
+      "context": "Various Windows",
+      "mac": {
+        "type": "keys",
+        "chord": "`"
+      }
+    },
+    {
+      "name": "Show/Hide Local Inspector",
+      "context": "Various Windows",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+I"
+      }
+    },
+    {
+      "name": "Toggle MIDI Out (Note Preview)",
+      "context": "Various Windows",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+O"
+      }
+    },
+    {
+      "name": "Toggle MIDI In (Step Record)",
+      "context": "Various Windows",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+I"
+      }
+    },
+    {
+      "name": "Increase Last Clicked Parameter by 1",
+      "context": "Various Windows",
+      "mac": {
+        "type": "keys",
+        "chord": "="
+      }
+    },
+    {
+      "name": "Decrease Last Clicked Parameter by 1",
+      "context": "Various Windows",
+      "mac": {
+        "type": "keys",
+        "chord": "-"
+      }
+    },
+    {
+      "name": "Increase Last Clicked Parameter by 10",
+      "context": "Various Windows",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+="
+      }
+    },
+    {
+      "name": "Decrease Last Clicked Parameter by 10",
+      "context": "Various Windows",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+-"
+      }
+    },
+    {
+      "name": "Preview",
+      "context": "Various Windows",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Space"
+      }
+    },
+    {
+      "name": "Search and Add Plug-in",
+      "context": "Various Windows",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Cmd+P"
+      }
+    },
+    {
+      "name": "Show Files in Finder",
+      "context": "Windows Showing Audio Files",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+R"
+      }
+    },
+    {
+      "name": "Add to Tracks",
+      "context": "Windows Showing Audio Files",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+;"
+      }
+    },
+    {
+      "name": "Remove Silence from Audio Region",
+      "context": "Windows Showing Audio Files",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+X"
+      }
+    },
+    {
+      "name": "Show/Hide Selection-based Processing",
+      "context": "Windows Showing Audio Files",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+P"
+      }
+    },
+    {
+      "name": "Apply Selection-based Processing Again",
+      "context": "Windows Showing Audio Files",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+P"
+      }
+    },
+    {
+      "name": "Show/Hide Automation",
+      "context": "Main Window Tracks and Various Editors",
+      "mac": {
+        "type": "keys",
+        "chord": "A"
+      }
+    },
+    {
+      "name": "New Tracks",
+      "context": "Main Window Tracks and Various Editors",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+N"
+      }
+    },
+    {
+      "name": "New Audio Track",
+      "context": "Main Window Tracks and Various Editors",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+A"
+      }
+    },
+    {
+      "name": "New Software Instrument Track",
+      "context": "Main Window Tracks and Various Editors",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+S"
+      }
+    },
+    {
+      "name": "New Session Player SI Track",
+      "context": "Main Window Tracks and Various Editors",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+P"
+      }
+    },
+    {
+      "name": "New External MIDI Track",
+      "context": "Main Window Tracks and Various Editors",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+X"
+      }
+    },
+    {
+      "name": "New Track with Duplicate Settings",
+      "context": "Main Window Tracks and Various Editors",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+D"
+      }
+    },
+    {
+      "name": "New Track with Duplicate Settings and Content",
+      "context": "Main Window Tracks and Various Editors",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+Cmd+D"
+      }
+    },
+    {
+      "name": "New Track with Next Channel / MIDI Channel",
+      "context": "Main Window Tracks and Various Editors",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Enter"
+      }
+    },
+    {
+      "name": "New Track with Same Channel Strip/Instrument",
+      "context": "Main Window Tracks and Various Editors",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Enter"
+      }
+    },
+    {
+      "name": "Delete Track",
+      "context": "Main Window Tracks and Various Editors",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Backspace"
+      }
+    },
+    {
+      "name": "Delete unused Tracks",
+      "context": "Main Window Tracks and Various Editors",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+Backspace"
+      }
+    },
+    {
+      "name": "Search and Select Track",
+      "context": "Main Window Tracks and Various Editors",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Cmd+T"
+      }
+    },
+    {
+      "name": "Import Audio File",
+      "context": "Main Window Tracks and Various Editors",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+I"
+      }
+    },
+    {
+      "name": "Select All Following",
+      "context": "Main Window Tracks and Various Editors",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+F"
+      }
+    },
+    {
+      "name": "Select All Following of Same Track/Pitch",
+      "context": "Main Window Tracks and Various Editors",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+F"
+      }
+    },
+    {
+      "name": "Select All Inside Locators",
+      "context": "Main Window Tracks and Various Editors",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+L"
+      }
+    },
+    {
+      "name": "Select Overlapped Regions/Events",
+      "context": "Main Window Tracks and Various Editors",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+O"
+      }
+    },
+    {
+      "name": "Select Equal Regions/Events",
+      "context": "Main Window Tracks and Various Editors",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+E"
+      }
+    },
+    {
+      "name": "Select Similar Regions/Events",
+      "context": "Main Window Tracks and Various Editors",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+S"
+      }
+    },
+    {
+      "name": "Select Same Subpositions",
+      "context": "Main Window Tracks and Various Editors",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+P"
+      }
+    },
+    {
+      "name": "Select Muted Regions/Cells/Events",
+      "context": "Main Window Tracks and Various Editors",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+M"
+      }
+    },
+    {
+      "name": "Select Same-Colored Regions/Cells/Events",
+      "context": "Main Window Tracks and Various Editors",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+C"
+      }
+    },
+    {
+      "name": "Select First, or Shift Marquee Selection Left",
+      "context": "Main Window Tracks and Various Editors",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Home"
+      }
+    },
+    {
+      "name": "Select Last, or Shift Marquee Selection Right",
+      "context": "Main Window Tracks and Various Editors",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+End"
+      }
+    },
+    {
+      "name": "Select Previous Region/Cell/Event or Move Marquee End (or Marquee Point) to Previous Transient",
+      "context": "Main Window Tracks and Various Editors",
+      "mac": {
+        "type": "keys",
+        "chord": "Left"
+      }
+    },
+    {
+      "name": "Select Next Region/Cell/Event or Move Marquee End (or Marquee Point) to Next Transient",
+      "context": "Main Window Tracks and Various Editors",
+      "mac": {
+        "type": "keys",
+        "chord": "Right"
+      }
+    },
+    {
+      "name": "Toggle Previous Region/Cell/Event or Move Marquee Start (or Extend Marquee Selection) to Previous Transient",
+      "context": "Main Window Tracks and Various Editors",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Left"
+      }
+    },
+    {
+      "name": "Toggle Next Region/Cell/Event or Move Marquee Start (or Extend Marquee Selection) to Next Transient",
+      "context": "Main Window Tracks and Various Editors",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Right"
+      }
+    },
+    {
+      "name": "Scroll to Selection",
+      "context": "Main Window Tracks and Various Editors",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+`"
+      }
+    },
+    {
+      "name": "Loop Regions/Cells/Folders On/Off",
+      "context": "Main Window Tracks and Various Editors",
+      "mac": {
+        "type": "keys",
+        "chord": "L"
+      }
+    },
+    {
+      "name": "Flex On/Off",
+      "context": "Main Window Tracks and Various Editors",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+F"
+      }
+    },
+    {
+      "name": "Reverse On/Off",
+      "context": "Main Window Tracks and Various Editors",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+R"
+      }
+    },
+    {
+      "name": "Quantize Selected Regions/Cells/Events",
+      "context": "Main Window Tracks and Various Editors",
+      "mac": {
+        "type": "keys",
+        "chord": "Q"
+      }
+    },
+    {
+      "name": "Dequantize",
+      "context": "Main Window Tracks and Various Editors",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+Q"
+      }
+    },
+    {
+      "name": "Delete Duplicated MIDI Events",
+      "context": "Main Window Tracks and Various Editors",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+D"
+      }
+    },
+    {
+      "name": "Paste Replace",
+      "context": "Main Window Tracks and Various Editors",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+V"
+      }
+    },
+    {
+      "name": "Repeat Regions/Cells/Events",
+      "context": "Main Window Tracks and Various Editors",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+R"
+      }
+    },
+    {
+      "name": "Set Optimal Region/Cell Lengths Rounded by Bar",
+      "context": "Main Window Tracks and Various Editors",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+\\"
+      }
+    },
+    {
+      "name": "Convert to MIDI Region/Cell",
+      "context": "Main Window Tracks and Various Editors",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Cmd+M"
+      }
+    },
+    {
+      "name": "Join Regions/Notes",
+      "context": "Main Window Tracks and Various Editors",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+J"
+      }
+    },
+    {
+      "name": "Split Regions/Events at Locators or Marquee Selection",
+      "context": "Main Window Tracks and Various Editors",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+T"
+      }
+    },
+    {
+      "name": "Split Regions/Events at Playhead Position",
+      "context": "Main Window Tracks and Various Editors",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+T"
+      }
+    },
+    {
+      "name": "Transpose KeySignature/Chord/Region/Event +1 Semitone, Nudge Automation Up 1 Step or Move Marquee Top Up 1 Track",
+      "context": "Main Window Tracks and Various Editors",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Up"
+      }
+    },
+    {
+      "name": "Transpose KeySignature/Chord/Region/Event -1 Semitone, Nudge Automation Down 1 Step or Move Marquee Top Down 1 Track",
+      "context": "Main Window Tracks and Various Editors",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Down"
+      }
+    },
+    {
+      "name": "Transpose Region/Event +12 Semitone, Nudge Automation Up 10 Steps or Move Marquee Bottom Up 1 Track",
+      "context": "Main Window Tracks and Various Editors",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+Up"
+      }
+    },
+    {
+      "name": "Transpose Region/Event -12 Semitone, Nudge Automation Down 10 Steps or Move Marquee Bottom Down 1 Track",
+      "context": "Main Window Tracks and Various Editors",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+Down"
+      }
+    },
+    {
+      "name": "Move Region/Event to Playhead Position (Pickup Clock)",
+      "context": "Main Window Tracks and Various Editors",
+      "mac": {
+        "type": "keys",
+        "chord": ";"
+      }
+    },
+    {
+      "name": "Move Region/Event to Playhead Position and Select Next Region/Event (Pickup Clock+)",
+      "context": "Main Window Tracks and Various Editors",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+;"
+      }
+    },
+    {
+      "name": "Set Region/Event/Marquee Start to Playhead Position",
+      "context": "Main Window Tracks and Various Editors",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+["
+      }
+    },
+    {
+      "name": "Set Region/Event/Marquee End to Playhead Position",
+      "context": "Main Window Tracks and Various Editors",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+]"
+      }
+    },
+    {
+      "name": "Nudge Region/Event/Marquee Position Right by Nudge Value",
+      "context": "Main Window Tracks and Various Editors",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Right"
+      }
+    },
+    {
+      "name": "Nudge Region/Event/Marquee Position Left by Nudge Value",
+      "context": "Main Window Tracks and Various Editors",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Left"
+      }
+    },
+    {
+      "name": "Nudge Region/Event/Marquee Length Right by Nudge Value",
+      "context": "Main Window Tracks and Various Editors",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+Right"
+      }
+    },
+    {
+      "name": "Nudge Region/Event/Marquee Length Left by Nudge Value",
+      "context": "Main Window Tracks and Various Editors",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+Left"
+      }
+    },
+    {
+      "name": "Slip Right by Nudge Value",
+      "context": "Main Window Tracks and Various Editors",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Right"
+      }
+    },
+    {
+      "name": "Slip Left by Nudge Value",
+      "context": "Main Window Tracks and Various Editors",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Left"
+      }
+    },
+    {
+      "name": "Rotate Right by Nudge Value",
+      "context": "Main Window Tracks and Various Editors",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Cmd+Right"
+      }
+    },
+    {
+      "name": "Rotate Left by Nudge Value",
+      "context": "Main Window Tracks and Various Editors",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Cmd+Left"
+      }
+    },
+    {
+      "name": "Open Track Stack",
+      "context": "Main Window Tracks and Various Editors",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Cmd+Right"
+      }
+    },
+    {
+      "name": "Close Track Stack",
+      "context": "Main Window Tracks and Various Editors",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Cmd+Left"
+      }
+    },
+    {
+      "name": "Mute Notes/Regions/Cells/Folders On/Off",
+      "context": "Main Window Tracks and Various Editors",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+M"
+      }
+    },
+    {
+      "name": "Unlock SMPTE Position",
+      "context": "Main Window Tracks and Various Editors",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+PageUp"
+      }
+    },
+    {
+      "name": "Lock SMPTE Position",
+      "context": "Main Window Tracks and Various Editors",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+PageDown"
+      }
+    },
+    {
+      "name": "Toggle Snap to Grid",
+      "context": "Main Window Tracks and Various Editors",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+G"
+      }
+    },
+    {
+      "name": "Shuffle Left",
+      "context": "Main Window Tracks and Various Editors",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+["
+      }
+    },
+    {
+      "name": "Shuffle Right",
+      "context": "Main Window Tracks and Various Editors",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+]"
+      }
+    },
+    {
+      "name": "Bounce",
+      "context": "Main Window Tracks and Various Editors",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+B"
+      }
+    },
+    {
+      "name": "Create Time Signature Change",
+      "context": "Main Window Tracks and Various Editors",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Shift+T"
+      }
+    },
+    {
+      "name": "Create Key Signature Change",
+      "context": "Main Window Tracks and Various Editors",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Shift+K"
+      }
+    },
+    {
+      "name": "Select Same Channels",
+      "context": "Various Editors",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+H"
+      }
+    },
+    {
+      "name": "Select Same Articulation",
+      "context": "Various Editors",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+A"
+      }
+    },
+    {
+      "name": "Trim Note End to Remove Overlaps to Following Notes (8 Ticks Gap)",
+      "context": "Various Editors",
+      "mac": {
+        "type": "keys",
+        "chord": "\\"
+      }
+    },
+    {
+      "name": "Trim Note End to Following Notes (8 Ticks Gap)",
+      "context": "Various Editors",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+\\"
+      }
+    },
+    {
+      "name": "Select Highest Notes",
+      "context": "Various Editors",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Up"
+      }
+    },
+    {
+      "name": "Select Lowest Notes",
+      "context": "Various Editors",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Down"
+      }
+    },
+    {
+      "name": "Show Event Position and Length as Time or Bars/Beats",
+      "context": "Various Editors",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+R"
+      }
+    },
+    {
+      "name": "Secondary Ruler",
+      "context": "Views Showing Time Ruler",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Shift+R"
+      }
+    },
+    {
+      "name": "Scroll in Play",
+      "context": "Views Showing Time Ruler",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+`"
+      }
+    },
+    {
+      "name": "Show/Hide Global Tracks",
+      "context": "Views Showing Time Ruler",
+      "mac": {
+        "type": "keys",
+        "chord": "G"
+      }
+    },
+    {
+      "name": "Configure Global Tracks",
+      "context": "Views Showing Time Ruler",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+G"
+      }
+    },
+    {
+      "name": "Show Single Global Track On/Off",
+      "context": "Views Showing Time Ruler",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Cmd+G"
+      }
+    },
+    {
+      "name": "Show/Hide Arrangement Track",
+      "context": "Views Showing Time Ruler",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+A"
+      }
+    },
+    {
+      "name": "Show/Hide Marker Track",
+      "context": "Views Showing Time Ruler",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+K"
+      }
+    },
+    {
+      "name": "Show/Hide Movie Track",
+      "context": "Views Showing Time Ruler",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+O"
+      }
+    },
+    {
+      "name": "Show/Hide Tempo Track",
+      "context": "Views Showing Time Ruler",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+T"
+      }
+    },
+    {
+      "name": "Show/Hide Chord Track",
+      "context": "Views Showing Time Ruler",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+C"
+      }
+    },
+    {
+      "name": "Show/Hide Beat Mapping Track",
+      "context": "Views Showing Time Ruler",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+B"
+      }
+    },
+    {
+      "name": "Show/Hide Marker Track Only",
+      "context": "Views Showing Time Ruler",
+      "mac": {
+        "type": "keys",
+        "chord": "'"
+      }
+    },
+    {
+      "name": "Transpose Chords +1 Semitone",
+      "context": "Views Showing Time Ruler",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+Cmd+Up"
+      }
+    },
+    {
+      "name": "Transpose Chords –1 Semitone",
+      "context": "Views Showing Time Ruler",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+Cmd+Down"
+      }
+    },
+    {
+      "name": "Automation: Cycle Through Used Parameters",
+      "context": "Views Showing Automation",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Y"
+      }
+    },
+    {
+      "name": "Automation: Display Off",
+      "context": "Views Showing Automation",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+Y"
+      }
+    },
+    {
+      "name": "Extend Track Selection Up",
+      "context": "Main Window Tracks",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Up"
+      }
+    },
+    {
+      "name": "Extend Track Selection Down",
+      "context": "Main Window Tracks",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Down"
+      }
+    },
+    {
+      "name": "Select Previous Region/Cell on Focused Track",
+      "context": "Main Window Tracks",
+      "mac": {
+        "type": "keys",
+        "chord": "Left"
+      }
+    },
+    {
+      "name": "Select Next Region/Cell on Focused Track",
+      "context": "Main Window Tracks",
+      "mac": {
+        "type": "keys",
+        "chord": "Right"
+      }
+    },
+    {
+      "name": "Pack Take Folder",
+      "context": "Main Window Tracks",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Cmd+F"
+      }
+    },
+    {
+      "name": "Unpack Take Folder to Existing Tracks",
+      "context": "Main Window Tracks",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Cmd+U"
+      }
+    },
+    {
+      "name": "Unpack Take Folder to New Tracks",
+      "context": "Main Window Tracks",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Cmd+U"
+      }
+    },
+    {
+      "name": "Create 1 Track Automation Point at Region Borders",
+      "context": "Main Window Tracks",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Cmd+1"
+      }
+    },
+    {
+      "name": "Create 2 Track Automation Points at Region Borders",
+      "context": "Main Window Tracks",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Cmd+2"
+      }
+    },
+    {
+      "name": "Create 1 Track Automation Point at Every Region Border",
+      "context": "Main Window Tracks",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Cmd+1"
+      }
+    },
+    {
+      "name": "Create 2 Track Automation Points at Every Region Border",
+      "context": "Main Window Tracks",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Cmd+2"
+      }
+    },
+    {
+      "name": "Delete Redundant Automation Points",
+      "context": "Main Window Tracks",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Backspace"
+      }
+    },
+    {
+      "name": "Delete Visible Automation on Selected Track",
+      "context": "Main Window Tracks",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Cmd+Backspace"
+      }
+    },
+    {
+      "name": "Delete All Automation on Selected Track",
+      "context": "Main Window Tracks",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Cmd+Backspace"
+      }
+    },
+    {
+      "name": "Delete Orphaned Automation on Selected Track",
+      "context": "Main Window Tracks",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Backspace"
+      }
+    },
+    {
+      "name": "Move Visible Region Data to Track Automation",
+      "context": "Main Window Tracks",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Cmd+Up"
+      }
+    },
+    {
+      "name": "Move Visible Track Automation to Region",
+      "context": "Main Window Tracks",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Cmd+Down"
+      }
+    },
+    {
+      "name": "Move All Region Data to Track Automation",
+      "context": "Main Window Tracks",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Cmd+Up"
+      }
+    },
+    {
+      "name": "Move All Track Automation to Region",
+      "context": "Main Window Tracks",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Cmd+Down"
+      }
+    },
+    {
+      "name": "Un/disclose Take Folder",
+      "context": "Main Window Tracks",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+F"
+      }
+    },
+    {
+      "name": "Flatten Take Folder/Cell",
+      "context": "Main Window Tracks",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+U"
+      }
+    },
+    {
+      "name": "Flatten and Merge Take Folder/Cell",
+      "context": "Main Window Tracks",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+U"
+      }
+    },
+    {
+      "name": "Rename Take or Comp",
+      "context": "Main Window Tracks",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+T"
+      }
+    },
+    {
+      "name": "Delete Take or Comp",
+      "context": "Main Window Tracks",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+Backspace"
+      }
+    },
+    {
+      "name": "Toggle Take Folder Quick Swipe Comping Mode",
+      "context": "Main Window Tracks",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Q"
+      }
+    },
+    {
+      "name": "Select Previous Take or Comp",
+      "context": "Main Window Tracks",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+Up"
+      }
+    },
+    {
+      "name": "Select Next Take or Comp",
+      "context": "Main Window Tracks",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+Down"
+      }
+    },
+    {
+      "name": "Create Track Stack",
+      "context": "Main Window Tracks",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+D"
+      }
+    },
+    {
+      "name": "Create Folder Stack",
+      "context": "Main Window Tracks",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+F"
+      }
+    },
+    {
+      "name": "Create Summing Stack",
+      "context": "Main Window Tracks",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+G"
+      }
+    },
+    {
+      "name": "Flatten Stack",
+      "context": "Main Window Tracks",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+U"
+      }
+    },
+    {
+      "name": "Bounce Regions/Cells in Place",
+      "context": "Main Window Tracks",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+B"
+      }
+    },
+    {
+      "name": "Bounce Tracks in Place",
+      "context": "Main Window Tracks",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Cmd+B"
+      }
+    },
+    {
+      "name": "Drum Replacement/Doubling",
+      "context": "Main Window Tracks",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+D"
+      }
+    },
+    {
+      "name": "Hide/Show Selected Tracks",
+      "context": "Main Window Tracks",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+H"
+      }
+    },
+    {
+      "name": "Unhide All Tracks",
+      "context": "Main Window Tracks",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+H"
+      }
+    },
+    {
+      "name": "Toggle Hide View",
+      "context": "Main Window Tracks",
+      "mac": {
+        "type": "keys",
+        "chord": "H"
+      }
+    },
+    {
+      "name": "Toggle Track On",
+      "context": "Main Window Tracks",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+M"
+      }
+    },
+    {
+      "name": "Toggle Track Record Enable",
+      "context": "Main Window Tracks",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+R"
+      }
+    },
+    {
+      "name": "Individual Track Zoom In",
+      "context": "Main Window Tracks",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+Down"
+      }
+    },
+    {
+      "name": "Individual Track Zoom Out",
+      "context": "Main Window Tracks",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+Up"
+      }
+    },
+    {
+      "name": "Toggle Individual Track Zoom",
+      "context": "Main Window Tracks",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+Z"
+      }
+    },
+    {
+      "name": "Reset Individual Track Zoom",
+      "context": "Main Window Tracks",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+Backspace"
+      }
+    },
+    {
+      "name": "Individual Track Zoom Reset for All Tracks",
+      "context": "Main Window Tracks",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+Cmd+Backspace"
+      }
+    },
+    {
+      "name": "Convert Alias to a Region Copy",
+      "context": "Main Window Tracks",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+A"
+      }
+    },
+    {
+      "name": "Select All Aliases of Region",
+      "context": "Main Window Tracks",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+A"
+      }
+    },
+    {
+      "name": "Audio Crossfade Options for Merge",
+      "context": "Main Window Tracks",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+X"
+      }
+    },
+    {
+      "name": "Apply Default Crossfade",
+      "context": "Main Window Tracks",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+X"
+      }
+    },
+    {
+      "name": "Apply Last Edited Fade Again",
+      "context": "Main Window Tracks",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+X"
+      }
+    },
+    {
+      "name": "Join Regions per Tracks / Fill Cell",
+      "context": "Main Window Tracks",
+      "mac": {
+        "type": "keys",
+        "chord": "J"
+      }
+    },
+    {
+      "name": "Cut Section Between Locators (Global)",
+      "context": "Main Window Tracks",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Cmd+X"
+      }
+    },
+    {
+      "name": "Insert Silence Between Locators (Global)",
+      "context": "Main Window Tracks",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Cmd+I"
+      }
+    },
+    {
+      "name": "Insert Section at Playhead (Global)",
+      "context": "Main Window Tracks",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Cmd+V"
+      }
+    },
+    {
+      "name": "Repeat Section Between Locators (Global)",
+      "context": "Main Window Tracks",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Cmd+R"
+      }
+    },
+    {
+      "name": "Cut Sections of Selected Arrangement Markers",
+      "context": "Main Window Tracks",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+Delete"
+      }
+    },
+    {
+      "name": "Insert Scenes at Playhead",
+      "context": "Main Window Tracks",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+End"
+      }
+    },
+    {
+      "name": "Rename Track",
+      "context": "Main Window Tracks",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Enter"
+      }
+    },
+    {
+      "name": "Move Selected Regions to Focused Track",
+      "context": "Main Window Tracks",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+T"
+      }
+    },
+    {
+      "name": "Move Region to Recorded Position",
+      "context": "Main Window Tracks",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+Cmd+R"
+      }
+    },
+    {
+      "name": "Convert Regions to New Regions",
+      "context": "Main Window Tracks",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+R"
+      }
+    },
+    {
+      "name": "Convert Regions to New Audio Files",
+      "context": "Main Window Tracks",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+F"
+      }
+    },
+    {
+      "name": "Convert Regions to New Sampler Track",
+      "context": "Main Window Tracks",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+E"
+      }
+    },
+    {
+      "name": "Time Stretch Region Length to Locators",
+      "context": "Main Window Tracks",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+L"
+      }
+    },
+    {
+      "name": "Time Stretch Region Length to Nearest Bar",
+      "context": "Main Window Tracks",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+B"
+      }
+    },
+    {
+      "name": "Normalize Region/Cell Gain",
+      "context": "Main Window Tracks",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+G"
+      }
+    },
+    {
+      "name": "Apply Normalize Region/Cell Gain Again",
+      "context": "Main Window Tracks",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+G"
+      }
+    },
+    {
+      "name": "Add Region/Cell to Loop Library",
+      "context": "Main Window Tracks",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+O"
+      }
+    },
+    {
+      "name": "Apply All Region/Cell Parameters Permanently",
+      "context": "Main Window Tracks",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+N"
+      }
+    },
+    {
+      "name": "Apply Quantization Permanently",
+      "context": "Main Window Tracks",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Q"
+      }
+    },
+    {
+      "name": "Convert Loops to Regions",
+      "context": "Main Window Tracks",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+L"
+      }
+    },
+    {
+      "name": "Remove Overlaps",
+      "context": "Main Window Tracks",
+      "mac": {
+        "type": "keys",
+        "chord": "\\"
+      }
+    },
+    {
+      "name": "Trim Region End to Next Region",
+      "context": "Main Window Tracks",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+\\"
+      }
+    },
+    {
+      "name": "Trim Regions to Fill within Locators",
+      "context": "Main Window Tracks",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+\\"
+      }
+    },
+    {
+      "name": "Crop Regions/Cells outside Locators/Playable Range or Marquee Selection",
+      "context": "Main Window Tracks",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+\\"
+      }
+    },
+    {
+      "name": "Switch between Live Loops Grid and Tracks View",
+      "context": "Main Window Tracks",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+V"
+      }
+    },
+    {
+      "name": "Show Live Loops Grid only",
+      "context": "Main Window Tracks",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+L"
+      }
+    },
+    {
+      "name": "Show Tracks View only",
+      "context": "Main Window Tracks",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+N"
+      }
+    },
+    {
+      "name": "Show Both, Live Loops Grid and Tracks View",
+      "context": "Main Window Tracks",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+B"
+      }
+    },
+    {
+      "name": "Copy to Live Loops Scene",
+      "context": "Main Window Tracks",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Home"
+      }
+    },
+    {
+      "name": "Hide/Show Track Automation",
+      "context": "Main Window Tracks",
+      "mac": {
+        "type": "keys",
+        "chord": "A"
+      }
+    },
+    {
+      "name": "Show/Hide Flex Pitch/Time",
+      "context": "Main Window Tracks",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+F"
+      }
+    },
+    {
+      "name": "Trim Region Start to Previous Transient",
+      "context": "Main Window Tracks",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+["
+      }
+    },
+    {
+      "name": "Trim Region Start to Next Transient",
+      "context": "Main Window Tracks",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+]"
+      }
+    },
+    {
+      "name": "Trim Region End to Previous Transient",
+      "context": "Main Window Tracks",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+["
+      }
+    },
+    {
+      "name": "Trim Region End to Next Transient",
+      "context": "Main Window Tracks",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+]"
+      }
+    },
+    {
+      "name": "Rename Regions/Cells/Scenes",
+      "context": "Main Window Tracks",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+N"
+      }
+    },
+    {
+      "name": "Name Regions/Cells by Track Name",
+      "context": "Main Window Tracks",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+N"
+      }
+    },
+    {
+      "name": "Name Tracks by Region/Cell Name",
+      "context": "Main Window Tracks",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+Cmd+N"
+      }
+    },
+    {
+      "name": "Color Regions/Cells by Track Color",
+      "context": "Main Window Tracks",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+C"
+      }
+    },
+    {
+      "name": "Color Tracks by Region/Cell Color",
+      "context": "Main Window Tracks",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+Cmd+C"
+      }
+    },
+    {
+      "name": "Waveform Vertical Zoom Out",
+      "context": "Main Window Tracks",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+-"
+      }
+    },
+    {
+      "name": "Waveform Vertical Zoom In",
+      "context": "Main Window Tracks",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+="
+      }
+    },
+    {
+      "name": "Show/Hide Toolbar",
+      "context": "Main Window Tracks",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Cmd+T"
+      }
+    },
+    {
+      "name": "Configure Track Header",
+      "context": "Main Window Tracks",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+T"
+      }
+    },
+    {
+      "name": "Show/Hide Editor",
+      "context": "Main Window Tracks",
+      "mac": {
+        "type": "keys",
+        "chord": "E"
+      }
+    },
+    {
+      "name": "Show/Hide Note Pad",
+      "context": "Main Window Tracks",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+P"
+      }
+    },
+    {
+      "name": "Show/Hide List Editors",
+      "context": "Main Window Tracks",
+      "mac": {
+        "type": "keys",
+        "chord": "D"
+      }
+    },
+    {
+      "name": "Show/Hide Browsers",
+      "context": "Main Window Tracks",
+      "mac": {
+        "type": "keys",
+        "chord": "F"
+      }
+    },
+    {
+      "name": "Show/Hide Output Track",
+      "context": "Main Window Tracks",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+M"
+      }
+    },
+    {
+      "name": "Toggle Alignment Guides",
+      "context": "Main Window Tracks",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+G"
+      }
+    },
+    {
+      "name": "New Track Alternative",
+      "context": "Main Window Tracks",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Cmd+N"
+      }
+    },
+    {
+      "name": "Duplicate Track Alternative",
+      "context": "Main Window Tracks",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Cmd+D"
+      }
+    },
+    {
+      "name": "Delete Inactive Track Alternatives",
+      "context": "Main Window Tracks",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Cmd+Delete"
+      }
+    },
+    {
+      "name": "Rename Track Alternative",
+      "context": "Main Window Tracks",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Cmd+Enter"
+      }
+    },
+    {
+      "name": "Show/Hide Inactive Track Alternatives",
+      "context": "Main Window Tracks",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+A"
+      }
+    },
+    {
+      "name": "Activate Next Track Alternative",
+      "context": "Main Window Tracks",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Up"
+      }
+    },
+    {
+      "name": "Activate Previous Track Alternative",
+      "context": "Main Window Tracks",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Down"
+      }
+    },
+    {
+      "name": "Move to next chord in chord group or create new chord after the last chord",
+      "context": "Main Window Tracks",
+      "mac": {
+        "type": "keys",
+        "chord": "Tab"
+      }
+    },
+    {
+      "name": "Move to previous chord in chord group when Edit Chord dialog is open",
+      "context": "Main Window Tracks",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Tab"
+      }
+    },
+    {
+      "name": "Queue Cell/Scene Playback",
+      "context": "Live Loops Grid",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Enter"
+      }
+    },
+    {
+      "name": "Trigger Cells or Scene",
+      "context": "Live Loops Grid",
+      "mac": {
+        "type": "keys",
+        "chord": "Enter"
+      }
+    },
+    {
+      "name": "Trigger Focused Scene",
+      "context": "Live Loops Grid",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+Enter"
+      }
+    },
+    {
+      "name": "Retrigger Selected Cells or Focused Scene",
+      "context": "Live Loops Grid",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Cmd+Enter"
+      }
+    },
+    {
+      "name": "Insert Empty Scene",
+      "context": "Live Loops Grid",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+PageDown"
+      }
+    },
+    {
+      "name": "Copy Playing Cells Here",
+      "context": "Live Loops Grid",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+PageUp"
+      }
+    },
+    {
+      "name": "Select Playing Cells",
+      "context": "Live Loops Grid",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+P"
+      }
+    },
+    {
+      "name": "Select Next Lower Cell, or Next Track",
+      "context": "Live Loops Grid",
+      "mac": {
+        "type": "keys",
+        "chord": "Down"
+      }
+    },
+    {
+      "name": "Select Next Upper Cell, or Previous Track",
+      "context": "Live Loops Grid",
+      "mac": {
+        "type": "keys",
+        "chord": "Up"
+      }
+    },
+    {
+      "name": "Extend Cell, or Track Selection Up",
+      "context": "Live Loops Grid",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Up"
+      }
+    },
+    {
+      "name": "Extend Cell, or Track Selection Down",
+      "context": "Live Loops Grid",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Down"
+      }
+    },
+    {
+      "name": "Select Previous Scene",
+      "context": "Live Loops Grid",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Left"
+      }
+    },
+    {
+      "name": "Select Next Scene",
+      "context": "Live Loops Grid",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Right"
+      }
+    },
+    {
+      "name": "Enable Performance Recording On/Off",
+      "context": "Live Loops Grid",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+P"
+      }
+    },
+    {
+      "name": "Unpack Take Cell to Existing Scenes",
+      "context": "Live Loops Grid",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Cmd+U"
+      }
+    },
+    {
+      "name": "Unpack Take Cell to New Scenes",
+      "context": "Live Loops Grid",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Shift+Cmd+U"
+      }
+    },
+    {
+      "name": "Toggle Grid Horizontal Zoom",
+      "context": "Live Loops Grid",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Z"
+      }
+    },
+    {
+      "name": "Cycle Through Mixer Modes (Single, Track, All)",
+      "context": "Mixer",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+X"
+      }
+    },
+    {
+      "name": "Select Audio Channel Strips",
+      "context": "Mixer",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+A"
+      }
+    },
+    {
+      "name": "Select Instrument Channel Strips",
+      "context": "Mixer",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+S"
+      }
+    },
+    {
+      "name": "Select Auxiliary Channel Strips",
+      "context": "Mixer",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+F"
+      }
+    },
+    {
+      "name": "Select Output Channel Strips",
+      "context": "Mixer",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+O"
+      }
+    },
+    {
+      "name": "Select MIDI Channel Strips",
+      "context": "Mixer",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+E"
+      }
+    },
+    {
+      "name": "Select Same-Colored Channel Strips",
+      "context": "Mixer",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+C"
+      }
+    },
+    {
+      "name": "Select Muted Channel Strips",
+      "context": "Mixer",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+M"
+      }
+    },
+    {
+      "name": "Select Previous (Left) Channel Strip",
+      "context": "Mixer",
+      "mac": {
+        "type": "keys",
+        "chord": "Left"
+      }
+    },
+    {
+      "name": "Select Next (Right) Channel Strip",
+      "context": "Mixer",
+      "mac": {
+        "type": "keys",
+        "chord": "Right"
+      }
+    },
+    {
+      "name": "Create New Auxiliary Channel Strip",
+      "context": "Mixer",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+N"
+      }
+    },
+    {
+      "name": "Create Tracks for Selected Channel Strips",
+      "context": "Mixer",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+T"
+      }
+    },
+    {
+      "name": "Show/Hide Long Faders",
+      "context": "Mixer",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+L"
+      }
+    },
+    {
+      "name": "Show/Hide Grouping",
+      "context": "Mixer",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+G"
+      }
+    },
+    {
+      "name": "Show/Hide Track Icon",
+      "context": "Mixer",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+I"
+      }
+    },
+    {
+      "name": "Show/Hide VCA",
+      "context": "Mixer",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+V"
+      }
+    },
+    {
+      "name": "Show/Hide Track Number",
+      "context": "Mixer",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+X"
+      }
+    },
+    {
+      "name": "Show/Hide Notes",
+      "context": "Mixer",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+N"
+      }
+    },
+    {
+      "name": "Configure Channel Strip Components",
+      "context": "Mixer",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+X"
+      }
+    },
+    {
+      "name": "Apply Channel Strip Configuration User Default",
+      "context": "Mixer",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+U"
+      }
+    },
+    {
+      "name": "Sends on Faders - Cycle Through Sends",
+      "context": "Mixer",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Cmd+S"
+      }
+    },
+    {
+      "name": "Clear Cables only",
+      "context": "MIDI Environment",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Backspace"
+      }
+    },
+    {
+      "name": "Object move left",
+      "context": "MIDI Environment",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Left"
+      }
+    },
+    {
+      "name": "Object move right",
+      "context": "MIDI Environment",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Right"
+      }
+    },
+    {
+      "name": "Object move up",
+      "context": "MIDI Environment",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Up"
+      }
+    },
+    {
+      "name": "Object move down",
+      "context": "MIDI Environment",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Down"
+      }
+    },
+    {
+      "name": "Object Width -1 Pixel",
+      "context": "MIDI Environment",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+Left"
+      }
+    },
+    {
+      "name": "Object Width +1 Pixel",
+      "context": "MIDI Environment",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+Right"
+      }
+    },
+    {
+      "name": "Object Height -1 Pixel",
+      "context": "MIDI Environment",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+Up"
+      }
+    },
+    {
+      "name": "Object Height +1 Pixel",
+      "context": "MIDI Environment",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+Down"
+      }
+    },
+    {
+      "name": "Show/Hide Cables",
+      "context": "MIDI Environment",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+C"
+      }
+    },
+    {
+      "name": "Protect Cabling/Positions",
+      "context": "MIDI Environment",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+P"
+      }
+    },
+    {
+      "name": "Define Custom Bank Messages",
+      "context": "MIDI Environment",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+I"
+      }
+    },
+    {
+      "name": "Select Unused Instruments",
+      "context": "MIDI Environment",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+U"
+      }
+    },
+    {
+      "name": "Select Cable Destination",
+      "context": "MIDI Environment",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Right"
+      }
+    },
+    {
+      "name": "Select Cable Origin",
+      "context": "MIDI Environment",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Left"
+      }
+    },
+    {
+      "name": "Select Next Object Above",
+      "context": "MIDI Environment",
+      "mac": {
+        "type": "keys",
+        "chord": "Up"
+      }
+    },
+    {
+      "name": "Select Next Object Below",
+      "context": "MIDI Environment",
+      "mac": {
+        "type": "keys",
+        "chord": "Down"
+      }
+    },
+    {
+      "name": "Select Next Object Left",
+      "context": "MIDI Environment",
+      "mac": {
+        "type": "keys",
+        "chord": "Left"
+      }
+    },
+    {
+      "name": "Select Next Object Right",
+      "context": "MIDI Environment",
+      "mac": {
+        "type": "keys",
+        "chord": "Right"
+      }
+    },
+    {
+      "name": "Send Selected Fader Values",
+      "context": "MIDI Environment",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+V"
+      }
+    },
+    {
+      "name": "Delete Layer",
+      "context": "MIDI Environment",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Backspace"
+      }
+    },
+    {
+      "name": "Cable serially",
+      "context": "MIDI Environment",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+S"
+      }
+    },
+    {
+      "name": "Toggle Time Handles",
+      "context": "Piano Roll",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+T"
+      }
+    },
+    {
+      "name": "Define Brush Pattern and Set Brush Tool",
+      "context": "Piano Roll",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+B"
+      }
+    },
+    {
+      "name": "Reset Brush Pattern",
+      "context": "Piano Roll",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Backspace"
+      }
+    },
+    {
+      "name": "Page View",
+      "context": "Score Editor",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+P"
+      }
+    },
+    {
+      "name": "Explode Folders",
+      "context": "Score Editor",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+F"
+      }
+    },
+    {
+      "name": "Explode Polyphony",
+      "context": "Score Editor",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+X"
+      }
+    },
+    {
+      "name": "Hide/Show Instrument Names",
+      "context": "Score Editor",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+N"
+      }
+    },
+    {
+      "name": "Hide/Show Page Rulers",
+      "context": "Score Editor",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+R"
+      }
+    },
+    {
+      "name": "Go to Page",
+      "context": "Score Editor",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+/"
+      }
+    },
+    {
+      "name": "Paste Multiple",
+      "context": "Score Editor",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+Cmd+V"
+      }
+    },
+    {
+      "name": "Next Staff",
+      "context": "Score Editor",
+      "mac": {
+        "type": "keys",
+        "chord": "Down"
+      }
+    },
+    {
+      "name": "Previous Staff",
+      "context": "Score Editor",
+      "mac": {
+        "type": "keys",
+        "chord": "Up"
+      }
+    },
+    {
+      "name": "Force Syncopation",
+      "context": "Score Editor",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Y"
+      }
+    },
+    {
+      "name": "Defeat Syncopation",
+      "context": "Score Editor",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Y"
+      }
+    },
+    {
+      "name": "Force Interpretation",
+      "context": "Score Editor",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+I"
+      }
+    },
+    {
+      "name": "Defeat Interpretation",
+      "context": "Score Editor",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+I"
+      }
+    },
+    {
+      "name": "Stems: Up",
+      "context": "Score Editor",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Up"
+      }
+    },
+    {
+      "name": "Stems: Down",
+      "context": "Score Editor",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Down"
+      }
+    },
+    {
+      "name": "Stem End: Move Up",
+      "context": "Score Editor",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+Up"
+      }
+    },
+    {
+      "name": "Stem End: Move Down",
+      "context": "Score Editor",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+Down"
+      }
+    },
+    {
+      "name": "Ties: Up",
+      "context": "Score Editor",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Shift+Up"
+      }
+    },
+    {
+      "name": "Ties: Down",
+      "context": "Score Editor",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Shift+Down"
+      }
+    },
+    {
+      "name": "Beam Selected Notes",
+      "context": "Score Editor",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+B"
+      }
+    },
+    {
+      "name": "Unbeam Selected Notes",
+      "context": "Score Editor",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+U"
+      }
+    },
+    {
+      "name": "Default Beams",
+      "context": "Score Editor",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+D"
+      }
+    },
+    {
+      "name": "Enharmonic Shift: #",
+      "context": "Score Editor",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+3"
+      }
+    },
+    {
+      "name": "Enharmonic Shift: b",
+      "context": "Score Editor",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+B"
+      }
+    },
+    {
+      "name": "Reset Note Attributes",
+      "context": "Score Editor",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Backspace"
+      }
+    },
+    {
+      "name": "Assign MIDI Channels Based on Score Split",
+      "context": "Score Editor",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+C"
+      }
+    },
+    {
+      "name": "Nudge Position Up",
+      "context": "Score Editor",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Cmd+Up"
+      }
+    },
+    {
+      "name": "Nudge Position Down",
+      "context": "Score Editor",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Cmd+Down"
+      }
+    },
+    {
+      "name": "Nudge Position Left",
+      "context": "Score Editor",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Cmd+Left"
+      }
+    },
+    {
+      "name": "Nudge Position Right",
+      "context": "Score Editor",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Cmd+Right"
+      }
+    },
+    {
+      "name": "Settings: Global Format",
+      "context": "Score Editor",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Shift+F"
+      }
+    },
+    {
+      "name": "Settings: Numbers and Names",
+      "context": "Score Editor",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Shift+N"
+      }
+    },
+    {
+      "name": "Settings: Guitar Tablature",
+      "context": "Score Editor",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Shift+G"
+      }
+    },
+    {
+      "name": "Settings: Chords and Grids",
+      "context": "Score Editor",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Shift+C"
+      }
+    },
+    {
+      "name": "Settings: Clefs and Signatures",
+      "context": "Score Editor",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Shift+L"
+      }
+    },
+    {
+      "name": "Settings: Extended Layout",
+      "context": "Score Editor",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Shift+X"
+      }
+    },
+    {
+      "name": "Settings: MIDI Meaning",
+      "context": "Score Editor",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Shift+M"
+      }
+    },
+    {
+      "name": "Settings: Score Colors",
+      "context": "Score Editor",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Shift+O"
+      }
+    },
+    {
+      "name": "Insert: Crescendo",
+      "context": "Score Editor",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+,"
+      }
+    },
+    {
+      "name": "Insert: Decrescendo",
+      "context": "Score Editor",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+."
+      }
+    },
+    {
+      "name": "Clear main finger",
+      "context": "Score Editor",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Shift+Backspace"
+      }
+    },
+    {
+      "name": "Set main finger 1",
+      "context": "Score Editor",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Shift+1"
+      }
+    },
+    {
+      "name": "Set main finger 2",
+      "context": "Score Editor",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Shift+2"
+      }
+    },
+    {
+      "name": "Set main finger 3",
+      "context": "Score Editor",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Shift+3"
+      }
+    },
+    {
+      "name": "Set main finger 4",
+      "context": "Score Editor",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Shift+4"
+      }
+    },
+    {
+      "name": "Set main finger 5",
+      "context": "Score Editor",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Shift+5"
+      }
+    },
+    {
+      "name": "Select Previous Event",
+      "context": "Event Editor",
+      "mac": {
+        "type": "keys",
+        "chord": "Up"
+      }
+    },
+    {
+      "name": "Select Next Event",
+      "context": "Event Editor",
+      "mac": {
+        "type": "keys",
+        "chord": "Down"
+      }
+    },
+    {
+      "name": "Length as Absolute Position",
+      "context": "Event Editor",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+A"
+      }
+    },
+    {
+      "name": "Articulation",
+      "context": "Event Editor",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+D"
+      }
+    },
+    {
+      "name": "Relative Position",
+      "context": "Event Editor",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+R"
+      }
+    },
+    {
+      "name": "Duplicate Event and Numerical Edit",
+      "context": "Event Editor",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+D"
+      }
+    },
+    {
+      "name": "Copy Value to All Following Events",
+      "context": "Event Editor",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+V"
+      }
+    },
+    {
+      "name": "Create Lane",
+      "context": "Step Editor",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+N"
+      }
+    },
+    {
+      "name": "Delete Lane",
+      "context": "Step Editor",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Backspace"
+      }
+    },
+    {
+      "name": "Copy Lane",
+      "context": "Step Editor",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+C"
+      }
+    },
+    {
+      "name": "Paste Lane",
+      "context": "Step Editor",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+V"
+      }
+    },
+    {
+      "name": "Toggle Auto Define",
+      "context": "Step Editor",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+A"
+      }
+    },
+    {
+      "name": "Select Next Lane",
+      "context": "Step Editor",
+      "mac": {
+        "type": "keys",
+        "chord": "Down"
+      }
+    },
+    {
+      "name": "Select Previous Lane",
+      "context": "Step Editor",
+      "mac": {
+        "type": "keys",
+        "chord": "Up"
+      }
+    },
+    {
+      "name": "Show/Hide Pattern Browser",
+      "context": "Step Sequencer",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+B"
+      }
+    },
+    {
+      "name": "Repeat Step",
+      "context": "Step Sequencer",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+R"
+      }
+    },
+    {
+      "name": "Copy Row",
+      "context": "Step Sequencer",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+C"
+      }
+    },
+    {
+      "name": "Paste Row",
+      "context": "Step Sequencer",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+V"
+      }
+    },
+    {
+      "name": "Paste Steps",
+      "context": "Step Sequencer",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+V"
+      }
+    },
+    {
+      "name": "Paste Row Settings",
+      "context": "Step Sequencer",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Shift+V"
+      }
+    },
+    {
+      "name": "Paste to New Row",
+      "context": "Step Sequencer",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+V"
+      }
+    },
+    {
+      "name": "Duplicate Row with Next Assignment",
+      "context": "Step Sequencer",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+D"
+      }
+    },
+    {
+      "name": "Delete Row",
+      "context": "Step Sequencer",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Backspace"
+      }
+    },
+    {
+      "name": "Delete Unused Rows",
+      "context": "Step Sequencer",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+Backspace"
+      }
+    },
+    {
+      "name": "Clear Step",
+      "context": "Step Sequencer",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Backspace"
+      }
+    },
+    {
+      "name": "Clear Row",
+      "context": "Step Sequencer",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Cmd+Backspace"
+      }
+    },
+    {
+      "name": "Clear Pattern",
+      "context": "Step Sequencer",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Cmd+Backspace"
+      }
+    },
+    {
+      "name": "Learn (Add)",
+      "context": "Step Sequencer",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+L"
+      }
+    },
+    {
+      "name": "Store as Default Pattern Template",
+      "context": "Step Sequencer",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Cmd+D"
+      }
+    },
+    {
+      "name": "Revert to Default Pattern Template",
+      "context": "Step Sequencer",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Shift+D"
+      }
+    },
+    {
+      "name": "Transpose +1 Semitone",
+      "context": "Step Sequencer",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Up"
+      }
+    },
+    {
+      "name": "Transpose -1 Semitone",
+      "context": "Step Sequencer",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Down"
+      }
+    },
+    {
+      "name": "Transpose +1 Octave",
+      "context": "Step Sequencer",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+Up"
+      }
+    },
+    {
+      "name": "Transpose -1 Octave",
+      "context": "Step Sequencer",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+Down"
+      }
+    },
+    {
+      "name": "Clear Current Edit Mode Values for Row",
+      "context": "Step Sequencer",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+Backspace"
+      }
+    },
+    {
+      "name": "Clear Current Edit Mode Values for All Rows",
+      "context": "Step Sequencer",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+Cmd+Backspace"
+      }
+    },
+    {
+      "name": "Randomize Current Edit Mode Values for Row",
+      "context": "Step Sequencer",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+R"
+      }
+    },
+    {
+      "name": "Randomize Current Edit Mode Values for All Rows",
+      "context": "Step Sequencer",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+R"
+      }
+    },
+    {
+      "name": "Select Step Above",
+      "context": "Step Sequencer",
+      "mac": {
+        "type": "keys",
+        "chord": "Up"
+      }
+    },
+    {
+      "name": "Select Step Below",
+      "context": "Step Sequencer",
+      "mac": {
+        "type": "keys",
+        "chord": "Down"
+      }
+    },
+    {
+      "name": "Select Previous Step",
+      "context": "Step Sequencer",
+      "mac": {
+        "type": "keys",
+        "chord": "Left"
+      }
+    },
+    {
+      "name": "Select Next Step",
+      "context": "Step Sequencer",
+      "mac": {
+        "type": "keys",
+        "chord": "Right"
+      }
+    },
+    {
+      "name": "Live Record",
+      "context": "Step Sequencer",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+R"
+      }
+    },
+    {
+      "name": "Mono Mode",
+      "context": "Step Sequencer",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Cmd+M"
+      }
+    },
+    {
+      "name": "Rename Row",
+      "context": "Step Sequencer",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Enter"
+      }
+    },
+    {
+      "name": "Select Next Pattern Page",
+      "context": "Step Sequencer",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+`"
+      }
+    },
+    {
+      "name": "Save Pattern",
+      "context": "Step Sequencer",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+P"
+      }
+    },
+    {
+      "name": "Save Template",
+      "context": "Step Sequencer",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+T"
+      }
+    },
+    {
+      "name": "Set Pattern Playback Mode to Forward",
+      "context": "Step Sequencer",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+]"
+      }
+    },
+    {
+      "name": "Set Pattern Playback Mode to Reverse",
+      "context": "Step Sequencer",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+["
+      }
+    },
+    {
+      "name": "Set Pattern Playback Mode to Ping Pong",
+      "context": "Step Sequencer",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+P"
+      }
+    },
+    {
+      "name": "Set Pattern Playback Mode to Shuffle",
+      "context": "Step Sequencer",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+\\"
+      }
+    },
+    {
+      "name": "Set Pattern Playback Mode to Pendulum",
+      "context": "Step Sequencer",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Y"
+      }
+    },
+    {
+      "name": "Set Pattern Playback Mode to Wander",
+      "context": "Step Sequencer",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+U"
+      }
+    },
+    {
+      "name": "Set Pattern Playback Mode to Random",
+      "context": "Step Sequencer",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+J"
+      }
+    },
+    {
+      "name": "Pattern Rotate Right",
+      "context": "Step Sequencer",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Cmd+Right"
+      }
+    },
+    {
+      "name": "Pattern Rotate Left",
+      "context": "Step Sequencer",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Cmd+Left"
+      }
+    },
+    {
+      "name": "Solo Row",
+      "context": "Step Sequencer",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+S"
+      }
+    },
+    {
+      "name": "Mute Row",
+      "context": "Step Sequencer",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+M"
+      }
+    },
+    {
+      "name": "Set Row Playback Mode to Forward",
+      "context": "Step Sequencer",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+]"
+      }
+    },
+    {
+      "name": "Set Row Playback Mode to Reverse",
+      "context": "Step Sequencer",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+["
+      }
+    },
+    {
+      "name": "Set Row Playback Mode to Ping Pong",
+      "context": "Step Sequencer",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+P"
+      }
+    },
+    {
+      "name": "Set Row Playback Mode to Shuffle",
+      "context": "Step Sequencer",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+\\"
+      }
+    },
+    {
+      "name": "Set Row Playback Mode to Pendulum",
+      "context": "Step Sequencer",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Y"
+      }
+    },
+    {
+      "name": "Set Row Playback Mode to Wander",
+      "context": "Step Sequencer",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+U"
+      }
+    },
+    {
+      "name": "Set Row Playback Mode to Random",
+      "context": "Step Sequencer",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+J"
+      }
+    },
+    {
+      "name": "Rotate Row Right",
+      "context": "Step Sequencer",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+Right"
+      }
+    },
+    {
+      "name": "Rotate Row Left",
+      "context": "Step Sequencer",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+Left"
+      }
+    },
+    {
+      "name": "Rotate Values for Current Edit Mode Right",
+      "context": "Step Sequencer",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+Right"
+      }
+    },
+    {
+      "name": "Rotate Values for Current Edit Mode Left",
+      "context": "Step Sequencer",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+Left"
+      }
+    },
+    {
+      "name": "Increment Loop Start for Row",
+      "context": "Step Sequencer",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+="
+      }
+    },
+    {
+      "name": "Decrement Loop Start for Row",
+      "context": "Step Sequencer",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+-"
+      }
+    },
+    {
+      "name": "Increment Loop End for Row",
+      "context": "Step Sequencer",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+="
+      }
+    },
+    {
+      "name": "Decrement Loop End for Row",
+      "context": "Step Sequencer",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+-"
+      }
+    },
+    {
+      "name": "Show Subrows for Row",
+      "context": "Step Sequencer",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Cmd+Right"
+      }
+    },
+    {
+      "name": "Hide Subrows for Row",
+      "context": "Step Sequencer",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Cmd+Left"
+      }
+    },
+    {
+      "name": "Show Subrows for All Rows",
+      "context": "Step Sequencer",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Cmd+Right"
+      }
+    },
+    {
+      "name": "Hide Subrows for All Rows",
+      "context": "Step Sequencer",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Cmd+Left"
+      }
+    },
+    {
+      "name": "Toggle Selected Step",
+      "context": "Step Sequencer",
+      "mac": {
+        "type": "keys",
+        "chord": "'"
+      }
+    },
+    {
+      "name": "Set Global Edit Mode to Steps On/Off",
+      "context": "Step Sequencer",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+S"
+      }
+    },
+    {
+      "name": "Set Global Edit Mode to Velocity/Value",
+      "context": "Step Sequencer",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+V"
+      }
+    },
+    {
+      "name": "Set Global Edit Mode to Gate",
+      "context": "Step Sequencer",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+G"
+      }
+    },
+    {
+      "name": "Set Global Edit Mode to Tie",
+      "context": "Step Sequencer",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+T"
+      }
+    },
+    {
+      "name": "Set Global Edit Mode to Note",
+      "context": "Step Sequencer",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+N"
+      }
+    },
+    {
+      "name": "Set Global Edit Mode to Octave",
+      "context": "Step Sequencer",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+O"
+      }
+    },
+    {
+      "name": "Set Global Edit Mode to Loop Start/End",
+      "context": "Step Sequencer",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+L"
+      }
+    },
+    {
+      "name": "Set Global Edit Mode to Note Repeat",
+      "context": "Step Sequencer",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+R"
+      }
+    },
+    {
+      "name": "Set Global Edit Mode to Chance",
+      "context": "Step Sequencer",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+C"
+      }
+    },
+    {
+      "name": "Set Global Edit Mode to Start Offset",
+      "context": "Step Sequencer",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+F"
+      }
+    },
+    {
+      "name": "Set Global Edit Mode to Step Rate",
+      "context": "Step Sequencer",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+A"
+      }
+    },
+    {
+      "name": "Set Global Edit Mode to Skip",
+      "context": "Step Sequencer",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+K"
+      }
+    },
+    {
+      "name": "Increment Pattern Step Rate",
+      "context": "Step Sequencer",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+="
+      }
+    },
+    {
+      "name": "Decrement Pattern Step Rate",
+      "context": "Step Sequencer",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+-"
+      }
+    },
+    {
+      "name": "Increment Row Step Rate",
+      "context": "Step Sequencer",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+="
+      }
+    },
+    {
+      "name": "Decrement Row Step Rate",
+      "context": "Step Sequencer",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+-"
+      }
+    },
+    {
+      "name": "Select Previous Audio File",
+      "context": "Project Audio",
+      "mac": {
+        "type": "keys",
+        "chord": "Up"
+      }
+    },
+    {
+      "name": "Select Next Audio File",
+      "context": "Project Audio",
+      "mac": {
+        "type": "keys",
+        "chord": "Down"
+      }
+    },
+    {
+      "name": "Rename",
+      "context": "Project Audio",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Enter"
+      }
+    },
+    {
+      "name": "Add Audio File",
+      "context": "Project Audio",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+F"
+      }
+    },
+    {
+      "name": "Add Region",
+      "context": "Project Audio",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+R"
+      }
+    },
+    {
+      "name": "Delete Files",
+      "context": "Project Audio",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Backspace"
+      }
+    },
+    {
+      "name": "Optimize Files",
+      "context": "Project Audio",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+O"
+      }
+    },
+    {
+      "name": "Backup Files",
+      "context": "Project Audio",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+B"
+      }
+    },
+    {
+      "name": "Copy/Convert Files",
+      "context": "Project Audio",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+K"
+      }
+    },
+    {
+      "name": "Select Unused",
+      "context": "Project Audio",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+U"
+      }
+    },
+    {
+      "name": "Show All Regions",
+      "context": "Project Audio",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Down"
+      }
+    },
+    {
+      "name": "Hide All Regions",
+      "context": "Project Audio",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Up"
+      }
+    },
+    {
+      "name": "Import Region Information",
+      "context": "Project Audio",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+I"
+      }
+    },
+    {
+      "name": "Export Region Information",
+      "context": "Project Audio",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+E"
+      }
+    },
+    {
+      "name": "Create Group",
+      "context": "Project Audio",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Cmd+G"
+      }
+    },
+    {
+      "name": "Play/Stop All",
+      "context": "Audio File Editor",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Cmd+Space"
+      }
+    },
+    {
+      "name": "Play/Stop Region",
+      "context": "Audio File Editor",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Space"
+      }
+    },
+    {
+      "name": "Play/Stop Region to Anchor",
+      "context": "Audio File Editor",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Left"
+      }
+    },
+    {
+      "name": "Play/Stop Region from Anchor",
+      "context": "Audio File Editor",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Right"
+      }
+    },
+    {
+      "name": "Create Backup",
+      "context": "Audio File Editor",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+B"
+      }
+    },
+    {
+      "name": "Revert to Backup",
+      "context": "Audio File Editor",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Cmd+B"
+      }
+    },
+    {
+      "name": "Save Selection As",
+      "context": "Audio File Editor",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+S"
+      }
+    },
+    {
+      "name": "Region -> Selection",
+      "context": "Audio File Editor",
+      "mac": {
+        "type": "keys",
+        "chord": "PageUp"
+      }
+    },
+    {
+      "name": "Selection -> Region",
+      "context": "Audio File Editor",
+      "mac": {
+        "type": "keys",
+        "chord": "PageDown"
+      }
+    },
+    {
+      "name": "Go to Region Start",
+      "context": "Audio File Editor",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Left"
+      }
+    },
+    {
+      "name": "Go to Region End",
+      "context": "Audio File Editor",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Right"
+      }
+    },
+    {
+      "name": "Go to Region Anchor",
+      "context": "Audio File Editor",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Down"
+      }
+    },
+    {
+      "name": "Go to Previous Transient",
+      "context": "Audio File Editor",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Left"
+      }
+    },
+    {
+      "name": "Go to Next Transient",
+      "context": "Audio File Editor",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Right"
+      }
+    },
+    {
+      "name": "Set Selection Start to Previous Transient",
+      "context": "Audio File Editor",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Left"
+      }
+    },
+    {
+      "name": "Set Selection Start to Next Transient",
+      "context": "Audio File Editor",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Right"
+      }
+    },
+    {
+      "name": "Set Selection End to Previous Transient",
+      "context": "Audio File Editor",
+      "mac": {
+        "type": "keys",
+        "chord": "Left"
+      }
+    },
+    {
+      "name": "Set Selection End to Next Transient",
+      "context": "Audio File Editor",
+      "mac": {
+        "type": "keys",
+        "chord": "Right"
+      }
+    },
+    {
+      "name": "Selection Start and End to Previous Transient",
+      "context": "Audio File Editor",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+Left"
+      }
+    },
+    {
+      "name": "Selection Start and End to Next Transient",
+      "context": "Audio File Editor",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+Right"
+      }
+    },
+    {
+      "name": "Selection Start and End to Previous Transient and Play",
+      "context": "Audio File Editor",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+Left"
+      }
+    },
+    {
+      "name": "Selection Start and End to Next Transient and Play",
+      "context": "Audio File Editor",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+Right"
+      }
+    },
+    {
+      "name": "Toggle Transient Editing Mode",
+      "context": "Audio File Editor",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+T"
+      }
+    },
+    {
+      "name": "Increase Number of Transients",
+      "context": "Audio File Editor",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+="
+      }
+    },
+    {
+      "name": "Decrease Number of Transients",
+      "context": "Audio File Editor",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+-"
+      }
+    },
+    {
+      "name": "Select All Previous Samples",
+      "context": "Audio File Editor",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Shift+Left"
+      }
+    },
+    {
+      "name": "Select All Following Samples",
+      "context": "Audio File Editor",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Shift+Right"
+      }
+    },
+    {
+      "name": "Create New Region",
+      "context": "Audio File Editor",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+R"
+      }
+    },
+    {
+      "name": "Normalize",
+      "context": "Audio File Editor",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+N"
+      }
+    },
+    {
+      "name": "Change Gain",
+      "context": "Audio File Editor",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+G"
+      }
+    },
+    {
+      "name": "Fade In",
+      "context": "Audio File Editor",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+I"
+      }
+    },
+    {
+      "name": "Fade Out",
+      "context": "Audio File Editor",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+O"
+      }
+    },
+    {
+      "name": "Silence",
+      "context": "Audio File Editor",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Backspace"
+      }
+    },
+    {
+      "name": "Invert",
+      "context": "Audio File Editor",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+I"
+      }
+    },
+    {
+      "name": "Reverse",
+      "context": "Audio File Editor",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+R"
+      }
+    },
+    {
+      "name": "Trim",
+      "context": "Audio File Editor",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+T"
+      }
+    },
+    {
+      "name": "Remove DC Offset",
+      "context": "Audio File Editor",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+D"
+      }
+    },
+    {
+      "name": "Time and Pitch Machine",
+      "context": "Audio File Editor",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+P"
+      }
+    },
+    {
+      "name": "Search Peak",
+      "context": "Audio File Editor",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+P"
+      }
+    },
+    {
+      "name": "Search Silence",
+      "context": "Audio File Editor",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+S"
+      }
+    },
+    {
+      "name": "Lock Position in Track when Moving Anchor",
+      "context": "Audio File Editor",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+A"
+      }
+    },
+    {
+      "name": "Tap Tempo - Smart Tempo Editor",
+      "context": "Smart Tempo Editor",
+      "mac": {
+        "type": "keys",
+        "chord": "T"
+      }
+    },
+    {
+      "name": "Tap Tempo (Downbeat)",
+      "context": "Smart Tempo Editor",
+      "mac": {
+        "type": "keys",
+        "chord": "D"
+      }
+    },
+    {
+      "name": "Toggle Metronome Click - Smart Tempo Editor",
+      "context": "Smart Tempo Editor",
+      "mac": {
+        "type": "keys",
+        "chord": "M"
+      }
+    },
+    {
+      "name": "Scroll Left",
+      "context": "Smart Tempo Editor",
+      "mac": {
+        "type": "keys",
+        "chord": "Left"
+      }
+    },
+    {
+      "name": "Scroll Right",
+      "context": "Smart Tempo Editor",
+      "mac": {
+        "type": "keys",
+        "chord": "Right"
+      }
+    },
+    {
+      "name": "Select from Start to Playhead",
+      "context": "Smart Tempo Editor",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Left"
+      }
+    },
+    {
+      "name": "Select from Playhead to End",
+      "context": "Smart Tempo Editor",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Right"
+      }
+    },
+    {
+      "name": "Zoom All",
+      "context": "Smart Tempo Editor",
+      "mac": {
+        "type": "keys",
+        "chord": "Up"
+      }
+    },
+    {
+      "name": "Center around Playhead",
+      "context": "Smart Tempo Editor",
+      "mac": {
+        "type": "keys",
+        "chord": "Down"
+      }
+    },
+    {
+      "name": "Half Tempo",
+      "context": "Smart Tempo Editor",
+      "mac": {
+        "type": "keys",
+        "chord": "5"
+      }
+    },
+    {
+      "name": "Double Tempo",
+      "context": "Smart Tempo Editor",
+      "mac": {
+        "type": "keys",
+        "chord": "2"
+      }
+    },
+    {
+      "name": "Set Average Tempo for Selection",
+      "context": "Smart Tempo Editor",
+      "mac": {
+        "type": "keys",
+        "chord": "A"
+      }
+    },
+    {
+      "name": "Extend First Tempo in Selection to Beginning",
+      "context": "Smart Tempo Editor",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Left"
+      }
+    },
+    {
+      "name": "Extend Last Tempo in Selection to End",
+      "context": "Smart Tempo Editor",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Right"
+      }
+    },
+    {
+      "name": "Set Downbeat to Playhead Position",
+      "context": "Smart Tempo Editor",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+D"
+      }
+    },
+    {
+      "name": "Load or Replace Audio File",
+      "context": "Sampler",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+F"
+      }
+    },
+    {
+      "name": "New Zone",
+      "context": "Sampler",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Z"
+      }
+    },
+    {
+      "name": "New Group",
+      "context": "Sampler",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+G"
+      }
+    },
+    {
+      "name": "Toggle Keyboard/Group/Zone View",
+      "context": "Sampler",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+V"
+      }
+    },
+    {
+      "name": "Shift Selected Zones/Groups Left",
+      "context": "Sampler",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Left"
+      }
+    },
+    {
+      "name": "Shift Selected Zones/Groups Right",
+      "context": "Sampler",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Right"
+      }
+    },
+    {
+      "name": "Shift Selected Zones/Groups Left (Zones incl. Root Key)",
+      "context": "Sampler",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+Left"
+      }
+    },
+    {
+      "name": "Shift Selected Zones/Groups Right (Zones incl. Root Key)",
+      "context": "Sampler",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+Right"
+      }
+    },
+    {
+      "name": "Load Multiple Audio Files",
+      "context": "Sampler",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+O"
+      }
+    },
+    {
+      "name": "Open in Audio File Editor",
+      "context": "Sampler",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+W"
+      }
+    },
+    {
+      "name": "New Mapping",
+      "context": "Sampler",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+N"
+      }
+    },
+    {
+      "name": "Duplicate Group",
+      "context": "Sampler",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+D"
+      }
+    },
+    {
+      "name": "Crop Sample",
+      "context": "Sampler",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+X"
+      }
+    },
+    {
+      "name": "Crop Loop",
+      "context": "Sampler",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+Cmd+X"
+      }
+    },
+    {
+      "name": "Toggle Snap Mode",
+      "context": "Sampler",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+G"
+      }
+    },
+    {
+      "name": "Vertical Autozoom",
+      "context": "Sampler",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Shift+Z"
+      }
+    },
+    {
+      "name": "Horizontal Autozoom",
+      "context": "Sampler",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Z"
+      }
+    },
+    {
+      "name": "Automap using Current Root Note",
+      "context": "Sampler",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+E"
+      }
+    },
+    {
+      "name": "Preview Selected Zone",
+      "context": "Sampler",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Space"
+      }
+    },
+    {
+      "name": "Note “C”",
+      "context": "Step Input Keyboard",
+      "mac": {
+        "type": "keys",
+        "chord": "A"
+      }
+    },
+    {
+      "name": "Note “C#”",
+      "context": "Step Input Keyboard",
+      "mac": {
+        "type": "keys",
+        "chord": "W"
+      }
+    },
+    {
+      "name": "Note “D”",
+      "context": "Step Input Keyboard",
+      "mac": {
+        "type": "keys",
+        "chord": "S"
+      }
+    },
+    {
+      "name": "Note “D#”",
+      "context": "Step Input Keyboard",
+      "mac": {
+        "type": "keys",
+        "chord": "E"
+      }
+    },
+    {
+      "name": "Note “E”",
+      "context": "Step Input Keyboard",
+      "mac": {
+        "type": "keys",
+        "chord": "D"
+      }
+    },
+    {
+      "name": "Note “F”",
+      "context": "Step Input Keyboard",
+      "mac": {
+        "type": "keys",
+        "chord": "F"
+      }
+    },
+    {
+      "name": "Note “F#”",
+      "context": "Step Input Keyboard",
+      "mac": {
+        "type": "keys",
+        "chord": "T"
+      }
+    },
+    {
+      "name": "Note “G”",
+      "context": "Step Input Keyboard",
+      "mac": {
+        "type": "keys",
+        "chord": "G"
+      }
+    },
+    {
+      "name": "Note “G#”",
+      "context": "Step Input Keyboard",
+      "mac": {
+        "type": "keys",
+        "chord": "Y"
+      }
+    },
+    {
+      "name": "Note “A”",
+      "context": "Step Input Keyboard",
+      "mac": {
+        "type": "keys",
+        "chord": "H"
+      }
+    },
+    {
+      "name": "Note “A#”",
+      "context": "Step Input Keyboard",
+      "mac": {
+        "type": "keys",
+        "chord": "U"
+      }
+    },
+    {
+      "name": "Note “B”",
+      "context": "Step Input Keyboard",
+      "mac": {
+        "type": "keys",
+        "chord": "J"
+      }
+    },
+    {
+      "name": "Rest",
+      "context": "Step Input Keyboard",
+      "mac": {
+        "type": "keys",
+        "chord": "Space"
+      }
+    },
+    {
+      "name": "Next note will be sharp",
+      "context": "Step Input Keyboard",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+3"
+      }
+    },
+    {
+      "name": "Next note will be flat",
+      "context": "Step Input Keyboard",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+B"
+      }
+    },
+    {
+      "name": "Chord Mode",
+      "context": "Step Input Keyboard",
+      "mac": {
+        "type": "keys",
+        "chord": "`"
+      }
+    },
+    {
+      "name": "Delete - Step Input",
+      "context": "Step Input Keyboard",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Backspace"
+      }
+    },
+    {
+      "name": "Step Backward",
+      "context": "Step Input Keyboard",
+      "mac": {
+        "type": "keys",
+        "chord": "Left"
+      }
+    },
+    {
+      "name": "Step Forward",
+      "context": "Step Input Keyboard",
+      "mac": {
+        "type": "keys",
+        "chord": "Right"
+      }
+    },
+    {
+      "name": "Octave - 2",
+      "context": "Step Input Keyboard",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Z"
+      }
+    },
+    {
+      "name": "Octave - 1",
+      "context": "Step Input Keyboard",
+      "mac": {
+        "type": "keys",
+        "chord": "Z"
+      }
+    },
+    {
+      "name": "Octave + 1",
+      "context": "Step Input Keyboard",
+      "mac": {
+        "type": "keys",
+        "chord": "X"
+      }
+    },
+    {
+      "name": "Octave + 2",
+      "context": "Step Input Keyboard",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+X"
+      }
+    },
+    {
+      "name": "1/1 Note",
+      "context": "Step Input Keyboard",
+      "mac": {
+        "type": "keys",
+        "chord": "1"
+      }
+    },
+    {
+      "name": "1/2 Note",
+      "context": "Step Input Keyboard",
+      "mac": {
+        "type": "keys",
+        "chord": "2"
+      }
+    },
+    {
+      "name": "1/4 Note",
+      "context": "Step Input Keyboard",
+      "mac": {
+        "type": "keys",
+        "chord": "3"
+      }
+    },
+    {
+      "name": "1/8 Note",
+      "context": "Step Input Keyboard",
+      "mac": {
+        "type": "keys",
+        "chord": "4"
+      }
+    },
+    {
+      "name": "1/16 Note",
+      "context": "Step Input Keyboard",
+      "mac": {
+        "type": "keys",
+        "chord": "5"
+      }
+    },
+    {
+      "name": "1/32 Note",
+      "context": "Step Input Keyboard",
+      "mac": {
+        "type": "keys",
+        "chord": "6"
+      }
+    },
+    {
+      "name": "1/64 Note",
+      "context": "Step Input Keyboard",
+      "mac": {
+        "type": "keys",
+        "chord": "7"
+      }
+    },
+    {
+      "name": "1/128 Note",
+      "context": "Step Input Keyboard",
+      "mac": {
+        "type": "keys",
+        "chord": "8"
+      }
+    },
+    {
+      "name": "Triplets On/Off",
+      "context": "Step Input Keyboard",
+      "mac": {
+        "type": "keys",
+        "chord": "9"
+      }
+    },
+    {
+      "name": "Dotted note values On/Off",
+      "context": "Step Input Keyboard",
+      "mac": {
+        "type": "keys",
+        "chord": "0"
+      }
+    },
+    {
+      "name": "Velocity 16 (ppp)",
+      "context": "Step Input Keyboard",
+      "mac": {
+        "type": "keys",
+        "chord": "C"
+      }
+    },
+    {
+      "name": "Velocity 32 (pp)",
+      "context": "Step Input Keyboard",
+      "mac": {
+        "type": "keys",
+        "chord": "V"
+      }
+    },
+    {
+      "name": "Velocity 48 (p)",
+      "context": "Step Input Keyboard",
+      "mac": {
+        "type": "keys",
+        "chord": "B"
+      }
+    },
+    {
+      "name": "Velocity 64 (mp)",
+      "context": "Step Input Keyboard",
+      "mac": {
+        "type": "keys",
+        "chord": "N"
+      }
+    },
+    {
+      "name": "Velocity 80 (mf)",
+      "context": "Step Input Keyboard",
+      "mac": {
+        "type": "keys",
+        "chord": "M"
+      }
+    },
+    {
+      "name": "Velocity 96 (f)",
+      "context": "Step Input Keyboard",
+      "mac": {
+        "type": "keys",
+        "chord": ","
+      }
+    },
+    {
+      "name": "Velocity 112 (ff)",
+      "context": "Step Input Keyboard",
+      "mac": {
+        "type": "keys",
+        "chord": "."
+      }
+    },
+    {
+      "name": "Velocity 127 (fff)",
+      "context": "Step Input Keyboard",
+      "mac": {
+        "type": "keys",
+        "chord": "/"
+      }
+    },
+    {
+      "name": "Quantize note starts On/Off",
+      "context": "Step Input Keyboard",
+      "mac": {
+        "type": "keys",
+        "chord": "Q"
+      }
+    },
+    {
+      "name": "Cycle Through Subviews",
+      "context": "Smart Controls",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+O"
+      }
+    },
+    {
+      "name": "Pencil Tool",
+      "context": "Tool Menu",
+      "mac": {
+        "type": "keys",
+        "chord": "P"
+      }
+    },
+    {
+      "name": "Eraser Tool",
+      "context": "Tool Menu",
+      "mac": {
+        "type": "keys",
+        "chord": "E"
+      }
+    },
+    {
+      "name": "Scissors Tool",
+      "context": "Tool Menu",
+      "mac": {
+        "type": "keys",
+        "chord": "I"
+      }
+    },
+    {
+      "name": "Join Tool",
+      "context": "Tool Menu",
+      "mac": {
+        "type": "keys",
+        "chord": "J"
+      }
+    },
+    {
+      "name": "Finger Tool",
+      "context": "Tool Menu",
+      "mac": {
+        "type": "keys",
+        "chord": "F"
+      }
+    },
+    {
+      "name": "Text Tool",
+      "context": "Tool Menu",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+T"
+      }
+    },
+    {
+      "name": "Zoom Tool",
+      "context": "Tool Menu",
+      "mac": {
+        "type": "keys",
+        "chord": "Y"
+      }
+    },
+    {
+      "name": "Solo Tool",
+      "context": "Tool Menu",
+      "mac": {
+        "type": "keys",
+        "chord": "S"
+      }
+    },
+    {
+      "name": "Mute Tool",
+      "context": "Tool Menu",
+      "mac": {
+        "type": "keys",
+        "chord": "M"
+      }
+    },
+    {
+      "name": "Quantize Tool",
+      "context": "Tool Menu",
+      "mac": {
+        "type": "keys",
+        "chord": "Q"
+      }
+    },
+    {
+      "name": "Velocity Tool",
+      "context": "Tool Menu",
+      "mac": {
+        "type": "keys",
+        "chord": "V"
+      }
+    },
+    {
+      "name": "Automation Select Tool",
+      "context": "Tool Menu",
+      "mac": {
+        "type": "keys",
+        "chord": "U"
+      }
+    },
+    {
+      "name": "Automation Curve Tool",
+      "context": "Tool Menu",
+      "mac": {
+        "type": "keys",
+        "chord": "W"
+      }
+    },
+    {
+      "name": "Fade Tool",
+      "context": "Tool Menu",
+      "mac": {
+        "type": "keys",
+        "chord": "A"
+      }
+    },
+    {
+      "name": "Marquee Tool",
+      "context": "Tool Menu",
+      "mac": {
+        "type": "keys",
+        "chord": "R"
+      }
+    },
+    {
+      "name": "Flex Tool Flex Pitch Vibrato Tool Flex Pitch Velocity Tool",
+      "context": "Tool Menu",
+      "mac": {
+        "type": "keys",
+        "chord": "X"
+      }
+    },
+    {
+      "name": "Brush Tool",
+      "context": "Tool Menu",
+      "mac": {
+        "type": "keys",
+        "chord": "B"
+      }
+    },
+    {
+      "name": "Layout Tool",
+      "context": "Tool Menu",
+      "mac": {
+        "type": "keys",
+        "chord": "L"
+      }
+    },
+    {
+      "name": "Voice Separation Tool",
+      "context": "Tool Menu",
+      "mac": {
+        "type": "keys",
+        "chord": "-"
+      }
+    },
+    {
+      "name": "Resize Tool",
+      "context": "Tool Menu",
+      "mac": {
+        "type": "keys",
+        "chord": "Z"
+      }
+    },
+    {
+      "name": "Camera Tool",
+      "context": "Tool Menu",
+      "mac": {
+        "type": "keys",
+        "chord": "C"
+      }
+    },
+    {
+      "name": "Crosshair Tool",
+      "context": "Tool Menu",
+      "mac": {
+        "type": "keys",
+        "chord": "H"
+      }
+    },
+    {
+      "name": "MIDI Thru Tool Move Tool",
+      "context": "Tool Menu",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+M"
+      }
+    },
+    {
+      "name": "Gain Tool Slip Tool Rotate Tool",
+      "context": "Tool Menu",
+      "mac": {
+        "type": "keys",
+        "chord": "G"
+      }
+    }
+  ],
+  "defaults": {
+    "TUNE_CW": {
+      "name": "Forward",
+      "action": {
+        "type": "keys",
+        "chord": "."
+      },
+      "accel": "medium"
+    },
+    "TUNE_CCW": {
+      "name": "Rewind",
+      "action": {
+        "type": "keys",
+        "chord": ","
+      },
+      "accel": "medium"
+    },
+    "TUNE_TAP_1F": {
+      "name": "Play or Stop",
+      "action": {
+        "type": "keys",
+        "chord": "Space"
+      }
+    },
+    "TUNE_SWIPE_LEFT": {
+      "name": "Undo",
+      "action": {
+        "type": "keys",
+        "chord": "Cmd+Z"
+      }
+    },
+    "TUNE_SWIPE_RIGHT": {
+      "name": "Redo",
+      "action": {
+        "type": "keys",
+        "chord": "Shift+Cmd+Z"
+      }
+    },
+    "TUNE_SWIPE_UP": {
+      "name": "Zoom Horizontal In",
+      "action": {
+        "type": "keys",
+        "chord": "Cmd+Right"
+      }
+    },
+    "TUNE_SWIPE_DOWN": {
+      "name": "Zoom Horizontal Out",
+      "action": {
+        "type": "keys",
+        "chord": "Cmd+Left"
+      }
+    }
+  }
+}
