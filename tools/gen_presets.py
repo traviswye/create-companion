@@ -247,9 +247,13 @@ def build_apps(generic: list[dict], files: dict[str, dict]) -> list[dict]:
             entry["os"] = c["os"]
         if c.get("title_required"):
             entry["title_required"] = True
-        # Defaults are actions too, so the picker's app tab shows them first.
-        # They exist on the platforms the app matches on (a Mac-only app has
-        # no Windows column).
+        # Documented actions first (they carry the correct per-platform chords);
+        # then any default binding whose name has no action yet, on the
+        # platforms the app matches on (a Mac-only app has no Windows column).
+        for a in c.get("actions", []):
+            if any(r["name"].lower() == a["name"].lower() and r["context"].lower() == a.get("context", "").lower() for r in sink.rows):
+                continue
+            sink.add(a["name"], a.get("context", ""), windows=a.get("windows"), mac=a.get("mac"), linux=a.get("linux"))
         on_windows = bool(entry["match"]["windows_exe"]) or entry["kind"] == "site" or "windows" in (c.get("os") or [])
         on_mac = bool(entry["match"]["macos_bundle"]) or entry["kind"] == "site" or "macos" in (c.get("os") or [])
         if not on_windows and not on_mac:
@@ -257,10 +261,6 @@ def build_apps(generic: list[dict], files: dict[str, dict]) -> list[dict]:
         for _ev, b in entry["defaults"].items():
             if b.get("name") and not any(r["name"].lower() == b["name"].lower() for r in sink.rows):
                 sink.add(b["name"], "", windows=b["action"] if on_windows else None, mac=b["action"] if on_mac else None)
-        for a in c.get("actions", []):
-            if any(r["name"].lower() == a["name"].lower() and r["context"].lower() == a.get("context", "").lower() for r in sink.rows):
-                continue
-            sink.add(a["name"], a.get("context", ""), windows=a.get("windows"), mac=a.get("mac"), linux=a.get("linux"))
         if cat := c.get("actions_from_category"):
             for g in generic:
                 if g["category"] == cat and not any(r["name"].lower() == g["name"].lower() for r in sink.rows):
