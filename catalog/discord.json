@@ -1,0 +1,183 @@
+{
+  "id": "discord",
+  "name": "Discord",
+  "kind": "app",
+  "category": "Communication",
+  "match": {
+    "windows_exe": [
+      "Discord.exe"
+    ],
+    "macos_bundle": [
+      "com.hnc.Discord"
+    ],
+    "window_title": []
+  },
+  "sources": [],
+  "note": "hand-authored 2026-09-04; expand from official documentation",
+  "actions": [
+    {
+      "name": "Next channel",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Down"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Down"
+      }
+    },
+    {
+      "name": "Previous channel",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Up"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Up"
+      }
+    },
+    {
+      "name": "Toggle mute",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+M"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+M"
+      }
+    },
+    {
+      "name": "Previous server",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Up"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Up"
+      }
+    },
+    {
+      "name": "Next server",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Down"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Down"
+      }
+    },
+    {
+      "name": "Toggle deafen",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+D"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+D"
+      }
+    },
+    {
+      "name": "Mark server read",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Esc"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Esc"
+      }
+    },
+    {
+      "name": "Unread channel",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+Down"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+Down"
+      }
+    },
+    {
+      "name": "Search",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+K"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+K"
+      }
+    },
+    {
+      "name": "Answer call",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Enter"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Enter"
+      }
+    }
+  ],
+  "defaults": {
+    "TUNE_CW": {
+      "name": "Next channel",
+      "action": {
+        "type": "keys",
+        "chord": "Alt+Down"
+      }
+    },
+    "TUNE_CCW": {
+      "name": "Previous channel",
+      "action": {
+        "type": "keys",
+        "chord": "Alt+Up"
+      }
+    },
+    "TUNE_TAP_1F": {
+      "name": "Toggle mute",
+      "action": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+M"
+      }
+    },
+    "TUNE_SWIPE_LEFT": {
+      "name": "Previous server",
+      "action": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Up"
+      }
+    },
+    "TUNE_SWIPE_RIGHT": {
+      "name": "Next server",
+      "action": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Down"
+      }
+    },
+    "TUNE_SWIPE_UP": {
+      "name": "Toggle deafen",
+      "action": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+D"
+      }
+    }
+  }
+}

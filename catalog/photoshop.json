@@ -1,0 +1,156 @@
+{
+  "id": "photoshop",
+  "name": "Adobe Photoshop",
+  "kind": "app",
+  "category": "Creative",
+  "match": {
+    "windows_exe": [
+      "Photoshop.exe"
+    ],
+    "macos_bundle": [
+      "com.adobe.Photoshop"
+    ],
+    "window_title": []
+  },
+  "sources": [],
+  "note": "hand-authored 2026-09-04; expand from official documentation",
+  "actions": [
+    {
+      "name": "Increase Brush Size",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "]"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "]"
+      }
+    },
+    {
+      "name": "Decrease Brush Size",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "["
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "["
+      }
+    },
+    {
+      "name": "Brush Tool",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "B"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "B"
+      }
+    },
+    {
+      "name": "Undo",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Z"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Z"
+      }
+    },
+    {
+      "name": "Redo",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Z"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Z"
+      }
+    },
+    {
+      "name": "Increase Brush Hardness",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+]"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+]"
+      }
+    },
+    {
+      "name": "Decrease Brush Hardness",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+["
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+["
+      }
+    }
+  ],
+  "defaults": {
+    "TUNE_CW": {
+      "name": "Increase Brush Size",
+      "action": {
+        "type": "keys",
+        "chord": "]"
+      },
+      "accel": "medium"
+    },
+    "TUNE_CCW": {
+      "name": "Decrease Brush Size",
+      "action": {
+        "type": "keys",
+        "chord": "["
+      },
+      "accel": "medium"
+    },
+    "TUNE_TAP_1F": {
+      "name": "Brush Tool",
+      "action": {
+        "type": "keys",
+        "chord": "B"
+      }
+    },
+    "TUNE_SWIPE_LEFT": {
+      "name": "Undo",
+      "action": {
+        "type": "keys",
+        "chord": "Ctrl+Z"
+      }
+    },
+    "TUNE_SWIPE_RIGHT": {
+      "name": "Redo",
+      "action": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Z"
+      }
+    },
+    "TUNE_SWIPE_UP": {
+      "name": "Increase Brush Hardness",
+      "action": {
+        "type": "keys",
+        "chord": "Shift+]"
+      }
+    },
+    "TUNE_SWIPE_DOWN": {
+      "name": "Decrease Brush Hardness",
+      "action": {
+        "type": "keys",
+        "chord": "Shift+["
+      }
+    }
+  }
+}

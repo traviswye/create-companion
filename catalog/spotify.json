@@ -1,0 +1,197 @@
+{
+  "id": "spotify",
+  "name": "Spotify",
+  "kind": "app",
+  "category": "Music",
+  "match": {
+    "windows_exe": [
+      "Spotify.exe"
+    ],
+    "macos_bundle": [
+      "com.spotify.client"
+    ],
+    "window_title": []
+  },
+  "sources": [],
+  "note": "hand-authored 2026-09-04; expand from official documentation",
+  "actions": [
+    {
+      "name": "Volume up (app)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Up"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Up"
+      }
+    },
+    {
+      "name": "Volume down (app)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Down"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Down"
+      }
+    },
+    {
+      "name": "Play / pause",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Space"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Space"
+      }
+    },
+    {
+      "name": "Previous track",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Left"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Left"
+      }
+    },
+    {
+      "name": "Next track",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Right"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Right"
+      }
+    },
+    {
+      "name": "Save to Liked Songs",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+B"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+B"
+      }
+    },
+    {
+      "name": "Seek forward",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Right"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Right"
+      }
+    },
+    {
+      "name": "Seek back",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Left"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Left"
+      }
+    },
+    {
+      "name": "Shuffle",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+S"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+S"
+      }
+    },
+    {
+      "name": "Repeat",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+R"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+R"
+      }
+    },
+    {
+      "name": "Search",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+L"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+L"
+      }
+    }
+  ],
+  "defaults": {
+    "TUNE_CW": {
+      "name": "Volume up (app)",
+      "action": {
+        "type": "keys",
+        "chord": "Ctrl+Up"
+      },
+      "accel": "light"
+    },
+    "TUNE_CCW": {
+      "name": "Volume down (app)",
+      "action": {
+        "type": "keys",
+        "chord": "Ctrl+Down"
+      },
+      "accel": "light"
+    },
+    "TUNE_TAP_1F": {
+      "name": "Play / pause",
+      "action": {
+        "type": "keys",
+        "chord": "Space"
+      }
+    },
+    "TUNE_SWIPE_LEFT": {
+      "name": "Previous track",
+      "action": {
+        "type": "keys",
+        "chord": "Ctrl+Left"
+      }
+    },
+    "TUNE_SWIPE_RIGHT": {
+      "name": "Next track",
+      "action": {
+        "type": "keys",
+        "chord": "Ctrl+Right"
+      }
+    },
+    "TUNE_SWIPE_UP": {
+      "name": "Save to Liked Songs",
+      "action": {
+        "type": "keys",
+        "chord": "Alt+Shift+B"
+      }
+    }
+  }
+}

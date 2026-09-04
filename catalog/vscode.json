@@ -1,0 +1,156 @@
+{
+  "id": "vscode",
+  "name": "VS Code",
+  "kind": "app",
+  "category": "Development",
+  "match": {
+    "windows_exe": [
+      "Code.exe",
+      "Code - Insiders.exe"
+    ],
+    "macos_bundle": [
+      "com.microsoft.VSCode"
+    ],
+    "window_title": []
+  },
+  "sources": [],
+  "note": "hand-authored 2026-09-04; expand from official documentation",
+  "actions": [
+    {
+      "name": "Next editor tab",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+PageDown"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+PageDown"
+      }
+    },
+    {
+      "name": "Previous editor tab",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+PageUp"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+PageUp"
+      }
+    },
+    {
+      "name": "Command palette",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+P"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+P"
+      }
+    },
+    {
+      "name": "Go back",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Left"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Left"
+      }
+    },
+    {
+      "name": "Go forward",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Right"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Right"
+      }
+    },
+    {
+      "name": "Previous problem",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+F8"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+F8"
+      }
+    },
+    {
+      "name": "Next problem",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F8"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "F8"
+      }
+    }
+  ],
+  "defaults": {
+    "TUNE_CW": {
+      "name": "Next editor tab",
+      "action": {
+        "type": "keys",
+        "chord": "Ctrl+PageDown"
+      }
+    },
+    "TUNE_CCW": {
+      "name": "Previous editor tab",
+      "action": {
+        "type": "keys",
+        "chord": "Ctrl+PageUp"
+      }
+    },
+    "TUNE_TAP_1F": {
+      "name": "Command palette",
+      "action": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+P"
+      }
+    },
+    "TUNE_SWIPE_LEFT": {
+      "name": "Go back",
+      "action": {
+        "type": "keys",
+        "chord": "Alt+Left"
+      }
+    },
+    "TUNE_SWIPE_RIGHT": {
+      "name": "Go forward",
+      "action": {
+        "type": "keys",
+        "chord": "Alt+Right"
+      }
+    },
+    "TUNE_SWIPE_UP": {
+      "name": "Previous problem",
+      "action": {
+        "type": "keys",
+        "chord": "Shift+F8"
+      }
+    },
+    "TUNE_SWIPE_DOWN": {
+      "name": "Next problem",
+      "action": {
+        "type": "keys",
+        "chord": "F8"
+      }
+    }
+  },
+  "actions_from_category": "VS Code"
+}

@@ -1,0 +1,232 @@
+{
+  "id": "terminal",
+  "name": "Terminal",
+  "kind": "app",
+  "category": "Development",
+  "match": {
+    "windows_exe": [
+      "WindowsTerminal.exe",
+      "powershell.exe",
+      "pwsh.exe",
+      "cmd.exe",
+      "conhost.exe",
+      "OpenConsole.exe"
+    ],
+    "macos_bundle": [
+      "com.apple.Terminal",
+      "com.googlecode.iterm2"
+    ],
+    "window_title": []
+  },
+  "sources": [],
+  "note": "hand-authored 2026-09-04; expand from official documentation",
+  "actions": [
+    {
+      "name": "Newer command (history)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Down"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Down"
+      }
+    },
+    {
+      "name": "Older command (history)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Up"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Up"
+      }
+    },
+    {
+      "name": "Clear line",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Esc"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Esc"
+      }
+    },
+    {
+      "name": "Previous tab",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Tab"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Tab"
+      }
+    },
+    {
+      "name": "Next tab",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Tab"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Tab"
+      }
+    },
+    {
+      "name": "Font bigger",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+="
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+="
+      }
+    },
+    {
+      "name": "Font smaller",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+-"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+-"
+      }
+    },
+    {
+      "name": "New tab",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+T"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+T"
+      }
+    },
+    {
+      "name": "Close tab",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+W"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+W"
+      }
+    },
+    {
+      "name": "Find",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+F"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+F"
+      }
+    },
+    {
+      "name": "Command palette",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+P"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+P"
+      }
+    },
+    {
+      "name": "Split pane",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+D"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+D"
+      }
+    },
+    {
+      "name": "Cancel command",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+C"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+C"
+      }
+    }
+  ],
+  "defaults": {
+    "TUNE_CW": {
+      "name": "Newer command (history)",
+      "action": {
+        "type": "keys",
+        "chord": "Down"
+      }
+    },
+    "TUNE_CCW": {
+      "name": "Older command (history)",
+      "action": {
+        "type": "keys",
+        "chord": "Up"
+      }
+    },
+    "TUNE_TAP_1F": {
+      "name": "Clear line",
+      "action": {
+        "type": "keys",
+        "chord": "Esc"
+      }
+    },
+    "TUNE_SWIPE_LEFT": {
+      "name": "Previous tab",
+      "action": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Tab"
+      }
+    },
+    "TUNE_SWIPE_RIGHT": {
+      "name": "Next tab",
+      "action": {
+        "type": "keys",
+        "chord": "Ctrl+Tab"
+      }
+    },
+    "TUNE_SWIPE_UP": {
+      "name": "Font bigger",
+      "action": {
+        "type": "keys",
+        "chord": "Ctrl+="
+      }
+    },
+    "TUNE_SWIPE_DOWN": {
+      "name": "Font smaller",
+      "action": {
+        "type": "keys",
+        "chord": "Ctrl+-"
+      }
+    }
+  }
+}
