@@ -29,6 +29,19 @@ function isEnabled(p: Profile) {
   return p.enabled !== false;
 }
 
+/** Which action column applies on this OS. */
+export function osColumn(os: "windows" | "macos" | "linux"): "windows" | "mac" | "linux" {
+  return os === "macos" ? "mac" : os === "linux" ? "linux" : "windows";
+}
+
+/** Can this catalog entry run on the given OS? */
+function entryOnOs(a: AppEntry, os: "windows" | "macos" | "linux"): boolean {
+  if (a.kind === "system") return a.os?.includes(os) ?? false;
+  if (a.kind === "site") return true;
+  if (os === "macos") return a.match.macos_bundle.length > 0;
+  return a.match.windows_exe.length > 0;
+}
+
 function currentOs(): "windows" | "macos" | "linux" {
   const p = navigator.platform.toLowerCase();
   if (p.startsWith("win")) return "windows";
@@ -200,7 +213,8 @@ export default function App() {
     });
     const known = new Set(cfg.profiles.map((p) => catalogFor(apps, p)?.id).filter(Boolean));
     // System entries are not profiles; they feed the Default profile's picker.
-    const available = apps.filter((a) => a.kind !== "system" && !known.has(a.id)).filter((a) => hit(matchText(a)));
+    const os = currentOs();
+    const available = apps.filter((a) => a.kind !== "system" && entryOnOs(a, os) && !known.has(a.id)).filter((a) => hit(matchText(a)));
     return { active, disabled, available };
   }, [cfg, apps, navQ]);
 
@@ -579,6 +593,7 @@ export default function App() {
           catalog={catalog}
           appName={appEntry?.name}
           appActions={appEntry?.actions ?? []}
+          os={currentOs()}
           onPick={(a, name) => setBinding(picker, a, name)}
           onClose={() => setPicker(null)}
         />

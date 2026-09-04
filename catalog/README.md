@@ -76,9 +76,9 @@ An action value is one of:
 
 `Modifier+Modifier+Key`, joined with `+`, one key per chord.
 
-- Modifiers: `Ctrl`, `Shift`, `Alt`, `Win`. On macOS write `Cmd` for ⌘ and `Alt` for ⌥ (`Cmd` is accepted as a spelling of the meta key; use `Ctrl` for ⌃).
+- Modifiers: `Ctrl`, `Shift`, `Alt`, `Win`, and `Fn`. On macOS write `Cmd` for ⌘, `Alt` for ⌥, `Ctrl` for ⌃, and `Fn` for the Fn/Globe key (`Fn+C` opens Control Center). Fn shortcuts are macOS-only: the engine can send them there and rejects them on Windows, so put them in the `mac` column. (As a module namespace, Fn+F-key is also macOS-only and depends on the firmware being able to emit the Apple Fn usage, which is unverified.)
 - Keys: letters `A`–`Z`, digits `0`–`9`, `F1`–`F24`, `Tab`, `Enter`, `Esc`, `Space`, `Backspace`, `Delete`, `Insert`, `Home`, `End`, `PageUp`, `PageDown`, `Left`, `Right`, `Up`, `Down`, and punctuation written literally: `-` `=` `[` `]` `\` `;` `'` `,` `.` `/` `` ` ``. For `+` as a key write `Ctrl++` or `Ctrl+Plus`.
-- Not expressible, so leave out: mouse clicks and drags, numpad-specific keys, media keys as chords (use `type: media`), holding a key while dragging, shortcuts that require a two-key press without a modifier ("G then T" style is a `sequence` of `G` and `T`).
+- Not expressible, so leave out: mouse clicks and drags, numpad-specific keys, media keys as chords (use `type: media`), holding a key while dragging, shortcuts that require a two-key press without a modifier ("G then T" style is a `sequence` of `G` and `T`), and a bare modifier press (pressing Fn alone).
 
 ## What "complete" means
 

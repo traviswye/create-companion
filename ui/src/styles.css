@@ -182,3 +182,7 @@ table.map td.action { min-width: 120px; }
 table.map .ev > div:first-child { white-space: nowrap; }
 .nav-add { display: grid; grid-template-columns: 1fr auto; gap: 6px; }
 .nav-add button.on { background: var(--accent-soft); border-color: var(--accent); }
+
+.modtoggles { display: inline-flex; gap: 2px; background: var(--panel-2); border: 1px solid var(--line); border-radius: 8px; padding: 2px; }
+.modtoggles button { border: 0; background: transparent; padding: 3px 8px; font-size: 12px; border-radius: 6px; }
+.modtoggles button.on { background: var(--accent); color: #fff; }

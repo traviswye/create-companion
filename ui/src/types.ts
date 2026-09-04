@@ -1,6 +1,7 @@
 // Mirrors companion-core's serde shapes (see crates/companion-core/src/config.rs).
 
-export type Mods = "none" | "shift" | "ctrl" | "alt" | "ctrl_shift";
+/** Modifier namespace as the engine serializes it: "none" or "+"-joined lowercase tokens (ctrl, shift, alt, cmd, fn). */
+export type Mods = string;
 export interface TransportCode {
   key: string;
   mods?: Mods;
@@ -113,7 +114,21 @@ export interface EngineMsg {
 }
 
 export const FUNCTION_KEYS = ["F13", "F14", "F15", "F16", "F17", "F18", "F19", "F20", "F21", "F22", "F23", "F24"] as const;
-export const MODS: Mods[] = ["none", "shift", "ctrl", "alt", "ctrl_shift"];
+/** Modifiers a module can carry alongside its F-key. Fn works only on macOS and only if the firmware can send it. */
+export const TRANSPORT_MODS = ["ctrl", "shift", "alt", "cmd", "fn"] as const;
+const MOD_TOKEN_LABEL: Record<string, string> = { ctrl: "Ctrl", shift: "Shift", alt: "Alt", cmd: "Cmd", win: "Cmd", meta: "Cmd", fn: "Fn" };
+const MOD_ORDER = ["ctrl", "shift", "alt", "cmd", "fn"];
+export function parseMods(m: Mods | undefined): Set<string> {
+  if (!m || m === "none") return new Set();
+  return new Set(m.toLowerCase().split(/[+_ ]/).filter(Boolean).map((t) => (t === "win" || t === "meta" ? "cmd" : t)));
+}
+export function buildMods(set: Set<string>): Mods {
+  const toks = MOD_ORDER.filter((t) => set.has(t));
+  return toks.length ? toks.join("+") : "none";
+}
+export function modsLabel(m: Mods | undefined): string {
+  return MOD_ORDER.filter((t) => parseMods(m).has(t)).map((t) => MOD_TOKEN_LABEL[t]).join("+");
+}
 export { MODULES, GESTURES, moduleLabel, gestureLabel, gesturesFor, eventLabel, eventSortKey, parseEvent, makeEvent, fingerOptions, takesFingers, fingersLabel, nayaBehavior } from "./events";
 
 export interface WindowInfo {
@@ -153,6 +168,6 @@ export function describeAction(a: Action | undefined): string {
 }
 
 export function transportLabel(t: TransportCode): string {
-  const m = t.mods && t.mods !== "none" ? t.mods.replace("ctrl_shift", "Ctrl+Shift").replace(/^\w/, (c) => c.toUpperCase()) + "+" : "";
-  return m + t.key;
+  const m = modsLabel(t.mods);
+  return m ? `${m}+${t.key}` : t.key;
 }

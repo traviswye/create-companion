@@ -21,7 +21,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 CATALOG = ROOT / "catalog"
 
-MODIFIERS = {"CTRL", "CONTROL", "SHIFT", "ALT", "OPTION", "OPT", "WIN", "META", "CMD", "COMMAND", "SUPER"}
+MODIFIERS = {"CTRL", "CONTROL", "SHIFT", "ALT", "OPTION", "OPT", "WIN", "META", "CMD", "COMMAND", "SUPER", "FN", "FUNCTION", "GLOBE"}
 NAMED_KEYS = {
     "TAB", "ENTER", "RETURN", "ESC", "ESCAPE", "SPACE", "BACKSPACE", "BKSP", "DELETE", "DEL",
     "INSERT", "INS", "HOME", "END", "PAGEUP", "PGUP", "PAGEDOWN", "PGDN", "LEFT", "RIGHT", "UP",

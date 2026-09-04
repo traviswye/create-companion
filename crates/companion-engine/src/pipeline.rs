@@ -9,7 +9,7 @@ use companion_core::accel::{AccelCurve, RotaryState};
 use companion_core::action::Action;
 use companion_core::event::SemanticEvent;
 use companion_core::profile::{AppContext, AppIdentity, ProfileResolver};
-use companion_core::transport::{Modifiers, TransportTable};
+use companion_core::transport::TransportTable;
 use companion_core::Config;
 use companion_platform::{ActionSink, PlatformError, RawTransportEvent};
 use crossbeam_channel::{select, Receiver};
@@ -124,7 +124,7 @@ impl Engine {
 
         // The firmware's namespace modifier is still held; release it before
         // the action's own chord goes out (PLAN.md §4.3).
-        if raw.code.mods != Modifiers::None {
+        if !raw.code.mods.is_empty() {
             if let Err(e) = sink.release_modifiers(raw.code.mods) {
                 tracing::warn!("could not release transport modifiers: {e}");
             }
@@ -300,7 +300,7 @@ pub fn run(
 mod tests {
     use super::*;
     use companion_core::presets::default_config;
-    use companion_core::transport::{FunctionKey, TransportCode};
+    use companion_core::transport::{FunctionKey, Modifiers, TransportCode};
     use std::time::Instant;
 
     #[derive(Default)]
@@ -315,7 +315,7 @@ mod tests {
             Ok(())
         }
         fn release_modifiers(&mut self, mods: Modifiers) -> Result<(), PlatformError> {
-            self.calls.push(format!("release {mods:?}"));
+            self.calls.push(format!("release {mods}"));
             Ok(())
         }
     }
@@ -340,7 +340,7 @@ mod tests {
         let chrome = AppContext::app(AppIdentity::WindowsExe("chrome.exe".into()));
 
         let h = engine
-            .handle(press(FunctionKey::F24, Modifiers::None), &chrome, &mut sink)
+            .handle(press(FunctionKey::F24, Modifiers::NONE), &chrome, &mut sink)
             .unwrap();
         assert_eq!(h.profile, "Browser");
         assert_eq!(sink.calls, ["exec Ctrl+Tab x1"]);
@@ -349,7 +349,7 @@ mod tests {
         let later = Instant::now() + std::time::Duration::from_secs(1);
         let h = engine
             .handle(
-                press_at(FunctionKey::F24, Modifiers::None, later),
+                press_at(FunctionKey::F24, Modifiers::NONE, later),
                 &AppContext::default(),
                 &mut sink,
             )
@@ -361,7 +361,7 @@ mod tests {
         let fast = later + std::time::Duration::from_millis(50);
         let h = engine
             .handle(
-                press_at(FunctionKey::F24, Modifiers::None, fast),
+                press_at(FunctionKey::F24, Modifiers::NONE, fast),
                 &AppContext::default(),
                 &mut sink,
             )
@@ -371,7 +371,7 @@ mod tests {
         // ...but tab switching never accelerates.
         let h = engine
             .handle(
-                press_at(FunctionKey::F24, Modifiers::None, fast),
+                press_at(FunctionKey::F24, Modifiers::NONE, fast),
                 &chrome,
                 &mut sink,
             )
@@ -383,7 +383,7 @@ mod tests {
     fn key_up_and_unreserved_do_nothing() {
         let mut engine = Engine::new(&default_config()).unwrap();
         let mut sink = MockSink::default();
-        let mut up = press(FunctionKey::F24, Modifiers::None);
+        let mut up = press(FunctionKey::F24, Modifiers::NONE);
         up.pressed = false;
         assert!(engine
             .handle(up, &AppContext::default(), &mut sink)
@@ -391,7 +391,7 @@ mod tests {
         // F13 is not in the bundled transport table.
         assert!(engine
             .handle(
-                press(FunctionKey::F13, Modifiers::None),
+                press(FunctionKey::F13, Modifiers::NONE),
                 &AppContext::default(),
                 &mut sink
             )
@@ -406,7 +406,7 @@ mod tests {
         engine.set_paused(true);
         assert!(engine
             .handle(
-                press(FunctionKey::F24, Modifiers::None),
+                press(FunctionKey::F24, Modifiers::NONE),
                 &AppContext::default(),
                 &mut sink
             )
@@ -414,7 +414,7 @@ mod tests {
         engine.set_paused(false);
         assert!(engine
             .handle(
-                press(FunctionKey::F24, Modifiers::None),
+                press(FunctionKey::F24, Modifiers::NONE),
                 &AppContext::default(),
                 &mut sink
             )
@@ -430,7 +430,7 @@ mod tests {
             ev,
             TransportCode {
                 key: FunctionKey::F20,
-                mods: Modifiers::Shift,
+                mods: Modifiers::SHIFT,
             },
         );
         cfg.default_profile.bindings.insert(
@@ -447,17 +447,17 @@ mod tests {
         let mut sink = MockSink::default();
         engine
             .handle(
-                press(FunctionKey::F20, Modifiers::Shift),
+                press(FunctionKey::F20, Modifiers::SHIFT),
                 &AppContext::default(),
                 &mut sink,
             )
             .unwrap();
-        assert_eq!(sink.calls, ["release Shift", "exec Alt+Left x1"]);
+        assert_eq!(sink.calls, ["release shift", "exec Alt+Left x1"]);
 
         // Plain F20 is a different transport code: the Tune swipe, not the Touch one.
         let h = engine
             .handle(
-                press(FunctionKey::F20, Modifiers::None),
+                press(FunctionKey::F20, Modifiers::NONE),
                 &AppContext::default(),
                 &mut sink,
             )
@@ -479,7 +479,7 @@ mod tests {
         engine.apply(&cfg).unwrap();
         let h = engine
             .handle(
-                press(FunctionKey::F24, Modifiers::None),
+                press(FunctionKey::F24, Modifiers::NONE),
                 &AppContext::default(),
                 &mut sink,
             )
