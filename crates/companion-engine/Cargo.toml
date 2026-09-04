@@ -1,0 +1,26 @@
+[package]
+name = "naya-companion"
+description = "Naya Companion background engine: maps Tune/Touch transport keys to per-application actions"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[[bin]]
+name = "naya-companion"
+path = "src/main.rs"
+
+[dependencies]
+companion-core.workspace = true
+companion-platform.workspace = true
+anyhow.workspace = true
+tracing.workspace = true
+tracing-subscriber.workspace = true
+tracing-appender = "0.2"
+crossbeam-channel.workspace = true
+ctrlc.workspace = true
+notify = "8"
+dirs = "6"
+
+[target.'cfg(windows)'.dependencies]
+tray-icon = "0.24"

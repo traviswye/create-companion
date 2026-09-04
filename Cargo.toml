@@ -1,0 +1,33 @@
+[workspace]
+resolver = "2"
+members = [
+    "crates/companion-core",
+    "crates/companion-platform",
+    "crates/companion-engine",
+]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+repository = "https://github.com/traviswye/naya-companion"
+
+[workspace.dependencies]
+companion-core = { path = "crates/companion-core" }
+companion-platform = { path = "crates/companion-platform" }
+
+serde = { version = "1", features = ["derive"] }
+toml = "0.8"
+thiserror = "2"
+anyhow = "1"
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+crossbeam-channel = "0.5"
+ctrlc = "3"
+
+[profile.release]
+opt-level = "s"
+lto = true
+codegen-units = 1
+strip = true
+panic = "abort"

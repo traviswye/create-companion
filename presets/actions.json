@@ -1,0 +1,2805 @@
+{
+ "_meta": {
+  "source": "tools/gen_presets.py from docs/reference/action-chords.json",
+  "count": 217
+ },
+ "actions": [
+  {
+   "id": "browser.bookmark",
+   "name": "Bookmark page",
+   "category": "Browser",
+   "windows": {
+    "type": "keys",
+    "chord": "Ctrl+D"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Win+D"
+   }
+  },
+  {
+   "id": "browser.close_tabs",
+   "name": "Close all tabs (window)",
+   "category": "Browser",
+   "windows": {
+    "type": "keys",
+    "chord": "Ctrl+Shift+W"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Shift+Win+W"
+   }
+  },
+  {
+   "id": "browser.close_tab",
+   "name": "Close tab",
+   "category": "Browser",
+   "windows": {
+    "type": "keys",
+    "chord": "Ctrl+W"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Win+W"
+   }
+  },
+  {
+   "id": "browser.find_next",
+   "name": "Find next",
+   "category": "Browser",
+   "windows": {
+    "type": "keys",
+    "chord": "F3"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Win+G"
+   }
+  },
+  {
+   "id": "browser.find_prev",
+   "name": "Find previous",
+   "category": "Browser",
+   "windows": {
+    "type": "keys",
+    "chord": "Shift+F3"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Shift+Win+G"
+   }
+  },
+  {
+   "id": "browser.back",
+   "name": "Navigate back",
+   "category": "Browser",
+   "windows": {
+    "type": "keys",
+    "chord": "Alt+Left"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Win+["
+   }
+  },
+  {
+   "id": "browser.forward",
+   "name": "Navigate forward",
+   "category": "Browser",
+   "windows": {
+    "type": "keys",
+    "chord": "Alt+Right"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Win+]"
+   }
+  },
+  {
+   "id": "browser.new_tab",
+   "name": "New tab",
+   "category": "Browser",
+   "windows": {
+    "type": "keys",
+    "chord": "Ctrl+T"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Win+T"
+   }
+  },
+  {
+   "id": "browser.new_window",
+   "name": "New window",
+   "category": "Browser",
+   "windows": {
+    "type": "keys",
+    "chord": "Ctrl+N"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Win+N"
+   }
+  },
+  {
+   "id": "browser.next_tab",
+   "name": "Next tab",
+   "category": "Browser",
+   "windows": {
+    "type": "keys",
+    "chord": "Ctrl+Tab"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Ctrl+Tab"
+   }
+  },
+  {
+   "id": "browser.prev_tab",
+   "name": "Previous tab",
+   "category": "Browser",
+   "windows": {
+    "type": "keys",
+    "chord": "Ctrl+Shift+Tab"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Ctrl+Shift+Tab"
+   }
+  },
+  {
+   "id": "browser.refresh_tab",
+   "name": "Reload page",
+   "category": "Browser",
+   "windows": {
+    "type": "keys",
+    "chord": "Ctrl+R"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Win+R"
+   }
+  },
+  {
+   "id": "browser.recent_tab",
+   "name": "Reopen closed tab",
+   "category": "Browser",
+   "windows": {
+    "type": "keys",
+    "chord": "Ctrl+Shift+T"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Shift+Win+T"
+   }
+  },
+  {
+   "id": "browser.zoom",
+   "name": "Reset zoom",
+   "category": "Browser",
+   "windows": {
+    "type": "keys",
+    "chord": "Ctrl+0"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Win+0"
+   }
+  },
+  {
+   "id": "browser.zoom_in",
+   "name": "Zoom in",
+   "category": "Browser",
+   "windows": {
+    "type": "keys",
+    "chord": "Ctrl+="
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Win+="
+   }
+  },
+  {
+   "id": "browser.zoom_out",
+   "name": "Zoom out",
+   "category": "Browser",
+   "windows": {
+    "type": "keys",
+    "chord": "Ctrl+-"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Win+-"
+   }
+  },
+  {
+   "id": "file_manager.expand_folder",
+   "name": "Expand folder",
+   "category": "Files",
+   "windows": {
+    "type": "keys",
+    "chord": "Right"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Right"
+   }
+  },
+  {
+   "id": "file_manager.go_folder",
+   "name": "Go to folder",
+   "category": "Files",
+   "windows": {
+    "type": "keys",
+    "chord": "Ctrl+L"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Shift+Win+G"
+   }
+  },
+  {
+   "id": "file_manager.new_folder",
+   "name": "New folder",
+   "category": "Files",
+   "windows": {
+    "type": "keys",
+    "chord": "Ctrl+Shift+N"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Shift+Win+N"
+   }
+  },
+  {
+   "id": "file_manager.delete_forever",
+   "name": "Permanently delete (skip trash)",
+   "category": "Files",
+   "windows": {
+    "type": "keys",
+    "chord": "Shift+Delete"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Alt+Win+Backspace"
+   }
+  },
+  {
+   "id": "file_manager.refresh_file",
+   "name": "Refresh file listing",
+   "category": "Files",
+   "windows": {
+    "type": "keys",
+    "chord": "F5"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Win+R"
+   }
+  },
+  {
+   "id": "file_manager.rename",
+   "name": "Rename",
+   "category": "Files",
+   "windows": {
+    "type": "keys",
+    "chord": "F2"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Enter"
+   }
+  },
+  {
+   "id": "media.mute",
+   "name": "Mute",
+   "category": "Media",
+   "windows": {
+    "type": "media",
+    "key": "mute"
+   },
+   "mac": {
+    "type": "media",
+    "key": "mute"
+   }
+  },
+  {
+   "id": "media.next_track",
+   "name": "Next track",
+   "category": "Media",
+   "windows": {
+    "type": "media",
+    "key": "next_track"
+   },
+   "mac": {
+    "type": "media",
+    "key": "next_track"
+   }
+  },
+  {
+   "id": "media.play_pause",
+   "name": "Play / pause",
+   "category": "Media",
+   "windows": {
+    "type": "media",
+    "key": "play_pause"
+   },
+   "mac": {
+    "type": "media",
+    "key": "play_pause"
+   }
+  },
+  {
+   "id": "media.previous_track",
+   "name": "Previous track",
+   "category": "Media",
+   "windows": {
+    "type": "media",
+    "key": "previous_track"
+   },
+   "mac": {
+    "type": "media",
+    "key": "previous_track"
+   }
+  },
+  {
+   "id": "media.volume_down",
+   "name": "Volume down",
+   "category": "Media",
+   "windows": {
+    "type": "media",
+    "key": "volume_down"
+   },
+   "mac": {
+    "type": "media",
+    "key": "volume_down"
+   }
+  },
+  {
+   "id": "media.volume_up",
+   "name": "Volume up",
+   "category": "Media",
+   "windows": {
+    "type": "media",
+    "key": "volume_up"
+   },
+   "mac": {
+    "type": "media",
+    "key": "volume_up"
+   }
+  },
+  {
+   "id": "scroll.down",
+   "name": "Scroll down",
+   "category": "Mouse / Scroll",
+   "windows": {
+    "type": "scroll",
+    "direction": "down",
+    "lines": 1
+   },
+   "mac": {
+    "type": "scroll",
+    "direction": "down",
+    "lines": 1
+   }
+  },
+  {
+   "id": "scroll.left",
+   "name": "Scroll left",
+   "category": "Mouse / Scroll",
+   "windows": {
+    "type": "scroll",
+    "direction": "left",
+    "lines": 1
+   },
+   "mac": {
+    "type": "scroll",
+    "direction": "left",
+    "lines": 1
+   }
+  },
+  {
+   "id": "scroll.right",
+   "name": "Scroll right",
+   "category": "Mouse / Scroll",
+   "windows": {
+    "type": "scroll",
+    "direction": "right",
+    "lines": 1
+   },
+   "mac": {
+    "type": "scroll",
+    "direction": "right",
+    "lines": 1
+   }
+  },
+  {
+   "id": "scroll.up",
+   "name": "Scroll up",
+   "category": "Mouse / Scroll",
+   "windows": {
+    "type": "scroll",
+    "direction": "up",
+    "lines": 1
+   },
+   "mac": {
+    "type": "scroll",
+    "direction": "up",
+    "lines": 1
+   }
+  },
+  {
+   "id": "os.add_desktop",
+   "name": "Add virtual desktop",
+   "category": "System",
+   "windows": {
+    "type": "keys",
+    "chord": "Ctrl+Win+D"
+   }
+  },
+  {
+   "id": "os.screenshot_section",
+   "name": "Capture selected screen section",
+   "category": "System",
+   "windows": {
+    "type": "keys",
+    "chord": "Shift+Win+S"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Shift+Win+4"
+   }
+  },
+  {
+   "id": "os.close_desktop",
+   "name": "Close virtual desktop",
+   "category": "System",
+   "windows": {
+    "type": "keys",
+    "chord": "Ctrl+Win+F4"
+   }
+  },
+  {
+   "id": "os.close_window",
+   "name": "Close window",
+   "category": "System",
+   "windows": {
+    "type": "keys",
+    "chord": "Alt+F4"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Win+W"
+   }
+  },
+  {
+   "id": "os.close_application",
+   "name": "Close/quit application",
+   "category": "System",
+   "windows": {
+    "type": "keys",
+    "chord": "Alt+F4"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Win+Q"
+   }
+  },
+  {
+   "id": "os.cycle_desktops",
+   "name": "Cycle virtual desktops",
+   "category": "System",
+   "windows": {
+    "type": "keys",
+    "chord": "Ctrl+Win+Right"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Ctrl+Right"
+   }
+  },
+  {
+   "id": "os.cycle_window_order",
+   "name": "Cycle window order",
+   "category": "System",
+   "windows": {
+    "type": "keys",
+    "chord": "Shift+Alt+Tab"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Shift+Win+`"
+   }
+  },
+  {
+   "id": "os.cycle_windows_order",
+   "name": "Cycle windows (reverse order)",
+   "category": "System",
+   "windows": {
+    "type": "keys",
+    "chord": "Shift+Alt+Tab"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Shift+Win+`"
+   }
+  },
+  {
+   "id": "os.cycle_windows",
+   "name": "Cycle windows of app",
+   "category": "System",
+   "windows": {
+    "type": "keys",
+    "chord": "Alt+Tab"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Win+`"
+   }
+  },
+  {
+   "id": "os.character_viewer",
+   "name": "Emoji / character picker",
+   "category": "System",
+   "windows": {
+    "type": "keys",
+    "chord": "Win+."
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Ctrl+Win+Space"
+   }
+  },
+  {
+   "id": "os.hide_windows",
+   "name": "Hide other windows / show desktop",
+   "category": "System",
+   "windows": {
+    "type": "keys",
+    "chord": "Win+D"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Alt+Win+H"
+   }
+  },
+  {
+   "id": "os.lock_screen",
+   "name": "Lock screen",
+   "category": "System",
+   "windows": {
+    "type": "keys",
+    "chord": "Win+L"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Ctrl+Win+Q"
+   }
+  },
+  {
+   "id": "os.maximize",
+   "name": "Maximize window",
+   "category": "System",
+   "windows": {
+    "type": "keys",
+    "chord": "Win+Up"
+   }
+  },
+  {
+   "id": "os.minimize_all",
+   "name": "Minimize all windows",
+   "category": "System",
+   "windows": {
+    "type": "keys",
+    "chord": "Win+M"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Alt+Win+M"
+   }
+  },
+  {
+   "id": "os.minimize",
+   "name": "Minimize window",
+   "category": "System",
+   "windows": {
+    "type": "keys",
+    "chord": "Win+Down"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Win+M"
+   }
+  },
+  {
+   "id": "os.next_screen",
+   "name": "Move window to next display",
+   "category": "System",
+   "windows": {
+    "type": "keys",
+    "chord": "Shift+Win+Right"
+   }
+  },
+  {
+   "id": "os.prev_screen",
+   "name": "Move window to previous display",
+   "category": "System",
+   "windows": {
+    "type": "keys",
+    "chord": "Shift+Win+Left"
+   }
+  },
+  {
+   "id": "os.ai",
+   "name": "Open AI assistant",
+   "category": "System",
+   "windows": {
+    "type": "keys",
+    "chord": "Win+C"
+   }
+  },
+  {
+   "id": "os.open_context",
+   "name": "Open context menu",
+   "category": "System",
+   "windows": {
+    "type": "keys",
+    "chord": "Shift+F10"
+   }
+  },
+  {
+   "id": "os.screenshot_dialog",
+   "name": "Open screenshot options dialog",
+   "category": "System",
+   "windows": {
+    "type": "keys",
+    "chord": "Shift+Win+S"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Shift+Win+5"
+   }
+  },
+  {
+   "id": "os.settings",
+   "name": "Open settings/preferences",
+   "category": "System",
+   "windows": {
+    "type": "keys",
+    "chord": "Win+I"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Win+,"
+   }
+  },
+  {
+   "id": "os.refresh_window",
+   "name": "Refresh window",
+   "category": "System",
+   "windows": {
+    "type": "keys",
+    "chord": "F5"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Win+R"
+   }
+  },
+  {
+   "id": "os.show_desktop",
+   "name": "Show desktop",
+   "category": "System",
+   "windows": {
+    "type": "keys",
+    "chord": "Win+D"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "F11"
+   }
+  },
+  {
+   "id": "os.cycle_apps",
+   "name": "Switch applications",
+   "category": "System",
+   "windows": {
+    "type": "keys",
+    "chord": "Alt+Tab"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Win+Tab"
+   }
+  },
+  {
+   "id": "os.cycle_apps_alt",
+   "name": "Switch applications (reverse)",
+   "category": "System",
+   "windows": {
+    "type": "keys",
+    "chord": "Shift+Alt+Tab"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Shift+Win+Tab"
+   }
+  },
+  {
+   "id": "os.language",
+   "name": "Switch input language",
+   "category": "System",
+   "windows": {
+    "type": "keys",
+    "chord": "Win+Space"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Ctrl+Space"
+   }
+  },
+  {
+   "id": "os.left_desktop",
+   "name": "Switch to desktop on the left",
+   "category": "System",
+   "windows": {
+    "type": "keys",
+    "chord": "Ctrl+Win+Left"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Ctrl+Left"
+   }
+  },
+  {
+   "id": "os.right_desktop",
+   "name": "Switch to desktop on the right",
+   "category": "System",
+   "windows": {
+    "type": "keys",
+    "chord": "Ctrl+Win+Right"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Ctrl+Right"
+   }
+  },
+  {
+   "id": "os.next_app",
+   "name": "Switch to next application",
+   "category": "System",
+   "windows": {
+    "type": "keys",
+    "chord": "Alt+Tab"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Win+Tab"
+   }
+  },
+  {
+   "id": "os.prev_app",
+   "name": "Switch to previous application",
+   "category": "System",
+   "windows": {
+    "type": "keys",
+    "chord": "Shift+Alt+Tab"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Shift+Win+Tab"
+   }
+  },
+  {
+   "id": "os.system_monitor",
+   "name": "System monitor / task manager",
+   "category": "System",
+   "windows": {
+    "type": "keys",
+    "chord": "Ctrl+Shift+Esc"
+   }
+  },
+  {
+   "id": "os.screenshot",
+   "name": "Take a screenshot",
+   "category": "System",
+   "windows": {
+    "type": "keys",
+    "chord": "Shift+Win+S"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Shift+Win+3"
+   }
+  },
+  {
+   "id": "os.task_view",
+   "name": "Task view",
+   "category": "System",
+   "windows": {
+    "type": "keys",
+    "chord": "Win+Tab"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Ctrl+Up"
+   }
+  },
+  {
+   "id": "os.fullscreen",
+   "name": "Toggle fullscreen",
+   "category": "System",
+   "windows": {
+    "type": "keys",
+    "chord": "F11"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Ctrl+Win+F"
+   }
+  },
+  {
+   "id": "terminal.paste_terminal",
+   "name": "Paste in terminal",
+   "category": "Terminal",
+   "windows": {
+    "type": "keys",
+    "chord": "Ctrl+Shift+V"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Win+V"
+   }
+  },
+  {
+   "id": "terminal.terminal_scroll_down_1",
+   "name": "Terminal scroll down (line)",
+   "category": "Terminal",
+   "windows": {
+    "type": "keys",
+    "chord": "Ctrl+Down"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Win+Down"
+   }
+  },
+  {
+   "id": "terminal.terminal_scroll_down_2",
+   "name": "Terminal scroll down (page)",
+   "category": "Terminal",
+   "windows": {
+    "type": "keys",
+    "chord": "Shift+PageDown"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Shift+PageDown"
+   }
+  },
+  {
+   "id": "terminal.terminal_scroll_end",
+   "name": "Terminal scroll to bottom",
+   "category": "Terminal",
+   "windows": {
+    "type": "keys",
+    "chord": "Ctrl+End"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Win+End"
+   }
+  },
+  {
+   "id": "terminal.terminal_scroll_start",
+   "name": "Terminal scroll to top",
+   "category": "Terminal",
+   "windows": {
+    "type": "keys",
+    "chord": "Ctrl+Home"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Win+Home"
+   }
+  },
+  {
+   "id": "terminal.terminal_scroll_up_1",
+   "name": "Terminal scroll up (line)",
+   "category": "Terminal",
+   "windows": {
+    "type": "keys",
+    "chord": "Ctrl+Up"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Win+Up"
+   }
+  },
+  {
+   "id": "terminal.terminal_scroll_up_2",
+   "name": "Terminal scroll up (page)",
+   "category": "Terminal",
+   "windows": {
+    "type": "keys",
+    "chord": "Shift+PageUp"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Shift+PageUp"
+   }
+  },
+  {
+   "id": "text.add_comment",
+   "name": "Add comment",
+   "category": "Text editing",
+   "windows": {
+    "type": "keys",
+    "chord": "Ctrl+Alt+M"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Alt+Win+M"
+   }
+  },
+  {
+   "id": "text.bold",
+   "name": "Bold",
+   "category": "Text editing",
+   "windows": {
+    "type": "keys",
+    "chord": "Ctrl+B"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Win+B"
+   }
+  },
+  {
+   "id": "text.copy",
+   "name": "Copy",
+   "category": "Text editing",
+   "windows": {
+    "type": "keys",
+    "chord": "Ctrl+C"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Win+C"
+   }
+  },
+  {
+   "id": "text.copy_line",
+   "name": "Copy line",
+   "category": "Text editing",
+   "windows": {
+    "type": "keys",
+    "chord": "Ctrl+C"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Win+C"
+   }
+  },
+  {
+   "id": "text.cut",
+   "name": "Cut",
+   "category": "Text editing",
+   "windows": {
+    "type": "keys",
+    "chord": "Ctrl+X"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Win+X"
+   }
+  },
+  {
+   "id": "text.cut_line",
+   "name": "Cut line",
+   "category": "Text editing",
+   "windows": {
+    "type": "keys",
+    "chord": "Ctrl+X"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Win+X"
+   }
+  },
+  {
+   "id": "text.delete_word",
+   "name": "Delete next word",
+   "category": "Text editing",
+   "windows": {
+    "type": "keys",
+    "chord": "Ctrl+Delete"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Alt+Delete"
+   }
+  },
+  {
+   "id": "text.backspace_word",
+   "name": "Delete previous word",
+   "category": "Text editing",
+   "windows": {
+    "type": "keys",
+    "chord": "Ctrl+Backspace"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Alt+Backspace"
+   }
+  },
+  {
+   "id": "text.select_next_line",
+   "name": "Extend selection down one line",
+   "category": "Text editing",
+   "windows": {
+    "type": "keys",
+    "chord": "Shift+Down"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Shift+Down"
+   }
+  },
+  {
+   "id": "text.select_next_page",
+   "name": "Extend selection down one page",
+   "category": "Text editing",
+   "windows": {
+    "type": "keys",
+    "chord": "Shift+PageDown"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Shift+PageDown"
+   }
+  },
+  {
+   "id": "text.select_prev_char",
+   "name": "Extend selection left one character",
+   "category": "Text editing",
+   "windows": {
+    "type": "keys",
+    "chord": "Shift+Left"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Shift+Left"
+   }
+  },
+  {
+   "id": "text.select_next_char",
+   "name": "Extend selection right one character",
+   "category": "Text editing",
+   "windows": {
+    "type": "keys",
+    "chord": "Shift+Right"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Shift+Right"
+   }
+  },
+  {
+   "id": "text.select_next_paragraph",
+   "name": "Extend selection to next paragraph",
+   "category": "Text editing",
+   "windows": {
+    "type": "keys",
+    "chord": "Ctrl+Shift+Down"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Shift+Alt+Down"
+   }
+  },
+  {
+   "id": "text.select_next_word",
+   "name": "Extend selection to next word",
+   "category": "Text editing",
+   "windows": {
+    "type": "keys",
+    "chord": "Ctrl+Shift+Right"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Shift+Alt+Right"
+   }
+  },
+  {
+   "id": "text.select_prev_paragraph",
+   "name": "Extend selection to previous paragraph",
+   "category": "Text editing",
+   "windows": {
+    "type": "keys",
+    "chord": "Ctrl+Shift+Up"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Shift+Alt+Up"
+   }
+  },
+  {
+   "id": "text.select_prev_word",
+   "name": "Extend selection to previous word",
+   "category": "Text editing",
+   "windows": {
+    "type": "keys",
+    "chord": "Ctrl+Shift+Left"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Shift+Alt+Left"
+   }
+  },
+  {
+   "id": "text.select_prev_line",
+   "name": "Extend selection up one line",
+   "category": "Text editing",
+   "windows": {
+    "type": "keys",
+    "chord": "Shift+Up"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Shift+Up"
+   }
+  },
+  {
+   "id": "text.select_prev_page",
+   "name": "Extend selection up one page",
+   "category": "Text editing",
+   "windows": {
+    "type": "keys",
+    "chord": "Shift+PageUp"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Shift+PageUp"
+   }
+  },
+  {
+   "id": "text.find",
+   "name": "Find",
+   "category": "Text editing",
+   "windows": {
+    "type": "keys",
+    "chord": "Ctrl+F"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Win+F"
+   }
+  },
+  {
+   "id": "text.doc_end",
+   "name": "Go to end of document",
+   "category": "Text editing",
+   "windows": {
+    "type": "keys",
+    "chord": "Ctrl+End"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Win+Down"
+   }
+  },
+  {
+   "id": "text.doc_start",
+   "name": "Go to start of document",
+   "category": "Text editing",
+   "windows": {
+    "type": "keys",
+    "chord": "Ctrl+Home"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Win+Up"
+   }
+  },
+  {
+   "id": "text.italic",
+   "name": "Italic",
+   "category": "Text editing",
+   "windows": {
+    "type": "keys",
+    "chord": "Ctrl+I"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Win+I"
+   }
+  },
+  {
+   "id": "text.line_end",
+   "name": "Move to end of line",
+   "category": "Text editing",
+   "windows": {
+    "type": "keys",
+    "chord": "End"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Win+Right"
+   }
+  },
+  {
+   "id": "text.next_paragraph",
+   "name": "Move to next paragraph",
+   "category": "Text editing",
+   "windows": {
+    "type": "keys",
+    "chord": "Ctrl+Down"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Alt+Down"
+   }
+  },
+  {
+   "id": "text.next_word",
+   "name": "Move to next word",
+   "category": "Text editing",
+   "windows": {
+    "type": "keys",
+    "chord": "Ctrl+Right"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Alt+Right"
+   }
+  },
+  {
+   "id": "text.prev_paragraph",
+   "name": "Move to previous paragraph",
+   "category": "Text editing",
+   "windows": {
+    "type": "keys",
+    "chord": "Ctrl+Up"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Alt+Up"
+   }
+  },
+  {
+   "id": "text.prev_word",
+   "name": "Move to previous word",
+   "category": "Text editing",
+   "windows": {
+    "type": "keys",
+    "chord": "Ctrl+Left"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Alt+Left"
+   }
+  },
+  {
+   "id": "text.line_start",
+   "name": "Move to start of line",
+   "category": "Text editing",
+   "windows": {
+    "type": "keys",
+    "chord": "Home"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Win+Left"
+   }
+  },
+  {
+   "id": "text.paste",
+   "name": "Paste",
+   "category": "Text editing",
+   "windows": {
+    "type": "keys",
+    "chord": "Ctrl+V"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Win+V"
+   }
+  },
+  {
+   "id": "text.paste_plain",
+   "name": "Paste as plain text",
+   "category": "Text editing",
+   "windows": {
+    "type": "keys",
+    "chord": "Ctrl+Shift+V"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Shift+Win+V"
+   }
+  },
+  {
+   "id": "text.print",
+   "name": "Print",
+   "category": "Text editing",
+   "windows": {
+    "type": "keys",
+    "chord": "Ctrl+P"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Win+P"
+   }
+  },
+  {
+   "id": "text.redo",
+   "name": "Redo",
+   "category": "Text editing",
+   "windows": {
+    "type": "keys",
+    "chord": "Ctrl+Y"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Shift+Win+Z"
+   }
+  },
+  {
+   "id": "text.save",
+   "name": "Save",
+   "category": "Text editing",
+   "windows": {
+    "type": "keys",
+    "chord": "Ctrl+S"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Win+S"
+   }
+  },
+  {
+   "id": "text.save_as",
+   "name": "Save as",
+   "category": "Text editing",
+   "windows": {
+    "type": "keys",
+    "chord": "Ctrl+Shift+S"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Shift+Win+S"
+   }
+  },
+  {
+   "id": "text.select_all",
+   "name": "Select all",
+   "category": "Text editing",
+   "windows": {
+    "type": "keys",
+    "chord": "Ctrl+A"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Win+A"
+   }
+  },
+  {
+   "id": "text.select_all_text",
+   "name": "Select all text",
+   "category": "Text editing",
+   "windows": {
+    "type": "keys",
+    "chord": "Ctrl+A"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Win+A"
+   }
+  },
+  {
+   "id": "text.select_text_end",
+   "name": "Select to end of document",
+   "category": "Text editing",
+   "windows": {
+    "type": "keys",
+    "chord": "Ctrl+Shift+End"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Shift+Win+Down"
+   }
+  },
+  {
+   "id": "text.select_line_end",
+   "name": "Select to end of line",
+   "category": "Text editing",
+   "windows": {
+    "type": "keys",
+    "chord": "Shift+End"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Shift+Win+Right"
+   }
+  },
+  {
+   "id": "text.select_text_start",
+   "name": "Select to start of document",
+   "category": "Text editing",
+   "windows": {
+    "type": "keys",
+    "chord": "Ctrl+Shift+Home"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Shift+Win+Up"
+   }
+  },
+  {
+   "id": "text.select_line_start",
+   "name": "Select to start of line",
+   "category": "Text editing",
+   "windows": {
+    "type": "keys",
+    "chord": "Shift+Home"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Shift+Win+Left"
+   }
+  },
+  {
+   "id": "text.strikethrough",
+   "name": "Strikethrough",
+   "category": "Text editing",
+   "windows": {
+    "type": "keys",
+    "chord": "Ctrl+Shift+X"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Shift+Win+X"
+   }
+  },
+  {
+   "id": "text.exclamation",
+   "name": "Type ! (exclamation)",
+   "category": "Text editing",
+   "windows": {
+    "type": "keys",
+    "chord": "Shift+1"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Shift+1"
+   }
+  },
+  {
+   "id": "text.double_quotes",
+   "name": "Type \" (double quote)",
+   "category": "Text editing",
+   "windows": {
+    "type": "keys",
+    "chord": "Shift+'"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Shift+'"
+   }
+  },
+  {
+   "id": "text.hash",
+   "name": "Type # (hash)",
+   "category": "Text editing",
+   "windows": {
+    "type": "keys",
+    "chord": "Shift+3"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Shift+3"
+   }
+  },
+  {
+   "id": "text.dollar",
+   "name": "Type $ (dollar)",
+   "category": "Text editing",
+   "windows": {
+    "type": "keys",
+    "chord": "Shift+4"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Shift+4"
+   }
+  },
+  {
+   "id": "text.percent",
+   "name": "Type % (percent)",
+   "category": "Text editing",
+   "windows": {
+    "type": "keys",
+    "chord": "Shift+5"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Shift+5"
+   }
+  },
+  {
+   "id": "text.ampersand",
+   "name": "Type & (ampersand)",
+   "category": "Text editing",
+   "windows": {
+    "type": "keys",
+    "chord": "Shift+7"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Shift+7"
+   }
+  },
+  {
+   "id": "text.left_parenthesis",
+   "name": "Type ( (left parenthesis)",
+   "category": "Text editing",
+   "windows": {
+    "type": "keys",
+    "chord": "Shift+9"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Shift+9"
+   }
+  },
+  {
+   "id": "text.right_parenthesis",
+   "name": "Type ) (right parenthesis)",
+   "category": "Text editing",
+   "windows": {
+    "type": "keys",
+    "chord": "Shift+0"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Shift+0"
+   }
+  },
+  {
+   "id": "text.asterisk",
+   "name": "Type * (asterisk)",
+   "category": "Text editing",
+   "windows": {
+    "type": "keys",
+    "chord": "Shift+8"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Shift+8"
+   }
+  },
+  {
+   "id": "text.plus",
+   "name": "Type + (plus)",
+   "category": "Text editing",
+   "windows": {
+    "type": "keys",
+    "chord": "Shift+="
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Shift+="
+   }
+  },
+  {
+   "id": "text.colon",
+   "name": "Type : (colon)",
+   "category": "Text editing",
+   "windows": {
+    "type": "keys",
+    "chord": "Shift+;"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Shift+;"
+   }
+  },
+  {
+   "id": "text.less_than",
+   "name": "Type < (less than)",
+   "category": "Text editing",
+   "windows": {
+    "type": "keys",
+    "chord": "Shift+,"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Shift+,"
+   }
+  },
+  {
+   "id": "text.greater_than",
+   "name": "Type > (greater than)",
+   "category": "Text editing",
+   "windows": {
+    "type": "keys",
+    "chord": "Shift+."
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Shift+."
+   }
+  },
+  {
+   "id": "text.question",
+   "name": "Type ? (question mark)",
+   "category": "Text editing",
+   "windows": {
+    "type": "keys",
+    "chord": "Shift+/"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Shift+/"
+   }
+  },
+  {
+   "id": "text.at_sign",
+   "name": "Type @ (at sign)",
+   "category": "Text editing",
+   "windows": {
+    "type": "keys",
+    "chord": "Shift+2"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Shift+2"
+   }
+  },
+  {
+   "id": "text.caret",
+   "name": "Type ^ (caret)",
+   "category": "Text editing",
+   "windows": {
+    "type": "keys",
+    "chord": "Shift+6"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Shift+6"
+   }
+  },
+  {
+   "id": "text.left_brace",
+   "name": "Type { (left brace)",
+   "category": "Text editing",
+   "windows": {
+    "type": "keys",
+    "chord": "Shift+["
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Shift+["
+   }
+  },
+  {
+   "id": "text.pipe",
+   "name": "Type | (pipe)",
+   "category": "Text editing",
+   "windows": {
+    "type": "keys",
+    "chord": "Shift+\\"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Shift+\\"
+   }
+  },
+  {
+   "id": "text.pipe2",
+   "name": "Type | (pipe), alternate key location",
+   "category": "Text editing",
+   "windows": {
+    "type": "keys",
+    "chord": "Shift+\\"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Shift+\\"
+   }
+  },
+  {
+   "id": "text.right_brace",
+   "name": "Type } (right brace)",
+   "category": "Text editing",
+   "windows": {
+    "type": "keys",
+    "chord": "Shift+]"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Shift+]"
+   }
+  },
+  {
+   "id": "text.underline",
+   "name": "Underline",
+   "category": "Text editing",
+   "windows": {
+    "type": "keys",
+    "chord": "Ctrl+U"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Win+U"
+   }
+  },
+  {
+   "id": "text.undo",
+   "name": "Undo",
+   "category": "Text editing",
+   "windows": {
+    "type": "keys",
+    "chord": "Ctrl+Z"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Win+Z"
+   }
+  },
+  {
+   "id": "text.find_selection",
+   "name": "Use selection for find",
+   "category": "Text editing",
+   "windows": {
+    "type": "keys",
+    "chord": "Ctrl+F3"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Win+E"
+   }
+  },
+  {
+   "id": "vscode.insert_cursor_above",
+   "name": "Add cursor above",
+   "category": "VS Code",
+   "windows": {
+    "type": "keys",
+    "chord": "Ctrl+Alt+Up"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Alt+Win+Up"
+   }
+  },
+  {
+   "id": "vscode.inser_cursor_above",
+   "name": "Add cursor above",
+   "category": "VS Code",
+   "windows": {
+    "type": "keys",
+    "chord": "Ctrl+Alt+Up"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Alt+Win+Up"
+   }
+  },
+  {
+   "id": "vscode.insert_cursor_below",
+   "name": "Add cursor below",
+   "category": "VS Code",
+   "windows": {
+    "type": "keys",
+    "chord": "Ctrl+Alt+Down"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Alt+Win+Down"
+   }
+  },
+  {
+   "id": "vscode.inser_cursor_below",
+   "name": "Add cursor below",
+   "category": "VS Code",
+   "windows": {
+    "type": "keys",
+    "chord": "Ctrl+Alt+Down"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Alt+Win+Down"
+   }
+  },
+  {
+   "id": "vscode.insert_cursor_end",
+   "name": "Add cursor to line ends",
+   "category": "VS Code",
+   "windows": {
+    "type": "keys",
+    "chord": "Shift+Alt+I"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Shift+Alt+I"
+   }
+  },
+  {
+   "id": "vscode.inser_cursor_end",
+   "name": "Add cursor to line ends",
+   "category": "VS Code",
+   "windows": {
+    "type": "keys",
+    "chord": "Shift+Alt+I"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Shift+Alt+I"
+   }
+  },
+  {
+   "id": "vscode.find_word",
+   "name": "Add selection to next find match",
+   "category": "VS Code",
+   "windows": {
+    "type": "keys",
+    "chord": "Ctrl+D"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Win+D"
+   }
+  },
+  {
+   "id": "vscode.close_file",
+   "name": "Close file/tab",
+   "category": "VS Code",
+   "windows": {
+    "type": "keys",
+    "chord": "Ctrl+W"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Win+W"
+   }
+  },
+  {
+   "id": "vscode.command_palette",
+   "name": "Command palette",
+   "category": "VS Code",
+   "windows": {
+    "type": "keys",
+    "chord": "Ctrl+Shift+P"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Shift+Win+P"
+   }
+  },
+  {
+   "id": "vscode.copy_path",
+   "name": "Copy file path",
+   "category": "VS Code",
+   "windows": {
+    "type": "keys",
+    "chord": "Shift+Alt+C"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Shift+Alt+C"
+   }
+  },
+  {
+   "id": "vscode.copy_line_down",
+   "name": "Copy line down",
+   "category": "VS Code",
+   "windows": {
+    "type": "keys",
+    "chord": "Shift+Alt+Down"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Shift+Alt+Down"
+   }
+  },
+  {
+   "id": "vscode.copy_line_up",
+   "name": "Copy line up",
+   "category": "VS Code",
+   "windows": {
+    "type": "keys",
+    "chord": "Shift+Alt+Up"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Shift+Alt+Up"
+   }
+  },
+  {
+   "id": "vscode.new_terminal",
+   "name": "Create new terminal",
+   "category": "VS Code",
+   "windows": {
+    "type": "keys",
+    "chord": "Ctrl+Shift+`"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Ctrl+Shift+`"
+   }
+  },
+  {
+   "id": "vscode.undo_cursor",
+   "name": "Cursor undo (soft undo)",
+   "category": "VS Code",
+   "windows": {
+    "type": "keys",
+    "chord": "Ctrl+U"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Win+U"
+   }
+  },
+  {
+   "id": "vscode.cycle_history",
+   "name": "Cycle editor tab history",
+   "category": "VS Code",
+   "windows": {
+    "type": "keys",
+    "chord": "Ctrl+Tab"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Ctrl+Tab"
+   }
+  },
+  {
+   "id": "vscode.delete_line",
+   "name": "Delete line",
+   "category": "VS Code",
+   "windows": {
+    "type": "keys",
+    "chord": "Ctrl+Shift+K"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Shift+Win+K"
+   }
+  },
+  {
+   "id": "vscode.expand_selection",
+   "name": "Expand selection",
+   "category": "VS Code",
+   "windows": {
+    "type": "keys",
+    "chord": "Shift+Alt+Right"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Shift+Alt+Right"
+   }
+  },
+  {
+   "id": "vscode.select_line",
+   "name": "Expand selection to line",
+   "category": "VS Code",
+   "windows": {
+    "type": "keys",
+    "chord": "Ctrl+L"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Win+L"
+   }
+  },
+  {
+   "id": "vscode.find_replace",
+   "name": "Find and replace",
+   "category": "VS Code",
+   "windows": {
+    "type": "keys",
+    "chord": "Ctrl+H"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Alt+Win+F"
+   }
+  },
+  {
+   "id": "vscode.find_case",
+   "name": "Find: toggle match case",
+   "category": "VS Code",
+   "windows": {
+    "type": "keys",
+    "chord": "Alt+C"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Alt+C"
+   }
+  },
+  {
+   "id": "vscode.find_regex",
+   "name": "Find: toggle regex",
+   "category": "VS Code",
+   "windows": {
+    "type": "keys",
+    "chord": "Alt+R"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Alt+R"
+   }
+  },
+  {
+   "id": "vscode.editor_1",
+   "name": "Focus editor group 1",
+   "category": "VS Code",
+   "windows": {
+    "type": "keys",
+    "chord": "Ctrl+1"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Win+1"
+   }
+  },
+  {
+   "id": "vscode.editor_2",
+   "name": "Focus editor group 2",
+   "category": "VS Code",
+   "windows": {
+    "type": "keys",
+    "chord": "Ctrl+2"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Win+2"
+   }
+  },
+  {
+   "id": "vscode.editor_3",
+   "name": "Focus editor group 3",
+   "category": "VS Code",
+   "windows": {
+    "type": "keys",
+    "chord": "Ctrl+3"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Win+3"
+   }
+  },
+  {
+   "id": "vscode.format",
+   "name": "Format document",
+   "category": "VS Code",
+   "windows": {
+    "type": "keys",
+    "chord": "Shift+Alt+F"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Shift+Alt+F"
+   }
+  },
+  {
+   "id": "vscode.jump_to_bracket",
+   "name": "Go to bracket",
+   "category": "VS Code",
+   "windows": {
+    "type": "keys",
+    "chord": "Ctrl+Shift+\\"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Shift+Win+\\"
+   }
+  },
+  {
+   "id": "vscode.go_to_definition",
+   "name": "Go to definition",
+   "category": "VS Code",
+   "windows": {
+    "type": "keys",
+    "chord": "F12"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "F12"
+   }
+  },
+  {
+   "id": "vscode.find_file",
+   "name": "Go to file (quick open)",
+   "category": "VS Code",
+   "windows": {
+    "type": "keys",
+    "chord": "Ctrl+P"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Win+P"
+   }
+  },
+  {
+   "id": "vscode.go_to_line",
+   "name": "Go to line",
+   "category": "VS Code",
+   "windows": {
+    "type": "keys",
+    "chord": "Ctrl+G"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Win+G"
+   }
+  },
+  {
+   "id": "vscode.next_problem",
+   "name": "Go to next problem/error",
+   "category": "VS Code",
+   "windows": {
+    "type": "keys",
+    "chord": "F8"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "F8"
+   }
+  },
+  {
+   "id": "vscode.prev_problem",
+   "name": "Go to previous problem/error",
+   "category": "VS Code",
+   "windows": {
+    "type": "keys",
+    "chord": "Shift+F8"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Shift+F8"
+   }
+  },
+  {
+   "id": "vscode.indent_line",
+   "name": "Indent line",
+   "category": "VS Code",
+   "windows": {
+    "type": "keys",
+    "chord": "Ctrl+]"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Win+]"
+   }
+  },
+  {
+   "id": "vscode.insert_line_up",
+   "name": "Insert line above",
+   "category": "VS Code",
+   "windows": {
+    "type": "keys",
+    "chord": "Ctrl+Shift+Enter"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Shift+Win+Enter"
+   }
+  },
+  {
+   "id": "vscode.insert_line_down",
+   "name": "Insert line below",
+   "category": "VS Code",
+   "windows": {
+    "type": "keys",
+    "chord": "Ctrl+Enter"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Win+Enter"
+   }
+  },
+  {
+   "id": "vscode.move_editor_left",
+   "name": "Move editor tab left",
+   "category": "VS Code",
+   "windows": {
+    "type": "keys",
+    "chord": "Ctrl+Shift+PageUp"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Shift+Win+PageUp"
+   }
+  },
+  {
+   "id": "vscode.move_editor_right",
+   "name": "Move editor tab right",
+   "category": "VS Code",
+   "windows": {
+    "type": "keys",
+    "chord": "Ctrl+Shift+PageDown"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Shift+Win+PageDown"
+   }
+  },
+  {
+   "id": "vscode.move_line_down",
+   "name": "Move line down",
+   "category": "VS Code",
+   "windows": {
+    "type": "keys",
+    "chord": "Alt+Down"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Alt+Down"
+   }
+  },
+  {
+   "id": "vscode.move_line_up",
+   "name": "Move line up",
+   "category": "VS Code",
+   "windows": {
+    "type": "keys",
+    "chord": "Alt+Up"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Alt+Up"
+   }
+  },
+  {
+   "id": "vscode.move_select_find_matches",
+   "name": "Move selection to next find match",
+   "category": "VS Code",
+   "windows": {
+    "type": "keys",
+    "chord": "Ctrl+D"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Win+D"
+   }
+  },
+  {
+   "id": "vscode.editor_history",
+   "name": "Navigate editor history back",
+   "category": "VS Code",
+   "windows": {
+    "type": "keys",
+    "chord": "Ctrl+Alt+-"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Ctrl+-"
+   }
+  },
+  {
+   "id": "vscode.new_file",
+   "name": "New file",
+   "category": "VS Code",
+   "windows": {
+    "type": "keys",
+    "chord": "Ctrl+N"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Win+N"
+   }
+  },
+  {
+   "id": "vscode.open_file",
+   "name": "Open file",
+   "category": "VS Code",
+   "windows": {
+    "type": "keys",
+    "chord": "Ctrl+O"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Win+O"
+   }
+  },
+  {
+   "id": "vscode.open_markdown",
+   "name": "Open markdown preview",
+   "category": "VS Code",
+   "windows": {
+    "type": "keys",
+    "chord": "Ctrl+Shift+V"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Shift+Win+V"
+   }
+  },
+  {
+   "id": "vscode.next_editor",
+   "name": "Open next editor tab",
+   "category": "VS Code",
+   "windows": {
+    "type": "keys",
+    "chord": "Ctrl+PageDown"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Ctrl+PageDown"
+   }
+  },
+  {
+   "id": "vscode.prev_editor",
+   "name": "Open previous editor tab",
+   "category": "VS Code",
+   "windows": {
+    "type": "keys",
+    "chord": "Ctrl+PageUp"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Ctrl+PageUp"
+   }
+  },
+  {
+   "id": "vscode.outdent_line",
+   "name": "Outdent line",
+   "category": "VS Code",
+   "windows": {
+    "type": "keys",
+    "chord": "Ctrl+["
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Win+["
+   }
+  },
+  {
+   "id": "vscode.peek_definition",
+   "name": "Peek definition",
+   "category": "VS Code",
+   "windows": {
+    "type": "keys",
+    "chord": "Alt+F12"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Alt+F12"
+   }
+  },
+  {
+   "id": "vscode.quick_fix",
+   "name": "Quick Fix",
+   "category": "VS Code",
+   "windows": {
+    "type": "keys",
+    "chord": "Ctrl+."
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Ctrl+."
+   }
+  },
+  {
+   "id": "vscode.select_find_matches",
+   "name": "Select all find matches",
+   "category": "VS Code",
+   "windows": {
+    "type": "keys",
+    "chord": "Alt+Enter"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Alt+Enter"
+   }
+  },
+  {
+   "id": "vscode.select_all_word_occurrences",
+   "name": "Select all occurrences of current word",
+   "category": "VS Code",
+   "windows": {
+    "type": "keys",
+    "chord": "Ctrl+Shift+L"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Shift+Win+L"
+   }
+  },
+  {
+   "id": "vscode.select_all_occurrences",
+   "name": "Select all occurrences of find match",
+   "category": "VS Code",
+   "windows": {
+    "type": "keys",
+    "chord": "Ctrl+Shift+L"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Shift+Win+L"
+   }
+  },
+  {
+   "id": "vscode.show_explorer",
+   "name": "Show explorer",
+   "category": "VS Code",
+   "windows": {
+    "type": "keys",
+    "chord": "Ctrl+Shift+E"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Shift+Win+E"
+   }
+  },
+  {
+   "id": "vscode.show_extensions",
+   "name": "Show extensions",
+   "category": "VS Code",
+   "windows": {
+    "type": "keys",
+    "chord": "Ctrl+Shift+X"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Shift+Win+X"
+   }
+  },
+  {
+   "id": "vscode.show_problems",
+   "name": "Show problems panel",
+   "category": "VS Code",
+   "windows": {
+    "type": "keys",
+    "chord": "Ctrl+Shift+M"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Shift+Win+M"
+   }
+  },
+  {
+   "id": "vscode.show_references",
+   "name": "Show references",
+   "category": "VS Code",
+   "windows": {
+    "type": "keys",
+    "chord": "Shift+F12"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Shift+F12"
+   }
+  },
+  {
+   "id": "vscode.show_search",
+   "name": "Show search",
+   "category": "VS Code",
+   "windows": {
+    "type": "keys",
+    "chord": "Ctrl+Shift+F"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Shift+Win+F"
+   }
+  },
+  {
+   "id": "vscode.show_source_control",
+   "name": "Show source control",
+   "category": "VS Code",
+   "windows": {
+    "type": "keys",
+    "chord": "Ctrl+Shift+G"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Shift+Win+G"
+   }
+  },
+  {
+   "id": "vscode.show_symbols",
+   "name": "Show symbols",
+   "category": "VS Code",
+   "windows": {
+    "type": "keys",
+    "chord": "Ctrl+Shift+O"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Shift+Win+O"
+   }
+  },
+  {
+   "id": "vscode.shrink_selection",
+   "name": "Shrink selection",
+   "category": "VS Code",
+   "windows": {
+    "type": "keys",
+    "chord": "Shift+Alt+Left"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Ctrl+Shift+Win+Left"
+   }
+  },
+  {
+   "id": "vscode.split_editor",
+   "name": "Split editor",
+   "category": "VS Code",
+   "windows": {
+    "type": "keys",
+    "chord": "Ctrl+\\"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Win+\\"
+   }
+  },
+  {
+   "id": "vscode.step_into",
+   "name": "Step into (debug)",
+   "category": "VS Code",
+   "windows": {
+    "type": "keys",
+    "chord": "F11"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "F11"
+   }
+  },
+  {
+   "id": "vscode.step_out",
+   "name": "Step out (debug)",
+   "category": "VS Code",
+   "windows": {
+    "type": "keys",
+    "chord": "Shift+F11"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Shift+F11"
+   }
+  },
+  {
+   "id": "vscode.step_over",
+   "name": "Step over (debug)",
+   "category": "VS Code",
+   "windows": {
+    "type": "keys",
+    "chord": "F10"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "F10"
+   }
+  },
+  {
+   "id": "vscode.stop",
+   "name": "Stop (debug)",
+   "category": "VS Code",
+   "windows": {
+    "type": "keys",
+    "chord": "Shift+F5"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Shift+F5"
+   }
+  },
+  {
+   "id": "vscode.suggested_action",
+   "name": "Suggested action (quick fix)",
+   "category": "VS Code",
+   "windows": {
+    "type": "keys",
+    "chord": "Ctrl+."
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Win+."
+   }
+  },
+  {
+   "id": "vscode.show_debug",
+   "name": "Toggle Debug view",
+   "category": "VS Code",
+   "windows": {
+    "type": "keys",
+    "chord": "Ctrl+Shift+D"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Shift+Win+D"
+   }
+  },
+  {
+   "id": "vscode.output",
+   "name": "Toggle Output panel",
+   "category": "VS Code",
+   "windows": {
+    "type": "keys",
+    "chord": "Ctrl+Shift+U"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Shift+Win+U"
+   }
+  },
+  {
+   "id": "vscode.block_comment",
+   "name": "Toggle block comment",
+   "category": "VS Code",
+   "windows": {
+    "type": "keys",
+    "chord": "Shift+Alt+A"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Shift+Alt+A"
+   }
+  },
+  {
+   "id": "vscode.toggle_breakpoint",
+   "name": "Toggle breakpoint",
+   "category": "VS Code",
+   "windows": {
+    "type": "keys",
+    "chord": "F9"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "F9"
+   }
+  },
+  {
+   "id": "vscode.editor_layout",
+   "name": "Toggle editor group layout",
+   "category": "VS Code",
+   "windows": {
+    "type": "keys",
+    "chord": "Shift+Alt+0"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Shift+Alt+0"
+   }
+  },
+  {
+   "id": "vscode.open_terminal",
+   "name": "Toggle integrated terminal",
+   "category": "VS Code",
+   "windows": {
+    "type": "keys",
+    "chord": "Ctrl+`"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Ctrl+`"
+   }
+  },
+  {
+   "id": "vscode.comment",
+   "name": "Toggle line comment",
+   "category": "VS Code",
+   "windows": {
+    "type": "keys",
+    "chord": "Ctrl+/"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Win+/"
+   }
+  },
+  {
+   "id": "vscode.remove_comment",
+   "name": "Toggle line comment",
+   "category": "VS Code",
+   "windows": {
+    "type": "keys",
+    "chord": "Ctrl+/"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Win+/"
+   }
+  },
+  {
+   "id": "vscode.toggle_sidebar",
+   "name": "Toggle sidebar",
+   "category": "VS Code",
+   "windows": {
+    "type": "keys",
+    "chord": "Ctrl+B"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Win+B"
+   }
+  },
+  {
+   "id": "vscode.toggle_tab_focus",
+   "name": "Toggle tab key moves focus",
+   "category": "VS Code",
+   "windows": {
+    "type": "keys",
+    "chord": "Ctrl+M"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Ctrl+Shift+M"
+   }
+  },
+  {
+   "id": "vscode.terminal",
+   "name": "Toggle terminal",
+   "category": "VS Code",
+   "windows": {
+    "type": "keys",
+    "chord": "Ctrl+`"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Win+`"
+   }
+  },
+  {
+   "id": "vscode.wrap",
+   "name": "Toggle word wrap",
+   "category": "VS Code",
+   "windows": {
+    "type": "keys",
+    "chord": "Alt+Z"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Alt+Z"
+   }
+  },
+  {
+   "id": "vscode.parameter_hints",
+   "name": "Trigger parameter hints",
+   "category": "VS Code",
+   "windows": {
+    "type": "keys",
+    "chord": "Ctrl+Shift+Space"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Ctrl+Shift+Space"
+   }
+  },
+  {
+   "id": "vscode.suggestion",
+   "name": "Trigger suggestion",
+   "category": "VS Code",
+   "windows": {
+    "type": "keys",
+    "chord": "Ctrl+Space"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Ctrl+Space"
+   }
+  },
+  {
+   "id": "vscode.unfold_region",
+   "name": "Unfold region",
+   "category": "VS Code",
+   "windows": {
+    "type": "keys",
+    "chord": "Ctrl+Shift+]"
+   },
+   "mac": {
+    "type": "keys",
+    "chord": "Alt+Win+]"
+   }
+  }
+ ]
+}
