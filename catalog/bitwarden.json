@@ -15,7 +15,7 @@
   "sources": [
     "https://bitwarden.com/help/keyboard-shortcuts/"
   ],
-  "note": "Covers the Bitwarden desktop app plus the browser-extension shortcuts the source page documents (same keys, listed separately by Bitwarden). Skipped as not expressible: macOS full-screen mode ('Fn+F', Fn is not a supported modifier in this grammar); 'Autofill the last used card' and 'Autofill the last used identity' (the source says these require the user to create a custom shortcut, no default given); 'Always keep on top: press again to undo the action' and 'Reload' are already single toggles, no separate chord needed.",
+  "note": "Covers the Bitwarden desktop app plus the browser-extension shortcuts the source page documents (same keys, listed separately by Bitwarden). macOS full-screen mode ('Fn+F') is now included, since the chord grammar accepts Fn as a mac-only modifier. Skipped as not expressible: 'Autofill the last used card' and 'Autofill the last used identity' (the source says these require the user to create a custom shortcut, no default given); 'Always keep on top: press again to undo the action' and 'Reload' are already single toggles, no separate chord needed.",
   "actions": [
     {
       "name": "Activate the extension",
@@ -299,6 +299,10 @@
       "windows": {
         "type": "keys",
         "chord": "F11"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Fn+F"
       }
     },
     {

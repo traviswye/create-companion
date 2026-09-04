@@ -15,7 +15,7 @@
   "sources": [
     "https://support.microsoft.com/en-us/office/keyboard-shortcuts-in-word-95ef89dd-7142-4b50-afb2-f762f663ceb2"
   ],
-  "note": "From the Microsoft Support article \"Keyboard shortcuts in Word\", Windows and macOS tabs. Ribbon access keys documented as \"Alt, H, F, O\" are written with the leading Alt folded into the first key (Alt+H, then F, then O), which is how Word accepts them and the only form the chord grammar allows. Where Microsoft lists two equivalent bindings the first is kept. Omitted because the grammar cannot express them: mouse bindings (Ctrl+Scroll / Cmd+Scroll to zoom, Shift+click to extend a selection), plain \"Arrow keys\" entries, numeric-keypad bindings (select the whole table with Alt+5 on the keypad, ANSI character codes), Fn-key variants on a MacBook, the international-character and East Asian IME sections (they all end in \"then the letter\"), the copyright/trademark symbol sequences that need parentheses, and open-ended entries such as \"Alt, Q, then enter the search term\" or \"F8 repeatedly\".",
+  "note": "From the Microsoft Support article \"Keyboard shortcuts in Word\", Windows and macOS tabs. Ribbon access keys documented as \"Alt, H, F, O\" are written with the leading Alt folded into the first key (Alt+H, then F, then O), which is how Word accepts them and the only form the chord grammar allows. Where Microsoft lists two equivalent bindings the first is kept. The MacBook Fn-key alternatives Microsoft documents for page/document navigation (Cmd+Fn+Up/Down/Left/Right in place of Cmd+PageUp/PageDown/Home/End on keyboards with no dedicated Page Up, Page Down, Home or End keys) are now included as their own actions, since the chord grammar accepts Fn as a mac-only modifier. Omitted because the grammar cannot express them: mouse bindings (Ctrl+Scroll / Cmd+Scroll to zoom, Shift+click to extend a selection), plain \"Arrow keys\" entries, numeric-keypad bindings (select the whole table with Alt+5 on the keypad, ANSI character codes), the international-character and East Asian IME sections (they all end in \"then the letter\"), the copyright/trademark symbol sequences that need parentheses, and open-ended entries such as \"Alt, Q, then enter the search term\" or \"F8 repeatedly\".",
   "actions": [
     {
       "name": "Open a document",
@@ -589,6 +589,14 @@
       }
     },
     {
+      "name": "Move the cursor to the top of the next page (MacBook with no dedicated Page Down key)",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Fn+Down"
+      }
+    },
+    {
       "name": "Move the cursor to the top of the previous page",
       "context": "",
       "windows": {
@@ -598,6 +606,14 @@
       "mac": {
         "type": "keys",
         "chord": "Cmd+PageUp"
+      }
+    },
+    {
+      "name": "Move the cursor to the top of the previous page (MacBook with no dedicated Page Up key)",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Fn+Up"
       }
     },
     {
@@ -613,6 +629,14 @@
       }
     },
     {
+      "name": "Move the cursor to the end of the document (MacBook with no dedicated End key)",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Fn+Right"
+      }
+    },
+    {
       "name": "Move the cursor to the beginning of the document",
       "context": "",
       "windows": {
@@ -622,6 +646,14 @@
       "mac": {
         "type": "keys",
         "chord": "Cmd+Home"
+      }
+    },
+    {
+      "name": "Move the cursor to the beginning of the document (MacBook with no dedicated Home key)",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Fn+Left"
       }
     },
     {

@@ -11,7 +11,7 @@
     "https://support.apple.com/en-us/102646",
     "https://support.apple.com/guide/mac-help/mission-control-mh35798/mac"
   ],
-  "note": "Apple writes Command as Cmd, Option as Alt and Control as Ctrl here. The Mac Delete key (backwards delete) is written Backspace, which is the key the chord grammar names. Finder-window shortcuts live in catalog/finder.json. Left out because the chord grammar cannot express them: every Fn shortcut (Fn-A, Fn-C, Fn-D, Fn-E, Fn-H, Fn-N, Fn-Q, Fn-Fn, Fn-Shift-A, Fn-F11, Fn-Delete, Fn with the arrow keys), every Power button and Touch ID combination, the hardware-key combinations (Brightness, Volume, Keyboard Brightness, Mission Control), Command+Command (press twice), Control-Shift held for Dock magnification (modifier-only), the open-ended \"Arrow keys\" and \"Control-Arrow keys\" rows, and every click/double-click/drag shortcut. Keyboard equivalents of the trackpad gestures (Mission Control = swipe up, App Exposé = swipe down, Spaces = swipe left/right, Show desktop, Launchpad) are listed under context Mission Control; Show desktop and Launchpad are F11/F4 on keyboards set to standard function keys and fn+F11 / fn+F4 otherwise (fn is not expressible here).",
+  "note": "Apple writes Command as Cmd, Option as Alt and Control as Ctrl here. The Mac Delete key (backwards delete) is written Backspace, which is the key the chord grammar names. Finder-window shortcuts live in catalog/finder.json. Fn shortcuts are now included (Fn-A, Fn-C, Fn-D, Fn-E, Fn-H, Fn-N, Fn-Q, Fn-Shift-A, Fn-F11, Fn-Delete, Fn with the arrow keys), since the chord grammar accepts Fn as a mac-only modifier. Left out because the chord grammar still cannot express them: Fn-Fn (pressing Fn twice, a bare double-press of the same modifier), every Power button and Touch ID combination, the hardware-key combinations (Brightness, Volume, Keyboard Brightness, Mission Control), Command+Command (press twice), Control-Shift held for Dock magnification (modifier-only), the open-ended \"Arrow keys\" and \"Control-Arrow keys\" rows, and every click/double-click/drag shortcut. Keyboard equivalents of the trackpad gestures (Mission Control = swipe up, App Exposé = swipe down, Spaces = swipe left/right, Show desktop, Launchpad) are listed under context Mission Control; Show desktop and Launchpad are F11/F4 on keyboards set to standard function keys and Fn+F11 / Fn+Shift-A otherwise, both now included above.",
   "actions": [
     {
       "name": "Cut the selected item and copy it to the Clipboard",
@@ -974,6 +974,118 @@
       "mac": {
         "type": "keys",
         "chord": "Ctrl+Cmd+D"
+      }
+    },
+    {
+      "name": "Create a Quick Note",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Fn+Q"
+      }
+    },
+    {
+      "name": "Show the Character Viewer, from which you can choose emoji and other symbols (Fn-E)",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Fn+E"
+      }
+    },
+    {
+      "name": "Show or hide the Dock (Fn-A)",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Fn+A"
+      }
+    },
+    {
+      "name": "Show or hide Control Center",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Fn+C"
+      }
+    },
+    {
+      "name": "Start or stop dictation",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Fn+D"
+      }
+    },
+    {
+      "name": "Show or hide Notification Center",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Fn+N"
+      }
+    },
+    {
+      "name": "Show or hide Apps (macOS Tahoe or later) or Launchpad (earlier versions of macOS)",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Fn+Shift+A"
+      }
+    },
+    {
+      "name": "Show the desktop (Fn-H)",
+      "context": "Mission Control",
+      "mac": {
+        "type": "keys",
+        "chord": "Fn+H"
+      }
+    },
+    {
+      "name": "Show the desktop (Fn-F11)",
+      "context": "Mission Control",
+      "mac": {
+        "type": "keys",
+        "chord": "Fn+F11"
+      }
+    },
+    {
+      "name": "Page Up: scroll up one page",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Fn+Up"
+      }
+    },
+    {
+      "name": "Page Down: scroll down one page",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Fn+Down"
+      }
+    },
+    {
+      "name": "Home: scroll to the beginning of a document",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Fn+Left"
+      }
+    },
+    {
+      "name": "End: scroll to the end of a document",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Fn+Right"
+      }
+    },
+    {
+      "name": "Forward delete on keyboards that don't have a Forward Delete key",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Fn+Delete"
       }
     }
   ],

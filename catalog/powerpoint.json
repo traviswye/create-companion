@@ -16,7 +16,7 @@
     "https://support.microsoft.com/en-us/office/use-keyboard-shortcuts-to-create-powerpoint-presentations-ebb3d20e-dcd4-444f-a38e-bb5c5ed180f4",
     "https://support.microsoft.com/en-us/office/use-keyboard-shortcuts-to-deliver-powerpoint-presentations-1524ffce-bd2a-45f4-9a7f-f18b992b93a0"
   ],
-  "note": "From the two Microsoft Support articles \"Use keyboard shortcuts to create PowerPoint presentations\" and \"Use keyboard shortcuts to deliver PowerPoint presentations\", Windows and macOS tabs of each. Everything from the delivery article carries the context Slide show, Rehearsal or Presenter View. Ribbon access keys documented as \"Alt, H, L\" are written with the leading Alt folded into the first key, which is how PowerPoint accepts them and the only form the chord grammar allows. Where Microsoft lists two equivalent bindings the first is kept. Omitted because the grammar cannot express them: mouse bindings (Ctrl+Drag to duplicate, Control+click for the shortcut menu, holding both mouse buttons to return to the first slide), plain \"Arrow keys\" entries, numeric-keypad-only bindings in the Selection pane, and open-ended entries such as \"type the slide number, then press Enter\".",
+  "note": "From the two Microsoft Support articles \"Use keyboard shortcuts to create PowerPoint presentations\" and \"Use keyboard shortcuts to deliver PowerPoint presentations\", Windows and macOS tabs of each. Everything from the delivery article carries the context Slide show, Rehearsal or Presenter View. Ribbon access keys documented as \"Alt, H, L\" are written with the leading Alt folded into the first key, which is how PowerPoint accepts them and the only form the chord grammar allows. Where Microsoft lists two equivalent bindings the first is kept. The Mac Fn-key shortcuts Microsoft documents (Fn+Delete, Option+Fn+Delete, Fn+Left/Right as text-navigation and Slide-show alternatives to Home/End) are now included, since the chord grammar accepts Fn as a mac-only modifier. Omitted because the grammar cannot express them: mouse bindings (Ctrl+Drag to duplicate, Control+click for the shortcut menu, holding both mouse buttons to return to the first slide), plain \"Arrow keys\" entries, numeric-keypad-only bindings in the Selection pane, and open-ended entries such as \"type the slide number, then press Enter\".",
   "actions": [
     {
       "name": "Create new presentation",
@@ -732,6 +732,10 @@
       "windows": {
         "type": "keys",
         "chord": "Delete"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Fn+Delete"
       }
     },
     {
@@ -740,6 +744,10 @@
       "windows": {
         "type": "keys",
         "chord": "Ctrl+Delete"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Fn+Delete"
       }
     },
     {
@@ -823,6 +831,14 @@
       }
     },
     {
+      "name": "Move to the end of a line (MacBook with no dedicated End key)",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Fn+Right"
+      }
+    },
+    {
       "name": "Move to the beginning of a line",
       "context": "",
       "windows": {
@@ -832,6 +848,14 @@
       "mac": {
         "type": "keys",
         "chord": "Home"
+      }
+    },
+    {
+      "name": "Move to the beginning of a line (MacBook with no dedicated Home key)",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Fn+Left"
       }
     },
     {
@@ -2002,6 +2026,10 @@
       "windows": {
         "type": "keys",
         "chord": "Home"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Fn+Left"
       }
     },
     {
@@ -2010,6 +2038,10 @@
       "windows": {
         "type": "keys",
         "chord": "End"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Fn+Right"
       }
     },
     {

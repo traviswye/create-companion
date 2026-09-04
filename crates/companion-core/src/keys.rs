@@ -18,7 +18,8 @@ pub struct ModifierSet {
     pub alt: bool,
     /// Windows key / Command key.
     pub meta: bool,
-    /// macOS Fn / Globe key. Actions only; never a transport namespace.
+    /// macOS Fn / Globe key. Sendable to apps on macOS; as a transport
+    /// namespace it needs firmware support (unverified) and a macOS host.
     pub fn_key: bool,
 }
 

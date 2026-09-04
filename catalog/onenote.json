@@ -15,7 +15,7 @@
   "sources": [
     "https://support.microsoft.com/en-us/office/keyboard-shortcuts-in-onenote-44b8b3f4-c274-4bcc-a089-e80fdcc87950"
   ],
-  "note": "From the Microsoft Support article \"Keyboard shortcuts in OneNote\", Windows and macOS tabs (the desktop OneNote tabs; the OneNote for Windows 10 / universal-app and web tabs of the same article are not included). Where Microsoft lists two equivalent bindings the first is kept. Omitted because the grammar cannot express them: mouse bindings, plain \"Arrow keys\" entries, numeric-keypad-only bindings, and open-ended entries such as \"type a page name, then press Enter\".",
+  "note": "From the Microsoft Support article \"Keyboard shortcuts in OneNote\", Windows and macOS tabs (the desktop OneNote tabs; the OneNote for Windows 10 / universal-app and web tabs of the same article are not included). Where Microsoft lists two equivalent bindings the first is kept, except that the Mac Fn-key alternatives ('Fn+Delete' for delete-character-right and 'Fn+Option+Delete' for delete-word-right) are now included as their own actions alongside the previously kept second alternative, since the chord grammar accepts Fn as a mac-only modifier. Omitted because the grammar cannot express them: mouse bindings, plain \"Arrow keys\" entries, numeric-keypad-only bindings, and open-ended entries such as \"type a page name, then press Enter\".",
   "actions": [
     {
       "name": "Open a new OneNote window",
@@ -1834,6 +1834,14 @@
       }
     },
     {
+      "name": "Delete the character to the right of the cursor",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Fn+Delete"
+      }
+    },
+    {
       "name": "Delete the word to the left of the cursor",
       "context": "",
       "mac": {
@@ -1847,6 +1855,14 @@
       "mac": {
         "type": "keys",
         "chord": "Alt+Delete"
+      }
+    },
+    {
+      "name": "Delete the word to the right of the cursor (Fn+Option+Delete)",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Fn+Delete"
       }
     },
     {

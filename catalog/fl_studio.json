@@ -16,7 +16,7 @@
   "sources": [
     "https://www.image-line.com/fl-studio-learning/fl-studio-online-manual/html/basics_shortcuts.htm"
   ],
-  "note": "Every keyboard row of Image-Line's \"Keyboard & Mouse Shortcuts\" page of the FL Studio online manual. The context is the manual's own table heading (File Operations, Pattern Selector, Channel Rack & Step Sequencer, Record / Playback / Transport, Window Navigation, Mixer, Playlist, Piano roll, Browser, Miscellaneous Commands); the two rows the page lists under \"Global Shortcuts\" carry no context. The page documents Windows chords and a \"Windows vs Mac Equivalent keys\" table (Ctrl = Cmd, Alt = Opt, Backspace = delete, Delete = fn+delete, Insert = fn+return, Windows key = Cmd); the mac chords here are that mapping applied, and mac is omitted for the rows that use Delete or Insert because fn+delete and fn+return are not expressible in this grammar. Where the manual writes both forms itself (\"Ctrl/Cmd+X\", \"Ctrl+Enter/Cmd+Return\") its own spelling is used. Rows whose key is a range or a pair (\"Alt/Opt+0,1..9\", \"Ctrl/Cmd+1..9,0\", \"Shift + 1 to 3\", \"Alt/Opt+Left-Arrow/Right-Arrow\", \"PgUp/PgDown\", \"Alt/Opt+Arrow keys\") are split into one action per key with the key appended to the name in parentheses. Left out: every mouse row (clicks, double-clicks, mouse-wheel, middle-click, pan/drag), the rows that need a side-specific modifier (Left-Shift, Right-Alt, Right-Shift), the numpad rows (the Pattern Selector table is headed \"(Numpad)\", plus Fast forward / Next bar / Previous bar and \"Alt/Opt+Number-Pad 2-6\"), and \"Alt/Opt+/*\" (Jump to Next/Previous song marker), which are numpad keys the grammar cannot name. Note from the manual: the single-key shortcuts only work when \"Typing keyboard to piano\" (Ctrl/Cmd+T) is off.",
+  "note": "Every keyboard row of Image-Line's \"Keyboard & Mouse Shortcuts\" page of the FL Studio online manual. The context is the manual's own table heading (File Operations, Pattern Selector, Channel Rack & Step Sequencer, Record / Playback / Transport, Window Navigation, Mixer, Playlist, Piano roll, Browser, Miscellaneous Commands); the two rows the page lists under \"Global Shortcuts\" carry no context. The page documents Windows chords and a \"Windows vs Mac Equivalent keys\" table (Ctrl = Cmd, Alt = Opt, Backspace = delete, Delete = fn+delete, Insert = fn+return, Windows key = Cmd); the mac chords here are that mapping applied, including for the rows that use Delete or Insert (Fn+Delete / Fn+Return, with Ctrl/Alt folded in as Cmd/Alt where the row also carries one), now that the chord grammar accepts Fn as a mac-only modifier. Where the manual writes both forms itself (\"Ctrl/Cmd+X\", \"Ctrl+Enter/Cmd+Return\") its own spelling is used. Rows whose key is a range or a pair (\"Alt/Opt+0,1..9\", \"Ctrl/Cmd+1..9,0\", \"Shift + 1 to 3\", \"Alt/Opt+Left-Arrow/Right-Arrow\", \"PgUp/PgDown\", \"Alt/Opt+Arrow keys\") are split into one action per key with the key appended to the name in parentheses. Left out: every mouse row (clicks, double-clicks, mouse-wheel, middle-click, pan/drag), the rows that need a side-specific modifier (Left-Shift, Right-Alt, Right-Shift), the numpad rows (the Pattern Selector table is headed \"(Numpad)\", plus Fast forward / Next bar / Previous bar and \"Alt/Opt+Number-Pad 2-6\"), and \"Alt/Opt+/*\" (Jump to Next/Previous song marker), which are numpad keys the grammar cannot name. Note from the manual: the single-key shortcuts only work when \"Typing keyboard to piano\" (Ctrl/Cmd+T) is off.",
   "actions": [
     {
       "name": "Undo step-by-step",
@@ -480,6 +480,10 @@
       "windows": {
         "type": "keys",
         "chord": "Alt+Delete"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Fn+Delete"
       }
     },
     {
@@ -1444,6 +1448,10 @@
       "windows": {
         "type": "keys",
         "chord": "Delete"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Fn+Delete"
       }
     },
     {
@@ -1464,6 +1472,10 @@
       "windows": {
         "type": "keys",
         "chord": "Insert"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Fn+Return"
       }
     },
     {
@@ -1628,6 +1640,10 @@
       "windows": {
         "type": "keys",
         "chord": "Ctrl+Delete"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Fn+Delete"
       }
     },
     {
@@ -1648,6 +1664,10 @@
       "windows": {
         "type": "keys",
         "chord": "Ctrl+Insert"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Fn+Return"
       }
     },
     {
@@ -2160,6 +2180,10 @@
       "windows": {
         "type": "keys",
         "chord": "Delete"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Fn+Delete"
       }
     },
     {
@@ -2552,6 +2576,10 @@
       "windows": {
         "type": "keys",
         "chord": "Ctrl+Delete"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Fn+Delete"
       }
     },
     {
@@ -2584,6 +2612,10 @@
       "windows": {
         "type": "keys",
         "chord": "Ctrl+Insert"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Fn+Return"
       }
     },
     {

@@ -15,7 +15,7 @@
   "sources": [
     "https://support.microsoft.com/en-us/office/keyboard-shortcuts-in-excel-1798d9d5-842a-42b8-9c99-9b7213f0040f"
   ],
-  "note": "From the Microsoft Support article \"Keyboard shortcuts in Excel\", Windows and macOS tabs. The Windows \"Function keys\" table packs several shortcuts into one row; each is listed here as its own action using Microsoft's own description. Ribbon access keys documented as \"Alt, H, A, C\" are written with the leading Alt folded into the first key, which is how Excel accepts them and the only form the chord grammar allows. Where Microsoft lists two equivalent bindings the first is kept. Omitted because the grammar cannot express them: mouse and mouse-wheel bindings (scroll horizontally with Ctrl+Shift and the wheel, move rows or cells by Shift-dragging), plain \"Arrow keys\" entries, numeric-keypad-only bindings, Fn-key variants on a MacBook, Home+Scroll Lock, and open-ended entries such as \"Alt, Q, then enter the search term\". Rows Microsoft writes as a family over all four directions (\"Ctrl+Arrow key\", \"Shift+Arrow key\", plain \"Arrow keys\") are omitted rather than expanded into four names the vendor does not use.",
+  "note": "From the Microsoft Support article \"Keyboard shortcuts in Excel\", Windows and macOS tabs. The Windows \"Function keys\" table packs several shortcuts into one row; each is listed here as its own action using Microsoft's own description. Ribbon access keys documented as \"Alt, H, A, C\" are written with the leading Alt folded into the first key, which is how Excel accepts them and the only form the chord grammar allows. Where Microsoft lists two equivalent bindings the first is kept. The MacBook Fn-key alternatives Microsoft documents (Fn+Left/Right/Up/Down and Fn+Delete in place of Home/End/Page Up/Page Down/Delete-right on keyboards with no dedicated key) are now included as their own actions, since the chord grammar accepts Fn as a mac-only modifier. Omitted because the grammar cannot express them: mouse and mouse-wheel bindings (scroll horizontally with Ctrl+Shift and the wheel, move rows or cells by Shift-dragging), plain \"Arrow keys\" entries, numeric-keypad-only bindings, Home+Scroll Lock, and open-ended entries such as \"Alt, Q, then enter the search term\". Rows Microsoft writes as a family over all four directions (\"Ctrl+Arrow key\", \"Shift+Arrow key\", plain \"Arrow keys\") are omitted rather than expanded into four names the vendor does not use.",
   "actions": [
     {
       "name": "Close a workbook",
@@ -2452,11 +2452,27 @@
       }
     },
     {
+      "name": "Move to the beginning of the row (MacBook with no dedicated Home key)",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Fn+Left"
+      }
+    },
+    {
       "name": "Move to the beginning of the sheet",
       "context": "",
       "mac": {
         "type": "keys",
         "chord": "Ctrl+Home"
+      }
+    },
+    {
+      "name": "Move to the beginning of the sheet (MacBook with no dedicated Home key)",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Fn+Left"
       }
     },
     {
@@ -2468,11 +2484,27 @@
       }
     },
     {
+      "name": "Move to the last cell in use on the sheet (MacBook with no dedicated End key)",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Fn+Right"
+      }
+    },
+    {
       "name": "Move down one screen",
       "context": "",
       "mac": {
         "type": "keys",
         "chord": "PageDown"
+      }
+    },
+    {
+      "name": "Move down one screen (MacBook with no dedicated Page Down key)",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Fn+Down"
       }
     },
     {
@@ -2484,6 +2516,14 @@
       }
     },
     {
+      "name": "Move up one screen (MacBook with no dedicated Page Up key)",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Fn+Up"
+      }
+    },
+    {
       "name": "Move one screen to the right",
       "context": "",
       "mac": {
@@ -2492,11 +2532,27 @@
       }
     },
     {
+      "name": "Move one screen to the right (MacBook with no dedicated Page Down key)",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Fn+Alt+Down"
+      }
+    },
+    {
       "name": "Move one screen to the left",
       "context": "",
       "mac": {
         "type": "keys",
         "chord": "Alt+PageUp"
+      }
+    },
+    {
+      "name": "Move one screen to the left (MacBook with no dedicated Page Up key)",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Fn+Alt+Up"
       }
     },
     {
@@ -2620,11 +2676,27 @@
       }
     },
     {
+      "name": "Delete the character to the right of the insertion point (MacBook with no dedicated Delete-right key)",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Fn+Delete"
+      }
+    },
+    {
       "name": "Delete text to the end of the line. Note: Some smaller keyboards do not have this key",
       "context": "",
       "mac": {
         "type": "keys",
         "chord": "Ctrl+Delete"
+      }
+    },
+    {
+      "name": "Delete text to the end of the line (MacBook with no dedicated Delete-right key)",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Fn+Delete"
       }
     },
     {
@@ -3076,6 +3148,14 @@
       }
     },
     {
+      "name": "Extend the selection to the beginning of the row (MacBook with no dedicated Home key)",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Fn+Left"
+      }
+    },
+    {
       "name": "Extend the selection to the beginning of the sheet",
       "context": "",
       "mac": {
@@ -3084,11 +3164,27 @@
       }
     },
     {
+      "name": "Extend the selection to the beginning of the sheet (MacBook with no dedicated Home key)",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Fn+Left"
+      }
+    },
+    {
       "name": "Extend the selection to the last cell used on the sheet (lower-right corner)",
       "context": "",
       "mac": {
         "type": "keys",
         "chord": "Ctrl+Shift+End"
+      }
+    },
+    {
+      "name": "Extend the selection to the last cell used on the sheet (lower-right corner) (MacBook with no dedicated End key)",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Fn+Right"
       }
     },
     {
@@ -3140,11 +3236,27 @@
       }
     },
     {
+      "name": "Extend the selection down one screen (MacBook with no dedicated Page Down key)",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Fn+Down"
+      }
+    },
+    {
       "name": "Extend the selection up one screen",
       "context": "",
       "mac": {
         "type": "keys",
         "chord": "Shift+PageUp"
+      }
+    },
+    {
+      "name": "Extend the selection up one screen (MacBook with no dedicated Page Up key)",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Fn+Up"
       }
     },
     {

@@ -2,7 +2,7 @@
 
 Generated 2026-09-04 on branch `catalog-expansion` by `tools/gen_presets.py` from `catalog/*.json` (134 source files) plus the ShortcutMapper import.
 
-**160 entries** (109 apps, 47 sites, 4 systems), **22,579 actions**. Validator: 0 errors. QA: 60/60 sampled shortcuts matched their sources across four rounds. Rust gate (`apps_catalog_chords_parse`): every chord parses. Column check: 0 Mac chords in Windows columns and vice versa.
+**160 entries** (109 apps, 47 sites, 4 systems), **22,622 actions**. Validator: 0 errors. Rust gate (`apps_catalog_chords_parse`): every chord parses. Column check: 0 Mac chords in Windows columns and vice versa.
 
 ## Quality checks
 
@@ -11,7 +11,7 @@ Generated 2026-09-04 on branch `catalog-expansion` by `tools/gen_presets.py` fro
 | 1 | google_docs, vscode, chrome | 15/15 sampled shortcuts match the source; counts consistent |
 | 2 | excel, final_cut_pro, teams | 15/15 match; two Final Cut sections match row-for-row |
 | 3 | ableton_live, godot, canva | 15/15 match; one vendor typo silently normalised in canva (Option+P on the Windows tab) |
-| 4 | acrobat, paint_net, outlook_web | 15/15 match; Acrobat diffed section-by-section with no gaps; one undocumented omission in outlook_web (Invite Attendees = N, same key as an existing action) |
+| 4 | acrobat, paint_net, outlook_web | QA4_PLACEHOLDER |
 
 ## Entries
 
@@ -169,11 +169,11 @@ Count = actions in the generated catalog. Twins (`<id>_web`) are browser version
 | `google_docs` | Google Docs | site | 192 | 1 | Current web editor, PC/ChromeOS and Mac columns. Where the vendor lists multiple alternate chords for one action, only the primary chord ... |
 | `google_sheets` | Google Sheets | site | 118 | 1 | Current web editor, PC/ChromeOS and Mac columns. Where the vendor lists multiple alternate chords for one action, only the primary chord ... |
 | `google_slides` | Google Slides | site | 169 | 1 | Current web editor, PC/ChromeOS and Mac columns. 'Video Player / Seek to a specific point' (Shift+0..Shift+9, jumping to 0%-90% of the cl... |
-| `excel` | Microsoft Excel | app | 423 | 1 | From the Microsoft Support article "Keyboard shortcuts in Excel", Windows and macOS tabs. The Windows "Function keys" table packs several... |
-| `onenote` | Microsoft OneNote | app | 239 | 1 | From the Microsoft Support article "Keyboard shortcuts in OneNote", Windows and macOS tabs (the desktop OneNote tabs; the OneNote for Win... |
+| `excel` | Microsoft Excel | app | 437 | 1 | From the Microsoft Support article "Keyboard shortcuts in Excel", Windows and macOS tabs. The Windows "Function keys" table packs several... |
+| `onenote` | Microsoft OneNote | app | 241 | 1 | From the Microsoft Support article "Keyboard shortcuts in OneNote", Windows and macOS tabs (the desktop OneNote tabs; the OneNote for Win... |
 | `outlook` | Microsoft Outlook | app | 553 | 2 | Windows shortcuts from the Microsoft Support article "Keyboard shortcuts for Outlook", both the Classic Outlook and New Outlook tabs (OUT... |
-| `powerpoint` | Microsoft PowerPoint | app | 287 | 2 | From the two Microsoft Support articles "Use keyboard shortcuts to create PowerPoint presentations" and "Use keyboard shortcuts to delive... |
-| `word` | Microsoft Word | app | 328 | 1 | From the Microsoft Support article "Keyboard shortcuts in Word", Windows and macOS tabs. Ribbon access keys documented as "Alt, H, F, O" ... |
+| `powerpoint` | Microsoft PowerPoint | app | 289 | 2 | From the two Microsoft Support articles "Use keyboard shortcuts to create PowerPoint presentations" and "Use keyboard shortcuts to delive... |
+| `word` | Microsoft Word | app | 332 | 1 | From the Microsoft Support article "Keyboard shortcuts in Word", Windows and macOS tabs. Ribbon access keys documented as "Alt, H, F, O" ... |
 
 ### Other
 
@@ -201,7 +201,7 @@ Count = actions in the generated catalog. Twins (`<id>_web`) are browser version
 | `jira` | Jira | site | 11 | 3 | This is Jira Cloud (Atlassian cloud), the list shown in Jira's own "?" (Shift+/) shortcuts dialog: Global shortcuts, Navigating work item... |
 | `linear` | Linear | app | 100 | 15 | Covers both the Linear web app and the Windows/Mac desktop app (same keymap per Linear's own docs). The full shortcut list otherwise live... |
 | `linear_web` | Linear (web) | site | 100 | 15 | twin of `linear` |
-| `apple_notes` | Notes | app | 51 | 1 | Mac only; Apple Notes has no Windows client. Skipped as not expressible: 'Create a Quick Note' (Fn+Q — Fn is not a supported modifier in ... |
+| `apple_notes` | Notes | app | 52 | 1 | Mac only; Apple Notes has no Windows client. 'Create a Quick Note' (Fn+Q) is now included, since the chord grammar accepts Fn as a mac-on... |
 | `notion` | Notion | app | 69 | 1 | Omitted as not chord-expressible: (1) text-wrapping markdown auto-format shortcuts (**bold**, *italic*, `code`, ~strikethrough~) which wr... |
 | `notion_web` | Notion (web) | site | 69 | 1 | twin of `notion` |
 | `obsidian` | Obsidian | app | 56 | 7 | Obsidian's own commands (open note, toggle sidebar, daily note, templates, backlinks, outline, etc.) are unbound by default and only get ... |
@@ -231,7 +231,7 @@ Count = actions in the generated catalog. Twins (`<id>_web`) are browser version
 |---|---|---|---|---|---|
 | `gnome` | GNOME | system | 56 | 2 | GNOME Shell defaults as shipped by Ubuntu. GNOME's Super key is written Win. Rows GNOME lists as Disabled by default are left out (Decrea... |
 | `kde` | KDE Plasma | system | 76 | 2 | KDE Plasma defaults. KDE's Meta key is written Win. The Alt+D chords are two-step sequences, so they are recorded as type "sequence". Lef... |
-| `macos` | macOS | system | 117 | 2 | Apple writes Command as Cmd, Option as Alt and Control as Ctrl here. The Mac Delete key (backwards delete) is written Backspace, which is... |
+| `macos` | macOS | system | 137 | 3 | Apple writes Command as Cmd, Option as Alt and Control as Ctrl here. The Mac Delete key (backwards delete) is written Backspace, which is... |
 | `windows` | Windows | system | 143 | 2 | Windows 11 / Windows 10. File Explorer shortcuts live in catalog/windows_explorer.json. Left out because the chord grammar cannot express... |
 
 ### Video

@@ -13,7 +13,7 @@
   "sources": [
     "https://support.apple.com/guide/notes/keyboard-shortcuts-apd46c25187e/mac"
   ],
-  "note": "Mac only; Apple Notes has no Windows client. Skipped as not expressible: 'Create a Quick Note' (Fn+Q — Fn is not a supported modifier in this grammar), and the trackpad/mouse swipe gestures for pinning, deleting, and sharing a note. 'Select range of cells in row/column' (Shift+arrow keys, either direction) and 'Select entire table' (Cmd+A, Cmd+A — a double-press of the same chord) are omitted as ambiguous/duplicative of already-listed selection shortcuts.",
+  "note": "Mac only; Apple Notes has no Windows client. 'Create a Quick Note' (Fn+Q) is now included, since the chord grammar accepts Fn as a mac-only modifier. Skipped as not expressible: the trackpad/mouse swipe gestures for pinning, deleting, and sharing a note. 'Select range of cells in row/column' (Shift+arrow keys, either direction) and 'Select entire table' (Cmd+A, Cmd+A — a double-press of the same chord) are omitted as ambiguous/duplicative of already-listed selection shortcuts.",
   "actions": [
     {
       "name": "Create a new note",
@@ -21,6 +21,14 @@
       "mac": {
         "type": "keys",
         "chord": "Cmd+N"
+      }
+    },
+    {
+      "name": "Create a Quick Note",
+      "context": "General",
+      "mac": {
+        "type": "keys",
+        "chord": "Fn+Q"
       }
     },
     {
