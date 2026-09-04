@@ -1,0 +1,60 @@
+{
+  "id": "whatsapp",
+  "name": "WhatsApp Desktop",
+  "kind": "app",
+  "category": "Communication",
+  "match": {
+    "windows_exe": ["WhatsApp.exe"],
+    "macos_bundle": ["net.whatsapp.WhatsApp", "WhatsApp"],
+    "window_title": []
+  },
+  "sources": [
+    "https://faq.whatsapp.com/6204576529560565/?cms_platform=windows-desktop",
+    "https://faq.whatsapp.com/6204576529560565/?cms_platform=mac-desktop"
+  ],
+  "note": "From the official WhatsApp Help Center 'About keyboard shortcuts' article, current as of 2026-09, using its Windows and Mac tabs (the article also has a separate 'Web' tab for the browser version, which was not used here since this entry targets the desktop app). Some actions are documented with matching wording on both platforms and are merged into one entry with both 'windows' and 'mac' chords (New chat, New group chat, Next/Previous chat, Settings, Zoom in/out/Reset zoom, and the two search actions, where Windows' 'Search' / 'Search chat' were matched to Mac's 'Search chats/calls/status' / 'Search messages in chat' by function). Other actions are kept platform-specific because the two docs describe them differently enough to not be confidently the same feature: Windows' 'Archive chat' (an action on the current chat) vs Mac's 'Archived chats' (opens the archived-chats list); and Windows' 'Close chat' (Esc) vs Mac's 'Hide chat' (Cmd+Shift+W). 'Mute', 'Pin chat', and most message/panel/PTT shortcuts are Windows-only, and 'Mute/Unmute during call' and camera toggle are Mac-only, per what each tab documents — no Mac or Windows equivalent is implied where the other platform's tab is simply silent on it. Skipped as not expressible: 'Open chat' (Ctrl+1..9, Windows), a range pattern rather than one fixed chord, matching how numbered-item shortcuts are skipped in other catalog entries. 'Interact with an incoming call notification while WhatsApp for Windows is minimized' (Win+Shift+V) comes from a footnote in the Windows tab rather than its shortcut table, but is a real fixed chord so it is included.",
+  "actions": [
+    { "name": "New chat", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Alt+N" }, "mac": { "type": "keys", "chord": "Cmd+N" } },
+    { "name": "New group chat", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Shift+N" }, "mac": { "type": "keys", "chord": "Cmd+Shift+N" } },
+    { "name": "Next chat", "context": "", "windows": { "type": "keys", "chord": "Ctrl+]" }, "mac": { "type": "keys", "chord": "Cmd+Shift+]" } },
+    { "name": "Previous chat", "context": "", "windows": { "type": "keys", "chord": "Ctrl+[" }, "mac": { "type": "keys", "chord": "Cmd+Shift+[" } },
+    { "name": "Close chat", "context": "", "windows": { "type": "keys", "chord": "Esc" } },
+    { "name": "Hide chat", "context": "", "mac": { "type": "keys", "chord": "Cmd+Shift+W" } },
+    { "name": "Search messages in chat", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Shift+F" }, "mac": { "type": "keys", "chord": "Cmd+F" } },
+    { "name": "Search chats, calls, and status", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Alt+/" }, "mac": { "type": "keys", "chord": "Cmd+Alt+F" } },
+    { "name": "Extended search", "context": "", "windows": { "type": "keys", "chord": "Alt+K" } },
+    { "name": "Mark as unread", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Shift+U" } },
+    { "name": "Mute", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Shift+M" } },
+    { "name": "Archive chat", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Shift+A" } },
+    { "name": "Archived chats", "context": "", "mac": { "type": "keys", "chord": "Cmd+Shift+E" } },
+    { "name": "Pin chat", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Alt+Shift+P" } },
+    { "name": "Block chat", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Shift+B" } },
+    { "name": "Profile and About", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Alt+P" } },
+    { "name": "Open chat info", "context": "", "windows": { "type": "keys", "chord": "Alt+I" } },
+    { "name": "Settings", "context": "", "windows": { "type": "keys", "chord": "Alt+S" }, "mac": { "type": "keys", "chord": "Cmd+," } },
+    { "name": "Lock app", "context": "", "windows": { "type": "keys", "chord": "Alt+L" } },
+    { "name": "Emoji panel", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Alt+E" } },
+    { "name": "GIF panel", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Alt+G" } },
+    { "name": "Sticker panel", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Alt+S" } },
+    { "name": "Open attachment dropdown", "context": "", "windows": { "type": "keys", "chord": "Alt+A" } },
+    { "name": "Reply", "context": "Message focused", "windows": { "type": "keys", "chord": "Alt+R" } },
+    { "name": "Reply privately", "context": "Message focused", "windows": { "type": "keys", "chord": "Ctrl+Alt+R" } },
+    { "name": "Forward", "context": "Message focused", "windows": { "type": "keys", "chord": "Ctrl+Alt+D" } },
+    { "name": "Star message", "context": "Message focused", "windows": { "type": "keys", "chord": "Alt+8" } },
+    { "name": "Edit last message", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Up" } },
+    { "name": "Start PTT", "context": "Message compose box", "windows": { "type": "keys", "chord": "Ctrl+Alt+Shift+R" } },
+    { "name": "Pause PTT", "context": "Message compose box", "windows": { "type": "keys", "chord": "Ctrl+Enter" } },
+    { "name": "Increase speed of the selected voice message", "context": "Voice message selected", "windows": { "type": "keys", "chord": "Shift+." } },
+    { "name": "Zoom in", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Plus" }, "mac": { "type": "keys", "chord": "Cmd+Plus" } },
+    { "name": "Zoom out", "context": "", "windows": { "type": "keys", "chord": "Ctrl+-" }, "mac": { "type": "keys", "chord": "Cmd+-" } },
+    { "name": "Reset zoom", "context": "", "windows": { "type": "keys", "chord": "Ctrl+0" }, "mac": { "type": "keys", "chord": "Cmd+0" } },
+    { "name": "Mute/Unmute during call", "context": "During a call", "mac": { "type": "keys", "chord": "Cmd+Ctrl+M" } },
+    { "name": "Toggle camera on/off during video call", "context": "During a call", "mac": { "type": "keys", "chord": "Cmd+Ctrl+V" } },
+    { "name": "Interact with an incoming call notification", "context": "App minimized", "windows": { "type": "keys", "chord": "Win+Shift+V" } }
+  ],
+  "defaults": {
+    "TUNE_CW": { "name": "Next chat", "action": { "type": "keys", "chord": "Ctrl+]" }, "accel": "medium" },
+    "TUNE_CCW": { "name": "Previous chat", "action": { "type": "keys", "chord": "Ctrl+[" }, "accel": "medium" },
+    "TUNE_TAP_1F": { "name": "Mute", "action": { "type": "keys", "chord": "Ctrl+Shift+M" } }
+  }
+}

@@ -1,0 +1,2036 @@
+{
+  "id": "onenote",
+  "name": "Microsoft OneNote",
+  "kind": "app",
+  "category": "Office",
+  "match": {
+    "windows_exe": [
+      "ONENOTE.EXE"
+    ],
+    "macos_bundle": [
+      "com.microsoft.onenote.mac"
+    ],
+    "window_title": []
+  },
+  "sources": [
+    "https://support.microsoft.com/en-us/office/keyboard-shortcuts-in-onenote-44b8b3f4-c274-4bcc-a089-e80fdcc87950"
+  ],
+  "note": "From the Microsoft Support article \"Keyboard shortcuts in OneNote\", Windows and macOS tabs (the desktop OneNote tabs; the OneNote for Windows 10 / universal-app and web tabs of the same article are not included). Where Microsoft lists two equivalent bindings the first is kept. Omitted because the grammar cannot express them: mouse bindings, plain \"Arrow keys\" entries, numeric-keypad-only bindings, and open-ended entries such as \"type a page name, then press Enter\".",
+  "actions": [
+    {
+      "name": "Open a new OneNote window",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+M"
+      }
+    },
+    {
+      "name": "Create a Quick Note",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+M"
+      }
+    },
+    {
+      "name": "Dock the OneNote window",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+D"
+      }
+    },
+    {
+      "name": "Undo the previous action",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Z"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Z"
+      }
+    },
+    {
+      "name": "Redo the previous action, if possible",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Y"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Y"
+      }
+    },
+    {
+      "name": "Select all items on the current page",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+A"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+A"
+      }
+    },
+    {
+      "name": "Cut the selected text or item",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+X"
+      }
+    },
+    {
+      "name": "Copy the selected text or item to the clipboard",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+C"
+      }
+    },
+    {
+      "name": "Paste the contents of the clipboard",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+V"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+V"
+      }
+    },
+    {
+      "name": "Paste text only (Paste without formatting)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+V"
+      }
+    },
+    {
+      "name": "Move to the beginning of the line",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Home"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Left"
+      }
+    },
+    {
+      "name": "Move to the end of the line",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "End"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Right"
+      }
+    },
+    {
+      "name": "Move one word to the left",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Left"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Left"
+      }
+    },
+    {
+      "name": "Move one word to the right",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Right"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Right"
+      }
+    },
+    {
+      "name": "Delete one character to the left",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Backspace"
+      }
+    },
+    {
+      "name": "Delete one character to the right",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Delete"
+      }
+    },
+    {
+      "name": "Delete one word to the left",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Backspace"
+      }
+    },
+    {
+      "name": "Delete one word to the right",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Delete"
+      }
+    },
+    {
+      "name": "Insert a line break without starting a new paragraph",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Enter"
+      }
+    },
+    {
+      "name": "Check spelling",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F7"
+      }
+    },
+    {
+      "name": "Open the thesaurus for the currently selected word",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+F7"
+      }
+    },
+    {
+      "name": "Display the context menu for the currently focused object",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+F10"
+      }
+    },
+    {
+      "name": "Perform the action suggested on the Information Bar when it appears at the top of a page",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+W"
+      }
+    },
+    {
+      "name": "Play the selected audio recording",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+P"
+      }
+    },
+    {
+      "name": "Stop audio recording playback",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+S"
+      }
+    },
+    {
+      "name": "Skip the current audio recording backward by 10 seconds",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Y"
+      }
+    },
+    {
+      "name": "Skip the current audio recording forward by 10 seconds",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+U"
+      }
+    },
+    {
+      "name": "Highlight the selected text",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+H"
+      }
+    },
+    {
+      "name": "Insert a hyperlink",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+K"
+      }
+    },
+    {
+      "name": "Copy the formatting of the selected text (Format Painter)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+C"
+      }
+    },
+    {
+      "name": "Paste the formatting to the selected text (Format Painter)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+V"
+      }
+    },
+    {
+      "name": "Open a hyperlink",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Enter"
+      }
+    },
+    {
+      "name": "Apply or remove bold formatting",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+B"
+      }
+    },
+    {
+      "name": "Apply or remove italics formatting",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+I"
+      }
+    },
+    {
+      "name": "Apply or remove underline formatting",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+U"
+      }
+    },
+    {
+      "name": "Apply or remove strikethrough formatting",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+-"
+      }
+    },
+    {
+      "name": "Apply or remove superscript formatting",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Plus"
+      }
+    },
+    {
+      "name": "Apply or remove subscript formatting",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+-"
+      }
+    },
+    {
+      "name": "Apply or remove bulleted list formatting",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+."
+      }
+    },
+    {
+      "name": "Apply or remove numbered list formatting",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+/"
+      }
+    },
+    {
+      "name": "Apply a Heading 1 style to the current note",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+1"
+      }
+    },
+    {
+      "name": "Apply a Heading 2 style to the current note",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+2"
+      }
+    },
+    {
+      "name": "Apply a Heading 3 style to the current note",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+3"
+      }
+    },
+    {
+      "name": "Apply a Heading 4 style to the current note",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+4"
+      }
+    },
+    {
+      "name": "Apply a Heading 5 style to the current note",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+5"
+      }
+    },
+    {
+      "name": "Apply a Heading 6 style to the current note",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+6"
+      }
+    },
+    {
+      "name": "Clear all formatting applied to the selected text. (Apply the Normal style.)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+N"
+      }
+    },
+    {
+      "name": "Increase the paragraph indent",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+Right"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Tab"
+      }
+    },
+    {
+      "name": "Decrease the paragraph indent",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+Left"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Tab"
+      }
+    },
+    {
+      "name": "Align the paragraph to the left",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+L"
+      }
+    },
+    {
+      "name": "Align the paragraph to the right",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+R"
+      }
+    },
+    {
+      "name": "Increase the font size of the selected text",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+."
+      }
+    },
+    {
+      "name": "Decrease the font size of the selected text",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+,"
+      }
+    },
+    {
+      "name": "Show or hide the rule lines on the current page",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+R"
+      }
+    },
+    {
+      "name": "Insert a document or file on the current page",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+N",
+          "F"
+        ]
+      }
+    },
+    {
+      "name": "Insert a document or file as a printout on the current page",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+N",
+          "O"
+        ]
+      }
+    },
+    {
+      "name": "Show or hide document printouts on the current page when the high contrast mode on Windows 10 or one of the contrast themes on Windows 11 is activated",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+P"
+      }
+    },
+    {
+      "name": "Insert a picture from a file",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+N",
+          "P"
+        ]
+      }
+    },
+    {
+      "name": "Insert a sticker",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+N",
+          "S"
+        ]
+      }
+    },
+    {
+      "name": "Insert a screen clipping. Note: The OneNote icon must be active in the Windows taskbar notification area",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Win+Shift+S"
+      }
+    },
+    {
+      "name": "Insert the current date",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+D"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+D"
+      }
+    },
+    {
+      "name": "Insert the current date and time",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+F"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+D"
+      }
+    },
+    {
+      "name": "Insert the current time",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+T"
+      }
+    },
+    {
+      "name": "Insert a line break",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Enter"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Enter"
+      }
+    },
+    {
+      "name": "Start a math equation or convert selected text to a math equation",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+="
+      }
+    },
+    {
+      "name": "Create a table",
+      "context": "Table",
+      "windows": {
+        "type": "keys",
+        "chord": "Tab"
+      }
+    },
+    {
+      "name": "Create another column in a table with a single row",
+      "context": "Table",
+      "windows": {
+        "type": "keys",
+        "chord": "Tab"
+      }
+    },
+    {
+      "name": "Create another row when at the end cell of a table",
+      "context": "Table",
+      "windows": {
+        "type": "keys",
+        "chord": "Enter"
+      }
+    },
+    {
+      "name": "Insert a row below the current row",
+      "context": "Table",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Enter"
+      }
+    },
+    {
+      "name": "Create another paragraph in the same cell in a table",
+      "context": "Table",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Enter"
+      }
+    },
+    {
+      "name": "Create a column to the right of the current column in a table",
+      "context": "Table",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+R"
+      }
+    },
+    {
+      "name": "Create a column to the left of the current column in a table",
+      "context": "Table",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+E"
+      }
+    },
+    {
+      "name": "Create a row above the current one in a table",
+      "context": "Table",
+      "windows": {
+        "type": "keys",
+        "chord": "Enter"
+      }
+    },
+    {
+      "name": "Create a new cell or row",
+      "context": "Table",
+      "windows": {
+        "type": "keys",
+        "chord": "Tab"
+      }
+    },
+    {
+      "name": "Delete the current empty row in a table",
+      "context": "Table",
+      "windows": {
+        "type": "keys",
+        "chord": "Delete"
+      }
+    },
+    {
+      "name": "Select to the end of the line from the current cursor location",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+End"
+      }
+    },
+    {
+      "name": "Select the whole line",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Down"
+      }
+    },
+    {
+      "name": "Jump to the title of the page and select it",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+T"
+      }
+    },
+    {
+      "name": "Cancel selecting the outline or page",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Esc"
+      }
+    },
+    {
+      "name": "Move the selected paragraphs upward",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+Up"
+      }
+    },
+    {
+      "name": "Move the selected paragraphs downward",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+Down"
+      }
+    },
+    {
+      "name": "Select the current paragraph and its subordinate paragraphs",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+-"
+      }
+    },
+    {
+      "name": "Delete the selected note or object",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Delete"
+      }
+    },
+    {
+      "name": "Go back to the last page visited",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Left"
+      }
+    },
+    {
+      "name": "Go forward to the next page visited",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Right"
+      }
+    },
+    {
+      "name": "Apply, select, or clear the To Do tag",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+1"
+      }
+    },
+    {
+      "name": "Apply or clear the Important tag",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+2"
+      }
+    },
+    {
+      "name": "Apply or clear the Question tag",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+3"
+      }
+    },
+    {
+      "name": "Apply or clear the Remember for later tag",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+4"
+      }
+    },
+    {
+      "name": "Apply or clear the Definition tag",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+5"
+      }
+    },
+    {
+      "name": "Apply or clear the Highlight tag",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+6"
+      }
+    },
+    {
+      "name": "Apply or clear the Contact tag",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+7"
+      }
+    },
+    {
+      "name": "Apply or clear the Address tag",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+8"
+      }
+    },
+    {
+      "name": "Apply or clear the Phone number tag",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+9"
+      }
+    },
+    {
+      "name": "Remove all selected note tags",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+0"
+      }
+    },
+    {
+      "name": "Collapse the selected outline to Level 1",
+      "context": "Outline",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+1"
+      }
+    },
+    {
+      "name": "Expand an outline to Level 2",
+      "context": "Outline",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+2"
+      }
+    },
+    {
+      "name": "Expand an outline to Level 3",
+      "context": "Outline",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+3"
+      }
+    },
+    {
+      "name": "Expand an outline to Level 4",
+      "context": "Outline",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+4"
+      }
+    },
+    {
+      "name": "Expand an outline to Level 5",
+      "context": "Outline",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+5"
+      }
+    },
+    {
+      "name": "Expand an outline to Level 6",
+      "context": "Outline",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+6"
+      }
+    },
+    {
+      "name": "Expand an outline to Level 7",
+      "context": "Outline",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+7"
+      }
+    },
+    {
+      "name": "Expand an outline to Level 8",
+      "context": "Outline",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+8"
+      }
+    },
+    {
+      "name": "Expand an outline to Level 9",
+      "context": "Outline",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+9"
+      }
+    },
+    {
+      "name": "Expand all levels of an outline",
+      "context": "Outline",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+0"
+      }
+    },
+    {
+      "name": "Expand the selected heading",
+      "context": "Outline",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+="
+      }
+    },
+    {
+      "name": "Collapse the selected heading",
+      "context": "Outline",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+-"
+      }
+    },
+    {
+      "name": "Increase the indent by one level",
+      "context": "Outline",
+      "windows": {
+        "type": "keys",
+        "chord": "Tab"
+      }
+    },
+    {
+      "name": "Decrease the indent by one level",
+      "context": "Outline",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Tab"
+      }
+    },
+    {
+      "name": "Expand a selected, collapsed outline",
+      "context": "Outline",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+Plus"
+      }
+    },
+    {
+      "name": "Collapse a selected, expanded outline",
+      "context": "Outline",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+-"
+      }
+    },
+    {
+      "name": "Increase indent by one level in right-to-left text",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Tab"
+      }
+    },
+    {
+      "name": "Decrease indent by one level in right-to-left text",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Tab"
+      }
+    },
+    {
+      "name": "Enable or disable the full-page view",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F11"
+      }
+    },
+    {
+      "name": "Expand or collapse a page group in the page navigation pane",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+8"
+      }
+    },
+    {
+      "name": "Print the current page",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+P"
+      }
+    },
+    {
+      "name": "Add a new page at the end of the selected section",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+N"
+      }
+    },
+    {
+      "name": "Increase the width of the page navigation pane",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+["
+      }
+    },
+    {
+      "name": "Decrease the width of the page navigation pane",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+]"
+      }
+    },
+    {
+      "name": "Decrease indent level of the current page in the page navigation pane",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+["
+      }
+    },
+    {
+      "name": "Increase indent level of the current page in the page navigation pane",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+]"
+      }
+    },
+    {
+      "name": "Create a new subpage below the current page",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Shift+N"
+      }
+    },
+    {
+      "name": "Select all items",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+A"
+      }
+    },
+    {
+      "name": "Select the current page",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+A"
+      }
+    },
+    {
+      "name": "Move the selected page up in the page navigation pane",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+Up"
+      }
+    },
+    {
+      "name": "Move the selected page down in the page navigation pane",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+Down"
+      }
+    },
+    {
+      "name": "Move to the page title",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+T"
+      }
+    },
+    {
+      "name": "Go to the first page in the currently visible set of pages in the page navigation pane",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+PageUp"
+      }
+    },
+    {
+      "name": "Go to the last page in the currently visible set of pages in the page navigation pane",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+PageDown"
+      }
+    },
+    {
+      "name": "Scroll up in the current page",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "PageUp"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "PageUp"
+      }
+    },
+    {
+      "name": "Scroll down in the current page",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "PageDown"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "PageDown"
+      }
+    },
+    {
+      "name": "Scroll to the top of the current page",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Home"
+      }
+    },
+    {
+      "name": "Scroll to the bottom of the current page",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+End"
+      }
+    },
+    {
+      "name": "Go to the next paragraph",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Down"
+      }
+    },
+    {
+      "name": "Go to the previous paragraph",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Up"
+      }
+    },
+    {
+      "name": "Move the cursor up on the current page, or expand the page up",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Up"
+      }
+    },
+    {
+      "name": "Move the cursor down on the current page, or expand the page down",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Down"
+      }
+    },
+    {
+      "name": "Move the cursor left on the current page, or expand the page to the left",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Left"
+      }
+    },
+    {
+      "name": "Move the cursor right on the current page, or expand the page to the right",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Right"
+      }
+    },
+    {
+      "name": "Go to the next note container",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Down"
+      }
+    },
+    {
+      "name": "Go to the beginning of the line",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Home"
+      }
+    },
+    {
+      "name": "Go to the end of the line",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "End"
+      }
+    },
+    {
+      "name": "Go to the previous page visited",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Left"
+      }
+    },
+    {
+      "name": "Go to the next page visited, if possible",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Right"
+      }
+    },
+    {
+      "name": "Zoom in",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Plus"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Plus"
+      }
+    },
+    {
+      "name": "Zoom out",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+-"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+-"
+      }
+    },
+    {
+      "name": "Synchronize the notebook. Note: While OneNote is running, your notes are automatically saved whenever you change them. It is not necessary to manually save notes",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+S"
+      }
+    },
+    {
+      "name": "Open OneNote",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Win+Shift+N"
+      }
+    },
+    {
+      "name": "Open a notebook",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+O"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+O"
+      }
+    },
+    {
+      "name": "Open a section",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Shift+O"
+      }
+    },
+    {
+      "name": "Create a new section",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+T"
+      }
+    },
+    {
+      "name": "Go to the next section",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Tab"
+      }
+    },
+    {
+      "name": "Go to the previous section",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Tab"
+      }
+    },
+    {
+      "name": "Go to the next page in the section",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+PageDown"
+      }
+    },
+    {
+      "name": "Go to the previous page in the section",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+PageUp"
+      }
+    },
+    {
+      "name": "Go to the first page in the section",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Home"
+      }
+    },
+    {
+      "name": "Go to the last page in the section",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+End"
+      }
+    },
+    {
+      "name": "Go to the first page in the currently visible set of page tabs",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+PageUp"
+      }
+    },
+    {
+      "name": "Go to the last page of the currently visible set of page tabs",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+PageDown"
+      }
+    },
+    {
+      "name": "Move or copy the current page",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+M"
+      }
+    },
+    {
+      "name": "Put focus on the current page tab",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+G"
+      }
+    },
+    {
+      "name": "Select the current page tab",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+A"
+      }
+    },
+    {
+      "name": "Put focus on the current section tab",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+G"
+      }
+    },
+    {
+      "name": "Move the current section",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+G"
+      }
+    },
+    {
+      "name": "Switch to a different notebook on the Navigation bar",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+G"
+      }
+    },
+    {
+      "name": "Move to the Search box to search all notebooks",
+      "context": "Search",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+E"
+      }
+    },
+    {
+      "name": "While searching all notebooks, preview the next result",
+      "context": "Search",
+      "windows": {
+        "type": "keys",
+        "chord": "Down"
+      }
+    },
+    {
+      "name": "While searching all notebooks, go to the selected result and dismiss the search",
+      "context": "Search",
+      "windows": {
+        "type": "keys",
+        "chord": "Enter"
+      }
+    },
+    {
+      "name": "Change the search scope",
+      "context": "Search",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+E",
+          "Tab",
+          "Space"
+        ]
+      }
+    },
+    {
+      "name": "Open the Search Results pane",
+      "context": "Search",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+O"
+      }
+    },
+    {
+      "name": "Search the current page",
+      "context": "Search",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+F"
+      }
+    },
+    {
+      "name": "While searching the current page, move to the next result",
+      "context": "Search",
+      "windows": {
+        "type": "keys",
+        "chord": "Enter"
+      }
+    },
+    {
+      "name": "While searching the current page, move to the previous result",
+      "context": "Search",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+F3"
+      }
+    },
+    {
+      "name": "Dismiss the search and return to the page",
+      "context": "Search",
+      "windows": {
+        "type": "keys",
+        "chord": "Esc"
+      }
+    },
+    {
+      "name": "Send the selected pages in an email message",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+E"
+      }
+    },
+    {
+      "name": "Create a Today Outlook task from the selected note",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+1"
+      }
+    },
+    {
+      "name": "Create a Tomorrow Outlook task from the selected note",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+2"
+      }
+    },
+    {
+      "name": "Create a This Week Outlook task from the selected note",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+3"
+      }
+    },
+    {
+      "name": "Create a Next Week Outlook task from the selected note",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+4"
+      }
+    },
+    {
+      "name": "Create a No Date Outlook task from the selected note",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+5"
+      }
+    },
+    {
+      "name": "Open the selected Outlook task",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+K"
+      }
+    },
+    {
+      "name": "Mark the selected Outlook task as complete",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+9"
+      }
+    },
+    {
+      "name": "Delete the selected Outlook task",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+0"
+      }
+    },
+    {
+      "name": "Synchronize changes in the current shared notebook",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+F9"
+      }
+    },
+    {
+      "name": "Synchronize changes in all shared notebooks",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F9"
+      }
+    },
+    {
+      "name": "Mark the current page as Unread",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Q"
+      }
+    },
+    {
+      "name": "Lock all password-protected sections",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+L"
+      }
+    },
+    {
+      "name": "Create a new page",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+N"
+      }
+    },
+    {
+      "name": "Cut the selected content to the clipboard",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+X"
+      }
+    },
+    {
+      "name": "Copy the selected content to the clipboard",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+C"
+      }
+    },
+    {
+      "name": "Enter or exit the full-screen mode",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Ctrl+F"
+      }
+    },
+    {
+      "name": "Close the current notebook",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+W"
+      }
+    },
+    {
+      "name": "Synchronize this notebook",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+S"
+      }
+    },
+    {
+      "name": "Synchronize all notebooks",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+S"
+      }
+    },
+    {
+      "name": "Select the page title",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+T"
+      }
+    },
+    {
+      "name": "Reset the zoom magnification",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+0"
+      }
+    },
+    {
+      "name": "Collapse an expanded outline",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Plus"
+      }
+    },
+    {
+      "name": "Expand a collapsed outline",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+-"
+      }
+    },
+    {
+      "name": "Open the selected link",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Enter"
+      }
+    },
+    {
+      "name": "Copy the selected formatting",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+C"
+      }
+    },
+    {
+      "name": "Paste the copied formatting",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+V"
+      }
+    },
+    {
+      "name": "Find text on the page",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+F"
+      }
+    },
+    {
+      "name": "Find text within all open notebooks",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+F"
+      }
+    },
+    {
+      "name": "Move up one paragraph",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Up"
+      }
+    },
+    {
+      "name": "Move down one paragraph",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Down"
+      }
+    },
+    {
+      "name": "Move the cursor up in the current outline",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+Up"
+      }
+    },
+    {
+      "name": "Move the cursor to the title of the current page",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+T"
+      }
+    },
+    {
+      "name": "Start creating a numbered list",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+/"
+      }
+    },
+    {
+      "name": "Promote (indent) the selected list item",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+]"
+      }
+    },
+    {
+      "name": "Demote (decrease indent) the selected list item",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+["
+      }
+    },
+    {
+      "name": "Apply superscript formatting",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+Shift+="
+      }
+    },
+    {
+      "name": "Apply subscript formatting",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Ctrl+Alt+="
+      }
+    },
+    {
+      "name": "Insert equations (or convert the selected text to a math equation)",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+="
+      }
+    },
+    {
+      "name": "Search for the selected text using the Smart Lookup task pane",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Ctrl+Alt+L"
+      }
+    },
+    {
+      "name": "Insert emoji",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Ctrl+Space"
+      }
+    },
+    {
+      "name": "Delete the character to the left of the cursor",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Delete"
+      }
+    },
+    {
+      "name": "Delete the word to the left of the cursor",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Delete"
+      }
+    },
+    {
+      "name": "Delete the word to the right of the cursor",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Delete"
+      }
+    },
+    {
+      "name": "Move the selected image or object up",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+Up"
+      }
+    },
+    {
+      "name": "Move the selected image or object down",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+Down"
+      }
+    },
+    {
+      "name": "Create another table row",
+      "context": "Table",
+      "mac": {
+        "type": "keys",
+        "chord": "Enter"
+      }
+    },
+    {
+      "name": "Create a table column to the right of the current column",
+      "context": "Table",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Ctrl+R"
+      }
+    },
+    {
+      "name": "Create a table column to the left of the current column",
+      "context": "Table",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Ctrl+L"
+      }
+    },
+    {
+      "name": "Create a table row below the current row",
+      "context": "Table",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Enter"
+      }
+    },
+    {
+      "name": "Create another paragraph in the same cell",
+      "context": "Table",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Enter"
+      }
+    },
+    {
+      "name": "Switch between sections in a notebook",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+["
+      }
+    },
+    {
+      "name": "Switch between pages in a section",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+PageUp"
+      }
+    },
+    {
+      "name": "Open other notebooks or create new ones",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+O"
+      }
+    },
+    {
+      "name": "Review the list of your open notebooks",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+G"
+      }
+    },
+    {
+      "name": "Create a new notebook page",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+N"
+      }
+    },
+    {
+      "name": "Open the OneNote app preferences",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+,"
+      }
+    },
+    {
+      "name": "Move the current page to another location",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+M"
+      }
+    },
+    {
+      "name": "Copy the current page to another location",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+C"
+      }
+    },
+    {
+      "name": "Enter full-screen mode",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Ctrl+F"
+      }
+    },
+    {
+      "name": "Move the keyboard focus to the page list",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Ctrl+G"
+      }
+    },
+    {
+      "name": "Move the keyboard focus to the section list",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+G"
+      }
+    }
+  ],
+  "defaults": {
+    "TUNE_CW": {
+      "name": "Go to the next page in the section",
+      "action": {
+        "type": "keys",
+        "chord": "Ctrl+PageDown"
+      },
+      "accel": "light"
+    },
+    "TUNE_CCW": {
+      "name": "Go to the previous page in the section",
+      "action": {
+        "type": "keys",
+        "chord": "Ctrl+PageUp"
+      },
+      "accel": "light"
+    },
+    "TUNE_TAP_1F": {
+      "name": "Search all notebooks",
+      "action": {
+        "type": "keys",
+        "chord": "Ctrl+E"
+      }
+    },
+    "TUNE_SWIPE_LEFT": {
+      "name": "Undo the last action",
+      "action": {
+        "type": "keys",
+        "chord": "Ctrl+Z"
+      }
+    },
+    "TUNE_SWIPE_RIGHT": {
+      "name": "Redo the last action",
+      "action": {
+        "type": "keys",
+        "chord": "Ctrl+Y"
+      }
+    }
+  }
+}

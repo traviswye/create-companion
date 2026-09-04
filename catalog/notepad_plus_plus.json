@@ -1,0 +1,1401 @@
+{
+  "id": "notepad_plus_plus",
+  "name": "Notepad++",
+  "kind": "app",
+  "category": "Development",
+  "match": {
+    "windows_exe": [
+      "notepad++.exe"
+    ],
+    "window_title": []
+  },
+  "sources": [
+    "https://npp-user-manual.org/docs/editing/",
+    "https://npp-user-manual.org/docs/preferences/#shortcut-mapper",
+    "https://raw.githubusercontent.com/notepad-plus-plus/npp-usermanual/master/content/docs/editing.md",
+    "https://raw.githubusercontent.com/notepad-plus-plus/notepad-plus-plus/master/PowerEditor/src/Parameters.cpp",
+    "https://raw.githubusercontent.com/notepad-plus-plus/notepad-plus-plus/master/PowerEditor/src/Notepad_plus.rc"
+  ],
+  "note": "Windows only. The Notepad++ User Manual describes the Shortcut Mapper but does not print the Main menu tab's default assignments, so this file combines the two places Notepad++ does publish them. The editor commands are the manual's own \"Scintilla SCI_xxx Keyboard Commands\" table on the Editing page, with its Default Shortcut column; their names are the SCI_ message names, which is exactly what the Shortcut Mapper's \"Scintilla commands\" tab shows (\"The Name matches the menu item, or the name of the Scintilla message\"). The menu commands come from Notepad++'s own default accelerator table, winKeyDefs[] in PowerEditor/src/Parameters.cpp, with the command names taken from the menu labels in PowerEditor/src/Notepad_plus.rc (ampersand accelerators removed) or from the cmdName the table itself gives. Manual prose was not used as a source for individual bindings: it contains at least one error (the Files page gives Ctrl+N as the shortcut for File > Open). Commands the tables list without a default shortcut are left out, as are the numeric-keypad bindings for Ctrl+Keypad 0-9 (fold level) and the SCI_ commands the manual marks as not being in the Shortcut Mapper. Where a command has two default accelerators the letter or digit one is kept (Cut is Ctrl+X, not Shift+Delete); where the manual lists two shortcuts for one SCI_ command the first is kept. These are the factory defaults - the Shortcut Mapper can change any of them.",
+  "actions": [
+    {
+      "name": "New",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+N"
+      }
+    },
+    {
+      "name": "Open",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+O"
+      }
+    },
+    {
+      "name": "Reload from Disk",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+R"
+      }
+    },
+    {
+      "name": "Save",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+S"
+      }
+    },
+    {
+      "name": "Save As",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+S"
+      }
+    },
+    {
+      "name": "Save All",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+S"
+      }
+    },
+    {
+      "name": "Close",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+W"
+      }
+    },
+    {
+      "name": "Close All",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+W"
+      }
+    },
+    {
+      "name": "Print",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+P"
+      }
+    },
+    {
+      "name": "Restore Recent Closed File",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+T"
+      }
+    },
+    {
+      "name": "Exit",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+F4"
+      }
+    },
+    {
+      "name": "Cut",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+X"
+      }
+    },
+    {
+      "name": "Copy",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+C"
+      }
+    },
+    {
+      "name": "Paste",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+V"
+      }
+    },
+    {
+      "name": "Begin/End Select",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+B"
+      }
+    },
+    {
+      "name": "Begin/End Select in Column Mode",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+B"
+      }
+    },
+    {
+      "name": "UPPERCASE",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+U"
+      }
+    },
+    {
+      "name": "lowercase",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+U"
+      }
+    },
+    {
+      "name": "Proper Case",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+U"
+      }
+    },
+    {
+      "name": "Proper Case (blend)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+U"
+      }
+    },
+    {
+      "name": "Sentence case",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+U"
+      }
+    },
+    {
+      "name": "Sentence case (blend)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Alt+U"
+      }
+    },
+    {
+      "name": "Split Lines",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+I"
+      }
+    },
+    {
+      "name": "Join Lines",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+J"
+      }
+    },
+    {
+      "name": "Move Up Current Line",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Up"
+      }
+    },
+    {
+      "name": "Move Down Current Line",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Down"
+      }
+    },
+    {
+      "name": "Insert Blank Line Above Current",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Enter"
+      }
+    },
+    {
+      "name": "Insert Blank Line Below Current",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Alt+Enter"
+      }
+    },
+    {
+      "name": "Toggle Single Line Comment",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Q"
+      }
+    },
+    {
+      "name": "Single Line Comment",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+K"
+      }
+    },
+    {
+      "name": "Single Line Uncomment",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+K"
+      }
+    },
+    {
+      "name": "Block Comment",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Q"
+      }
+    },
+    {
+      "name": "Function Completion",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Space"
+      }
+    },
+    {
+      "name": "Path Completion",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Space"
+      }
+    },
+    {
+      "name": "Word Completion",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Enter"
+      }
+    },
+    {
+      "name": "Function Parameters Hint",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Space"
+      }
+    },
+    {
+      "name": "Function Parameters Previous Hint",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Up"
+      }
+    },
+    {
+      "name": "Function Parameters Next Hint",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Down"
+      }
+    },
+    {
+      "name": "Column Editor",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+C"
+      }
+    },
+    {
+      "name": "Find",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+F"
+      }
+    },
+    {
+      "name": "Find in Files",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+F"
+      }
+    },
+    {
+      "name": "Find Next",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F3"
+      }
+    },
+    {
+      "name": "Find Previous",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+F3"
+      }
+    },
+    {
+      "name": "Select and Find Next",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+F3"
+      }
+    },
+    {
+      "name": "Select and Find Previous",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+F3"
+      }
+    },
+    {
+      "name": "Find (Volatile) Next",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+F3"
+      }
+    },
+    {
+      "name": "Find (Volatile) Previous",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Alt+F3"
+      }
+    },
+    {
+      "name": "Replace",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+H"
+      }
+    },
+    {
+      "name": "Incremental Search",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+I"
+      }
+    },
+    {
+      "name": "Search Results Window",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F7"
+      }
+    },
+    {
+      "name": "Previous Search Result",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+F4"
+      }
+    },
+    {
+      "name": "Next Search Result",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F4"
+      }
+    },
+    {
+      "name": "Go to",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+G"
+      }
+    },
+    {
+      "name": "Go to Matching Brace",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+B"
+      }
+    },
+    {
+      "name": "Select All In-between {} [] or ()",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+B"
+      }
+    },
+    {
+      "name": "Mark",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+M"
+      }
+    },
+    {
+      "name": "Previous style of 1st style",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+1"
+      }
+    },
+    {
+      "name": "Previous style of 2nd style",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+2"
+      }
+    },
+    {
+      "name": "Previous style of 3rd style",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+3"
+      }
+    },
+    {
+      "name": "Previous style of 4th style",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+4"
+      }
+    },
+    {
+      "name": "Previous style of 5th style",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+5"
+      }
+    },
+    {
+      "name": "Previous style of Find Mark style",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+0"
+      }
+    },
+    {
+      "name": "Next style of 1st style",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+1"
+      }
+    },
+    {
+      "name": "Next style of 2nd style",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+2"
+      }
+    },
+    {
+      "name": "Next style of 3rd style",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+3"
+      }
+    },
+    {
+      "name": "Next style of 4th style",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+4"
+      }
+    },
+    {
+      "name": "Next style of 5th style",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+5"
+      }
+    },
+    {
+      "name": "Next style of Find Mark style",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+0"
+      }
+    },
+    {
+      "name": "Toggle Bookmark",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+F2"
+      }
+    },
+    {
+      "name": "Next Bookmark",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F2"
+      }
+    },
+    {
+      "name": "Previous Bookmark",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+F2"
+      }
+    },
+    {
+      "name": "Toggle Full Screen Mode",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F11"
+      }
+    },
+    {
+      "name": "Post-It",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F12"
+      }
+    },
+    {
+      "name": "Next Tab",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+PageDown"
+      }
+    },
+    {
+      "name": "Previous Tab",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+PageUp"
+      }
+    },
+    {
+      "name": "Move Tab Forward",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+PageDown"
+      }
+    },
+    {
+      "name": "Move Tab Backward",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+PageUp"
+      }
+    },
+    {
+      "name": "Hide Lines",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+H"
+      }
+    },
+    {
+      "name": "Focus on Another View",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F8"
+      }
+    },
+    {
+      "name": "Fold All",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+0"
+      }
+    },
+    {
+      "name": "Unfold All",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+0"
+      }
+    },
+    {
+      "name": "Fold Current Level",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+F"
+      }
+    },
+    {
+      "name": "Unfold Current Level",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Alt+F"
+      }
+    },
+    {
+      "name": "Fold Level 1",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+1"
+      }
+    },
+    {
+      "name": "Fold Level 2",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+2"
+      }
+    },
+    {
+      "name": "Fold Level 3",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+3"
+      }
+    },
+    {
+      "name": "Fold Level 4",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+4"
+      }
+    },
+    {
+      "name": "Fold Level 5",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+5"
+      }
+    },
+    {
+      "name": "Fold Level 6",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+6"
+      }
+    },
+    {
+      "name": "Fold Level 7",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+7"
+      }
+    },
+    {
+      "name": "Fold Level 8",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+8"
+      }
+    },
+    {
+      "name": "Unfold Level 1",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+1"
+      }
+    },
+    {
+      "name": "Unfold Level 2",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+2"
+      }
+    },
+    {
+      "name": "Unfold Level 3",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+3"
+      }
+    },
+    {
+      "name": "Unfold Level 4",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+4"
+      }
+    },
+    {
+      "name": "Unfold Level 5",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+5"
+      }
+    },
+    {
+      "name": "Unfold Level 6",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+6"
+      }
+    },
+    {
+      "name": "Unfold Level 7",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+7"
+      }
+    },
+    {
+      "name": "Unfold Level 8",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+8"
+      }
+    },
+    {
+      "name": "Text Direction RTL",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+R"
+      }
+    },
+    {
+      "name": "Text Direction LTR",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+L"
+      }
+    },
+    {
+      "name": "Playback",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+P"
+      }
+    },
+    {
+      "name": "Run",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F5"
+      }
+    },
+    {
+      "name": "About Notepad++",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F1"
+      }
+    },
+    {
+      "name": "SCI_BACKTAB",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Tab"
+      }
+    },
+    {
+      "name": "SCI_CANCEL",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Esc"
+      }
+    },
+    {
+      "name": "SCI_CHARLEFTEXTEND",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Left"
+      }
+    },
+    {
+      "name": "SCI_CHARLEFTRECTEXTEND",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+Left"
+      }
+    },
+    {
+      "name": "SCI_CHARLEFT",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Left"
+      }
+    },
+    {
+      "name": "SCI_CHARRIGHTEXTEND",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Right"
+      }
+    },
+    {
+      "name": "SCI_CHARRIGHTRECTEXTEND",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+Right"
+      }
+    },
+    {
+      "name": "SCI_CHARRIGHT",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Right"
+      }
+    },
+    {
+      "name": "SCI_DELETEBACKNOTLINE",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Delete"
+      }
+    },
+    {
+      "name": "SCI_DELETEBACK",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Backspace"
+      }
+    },
+    {
+      "name": "SCI_DELLINELEFT",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Backspace"
+      }
+    },
+    {
+      "name": "SCI_DELLINERIGHT",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Delete"
+      }
+    },
+    {
+      "name": "SCI_DELWORDLEFT",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Backspace"
+      }
+    },
+    {
+      "name": "SCI_DELWORDRIGHT",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Delete"
+      }
+    },
+    {
+      "name": "SCI_DOCUMENTENDEXTEND",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+End"
+      }
+    },
+    {
+      "name": "SCI_DOCUMENTEND",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+End"
+      }
+    },
+    {
+      "name": "SCI_DOCUMENTSTARTEXTEND",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Home"
+      }
+    },
+    {
+      "name": "SCI_DOCUMENTSTART",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Home"
+      }
+    },
+    {
+      "name": "SCI_EDITTOGGLEOVERTYPE",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Insert"
+      }
+    },
+    {
+      "name": "SCI_HOMEDISPLAY",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Home"
+      }
+    },
+    {
+      "name": "SCI_LINECOPY",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+X"
+      }
+    },
+    {
+      "name": "SCI_LINECUT",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+L"
+      }
+    },
+    {
+      "name": "SCI_LINEDELETE",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+L"
+      }
+    },
+    {
+      "name": "SCI_LINEDOWNEXTEND",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Down"
+      }
+    },
+    {
+      "name": "SCI_LINEDOWNRECTEXTEND",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+Down"
+      }
+    },
+    {
+      "name": "SCI_LINEDOWN",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Down"
+      }
+    },
+    {
+      "name": "SCI_LINEENDDISPLAY",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+End"
+      }
+    },
+    {
+      "name": "SCI_LINEENDRECTEXTEND",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+End"
+      }
+    },
+    {
+      "name": "SCI_LINEENDWRAPEXTEND",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+End"
+      }
+    },
+    {
+      "name": "SCI_LINEENDWRAP",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "End"
+      }
+    },
+    {
+      "name": "SCI_LINESCROLLDOWN",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Down"
+      }
+    },
+    {
+      "name": "SCI_LINESCROLLUP",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Up"
+      }
+    },
+    {
+      "name": "SCI_LINETRANSPOSE",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+T"
+      }
+    },
+    {
+      "name": "SCI_LINEUPEXTEND",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Up"
+      }
+    },
+    {
+      "name": "SCI_LINEUPRECTEXTEND",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+Up"
+      }
+    },
+    {
+      "name": "SCI_LINEUP",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Up"
+      }
+    },
+    {
+      "name": "SCI_NEWLINE",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Enter"
+      }
+    },
+    {
+      "name": "SCI_PAGEDOWNEXTEND",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+PageDown"
+      }
+    },
+    {
+      "name": "SCI_PAGEDOWNRECTEXTEND",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+PageDown"
+      }
+    },
+    {
+      "name": "SCI_PAGEDOWN",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "PageDown"
+      }
+    },
+    {
+      "name": "SCI_PAGEUPEXTEND",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+PageUp"
+      }
+    },
+    {
+      "name": "SCI_PAGEUPRECTEXTEND",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+PageUp"
+      }
+    },
+    {
+      "name": "SCI_PAGEUP",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "PageUp"
+      }
+    },
+    {
+      "name": "SCI_PARADOWNEXTEND",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+]"
+      }
+    },
+    {
+      "name": "SCI_PARADOWN",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+]"
+      }
+    },
+    {
+      "name": "SCI_PARAUPEXTEND",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+["
+      }
+    },
+    {
+      "name": "SCI_PARAUP",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+["
+      }
+    },
+    {
+      "name": "SCI_SCROLLTOEND",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Y"
+      }
+    },
+    {
+      "name": "SCI_SELECTALL",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+A"
+      }
+    },
+    {
+      "name": "SCI_SELECTIONDUPLICATE",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+D"
+      }
+    },
+    {
+      "name": "SCI_TAB",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Tab"
+      }
+    },
+    {
+      "name": "SCI_VCHOMERECTEXTEND",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+Home"
+      }
+    },
+    {
+      "name": "SCI_VCHOMEWRAPEXTEND",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Home"
+      }
+    },
+    {
+      "name": "SCI_VCHOMEWRAP",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Home"
+      }
+    },
+    {
+      "name": "SCI_WORDLEFTEXTEND",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Left"
+      }
+    },
+    {
+      "name": "SCI_WORDLEFT",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Left"
+      }
+    },
+    {
+      "name": "SCI_WORDPARTLEFTEXTEND",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+/"
+      }
+    },
+    {
+      "name": "SCI_WORDPARTLEFT",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+/"
+      }
+    },
+    {
+      "name": "SCI_WORDPARTRIGHTEXTEND",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+\\"
+      }
+    },
+    {
+      "name": "SCI_WORDPARTRIGHT",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+\\"
+      }
+    },
+    {
+      "name": "SCI_WORDRIGHTENDEXTEND",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Right"
+      }
+    },
+    {
+      "name": "SCI_WORDRIGHT",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Right"
+      }
+    }
+  ],
+  "defaults": {
+    "TUNE_CW": {
+      "name": "Next tab",
+      "action": {
+        "type": "keys",
+        "chord": "Ctrl+Tab"
+      }
+    },
+    "TUNE_CCW": {
+      "name": "Previous tab",
+      "action": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Tab"
+      }
+    },
+    "TUNE_TAP_1F": {
+      "name": "Find",
+      "action": {
+        "type": "keys",
+        "chord": "Ctrl+F"
+      }
+    },
+    "TUNE_SWIPE_LEFT": {
+      "name": "Previous Search Result",
+      "action": {
+        "type": "keys",
+        "chord": "Shift+F4"
+      }
+    },
+    "TUNE_SWIPE_RIGHT": {
+      "name": "Next Search Result",
+      "action": {
+        "type": "keys",
+        "chord": "F4"
+      }
+    },
+    "TUNE_SWIPE_UP": {
+      "name": "SCI_DOCUMENTSTART",
+      "action": {
+        "type": "keys",
+        "chord": "Ctrl+Home"
+      }
+    },
+    "TUNE_SWIPE_DOWN": {
+      "name": "SCI_DOCUMENTEND",
+      "action": {
+        "type": "keys",
+        "chord": "Ctrl+End"
+      }
+    }
+  }
+}

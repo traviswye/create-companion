@@ -1,0 +1,1878 @@
+{
+  "id": "teams",
+  "name": "Microsoft Teams",
+  "kind": "app",
+  "category": "Communication",
+  "match": {
+    "windows_exe": [
+      "ms-teams.exe",
+      "Teams.exe"
+    ],
+    "macos_bundle": [
+      "com.microsoft.teams2",
+      "com.microsoft.teams"
+    ],
+    "window_title": []
+  },
+  "sources": [
+    "https://support.microsoft.com/en-us/accessibility/teams/keyboard-shortcuts-for-microsoft-teams"
+  ],
+  "note": "From the official 'Keyboard shortcuts for Microsoft Teams' Microsoft Support article (Windows and MacOS tabs), current as of 2026-09. Only the Desktop-app column was used for 'windows' and the Mac-app column for 'mac'; the article's separate Web-app columns were skipped since this catalog entry matches only the installed desktop app, not the browser. Skipped as not expressible: 'Add reaction' style emoji-picker shortcuts are not listed with fixed chords in this article. The app-bar and chat-header shortcuts (Ctrl/Cmd/Alt+1-9) assume the default app-bar order, per the article's own note; a reordered app bar changes what each number opens. 'Show help' (Calendar) uses the literal '?' character, written here as its US-layout chord Shift+/. Deduplicated several rows that the source article itself lists twice with identical Desktop/Mac chords under slightly different names: 'Go previous/next time period' vs 'Go to the previous/next time period' (Windows), 'Open an event'/'Delete an event' vs 'Open/Delete the selected item', 'Save an appointment' vs 'Save or send meeting request', 'Discard draft' vs 'Close', and Mac's 'Switch the view to include today' vs 'Go to today', and Mac's 'In Day/Week/Month view, move to previous/next...' vs 'Go to the previous/next time period'. Skipped the Windows-only 'Switch to Day view / full Week view / Month view / Work week view / three-day view / List view' block entirely: it directly contradicts the article's own 'Open Day/Week/Month view' shortcuts listed just above it (e.g. both 'Switch to full Week view' and 'Switch to Work week view' are given as Ctrl+Alt+2, and Alt+3 is separately claimed by 'Open Week view', 'Show 3 days in the calendar', and 'Switch to three-day view'), so no single trustworthy chord could be recorded for it. A few chords collide across different contexts exactly as the source documents them (e.g. mac 'Pin a window on top' and 'Move focus to toast' are both Shift+Cmd+T; mac 'Accept screen share' and 'Accept video call' are both Shift+Cmd+V) — kept as documented since the names and contexts differ. 'Mark all messages as read', 'Edit last sent/selected message', 'See all items you are mentioned in', 'Move focus to Chat options', 'Toggle live captions', 'Create a new appointment or calendar item', and the two calendar 'Navigate to the previous/next pane' shortcuts are Mac-only additions with no Windows equivalent in this article; 'Insert block quote' and most of the day/week/month Calendar navigation shortcuts are Windows-only with no Mac equivalent listed.",
+  "actions": [
+    {
+      "name": "Show keyboard shortcuts",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+."
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+."
+      }
+    },
+    {
+      "name": "Show keyboard shortcuts (alt)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+/"
+      }
+    },
+    {
+      "name": "Go to Search",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+E"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+E"
+      }
+    },
+    {
+      "name": "Open filter",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+F"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+F"
+      }
+    },
+    {
+      "name": "Start a new chat",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+N"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+N"
+      }
+    },
+    {
+      "name": "Start a chat in a new window",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+N"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+N"
+      }
+    },
+    {
+      "name": "Open Settings",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+,"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+,"
+      }
+    },
+    {
+      "name": "Open Help",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F1"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "F1"
+      }
+    },
+    {
+      "name": "Close",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Esc"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Esc"
+      }
+    },
+    {
+      "name": "Zoom in",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+="
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+="
+      }
+    },
+    {
+      "name": "Zoom out",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+-"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+-"
+      }
+    },
+    {
+      "name": "Reset zoom level",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+0"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+0"
+      }
+    },
+    {
+      "name": "Report a problem",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Shift+R"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+Cmd+R"
+      }
+    },
+    {
+      "name": "Go to a specific chat or channel",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+G"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+G"
+      }
+    },
+    {
+      "name": "Move focus to pane divider",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Enter"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+Enter"
+      }
+    },
+    {
+      "name": "Return pane to the default width",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Enter"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+Enter"
+      }
+    },
+    {
+      "name": "Pin a window on top",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+T"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+T"
+      }
+    },
+    {
+      "name": "Open existing conversation in new window",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+O"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+O"
+      }
+    },
+    {
+      "name": "Open 1st app on app bar",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+1"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+1"
+      }
+    },
+    {
+      "name": "Open 2nd app on app bar",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+2"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+2"
+      }
+    },
+    {
+      "name": "Open 3rd app on app bar",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+3"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+3"
+      }
+    },
+    {
+      "name": "Open 4th app on app bar",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+4"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+4"
+      }
+    },
+    {
+      "name": "Open 5th app on app bar",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+5"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+5"
+      }
+    },
+    {
+      "name": "Open 6th app on app bar",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+6"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+6"
+      }
+    },
+    {
+      "name": "Open 7th app on app bar",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+7"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+7"
+      }
+    },
+    {
+      "name": "Open 8th app on app bar",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+8"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+8"
+      }
+    },
+    {
+      "name": "Open 9th app on app bar",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+9"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+9"
+      }
+    },
+    {
+      "name": "Add Loop paragraph",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+L"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+L"
+      }
+    },
+    {
+      "name": "Move focus to chat or channel list",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+L"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+L"
+      }
+    },
+    {
+      "name": "Move focus to Chat options",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+L"
+      }
+    },
+    {
+      "name": "Move focus to message pane",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+M"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+P"
+      }
+    },
+    {
+      "name": "Move focus to toast",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+T"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+T"
+      }
+    },
+    {
+      "name": "Go to compose box",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+R"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+R"
+      }
+    },
+    {
+      "name": "Open history menu",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+H"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Y"
+      }
+    },
+    {
+      "name": "Go to previous section",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+F6"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+F6"
+      }
+    },
+    {
+      "name": "Go to next section",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+F6"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+F6"
+      }
+    },
+    {
+      "name": "Go back",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Left"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+["
+      }
+    },
+    {
+      "name": "Go forward",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Right"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+]"
+      }
+    },
+    {
+      "name": "Move focus to notification",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Win+Shift+Y"
+      }
+    },
+    {
+      "name": "Collapse all conversational folders",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Q"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+L"
+      }
+    },
+    {
+      "name": "Mark all as read",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Esc"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Esc"
+      }
+    },
+    {
+      "name": "Jump to last read or newest message",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+J"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+J"
+      }
+    },
+    {
+      "name": "Mark all messages as read",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+J"
+      }
+    },
+    {
+      "name": "Find in current chat or channel",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+F"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+F"
+      }
+    },
+    {
+      "name": "Open 1st tab on chat header",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+1"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+1"
+      }
+    },
+    {
+      "name": "Open 2nd tab on chat header",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+2"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+2"
+      }
+    },
+    {
+      "name": "Open 3rd tab on chat header",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+3"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+3"
+      }
+    },
+    {
+      "name": "Open 4th tab on chat header",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+4"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+4"
+      }
+    },
+    {
+      "name": "Open 5th tab on chat header",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+5"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+5"
+      }
+    },
+    {
+      "name": "Open 6th tab on chat header",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+6"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+6"
+      }
+    },
+    {
+      "name": "Open 7th tab on chat header",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+7"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+7"
+      }
+    },
+    {
+      "name": "Open 8th tab on chat header",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+8"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+8"
+      }
+    },
+    {
+      "name": "Open 9th tab on chat header",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+9"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+9"
+      }
+    },
+    {
+      "name": "Toggle details pane",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+P"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+D"
+      }
+    },
+    {
+      "name": "Reply to the last message",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+R"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+R"
+      }
+    },
+    {
+      "name": "Edit last sent/selected message",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+E"
+      }
+    },
+    {
+      "name": "React to the last message",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+R"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+R"
+      }
+    },
+    {
+      "name": "See all unread chats",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+U"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+U"
+      }
+    },
+    {
+      "name": "See all items you are mentioned in",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+M"
+      }
+    },
+    {
+      "name": "See all chat conversations",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+C"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+C"
+      }
+    },
+    {
+      "name": "See all channel conversations",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+A"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+A"
+      }
+    },
+    {
+      "name": "See all meeting chats",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+B"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+B"
+      }
+    },
+    {
+      "name": "Clear all filters",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Z"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+Z"
+      }
+    },
+    {
+      "name": "Expand compose box",
+      "context": "Compose box",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+X"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+X"
+      }
+    },
+    {
+      "name": "Send (expanded compose box)",
+      "context": "Compose box",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Enter"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Enter"
+      }
+    },
+    {
+      "name": "Paragraph style",
+      "context": "Compose box",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+P"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+P"
+      }
+    },
+    {
+      "name": "Insert block quote",
+      "context": "Compose box",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+4"
+      }
+    },
+    {
+      "name": "Attach file",
+      "context": "Compose box",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+O"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+O"
+      }
+    },
+    {
+      "name": "Start new line",
+      "context": "Compose box",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Enter"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Enter"
+      }
+    },
+    {
+      "name": "Apply the heading 1 style",
+      "context": "Compose box",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+1"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+1"
+      }
+    },
+    {
+      "name": "Apply the heading 2 style",
+      "context": "Compose box",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+2"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+2"
+      }
+    },
+    {
+      "name": "Apply the heading 3 style",
+      "context": "Compose box",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+3"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+3"
+      }
+    },
+    {
+      "name": "Apply bold style",
+      "context": "Compose box",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+B"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+B"
+      }
+    },
+    {
+      "name": "Apply italic style",
+      "context": "Compose box",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+I"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+I"
+      }
+    },
+    {
+      "name": "Apply underline style",
+      "context": "Compose box",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+U"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+U"
+      }
+    },
+    {
+      "name": "Apply strikethrough style",
+      "context": "Compose box",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+X"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Cmd+X"
+      }
+    },
+    {
+      "name": "Mark message as important",
+      "context": "Compose box",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+I"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+I"
+      }
+    },
+    {
+      "name": "Rewrite with Copilot",
+      "context": "Compose box",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+A"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Cmd+A"
+      }
+    },
+    {
+      "name": "Open video recorder",
+      "context": "Compose box",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+E"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+E"
+      }
+    },
+    {
+      "name": "Add Loop paragraph",
+      "context": "Compose box",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+L"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+L"
+      }
+    },
+    {
+      "name": "Insert link",
+      "context": "Compose box",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+K"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+K"
+      }
+    },
+    {
+      "name": "Insert inline code",
+      "context": "Compose box",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+C"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+C"
+      }
+    },
+    {
+      "name": "Insert code block",
+      "context": "Compose box",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+B"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+B"
+      }
+    },
+    {
+      "name": "Insert code",
+      "context": "Compose box",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+5"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+4"
+      }
+    },
+    {
+      "name": "Accept video call",
+      "context": "Incoming call",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+A"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+V"
+      }
+    },
+    {
+      "name": "Accept audio call",
+      "context": "Incoming call",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+S"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+A"
+      }
+    },
+    {
+      "name": "Decline call",
+      "context": "Incoming call",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+D"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+D"
+      }
+    },
+    {
+      "name": "Start audio call",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+A"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+S"
+      }
+    },
+    {
+      "name": "Start video call",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+V"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+S"
+      }
+    },
+    {
+      "name": "Schedule a meeting",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+N"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Cmd+N"
+      }
+    },
+    {
+      "name": "Save or send meeting request",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+S"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+S"
+      }
+    },
+    {
+      "name": "Join from meeting details",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+J"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Cmd+K"
+      }
+    },
+    {
+      "name": "Go to suggested time",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+S"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+S"
+      }
+    },
+    {
+      "name": "Join from meeting started toast",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+J"
+      }
+    },
+    {
+      "name": "Open meeting chat from meeting notification",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+R"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Cmd+C"
+      }
+    },
+    {
+      "name": "Toggle full screen",
+      "context": "In a meeting or call",
+      "windows": {
+        "type": "keys",
+        "chord": "F11"
+      }
+    },
+    {
+      "name": "Zoom in shared content",
+      "context": "In a meeting or call",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+Plus"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+="
+      }
+    },
+    {
+      "name": "Zoom out shared content",
+      "context": "In a meeting or call",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+-"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+-"
+      }
+    },
+    {
+      "name": "Reset zoom for shared content",
+      "context": "In a meeting or call",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+0"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+0"
+      }
+    },
+    {
+      "name": "End audio call",
+      "context": "In a meeting or call",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+H"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+H"
+      }
+    },
+    {
+      "name": "End video call",
+      "context": "In a meeting or call",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+H"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+H"
+      }
+    },
+    {
+      "name": "Toggle mute",
+      "context": "In a meeting or call",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+M"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+M"
+      }
+    },
+    {
+      "name": "Toggle speaker",
+      "context": "In a meeting or call",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+U"
+      }
+    },
+    {
+      "name": "Temporarily unmute",
+      "context": "In a meeting or call",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Space"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Space"
+      }
+    },
+    {
+      "name": "Announce raised hands (screen reader)",
+      "context": "In a meeting or call",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+L"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+L"
+      }
+    },
+    {
+      "name": "Raise or lower your hand",
+      "context": "In a meeting or call",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+K"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+K"
+      }
+    },
+    {
+      "name": "Toggle video",
+      "context": "In a meeting or call",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+O"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+O"
+      }
+    },
+    {
+      "name": "Toggle live captions",
+      "context": "In a meeting or call",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+A"
+      }
+    },
+    {
+      "name": "Toggle share content tray",
+      "context": "In a meeting or call",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+E"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+E"
+      }
+    },
+    {
+      "name": "Go to sharing toolbar",
+      "context": "In a meeting or call",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Space"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+Space"
+      }
+    },
+    {
+      "name": "Move focus to the toolbar in an edit field",
+      "context": "In a meeting or call",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+F10"
+      }
+    },
+    {
+      "name": "Pan shared content up",
+      "context": "In a meeting or call",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+Up"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+Up"
+      }
+    },
+    {
+      "name": "Pan shared content down",
+      "context": "In a meeting or call",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+Down"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+Down"
+      }
+    },
+    {
+      "name": "Pan shared content left",
+      "context": "In a meeting or call",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+Left"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+Left"
+      }
+    },
+    {
+      "name": "Pan shared content right",
+      "context": "In a meeting or call",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+Right"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+Right"
+      }
+    },
+    {
+      "name": "Admit people from lobby notification",
+      "context": "In a meeting or call",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Y"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+Y"
+      }
+    },
+    {
+      "name": "Decline screen share",
+      "context": "Screen share request",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+D"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+D"
+      }
+    },
+    {
+      "name": "Accept screen share",
+      "context": "Screen share request",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+A"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+V"
+      }
+    },
+    {
+      "name": "Open the calendar view",
+      "context": "Calendar",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+3"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+2"
+      }
+    },
+    {
+      "name": "Open Day view",
+      "context": "Calendar",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+1"
+      }
+    },
+    {
+      "name": "Open Work week view",
+      "context": "Calendar",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+2"
+      }
+    },
+    {
+      "name": "Open Week view",
+      "context": "Calendar",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+3"
+      }
+    },
+    {
+      "name": "Open Month view",
+      "context": "Calendar",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+4"
+      }
+    },
+    {
+      "name": "Open agenda in Month view",
+      "context": "Calendar",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+5"
+      }
+    },
+    {
+      "name": "Open the selected item",
+      "context": "Calendar",
+      "windows": {
+        "type": "keys",
+        "chord": "Enter"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+O"
+      }
+    },
+    {
+      "name": "Delete the selected item",
+      "context": "Calendar",
+      "windows": {
+        "type": "keys",
+        "chord": "Delete"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Delete"
+      }
+    },
+    {
+      "name": "Go to the previous time period",
+      "context": "Calendar",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Left"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+Left"
+      }
+    },
+    {
+      "name": "Go to the next time period",
+      "context": "Calendar",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Right"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+Right"
+      }
+    },
+    {
+      "name": "Show 1 day in the calendar",
+      "context": "Calendar",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+1"
+      }
+    },
+    {
+      "name": "Show 2 days in the calendar",
+      "context": "Calendar",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+2"
+      }
+    },
+    {
+      "name": "Show 3 days in the calendar",
+      "context": "Calendar",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+3"
+      }
+    },
+    {
+      "name": "Show 4 days in the calendar",
+      "context": "Calendar",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+4"
+      }
+    },
+    {
+      "name": "Show 5 days in the calendar",
+      "context": "Calendar",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+5"
+      }
+    },
+    {
+      "name": "Show 6 days in the calendar",
+      "context": "Calendar",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+6"
+      }
+    },
+    {
+      "name": "Show 7 days in the calendar",
+      "context": "Calendar",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+7"
+      }
+    },
+    {
+      "name": "Go to the next week",
+      "context": "Calendar",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Down"
+      }
+    },
+    {
+      "name": "Go to the previous week",
+      "context": "Calendar",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Up"
+      }
+    },
+    {
+      "name": "Go to the next month",
+      "context": "Calendar",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+PageDown"
+      }
+    },
+    {
+      "name": "Go to the previous month",
+      "context": "Calendar",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+PageUp"
+      }
+    },
+    {
+      "name": "Open or collapse the left pane",
+      "context": "Calendar",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+F1"
+      }
+    },
+    {
+      "name": "Move to a different region in the calendar",
+      "context": "Calendar",
+      "windows": {
+        "type": "keys",
+        "chord": "F6"
+      }
+    },
+    {
+      "name": "Move to the next event or area in the current view",
+      "context": "Calendar",
+      "windows": {
+        "type": "keys",
+        "chord": "Tab"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Tab"
+      }
+    },
+    {
+      "name": "Move to a previous event or area in the current view",
+      "context": "Calendar",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Tab"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Tab"
+      }
+    },
+    {
+      "name": "Go to today",
+      "context": "Calendar",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+Y"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+T"
+      }
+    },
+    {
+      "name": "Invite attendees",
+      "context": "Calendar",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+N"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+0"
+      }
+    },
+    {
+      "name": "Create a new appointment or calendar item",
+      "context": "Calendar",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+N"
+      }
+    },
+    {
+      "name": "Navigate to the previous pane in the calendar view",
+      "context": "Calendar",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Ctrl+["
+      }
+    },
+    {
+      "name": "Navigate to the next pane in the calendar view",
+      "context": "Calendar",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Ctrl+]"
+      }
+    },
+    {
+      "name": "Close an event",
+      "context": "Calendar",
+      "windows": {
+        "type": "keys",
+        "chord": "Esc"
+      }
+    },
+    {
+      "name": "Print calendar",
+      "context": "Calendar",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+P"
+      }
+    },
+    {
+      "name": "Search your calendar",
+      "context": "Calendar",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Q"
+      }
+    },
+    {
+      "name": "Show help",
+      "context": "Calendar",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+/"
+      }
+    },
+    {
+      "name": "Forward an event",
+      "context": "Calendar",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+F"
+      }
+    },
+    {
+      "name": "Reply to meeting",
+      "context": "Calendar",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+R"
+      }
+    },
+    {
+      "name": "Reply all to meeting",
+      "context": "Calendar",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+R"
+      }
+    },
+    {
+      "name": "Join event",
+      "context": "Calendar",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+J"
+      }
+    },
+    {
+      "name": "Create a new event",
+      "context": "Calendar",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+N"
+      }
+    },
+    {
+      "name": "Send a meeting",
+      "context": "Calendar",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Enter"
+      }
+    },
+    {
+      "name": "Insert a hyperlink",
+      "context": "Calendar",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+K"
+      }
+    },
+    {
+      "name": "Undo action",
+      "context": "Calendar",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Z"
+      }
+    },
+    {
+      "name": "Retry action",
+      "context": "Calendar",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Y"
+      }
+    },
+    {
+      "name": "Create a meeting request",
+      "context": "Calendar",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Q"
+      }
+    },
+    {
+      "name": "Mark all as read",
+      "context": "Activity feed",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+K"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+J"
+      }
+    },
+    {
+      "name": "See all unread activity",
+      "context": "Activity feed",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+U"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+U"
+      }
+    },
+    {
+      "name": "Filter activity to missed calls",
+      "context": "Activity feed",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+C"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+H"
+      }
+    },
+    {
+      "name": "Filter activity to @ mentions",
+      "context": "Activity feed",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+M"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+B"
+      }
+    },
+    {
+      "name": "Download diagnostic logs",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Shift+1"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+Shift+1"
+      }
+    }
+  ],
+  "defaults": {
+    "TUNE_CW": {
+      "name": "Go to next section",
+      "action": {
+        "type": "keys",
+        "chord": "Ctrl+F6"
+      },
+      "accel": "medium"
+    },
+    "TUNE_CCW": {
+      "name": "Go to previous section",
+      "action": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+F6"
+      },
+      "accel": "medium"
+    },
+    "TUNE_TAP_1F": {
+      "name": "Toggle mute",
+      "action": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+M"
+      }
+    },
+    "TUNE_SWIPE_UP": {
+      "name": "Accept video call",
+      "action": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+A"
+      }
+    },
+    "TUNE_SWIPE_DOWN": {
+      "name": "Decline call",
+      "action": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+D"
+      }
+    }
+  }
+}

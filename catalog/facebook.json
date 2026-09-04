@@ -1,0 +1,47 @@
+{
+  "id": "facebook",
+  "name": "Facebook",
+  "kind": "site",
+  "category": "Social",
+  "match": {
+    "windows_exe": [
+      "chrome.exe",
+      "msedge.exe",
+      "firefox.exe",
+      "brave.exe",
+      "vivaldi.exe"
+    ],
+    "macos_bundle": [
+      "com.google.Chrome",
+      "com.microsoft.edgemac",
+      "org.mozilla.firefox",
+      "com.brave.Browser",
+      "com.apple.Safari"
+    ],
+    "window_title": [
+      "Facebook"
+    ]
+  },
+  "sources": [
+    "https://www.facebook.com/help/156151771119453"
+  ],
+  "note": "The vendor documents scrolling between Feed stories as a single 'J and K' bullet without naming a direction; it is split here into two named actions ('Scroll to next/previous Feed story') so each has its own chord, consistent with the grammar and with how Reddit/LinkedIn document the same j/k pattern. Facebook's page states shortcuts only work outside text boxes and that other browsers (Firefox, Internet Explorer) may bind them differently; no Windows/Mac modifier differences are documented for these action keys, so the same plain-key chord is recorded for Chrome on Windows and Safari/Chrome on Mac. Keyboard shortcuts may not work in video calls or video players (vendor note); nothing else was excluded.",
+  "actions": [
+    { "name": "Scroll to next Feed story", "context": "", "windows": { "type": "keys", "chord": "J" }, "mac": { "type": "keys", "chord": "J" } },
+    { "name": "Scroll to previous Feed story", "context": "", "windows": { "type": "keys", "chord": "K" }, "mac": { "type": "keys", "chord": "K" } },
+    { "name": "See more of the selected story", "context": "", "windows": { "type": "keys", "chord": "Enter" }, "mac": { "type": "keys", "chord": "Enter" } },
+    { "name": "Post a new status", "context": "", "windows": { "type": "keys", "chord": "P" }, "mac": { "type": "keys", "chord": "P" } },
+    { "name": "Like or unlike the selected story", "context": "", "windows": { "type": "keys", "chord": "L" }, "mac": { "type": "keys", "chord": "L" } },
+    { "name": "Comment on the selected story", "context": "", "windows": { "type": "keys", "chord": "C" }, "mac": { "type": "keys", "chord": "C" } },
+    { "name": "Share the selected story", "context": "", "windows": { "type": "keys", "chord": "S" }, "mac": { "type": "keys", "chord": "S" } },
+    { "name": "Open an attachment from the selected story", "context": "", "windows": { "type": "keys", "chord": "O" }, "mac": { "type": "keys", "chord": "O" } },
+    { "name": "Search", "context": "", "windows": { "type": "keys", "chord": "/" }, "mac": { "type": "keys", "chord": "/" } },
+    { "name": "Search chat contacts", "context": "", "windows": { "type": "keys", "chord": "Q" }, "mac": { "type": "keys", "chord": "Q" } },
+    { "name": "Open a list of these keyboard shortcuts", "context": "Feed", "windows": { "type": "keys", "chord": "Shift+/" }, "mac": { "type": "keys", "chord": "Shift+/" } }
+  ],
+  "defaults": {
+    "TUNE_CW": { "name": "Scroll to next Feed story", "action": { "type": "keys", "chord": "J" }, "accel": "medium" },
+    "TUNE_CCW": { "name": "Scroll to previous Feed story", "action": { "type": "keys", "chord": "K" }, "accel": "medium" },
+    "TUNE_TAP_1F": { "name": "Like or unlike the selected story", "action": { "type": "keys", "chord": "L" } }
+  }
+}

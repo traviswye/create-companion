@@ -1,0 +1,57 @@
+{
+  "id": "vimeo",
+  "name": "Vimeo",
+  "kind": "site",
+  "category": "Video",
+  "match": {
+    "windows_exe": [
+      "chrome.exe",
+      "msedge.exe",
+      "firefox.exe",
+      "brave.exe",
+      "vivaldi.exe"
+    ],
+    "macos_bundle": [
+      "com.google.Chrome",
+      "com.microsoft.edgemac",
+      "org.mozilla.firefox",
+      "com.brave.Browser",
+      "com.apple.Safari"
+    ],
+    "window_title": [
+      "Vimeo"
+    ]
+  },
+  "sources": [
+    "https://help.vimeo.com/hc/en-us/articles/12425998125073-What-are-player-keyboard-shortcuts"
+  ],
+  "note": "The vendor table lists two separate keys for the same action in three cases (arrow keys and legacy YouTube-style letters both scrub/play); each pair is kept as two distinct actions here ('... (arrow key)' / '... (J/K/L key)') since one action can only carry one chord. All shortcuts require the Vimeo player to be engaged (focused); none were excluded as inexpressible.",
+  "actions": [
+    { "name": "Pull up the keyboard shortcuts menu", "context": "", "windows": { "type": "keys", "chord": "Shift+/" }, "mac": { "type": "keys", "chord": "Shift+/" } },
+    { "name": "Volume up", "context": "", "windows": { "type": "keys", "chord": "Up" }, "mac": { "type": "keys", "chord": "Up" } },
+    { "name": "Volume down", "context": "", "windows": { "type": "keys", "chord": "Down" }, "mac": { "type": "keys", "chord": "Down" } },
+    { "name": "Scrub forward (arrow key)", "context": "", "windows": { "type": "keys", "chord": "Right" }, "mac": { "type": "keys", "chord": "Right" } },
+    { "name": "Scrub forward (L key)", "context": "", "windows": { "type": "keys", "chord": "L" }, "mac": { "type": "keys", "chord": "L" } },
+    { "name": "Scrub backwards (arrow key)", "context": "", "windows": { "type": "keys", "chord": "Left" }, "mac": { "type": "keys", "chord": "Left" } },
+    { "name": "Scrub backwards (J key)", "context": "", "windows": { "type": "keys", "chord": "J" }, "mac": { "type": "keys", "chord": "J" } },
+    { "name": "Pause / play (Space)", "context": "", "windows": { "type": "keys", "chord": "Space" }, "mac": { "type": "keys", "chord": "Space" } },
+    { "name": "Pause / play (K key)", "context": "", "windows": { "type": "keys", "chord": "K" }, "mac": { "type": "keys", "chord": "K" } },
+    { "name": "Share", "context": "", "windows": { "type": "keys", "chord": "S" }, "mac": { "type": "keys", "chord": "S" } },
+    { "name": "Watch Later", "context": "", "windows": { "type": "keys", "chord": "W" }, "mac": { "type": "keys", "chord": "W" } },
+    { "name": "View on Vimeo", "context": "", "windows": { "type": "keys", "chord": "V" }, "mac": { "type": "keys", "chord": "V" } },
+    { "name": "Toggle mute", "context": "", "windows": { "type": "keys", "chord": "M" }, "mac": { "type": "keys", "chord": "M" } },
+    { "name": "Take screenshot of the video frame", "context": "", "windows": { "type": "keys", "chord": "P" }, "mac": { "type": "keys", "chord": "P" } },
+    { "name": "Toggle captions", "context": "", "windows": { "type": "keys", "chord": "C" }, "mac": { "type": "keys", "chord": "C" } },
+    { "name": "Toggle transcript", "context": "", "windows": { "type": "keys", "chord": "Shift+T" }, "mac": { "type": "keys", "chord": "Shift+T" } },
+    { "name": "Toggle player preferences menu", "context": "", "windows": { "type": "keys", "chord": "H" }, "mac": { "type": "keys", "chord": "H" } },
+    { "name": "Toggle fullscreen", "context": "", "windows": { "type": "keys", "chord": "F" }, "mac": { "type": "keys", "chord": "F" } },
+    { "name": "Debug Panel for technical issues", "context": "", "windows": { "type": "keys", "chord": "D" }, "mac": { "type": "keys", "chord": "D" } },
+    { "name": "Frame backward", "context": "", "windows": { "type": "keys", "chord": "Shift+Left" }, "mac": { "type": "keys", "chord": "Shift+Left" } },
+    { "name": "Frame forward", "context": "", "windows": { "type": "keys", "chord": "Shift+Right" }, "mac": { "type": "keys", "chord": "Shift+Right" } }
+  ],
+  "defaults": {
+    "TUNE_CW": { "name": "Scrub forward (arrow key)", "action": { "type": "keys", "chord": "Right" }, "accel": "medium" },
+    "TUNE_CCW": { "name": "Scrub backwards (arrow key)", "action": { "type": "keys", "chord": "Left" }, "accel": "medium" },
+    "TUNE_TAP_1F": { "name": "Pause / play (Space)", "action": { "type": "keys", "chord": "Space" } }
+  }
+}

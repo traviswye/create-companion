@@ -1,0 +1,78 @@
+{
+  "id": "wikipedia",
+  "name": "Wikipedia",
+  "kind": "site",
+  "category": "Other",
+  "match": {
+    "windows_exe": [
+      "chrome.exe",
+      "msedge.exe",
+      "firefox.exe",
+      "brave.exe",
+      "vivaldi.exe"
+    ],
+    "macos_bundle": [
+      "com.google.Chrome",
+      "com.microsoft.edgemac",
+      "org.mozilla.firefox",
+      "com.brave.Browser",
+      "com.apple.Safari"
+    ],
+    "window_title": [
+      "Wikipedia"
+    ]
+  },
+  "sources": [
+    "https://en.wikipedia.org/wiki/Wikipedia:Keyboard_shortcuts",
+    "https://en.wikipedia.org/wiki/Help:Keyboard_shortcuts"
+  ],
+  "note": "These are MediaWiki access keys, not fixed chords: the underlying key is a single letter/punctuation mark, and the browser decides the modifier prefix. Recorded here in the Chrome-on-Windows form (Alt+Shift+key) for 'windows' and the Chrome/Firefox/Safari-on-Mac form (Control+Option+key, written Ctrl+Alt per this grammar) for 'mac', as the source page documents per browser; Firefox on Windows/Linux also uses Alt+Shift+key, Internet Explorer/legacy Edge use Alt+key alone. Not expressible, so left out: 'Purge page cache' (access key '*' is not in the chord grammar's key set). Context reflects the page section from the source table (which page/state the key applies to); shortcuts marked in the source as requiring an active login are noted as such in context.",
+  "actions": [
+    { "name": "Move cursor to search box", "context": "Site navigation", "windows": { "type": "keys", "chord": "Alt+Shift+F" }, "mac": { "type": "keys", "chord": "Ctrl+Alt+F" } },
+    { "name": "Special pages", "context": "Site navigation", "windows": { "type": "keys", "chord": "Alt+Shift+Q" }, "mac": { "type": "keys", "chord": "Ctrl+Alt+Q" } },
+    { "name": "Recent changes", "context": "Site navigation", "windows": { "type": "keys", "chord": "Alt+Shift+R" }, "mac": { "type": "keys", "chord": "Ctrl+Alt+R" } },
+    { "name": "Upload file", "context": "Site navigation — requires login", "windows": { "type": "keys", "chord": "Alt+Shift+U" }, "mac": { "type": "keys", "chord": "Ctrl+Alt+U" } },
+    { "name": "Random article", "context": "Site navigation", "windows": { "type": "keys", "chord": "Alt+Shift+X" }, "mac": { "type": "keys", "chord": "Ctrl+Alt+X" } },
+    { "name": "Main Page", "context": "Site navigation", "windows": { "type": "keys", "chord": "Alt+Shift+Z" }, "mac": { "type": "keys", "chord": "Ctrl+Alt+Z" } },
+    { "name": "My user page", "context": "Personal tools", "windows": { "type": "keys", "chord": "Alt+Shift+." }, "mac": { "type": "keys", "chord": "Ctrl+Alt+." } },
+    { "name": "My watchlist", "context": "Personal tools — requires login", "windows": { "type": "keys", "chord": "Alt+Shift+L" }, "mac": { "type": "keys", "chord": "Ctrl+Alt+L" } },
+    { "name": "My talk", "context": "Personal tools", "windows": { "type": "keys", "chord": "Alt+Shift+N" }, "mac": { "type": "keys", "chord": "Ctrl+Alt+N" } },
+    { "name": "Log in", "context": "Personal tools — logged-out users only", "windows": { "type": "keys", "chord": "Alt+Shift+O" }, "mac": { "type": "keys", "chord": "Ctrl+Alt+O" } },
+    { "name": "My contributions", "context": "Personal tools", "windows": { "type": "keys", "chord": "Alt+Shift+Y" }, "mac": { "type": "keys", "chord": "Ctrl+Alt+Y" } },
+    { "name": "Edit page or view source", "context": "Current page tools", "windows": { "type": "keys", "chord": "Alt+Shift+E" }, "mac": { "type": "keys", "chord": "Ctrl+Alt+E" } },
+    { "name": "Edit with VisualEditor", "context": "Current page tools — if available", "windows": { "type": "keys", "chord": "Alt+Shift+V" }, "mac": { "type": "keys", "chord": "Ctrl+Alt+V" } },
+    { "name": "Open associated Wikidata item", "context": "Current page tools", "windows": { "type": "keys", "chord": "Alt+Shift+G" }, "mac": { "type": "keys", "chord": "Ctrl+Alt+G" } },
+    { "name": "View history", "context": "Current page tools", "windows": { "type": "keys", "chord": "Alt+Shift+H" }, "mac": { "type": "keys", "chord": "Ctrl+Alt+H" } },
+    { "name": "What links here", "context": "Current page tools", "windows": { "type": "keys", "chord": "Alt+Shift+J" }, "mac": { "type": "keys", "chord": "Ctrl+Alt+J" } },
+    { "name": "Related changes", "context": "Current page tools", "windows": { "type": "keys", "chord": "Alt+Shift+K" }, "mac": { "type": "keys", "chord": "Ctrl+Alt+K" } },
+    { "name": "Move page", "context": "Current page tools — requires login", "windows": { "type": "keys", "chord": "Alt+Shift+M" }, "mac": { "type": "keys", "chord": "Ctrl+Alt+M" } },
+    { "name": "Printable version", "context": "Current page tools", "windows": { "type": "keys", "chord": "Alt+Shift+P" }, "mac": { "type": "keys", "chord": "Ctrl+Alt+P" } },
+    { "name": "Watch/unwatch page", "context": "Current page tools — requires login", "windows": { "type": "keys", "chord": "Alt+Shift+W" }, "mac": { "type": "keys", "chord": "Ctrl+Alt+W" } },
+    { "name": "Switch to talk page", "context": "Current page tools", "windows": { "type": "keys", "chord": "Alt+Shift+T" }, "mac": { "type": "keys", "chord": "Ctrl+Alt+T" } },
+    { "name": "Start new discussion", "context": "Talk pages", "windows": { "type": "keys", "chord": "Alt+Shift+Plus" }, "mac": { "type": "keys", "chord": "Ctrl+Alt+Plus" } },
+    { "name": "Switch to content page", "context": "Talk pages", "windows": { "type": "keys", "chord": "Alt+Shift+C" }, "mac": { "type": "keys", "chord": "Ctrl+Alt+C" } },
+    { "name": "Move cursor to edit box", "context": "Editing page", "windows": { "type": "keys", "chord": "Alt+Shift+," }, "mac": { "type": "keys", "chord": "Ctrl+Alt+," } },
+    { "name": "Move cursor to edit summary", "context": "Editing page", "windows": { "type": "keys", "chord": "Alt+Shift+B" }, "mac": { "type": "keys", "chord": "Ctrl+Alt+B" } },
+    { "name": "Flag edit as minor", "context": "Editing page — requires login", "windows": { "type": "keys", "chord": "Alt+Shift+I" }, "mac": { "type": "keys", "chord": "Ctrl+Alt+I" } },
+    { "name": "Show preview", "context": "Editing page", "windows": { "type": "keys", "chord": "Alt+Shift+P" }, "mac": { "type": "keys", "chord": "Ctrl+Alt+P" } },
+    { "name": "Show changes", "context": "Editing page", "windows": { "type": "keys", "chord": "Alt+Shift+V" }, "mac": { "type": "keys", "chord": "Ctrl+Alt+V" } },
+    { "name": "Publish changes", "context": "Editing page", "windows": { "type": "keys", "chord": "Alt+Shift+S" }, "mac": { "type": "keys", "chord": "Ctrl+Alt+S" } },
+    { "name": "Toggle watch this page", "context": "Editing page", "windows": { "type": "keys", "chord": "Alt+Shift+W" }, "mac": { "type": "keys", "chord": "Ctrl+Alt+W" } },
+    { "name": "Delete/undelete page", "context": "Admin only", "windows": { "type": "keys", "chord": "Alt+Shift+D" }, "mac": { "type": "keys", "chord": "Ctrl+Alt+D" } },
+    { "name": "Protect/unprotect page", "context": "Admin only", "windows": { "type": "keys", "chord": "Alt+Shift+=" }, "mac": { "type": "keys", "chord": "Ctrl+Alt+=" } }
+  ],
+  "defaults": {
+    "TUNE_TAP_1F": {
+      "name": "Move cursor to search box",
+      "action": { "type": "keys", "chord": "Alt+Shift+F" }
+    },
+    "TUNE_SWIPE_LEFT": {
+      "name": "View history",
+      "action": { "type": "keys", "chord": "Alt+Shift+H" }
+    },
+    "TUNE_SWIPE_RIGHT": {
+      "name": "Random article",
+      "action": { "type": "keys", "chord": "Alt+Shift+X" }
+    }
+  }
+}

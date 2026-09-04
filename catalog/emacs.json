@@ -1,0 +1,2979 @@
+{
+  "id": "emacs",
+  "name": "GNU Emacs",
+  "kind": "app",
+  "category": "Development",
+  "match": {
+    "windows_exe": [
+      "emacs.exe",
+      "runemacs.exe"
+    ],
+    "macos_bundle": [
+      "org.gnu.Emacs"
+    ],
+    "window_title": []
+  },
+  "sources": [
+    "https://www.gnu.org/software/emacs/refcards/pdf/refcard.pdf",
+    "https://raw.githubusercontent.com/emacs-mirror/emacs/master/etc/refcards/refcard.tex",
+    "https://www.gnu.org/software/emacs/manual/html_node/emacs/index.html"
+  ],
+  "note": "From the GNU Emacs Reference Card - parsed from etc/refcards/refcard.tex in the Emacs tree, the typeset source of the PDF the GNU project publishes, so every binding here is the card's own. Emacs notation is translated as the card's own \"Key Binding Notation\" section defines it: C-x is Ctrl+X, M-x is Alt+X, C-M-x is Ctrl+Alt+X and S-x is Shift+X; a multi-key binding such as C-x C-s becomes a sequence. RET is Enter, SPC is Space, TAB is Tab and DEL is the Backspace key (Emacs's backward delete). Shifted punctuation is written as Shift plus the unshifted key on a US layout, so M-% is Alt+Shift+5, M-< is Alt+Shift+, and C-@ is Ctrl+Shift+2. The card's section names are groupings rather than modes, so the context is empty except for Incremental Search, Query Replace, Info and The Minibuffer. The card's three-column tables (Motion, Killing and Deleting, Multiple Windows) become two actions each, named with the row's entity and the column heading in parentheses. Where the card gives an alternative binding on the same line the first is kept (C-x u for undo, C-@ for set mark, SPC for replace-and-go-on). Left out: the \"Regular Expressions\" section, which is regexp syntax rather than key bindings; every command the card writes as M-x followed by a command name (recover-session, revert-buffer, query-replace-regexp, the ispell and flyspell commands, the tags commands, shell, the input-method and coding-system listings, name-last-kbd-macro, insert-kbd-macro, eval-region, load-library and customize), which are typed command names rather than chords; and the four bindings that take an argument (M-z char, C-u num, C-q char, and selecting the nth menu item by number).",
+  "actions": [
+    {
+      "name": "Iconify Emacs (or suspend it in terminal)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Z"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Z"
+      }
+    },
+    {
+      "name": "Exit Emacs permanently",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "Ctrl+C"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "Ctrl+C"
+        ]
+      }
+    },
+    {
+      "name": "Read a file into Emacs",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "Ctrl+F"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "Ctrl+F"
+        ]
+      }
+    },
+    {
+      "name": "Save a file back to disk",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "Ctrl+S"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "Ctrl+S"
+        ]
+      }
+    },
+    {
+      "name": "Save all files",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "S"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "S"
+        ]
+      }
+    },
+    {
+      "name": "Insert contents of another file into this buffer",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "I"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "I"
+        ]
+      }
+    },
+    {
+      "name": "Replace this file with the file you really want",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "Ctrl+V"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "Ctrl+V"
+        ]
+      }
+    },
+    {
+      "name": "Write buffer to a specified file",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "Ctrl+W"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "Ctrl+W"
+        ]
+      }
+    },
+    {
+      "name": "Toggle read-only status of buffer",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "Ctrl+Q"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "Ctrl+Q"
+        ]
+      }
+    },
+    {
+      "name": "Remove help window",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "1"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "1"
+        ]
+      }
+    },
+    {
+      "name": "Scroll help window",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+V"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+V"
+      }
+    },
+    {
+      "name": "Apropos: show commands matching a string",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+H",
+          "A"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+H",
+          "A"
+        ]
+      }
+    },
+    {
+      "name": "Describe the function a key runs",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+H",
+          "K"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+H",
+          "K"
+        ]
+      }
+    },
+    {
+      "name": "Describe a function",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+H",
+          "F"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+H",
+          "F"
+        ]
+      }
+    },
+    {
+      "name": "Get mode-specific information",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+H",
+          "M"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+H",
+          "M"
+        ]
+      }
+    },
+    {
+      "name": "Abort partially typed or executing command",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+G"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+G"
+      }
+    },
+    {
+      "name": "Undo an unwanted change",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "U"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "U"
+        ]
+      }
+    },
+    {
+      "name": "Redraw garbaged screen",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+L"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+L"
+      }
+    },
+    {
+      "name": "Search forward",
+      "context": "Incremental Search",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+S"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+S"
+      }
+    },
+    {
+      "name": "Search backward",
+      "context": "Incremental Search",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+R"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+R"
+      }
+    },
+    {
+      "name": "Regular expression search",
+      "context": "Incremental Search",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+S"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+S"
+      }
+    },
+    {
+      "name": "Reverse regular expression search",
+      "context": "Incremental Search",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+R"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+R"
+      }
+    },
+    {
+      "name": "Select previous search string",
+      "context": "Incremental Search",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+P"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+P"
+      }
+    },
+    {
+      "name": "Select next search string",
+      "context": "Incremental Search",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+N"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+N"
+      }
+    },
+    {
+      "name": "Exit incremental search",
+      "context": "Incremental Search",
+      "windows": {
+        "type": "keys",
+        "chord": "Enter"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Enter"
+      }
+    },
+    {
+      "name": "Undo effect of last character",
+      "context": "Incremental Search",
+      "windows": {
+        "type": "keys",
+        "chord": "Backspace"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Backspace"
+      }
+    },
+    {
+      "name": "Abort current search",
+      "context": "Incremental Search",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+G"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+G"
+      }
+    },
+    {
+      "name": "Move over character (backward)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+B"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+B"
+      }
+    },
+    {
+      "name": "Move over character (forward)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+F"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+F"
+      }
+    },
+    {
+      "name": "Move over word (backward)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+B"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+B"
+      }
+    },
+    {
+      "name": "Move over word (forward)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+F"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+F"
+      }
+    },
+    {
+      "name": "Move over line (backward)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+P"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+P"
+      }
+    },
+    {
+      "name": "Move over line (forward)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+N"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+N"
+      }
+    },
+    {
+      "name": "Move over go to line beginning (or end) (backward)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+A"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+A"
+      }
+    },
+    {
+      "name": "Move over go to line beginning (or end) (forward)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+E"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+E"
+      }
+    },
+    {
+      "name": "Move over sentence (backward)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+A"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+A"
+      }
+    },
+    {
+      "name": "Move over sentence (forward)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+E"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+E"
+      }
+    },
+    {
+      "name": "Move over paragraph (backward)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+["
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Alt+["
+      }
+    },
+    {
+      "name": "Move over paragraph (forward)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+]"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Alt+]"
+      }
+    },
+    {
+      "name": "Move over page (backward)",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "["
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "["
+        ]
+      }
+    },
+    {
+      "name": "Move over page (forward)",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "]"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "]"
+        ]
+      }
+    },
+    {
+      "name": "Move over sexp (backward)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+B"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+B"
+      }
+    },
+    {
+      "name": "Move over sexp (forward)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+F"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+F"
+      }
+    },
+    {
+      "name": "Move over function (backward)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+A"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+A"
+      }
+    },
+    {
+      "name": "Move over function (forward)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+E"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+E"
+      }
+    },
+    {
+      "name": "Move over go to buffer beginning (or end) (backward)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+,"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Alt+,"
+      }
+    },
+    {
+      "name": "Move over go to buffer beginning (or end) (forward)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+."
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Alt+."
+      }
+    },
+    {
+      "name": "Scroll to next screen",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+V"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+V"
+      }
+    },
+    {
+      "name": "Scroll to previous screen",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+V"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+V"
+      }
+    },
+    {
+      "name": "Scroll left",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "Shift+,"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "Shift+,"
+        ]
+      }
+    },
+    {
+      "name": "Scroll right",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "Shift+."
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "Shift+."
+        ]
+      }
+    },
+    {
+      "name": "Scroll current line to center, top, bottom",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+L"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+L"
+      }
+    },
+    {
+      "name": "Goto line",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+G",
+          "G"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Alt+G",
+          "G"
+        ]
+      }
+    },
+    {
+      "name": "Goto char",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+G",
+          "C"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Alt+G",
+          "C"
+        ]
+      }
+    },
+    {
+      "name": "Back to indentation",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+M"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+M"
+      }
+    },
+    {
+      "name": "Kill character (delete, not kill) (backward)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Backspace"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Backspace"
+      }
+    },
+    {
+      "name": "Kill character (delete, not kill) (forward)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+D"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+D"
+      }
+    },
+    {
+      "name": "Kill word (backward)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Backspace"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Backspace"
+      }
+    },
+    {
+      "name": "Kill word (forward)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+D"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+D"
+      }
+    },
+    {
+      "name": "Kill line (to end of) (backward)",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+0",
+          "Ctrl+K"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Alt+0",
+          "Ctrl+K"
+        ]
+      }
+    },
+    {
+      "name": "Kill line (to end of) (forward)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+K"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+K"
+      }
+    },
+    {
+      "name": "Kill sentence (backward)",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "Backspace"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "Backspace"
+        ]
+      }
+    },
+    {
+      "name": "Kill sentence (forward)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+K"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+K"
+      }
+    },
+    {
+      "name": "Kill sexp (backward)",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+-",
+          "Ctrl+Alt+K"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Alt+-",
+          "Ctrl+Alt+K"
+        ]
+      }
+    },
+    {
+      "name": "Kill sexp (forward)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+K"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+K"
+      }
+    },
+    {
+      "name": "Kill region",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+W"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+W"
+      }
+    },
+    {
+      "name": "Copy region to kill ring",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+W"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+W"
+      }
+    },
+    {
+      "name": "Yank back last thing killed",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Y"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Y"
+      }
+    },
+    {
+      "name": "Replace last yank with previous kill",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Y"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Y"
+      }
+    },
+    {
+      "name": "Set mark here",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+2"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+2"
+      }
+    },
+    {
+      "name": "Exchange point and mark",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "Ctrl+X"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "Ctrl+X"
+        ]
+      }
+    },
+    {
+      "name": "Set mark arg words away",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+2"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Alt+2"
+      }
+    },
+    {
+      "name": "Mark paragraph",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+H"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+H"
+      }
+    },
+    {
+      "name": "Mark page",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "Ctrl+P"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "Ctrl+P"
+        ]
+      }
+    },
+    {
+      "name": "Mark sexp",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Alt+2"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Alt+2"
+      }
+    },
+    {
+      "name": "Mark function",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+H"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+H"
+      }
+    },
+    {
+      "name": "Mark entire buffer",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "H"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "H"
+        ]
+      }
+    },
+    {
+      "name": "Interactively replace a text string",
+      "context": "Query Replace",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+5"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Alt+5"
+      }
+    },
+    {
+      "name": "Replace this one, go on to next",
+      "context": "Query Replace",
+      "windows": {
+        "type": "keys",
+        "chord": "Space"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Space"
+      }
+    },
+    {
+      "name": "Replace this one, don't move",
+      "context": "Query Replace",
+      "windows": {
+        "type": "keys",
+        "chord": ","
+      },
+      "mac": {
+        "type": "keys",
+        "chord": ","
+      }
+    },
+    {
+      "name": "Skip to next without replacing",
+      "context": "Query Replace",
+      "windows": {
+        "type": "keys",
+        "chord": "Backspace"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Backspace"
+      }
+    },
+    {
+      "name": "Replace all remaining matches",
+      "context": "Query Replace",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+1"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+1"
+      }
+    },
+    {
+      "name": "Back up to the previous match",
+      "context": "Query Replace",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+6"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+6"
+      }
+    },
+    {
+      "name": "Exit query-replace",
+      "context": "Query Replace",
+      "windows": {
+        "type": "keys",
+        "chord": "Enter"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Enter"
+      }
+    },
+    {
+      "name": "Enter recursive edit (\\kbd{C-M-c} to exit)",
+      "context": "Query Replace",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+R"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+R"
+      }
+    },
+    {
+      "name": "Delete all other windows (window)",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "1"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "1"
+        ]
+      }
+    },
+    {
+      "name": "Delete all other windows (frame)",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "5",
+          "1"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "5",
+          "1"
+        ]
+      }
+    },
+    {
+      "name": "Split window, above and below (window)",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "2"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "2"
+        ]
+      }
+    },
+    {
+      "name": "Split window, above and below (frame)",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "5",
+          "2"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "5",
+          "2"
+        ]
+      }
+    },
+    {
+      "name": "Delete this window (window)",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "0"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "0"
+        ]
+      }
+    },
+    {
+      "name": "Delete this window (frame)",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "5",
+          "0"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "5",
+          "0"
+        ]
+      }
+    },
+    {
+      "name": "Split window, side by side",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "3"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "3"
+        ]
+      }
+    },
+    {
+      "name": "Scroll other window",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+V"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+V"
+      }
+    },
+    {
+      "name": "Switch cursor to another window (window)",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "O"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "O"
+        ]
+      }
+    },
+    {
+      "name": "Switch cursor to another window (frame)",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "5",
+          "O"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "5",
+          "O"
+        ]
+      }
+    },
+    {
+      "name": "Select buffer in other window (window)",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "4",
+          "B"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "4",
+          "B"
+        ]
+      }
+    },
+    {
+      "name": "Select buffer in other window (frame)",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "5",
+          "B"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "5",
+          "B"
+        ]
+      }
+    },
+    {
+      "name": "Display buffer in other window (window)",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "4",
+          "Ctrl+O"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "4",
+          "Ctrl+O"
+        ]
+      }
+    },
+    {
+      "name": "Display buffer in other window (frame)",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "5",
+          "Ctrl+O"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "5",
+          "Ctrl+O"
+        ]
+      }
+    },
+    {
+      "name": "Find file in other window (window)",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "4",
+          "F"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "4",
+          "F"
+        ]
+      }
+    },
+    {
+      "name": "Find file in other window (frame)",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "5",
+          "F"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "5",
+          "F"
+        ]
+      }
+    },
+    {
+      "name": "Find file read-only in other window (window)",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "4",
+          "R"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "4",
+          "R"
+        ]
+      }
+    },
+    {
+      "name": "Find file read-only in other window (frame)",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "5",
+          "R"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "5",
+          "R"
+        ]
+      }
+    },
+    {
+      "name": "Run Dired in other window (window)",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "4",
+          "D"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "4",
+          "D"
+        ]
+      }
+    },
+    {
+      "name": "Run Dired in other window (frame)",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "5",
+          "D"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "5",
+          "D"
+        ]
+      }
+    },
+    {
+      "name": "Find tag in other window (window)",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "4",
+          "."
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "4",
+          "."
+        ]
+      }
+    },
+    {
+      "name": "Find tag in other window (frame)",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "5",
+          "."
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "5",
+          "."
+        ]
+      }
+    },
+    {
+      "name": "Grow window taller",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "Shift+6"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "Shift+6"
+        ]
+      }
+    },
+    {
+      "name": "Indent current line (mode-dependent)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Tab"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Tab"
+      }
+    },
+    {
+      "name": "Indent region (mode-dependent)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+\\"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+\\"
+      }
+    },
+    {
+      "name": "Indent sexp (mode-dependent)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Q"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Q"
+      }
+    },
+    {
+      "name": "Indent region rigidly arg columns",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "Tab"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "Tab"
+        ]
+      }
+    },
+    {
+      "name": "Indent for comment",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+;"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+;"
+      }
+    },
+    {
+      "name": "Insert newline after point",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+O"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+O"
+      }
+    },
+    {
+      "name": "Move rest of line vertically down",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+O"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+O"
+      }
+    },
+    {
+      "name": "Delete blank lines around point",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "Ctrl+O"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "Ctrl+O"
+        ]
+      }
+    },
+    {
+      "name": "Join line with previous (with arg, next)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+6"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Alt+6"
+      }
+    },
+    {
+      "name": "Delete all white space around point",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+\\"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+\\"
+      }
+    },
+    {
+      "name": "Put exactly one space at point",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Space"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Space"
+      }
+    },
+    {
+      "name": "Fill paragraph",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Q"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Q"
+      }
+    },
+    {
+      "name": "Set fill column to arg",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "F"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "F"
+        ]
+      }
+    },
+    {
+      "name": "Set prefix each line starts with",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "."
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "."
+        ]
+      }
+    },
+    {
+      "name": "Uppercase word",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+U"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+U"
+      }
+    },
+    {
+      "name": "Lowercase word",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+L"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+L"
+      }
+    },
+    {
+      "name": "Capitalize word",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+C"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+C"
+      }
+    },
+    {
+      "name": "Uppercase region",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "Ctrl+U"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "Ctrl+U"
+        ]
+      }
+    },
+    {
+      "name": "Lowercase region",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "Ctrl+L"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "Ctrl+L"
+        ]
+      }
+    },
+    {
+      "name": "Complete as much as possible",
+      "context": "The Minibuffer",
+      "windows": {
+        "type": "keys",
+        "chord": "Tab"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Tab"
+      }
+    },
+    {
+      "name": "Complete up to one word",
+      "context": "The Minibuffer",
+      "windows": {
+        "type": "keys",
+        "chord": "Space"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Space"
+      }
+    },
+    {
+      "name": "Complete and execute",
+      "context": "The Minibuffer",
+      "windows": {
+        "type": "keys",
+        "chord": "Enter"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Enter"
+      }
+    },
+    {
+      "name": "Show possible completions",
+      "context": "The Minibuffer",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+/"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+/"
+      }
+    },
+    {
+      "name": "Fetch previous minibuffer input",
+      "context": "The Minibuffer",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+P"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+P"
+      }
+    },
+    {
+      "name": "Fetch later minibuffer input or default",
+      "context": "The Minibuffer",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+N"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+N"
+      }
+    },
+    {
+      "name": "Regexp search backward through history",
+      "context": "The Minibuffer",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+R"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+R"
+      }
+    },
+    {
+      "name": "Regexp search forward through history",
+      "context": "The Minibuffer",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+S"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+S"
+      }
+    },
+    {
+      "name": "Abort command",
+      "context": "The Minibuffer",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+G"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+G"
+      }
+    },
+    {
+      "name": "Select another buffer",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "B"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "B"
+        ]
+      }
+    },
+    {
+      "name": "List all buffers",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "Ctrl+B"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "Ctrl+B"
+        ]
+      }
+    },
+    {
+      "name": "Kill a buffer",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "K"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "K"
+        ]
+      }
+    },
+    {
+      "name": "Transpose characters",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+T"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+T"
+      }
+    },
+    {
+      "name": "Transpose words",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+T"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+T"
+      }
+    },
+    {
+      "name": "Transpose lines",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "Ctrl+T"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "Ctrl+T"
+        ]
+      }
+    },
+    {
+      "name": "Transpose sexps",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+T"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+T"
+      }
+    },
+    {
+      "name": "Check spelling of current word",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+4"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Alt+4"
+      }
+    },
+    {
+      "name": "Find a tag (a definition)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+."
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+."
+      }
+    },
+    {
+      "name": "Execute a shell command",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+1"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Alt+1"
+      }
+    },
+    {
+      "name": "Execute a shell command asynchronously",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+7"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Alt+7"
+      }
+    },
+    {
+      "name": "Run a shell command on the region",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+\\"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Alt+\\"
+      }
+    },
+    {
+      "name": "Filter region through a shell command",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+U",
+          "Shift+Alt+\\"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+U",
+          "Shift+Alt+\\"
+        ]
+      }
+    },
+    {
+      "name": "Copy rectangle to register",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "R",
+          "R"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "R",
+          "R"
+        ]
+      }
+    },
+    {
+      "name": "Kill rectangle",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "R",
+          "K"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "R",
+          "K"
+        ]
+      }
+    },
+    {
+      "name": "Yank rectangle",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "R",
+          "Y"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "R",
+          "Y"
+        ]
+      }
+    },
+    {
+      "name": "Open rectangle, shifting text right",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "R",
+          "O"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "R",
+          "O"
+        ]
+      }
+    },
+    {
+      "name": "Blank out rectangle",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "R",
+          "C"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "R",
+          "C"
+        ]
+      }
+    },
+    {
+      "name": "Prefix each line with a string",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "R",
+          "T"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "R",
+          "T"
+        ]
+      }
+    },
+    {
+      "name": "Add global abbrev",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "A",
+          "G"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "A",
+          "G"
+        ]
+      }
+    },
+    {
+      "name": "Add mode-local abbrev",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "A",
+          "L"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "A",
+          "L"
+        ]
+      }
+    },
+    {
+      "name": "Add global expansion for this abbrev",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "A",
+          "I",
+          "G"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "A",
+          "I",
+          "G"
+        ]
+      }
+    },
+    {
+      "name": "Add mode-local expansion for this abbrev",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "A",
+          "I",
+          "L"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "A",
+          "I",
+          "L"
+        ]
+      }
+    },
+    {
+      "name": "Explicitly expand abbrev",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "A",
+          "E"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "A",
+          "E"
+        ]
+      }
+    },
+    {
+      "name": "Expand previous word dynamically",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+/"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+/"
+      }
+    },
+    {
+      "name": "Negative argument",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+-"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+-"
+      }
+    },
+    {
+      "name": "Specify principal language",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "Enter",
+          "L"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "Enter",
+          "L"
+        ]
+      }
+    },
+    {
+      "name": "Enable or disable input method",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+\\"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+\\"
+      }
+    },
+    {
+      "name": "Set coding system for next command",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "Enter",
+          "C"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "Enter",
+          "C"
+        ]
+      }
+    },
+    {
+      "name": "Enter the Info documentation reader",
+      "context": "Info",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+H",
+          "I"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+H",
+          "I"
+        ]
+      }
+    },
+    {
+      "name": "Find specified function or variable in Info",
+      "context": "Info",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+H",
+          "Shift+S"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+H",
+          "Shift+S"
+        ]
+      }
+    },
+    {
+      "name": "Scroll forward",
+      "context": "Info",
+      "windows": {
+        "type": "keys",
+        "chord": "Space"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Space"
+      }
+    },
+    {
+      "name": "Scroll reverse",
+      "context": "Info",
+      "windows": {
+        "type": "keys",
+        "chord": "Backspace"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Backspace"
+      }
+    },
+    {
+      "name": "Beginning of node",
+      "context": "Info",
+      "windows": {
+        "type": "keys",
+        "chord": "B"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "B"
+      }
+    },
+    {
+      "name": "Next node",
+      "context": "Info",
+      "windows": {
+        "type": "keys",
+        "chord": "N"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "N"
+      }
+    },
+    {
+      "name": "Previous node",
+      "context": "Info",
+      "windows": {
+        "type": "keys",
+        "chord": "P"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "P"
+      }
+    },
+    {
+      "name": "Move up",
+      "context": "Info",
+      "windows": {
+        "type": "keys",
+        "chord": "U"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "U"
+      }
+    },
+    {
+      "name": "Select menu item by name",
+      "context": "Info",
+      "windows": {
+        "type": "keys",
+        "chord": "M"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "M"
+      }
+    },
+    {
+      "name": "Follow cross reference (return with \\kbd{l})",
+      "context": "Info",
+      "windows": {
+        "type": "keys",
+        "chord": "F"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "F"
+      }
+    },
+    {
+      "name": "Return to last node you saw",
+      "context": "Info",
+      "windows": {
+        "type": "keys",
+        "chord": "L"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "L"
+      }
+    },
+    {
+      "name": "Return to directory node",
+      "context": "Info",
+      "windows": {
+        "type": "keys",
+        "chord": "D"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "D"
+      }
+    },
+    {
+      "name": "Go to top node of Info file",
+      "context": "Info",
+      "windows": {
+        "type": "keys",
+        "chord": "T"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "T"
+      }
+    },
+    {
+      "name": "Go to any node by name",
+      "context": "Info",
+      "windows": {
+        "type": "keys",
+        "chord": "G"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "G"
+      }
+    },
+    {
+      "name": "Run Info tutorial",
+      "context": "Info",
+      "windows": {
+        "type": "keys",
+        "chord": "H"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "H"
+      }
+    },
+    {
+      "name": "Look up a subject in the indices",
+      "context": "Info",
+      "windows": {
+        "type": "keys",
+        "chord": "I"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "I"
+      }
+    },
+    {
+      "name": "Search nodes for regexp",
+      "context": "Info",
+      "windows": {
+        "type": "keys",
+        "chord": "S"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "S"
+      }
+    },
+    {
+      "name": "Quit Info",
+      "context": "Info",
+      "windows": {
+        "type": "keys",
+        "chord": "Q"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Q"
+      }
+    },
+    {
+      "name": "Save region in register",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "R",
+          "S"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "R",
+          "S"
+        ]
+      }
+    },
+    {
+      "name": "Insert register contents into buffer",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "R",
+          "I"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "R",
+          "I"
+        ]
+      }
+    },
+    {
+      "name": "Save value of point in register",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "R",
+          "Space"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "R",
+          "Space"
+        ]
+      }
+    },
+    {
+      "name": "Jump to point saved in register",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "R",
+          "J"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "R",
+          "J"
+        ]
+      }
+    },
+    {
+      "name": "Start defining a keyboard macro",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "Shift+9"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "Shift+9"
+        ]
+      }
+    },
+    {
+      "name": "End keyboard macro definition",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "Shift+0"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "Shift+0"
+        ]
+      }
+    },
+    {
+      "name": "Execute last-defined keyboard macro",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "E"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "E"
+        ]
+      }
+    },
+    {
+      "name": "Append to last keyboard macro",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+U",
+          "Ctrl+X",
+          "Shift+9"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+U",
+          "Ctrl+X",
+          "Shift+9"
+        ]
+      }
+    },
+    {
+      "name": "Eval sexp before point",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "Ctrl+E"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "Ctrl+E"
+        ]
+      }
+    },
+    {
+      "name": "Eval current defun",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+X"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+X"
+      }
+    },
+    {
+      "name": "Read and eval minibuffer",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+;"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Alt+;"
+      }
+    }
+  ],
+  "defaults": {
+    "TUNE_CW": {
+      "name": "Select another buffer",
+      "action": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "B"
+        ]
+      }
+    },
+    "TUNE_CCW": {
+      "name": "Switch cursor to another window",
+      "action": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+X",
+          "O"
+        ]
+      }
+    },
+    "TUNE_TAP_1F": {
+      "name": "Execute a command by name",
+      "action": {
+        "type": "keys",
+        "chord": "Alt+X"
+      }
+    },
+    "TUNE_SWIPE_LEFT": {
+      "name": "Undo",
+      "action": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+-"
+      }
+    },
+    "TUNE_SWIPE_RIGHT": {
+      "name": "Search forward",
+      "action": {
+        "type": "keys",
+        "chord": "Ctrl+S"
+      }
+    },
+    "TUNE_SWIPE_UP": {
+      "name": "Scroll to previous screen",
+      "action": {
+        "type": "keys",
+        "chord": "Alt+V"
+      }
+    },
+    "TUNE_SWIPE_DOWN": {
+      "name": "Scroll to next screen",
+      "action": {
+        "type": "keys",
+        "chord": "Ctrl+V"
+      }
+    }
+  }
+}

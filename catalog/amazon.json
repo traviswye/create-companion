@@ -1,0 +1,53 @@
+{
+  "id": "amazon",
+  "name": "Amazon.com",
+  "kind": "site",
+  "category": "Shopping",
+  "match": {
+    "windows_exe": [
+      "chrome.exe",
+      "msedge.exe",
+      "firefox.exe",
+      "brave.exe",
+      "vivaldi.exe"
+    ],
+    "macos_bundle": [
+      "com.google.Chrome",
+      "com.microsoft.edgemac",
+      "org.mozilla.firefox",
+      "com.brave.Browser",
+      "com.apple.Safari"
+    ],
+    "window_title": [
+      "Amazon.com",
+      "Amazon"
+    ]
+  },
+  "sources": [
+    "https://www.amazon.com/gp/help/customer/display.html?nodeId=TNVfdg1IAagUonImNs"
+  ],
+  "note": "Not expressible in the chord grammar, so left out: opening the keyboard-accessible Navigation Assistant menu by pressing plain Tab after page load (no modifier), the per-page anchor links it lists (they vary by page type and aren't fixed shortcuts), navigating the open menu with Up/Down arrows and Enter/mouse, and closing it with plain Tab or Esc (context-dependent, not a distinct assigned shortcut). Generic Tab / Shift+Tab focus traversal is standard browser behavior, not an Amazon-specific shortcut, and is also omitted. 'Add to Cart' only works on product detail pages.",
+  "actions": [
+    { "name": "Move keyboard focus to the Search bar", "context": "", "windows": { "type": "keys", "chord": "Alt+/" }, "mac": { "type": "keys", "chord": "Alt+/" } },
+    { "name": "Navigate to your Cart", "context": "", "windows": { "type": "keys", "chord": "Shift+Alt+C" }, "mac": { "type": "keys", "chord": "Shift+Alt+C" } },
+    { "name": "Navigate to the Amazon Homepage", "context": "", "windows": { "type": "keys", "chord": "Shift+Alt+H" }, "mac": { "type": "keys", "chord": "Shift+Alt+H" } },
+    { "name": "Navigate to Your Orders", "context": "", "windows": { "type": "keys", "chord": "Shift+Alt+O" }, "mac": { "type": "keys", "chord": "Shift+Alt+O" } },
+    { "name": "Add to Cart", "context": "Product detail page", "windows": { "type": "keys", "chord": "Shift+Alt+K" }, "mac": { "type": "keys", "chord": "Shift+Alt+K" } },
+    { "name": "Navigate to Product Summary", "context": "", "windows": { "type": "keys", "chord": "Alt+Shift+D" }, "mac": { "type": "keys", "chord": "Shift+Alt+D" } },
+    { "name": "Show/Hide shortcuts", "context": "", "windows": { "type": "keys", "chord": "Shift+Alt+Z" }, "mac": { "type": "keys", "chord": "Shift+Alt+Z" } }
+  ],
+  "defaults": {
+    "TUNE_TAP_1F": {
+      "name": "Navigate to your Cart",
+      "action": { "type": "keys", "chord": "Shift+Alt+C" }
+    },
+    "TUNE_SWIPE_LEFT": {
+      "name": "Navigate to the Amazon Homepage",
+      "action": { "type": "keys", "chord": "Shift+Alt+H" }
+    },
+    "TUNE_SWIPE_RIGHT": {
+      "name": "Navigate to Your Orders",
+      "action": { "type": "keys", "chord": "Shift+Alt+O" }
+    }
+  }
+}

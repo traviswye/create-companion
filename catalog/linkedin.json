@@ -1,0 +1,53 @@
+{
+  "id": "linkedin",
+  "name": "LinkedIn",
+  "kind": "site",
+  "category": "Social",
+  "match": {
+    "windows_exe": [
+      "chrome.exe",
+      "msedge.exe",
+      "firefox.exe",
+      "brave.exe",
+      "vivaldi.exe"
+    ],
+    "macos_bundle": [
+      "com.google.Chrome",
+      "com.microsoft.edgemac",
+      "org.mozilla.firefox",
+      "com.brave.Browser",
+      "com.apple.Safari"
+    ],
+    "window_title": [
+      "LinkedIn"
+    ]
+  },
+  "sources": [
+    "https://www.linkedin.com/help/linkedin/answer/a6246187"
+  ],
+  "note": "Keyboard shortcuts are available in Desktop only (not iOS/Android, per the vendor FAQ). Contexts follow the vendor's own 'Location' column: Feed post shortcuts are only active after navigating to a post via the j/k hotkeys. 'Top Navigation' items work everywhere so context is left blank. Nothing was excluded as inexpressible.",
+  "actions": [
+    { "name": "New post (open sharebox)", "context": "Feed", "windows": { "type": "keys", "chord": "N" }, "mac": { "type": "keys", "chord": "N" } },
+    { "name": "Feed - next article", "context": "Feed", "windows": { "type": "keys", "chord": "J" }, "mac": { "type": "keys", "chord": "J" } },
+    { "name": "Feed - previous article", "context": "Feed", "windows": { "type": "keys", "chord": "K" }, "mac": { "type": "keys", "chord": "K" } },
+    { "name": "Like", "context": "Feed post", "windows": { "type": "keys", "chord": "L" }, "mac": { "type": "keys", "chord": "L" } },
+    { "name": "Comment", "context": "Feed post", "windows": { "type": "keys", "chord": "C" }, "mac": { "type": "keys", "chord": "C" } },
+    { "name": "Repost", "context": "Feed post", "windows": { "type": "keys", "chord": "R" }, "mac": { "type": "keys", "chord": "R" } },
+    { "name": "Send", "context": "Feed post", "windows": { "type": "keys", "chord": "S" }, "mac": { "type": "keys", "chord": "S" } },
+    { "name": "Next notification", "context": "Notifications", "windows": { "type": "keys", "chord": "J" }, "mac": { "type": "keys", "chord": "J" } },
+    { "name": "Previous notification", "context": "Notifications", "windows": { "type": "keys", "chord": "K" }, "mac": { "type": "keys", "chord": "K" } },
+    { "name": "Search", "context": "", "windows": { "type": "keys", "chord": "/" }, "mac": { "type": "keys", "chord": "/" } },
+    { "name": "Home", "context": "", "windows": { "type": "sequence", "chords": ["G", "H"] }, "mac": { "type": "sequence", "chords": ["G", "H"] } },
+    { "name": "My Network", "context": "", "windows": { "type": "sequence", "chords": ["G", "W"] }, "mac": { "type": "sequence", "chords": ["G", "W"] } },
+    { "name": "Jobs", "context": "", "windows": { "type": "sequence", "chords": ["G", "J"] }, "mac": { "type": "sequence", "chords": ["G", "J"] } },
+    { "name": "Messaging", "context": "", "windows": { "type": "sequence", "chords": ["G", "M"] }, "mac": { "type": "sequence", "chords": ["G", "M"] } },
+    { "name": "Notifications", "context": "", "windows": { "type": "sequence", "chords": ["G", "N"] }, "mac": { "type": "sequence", "chords": ["G", "N"] } },
+    { "name": "Me", "context": "", "windows": { "type": "sequence", "chords": ["G", "P"] }, "mac": { "type": "sequence", "chords": ["G", "P"] } },
+    { "name": "Cheatsheet modal", "context": "", "windows": { "type": "keys", "chord": "Shift+/" }, "mac": { "type": "keys", "chord": "Shift+/" } }
+  ],
+  "defaults": {
+    "TUNE_CW": { "name": "Feed - next article", "action": { "type": "keys", "chord": "J" }, "accel": "medium" },
+    "TUNE_CCW": { "name": "Feed - previous article", "action": { "type": "keys", "chord": "K" }, "accel": "medium" },
+    "TUNE_TAP_1F": { "name": "Like", "action": { "type": "keys", "chord": "L" } }
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "id": "feedly",
+  "name": "Feedly",
+  "kind": "site",
+  "category": "Productivity",
+  "match": {
+    "windows_exe": [
+      "chrome.exe",
+      "msedge.exe",
+      "firefox.exe",
+      "brave.exe",
+      "vivaldi.exe"
+    ],
+    "macos_bundle": [
+      "com.google.Chrome",
+      "com.microsoft.edgemac",
+      "org.mozilla.firefox",
+      "com.brave.Browser",
+      "com.apple.Safari"
+    ],
+    "window_title": [
+      "Feedly"
+    ]
+  },
+  "sources": [
+    "https://docs.feedly.com/article/81-what-are-the-keyboard-shortcuts"
+  ],
+  "note": "'G then T/A/L/I/O/P' are two-key sequences (no modifier) per the chord grammar's sequence type. Not expressible, so left out: 'Show full shortcut overlay', documented only as the bare '?' key, which is not in the chord grammar's key set. Clip to Evernote (C) requires the Evernote integration to be connected. Caps Lock must be off for these shortcuts to register, per the source.",
+  "actions": [
+    { "name": "Go To (jump to feeds, folders, or boards)", "context": "", "windows": { "type": "keys", "chord": "Ctrl+K" }, "mac": { "type": "keys", "chord": "Cmd+K" } },
+    { "name": "Go to Today", "context": "", "windows": { "type": "sequence", "chords": ["G", "T"] }, "mac": { "type": "sequence", "chords": ["G", "T"] } },
+    { "name": "Go to All", "context": "", "windows": { "type": "sequence", "chords": ["G", "A"] }, "mac": { "type": "sequence", "chords": ["G", "A"] } },
+    { "name": "Go to Read Later", "context": "", "windows": { "type": "sequence", "chords": ["G", "L"] }, "mac": { "type": "sequence", "chords": ["G", "L"] } },
+    { "name": "Go to Index", "context": "", "windows": { "type": "sequence", "chords": ["G", "I"] }, "mac": { "type": "sequence", "chords": ["G", "I"] } },
+    { "name": "Go to Organize Feeds", "context": "", "windows": { "type": "sequence", "chords": ["G", "O"] }, "mac": { "type": "sequence", "chords": ["G", "O"] } },
+    { "name": "Go to Preferences", "context": "", "windows": { "type": "sequence", "chords": ["G", "P"] }, "mac": { "type": "sequence", "chords": ["G", "P"] } },
+    { "name": "Next feed or folder", "context": "", "windows": { "type": "keys", "chord": "Shift+J" }, "mac": { "type": "keys", "chord": "Shift+J" } },
+    { "name": "Previous feed or folder", "context": "", "windows": { "type": "keys", "chord": "Shift+K" }, "mac": { "type": "keys", "chord": "Shift+K" } },
+    { "name": "Open Ask AI", "context": "", "windows": { "type": "keys", "chord": "/" }, "mac": { "type": "keys", "chord": "/" } },
+    { "name": "Refresh", "context": "", "windows": { "type": "keys", "chord": "R" }, "mac": { "type": "keys", "chord": "R" } },
+    { "name": "Pin or hide the sidebar", "context": "", "windows": { "type": "keys", "chord": "[" }, "mac": { "type": "keys", "chord": "[" } },
+    { "name": "Inline next article", "context": "Article list", "windows": { "type": "keys", "chord": "J" }, "mac": { "type": "keys", "chord": "J" } },
+    { "name": "Inline previous article", "context": "Article list", "windows": { "type": "keys", "chord": "K" }, "mac": { "type": "keys", "chord": "K" } },
+    { "name": "Select next article", "context": "Article list", "windows": { "type": "keys", "chord": "N" }, "mac": { "type": "keys", "chord": "N" } },
+    { "name": "Select previous article", "context": "Article list", "windows": { "type": "keys", "chord": "P" }, "mac": { "type": "keys", "chord": "P" } },
+    { "name": "Mark all articles as read", "context": "Article list", "windows": { "type": "keys", "chord": "Shift+A" }, "mac": { "type": "keys", "chord": "Shift+A" } },
+    { "name": "Inline or close the currently selected article", "context": "Selected article", "windows": { "type": "keys", "chord": "O" }, "mac": { "type": "keys", "chord": "O" } },
+    { "name": "View the original article in a new tab", "context": "Selected article", "windows": { "type": "keys", "chord": "V" }, "mac": { "type": "keys", "chord": "V" } },
+    { "name": "Toggle mark as read", "context": "Selected article", "windows": { "type": "keys", "chord": "M" }, "mac": { "type": "keys", "chord": "M" } },
+    { "name": "Mark as read and hide", "context": "Selected article", "windows": { "type": "keys", "chord": "X" }, "mac": { "type": "keys", "chord": "X" } },
+    { "name": "Save to Read Later", "context": "Selected article", "windows": { "type": "keys", "chord": "S" }, "mac": { "type": "keys", "chord": "S" } },
+    { "name": "Save to Board", "context": "Selected article", "windows": { "type": "keys", "chord": "T" }, "mac": { "type": "keys", "chord": "T" } },
+    { "name": "Save to Buffer", "context": "Selected article", "windows": { "type": "keys", "chord": "B" }, "mac": { "type": "keys", "chord": "B" } },
+    { "name": "Clip to Evernote", "context": "Selected article", "windows": { "type": "keys", "chord": "C" }, "mac": { "type": "keys", "chord": "C" } }
+  ],
+  "defaults": {
+    "TUNE_CW": {
+      "name": "Select next article",
+      "action": { "type": "keys", "chord": "N" }
+    },
+    "TUNE_CCW": {
+      "name": "Select previous article",
+      "action": { "type": "keys", "chord": "P" }
+    },
+    "TUNE_TAP_1F": {
+      "name": "Toggle mark as read",
+      "action": { "type": "keys", "chord": "M" }
+    },
+    "TUNE_SWIPE_LEFT": {
+      "name": "Save to Read Later",
+      "action": { "type": "keys", "chord": "S" }
+    }
+  }
+}

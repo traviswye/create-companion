@@ -1,0 +1,63 @@
+{
+  "id": "twitter_x",
+  "name": "X (Twitter)",
+  "kind": "site",
+  "category": "Social",
+  "match": {
+    "windows_exe": [
+      "chrome.exe",
+      "msedge.exe",
+      "firefox.exe",
+      "brave.exe",
+      "vivaldi.exe"
+    ],
+    "macos_bundle": [
+      "com.google.Chrome",
+      "com.microsoft.edgemac",
+      "org.mozilla.firefox",
+      "com.brave.Browser",
+      "com.apple.Safari"
+    ],
+    "window_title": [
+      " / X",
+      "on X"
+    ]
+  },
+  "sources": [
+    "https://help.x.com/en/using-x/how-to-post"
+  ],
+  "note": "The 'Timelines' section is documented as two-key sequences ('g' then a second letter), not modifier chords, so each is a sequence of two single-key chords. 'send post' is documented as 'cmd-enter | ctrl-enter', recorded as Ctrl+Enter on Windows / Cmd+Enter on Mac. Not expressible in the chord grammar, so left out: none observed in this list — X's mobile apps use touch gestures instead and are out of scope for a browser-matched site profile.",
+  "actions": [
+    { "name": "New post", "context": "", "windows": { "type": "keys", "chord": "N" }, "mac": { "type": "keys", "chord": "N" } },
+    { "name": "Like", "context": "", "windows": { "type": "keys", "chord": "L" }, "mac": { "type": "keys", "chord": "L" } },
+    { "name": "Reply", "context": "", "windows": { "type": "keys", "chord": "R" }, "mac": { "type": "keys", "chord": "R" } },
+    { "name": "Repost", "context": "", "windows": { "type": "keys", "chord": "T" }, "mac": { "type": "keys", "chord": "T" } },
+    { "name": "Direct Message", "context": "", "windows": { "type": "keys", "chord": "M" }, "mac": { "type": "keys", "chord": "M" } },
+    { "name": "Mute account", "context": "", "windows": { "type": "keys", "chord": "U" }, "mac": { "type": "keys", "chord": "U" } },
+    { "name": "Block account", "context": "", "windows": { "type": "keys", "chord": "B" }, "mac": { "type": "keys", "chord": "B" } },
+    { "name": "Open post details", "context": "", "windows": { "type": "keys", "chord": "Enter" }, "mac": { "type": "keys", "chord": "Enter" } },
+    { "name": "Expand photo", "context": "", "windows": { "type": "keys", "chord": "O" }, "mac": { "type": "keys", "chord": "O" } },
+    { "name": "Search", "context": "", "windows": { "type": "keys", "chord": "/" }, "mac": { "type": "keys", "chord": "/" } },
+    { "name": "Send post", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Enter" }, "mac": { "type": "keys", "chord": "Cmd+Enter" } },
+    { "name": "Full keyboard shortcuts menu", "context": "", "windows": { "type": "keys", "chord": "Shift+/" }, "mac": { "type": "keys", "chord": "Shift+/" } },
+    { "name": "Next post", "context": "", "windows": { "type": "keys", "chord": "J" }, "mac": { "type": "keys", "chord": "J" } },
+    { "name": "Previous post", "context": "", "windows": { "type": "keys", "chord": "K" }, "mac": { "type": "keys", "chord": "K" } },
+    { "name": "Page down", "context": "", "windows": { "type": "keys", "chord": "Space" }, "mac": { "type": "keys", "chord": "Space" } },
+    { "name": "Load new posts", "context": "", "windows": { "type": "keys", "chord": "." }, "mac": { "type": "keys", "chord": "." } },
+    { "name": "Go to Home timeline", "context": "", "windows": { "type": "sequence", "chords": ["G", "H"] }, "mac": { "type": "sequence", "chords": ["G", "H"] } },
+    { "name": "Go to Moments", "context": "", "windows": { "type": "sequence", "chords": ["G", "O"] }, "mac": { "type": "sequence", "chords": ["G", "O"] } },
+    { "name": "Go to Notifications tab", "context": "", "windows": { "type": "sequence", "chords": ["G", "N"] }, "mac": { "type": "sequence", "chords": ["G", "N"] } },
+    { "name": "Go to Mentions", "context": "", "windows": { "type": "sequence", "chords": ["G", "R"] }, "mac": { "type": "sequence", "chords": ["G", "R"] } },
+    { "name": "Go to profile", "context": "", "windows": { "type": "sequence", "chords": ["G", "P"] }, "mac": { "type": "sequence", "chords": ["G", "P"] } },
+    { "name": "Go to likes tab", "context": "", "windows": { "type": "sequence", "chords": ["G", "L"] }, "mac": { "type": "sequence", "chords": ["G", "L"] } },
+    { "name": "Go to lists tab", "context": "", "windows": { "type": "sequence", "chords": ["G", "I"] }, "mac": { "type": "sequence", "chords": ["G", "I"] } },
+    { "name": "Go to Direct Messages", "context": "", "windows": { "type": "sequence", "chords": ["G", "M"] }, "mac": { "type": "sequence", "chords": ["G", "M"] } },
+    { "name": "Go to Settings and privacy", "context": "", "windows": { "type": "sequence", "chords": ["G", "S"] }, "mac": { "type": "sequence", "chords": ["G", "S"] } },
+    { "name": "Go to someone's profile", "context": "", "windows": { "type": "sequence", "chords": ["G", "U"] }, "mac": { "type": "sequence", "chords": ["G", "U"] } }
+  ],
+  "defaults": {
+    "TUNE_CW": { "name": "Next post", "action": { "type": "keys", "chord": "J" }, "accel": "medium" },
+    "TUNE_CCW": { "name": "Previous post", "action": { "type": "keys", "chord": "K" }, "accel": "medium" },
+    "TUNE_TAP_1F": { "name": "Like", "action": { "type": "keys", "chord": "L" } }
+  }
+}

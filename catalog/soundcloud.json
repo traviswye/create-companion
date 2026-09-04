@@ -1,0 +1,69 @@
+{
+  "id": "soundcloud",
+  "name": "SoundCloud",
+  "kind": "site",
+  "category": "Music",
+  "match": {
+    "windows_exe": [
+      "chrome.exe",
+      "msedge.exe",
+      "firefox.exe",
+      "brave.exe",
+      "vivaldi.exe"
+    ],
+    "macos_bundle": [
+      "com.google.Chrome",
+      "com.microsoft.edgemac",
+      "org.mozilla.firefox",
+      "com.brave.Browser",
+      "com.apple.Safari"
+    ],
+    "window_title": [
+      "SoundCloud"
+    ]
+  },
+  "sources": [
+    "https://soundcloud.com (in-page \"Keyboard shortcuts\" dialog, opened with H while a track is loaded)"
+  ],
+  "note": "SoundCloud has no separate written help article for these; the list was read from the in-app overlay (press H on soundcloud.com). The overlay's '0-9 = Seek to position' row is expanded here into ten separate 'Seek to N0%' actions, one per digit, matching how youtube.json handles the same pattern. Nothing else was excluded as inexpressible.",
+  "actions": [
+    { "name": "Play or pause", "context": "", "windows": { "type": "keys", "chord": "Space" }, "mac": { "type": "keys", "chord": "Space" } },
+    { "name": "Play next track", "context": "", "windows": { "type": "keys", "chord": "Shift+Right" }, "mac": { "type": "keys", "chord": "Shift+Right" } },
+    { "name": "Repeat playing track", "context": "", "windows": { "type": "keys", "chord": "Shift+L" }, "mac": { "type": "keys", "chord": "Shift+L" } },
+    { "name": "Play previous track", "context": "", "windows": { "type": "keys", "chord": "Shift+Left" }, "mac": { "type": "keys", "chord": "Shift+Left" } },
+    { "name": "Seek forward", "context": "", "windows": { "type": "keys", "chord": "Right" }, "mac": { "type": "keys", "chord": "Right" } },
+    { "name": "Seek backward", "context": "", "windows": { "type": "keys", "chord": "Left" }, "mac": { "type": "keys", "chord": "Left" } },
+    { "name": "Like playing track", "context": "", "windows": { "type": "keys", "chord": "L" }, "mac": { "type": "keys", "chord": "L" } },
+    { "name": "Repost playing track", "context": "", "windows": { "type": "keys", "chord": "R" }, "mac": { "type": "keys", "chord": "R" } },
+    { "name": "Search", "context": "", "windows": { "type": "keys", "chord": "S" }, "mac": { "type": "keys", "chord": "S" } },
+    { "name": "Decrease volume", "context": "", "windows": { "type": "keys", "chord": "Shift+Down" }, "mac": { "type": "keys", "chord": "Shift+Down" } },
+    { "name": "Increase volume", "context": "", "windows": { "type": "keys", "chord": "Shift+Up" }, "mac": { "type": "keys", "chord": "Shift+Up" } },
+    { "name": "Mute volume", "context": "", "windows": { "type": "keys", "chord": "M" }, "mac": { "type": "keys", "chord": "M" } },
+    { "name": "Navigate to playing track", "context": "", "windows": { "type": "keys", "chord": "P" }, "mac": { "type": "keys", "chord": "P" } },
+    { "name": "Show keyboard shortcuts", "context": "", "windows": { "type": "keys", "chord": "H" }, "mac": { "type": "keys", "chord": "H" } },
+    { "name": "Show Next up", "context": "", "windows": { "type": "keys", "chord": "Q" }, "mac": { "type": "keys", "chord": "Q" } },
+    { "name": "Shuffle", "context": "", "windows": { "type": "keys", "chord": "Shift+S" }, "mac": { "type": "keys", "chord": "Shift+S" } },
+    { "name": "Seek to beginning (0%)", "context": "", "windows": { "type": "keys", "chord": "0" }, "mac": { "type": "keys", "chord": "0" } },
+    { "name": "Seek to 10%", "context": "", "windows": { "type": "keys", "chord": "1" }, "mac": { "type": "keys", "chord": "1" } },
+    { "name": "Seek to 20%", "context": "", "windows": { "type": "keys", "chord": "2" }, "mac": { "type": "keys", "chord": "2" } },
+    { "name": "Seek to 30%", "context": "", "windows": { "type": "keys", "chord": "3" }, "mac": { "type": "keys", "chord": "3" } },
+    { "name": "Seek to 40%", "context": "", "windows": { "type": "keys", "chord": "4" }, "mac": { "type": "keys", "chord": "4" } },
+    { "name": "Seek to 50%", "context": "", "windows": { "type": "keys", "chord": "5" }, "mac": { "type": "keys", "chord": "5" } },
+    { "name": "Seek to 60%", "context": "", "windows": { "type": "keys", "chord": "6" }, "mac": { "type": "keys", "chord": "6" } },
+    { "name": "Seek to 70%", "context": "", "windows": { "type": "keys", "chord": "7" }, "mac": { "type": "keys", "chord": "7" } },
+    { "name": "Seek to 80%", "context": "", "windows": { "type": "keys", "chord": "8" }, "mac": { "type": "keys", "chord": "8" } },
+    { "name": "Seek to 90%", "context": "", "windows": { "type": "keys", "chord": "9" }, "mac": { "type": "keys", "chord": "9" } },
+    { "name": "Navigate to Likes", "context": "", "windows": { "type": "sequence", "chords": ["G", "L"] }, "mac": { "type": "sequence", "chords": ["G", "L"] } },
+    { "name": "Navigate to Library", "context": "", "windows": { "type": "sequence", "chords": ["G", "C"] }, "mac": { "type": "sequence", "chords": ["G", "C"] } },
+    { "name": "Navigate to History", "context": "", "windows": { "type": "sequence", "chords": ["G", "H"] }, "mac": { "type": "sequence", "chords": ["G", "H"] } },
+    { "name": "Navigate to Feed", "context": "", "windows": { "type": "sequence", "chords": ["G", "S"] }, "mac": { "type": "sequence", "chords": ["G", "S"] } },
+    { "name": "Navigate to Profile", "context": "", "windows": { "type": "sequence", "chords": ["G", "P"] }, "mac": { "type": "sequence", "chords": ["G", "P"] } }
+  ],
+  "defaults": {
+    "TUNE_CW": { "name": "Increase volume", "action": { "type": "keys", "chord": "Shift+Up" }, "accel": "light" },
+    "TUNE_CCW": { "name": "Decrease volume", "action": { "type": "keys", "chord": "Shift+Down" }, "accel": "light" },
+    "TUNE_TAP_1F": { "name": "Play or pause", "action": { "type": "keys", "chord": "Space" } },
+    "TUNE_SWIPE_LEFT": { "name": "Play previous track", "action": { "type": "keys", "chord": "Shift+Left" } },
+    "TUNE_SWIPE_RIGHT": { "name": "Play next track", "action": { "type": "keys", "chord": "Shift+Right" } }
+  }
+}

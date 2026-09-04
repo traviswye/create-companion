@@ -1,0 +1,98 @@
+{
+  "id": "signal",
+  "name": "Signal Desktop",
+  "kind": "app",
+  "category": "Communication",
+  "match": {
+    "windows_exe": ["Signal.exe"],
+    "macos_bundle": ["org.whispersystems.signal-desktop"],
+    "window_title": []
+  },
+  "sources": [
+    "https://support.signal.org/hc/en-us/articles/360036517511-Signal-Desktop-Keyboard-Shortcuts",
+    "https://support.signal.org/hc/en-us/articles/6325622209178-Text-Formatting"
+  ],
+  "note": "From the official 'Signal Desktop Keyboard Shortcuts' Help Center article (Mac and Windows/Linux columns), current as of 2026-09; the 'Text Formatting' article's shortcut table duplicates the Composer formatting shortcuts with no additions. 'Jump to chat' is documented as one row covering Ctrl/Cmd+1 through Ctrl/Cmd+9 and is expanded here into 9 discrete actions, one per digit. 'Previous chat' and 'Next chat' each have two documented chords (a primary Alt/Option+arrow and an alternate Ctrl+Shift+Tab / Ctrl+Tab using the literal Control key on both platforms) and are listed as separate '(alt)' actions. The Calling section's answer/decline/start/end shortcuts use the literal Control key on Mac (not Cmd) with Alt on Windows/Linux, per the source table. This page documents only keyboard shortcuts (no mouse-only entries), so nothing was skipped as inexpressible.",
+  "actions": [
+    { "name": "View all shortcuts", "context": "", "windows": { "type": "keys", "chord": "Ctrl+/" }, "mac": { "type": "keys", "chord": "Cmd+/" } },
+    { "name": "Zoom in", "context": "", "windows": { "type": "keys", "chord": "Ctrl+=" }, "mac": { "type": "keys", "chord": "Cmd+=" } },
+    { "name": "Zoom out", "context": "", "windows": { "type": "keys", "chord": "Ctrl+-" }, "mac": { "type": "keys", "chord": "Cmd+-" } },
+    { "name": "Navigate by section", "context": "", "windows": { "type": "keys", "chord": "Ctrl+T" }, "mac": { "type": "keys", "chord": "Cmd+T" } },
+    { "name": "Previous chat", "context": "", "windows": { "type": "keys", "chord": "Alt+Up" }, "mac": { "type": "keys", "chord": "Alt+Up" } },
+    { "name": "Previous chat (alt)", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Shift+Tab" }, "mac": { "type": "keys", "chord": "Ctrl+Shift+Tab" } },
+    { "name": "Next chat", "context": "", "windows": { "type": "keys", "chord": "Alt+Down" }, "mac": { "type": "keys", "chord": "Alt+Down" } },
+    { "name": "Next chat (alt)", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Tab" }, "mac": { "type": "keys", "chord": "Ctrl+Tab" } },
+    { "name": "Previous unread chat", "context": "", "windows": { "type": "keys", "chord": "Alt+Shift+Up" }, "mac": { "type": "keys", "chord": "Alt+Shift+Up" } },
+    { "name": "Next unread chat", "context": "", "windows": { "type": "keys", "chord": "Alt+Shift+Down" }, "mac": { "type": "keys", "chord": "Alt+Shift+Down" } },
+
+    { "name": "Jump to chat 1", "context": "", "windows": { "type": "keys", "chord": "Ctrl+1" }, "mac": { "type": "keys", "chord": "Cmd+1" } },
+    { "name": "Jump to chat 2", "context": "", "windows": { "type": "keys", "chord": "Ctrl+2" }, "mac": { "type": "keys", "chord": "Cmd+2" } },
+    { "name": "Jump to chat 3", "context": "", "windows": { "type": "keys", "chord": "Ctrl+3" }, "mac": { "type": "keys", "chord": "Cmd+3" } },
+    { "name": "Jump to chat 4", "context": "", "windows": { "type": "keys", "chord": "Ctrl+4" }, "mac": { "type": "keys", "chord": "Cmd+4" } },
+    { "name": "Jump to chat 5", "context": "", "windows": { "type": "keys", "chord": "Ctrl+5" }, "mac": { "type": "keys", "chord": "Cmd+5" } },
+    { "name": "Jump to chat 6", "context": "", "windows": { "type": "keys", "chord": "Ctrl+6" }, "mac": { "type": "keys", "chord": "Cmd+6" } },
+    { "name": "Jump to chat 7", "context": "", "windows": { "type": "keys", "chord": "Ctrl+7" }, "mac": { "type": "keys", "chord": "Cmd+7" } },
+    { "name": "Jump to chat 8", "context": "", "windows": { "type": "keys", "chord": "Ctrl+8" }, "mac": { "type": "keys", "chord": "Cmd+8" } },
+    { "name": "Jump to chat 9", "context": "", "windows": { "type": "keys", "chord": "Ctrl+9" }, "mac": { "type": "keys", "chord": "Cmd+9" } },
+
+    { "name": "Focus oldest unread or last message", "context": "", "windows": { "type": "keys", "chord": "Ctrl+J" }, "mac": { "type": "keys", "chord": "Cmd+J" } },
+    { "name": "Preferences", "context": "", "windows": { "type": "keys", "chord": "Ctrl+," }, "mac": { "type": "keys", "chord": "Cmd+," } },
+    { "name": "Open chat menu", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Shift+L" }, "mac": { "type": "keys", "chord": "Cmd+Shift+L" } },
+    { "name": "Start new chat", "context": "", "windows": { "type": "keys", "chord": "Ctrl+N" }, "mac": { "type": "keys", "chord": "Cmd+N" } },
+    { "name": "Search", "context": "", "windows": { "type": "keys", "chord": "Ctrl+F" }, "mac": { "type": "keys", "chord": "Cmd+F" } },
+    { "name": "Search in chat", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Shift+F" }, "mac": { "type": "keys", "chord": "Cmd+Shift+F" } },
+    { "name": "Focus composer", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Shift+T" }, "mac": { "type": "keys", "chord": "Cmd+Shift+T" } },
+    { "name": "Open All Media view", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Shift+M" }, "mac": { "type": "keys", "chord": "Cmd+Shift+M" } },
+    { "name": "Open emoji chooser", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Shift+J" }, "mac": { "type": "keys", "chord": "Cmd+Shift+J" } },
+    { "name": "Open sticker chooser", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Shift+O" }, "mac": { "type": "keys", "chord": "Cmd+Shift+O" } },
+    { "name": "Open GIF chooser", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Shift+G" }, "mac": { "type": "keys", "chord": "Cmd+Shift+G" } },
+    { "name": "Begin recording voice message", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Shift+Y" }, "mac": { "type": "keys", "chord": "Cmd+Shift+Y" } },
+    { "name": "Archive chat", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Shift+A" }, "mac": { "type": "keys", "chord": "Cmd+Shift+A" } },
+    { "name": "Unarchive chat", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Shift+U" }, "mac": { "type": "keys", "chord": "Cmd+Shift+U" } },
+    { "name": "Close current chat", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Shift+C" }, "mac": { "type": "keys", "chord": "Cmd+Shift+C" } },
+
+    { "name": "Save Media (in media viewer)", "context": "Media viewer", "windows": { "type": "keys", "chord": "Ctrl+S" }, "mac": { "type": "keys", "chord": "Cmd+S" } },
+
+    { "name": "Scroll to top of chat", "context": "Conversation", "windows": { "type": "keys", "chord": "Ctrl+Up" }, "mac": { "type": "keys", "chord": "Cmd+Up" } },
+    { "name": "Scroll to bottom of chat", "context": "Conversation", "windows": { "type": "keys", "chord": "Ctrl+Down" }, "mac": { "type": "keys", "chord": "Cmd+Down" } },
+    { "name": "Start voice call", "context": "Conversation", "windows": { "type": "keys", "chord": "Alt+Shift+C" }, "mac": { "type": "keys", "chord": "Ctrl+Shift+C" } },
+    { "name": "Start video call", "context": "Conversation", "windows": { "type": "keys", "chord": "Alt+Shift+Y" }, "mac": { "type": "keys", "chord": "Ctrl+Shift+Y" } },
+
+    { "name": "Default action for selected message", "context": "Selected message", "windows": { "type": "keys", "chord": "Enter" }, "mac": { "type": "keys", "chord": "Enter" } },
+    { "name": "View selected message details", "context": "Selected message", "windows": { "type": "keys", "chord": "Ctrl+D" }, "mac": { "type": "keys", "chord": "Cmd+D" } },
+    { "name": "Toggle reply to selected message", "context": "Selected message", "windows": { "type": "keys", "chord": "Ctrl+Shift+R" }, "mac": { "type": "keys", "chord": "Cmd+Shift+R" } },
+    { "name": "Toggle emoji-reaction picker for selected message", "context": "Selected message", "windows": { "type": "keys", "chord": "Ctrl+Shift+E" }, "mac": { "type": "keys", "chord": "Cmd+Shift+E" } },
+    { "name": "Save attachment from selected message", "context": "Selected message", "windows": { "type": "keys", "chord": "Ctrl+S" }, "mac": { "type": "keys", "chord": "Cmd+S" } },
+    { "name": "Forward selected messages", "context": "Selected message", "windows": { "type": "keys", "chord": "Ctrl+Shift+S" }, "mac": { "type": "keys", "chord": "Cmd+Shift+S" } },
+    { "name": "Open context menu for selected message", "context": "Selected message", "windows": { "type": "keys", "chord": "Shift+F10" }, "mac": { "type": "keys", "chord": "Cmd+F12" } },
+    { "name": "Delete selected message", "context": "Selected message", "windows": { "type": "keys", "chord": "Ctrl+Shift+D" }, "mac": { "type": "keys", "chord": "Cmd+Shift+D" } },
+
+    { "name": "Add newline to message", "context": "Message compose box", "windows": { "type": "keys", "chord": "Shift+Enter" }, "mac": { "type": "keys", "chord": "Shift+Enter" } },
+    { "name": "Expand composer", "context": "Message compose box", "windows": { "type": "keys", "chord": "Ctrl+Shift+K" }, "mac": { "type": "keys", "chord": "Cmd+Shift+K" } },
+    { "name": "Attach file", "context": "Message compose box", "windows": { "type": "keys", "chord": "Ctrl+U" }, "mac": { "type": "keys", "chord": "Cmd+U" } },
+    { "name": "Remove draft link preview", "context": "Message compose box", "windows": { "type": "keys", "chord": "Ctrl+P" }, "mac": { "type": "keys", "chord": "Cmd+P" } },
+    { "name": "Remove all draft attachments", "context": "Message compose box", "windows": { "type": "keys", "chord": "Ctrl+Shift+P" }, "mac": { "type": "keys", "chord": "Cmd+Shift+P" } },
+    { "name": "Edit the previous message", "context": "Message compose box", "windows": { "type": "keys", "chord": "Up" }, "mac": { "type": "keys", "chord": "Up" } },
+    { "name": "Mark selected text as bold", "context": "Message compose box", "windows": { "type": "keys", "chord": "Ctrl+B" }, "mac": { "type": "keys", "chord": "Cmd+B" } },
+    { "name": "Mark selected text as italic", "context": "Message compose box", "windows": { "type": "keys", "chord": "Ctrl+I" }, "mac": { "type": "keys", "chord": "Cmd+I" } },
+    { "name": "Mark selected text as strikethrough", "context": "Message compose box", "windows": { "type": "keys", "chord": "Ctrl+Shift+X" }, "mac": { "type": "keys", "chord": "Cmd+Shift+X" } },
+    { "name": "Mark selected text as monospace", "context": "Message compose box", "windows": { "type": "keys", "chord": "Ctrl+E" }, "mac": { "type": "keys", "chord": "Cmd+E" } },
+    { "name": "Mark selected text as a spoiler", "context": "Message compose box", "windows": { "type": "keys", "chord": "Ctrl+Shift+B" }, "mac": { "type": "keys", "chord": "Cmd+Shift+B" } },
+
+    { "name": "Send (in expanded composer)", "context": "Expanded composer", "windows": { "type": "keys", "chord": "Ctrl+Enter" }, "mac": { "type": "keys", "chord": "Cmd+Enter" } },
+
+    { "name": "Toggle mute on and off", "context": "Call", "windows": { "type": "keys", "chord": "Shift+M" }, "mac": { "type": "keys", "chord": "Shift+M" } },
+    { "name": "Toggle video on and off", "context": "Call", "windows": { "type": "keys", "chord": "Shift+V" }, "mac": { "type": "keys", "chord": "Shift+V" } },
+    { "name": "End call", "context": "Call", "windows": { "type": "keys", "chord": "Alt+Shift+E" }, "mac": { "type": "keys", "chord": "Ctrl+Shift+E" } },
+    { "name": "Maximize Preview", "context": "Call", "windows": { "type": "keys", "chord": "Shift+P" }, "mac": { "type": "keys", "chord": "Shift+P" } },
+
+    { "name": "Answer call without video", "context": "Incoming call", "windows": { "type": "keys", "chord": "Alt+Shift+A" }, "mac": { "type": "keys", "chord": "Ctrl+Shift+A" } },
+    { "name": "Decline call", "context": "Incoming call", "windows": { "type": "keys", "chord": "Alt+Shift+D" }, "mac": { "type": "keys", "chord": "Ctrl+Shift+D" } },
+    { "name": "Answer call with video (video calls only)", "context": "Incoming call (video)", "windows": { "type": "keys", "chord": "Alt+Shift+V" }, "mac": { "type": "keys", "chord": "Ctrl+Shift+V" } }
+  ],
+  "defaults": {
+    "TUNE_CW": { "name": "Next chat", "action": { "type": "keys", "chord": "Alt+Down" }, "accel": "medium" },
+    "TUNE_CCW": { "name": "Previous chat", "action": { "type": "keys", "chord": "Alt+Up" }, "accel": "medium" },
+    "TUNE_TAP_1F": { "name": "Toggle mute on and off", "action": { "type": "keys", "chord": "Shift+M" } }
+  }
+}

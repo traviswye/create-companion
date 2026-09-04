@@ -1,0 +1,2811 @@
+{
+  "id": "powerpoint",
+  "name": "Microsoft PowerPoint",
+  "kind": "app",
+  "category": "Office",
+  "match": {
+    "windows_exe": [
+      "POWERPNT.EXE"
+    ],
+    "macos_bundle": [
+      "com.microsoft.Powerpoint"
+    ],
+    "window_title": []
+  },
+  "sources": [
+    "https://support.microsoft.com/en-us/office/use-keyboard-shortcuts-to-create-powerpoint-presentations-ebb3d20e-dcd4-444f-a38e-bb5c5ed180f4",
+    "https://support.microsoft.com/en-us/office/use-keyboard-shortcuts-to-deliver-powerpoint-presentations-1524ffce-bd2a-45f4-9a7f-f18b992b93a0"
+  ],
+  "note": "From the two Microsoft Support articles \"Use keyboard shortcuts to create PowerPoint presentations\" and \"Use keyboard shortcuts to deliver PowerPoint presentations\", Windows and macOS tabs of each. Everything from the delivery article carries the context Slide show, Rehearsal or Presenter View. Ribbon access keys documented as \"Alt, H, L\" are written with the leading Alt folded into the first key, which is how PowerPoint accepts them and the only form the chord grammar allows. Where Microsoft lists two equivalent bindings the first is kept. Omitted because the grammar cannot express them: mouse bindings (Ctrl+Drag to duplicate, Control+click for the shortcut menu, holding both mouse buttons to return to the first slide), plain \"Arrow keys\" entries, numeric-keypad-only bindings in the Selection pane, and open-ended entries such as \"type the slide number, then press Enter\".",
+  "actions": [
+    {
+      "name": "Create new presentation",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+N"
+      }
+    },
+    {
+      "name": "Add a new slide",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+M"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+N"
+      }
+    },
+    {
+      "name": "Apply bold formatting to the selected text",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+B"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+B"
+      }
+    },
+    {
+      "name": "Open the Font dialog box",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+T"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+T"
+      }
+    },
+    {
+      "name": "Cut selected text, object, or slide",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+X"
+      }
+    },
+    {
+      "name": "Copy selected text, object, or slide",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+C"
+      }
+    },
+    {
+      "name": "Paste cut or copied text, object, or slide",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+V"
+      }
+    },
+    {
+      "name": "Insert a hyperlink",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+K"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+K"
+      }
+    },
+    {
+      "name": "Insert a new comment",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+M"
+      }
+    },
+    {
+      "name": "Undo the last action",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Z"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Z"
+      }
+    },
+    {
+      "name": "Redo the last action",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Y"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Y"
+      }
+    },
+    {
+      "name": "Go to the next slide",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "PageDown"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "PageDown"
+      }
+    },
+    {
+      "name": "Go to the previous slide",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "PageUp"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "PageUp"
+      }
+    },
+    {
+      "name": "Start the slide show",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F5"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+Enter"
+      }
+    },
+    {
+      "name": "End the slide show",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Esc"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Esc"
+      }
+    },
+    {
+      "name": "Print a presentation",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+P"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+P"
+      }
+    },
+    {
+      "name": "Save the presentation",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+S"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+S"
+      }
+    },
+    {
+      "name": "Close PowerPoint",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Q"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Q"
+      }
+    },
+    {
+      "name": "Insert a new slide",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+M"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+N"
+      }
+    },
+    {
+      "name": "Zoom out",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+-"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+-"
+      }
+    },
+    {
+      "name": "Zoom in",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Plus"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Plus"
+      }
+    },
+    {
+      "name": "Zoom to fit",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+O"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+O"
+      }
+    },
+    {
+      "name": "Make a copy of the selected slide",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+D"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+D"
+      }
+    },
+    {
+      "name": "Open a presentation",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+O"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+O"
+      }
+    },
+    {
+      "name": "Close a presentation",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+D"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+W"
+      }
+    },
+    {
+      "name": "Save a presentation with a different name, location, or file format",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+S"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+S"
+      }
+    },
+    {
+      "name": "Cancel a command, such as Save As",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Esc"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Esc"
+      }
+    },
+    {
+      "name": "Open a recent file",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+O"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+O"
+      }
+    },
+    {
+      "name": "Cut selected object or text",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+X"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+X"
+      }
+    },
+    {
+      "name": "Copy selected object or text",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+C"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+C"
+      }
+    },
+    {
+      "name": "Paste cut or copied object or text",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+V"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+V"
+      }
+    },
+    {
+      "name": "Duplicate selected objects",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+D"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+D"
+      }
+    },
+    {
+      "name": "Copy the formatting of the selected object or text",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+C"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+C"
+      }
+    },
+    {
+      "name": "Paste copied formatting to the selected object or text",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+V"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+V"
+      }
+    },
+    {
+      "name": "Copy animation painter",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+C"
+      }
+    },
+    {
+      "name": "Paste animation painter",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+V"
+      }
+    },
+    {
+      "name": "Open the Paste Special dialog box",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+V"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Ctrl+V"
+      }
+    },
+    {
+      "name": "Move the focus to the first floating shape, such as an image or a text box",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+5"
+      }
+    },
+    {
+      "name": "Select another object when one object is selected",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Tab"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Tab"
+      }
+    },
+    {
+      "name": "Send object back one position",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+["
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+Shift+B"
+      }
+    },
+    {
+      "name": "Bring object forward one position",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+]"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+Shift+F"
+      }
+    },
+    {
+      "name": "Select all objects on a slide",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+A"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+A"
+      }
+    },
+    {
+      "name": "Group the selected objects",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+G"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+G"
+      }
+    },
+    {
+      "name": "Ungroup the selected group",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+G"
+      }
+    },
+    {
+      "name": "Regroup the selected objects",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+J"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+J"
+      }
+    },
+    {
+      "name": "Rotate the selected object clockwise 15 degrees",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Right"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Right"
+      }
+    },
+    {
+      "name": "Rotate the selected object counterclockwise 15 degrees",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Left"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Left"
+      }
+    },
+    {
+      "name": "Play or pause media",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Space"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Space"
+      }
+    },
+    {
+      "name": "Insert equation",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+="
+      }
+    },
+    {
+      "name": "Edit a linked or embedded object",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+F10"
+      }
+    },
+    {
+      "name": "Select one character to the right",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Right"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Right"
+      }
+    },
+    {
+      "name": "Select one character to the left",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Left"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Left"
+      }
+    },
+    {
+      "name": "Select to the end of a word",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Right"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+Right"
+      }
+    },
+    {
+      "name": "Select to the beginning of a word",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Left"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+Left"
+      }
+    },
+    {
+      "name": "Select from the insertion point to the same point one line up",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Up"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Up"
+      }
+    },
+    {
+      "name": "Select from the insertion point to the same point one line down",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Down"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Down"
+      }
+    },
+    {
+      "name": "Select from the insertion point to the end of the paragraph",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Down"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+Down"
+      }
+    },
+    {
+      "name": "Select from the insertion point to the beginning of the paragraph",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Up"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+Up"
+      }
+    },
+    {
+      "name": "Select text within an object (with an object selected)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Enter"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Enter"
+      }
+    },
+    {
+      "name": "Select an object when the text inside the object is selected",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Esc"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Esc"
+      }
+    },
+    {
+      "name": "Invoke Copilot options for rewriting selected textbox",
+      "context": "Copilot",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+F8"
+      }
+    },
+    {
+      "name": "Delete one character to the left",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Backspace"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Delete"
+      }
+    },
+    {
+      "name": "Delete one word to the left",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Backspace"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Delete"
+      }
+    },
+    {
+      "name": "Delete one character to the right",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Delete"
+      }
+    },
+    {
+      "name": "Delete one word to the right (with the cursor between the words)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Delete"
+      }
+    },
+    {
+      "name": "Move one character to the left",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Left"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Left"
+      }
+    },
+    {
+      "name": "Move one character to the right",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Right"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Right"
+      }
+    },
+    {
+      "name": "Move one line up",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Up"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Up"
+      }
+    },
+    {
+      "name": "Move one line down",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Down"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Down"
+      }
+    },
+    {
+      "name": "Move one word to the left",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Left"
+      }
+    },
+    {
+      "name": "Move one word to the right",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Right"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Right"
+      }
+    },
+    {
+      "name": "Move to the end of a line",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "End"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "End"
+      }
+    },
+    {
+      "name": "Move to the beginning of a line",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Home"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Home"
+      }
+    },
+    {
+      "name": "Move up one paragraph",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Up"
+      }
+    },
+    {
+      "name": "Move down one paragraph",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Down"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Down"
+      }
+    },
+    {
+      "name": "Move to the end of a text box",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+End"
+      }
+    },
+    {
+      "name": "Move to the beginning of a text box",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Home"
+      }
+    },
+    {
+      "name": "Move to the next title or body text placeholder. If it is the last placeholder on a slide, this action inserts a new slide with the same slide layout as the original slide",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Enter"
+      }
+    },
+    {
+      "name": "Promote a paragraph",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+Left"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+["
+      }
+    },
+    {
+      "name": "Demote a paragraph",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+Right"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+]"
+      }
+    },
+    {
+      "name": "Move selected paragraphs up",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+Up"
+      }
+    },
+    {
+      "name": "Move selected paragraphs down",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+Down"
+      }
+    },
+    {
+      "name": "Open the Find dialog box",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+F"
+      }
+    },
+    {
+      "name": "Open the Replace dialog box",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+H"
+      }
+    },
+    {
+      "name": "Repeat the last Find action",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+F4"
+      }
+    },
+    {
+      "name": "Increase the font size",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+."
+      }
+    },
+    {
+      "name": "Decrease the font size",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+,"
+      }
+    },
+    {
+      "name": "Switch between sentence case, lowercase, or uppercase",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+F3"
+      }
+    },
+    {
+      "name": "Apply bold formatting",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+B"
+      }
+    },
+    {
+      "name": "Apply underline formatting",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+U"
+      }
+    },
+    {
+      "name": "Apply italic formatting",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+I"
+      }
+    },
+    {
+      "name": "Apply subscript formatting (automatic spacing)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+="
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Ctrl+="
+      }
+    },
+    {
+      "name": "Apply superscript formatting (automatic spacing)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Plus"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Ctrl+Shift+="
+      }
+    },
+    {
+      "name": "Remove manual character formatting, such as subscript and superscript",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Space"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Space"
+      }
+    },
+    {
+      "name": "Center a paragraph",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+E"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+E"
+      }
+    },
+    {
+      "name": "Justify a paragraph",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+J"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+J"
+      }
+    },
+    {
+      "name": "Left align a paragraph",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+L"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+L"
+      }
+    },
+    {
+      "name": "Right align a paragraph",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+R"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+R"
+      }
+    },
+    {
+      "name": "Move to the next cell",
+      "context": "Table",
+      "windows": {
+        "type": "keys",
+        "chord": "Tab"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Tab"
+      }
+    },
+    {
+      "name": "Move to the preceding cell",
+      "context": "Table",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Tab"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Tab"
+      }
+    },
+    {
+      "name": "Move to the next row",
+      "context": "Table",
+      "windows": {
+        "type": "keys",
+        "chord": "Down"
+      }
+    },
+    {
+      "name": "Move to the preceding row",
+      "context": "Table",
+      "windows": {
+        "type": "keys",
+        "chord": "Up"
+      }
+    },
+    {
+      "name": "Insert a tab in a cell",
+      "context": "Table",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Tab"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+Tab"
+      }
+    },
+    {
+      "name": "Start a new paragraph",
+      "context": "Table",
+      "windows": {
+        "type": "keys",
+        "chord": "Enter"
+      }
+    },
+    {
+      "name": "Add a new row at the bottom of the table with the cursor in the last cell of the last row",
+      "context": "Table",
+      "windows": {
+        "type": "keys",
+        "chord": "Tab"
+      }
+    },
+    {
+      "name": "Move the selected slide or section up in order",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Up"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Up"
+      }
+    },
+    {
+      "name": "Move the selected slide or section down in order",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Down"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Down"
+      }
+    },
+    {
+      "name": "Move the selected slide or section to the beginning",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Up"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+Up"
+      }
+    },
+    {
+      "name": "Move the selected slide or section to the end",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Down"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+Down"
+      }
+    },
+    {
+      "name": "Switch to Presenter view",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+F5"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Enter"
+      }
+    },
+    {
+      "name": "Switch to Slide Show",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F5"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+Enter"
+      }
+    },
+    {
+      "name": "Toggle between Outline and Thumbnail views",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Tab"
+      }
+    },
+    {
+      "name": "Switch to full screen (hide menus)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+F1"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Ctrl+F"
+      }
+    },
+    {
+      "name": "Show or hide guides",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+F9"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Ctrl+Alt+G"
+      }
+    },
+    {
+      "name": "Show or hide the grid",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+F9"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+F9"
+      }
+    },
+    {
+      "name": "Cycle clockwise through panes in the Normal view",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F6"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "F6"
+      }
+    },
+    {
+      "name": "Cycle counterclockwise through panes in the Normal view",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+F6"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+F6"
+      }
+    },
+    {
+      "name": "Switch between the Thumbnail pane and the Outline View pane",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Tab"
+      }
+    },
+    {
+      "name": "Show Outline View level 1 headings",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+1"
+      }
+    },
+    {
+      "name": "Expand Outline View text below a heading",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+Plus"
+      }
+    },
+    {
+      "name": "Collapse Outline View text below a heading",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+-"
+      }
+    },
+    {
+      "name": "Select all text in the Outline View",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+A"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+A"
+      }
+    },
+    {
+      "name": "Select all slides in the Slide Sorter view or the thumbnail pane",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+A"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+A"
+      }
+    },
+    {
+      "name": "Show the help menu",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F1"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "F1"
+      }
+    },
+    {
+      "name": "Open the Selection pane",
+      "context": "Selection pane",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+F10"
+      }
+    },
+    {
+      "name": "Cycle the focus through the different panes",
+      "context": "Selection pane",
+      "windows": {
+        "type": "keys",
+        "chord": "F6"
+      }
+    },
+    {
+      "name": "Display the context menu",
+      "context": "Selection pane",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+F10"
+      }
+    },
+    {
+      "name": "Move the focus to a single item or group",
+      "context": "Selection pane",
+      "windows": {
+        "type": "keys",
+        "chord": "Up"
+      }
+    },
+    {
+      "name": "Move the focus from an item in a group to its parent group",
+      "context": "Selection pane",
+      "windows": {
+        "type": "keys",
+        "chord": "Left"
+      }
+    },
+    {
+      "name": "Move the focus from a group to the first item in that group",
+      "context": "Selection pane",
+      "windows": {
+        "type": "keys",
+        "chord": "Right"
+      }
+    },
+    {
+      "name": "Expand a focused group",
+      "context": "Selection pane",
+      "windows": {
+        "type": "keys",
+        "chord": "Right"
+      }
+    },
+    {
+      "name": "Collapse a focused group",
+      "context": "Selection pane",
+      "windows": {
+        "type": "keys",
+        "chord": "Left"
+      }
+    },
+    {
+      "name": "Move the focus to an item and select it",
+      "context": "Selection pane",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Up"
+      }
+    },
+    {
+      "name": "Select a focused item",
+      "context": "Selection pane",
+      "windows": {
+        "type": "keys",
+        "chord": "Space"
+      }
+    },
+    {
+      "name": "Cancel selection of a focused item",
+      "context": "Selection pane",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Space"
+      }
+    },
+    {
+      "name": "Move a selected item forward",
+      "context": "Selection pane",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+F"
+      }
+    },
+    {
+      "name": "Move a selected item backward",
+      "context": "Selection pane",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+B"
+      }
+    },
+    {
+      "name": "Show or hide a focused item",
+      "context": "Selection pane",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+S"
+      }
+    },
+    {
+      "name": "Rename a focused item",
+      "context": "Selection pane",
+      "windows": {
+        "type": "keys",
+        "chord": "F2"
+      }
+    },
+    {
+      "name": "Switch the keyboard focus within the Selection pane between tree view and the Show All and Hide All buttons",
+      "context": "Selection pane",
+      "windows": {
+        "type": "keys",
+        "chord": "Tab"
+      }
+    },
+    {
+      "name": "Collapse all groups (with the focus in the tree view of the Selection pane)",
+      "context": "Selection pane",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+1"
+      }
+    },
+    {
+      "name": "Expand all groups",
+      "context": "Selection pane",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+9"
+      }
+    },
+    {
+      "name": "Move to a task pane from another pane or area in the program window. (You might need to press F6 more than once.)",
+      "context": "Task pane",
+      "windows": {
+        "type": "keys",
+        "chord": "F6"
+      }
+    },
+    {
+      "name": "When a task pane option has focus, move to the next or previous option in the task pane",
+      "context": "Task pane",
+      "windows": {
+        "type": "keys",
+        "chord": "Tab"
+      }
+    },
+    {
+      "name": "Display the full set of commands on a task pane menu. You can access, for example, the Close, Move, or Size buttons of a task pane",
+      "context": "Task pane",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Space"
+      }
+    },
+    {
+      "name": "Select the highlighted option on the task pane menu",
+      "context": "Task pane",
+      "windows": {
+        "type": "keys",
+        "chord": "Enter"
+      }
+    },
+    {
+      "name": "Close a task pane",
+      "context": "Task pane",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+Space",
+          "C"
+        ]
+      }
+    },
+    {
+      "name": "Move to the Tell me or Search field on the ribbon and type a search term for assistance or Help content",
+      "context": "Ribbon",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Q"
+      }
+    },
+    {
+      "name": "Open the File menu",
+      "context": "Ribbon",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+F"
+      }
+    },
+    {
+      "name": "Open the Home tab and format slides, fonts, paragraphs, or drawings",
+      "context": "Ribbon",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+H"
+      }
+    },
+    {
+      "name": "Open the Insert tab and insert slides, tables, images, illustrations, forms, links, text, symbols, or media",
+      "context": "Ribbon",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+N"
+      }
+    },
+    {
+      "name": "Open the Draw tab and access the drawing tools",
+      "context": "Ribbon",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+J",
+          "I"
+        ]
+      }
+    },
+    {
+      "name": "Open the Design tab and apply themes and customize slides",
+      "context": "Ribbon",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+G"
+      }
+    },
+    {
+      "name": "Open the Transitions tab and add transitions between slides",
+      "context": "Ribbon",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+K"
+      }
+    },
+    {
+      "name": "Open the Animations tab and add animations to slides",
+      "context": "Ribbon",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+A"
+      }
+    },
+    {
+      "name": "Open the Slide Show tab and set up and play the slide show",
+      "context": "Ribbon",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+S"
+      }
+    },
+    {
+      "name": "Open the Review tab and check spelling and accessibility and add comments",
+      "context": "Ribbon",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+R"
+      }
+    },
+    {
+      "name": "Open the View tab and preview presentation layouts, show and hide gridlines and guides, set zoom magnification, manage windows, and view macros",
+      "context": "Ribbon",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+W"
+      }
+    },
+    {
+      "name": "Open the Recording tab and manage screen recordings, audio, and video in your presentation",
+      "context": "Ribbon",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+E"
+      }
+    },
+    {
+      "name": "Open the Help tab and browse the PowerPoint, contact support, and leave feedback",
+      "context": "Ribbon",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+Y",
+          "2"
+        ]
+      }
+    },
+    {
+      "name": "Select the active tab on the ribbon, and activate the access keys",
+      "context": "Ribbon",
+      "windows": {
+        "type": "keys",
+        "chord": "F10"
+      }
+    },
+    {
+      "name": "Move the focus to commands on the ribbon",
+      "context": "Ribbon",
+      "windows": {
+        "type": "keys",
+        "chord": "Tab"
+      }
+    },
+    {
+      "name": "Show the tooltip for the ribbon element currently in focus",
+      "context": "Ribbon",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+F10"
+      }
+    },
+    {
+      "name": "Activate a selected button or control",
+      "context": "Ribbon",
+      "windows": {
+        "type": "keys",
+        "chord": "Space"
+      }
+    },
+    {
+      "name": "Open the list for a selected command",
+      "context": "Ribbon",
+      "windows": {
+        "type": "keys",
+        "chord": "Down"
+      }
+    },
+    {
+      "name": "Open the menu for a selected button",
+      "context": "Ribbon",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Down"
+      }
+    },
+    {
+      "name": "When a menu or submenu is open, move to the next command",
+      "context": "Ribbon",
+      "windows": {
+        "type": "keys",
+        "chord": "Down"
+      }
+    },
+    {
+      "name": "Expand or collapse the ribbon",
+      "context": "Ribbon",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+F1"
+      }
+    },
+    {
+      "name": "Open a context menu",
+      "context": "Ribbon",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+F10"
+      }
+    },
+    {
+      "name": "Move to the submenu when a main menu is open or selected",
+      "context": "Ribbon",
+      "windows": {
+        "type": "keys",
+        "chord": "Left"
+      }
+    },
+    {
+      "name": "Get help on the currently selected command or control on the ribbon",
+      "context": "Ribbon",
+      "windows": {
+        "type": "keys",
+        "chord": "F1"
+      }
+    },
+    {
+      "name": "Change the font size for selected text",
+      "context": "Ribbon",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+H",
+          "F",
+          "S"
+        ]
+      }
+    },
+    {
+      "name": "Open the Zoom dialog box",
+      "context": "Ribbon",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+W",
+          "Q"
+        ]
+      }
+    },
+    {
+      "name": "Print all slides in your presentation as full page slides using your default printer settings (when the Print dialog box is open)",
+      "context": "Ribbon",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+P",
+          "P"
+        ]
+      }
+    },
+    {
+      "name": "Select a theme",
+      "context": "Ribbon",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+G",
+          "H"
+        ]
+      }
+    },
+    {
+      "name": "Select a slide layout",
+      "context": "Ribbon",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+H",
+          "L"
+        ]
+      }
+    },
+    {
+      "name": "Show or hide the Notes pane in the Normal view",
+      "context": "Ribbon",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+W",
+          "P",
+          "N"
+        ]
+      }
+    },
+    {
+      "name": "Open the clipboard",
+      "context": "Ribbon",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+H",
+          "F",
+          "O"
+        ]
+      }
+    },
+    {
+      "name": "Insert a text box",
+      "context": "Ribbon",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+N",
+          "X"
+        ]
+      }
+    },
+    {
+      "name": "Insert an embedded document or spreadsheet as an object",
+      "context": "Ribbon",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+N",
+          "J"
+        ]
+      }
+    },
+    {
+      "name": "Insert WordArt",
+      "context": "Ribbon",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+N",
+          "W"
+        ]
+      }
+    },
+    {
+      "name": "Insert a picture from your device",
+      "context": "Ribbon",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+N",
+          "P",
+          "D"
+        ]
+      }
+    },
+    {
+      "name": "Insert a shape",
+      "context": "Ribbon",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+N",
+          "S",
+          "H"
+        ]
+      }
+    },
+    {
+      "name": "Start a presentation from the beginning",
+      "context": "Slide show",
+      "windows": {
+        "type": "keys",
+        "chord": "F5"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+Enter"
+      }
+    },
+    {
+      "name": "Start a presentation from the current slide",
+      "context": "Slide show",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+F5"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Enter"
+      }
+    },
+    {
+      "name": "Start the presentation in Presenter View",
+      "context": "Slide show",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+F5"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Enter"
+      }
+    },
+    {
+      "name": "Perform the next animation or advance to the next slide",
+      "context": "Slide show",
+      "windows": {
+        "type": "keys",
+        "chord": "N"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "N"
+      }
+    },
+    {
+      "name": "Perform the previous animation or return to the previous slide",
+      "context": "Slide show",
+      "windows": {
+        "type": "keys",
+        "chord": "P"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "P"
+      }
+    },
+    {
+      "name": "Hide the pointer and navigation buttons",
+      "context": "Slide show",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+H"
+      }
+    },
+    {
+      "name": "Display a blank black slide, or return to the presentation from a blank black slide",
+      "context": "Slide show",
+      "windows": {
+        "type": "keys",
+        "chord": "B"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "B"
+      }
+    },
+    {
+      "name": "Display a blank white slide, or return to the presentation from a blank white slide",
+      "context": "Slide show",
+      "windows": {
+        "type": "keys",
+        "chord": "W"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "W"
+      }
+    },
+    {
+      "name": "End the presentation",
+      "context": "Slide show",
+      "windows": {
+        "type": "keys",
+        "chord": "Esc"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Esc"
+      }
+    },
+    {
+      "name": "Go to the next slide, if the next slide is hidden",
+      "context": "Slide show",
+      "windows": {
+        "type": "keys",
+        "chord": "H"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "H"
+      }
+    },
+    {
+      "name": "View the All Slides dialog box",
+      "context": "Slide show",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+S"
+      }
+    },
+    {
+      "name": "Return to the first slide",
+      "context": "Slide show",
+      "windows": {
+        "type": "keys",
+        "chord": "Home"
+      }
+    },
+    {
+      "name": "Go to the last slide",
+      "context": "Slide show",
+      "windows": {
+        "type": "keys",
+        "chord": "End"
+      }
+    },
+    {
+      "name": "View the computer taskbar",
+      "context": "Slide show",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+T"
+      }
+    },
+    {
+      "name": "Display the context menu",
+      "context": "Slide show",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+F10"
+      }
+    },
+    {
+      "name": "Display the shortcuts menu",
+      "context": "Slide show",
+      "windows": {
+        "type": "keys",
+        "chord": "F1"
+      }
+    },
+    {
+      "name": "Go to the next hotspot on the current slide. (Hotspots include hyperlinks, animation triggers, audio objects, and video objects.)",
+      "context": "Slide show",
+      "windows": {
+        "type": "keys",
+        "chord": "Tab"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Tab"
+      }
+    },
+    {
+      "name": "Go to the previous hyperlink on the current slide",
+      "context": "Slide show",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Tab"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Tab"
+      }
+    },
+    {
+      "name": "Open the selected hyperlink",
+      "context": "Slide show",
+      "windows": {
+        "type": "keys",
+        "chord": "Enter"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Enter"
+      }
+    },
+    {
+      "name": "Change the camera source for cameo (PowerPoint for Microsoft 365 only)",
+      "context": "Slide show",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+X"
+      }
+    },
+    {
+      "name": "Play or pause media",
+      "context": "Slide show",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+P"
+      }
+    },
+    {
+      "name": "Stop media playback",
+      "context": "Slide show",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Q"
+      }
+    },
+    {
+      "name": "Go to the next bookmark",
+      "context": "Slide show",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+End"
+      }
+    },
+    {
+      "name": "Go to the previous bookmark",
+      "context": "Slide show",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Home"
+      }
+    },
+    {
+      "name": "Increase the sound volume",
+      "context": "Slide show",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Up"
+      }
+    },
+    {
+      "name": "Decrease the sound volume",
+      "context": "Slide show",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Down"
+      }
+    },
+    {
+      "name": "Mute the sound",
+      "context": "Slide show",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+U"
+      }
+    },
+    {
+      "name": "Move forward three seconds",
+      "context": "Slide show",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+PageDown"
+      }
+    },
+    {
+      "name": "Move backward three seconds",
+      "context": "Slide show",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+PageUp"
+      }
+    },
+    {
+      "name": "Move forward 0.25 seconds, then pause",
+      "context": "Slide show",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+Right"
+      }
+    },
+    {
+      "name": "Move backward 0.25 seconds, then pause",
+      "context": "Slide show",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+Left"
+      }
+    },
+    {
+      "name": "Show or hide the audio and subtitles menu. (For videos that have multiple audio tracks and/or subtitle tracks in supported formats.)",
+      "context": "Slide show",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+J"
+      }
+    },
+    {
+      "name": "Start the laser pointer",
+      "context": "Slide show",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+L"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+L"
+      }
+    },
+    {
+      "name": "Change the pointer to a pen",
+      "context": "Slide show",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+P"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+P"
+      }
+    },
+    {
+      "name": "Change the pointer to an arrow",
+      "context": "Slide show",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+A"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+A"
+      }
+    },
+    {
+      "name": "Change the pen pointer to an eraser",
+      "context": "Slide show",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+E"
+      }
+    },
+    {
+      "name": "Hide the arrow pointer",
+      "context": "Slide show",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+H"
+      }
+    },
+    {
+      "name": "Show or hide ink markup",
+      "context": "Slide show",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+M"
+      }
+    },
+    {
+      "name": "Erase on-screen annotations",
+      "context": "Slide show",
+      "windows": {
+        "type": "keys",
+        "chord": "E"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+E"
+      }
+    },
+    {
+      "name": "Set new timings while rehearsing",
+      "context": "Rehearsal",
+      "windows": {
+        "type": "keys",
+        "chord": "T"
+      }
+    },
+    {
+      "name": "Use original timings while rehearsing",
+      "context": "Rehearsal",
+      "windows": {
+        "type": "keys",
+        "chord": "O"
+      }
+    },
+    {
+      "name": "Use mouse click to advance while rehearsing",
+      "context": "Rehearsal",
+      "windows": {
+        "type": "keys",
+        "chord": "M"
+      }
+    },
+    {
+      "name": "Re-record slide narration and timing",
+      "context": "Rehearsal",
+      "windows": {
+        "type": "keys",
+        "chord": "R"
+      }
+    },
+    {
+      "name": "Cycle between Presenter View regions. (Buttons above the slide, buttons on the upper-right corner, and the Notes pane)",
+      "context": "Presenter View",
+      "windows": {
+        "type": "keys",
+        "chord": "F6"
+      }
+    },
+    {
+      "name": "Cycle through tools within a Presenter View region",
+      "context": "Presenter View",
+      "windows": {
+        "type": "keys",
+        "chord": "Tab"
+      }
+    },
+    {
+      "name": "Scroll down one line in the Notes pane",
+      "context": "Presenter View",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Down"
+      }
+    },
+    {
+      "name": "Scroll up one line in the Notes pane",
+      "context": "Presenter View",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Up"
+      }
+    },
+    {
+      "name": "Scroll down one screenful in the Notes pane",
+      "context": "Presenter View",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+PageDown"
+      }
+    },
+    {
+      "name": "Scroll up one screenful in the Notes pane",
+      "context": "Presenter View",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+PageUp"
+      }
+    },
+    {
+      "name": "Read the next line in the Notes pane",
+      "context": "Presenter View",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+A"
+      }
+    },
+    {
+      "name": "Read the previous line in the Notes pane",
+      "context": "Presenter View",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Z"
+      }
+    },
+    {
+      "name": "Read the elapsed time. (The timer starts running as soon as you start Presenter View.)",
+      "context": "Presenter View",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+W"
+      }
+    },
+    {
+      "name": "Read the next step (for example, the next slide, next animation, or end of slide show)",
+      "context": "Presenter View",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Q"
+      }
+    },
+    {
+      "name": "Close Presenter View",
+      "context": "Presenter View",
+      "windows": {
+        "type": "keys",
+        "chord": "Esc"
+      }
+    },
+    {
+      "name": "Create a new presentation",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+N"
+      }
+    },
+    {
+      "name": "Cut the selected text, object, or slide",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+X"
+      }
+    },
+    {
+      "name": "Copy the selected text, object, or slide",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+C"
+      }
+    },
+    {
+      "name": "Paste the cut or copied text, object, or slide",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+V"
+      }
+    },
+    {
+      "name": "Insert a comment",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+M"
+      }
+    },
+    {
+      "name": "Create a new presentation with a template from the PowerPoint template gallery",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+P"
+      }
+    },
+    {
+      "name": "Format slide background",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+2"
+      }
+    },
+    {
+      "name": "Move through multiple open presentations",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+`"
+      }
+    },
+    {
+      "name": "Copy animation",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+Shift+C"
+      }
+    },
+    {
+      "name": "Paste animation",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+Shift+V"
+      }
+    },
+    {
+      "name": "Send object to back",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+B"
+      }
+    },
+    {
+      "name": "Bring object to front",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+F"
+      }
+    },
+    {
+      "name": "Ungroup the selected objects",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+Shift+G"
+      }
+    },
+    {
+      "name": "Format the selected object",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+1"
+      }
+    },
+    {
+      "name": "Select all text to the start of the line",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+Left"
+      }
+    },
+    {
+      "name": "Select all text to the end of the line",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+Right"
+      }
+    },
+    {
+      "name": "Move to the beginning of a word or one word to the left",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Left"
+      }
+    },
+    {
+      "name": "Move to the beginning of a paragraph or up one paragraph",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Up"
+      }
+    },
+    {
+      "name": "Move to the start or end of all the text in the object you are editing",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Up"
+      }
+    },
+    {
+      "name": "Open the Search in Presentation search field",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+F"
+      }
+    },
+    {
+      "name": "Open the Find and Replace pane",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+H"
+      }
+    },
+    {
+      "name": "Increase the font size of the selected text",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+."
+      }
+    },
+    {
+      "name": "Decrease the font size of the selected text",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+,"
+      }
+    },
+    {
+      "name": "Open the Paragraph dialog box",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+M"
+      }
+    },
+    {
+      "name": "Switch between sentence case, uppercase, or lowercase",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+F3"
+      }
+    },
+    {
+      "name": "Apply an underline to the selected text",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+U"
+      }
+    },
+    {
+      "name": "Apply italic formatting to the selected text",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+I"
+      }
+    },
+    {
+      "name": "Move to the next line or row",
+      "context": "Table",
+      "mac": {
+        "type": "keys",
+        "chord": "Down"
+      }
+    },
+    {
+      "name": "Move to the preceding line or row",
+      "context": "Table",
+      "mac": {
+        "type": "keys",
+        "chord": "Up"
+      }
+    },
+    {
+      "name": "Start a new paragraph in a cell",
+      "context": "Table",
+      "mac": {
+        "type": "keys",
+        "chord": "Enter"
+      }
+    },
+    {
+      "name": "Add a new row at the bottom of the table (with the cursor in the last cell of the last row)",
+      "context": "Table",
+      "mac": {
+        "type": "keys",
+        "chord": "Tab"
+      }
+    },
+    {
+      "name": "Switch to Normal view",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+1"
+      }
+    },
+    {
+      "name": "Switch to Slide Sorter view",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+2"
+      }
+    },
+    {
+      "name": "Switch to Notes Page view",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+3"
+      }
+    },
+    {
+      "name": "Switch to Outline View",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+4"
+      }
+    },
+    {
+      "name": "Switch to Slide Master view",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+1"
+      }
+    },
+    {
+      "name": "Switch to Handout Master view",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+2"
+      }
+    },
+    {
+      "name": "Switch to Notes Master view",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+3"
+      }
+    },
+    {
+      "name": "Toggle between Outline View and thumbnail pane",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Tab"
+      }
+    },
+    {
+      "name": "Switch Drawing mode on and off",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Ctrl+Z"
+      }
+    },
+    {
+      "name": "Show Thesaurus entry for a selected word",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Ctrl+Alt+R"
+      }
+    },
+    {
+      "name": "Hide the pointer",
+      "context": "Slide show",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+I"
+      }
+    },
+    {
+      "name": "Change the camera source for cameo (PowerPoint for Microsoft 365 for Mac only)",
+      "context": "Slide show",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+X"
+      }
+    },
+    {
+      "name": "Hide the pointer on mouse move",
+      "context": "Slide show",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+H"
+      }
+    },
+    {
+      "name": "Show the pointer on mouse move",
+      "context": "Slide show",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+U"
+      }
+    },
+    {
+      "name": "Start the presentation in the Presenter View",
+      "context": "Presenter View",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Enter"
+      }
+    },
+    {
+      "name": "Move the focus to the next control",
+      "context": "Presenter View",
+      "mac": {
+        "type": "keys",
+        "chord": "Tab"
+      }
+    },
+    {
+      "name": "Move the focus to the previous control",
+      "context": "Presenter View",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Tab"
+      }
+    },
+    {
+      "name": "Activate the control in focus",
+      "context": "Presenter View",
+      "mac": {
+        "type": "keys",
+        "chord": "Space"
+      }
+    },
+    {
+      "name": "In the Notes Pane, move the focus to the next control (pressing the Tab key inserts a tab character)",
+      "context": "Presenter View",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Tab"
+      }
+    }
+  ],
+  "defaults": {
+    "TUNE_CW": {
+      "name": "Go to the next slide",
+      "action": {
+        "type": "keys",
+        "chord": "PageDown"
+      },
+      "accel": "light"
+    },
+    "TUNE_CCW": {
+      "name": "Go to the previous slide",
+      "action": {
+        "type": "keys",
+        "chord": "PageUp"
+      },
+      "accel": "light"
+    },
+    "TUNE_TAP_1F": {
+      "name": "Start the slide show",
+      "action": {
+        "type": "keys",
+        "chord": "F5"
+      }
+    },
+    "TUNE_SWIPE_LEFT": {
+      "name": "Undo the last action",
+      "action": {
+        "type": "keys",
+        "chord": "Ctrl+Z"
+      }
+    },
+    "TUNE_SWIPE_RIGHT": {
+      "name": "Redo the last action",
+      "action": {
+        "type": "keys",
+        "chord": "Ctrl+Y"
+      }
+    }
+  }
+}

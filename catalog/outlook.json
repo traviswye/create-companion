@@ -1,0 +1,4731 @@
+{
+  "id": "outlook",
+  "name": "Microsoft Outlook",
+  "kind": "app",
+  "category": "Office",
+  "match": {
+    "windows_exe": [
+      "OUTLOOK.EXE",
+      "olk.exe"
+    ],
+    "macos_bundle": [
+      "com.microsoft.Outlook"
+    ],
+    "window_title": []
+  },
+  "sources": [
+    "https://support.microsoft.com/en-us/office/keyboard-shortcuts-for-outlook-3cdeb221-7ae5-4c1d-8c1d-9e63216c1efd",
+    "https://support.microsoft.com/en-us/topic/keyboard-shortcuts-in-outlook-for-mac-af188485-2c8e-4fcf-a5d2-76bc24edf9d0"
+  ],
+  "note": "Windows shortcuts from the Microsoft Support article \"Keyboard shortcuts for Outlook\", both the Classic Outlook and New Outlook tabs (OUTLOOK.EXE and olk.exe); the Outlook on the web tab is not included. macOS shortcuts from \"Keyboard shortcuts in Outlook for Mac\". Where classic and new Outlook document the same command under the same name, the classic binding is the one listed. Where Microsoft lists two equivalent bindings the first is kept. Omitted because the grammar cannot express them: the new-Outlook accent-mark and special-character tables (every entry ends in \"then the letter\"), mouse bindings, plain \"Arrow keys\" entries, and open-ended entries.",
+  "actions": [
+    {
+      "name": "Close a window or a menu",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Esc"
+      }
+    },
+    {
+      "name": "Go to the Home tab",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+H"
+      }
+    },
+    {
+      "name": "Create a new message",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+M"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+N"
+      }
+    },
+    {
+      "name": "Send a message",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+S"
+      }
+    },
+    {
+      "name": "Insert a file",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+N",
+          "A",
+          "F"
+        ]
+      }
+    },
+    {
+      "name": "New task",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+K"
+      }
+    },
+    {
+      "name": "Delete an item (when a message, task, or meeting is selected)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Delete"
+      }
+    },
+    {
+      "name": "Search for an item",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+E"
+      }
+    },
+    {
+      "name": "Reply to a message",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+H",
+          "R",
+          "P"
+        ]
+      }
+    },
+    {
+      "name": "Forward a message",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+H",
+          "F",
+          "W"
+        ]
+      }
+    },
+    {
+      "name": "Select the Reply All option",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+H",
+          "R",
+          "A"
+        ]
+      }
+    },
+    {
+      "name": "Copy an item",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+C"
+      }
+    },
+    {
+      "name": "Go to the Send/Receive tab",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+J",
+          "S"
+        ]
+      }
+    },
+    {
+      "name": "Go to Calendar",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+2"
+      }
+    },
+    {
+      "name": "Create an appointment",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+A"
+      }
+    },
+    {
+      "name": "Move an item to a folder",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+H",
+          "M",
+          "V"
+        ]
+      }
+    },
+    {
+      "name": "Open the Save As dialog box on the Attachment tab",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+J",
+          "A",
+          "2",
+          "A",
+          "V"
+        ]
+      }
+    },
+    {
+      "name": "Check for new messages",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+M"
+      }
+    },
+    {
+      "name": "Switch to the Mail view",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+1"
+      }
+    },
+    {
+      "name": "Switch to the Calendar view",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+2"
+      }
+    },
+    {
+      "name": "Switch to the Copilot view",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+3"
+      }
+    },
+    {
+      "name": "Switch to the People view",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+4"
+      }
+    },
+    {
+      "name": "Switch to the To Do",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+5"
+      }
+    },
+    {
+      "name": "Switch to the Org Explorer pane",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+6"
+      }
+    },
+    {
+      "name": "Switch to Loop",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+7"
+      }
+    },
+    {
+      "name": "Open Tasks",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+8"
+      }
+    },
+    {
+      "name": "Open the Address Book",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+B"
+      }
+    },
+    {
+      "name": "Go back to the previous view",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+B"
+      }
+    },
+    {
+      "name": "Go forward to next view",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Right"
+      }
+    },
+    {
+      "name": "Switch to next open message",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+."
+      }
+    },
+    {
+      "name": "Switch to previous open message",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+,"
+      }
+    },
+    {
+      "name": "Move between the Folder pane, the main classic Outlook window, the Reading pane, and the To-Do bar",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Tab"
+      }
+    },
+    {
+      "name": "Move between the classic Outlook window, the smaller panes in the Folder pane, the Reading pane, and the sections in the To-Do bar",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Tab"
+      }
+    },
+    {
+      "name": "Move between the ribbon and the calendar",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F6"
+      }
+    },
+    {
+      "name": "Show the access keys in the ribbon",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F6"
+      }
+    },
+    {
+      "name": "Show the tooltip for the ribbon element currently in focus",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+F10"
+      }
+    },
+    {
+      "name": "Open split buttons",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Down"
+      }
+    },
+    {
+      "name": "Move around message header lines in the Folder pane or an open message",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Tab"
+      }
+    },
+    {
+      "name": "Move between the Navigation pane and the calendar",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Tab"
+      }
+    },
+    {
+      "name": "Go to a different folder",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Y"
+      }
+    },
+    {
+      "name": "Go to the Search box",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F3"
+      }
+    },
+    {
+      "name": "In the Reading pane, go to the previous message",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Up"
+      }
+    },
+    {
+      "name": "In the Reading pane, page down through the text",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Space"
+      }
+    },
+    {
+      "name": "In the Reading pane, page up through the text",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Space"
+      }
+    },
+    {
+      "name": "Collapse or expand a group in the email message list",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Left"
+      }
+    },
+    {
+      "name": "Go back to previous view in the main classic Outlook window",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+B"
+      }
+    },
+    {
+      "name": "Go forward to next view in the main classic Outlook window",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Right"
+      }
+    },
+    {
+      "name": "Select the InfoBar and, if available, show the menu of commands",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+W"
+      }
+    },
+    {
+      "name": "Show the To-Do bar (peek)",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+V",
+          "B"
+        ]
+      }
+    },
+    {
+      "name": "Open the Home tab",
+      "context": "Ribbon",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+H"
+      }
+    },
+    {
+      "name": "Open the File menu",
+      "context": "Ribbon",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+F"
+      }
+    },
+    {
+      "name": "Open the Send/Receive tab",
+      "context": "Ribbon",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+J",
+          "S"
+        ]
+      }
+    },
+    {
+      "name": "Open the Folder tab",
+      "context": "Ribbon",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+O"
+      }
+    },
+    {
+      "name": "Open the View tab",
+      "context": "Ribbon",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+V"
+      }
+    },
+    {
+      "name": "Open the Search tab",
+      "context": "Ribbon",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+E"
+      }
+    },
+    {
+      "name": "Go to the Tell Me search field",
+      "context": "Ribbon",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Q"
+      }
+    },
+    {
+      "name": "Create a contact",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+C"
+      }
+    },
+    {
+      "name": "Create a contact group",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+L"
+      }
+    },
+    {
+      "name": "Create a fax",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+X"
+      }
+    },
+    {
+      "name": "Create a folder",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+E"
+      }
+    },
+    {
+      "name": "Create a meeting request",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Q"
+      }
+    },
+    {
+      "name": "Create a message",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+M"
+      }
+    },
+    {
+      "name": "Create a note",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+N"
+      }
+    },
+    {
+      "name": "Create Microsoft Office document",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+H"
+      }
+    },
+    {
+      "name": "Post to the selected folder",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+S"
+      }
+    },
+    {
+      "name": "Post a reply in the selected folder",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+T"
+      }
+    },
+    {
+      "name": "Create a Search folder",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+P"
+      }
+    },
+    {
+      "name": "Create a task",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+K"
+      }
+    },
+    {
+      "name": "Display the Format Text tab on the ribbon",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+O"
+      }
+    },
+    {
+      "name": "Display the Font dialog box",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+P"
+      }
+    },
+    {
+      "name": "Switch the case of the first letter in a selected word or line",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+F3"
+      }
+    },
+    {
+      "name": "Toggle the case of the selected text between small caps and all caps",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+K"
+      }
+    },
+    {
+      "name": "Apply bold formatting",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+B"
+      }
+    },
+    {
+      "name": "Add a bulleted list",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+L"
+      }
+    },
+    {
+      "name": "Apply italic formatting",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+I"
+      }
+    },
+    {
+      "name": "Increase indent",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+T"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+]"
+      }
+    },
+    {
+      "name": "Decrease indent",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+T"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+["
+      }
+    },
+    {
+      "name": "Center text",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+E"
+      }
+    },
+    {
+      "name": "Underline text",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+U"
+      }
+    },
+    {
+      "name": "Increase the font size",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+]"
+      }
+    },
+    {
+      "name": "Decrease the font size",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+["
+      }
+    },
+    {
+      "name": "Cut a selection",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+X"
+      }
+    },
+    {
+      "name": "Copy a selection",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+C"
+      }
+    },
+    {
+      "name": "Paste the copied or cut selection",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+V"
+      }
+    },
+    {
+      "name": "Clear the formatting",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Z"
+      }
+    },
+    {
+      "name": "Delete the next word",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+H"
+      }
+    },
+    {
+      "name": "Justify text (Stretch a paragraph to fit between the margins}",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+J"
+      }
+    },
+    {
+      "name": "Apply styles",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+S"
+      }
+    },
+    {
+      "name": "Create a hanging indent",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+T"
+      }
+    },
+    {
+      "name": "Insert a hyperlink",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+K"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+K"
+      }
+    },
+    {
+      "name": "Left-align a paragraph",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+L"
+      }
+    },
+    {
+      "name": "Right-align a paragraph",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+R"
+      }
+    },
+    {
+      "name": "Reduce a hanging indent",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+T"
+      }
+    },
+    {
+      "name": "Remove paragraph formatting",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Q"
+      }
+    },
+    {
+      "name": "Go to the Search field to find a message or another item",
+      "context": "Search",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+E"
+      }
+    },
+    {
+      "name": "Clear the search results",
+      "context": "Search",
+      "windows": {
+        "type": "keys",
+        "chord": "Esc"
+      }
+    },
+    {
+      "name": "Expand the search to include All Mail Items, All Calendar Items, or All Contact Items, depending on the module you are in",
+      "context": "Search",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+A"
+      }
+    },
+    {
+      "name": "Use Advanced Find",
+      "context": "Search",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+F"
+      }
+    },
+    {
+      "name": "Create a Search folder",
+      "context": "Search",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+P"
+      }
+    },
+    {
+      "name": "Search for text within an open item",
+      "context": "Search",
+      "windows": {
+        "type": "keys",
+        "chord": "F4"
+      }
+    },
+    {
+      "name": "Find and replace text, symbols, or some formatting commands when in the Reading pane or in an open item",
+      "context": "Search",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+H"
+      }
+    },
+    {
+      "name": "Expand search to include items from the current folder",
+      "context": "Search",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+K"
+      }
+    },
+    {
+      "name": "Expand search to include subfolders",
+      "context": "Search",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Z"
+      }
+    },
+    {
+      "name": "Open the Print page in the File menu",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+F",
+          "P"
+        ]
+      }
+    },
+    {
+      "name": "Print an item from an open window",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+F",
+          "P",
+          "P"
+        ]
+      }
+    },
+    {
+      "name": "Open the Page Setup dialog box on Print page",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+S"
+      }
+    },
+    {
+      "name": "Select a printer on the Print page",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+F",
+          "P",
+          "I"
+        ]
+      }
+    },
+    {
+      "name": "Open the Print Options dialog box",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+F",
+          "P",
+          "R"
+        ]
+      }
+    },
+    {
+      "name": "Open the Flag for Follow Up dialog box to assign a flag",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+G"
+      }
+    },
+    {
+      "name": "Delete the selected category from the list in the Color categories dialog",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+D"
+      }
+    },
+    {
+      "name": "Switch to Inbox",
+      "context": "Mail",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+I"
+      }
+    },
+    {
+      "name": "Switch to Outbox",
+      "context": "Mail",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+O"
+      }
+    },
+    {
+      "name": "Check names",
+      "context": "Mail",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+K"
+      }
+    },
+    {
+      "name": "Send a message",
+      "context": "Mail",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+S"
+      }
+    },
+    {
+      "name": "Reply to a message",
+      "context": "Mail",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+R"
+      }
+    },
+    {
+      "name": "Select the Reply to All option",
+      "context": "Mail",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+R"
+      }
+    },
+    {
+      "name": "Reply with a meeting request",
+      "context": "Mail",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+R"
+      }
+    },
+    {
+      "name": "Forward a message",
+      "context": "Mail",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+F"
+      }
+    },
+    {
+      "name": "Mark a message as not junk",
+      "context": "Mail",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+J"
+      }
+    },
+    {
+      "name": "Display blocked external content (in a message)",
+      "context": "Mail",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+I"
+      }
+    },
+    {
+      "name": "Post to a folder",
+      "context": "Mail",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+S"
+      }
+    },
+    {
+      "name": "Apply Normal style",
+      "context": "Mail",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+N"
+      }
+    },
+    {
+      "name": "Check for new messages",
+      "context": "Mail",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+M"
+      }
+    },
+    {
+      "name": "Go to the previous message",
+      "context": "Mail",
+      "windows": {
+        "type": "keys",
+        "chord": "Up"
+      }
+    },
+    {
+      "name": "Go to the next message",
+      "context": "Mail",
+      "windows": {
+        "type": "keys",
+        "chord": "Down"
+      }
+    },
+    {
+      "name": "Create a message (when in Mail view)",
+      "context": "Mail",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+N"
+      }
+    },
+    {
+      "name": "Create a message (from any Outlook view)",
+      "context": "Mail",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+M"
+      }
+    },
+    {
+      "name": "Open a received message",
+      "context": "Mail",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+O"
+      }
+    },
+    {
+      "name": "Delete and ignore a conversation",
+      "context": "Mail",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+D"
+      }
+    },
+    {
+      "name": "Open the Address Book",
+      "context": "Mail",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+B"
+      }
+    },
+    {
+      "name": "Add a Quick flag to an unopened message",
+      "context": "Mail",
+      "windows": {
+        "type": "keys",
+        "chord": "Insert"
+      }
+    },
+    {
+      "name": "Display the Flag for follow up dialog box",
+      "context": "Mail",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+G"
+      }
+    },
+    {
+      "name": "Mark a message as read",
+      "context": "Mail",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Q"
+      }
+    },
+    {
+      "name": "Mark a message as unread",
+      "context": "Mail",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+U"
+      }
+    },
+    {
+      "name": "Open the MailTip in the composed message",
+      "context": "Mail",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+P"
+      }
+    },
+    {
+      "name": "Find or replace text",
+      "context": "Mail",
+      "windows": {
+        "type": "keys",
+        "chord": "F4"
+      }
+    },
+    {
+      "name": "Find the next item",
+      "context": "Mail",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+F4"
+      }
+    },
+    {
+      "name": "Print an item",
+      "context": "Mail",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+P"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+P"
+      }
+    },
+    {
+      "name": "Forward a message as an attachment",
+      "context": "Mail",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+F"
+      }
+    },
+    {
+      "name": "Show the properties for the selected item",
+      "context": "Mail",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Enter"
+      }
+    },
+    {
+      "name": "Mark an item for download",
+      "context": "Mail",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+M"
+      }
+    },
+    {
+      "name": "Check the Mark for download status",
+      "context": "Mail",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+J",
+          "S",
+          "M",
+          "T"
+        ]
+      }
+    },
+    {
+      "name": "Display the Send/Receive progress",
+      "context": "Mail",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+J",
+          "S",
+          "P"
+        ]
+      }
+    },
+    {
+      "name": "Save an item",
+      "context": "Mail",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+S"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+S"
+      }
+    },
+    {
+      "name": "Open the Save as dialog box",
+      "context": "Mail",
+      "windows": {
+        "type": "keys",
+        "chord": "F12"
+      }
+    },
+    {
+      "name": "Move to the Message list from the Folder pane",
+      "context": "Folder pane",
+      "windows": {
+        "type": "keys",
+        "chord": "Space"
+      }
+    },
+    {
+      "name": "Create a new folder",
+      "context": "Folder pane",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Shift+F10",
+          "N"
+        ]
+      }
+    },
+    {
+      "name": "Expand a selected group or folder with subfolders",
+      "context": "Folder pane",
+      "windows": {
+        "type": "keys",
+        "chord": "Right"
+      }
+    },
+    {
+      "name": "Collapse a selected group or folder with subfolders",
+      "context": "Folder pane",
+      "windows": {
+        "type": "keys",
+        "chord": "Left"
+      }
+    },
+    {
+      "name": "Open a selected item in the Folder pane",
+      "context": "Folder pane",
+      "windows": {
+        "type": "keys",
+        "chord": "Space"
+      }
+    },
+    {
+      "name": "Rename a selected folder in the list of folders",
+      "context": "Folder pane",
+      "windows": {
+        "type": "keys",
+        "chord": "F2"
+      }
+    },
+    {
+      "name": "Delete a selected folder in the list (default folders, such as Inbox, Outbox, Drafts, and Sent cannot be deleted)",
+      "context": "Folder pane",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Shift+F10",
+          "D"
+        ]
+      }
+    },
+    {
+      "name": "Go to the item at the bottom of the screen",
+      "context": "Message list",
+      "windows": {
+        "type": "keys",
+        "chord": "PageDown"
+      }
+    },
+    {
+      "name": "Go to the item at the top of the screen",
+      "context": "Message list",
+      "windows": {
+        "type": "keys",
+        "chord": "PageUp"
+      }
+    },
+    {
+      "name": "Extend or reduce the selected items by one item",
+      "context": "Message list",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Up"
+      }
+    },
+    {
+      "name": "Go to the next or previous item without extending the selection",
+      "context": "Message list",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Up"
+      }
+    },
+    {
+      "name": "Select or cancel a selection of the active item",
+      "context": "Message list",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Space"
+      }
+    },
+    {
+      "name": "Expand groups of messages (for example, Last Week)",
+      "context": "Message list",
+      "windows": {
+        "type": "keys",
+        "chord": "Right"
+      }
+    },
+    {
+      "name": "Collapse groups of messages (for example, Last Week)",
+      "context": "Message list",
+      "windows": {
+        "type": "keys",
+        "chord": "Left"
+      }
+    },
+    {
+      "name": "Select multiple adjacent messages",
+      "context": "Message list",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Down"
+      }
+    },
+    {
+      "name": "Select multiple non-adjacent messages",
+      "context": "Message list",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Up"
+      }
+    },
+    {
+      "name": "Move message to folder",
+      "context": "Message list",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+V"
+      }
+    },
+    {
+      "name": "Add Follow Up or Quick Flag to message",
+      "context": "Message list",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Shift+F10",
+          "U",
+          "T"
+        ]
+      }
+    },
+    {
+      "name": "Add Custom Flag to message",
+      "context": "Message list",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+G"
+      }
+    },
+    {
+      "name": "Mark message as junk or not junk",
+      "context": "Message list",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Shift+F10",
+          "J"
+        ]
+      }
+    },
+    {
+      "name": "Mark a message as read",
+      "context": "Message list",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Q"
+      }
+    },
+    {
+      "name": "Mark a message as unread",
+      "context": "Message list",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+U"
+      }
+    },
+    {
+      "name": "Mark an item to download",
+      "context": "Message list",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+J",
+          "S",
+          "M",
+          "T"
+        ]
+      }
+    },
+    {
+      "name": "Mark an item to download a copy",
+      "context": "Message list",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+J",
+          "S",
+          "M",
+          "C"
+        ]
+      }
+    },
+    {
+      "name": "Unmark an item to download",
+      "context": "Message list",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+J",
+          "S",
+          "U",
+          "U"
+        ]
+      }
+    },
+    {
+      "name": "Unmark all items to download",
+      "context": "Message list",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+J",
+          "S",
+          "U",
+          "K"
+        ]
+      }
+    },
+    {
+      "name": "Delete a message",
+      "context": "Message list",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+H",
+          "D"
+        ]
+      }
+    },
+    {
+      "name": "Ignore a message",
+      "context": "Message list",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+H",
+          "X"
+        ]
+      }
+    },
+    {
+      "name": "Reply to a message",
+      "context": "Message list",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+H",
+          "R",
+          "P"
+        ]
+      }
+    },
+    {
+      "name": "Select the Reply All option",
+      "context": "Message list",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+H",
+          "R",
+          "A"
+        ]
+      }
+    },
+    {
+      "name": "Forward a message",
+      "context": "Message list",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+H",
+          "F",
+          "W"
+        ]
+      }
+    },
+    {
+      "name": "Open a message",
+      "context": "Message list",
+      "windows": {
+        "type": "keys",
+        "chord": "Enter"
+      }
+    },
+    {
+      "name": "Display a blocked content menu",
+      "context": "Message list",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+W"
+      }
+    },
+    {
+      "name": "Download blocked pictures or images",
+      "context": "Message list",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+Shift+W",
+          "P"
+        ]
+      }
+    },
+    {
+      "name": "Show email properties",
+      "context": "Message list",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Enter"
+      }
+    },
+    {
+      "name": "Post to a folder",
+      "context": "Message list",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+S"
+      }
+    },
+    {
+      "name": "Copy item to a folder",
+      "context": "Message list",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Y"
+      }
+    },
+    {
+      "name": "Print a message",
+      "context": "Message list",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+P"
+      }
+    },
+    {
+      "name": "Set how often Outlook checks for new messages",
+      "context": "Message list",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+S"
+      }
+    },
+    {
+      "name": "Set the junk mail options",
+      "context": "Message list",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+H",
+          "J",
+          "O"
+        ]
+      }
+    },
+    {
+      "name": "Go to the previous message",
+      "context": "Reading pane",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Up"
+      }
+    },
+    {
+      "name": "Page down through text",
+      "context": "Reading pane",
+      "windows": {
+        "type": "keys",
+        "chord": "Space"
+      }
+    },
+    {
+      "name": "Page up through text",
+      "context": "Reading pane",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Space"
+      }
+    },
+    {
+      "name": "Move to the next field",
+      "context": "Reading pane",
+      "windows": {
+        "type": "keys",
+        "chord": "Tab"
+      }
+    },
+    {
+      "name": "Move to previous field",
+      "context": "Reading pane",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Tab"
+      }
+    },
+    {
+      "name": "Move to the next or previous link",
+      "context": "Reading pane",
+      "windows": {
+        "type": "keys",
+        "chord": "Tab"
+      }
+    },
+    {
+      "name": "Jump to the Reply button",
+      "context": "Reading pane",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+R"
+      }
+    },
+    {
+      "name": "In an email message, select the InfoBar and, if available, show the options menu. The InfoBar appears in messages that contain additional information, for example, about conflicting meetings and actions are needed. If available, the InfoBar appears in the message below the subject and sender",
+      "context": "Reading pane",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+W"
+      }
+    },
+    {
+      "name": "Close the InfoBar menu",
+      "context": "Reading pane",
+      "windows": {
+        "type": "keys",
+        "chord": "Esc"
+      }
+    },
+    {
+      "name": "Start a send/receive action for all defined Send/Receive groups with Include this group in Send/Receive (F9) selected. This can include headers, full items, specified folders, items less than a specific size, or any combination that you define",
+      "context": "Mail",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+J",
+          "S",
+          "G"
+        ]
+      }
+    },
+    {
+      "name": "Start a send/receive action for the current folder, retrieving full items (header, item, and any attachments)",
+      "context": "Mail",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+F9"
+      }
+    },
+    {
+      "name": "Start a send/receive action",
+      "context": "Mail",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+J",
+          "S",
+          "S"
+        ]
+      }
+    },
+    {
+      "name": "Define Send/Receive groups",
+      "context": "Mail",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+S"
+      }
+    },
+    {
+      "name": "Create an appointment (when in the Calendar view)",
+      "context": "Calendar",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+N"
+      }
+    },
+    {
+      "name": "Create an appointment (in any Outlook view)",
+      "context": "Calendar",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+A"
+      }
+    },
+    {
+      "name": "Create a meeting request",
+      "context": "Calendar",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Q"
+      }
+    },
+    {
+      "name": "Open the New Items menu to select which item you'd like to create",
+      "context": "Calendar",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+H",
+          "I"
+        ]
+      }
+    },
+    {
+      "name": "Forward an appointment or meeting",
+      "context": "Calendar",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+H",
+          "F",
+          "W"
+        ]
+      }
+    },
+    {
+      "name": "Reply to a meeting request with a message",
+      "context": "Calendar",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+R"
+      }
+    },
+    {
+      "name": "Select the Reply All option",
+      "context": "Calendar",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+R"
+      }
+    },
+    {
+      "name": "Show one day in the calendar",
+      "context": "Calendar",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+1"
+      }
+    },
+    {
+      "name": "Show two days in the calendar",
+      "context": "Calendar",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+2"
+      }
+    },
+    {
+      "name": "Show three days in the calendar",
+      "context": "Calendar",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+3"
+      }
+    },
+    {
+      "name": "Show four days in the calendar",
+      "context": "Calendar",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+4"
+      }
+    },
+    {
+      "name": "Show five days in the calendar",
+      "context": "Calendar",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+5"
+      }
+    },
+    {
+      "name": "Show six days in the calendar",
+      "context": "Calendar",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+6"
+      }
+    },
+    {
+      "name": "Show seven days in the calendar",
+      "context": "Calendar",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+7"
+      }
+    },
+    {
+      "name": "Show eight days in the calendar",
+      "context": "Calendar",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+8"
+      }
+    },
+    {
+      "name": "Show nine days in the calendar",
+      "context": "Calendar",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+9"
+      }
+    },
+    {
+      "name": "Show ten days in the calendar",
+      "context": "Calendar",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+0"
+      }
+    },
+    {
+      "name": "Show today in the calendar",
+      "context": "Calendar",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+H",
+          "O",
+          "D"
+        ]
+      }
+    },
+    {
+      "name": "Show the daily view",
+      "context": "Calendar",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+H",
+          "R"
+        ]
+      }
+    },
+    {
+      "name": "Show the next seven days",
+      "context": "Calendar",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+H",
+          "X"
+        ]
+      }
+    },
+    {
+      "name": "Go to a date",
+      "context": "Calendar",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+G"
+      }
+    },
+    {
+      "name": "Switch to Month view",
+      "context": "Calendar",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+="
+      }
+    },
+    {
+      "name": "Go to the next day",
+      "context": "Calendar",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Right"
+      }
+    },
+    {
+      "name": "Go to the next week",
+      "context": "Calendar",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Down"
+      }
+    },
+    {
+      "name": "Go to the next month",
+      "context": "Calendar",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+PageDown"
+      }
+    },
+    {
+      "name": "Go to the previous day",
+      "context": "Calendar",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Left"
+      }
+    },
+    {
+      "name": "Go to the previous week",
+      "context": "Calendar",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Up"
+      }
+    },
+    {
+      "name": "Go to the previous month",
+      "context": "Calendar",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+PageUp"
+      }
+    },
+    {
+      "name": "Go to the start of the week",
+      "context": "Calendar",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Home"
+      }
+    },
+    {
+      "name": "Go to the end of the week",
+      "context": "Calendar",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+End"
+      }
+    },
+    {
+      "name": "Switch to the Full Week view",
+      "context": "Calendar",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+-"
+      }
+    },
+    {
+      "name": "Switch to the Work Week view",
+      "context": "Calendar",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+2"
+      }
+    },
+    {
+      "name": "Go to the previous appointment",
+      "context": "Calendar",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+,"
+      }
+    },
+    {
+      "name": "Go to the next appointment",
+      "context": "Calendar",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+."
+      }
+    },
+    {
+      "name": "Set up recurrence for an open appointment or meeting",
+      "context": "Calendar",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+G"
+      }
+    },
+    {
+      "name": "Open an appointment when the reminder appears",
+      "context": "Calendar",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+O"
+      }
+    },
+    {
+      "name": "Open the reminder window",
+      "context": "Calendar",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+V",
+          "M"
+        ]
+      }
+    },
+    {
+      "name": "Snooze the reminder",
+      "context": "Calendar",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+S"
+      }
+    },
+    {
+      "name": "Dismiss the reminder",
+      "context": "Calendar",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+D"
+      }
+    },
+    {
+      "name": "Assign a sound to a reminder",
+      "context": "Calendar",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+F",
+          "T",
+          "A"
+        ]
+      }
+    },
+    {
+      "name": "Jump to Search",
+      "context": "Calendar",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+E"
+      }
+    },
+    {
+      "name": "Show the selected schedule in a horizontal layout if you want to compare calendars to schedule meetings",
+      "context": "Calendar",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+H",
+          "S",
+          "V"
+        ]
+      }
+    },
+    {
+      "name": "Add shared calendars from your contacts, or create a new calendar",
+      "context": "Calendar",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+H",
+          "O",
+          "C"
+        ]
+      }
+    },
+    {
+      "name": "Create a new calendar group or add a department calendar",
+      "context": "Calendar",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+H",
+          "C",
+          "G"
+        ]
+      }
+    },
+    {
+      "name": "Email a selected calendar to a contact",
+      "context": "Calendar",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+H",
+          "E"
+        ]
+      }
+    },
+    {
+      "name": "Share a calendar with others",
+      "context": "Calendar",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+H",
+          "S",
+          "C"
+        ]
+      }
+    },
+    {
+      "name": "Publish a calendar online",
+      "context": "Calendar",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+H",
+          "P",
+          "O"
+        ]
+      }
+    },
+    {
+      "name": "View and edit the sharing permissions for a folder",
+      "context": "Calendar",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+H",
+          "F",
+          "P"
+        ]
+      }
+    },
+    {
+      "name": "Search for contacts",
+      "context": "Calendar",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+H",
+          "F",
+          "C"
+        ]
+      }
+    },
+    {
+      "name": "Open the address book",
+      "context": "Calendar",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+H",
+          "A",
+          "B"
+        ]
+      }
+    },
+    {
+      "name": "Open the Outlook Options dialog box for calendars",
+      "context": "Calendar",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+H",
+          "C",
+          "O"
+        ]
+      }
+    },
+    {
+      "name": "If information for the currently selected item is abbreviated or not read in full, activate the Microsoft Active Accessibility (MSAA) information. MSAA provides more details to JAWS so that the information can be read in full",
+      "context": "Calendar",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Shift+M"
+      }
+    },
+    {
+      "name": "Open the calendar scheduling assistant from the meeting window",
+      "context": "Calendar",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+X"
+      }
+    },
+    {
+      "name": "View 10 days",
+      "context": "Calendar",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+0"
+      }
+    },
+    {
+      "name": "Switch to the Week view",
+      "context": "Calendar",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+-"
+      }
+    },
+    {
+      "name": "Switch to the Month view",
+      "context": "Calendar",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+="
+      }
+    },
+    {
+      "name": "Move between the Calendar view, TaskPad, and Folder list",
+      "context": "Calendar",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Tab"
+      }
+    },
+    {
+      "name": "Select the previous appointment",
+      "context": "Calendar",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Tab"
+      }
+    },
+    {
+      "name": "Go to the same day in the next week",
+      "context": "Calendar",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Down"
+      }
+    },
+    {
+      "name": "Go to the same day in the previous week",
+      "context": "Calendar",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Up"
+      }
+    },
+    {
+      "name": "Select the time that begins your work day",
+      "context": "Calendar day view",
+      "windows": {
+        "type": "keys",
+        "chord": "Home"
+      }
+    },
+    {
+      "name": "Select the time that ends your work day",
+      "context": "Calendar day view",
+      "windows": {
+        "type": "keys",
+        "chord": "End"
+      }
+    },
+    {
+      "name": "Select the previous block of time",
+      "context": "Calendar day view",
+      "windows": {
+        "type": "keys",
+        "chord": "Up"
+      }
+    },
+    {
+      "name": "Select the next block of time",
+      "context": "Calendar day view",
+      "windows": {
+        "type": "keys",
+        "chord": "Down"
+      }
+    },
+    {
+      "name": "Select the block of time at the top of the screen",
+      "context": "Calendar day view",
+      "windows": {
+        "type": "keys",
+        "chord": "PageUp"
+      }
+    },
+    {
+      "name": "Select the block of time at the bottom of the screen",
+      "context": "Calendar day view",
+      "windows": {
+        "type": "keys",
+        "chord": "PageDown"
+      }
+    },
+    {
+      "name": "Extend or reduce the selected time",
+      "context": "Calendar day view",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Up"
+      }
+    },
+    {
+      "name": "Go to the same day in the next week",
+      "context": "Calendar day view",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Down"
+      }
+    },
+    {
+      "name": "Go to the same day in the previous week",
+      "context": "Calendar day view",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Up"
+      }
+    },
+    {
+      "name": "Go to the start of work hours for the selected day",
+      "context": "Calendar week view",
+      "windows": {
+        "type": "keys",
+        "chord": "Home"
+      }
+    },
+    {
+      "name": "Go to the end of work hours for the selected day",
+      "context": "Calendar week view",
+      "windows": {
+        "type": "keys",
+        "chord": "End"
+      }
+    },
+    {
+      "name": "Go up one page view in the selected day",
+      "context": "Calendar week view",
+      "windows": {
+        "type": "keys",
+        "chord": "PageUp"
+      }
+    },
+    {
+      "name": "Go down one page view in the selected day",
+      "context": "Calendar week view",
+      "windows": {
+        "type": "keys",
+        "chord": "PageDown"
+      }
+    },
+    {
+      "name": "Change the duration of the selected block of time",
+      "context": "Calendar week view",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Shift+Left",
+          "Shift+Right",
+          "Shift+Up",
+          "Shift+Down",
+          "Shift+Home"
+        ]
+      }
+    },
+    {
+      "name": "Go to the first day of the week",
+      "context": "Calendar month view",
+      "windows": {
+        "type": "keys",
+        "chord": "Home"
+      }
+    },
+    {
+      "name": "Go to the same day of the week in the previous page",
+      "context": "Calendar month view",
+      "windows": {
+        "type": "keys",
+        "chord": "PageUp"
+      }
+    },
+    {
+      "name": "Go to the same day of the week in the next page",
+      "context": "Calendar month view",
+      "windows": {
+        "type": "keys",
+        "chord": "PageDown"
+      }
+    },
+    {
+      "name": "Go to the first day of the current week",
+      "context": "Date Navigator",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Home"
+      }
+    },
+    {
+      "name": "Go to the last day of the current week",
+      "context": "Date Navigator",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+End"
+      }
+    },
+    {
+      "name": "Go to the same day in the previous week",
+      "context": "Date Navigator",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Up"
+      }
+    },
+    {
+      "name": "Go to the same day in the next week",
+      "context": "Date Navigator",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Down"
+      }
+    },
+    {
+      "name": "Dial a new call to a contact",
+      "context": "People",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+D"
+      }
+    },
+    {
+      "name": "Find a contact",
+      "context": "People",
+      "windows": {
+        "type": "keys",
+        "chord": "F3"
+      }
+    },
+    {
+      "name": "Enter a name in the Search Address Books",
+      "context": "People",
+      "windows": {
+        "type": "keys",
+        "chord": "F11"
+      }
+    },
+    {
+      "name": "Select all contacts",
+      "context": "People",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+A"
+      }
+    },
+    {
+      "name": "Create a message with the selected contact as subject",
+      "context": "People",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+F"
+      }
+    },
+    {
+      "name": "Create a contact (when in Contacts)",
+      "context": "People",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+N"
+      }
+    },
+    {
+      "name": "Create a contact (from any Outlook view)",
+      "context": "People",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+C"
+      }
+    },
+    {
+      "name": "Open a contact form for the selected contact",
+      "context": "People",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+O"
+      }
+    },
+    {
+      "name": "Create a contact group",
+      "context": "People",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+L"
+      }
+    },
+    {
+      "name": "Open the Print dialog box",
+      "context": "People",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+P"
+      }
+    },
+    {
+      "name": "Update a list of contact group members",
+      "context": "People",
+      "windows": {
+        "type": "keys",
+        "chord": "F5"
+      }
+    },
+    {
+      "name": "Go to a different folder",
+      "context": "People",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Y"
+      }
+    },
+    {
+      "name": "Open the Address Book",
+      "context": "People",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+B"
+      }
+    },
+    {
+      "name": "Use Advanced Find",
+      "context": "People",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+F"
+      }
+    },
+    {
+      "name": "In an open contact, open the next contact listed",
+      "context": "People",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+."
+      }
+    },
+    {
+      "name": "Find a contact in Favorites",
+      "context": "People",
+      "windows": {
+        "type": "keys",
+        "chord": "F11"
+      }
+    },
+    {
+      "name": "Close a contact",
+      "context": "People",
+      "windows": {
+        "type": "keys",
+        "chord": "Esc"
+      }
+    },
+    {
+      "name": "Send a fax to the selected contact",
+      "context": "People",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+X"
+      }
+    },
+    {
+      "name": "Open the Check Address dialog box",
+      "context": "People",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+D"
+      }
+    },
+    {
+      "name": "In a contact form, under Internet, display the Email 1 information",
+      "context": "People",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+1"
+      }
+    },
+    {
+      "name": "In a contact form, under Internet, display the Email 2 information",
+      "context": "People",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+2"
+      }
+    },
+    {
+      "name": "In a contact form, under Internet, display the Email 3 information",
+      "context": "People",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+3"
+      }
+    },
+    {
+      "name": "Select the previous card",
+      "context": "Business Cards view",
+      "windows": {
+        "type": "keys",
+        "chord": "Up"
+      }
+    },
+    {
+      "name": "Select the next card",
+      "context": "Business Cards view",
+      "windows": {
+        "type": "keys",
+        "chord": "Down"
+      }
+    },
+    {
+      "name": "Select the first card in the list",
+      "context": "Business Cards view",
+      "windows": {
+        "type": "keys",
+        "chord": "Home"
+      }
+    },
+    {
+      "name": "Select the last card in the list",
+      "context": "Business Cards view",
+      "windows": {
+        "type": "keys",
+        "chord": "End"
+      }
+    },
+    {
+      "name": "Select the first card on the current page",
+      "context": "Business Cards view",
+      "windows": {
+        "type": "keys",
+        "chord": "PageUp"
+      }
+    },
+    {
+      "name": "Select the first card on the next page",
+      "context": "Business Cards view",
+      "windows": {
+        "type": "keys",
+        "chord": "PageDown"
+      }
+    },
+    {
+      "name": "Select the closest card in the next column",
+      "context": "Business Cards view",
+      "windows": {
+        "type": "keys",
+        "chord": "Right"
+      }
+    },
+    {
+      "name": "Select the closest card in the previous column",
+      "context": "Business Cards view",
+      "windows": {
+        "type": "keys",
+        "chord": "Left"
+      }
+    },
+    {
+      "name": "Select or cancel the selection of the active card",
+      "context": "Business Cards view",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Space"
+      }
+    },
+    {
+      "name": "Extend the selection to the previous card and cancel the selection of cards after the starting point",
+      "context": "Business Cards view",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Up"
+      }
+    },
+    {
+      "name": "Extend the selection to the next card and cancel the selection of cards before the starting point",
+      "context": "Business Cards view",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Down"
+      }
+    },
+    {
+      "name": "Extend the selection to the previous card, regardless of the starting point",
+      "context": "Business Cards view",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Up"
+      }
+    },
+    {
+      "name": "Extend the selection to the next card, regardless of the starting point",
+      "context": "Business Cards view",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Down"
+      }
+    },
+    {
+      "name": "Extend the selection to the first card in the list",
+      "context": "Business Cards view",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Home"
+      }
+    },
+    {
+      "name": "Extend the selection to the last card in the list",
+      "context": "Business Cards view",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+End"
+      }
+    },
+    {
+      "name": "Extend the selection to the first card on the previous page",
+      "context": "Business Cards view",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+PageUp"
+      }
+    },
+    {
+      "name": "Extend the selection to the last card on the last page",
+      "context": "Business Cards view",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+PageDown"
+      }
+    },
+    {
+      "name": "Open the Add menu list",
+      "context": "Edit Business Card dialog",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+A"
+      }
+    },
+    {
+      "name": "Select text in the Label box when the field with a label assigned is selected",
+      "context": "Edit Business Card dialog",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+B"
+      }
+    },
+    {
+      "name": "Open the Add Card Picture dialog",
+      "context": "Edit Business Card dialog",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+C"
+      }
+    },
+    {
+      "name": "Place cursor at beginning of the Edit text field",
+      "context": "Edit Business Card dialog",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+E"
+      }
+    },
+    {
+      "name": "Go to and select the Fields box",
+      "context": "Edit Business Card dialog",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+F"
+      }
+    },
+    {
+      "name": "Select the Image Align menu",
+      "context": "Edit Business Card dialog",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+G"
+      }
+    },
+    {
+      "name": "Select the color palette for the background",
+      "context": "Edit Business Card dialog",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+K",
+          "Enter"
+        ]
+      }
+    },
+    {
+      "name": "Select the Layout menu",
+      "context": "Edit Business Card dialog",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+L"
+      }
+    },
+    {
+      "name": "Remove a selected field from the Fields box",
+      "context": "Edit Business Card dialog",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+R"
+      }
+    },
+    {
+      "name": "Move to the next field and control",
+      "context": "Business Card",
+      "windows": {
+        "type": "keys",
+        "chord": "Tab"
+      }
+    },
+    {
+      "name": "Move to the previous field and control",
+      "context": "Business Card",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Tab"
+      }
+    },
+    {
+      "name": "Close the active card",
+      "context": "Business Card",
+      "windows": {
+        "type": "keys",
+        "chord": "Enter"
+      }
+    },
+    {
+      "name": "Add a line in a multiline field",
+      "context": "Business Card",
+      "windows": {
+        "type": "keys",
+        "chord": "Enter"
+      }
+    },
+    {
+      "name": "Move to the beginning of a line",
+      "context": "Business Card",
+      "windows": {
+        "type": "keys",
+        "chord": "Home"
+      }
+    },
+    {
+      "name": "Move to the end of a line",
+      "context": "Business Card",
+      "windows": {
+        "type": "keys",
+        "chord": "End"
+      }
+    },
+    {
+      "name": "Move to the beginning of a multiline field",
+      "context": "Business Card",
+      "windows": {
+        "type": "keys",
+        "chord": "PageUp"
+      }
+    },
+    {
+      "name": "Move to the end of a multiline field",
+      "context": "Business Card",
+      "windows": {
+        "type": "keys",
+        "chord": "PageDown"
+      }
+    },
+    {
+      "name": "Move to the previous line in a multiline field",
+      "context": "Business Card",
+      "windows": {
+        "type": "keys",
+        "chord": "Up"
+      }
+    },
+    {
+      "name": "Move to the next line in a multiline field",
+      "context": "Business Card",
+      "windows": {
+        "type": "keys",
+        "chord": "Down"
+      }
+    },
+    {
+      "name": "Move to the previous character in a field",
+      "context": "Business Card",
+      "windows": {
+        "type": "keys",
+        "chord": "Left"
+      }
+    },
+    {
+      "name": "Move to the next character in a field",
+      "context": "Business Card",
+      "windows": {
+        "type": "keys",
+        "chord": "Right"
+      }
+    },
+    {
+      "name": "Accept a task request",
+      "context": "Tasks",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+C"
+      }
+    },
+    {
+      "name": "Decline a task request",
+      "context": "Tasks",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+D"
+      }
+    },
+    {
+      "name": "Find a task or other item",
+      "context": "Tasks",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+E"
+      }
+    },
+    {
+      "name": "Open the Go to Folder dialog box",
+      "context": "Tasks",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Y"
+      }
+    },
+    {
+      "name": "Create a task when in Tasks view",
+      "context": "Tasks",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+N"
+      }
+    },
+    {
+      "name": "Create a task from any Outlook view",
+      "context": "Tasks",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+K"
+      }
+    },
+    {
+      "name": "Open the selected item",
+      "context": "Tasks",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+O"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+O"
+      }
+    },
+    {
+      "name": "Print the selected item",
+      "context": "Tasks",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+P"
+      }
+    },
+    {
+      "name": "Select all items",
+      "context": "Tasks",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+A"
+      }
+    },
+    {
+      "name": "Delete selected item",
+      "context": "Tasks",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+D"
+      }
+    },
+    {
+      "name": "Forward a task as an attachment",
+      "context": "Tasks",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+F"
+      }
+    },
+    {
+      "name": "Create a task request",
+      "context": "Tasks",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Shift+U"
+      }
+    },
+    {
+      "name": "Switch between the Folder pane, Tasks list, and To-Do bar",
+      "context": "Tasks",
+      "windows": {
+        "type": "keys",
+        "chord": "F6"
+      }
+    },
+    {
+      "name": "Undo the last action",
+      "context": "Tasks",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Z"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Z"
+      }
+    },
+    {
+      "name": "Flag an item or mark complete",
+      "context": "Tasks",
+      "windows": {
+        "type": "keys",
+        "chord": "Insert"
+      }
+    },
+    {
+      "name": "Select the previous item",
+      "context": "Timeline view",
+      "windows": {
+        "type": "keys",
+        "chord": "Left"
+      }
+    },
+    {
+      "name": "Select the next item",
+      "context": "Timeline view",
+      "windows": {
+        "type": "keys",
+        "chord": "Right"
+      }
+    },
+    {
+      "name": "Select multiple adjacent items",
+      "context": "Timeline view",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Left"
+      }
+    },
+    {
+      "name": "Open the selected items",
+      "context": "Timeline view",
+      "windows": {
+        "type": "keys",
+        "chord": "Enter"
+      }
+    },
+    {
+      "name": "Select the first item on the timeline (if items are not grouped) or the first item in the group",
+      "context": "Timeline view",
+      "windows": {
+        "type": "keys",
+        "chord": "Home"
+      }
+    },
+    {
+      "name": "Select the last item on the timeline (if items are not grouped) or the last item in the group",
+      "context": "Timeline view",
+      "windows": {
+        "type": "keys",
+        "chord": "End"
+      }
+    },
+    {
+      "name": "Display (without selecting) the first item on the timeline (if items are not grouped) or the first item in the group",
+      "context": "Timeline view",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Home"
+      }
+    },
+    {
+      "name": "Display (without selecting) the last item on the timeline (if items are not grouped) or the last item in the group",
+      "context": "Timeline view",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+End"
+      }
+    },
+    {
+      "name": "Expand the group",
+      "context": "Timeline view",
+      "windows": {
+        "type": "keys",
+        "chord": "Enter"
+      }
+    },
+    {
+      "name": "Collapse the group",
+      "context": "Timeline view",
+      "windows": {
+        "type": "keys",
+        "chord": "Enter"
+      }
+    },
+    {
+      "name": "Select the previous group",
+      "context": "Timeline view",
+      "windows": {
+        "type": "keys",
+        "chord": "Up"
+      }
+    },
+    {
+      "name": "Select the next group",
+      "context": "Timeline view",
+      "windows": {
+        "type": "keys",
+        "chord": "Down"
+      }
+    },
+    {
+      "name": "Select the first group on the timeline",
+      "context": "Timeline view",
+      "windows": {
+        "type": "keys",
+        "chord": "Home"
+      }
+    },
+    {
+      "name": "Select the last group on the timeline",
+      "context": "Timeline view",
+      "windows": {
+        "type": "keys",
+        "chord": "End"
+      }
+    },
+    {
+      "name": "Select the first item on screen in an expanded group or the first item off screen to the right",
+      "context": "Timeline view",
+      "windows": {
+        "type": "keys",
+        "chord": "Right"
+      }
+    },
+    {
+      "name": "Move backwards in increments of time that are the same as those shown on the time scale",
+      "context": "Timeline view",
+      "windows": {
+        "type": "keys",
+        "chord": "Left"
+      }
+    },
+    {
+      "name": "Move forward in increments of time that are the same as those shown on the time scale",
+      "context": "Timeline view",
+      "windows": {
+        "type": "keys",
+        "chord": "Right"
+      }
+    },
+    {
+      "name": "Open the Visual Basic Editor",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+F11"
+      }
+    },
+    {
+      "name": "Play a macro",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+F8"
+      }
+    },
+    {
+      "name": "Expand a single selected group",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Right"
+      }
+    },
+    {
+      "name": "Collapse a single selected group",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Left"
+      }
+    },
+    {
+      "name": "Select the previous group",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Up"
+      }
+    },
+    {
+      "name": "Select the next group",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Down"
+      }
+    },
+    {
+      "name": "Select the first group",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Home"
+      }
+    },
+    {
+      "name": "Select the last group",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "End"
+      }
+    },
+    {
+      "name": "Select the first item on screen in an expanded group or the first item off-screen to the right",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Right"
+      }
+    },
+    {
+      "name": "Create a new message or calendar event",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+N"
+      }
+    },
+    {
+      "name": "Open the selected message in a new window",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Enter"
+      }
+    },
+    {
+      "name": "Delete message or item",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Delete"
+      }
+    },
+    {
+      "name": "Forward message",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+F"
+      }
+    },
+    {
+      "name": "Reply to email message",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+R"
+      }
+    },
+    {
+      "name": "Send an email message",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Enter"
+      }
+    },
+    {
+      "name": "Open keyboard shortcuts",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "/"
+      }
+    },
+    {
+      "name": "Copy your selection to the clipboard",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+C"
+      }
+    },
+    {
+      "name": "Cut the text you selected",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+X"
+      }
+    },
+    {
+      "name": "Delete selected text or characters to the left of the cursor",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Backspace"
+      }
+    },
+    {
+      "name": "Delete the word to the left of the cursor, but not the space before the word",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Backspace"
+      }
+    },
+    {
+      "name": "Paste content from the clipboard into the current location",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+V"
+      }
+    },
+    {
+      "name": "Repeat the most recent action",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Y"
+      }
+    },
+    {
+      "name": "Reverse the most recent action",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Z"
+      }
+    },
+    {
+      "name": "Go to the Folder pane",
+      "context": "Folder pane",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Y"
+      }
+    },
+    {
+      "name": "Collapse the selected section",
+      "context": "Folder pane",
+      "windows": {
+        "type": "keys",
+        "chord": "Left"
+      }
+    },
+    {
+      "name": "Expand the selected section",
+      "context": "Folder pane",
+      "windows": {
+        "type": "keys",
+        "chord": "Right"
+      }
+    },
+    {
+      "name": "Delete the selected message",
+      "context": "Message list",
+      "windows": {
+        "type": "keys",
+        "chord": "Delete"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Delete"
+      }
+    },
+    {
+      "name": "Mark the selected conversation or message as read",
+      "context": "Message list",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Q"
+      }
+    },
+    {
+      "name": "Mark the selected conversation or message as unread",
+      "context": "Message list",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+U"
+      }
+    },
+    {
+      "name": "Permanently delete the selected message or item",
+      "context": "Message list",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Delete"
+      }
+    },
+    {
+      "name": "Flag a message or mark a flagged message as complete",
+      "context": "Message list",
+      "windows": {
+        "type": "keys",
+        "chord": "Insert"
+      }
+    },
+    {
+      "name": "Cancel a search",
+      "context": "Message list",
+      "windows": {
+        "type": "keys",
+        "chord": "Esc"
+      }
+    },
+    {
+      "name": "Select the current and next message in the list. Use this to select multiple, contiguous messages",
+      "context": "Message list",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Down"
+      }
+    },
+    {
+      "name": "Select the current and previous messages in the list. Use this to select multiple, contiguous messages",
+      "context": "Message list",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Up"
+      }
+    },
+    {
+      "name": "Select the first message in the folder",
+      "context": "Message list",
+      "windows": {
+        "type": "keys",
+        "chord": "Home"
+      }
+    },
+    {
+      "name": "Close a new message",
+      "context": "Reading pane",
+      "windows": {
+        "type": "keys",
+        "chord": "Esc"
+      }
+    },
+    {
+      "name": "Create a new message",
+      "context": "Reading pane",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+N"
+      }
+    },
+    {
+      "name": "Forward a selected message",
+      "context": "Reading pane",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+F"
+      }
+    },
+    {
+      "name": "Go to the bottom of a conversation or message",
+      "context": "Reading pane",
+      "windows": {
+        "type": "keys",
+        "chord": "End"
+      }
+    },
+    {
+      "name": "Go to the top of a conversation or message",
+      "context": "Reading pane",
+      "windows": {
+        "type": "keys",
+        "chord": "Home"
+      }
+    },
+    {
+      "name": "Move down one page for conversations or messages of two or more pages",
+      "context": "Reading pane",
+      "windows": {
+        "type": "keys",
+        "chord": "PageDown"
+      }
+    },
+    {
+      "name": "Move up one page for conversations or messages of two or more pages",
+      "context": "Reading pane",
+      "windows": {
+        "type": "keys",
+        "chord": "PageUp"
+      }
+    },
+    {
+      "name": "Reply to the selected message",
+      "context": "Reading pane",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+R"
+      }
+    },
+    {
+      "name": "Reply to the sender and all recipients of the selected message",
+      "context": "Reading pane",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+R"
+      }
+    },
+    {
+      "name": "Send a message",
+      "context": "Reading pane",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Enter"
+      }
+    },
+    {
+      "name": "Open the calendar view",
+      "context": "Calendar",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+2"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+2"
+      }
+    },
+    {
+      "name": "Create a new calendar item",
+      "context": "Calendar",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+N"
+      }
+    },
+    {
+      "name": "Open the selected item",
+      "context": "Calendar",
+      "windows": {
+        "type": "keys",
+        "chord": "Enter"
+      }
+    },
+    {
+      "name": "Delete the selected item",
+      "context": "Calendar",
+      "windows": {
+        "type": "keys",
+        "chord": "Delete"
+      }
+    },
+    {
+      "name": "In Day view, move to the previous day. In Week and Work Week views, move to the previous week. In Month view, move to the previous month",
+      "context": "Calendar",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Left"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+Left"
+      }
+    },
+    {
+      "name": "In Day view, move to the next day. In Week and Work Week views, move to the next week. In Month view, move to the next month",
+      "context": "Calendar",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Right"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+Right"
+      }
+    },
+    {
+      "name": "Move to a different region in the calendar",
+      "context": "Calendar",
+      "windows": {
+        "type": "keys",
+        "chord": "F6"
+      }
+    },
+    {
+      "name": "Move to the next event or area in the current view",
+      "context": "Calendar",
+      "windows": {
+        "type": "keys",
+        "chord": "Tab"
+      }
+    },
+    {
+      "name": "Move to a previous event or area in the current view",
+      "context": "Calendar",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Tab"
+      }
+    },
+    {
+      "name": "Go to the next time period",
+      "context": "Calendar",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Right"
+      }
+    },
+    {
+      "name": "Go to the previous time period",
+      "context": "Calendar",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Left"
+      }
+    },
+    {
+      "name": "Go to today",
+      "context": "Calendar",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+Y"
+      }
+    },
+    {
+      "name": "Switch to Day view",
+      "context": "Calendar",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+1"
+      }
+    },
+    {
+      "name": "Switch to full Week view",
+      "context": "Calendar",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+2"
+      }
+    },
+    {
+      "name": "Switch to Work week view",
+      "context": "Calendar",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+2"
+      }
+    },
+    {
+      "name": "Switch to three-day view",
+      "context": "Calendar",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+3"
+      }
+    },
+    {
+      "name": "Invite Attendees",
+      "context": "Calendar",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+N"
+      }
+    },
+    {
+      "name": "Go to Mail",
+      "context": "People",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+1"
+      }
+    },
+    {
+      "name": "Go to Calendar",
+      "context": "People",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+2"
+      }
+    },
+    {
+      "name": "Go to Copilot",
+      "context": "People",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+3"
+      }
+    },
+    {
+      "name": "Go to People",
+      "context": "People",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+4"
+      }
+    },
+    {
+      "name": "Delete a contact or contact list",
+      "context": "People",
+      "windows": {
+        "type": "keys",
+        "chord": "Delete"
+      }
+    },
+    {
+      "name": "Create a contact",
+      "context": "People",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+N"
+      }
+    },
+    {
+      "name": "Search for a contact",
+      "context": "People",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+E"
+      }
+    },
+    {
+      "name": "Discard contact",
+      "context": "People",
+      "windows": {
+        "type": "keys",
+        "chord": "Esc"
+      }
+    },
+    {
+      "name": "Save a contact or contact list",
+      "context": "People",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+S"
+      }
+    },
+    {
+      "name": "Select all contacts or contact lists",
+      "context": "People",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+A"
+      }
+    },
+    {
+      "name": "Unselect all contacts or contact lists",
+      "context": "People",
+      "windows": {
+        "type": "keys",
+        "chord": "Esc"
+      }
+    },
+    {
+      "name": "Edit a contact or contact list",
+      "context": "People",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+E"
+      }
+    },
+    {
+      "name": "Move down in the contact list or hub list",
+      "context": "People",
+      "windows": {
+        "type": "keys",
+        "chord": "Down"
+      }
+    },
+    {
+      "name": "Move up in the contact list or hub list",
+      "context": "People",
+      "windows": {
+        "type": "keys",
+        "chord": "Up"
+      }
+    },
+    {
+      "name": "Create a contact list",
+      "context": "People",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+L"
+      }
+    },
+    {
+      "name": "Display the list of People keyboard shortcuts",
+      "context": "People",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+/"
+      }
+    },
+    {
+      "name": "Move the focus to the Home tab",
+      "context": "People",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+H"
+      }
+    },
+    {
+      "name": "Move the focus to the View tab",
+      "context": "People",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+V"
+      }
+    },
+    {
+      "name": "Redo the last action",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Y"
+      }
+    },
+    {
+      "name": "Minimize the active window",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+M"
+      }
+    },
+    {
+      "name": "Create a new folder in the folder pane",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+N"
+      }
+    },
+    {
+      "name": "Create a new email (in Mail view)",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+N"
+      }
+    },
+    {
+      "name": "Hide the reading pane or show it on the right",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+\\"
+      }
+    },
+    {
+      "name": "Hide the reading pane or show it below",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+\\"
+      }
+    },
+    {
+      "name": "Move the selected item to a different folder",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+M"
+      }
+    },
+    {
+      "name": "Copy the selected item to a different folder",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+C"
+      }
+    },
+    {
+      "name": "Select all items in the item list, if the item list is the active pane",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+A"
+      }
+    },
+    {
+      "name": "Hide Outlook",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+H"
+      }
+    },
+    {
+      "name": "Quit Outlook",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Q"
+      }
+    },
+    {
+      "name": "Insert emoji",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Cmd+Space"
+      }
+    },
+    {
+      "name": "Go to Mail view",
+      "context": "Dialog box",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+1"
+      }
+    },
+    {
+      "name": "Go to Calendar view",
+      "context": "Dialog box",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+2"
+      }
+    },
+    {
+      "name": "Go to Contacts view",
+      "context": "Dialog box",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+3"
+      }
+    },
+    {
+      "name": "Open the Favorites pane",
+      "context": "Dialog box",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+4"
+      }
+    },
+    {
+      "name": "Open the Outlook Preferences dialog box",
+      "context": "Dialog box",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+,"
+      }
+    },
+    {
+      "name": "Cycle forward through open windows",
+      "context": "Dialog box",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+`"
+      }
+    },
+    {
+      "name": "Cycle backward through open windows",
+      "context": "Dialog box",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+`"
+      }
+    },
+    {
+      "name": "Close the active window",
+      "context": "Dialog box",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+W"
+      }
+    },
+    {
+      "name": "Move forward through controls in a window",
+      "context": "Dialog box",
+      "mac": {
+        "type": "keys",
+        "chord": "Tab"
+      }
+    },
+    {
+      "name": "Move backward through controls in a window",
+      "context": "Dialog box",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Tab"
+      }
+    },
+    {
+      "name": "Search the current folder",
+      "context": "Search",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+F"
+      }
+    },
+    {
+      "name": "Do an advanced search in Outlook (add Item Contains filter for searching)",
+      "context": "Search",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+F"
+      }
+    },
+    {
+      "name": "Find text within an item",
+      "context": "Search",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+F"
+      }
+    },
+    {
+      "name": "Find the next instance of the text you searched for in an item",
+      "context": "Search",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+G"
+      }
+    },
+    {
+      "name": "Find the previous instance of the text you searched for in an item",
+      "context": "Search",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+G"
+      }
+    },
+    {
+      "name": "Send the open message",
+      "context": "Mail",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Enter"
+      }
+    },
+    {
+      "name": "Send all messages in the Outbox and receive all incoming messages",
+      "context": "Mail",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Cmd+K"
+      }
+    },
+    {
+      "name": "Send all the messages in the Outbox",
+      "context": "Mail",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+K"
+      }
+    },
+    {
+      "name": "Save the open message and store it in the Drafts folder",
+      "context": "Mail",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+S"
+      }
+    },
+    {
+      "name": "Add an attachment to the open message",
+      "context": "Mail",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+E"
+      }
+    },
+    {
+      "name": "Open the Spelling and Grammar dialog box",
+      "context": "Mail",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+;"
+      }
+    },
+    {
+      "name": "Reply to the sender of the message or, if the message is from a mailing list, reply to the mailing list",
+      "context": "Mail",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+R"
+      }
+    },
+    {
+      "name": "Reply to all",
+      "context": "Mail",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+R"
+      }
+    },
+    {
+      "name": "Forward the message",
+      "context": "Mail",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+J"
+      }
+    },
+    {
+      "name": "Open the selected message in a separate window",
+      "context": "Mail",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+O"
+      }
+    },
+    {
+      "name": "Mark the selected message as junk email",
+      "context": "Mail",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+J"
+      }
+    },
+    {
+      "name": "Mark the selected message as not junk email",
+      "context": "Mail",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+Shift+J"
+      }
+    },
+    {
+      "name": "Display the previous message",
+      "context": "Mail",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+["
+      }
+    },
+    {
+      "name": "Display the next message",
+      "context": "Mail",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+]"
+      }
+    },
+    {
+      "name": "Navigate to the previous pane in the Mail view",
+      "context": "Mail",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+["
+      }
+    },
+    {
+      "name": "Navigate to the next pane in the mail view",
+      "context": "Mail",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+]"
+      }
+    },
+    {
+      "name": "Move the selected message to a folder",
+      "context": "Mail",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+M"
+      }
+    },
+    {
+      "name": "Decrease the display size of text in an open message or in the reading pane",
+      "context": "Mail",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+-"
+      }
+    },
+    {
+      "name": "Increase the display size of text in an open message or in the reading pane",
+      "context": "Mail",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Plus"
+      }
+    },
+    {
+      "name": "Scroll down to the next screen of text or, if you are at the end of a message, display the next message",
+      "context": "Mail",
+      "mac": {
+        "type": "keys",
+        "chord": "Space"
+      }
+    },
+    {
+      "name": "Scroll up to the previous screen of text or, if you are at the beginning of a message, display the previous message",
+      "context": "Mail",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Space"
+      }
+    },
+    {
+      "name": "Permanently delete the selected message",
+      "context": "Mail",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Delete"
+      }
+    },
+    {
+      "name": "Delete the current message, and, if the message window is open, close it",
+      "context": "Mail",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Delete"
+      }
+    },
+    {
+      "name": "Mark selected messages as read",
+      "context": "Mail",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+T"
+      }
+    },
+    {
+      "name": "Mark selected messages as unread",
+      "context": "Mail",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+T"
+      }
+    },
+    {
+      "name": "Mark all messages in a folder as read",
+      "context": "Mail",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+T"
+      }
+    },
+    {
+      "name": "Archive a selected message",
+      "context": "Mail",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+E"
+      }
+    },
+    {
+      "name": "Create a new appointment",
+      "context": "Calendar",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+N"
+      }
+    },
+    {
+      "name": "Open the selected calendar event",
+      "context": "Calendar",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+O"
+      }
+    },
+    {
+      "name": "Delete the calendar event",
+      "context": "Calendar",
+      "mac": {
+        "type": "keys",
+        "chord": "Delete"
+      }
+    },
+    {
+      "name": "Switch the view to include today",
+      "context": "Calendar",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+T"
+      }
+    },
+    {
+      "name": "Navigate to the previous pane in the calendar view",
+      "context": "Calendar",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+["
+      }
+    },
+    {
+      "name": "Navigate to the next pane in the calendar view",
+      "context": "Calendar",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+]"
+      }
+    },
+    {
+      "name": "Create a new contact",
+      "context": "People",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+N"
+      }
+    },
+    {
+      "name": "Open the selected contact",
+      "context": "People",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+O"
+      }
+    },
+    {
+      "name": "Delete the contact",
+      "context": "People",
+      "mac": {
+        "type": "keys",
+        "chord": "Delete"
+      }
+    },
+    {
+      "name": "Close the current open contact and open the previous contact",
+      "context": "People",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+["
+      }
+    },
+    {
+      "name": "Close the current open contact and open the next contact",
+      "context": "People",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+]"
+      }
+    },
+    {
+      "name": "Navigate to the previous pane in the People view",
+      "context": "People",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+["
+      }
+    },
+    {
+      "name": "Navigate to the next pane in the People view",
+      "context": "People",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+]"
+      }
+    },
+    {
+      "name": "Cut the selected text to the clipboard",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+X"
+      }
+    },
+    {
+      "name": "Copy a selection to the clipboard",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+C"
+      }
+    },
+    {
+      "name": "Paste a selection from the clipboard",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+V"
+      }
+    },
+    {
+      "name": "Paste a selection from the clipboard and match the destination style",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+Shift+V"
+      }
+    },
+    {
+      "name": "Make the selected text bold",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+B"
+      }
+    },
+    {
+      "name": "Make the selected text italic",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+I"
+      }
+    },
+    {
+      "name": "Underline the selected text",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+U"
+      }
+    },
+    {
+      "name": "Strike through the selected text",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+X"
+      }
+    },
+    {
+      "name": "Move the cursor left one character",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Left"
+      }
+    },
+    {
+      "name": "Move the cursor right one character",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Right"
+      }
+    },
+    {
+      "name": "Move the cursor up one line",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Up"
+      }
+    },
+    {
+      "name": "Move the cursor down one line",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Down"
+      }
+    },
+    {
+      "name": "Move the cursor to the beginning of the current paragraph",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Up"
+      }
+    },
+    {
+      "name": "Move the cursor to the end of the current paragraph",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Down"
+      }
+    },
+    {
+      "name": "Move the cursor to the beginning of the current word",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Left"
+      }
+    },
+    {
+      "name": "Move the cursor to the end of the current word",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Right"
+      }
+    },
+    {
+      "name": "Delete the character to the left of the cursor, or delete the selected text",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Delete"
+      }
+    },
+    {
+      "name": "Delete the character to the right side of the cursor, or delete the selected text",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Delete"
+      }
+    },
+    {
+      "name": "Insert a tab stop",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Tab"
+      }
+    },
+    {
+      "name": "Move the cursor to the beginning of the line",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Left"
+      }
+    },
+    {
+      "name": "Move the cursor to the end of the line",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Right"
+      }
+    },
+    {
+      "name": "Move the cursor to the top of the message body",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Up"
+      }
+    },
+    {
+      "name": "Move the cursor to the bottom of the message body",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Down"
+      }
+    },
+    {
+      "name": "Move the cursor to the beginning of the selected text",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Home"
+      }
+    },
+    {
+      "name": "Move the cursor to the end of the selected text",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+End"
+      }
+    },
+    {
+      "name": "Scroll the view up",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "PageUp"
+      }
+    },
+    {
+      "name": "Scroll the view down",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "PageDown"
+      }
+    },
+    {
+      "name": "Flag the selected item for follow up, with Today as Due Date",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+1"
+      }
+    },
+    {
+      "name": "Flag the selected item for follow up, with Tomorrow as Due Date",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+2"
+      }
+    },
+    {
+      "name": "Flag the selected item for follow up, with This Week as Due Date",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+3"
+      }
+    },
+    {
+      "name": "Flag the selected item for follow up, with Next Week as Due Date",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+4"
+      }
+    },
+    {
+      "name": "Flag the selected item for follow up, with No Due Date",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+5"
+      }
+    },
+    {
+      "name": "Flag the selected item for follow up, and add a custom Due Date",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+6"
+      }
+    },
+    {
+      "name": "Flag the selected item for follow up, and add a reminder",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+="
+      }
+    },
+    {
+      "name": "Mark the selected item as complete",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+0"
+      }
+    }
+  ],
+  "defaults": {
+    "TUNE_CW": {
+      "name": "Switch to next open message",
+      "action": {
+        "type": "keys",
+        "chord": "Ctrl+."
+      },
+      "accel": "light"
+    },
+    "TUNE_CCW": {
+      "name": "Switch to previous open message",
+      "action": {
+        "type": "keys",
+        "chord": "Ctrl+,"
+      },
+      "accel": "light"
+    },
+    "TUNE_TAP_1F": {
+      "name": "Create a new message",
+      "action": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+M"
+      }
+    },
+    "TUNE_SWIPE_LEFT": {
+      "name": "Reply to a message",
+      "action": {
+        "type": "keys",
+        "chord": "Ctrl+R"
+      }
+    },
+    "TUNE_SWIPE_RIGHT": {
+      "name": "Forward a message",
+      "action": {
+        "type": "keys",
+        "chord": "Ctrl+F"
+      }
+    }
+  }
+}

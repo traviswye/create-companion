@@ -1,0 +1,3558 @@
+{
+  "id": "excel",
+  "name": "Microsoft Excel",
+  "kind": "app",
+  "category": "Office",
+  "match": {
+    "windows_exe": [
+      "EXCEL.EXE"
+    ],
+    "macos_bundle": [
+      "com.microsoft.Excel"
+    ],
+    "window_title": []
+  },
+  "sources": [
+    "https://support.microsoft.com/en-us/office/keyboard-shortcuts-in-excel-1798d9d5-842a-42b8-9c99-9b7213f0040f"
+  ],
+  "note": "From the Microsoft Support article \"Keyboard shortcuts in Excel\", Windows and macOS tabs. The Windows \"Function keys\" table packs several shortcuts into one row; each is listed here as its own action using Microsoft's own description. Ribbon access keys documented as \"Alt, H, A, C\" are written with the leading Alt folded into the first key, which is how Excel accepts them and the only form the chord grammar allows. Where Microsoft lists two equivalent bindings the first is kept. Omitted because the grammar cannot express them: mouse and mouse-wheel bindings (scroll horizontally with Ctrl+Shift and the wheel, move rows or cells by Shift-dragging), plain \"Arrow keys\" entries, numeric-keypad-only bindings, Fn-key variants on a MacBook, Home+Scroll Lock, and open-ended entries such as \"Alt, Q, then enter the search term\". Rows Microsoft writes as a family over all four directions (\"Ctrl+Arrow key\", \"Shift+Arrow key\", plain \"Arrow keys\") are omitted rather than expanded into four names the vendor does not use.",
+  "actions": [
+    {
+      "name": "Close a workbook",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+W"
+      }
+    },
+    {
+      "name": "Open a workbook",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+O"
+      }
+    },
+    {
+      "name": "Go to the Home tab",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+H"
+      }
+    },
+    {
+      "name": "Save a workbook",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+S"
+      }
+    },
+    {
+      "name": "Copy selection",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+C"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+C"
+      }
+    },
+    {
+      "name": "Paste selection",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+V"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+V"
+      }
+    },
+    {
+      "name": "Undo recent action",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Z"
+      }
+    },
+    {
+      "name": "Remove cell contents",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Delete"
+      }
+    },
+    {
+      "name": "Choose a fill color",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+H",
+          "H"
+        ]
+      }
+    },
+    {
+      "name": "Cut selection",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+X"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+X"
+      }
+    },
+    {
+      "name": "Go to the Insert tab",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+N"
+      }
+    },
+    {
+      "name": "Apply bold formatting",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+B"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+B"
+      }
+    },
+    {
+      "name": "Center align cell contents",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+H",
+          "A",
+          "C"
+        ]
+      }
+    },
+    {
+      "name": "Go to the Page Layout tab",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+P"
+      }
+    },
+    {
+      "name": "Go to the Data tab",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+A"
+      }
+    },
+    {
+      "name": "Go to the View tab",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+W"
+      }
+    },
+    {
+      "name": "Open the context menu",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+F10"
+      }
+    },
+    {
+      "name": "Add borders",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+H",
+          "B"
+        ]
+      }
+    },
+    {
+      "name": "Delete column",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+H",
+          "D",
+          "C"
+        ]
+      }
+    },
+    {
+      "name": "Go to the Formula tab",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+M"
+      }
+    },
+    {
+      "name": "Hide the selected rows",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+9"
+      }
+    },
+    {
+      "name": "Hide the selected columns",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+0"
+      }
+    },
+    {
+      "name": "Move to the Search field on the ribbon and type a search term for assistance or Help content",
+      "context": "Ribbon",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Q"
+      }
+    },
+    {
+      "name": "Open the File menu",
+      "context": "Ribbon",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+F"
+      }
+    },
+    {
+      "name": "Open the Home tab and format text and numbers and use the Find tool",
+      "context": "Ribbon",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+H"
+      }
+    },
+    {
+      "name": "Open the Insert tab and insert PivotTables, charts, add-ins, Sparklines, pictures, shapes, headers, or text boxes",
+      "context": "Ribbon",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+N"
+      }
+    },
+    {
+      "name": "Open the Page Layout tab and work with themes, page setup, scale, and alignment",
+      "context": "Ribbon",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+P"
+      }
+    },
+    {
+      "name": "Open the Formulas tab and insert, trace, and customize functions and calculations",
+      "context": "Ribbon",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+M"
+      }
+    },
+    {
+      "name": "Open the Data tab and connect to, sort, filter, analyze, and work with data",
+      "context": "Ribbon",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+A"
+      }
+    },
+    {
+      "name": "Open the Review tab and check spelling, add notes and comments, and protect sheets and workbooks",
+      "context": "Ribbon",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+R"
+      }
+    },
+    {
+      "name": "Open the View tab and preview page breaks and layouts, show and hide gridlines and headings, set zoom magnification, manage windows and panes, and view macros",
+      "context": "Ribbon",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+W"
+      }
+    },
+    {
+      "name": "Select the active tab on the ribbon and activate the access keys",
+      "context": "Ribbon",
+      "windows": {
+        "type": "keys",
+        "chord": "F10"
+      }
+    },
+    {
+      "name": "Move the focus to commands on the ribbon or add-in pane",
+      "context": "Ribbon",
+      "windows": {
+        "type": "keys",
+        "chord": "Tab"
+      }
+    },
+    {
+      "name": "Show the tooltip for the ribbon element currently in focus",
+      "context": "Ribbon",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+F10"
+      }
+    },
+    {
+      "name": "Activate a selected button",
+      "context": "Ribbon",
+      "windows": {
+        "type": "keys",
+        "chord": "Space"
+      }
+    },
+    {
+      "name": "Open the list for a selected command",
+      "context": "Ribbon",
+      "windows": {
+        "type": "keys",
+        "chord": "Down"
+      }
+    },
+    {
+      "name": "Open the menu for a selected button",
+      "context": "Ribbon",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Down"
+      }
+    },
+    {
+      "name": "When a menu or submenu is open, move to the next command",
+      "context": "Ribbon",
+      "windows": {
+        "type": "keys",
+        "chord": "Down"
+      }
+    },
+    {
+      "name": "Expand or collapse the ribbon",
+      "context": "Ribbon",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+F1"
+      }
+    },
+    {
+      "name": "Open a context menu",
+      "context": "Ribbon",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+F10"
+      }
+    },
+    {
+      "name": "Move to the submenu when a main menu is open or selected",
+      "context": "Ribbon",
+      "windows": {
+        "type": "keys",
+        "chord": "Left"
+      }
+    },
+    {
+      "name": "Move from one group of controls to another",
+      "context": "Ribbon",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Left"
+      }
+    },
+    {
+      "name": "Move to the previous cell in a worksheet or the previous option in a dialog box",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Tab"
+      }
+    },
+    {
+      "name": "Move one cell up in a worksheet",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Up"
+      }
+    },
+    {
+      "name": "Move one cell down in a worksheet",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Down"
+      }
+    },
+    {
+      "name": "Move one cell left in a worksheet",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Left"
+      }
+    },
+    {
+      "name": "Move one cell right in a worksheet",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Right"
+      }
+    },
+    {
+      "name": "Move to the last cell on a worksheet, to the lowest used row of the rightmost used column",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+End"
+      }
+    },
+    {
+      "name": "Extend the selection of cells to the last used cell on the worksheet (lower-right corner)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+End"
+      }
+    },
+    {
+      "name": "Move to the beginning of a worksheet",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Home"
+      }
+    },
+    {
+      "name": "Move one screen down in a worksheet",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "PageDown"
+      }
+    },
+    {
+      "name": "Move to the next sheet in a workbook",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+PageDown"
+      }
+    },
+    {
+      "name": "Move one screen to the right in a worksheet",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+PageDown"
+      }
+    },
+    {
+      "name": "Move one screen up in a worksheet",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "PageUp"
+      }
+    },
+    {
+      "name": "Move one screen to the left in a worksheet",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+PageUp"
+      }
+    },
+    {
+      "name": "Move to the previous sheet in a workbook",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+PageUp"
+      }
+    },
+    {
+      "name": "Move one cell to the right in a worksheet. Or, in a protected worksheet, move between unlocked cells",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Tab"
+      }
+    },
+    {
+      "name": "Open the list of validation choices on a cell that has data validation option applied to it",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Down"
+      }
+    },
+    {
+      "name": "Cycle through floating shapes, such as text boxes or images",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+5"
+      }
+    },
+    {
+      "name": "Exit the floating shape navigation and return to the normal navigation",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Esc"
+      }
+    },
+    {
+      "name": "Zoom in",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+="
+      }
+    },
+    {
+      "name": "Zoom out",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+-"
+      }
+    },
+    {
+      "name": "Open the Format Cells dialog box",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+1"
+      }
+    },
+    {
+      "name": "Format fonts in the Format Cells dialog box",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+F"
+      }
+    },
+    {
+      "name": "Edit the active cell and put the insertion point at the end of its contents. Or, if editing is turned off for the cell, move the insertion point into the formula bar. If editing a formula, toggle Point mode off or on so you can use the arrow keys to create a reference",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F2"
+      }
+    },
+    {
+      "name": "Insert a note. Open and edit a cell note",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+F2"
+      }
+    },
+    {
+      "name": "Insert a threaded comment. Open and reply to a threaded comment",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+F2"
+      }
+    },
+    {
+      "name": "Open the Insert dialog box to insert blank cells",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Plus"
+      }
+    },
+    {
+      "name": "Open the Delete dialog box to delete selected cells",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+-"
+      }
+    },
+    {
+      "name": "Enter the current time",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+;"
+      }
+    },
+    {
+      "name": "Enter the current date",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+;"
+      }
+    },
+    {
+      "name": "Switch between displaying cell values or formulas in the worksheet",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+`"
+      }
+    },
+    {
+      "name": "Copy a formula from the cell above the active cell into the cell or the formula bar",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+'"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+'"
+      }
+    },
+    {
+      "name": "Move the selected cells",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+X"
+      }
+    },
+    {
+      "name": "Copy the selected cells",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+C"
+      }
+    },
+    {
+      "name": "Paste content at the insertion point, replacing any selection",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+V"
+      }
+    },
+    {
+      "name": "Open the Paste Special dialog box",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+V"
+      }
+    },
+    {
+      "name": "Italicize text or remove italic formatting",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+I"
+      }
+    },
+    {
+      "name": "Bold text or remove bold formatting",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+B"
+      }
+    },
+    {
+      "name": "Underline text or remove underline",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+U"
+      }
+    },
+    {
+      "name": "Apply or remove strikethrough formatting",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+5"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+X"
+      }
+    },
+    {
+      "name": "Switch between hiding objects, displaying objects, and displaying placeholders for objects",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+6"
+      }
+    },
+    {
+      "name": "Apply an outline border to the selected cells",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+7"
+      }
+    },
+    {
+      "name": "Remove the outline border from the selected cells",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+-"
+      }
+    },
+    {
+      "name": "Display or hide the outline symbols",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+8"
+      }
+    },
+    {
+      "name": "Use the Fill Down command to copy the contents and format of the topmost cell of a selected range into the cells below",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+D"
+      }
+    },
+    {
+      "name": "Apply the General number format",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+`"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+`"
+      }
+    },
+    {
+      "name": "Apply the Currency format with two decimal places (negative numbers in parentheses)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+4"
+      }
+    },
+    {
+      "name": "Apply the Percentage format with no decimal places",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+5"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+5"
+      }
+    },
+    {
+      "name": "Apply the Scientific number format with two decimal places",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+6"
+      }
+    },
+    {
+      "name": "Apply the Date format with the day, month, and year",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+3"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+3"
+      }
+    },
+    {
+      "name": "Apply the Time format with the hour and minute, and AM or PM",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+2"
+      }
+    },
+    {
+      "name": "Apply the Number format with two decimal places, thousands separator, and minus sign (-) for negative values",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+1"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+1"
+      }
+    },
+    {
+      "name": "Open the Insert hyperlink dialog box",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+K"
+      }
+    },
+    {
+      "name": "Check spelling in the active worksheet or selected range",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F7"
+      }
+    },
+    {
+      "name": "Display the Quick Analysis options for selected cells that contain data",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Q"
+      }
+    },
+    {
+      "name": "Display the Create Table dialog box",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+L"
+      }
+    },
+    {
+      "name": "Open the Workbook Statistics dialog box",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+G"
+      }
+    },
+    {
+      "name": "Paste all cell contents and formatting",
+      "context": "Paste Special dialog",
+      "windows": {
+        "type": "keys",
+        "chord": "A"
+      }
+    },
+    {
+      "name": "Paste only the formulas as entered in the formula bar",
+      "context": "Paste Special dialog",
+      "windows": {
+        "type": "keys",
+        "chord": "F"
+      }
+    },
+    {
+      "name": "Paste only the values (not the formulas)",
+      "context": "Paste Special dialog",
+      "windows": {
+        "type": "keys",
+        "chord": "V"
+      }
+    },
+    {
+      "name": "Paste only the copied formatting",
+      "context": "Paste Special dialog",
+      "windows": {
+        "type": "keys",
+        "chord": "T"
+      }
+    },
+    {
+      "name": "Paste only comments and notes attached to the cell",
+      "context": "Paste Special dialog",
+      "windows": {
+        "type": "keys",
+        "chord": "C"
+      }
+    },
+    {
+      "name": "Paste only the data validation settings from copied cells",
+      "context": "Paste Special dialog",
+      "windows": {
+        "type": "keys",
+        "chord": "N"
+      }
+    },
+    {
+      "name": "Paste all cell contents and formatting from copied cells",
+      "context": "Paste Special dialog",
+      "windows": {
+        "type": "keys",
+        "chord": "H"
+      }
+    },
+    {
+      "name": "Paste all cell contents without borders",
+      "context": "Paste Special dialog",
+      "windows": {
+        "type": "keys",
+        "chord": "X"
+      }
+    },
+    {
+      "name": "Paste only column widths from copied cells",
+      "context": "Paste Special dialog",
+      "windows": {
+        "type": "keys",
+        "chord": "W"
+      }
+    },
+    {
+      "name": "Paste only formulas and number formats from copied cells",
+      "context": "Paste Special dialog",
+      "windows": {
+        "type": "keys",
+        "chord": "R"
+      }
+    },
+    {
+      "name": "Paste only the values (not formulas) and number formats from copied cells",
+      "context": "Paste Special dialog",
+      "windows": {
+        "type": "keys",
+        "chord": "U"
+      }
+    },
+    {
+      "name": "Select the entire worksheet",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+A"
+      }
+    },
+    {
+      "name": "Select the current and next sheet in a workbook",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+PageDown"
+      }
+    },
+    {
+      "name": "Select the current and previous sheet in a workbook",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+PageUp"
+      }
+    },
+    {
+      "name": "Turn extend mode on and use the arrow keys to extend a selection. Press again to turn off",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F8"
+      }
+    },
+    {
+      "name": "Add a non-adjacent cell or range to a selection of cells by using the arrow keys",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+F8"
+      }
+    },
+    {
+      "name": "Start a new line in the same cell",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Enter"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Enter"
+      }
+    },
+    {
+      "name": "Fill the selected cell range with the current entry",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Enter"
+      }
+    },
+    {
+      "name": "Complete a cell entry and select the cell above",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Enter"
+      }
+    },
+    {
+      "name": "Select an entire column in a worksheet",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Space"
+      }
+    },
+    {
+      "name": "Select an entire row in a worksheet",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Space"
+      }
+    },
+    {
+      "name": "Select all objects on a worksheet when an object is selected",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Space"
+      }
+    },
+    {
+      "name": "Extend the selection of cells to the beginning of the worksheet",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Home"
+      }
+    },
+    {
+      "name": "Select the current region if the worksheet contains data. Press a second time to select the current region and its summary rows. Press a third time to select the entire worksheet",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+A"
+      }
+    },
+    {
+      "name": "Select the current region around the active cell",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+8"
+      }
+    },
+    {
+      "name": "Select the first command on the menu when a menu or submenu is visible",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Home"
+      }
+    },
+    {
+      "name": "Repeat the last command or action, if possible",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Y"
+      }
+    },
+    {
+      "name": "Undo the last action",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Z"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Z"
+      }
+    },
+    {
+      "name": "Turn on or off tooltips for checking formulas directly in the formula bar or in the cell you're editing",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+P"
+      }
+    },
+    {
+      "name": "Expand or collapse the formula bar",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+U"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+U"
+      }
+    },
+    {
+      "name": "Cancel an entry in the cell or formula bar",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Esc"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Esc"
+      }
+    },
+    {
+      "name": "Complete an entry in the formula bar and select the cell below",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Enter"
+      }
+    },
+    {
+      "name": "Move the cursor to the end of the text when in the formula bar",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+End"
+      }
+    },
+    {
+      "name": "Select all text in the formula bar from the cursor position to the end",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+End"
+      }
+    },
+    {
+      "name": "Calculate all worksheets in all open workbooks",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F9"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+F9"
+      }
+    },
+    {
+      "name": "Calculate the active worksheet",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+F9"
+      }
+    },
+    {
+      "name": "Calculate all worksheets in all open workbooks, regardless of whether they have changed since the last calculation",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+F9"
+      }
+    },
+    {
+      "name": "Check dependent formulas, and then calculate all cells in all open workbooks, including cells not marked as needing to be calculated",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Shift+F9"
+      }
+    },
+    {
+      "name": "Display the menu or message for an Error Checking button",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+F10"
+      }
+    },
+    {
+      "name": "Display the Function Arguments dialog box when the insertion point is to the right of a function name in a formula",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+A"
+      }
+    },
+    {
+      "name": "Insert argument names and parentheses when the insertion point is to the right of a function name in a formula",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+A"
+      }
+    },
+    {
+      "name": "Insert the Sum formula",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+="
+      }
+    },
+    {
+      "name": "Invoke Flash Fill to automatically recognize patterns in adjacent columns and fill the current column",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+E"
+      }
+    },
+    {
+      "name": "Cycle through all combinations of absolute and relative references in a formula if a cell reference or range is selected",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F4"
+      }
+    },
+    {
+      "name": "Insert a function",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+F3"
+      }
+    },
+    {
+      "name": "Copy the value from the cell above the active cell into the cell or the formula bar",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+'"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+'"
+      }
+    },
+    {
+      "name": "Create an embedded chart of the data in the current range",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+F1"
+      }
+    },
+    {
+      "name": "Create a chart of the data in the current range in a separate Chart sheet",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F11"
+      }
+    },
+    {
+      "name": "Define a name to use in references",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+M",
+          "M",
+          "D"
+        ]
+      }
+    },
+    {
+      "name": "Paste a name from the Paste Name dialog box (if names have been defined in the workbook)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F3"
+      }
+    },
+    {
+      "name": "Move to the first field in the next record of a data form",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Enter"
+      }
+    },
+    {
+      "name": "Create, run, edit, or delete a macro",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+F8"
+      }
+    },
+    {
+      "name": "Open the Microsoft Visual Basic For Applications Editor",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+F11"
+      }
+    },
+    {
+      "name": "Open the Power Query Editor",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+F12"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+F12"
+      }
+    },
+    {
+      "name": "Stop a refresh operation",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Esc"
+      }
+    },
+    {
+      "name": "Refresh data in the current worksheet",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+F5"
+      }
+    },
+    {
+      "name": "Refresh all data in the workbook",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+F5"
+      }
+    },
+    {
+      "name": "Open the context menu for the selected cell, column, or row",
+      "context": "Power Pivot",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+F10"
+      }
+    },
+    {
+      "name": "Select the entire table",
+      "context": "Power Pivot",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+A"
+      }
+    },
+    {
+      "name": "Copy selected data",
+      "context": "Power Pivot",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+C"
+      }
+    },
+    {
+      "name": "Delete the table",
+      "context": "Power Pivot",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+D"
+      }
+    },
+    {
+      "name": "Move the table",
+      "context": "Power Pivot",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+M"
+      }
+    },
+    {
+      "name": "Rename the table",
+      "context": "Power Pivot",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+R"
+      }
+    },
+    {
+      "name": "Save the file",
+      "context": "Power Pivot",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+S"
+      }
+    },
+    {
+      "name": "Redo the last action",
+      "context": "Power Pivot",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Y"
+      }
+    },
+    {
+      "name": "Undo the last action",
+      "context": "Power Pivot",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Z"
+      }
+    },
+    {
+      "name": "Select the current column",
+      "context": "Power Pivot",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Space"
+      }
+    },
+    {
+      "name": "Select the current row",
+      "context": "Power Pivot",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Space"
+      }
+    },
+    {
+      "name": "Select all cells from the current location to the last cell of the column",
+      "context": "Power Pivot",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+PageDown"
+      }
+    },
+    {
+      "name": "Select all cells from the current location to the first cell of the column",
+      "context": "Power Pivot",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+PageUp"
+      }
+    },
+    {
+      "name": "Select all cells from the current location to the last cell of the row",
+      "context": "Power Pivot",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+End"
+      }
+    },
+    {
+      "name": "Select all cells from the current location to the first cell of the row",
+      "context": "Power Pivot",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Home"
+      }
+    },
+    {
+      "name": "Move to the previous table",
+      "context": "Power Pivot",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+PageUp"
+      }
+    },
+    {
+      "name": "Move to the next table",
+      "context": "Power Pivot",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+PageDown"
+      }
+    },
+    {
+      "name": "Move to the first cell in the upper-left corner of selected table",
+      "context": "Power Pivot",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Home"
+      }
+    },
+    {
+      "name": "Move to the last cell in the lower-right corner of selected table",
+      "context": "Power Pivot",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+End"
+      }
+    },
+    {
+      "name": "Move to the first cell of the selected row",
+      "context": "Power Pivot",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Left"
+      }
+    },
+    {
+      "name": "Move to the last cell of the selected row",
+      "context": "Power Pivot",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Right"
+      }
+    },
+    {
+      "name": "Move to the first cell of the selected column",
+      "context": "Power Pivot",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Up"
+      }
+    },
+    {
+      "name": "Move to the last cell of selected column",
+      "context": "Power Pivot",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Down"
+      }
+    },
+    {
+      "name": "Close a dialog box or cancel a process, such as a paste operation",
+      "context": "Power Pivot",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Esc"
+      }
+    },
+    {
+      "name": "Open the AutoFilter Menu dialog box",
+      "context": "Power Pivot",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Down"
+      }
+    },
+    {
+      "name": "Open the Go To dialog box",
+      "context": "Power Pivot",
+      "windows": {
+        "type": "keys",
+        "chord": "F5"
+      }
+    },
+    {
+      "name": "Recalculate all formulas in the Power Pivot window. For more information, see Recalculate Formulas in Power Pivot",
+      "context": "Power Pivot",
+      "windows": {
+        "type": "keys",
+        "chord": "F9"
+      }
+    },
+    {
+      "name": "Send your prompt, in the Copilot in Excel task pane",
+      "context": "Copilot",
+      "windows": {
+        "type": "keys",
+        "chord": "Enter"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Enter"
+      }
+    },
+    {
+      "name": "Stop or cancel the Copilot in Excel request",
+      "context": "Copilot",
+      "windows": {
+        "type": "keys",
+        "chord": "Esc"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Esc"
+      }
+    },
+    {
+      "name": "Accept changes made by Copilot in Excel",
+      "context": "Copilot",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Enter"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Enter"
+      }
+    },
+    {
+      "name": "Switch between edit, chat, and plan mode in the Copilot in Excel task pane",
+      "context": "Copilot",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+M"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+M"
+      }
+    },
+    {
+      "name": "Navigate between chat responses in the Copilot in Excel task pane",
+      "context": "Copilot",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+C"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+C"
+      }
+    },
+    {
+      "name": "Confirm use of selected files in the Copilot in Excel task pane",
+      "context": "Copilot",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+J"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+J"
+      }
+    },
+    {
+      "name": "Start dictation for Copilot in Excel",
+      "context": "Copilot",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+H"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+H"
+      }
+    },
+    {
+      "name": "Open the Copilot in Excel task pane",
+      "context": "Copilot",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+C"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Ctrl+I"
+      }
+    },
+    {
+      "name": "Move focus between the Excel grid and the Copilot in Excel task pane",
+      "context": "Copilot",
+      "windows": {
+        "type": "keys",
+        "chord": "F6"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+F6"
+      }
+    },
+    {
+      "name": "Displays the Excel Help task pane",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F1"
+      }
+    },
+    {
+      "name": "Displays or hides the ribbon",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+F1"
+      }
+    },
+    {
+      "name": "Creates an embedded chart of the data in the current range",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+F1"
+      }
+    },
+    {
+      "name": "Inserts a new worksheet",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+F1"
+      }
+    },
+    {
+      "name": "Toggles full screen mode",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+F1"
+      }
+    },
+    {
+      "name": "Edit the active cell and put the insertion point at the end of its contents",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F2"
+      }
+    },
+    {
+      "name": "Adds or edits a cell note",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+F2"
+      }
+    },
+    {
+      "name": "Edit the active cell in the formula bar",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+F2"
+      }
+    },
+    {
+      "name": "Displays the Paste Name dialog box",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F3"
+      }
+    },
+    {
+      "name": "Displays the Insert Function dialog box",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+F3"
+      }
+    },
+    {
+      "name": "Repeats the last command or action, if possible",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F4"
+      }
+    },
+    {
+      "name": "Closes the selected workbook window",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+F4"
+      }
+    },
+    {
+      "name": "Closes Excel",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+F4"
+      }
+    },
+    {
+      "name": "Displays the Go To dialog box",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F5"
+      }
+    },
+    {
+      "name": "Restores the window size of the selected workbook window",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+F5"
+      }
+    },
+    {
+      "name": "Switches between the worksheet, ribbon, task pane, and Zoom controls",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F6"
+      }
+    },
+    {
+      "name": "Switches between the worksheet, Zoom controls, task pane, and ribbon",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+F6"
+      }
+    },
+    {
+      "name": "Switches between two Excel windows",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+F6"
+      }
+    },
+    {
+      "name": "Switches between all Excel windows",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+F6"
+      }
+    },
+    {
+      "name": "Opens the Spelling dialog box to check spelling in the active worksheet or selected range",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F7"
+      }
+    },
+    {
+      "name": "Performs the Move command on the workbook window when it is not maximized",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+F7"
+      }
+    },
+    {
+      "name": "Turns extend mode on or off",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F8"
+      }
+    },
+    {
+      "name": "Enables you to add a non-adjacent cell or range to a selection of cells by using the arrow keys",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+F8"
+      }
+    },
+    {
+      "name": "Performs the Size command when a workbook is not maximized",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+F8"
+      }
+    },
+    {
+      "name": "Displays the Macro dialog box to create, run, edit, or delete a macro",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+F8"
+      }
+    },
+    {
+      "name": "Calculates all worksheets in all open workbooks",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F9"
+      }
+    },
+    {
+      "name": "Calculates the active worksheet",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+F9"
+      }
+    },
+    {
+      "name": "Calculates all worksheets in all open workbooks, regardless of whether they have changed since the last calculation",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+F9"
+      }
+    },
+    {
+      "name": "Rechecks dependent formulas, and then calculates all cells in all open workbooks, including cells not marked as needing to be calculated",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Shift+F9"
+      }
+    },
+    {
+      "name": "Minimizes a workbook window to an icon",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+F9"
+      }
+    },
+    {
+      "name": "Turns key tips on or off. (Pressing Alt does the same thing.)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F10"
+      }
+    },
+    {
+      "name": "Displays the context menu for a selected item",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+F10"
+      }
+    },
+    {
+      "name": "Displays the menu or message for an Error Checking button",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+F10"
+      }
+    },
+    {
+      "name": "Maximizes or restores the selected workbook window",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+F10"
+      }
+    },
+    {
+      "name": "Creates a chart of the data in the current range in a separate Chart sheet",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F11"
+      }
+    },
+    {
+      "name": "Opens the Microsoft Visual Basic For Applications Editor, in which you can create a macro by using Visual Basic for Applications (VBA)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+F11"
+      }
+    },
+    {
+      "name": "Displays the Save As dialog box",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F12"
+      }
+    },
+    {
+      "name": "Arrow keys",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Right"
+      }
+    },
+    {
+      "name": "Deletes one character to the left in the formula bar",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Backspace"
+      }
+    },
+    {
+      "name": "Removes the cell contents (data and formulas) from selected cells without affecting cell formats, threaded comments, or notes",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Delete"
+      }
+    },
+    {
+      "name": "End turns End mode on or off",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "End"
+      }
+    },
+    {
+      "name": "Completes a cell entry from the cell or the formula bar and selects the cell below (by default)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Enter"
+      }
+    },
+    {
+      "name": "Cancels an entry in the cell or formula bar",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Esc"
+      }
+    },
+    {
+      "name": "Moves to the beginning of a row in a worksheet",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Home"
+      }
+    },
+    {
+      "name": "Moves one screen down in a worksheet",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "PageDown"
+      }
+    },
+    {
+      "name": "Moves one screen up in a worksheet",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "PageUp"
+      }
+    },
+    {
+      "name": "In a dialog box, performs the action for the selected button, or selects or clears a checkbox",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Space"
+      }
+    },
+    {
+      "name": "Moves one cell to the right in a worksheet",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Tab"
+      }
+    },
+    {
+      "name": "Clear selection",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Delete"
+      }
+    },
+    {
+      "name": "Save workbook",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+S"
+      }
+    },
+    {
+      "name": "Undo action",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Z"
+      }
+    },
+    {
+      "name": "Redo action",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Y"
+      }
+    },
+    {
+      "name": "Print workbook",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+P"
+      }
+    },
+    {
+      "name": "Open Visual Basic",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+F11"
+      }
+    },
+    {
+      "name": "Fill cells down",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+D"
+      }
+    },
+    {
+      "name": "Fill cells right",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+R"
+      }
+    },
+    {
+      "name": "Insert cells",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+="
+      }
+    },
+    {
+      "name": "Delete cells",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+-"
+      }
+    },
+    {
+      "name": "Calculate all open workbooks",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+="
+      }
+    },
+    {
+      "name": "Close window",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+W"
+      }
+    },
+    {
+      "name": "Quit Excel",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Q"
+      }
+    },
+    {
+      "name": "Display the Go To dialog box",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+G"
+      }
+    },
+    {
+      "name": "Display the Format Cells dialog box",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+1"
+      }
+    },
+    {
+      "name": "Display the Replace dialog box",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+H"
+      }
+    },
+    {
+      "name": "Use Paste Special",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Ctrl+V"
+      }
+    },
+    {
+      "name": "Apply underline formatting",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+U"
+      }
+    },
+    {
+      "name": "Apply italic formatting",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+I"
+      }
+    },
+    {
+      "name": "Open a new blank workbook",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+N"
+      }
+    },
+    {
+      "name": "Create a new workbook from template",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+P"
+      }
+    },
+    {
+      "name": "Display the Save As dialog box",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+S"
+      }
+    },
+    {
+      "name": "Display the Help window",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "F1"
+      }
+    },
+    {
+      "name": "Select all",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+A"
+      }
+    },
+    {
+      "name": "Add or remove a filter",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+F"
+      }
+    },
+    {
+      "name": "Minimize or maximize the ribbon tabs",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+R"
+      }
+    },
+    {
+      "name": "Display the Open dialog box",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+O"
+      }
+    },
+    {
+      "name": "Check spelling",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "F7"
+      }
+    },
+    {
+      "name": "Open the thesaurus",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+F7"
+      }
+    },
+    {
+      "name": "Display the Formula Builder",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+F3"
+      }
+    },
+    {
+      "name": "Open the Define Name dialog box",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+F3"
+      }
+    },
+    {
+      "name": "Insert or reply to a threaded comment",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Enter"
+      }
+    },
+    {
+      "name": "Open the Create names dialog box",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+F3"
+      }
+    },
+    {
+      "name": "Insert a new sheet",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+F11"
+      }
+    },
+    {
+      "name": "Print preview",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+P"
+      }
+    },
+    {
+      "name": "Expand or minimize the ribbon",
+      "context": "Dialog box",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+R"
+      }
+    },
+    {
+      "name": "Switch to full screen view",
+      "context": "Dialog box",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Ctrl+F"
+      }
+    },
+    {
+      "name": "Switch to the next application",
+      "context": "Dialog box",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Tab"
+      }
+    },
+    {
+      "name": "Switch to the previous application",
+      "context": "Dialog box",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+Tab"
+      }
+    },
+    {
+      "name": "Close the active workbook window",
+      "context": "Dialog box",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+W"
+      }
+    },
+    {
+      "name": "Take a screenshot and save it on your desktop",
+      "context": "Dialog box",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+3"
+      }
+    },
+    {
+      "name": "Minimize the active window",
+      "context": "Dialog box",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+F9"
+      }
+    },
+    {
+      "name": "Maximize or restore the active window",
+      "context": "Dialog box",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+F10"
+      }
+    },
+    {
+      "name": "Hide Excel",
+      "context": "Dialog box",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+H"
+      }
+    },
+    {
+      "name": "Move to the next box, option, control, or command",
+      "context": "Dialog box",
+      "mac": {
+        "type": "keys",
+        "chord": "Tab"
+      }
+    },
+    {
+      "name": "Move to the previous box, option, control, or command",
+      "context": "Dialog box",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Tab"
+      }
+    },
+    {
+      "name": "Exit a dialog box or cancel an action",
+      "context": "Dialog box",
+      "mac": {
+        "type": "keys",
+        "chord": "Esc"
+      }
+    },
+    {
+      "name": "Perform the action assigned to the default button (the button with the bold outline)",
+      "context": "Dialog box",
+      "mac": {
+        "type": "keys",
+        "chord": "Enter"
+      }
+    },
+    {
+      "name": "Cancel the command and close the dialog box or menu",
+      "context": "Dialog box",
+      "mac": {
+        "type": "keys",
+        "chord": "Esc"
+      }
+    },
+    {
+      "name": "Move to the beginning of the row",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Home"
+      }
+    },
+    {
+      "name": "Move to the beginning of the sheet",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Home"
+      }
+    },
+    {
+      "name": "Move to the last cell in use on the sheet",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+End"
+      }
+    },
+    {
+      "name": "Move down one screen",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "PageDown"
+      }
+    },
+    {
+      "name": "Move up one screen",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "PageUp"
+      }
+    },
+    {
+      "name": "Move one screen to the right",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+PageDown"
+      }
+    },
+    {
+      "name": "Move one screen to the left",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+PageUp"
+      }
+    },
+    {
+      "name": "Move to the next sheet in the workbook",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+PageDown"
+      }
+    },
+    {
+      "name": "Move to the previous sheet in the workbook",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+PageDown"
+      }
+    },
+    {
+      "name": "Scroll to display the active cell",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Delete"
+      }
+    },
+    {
+      "name": "Display the Find dialog box",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+F"
+      }
+    },
+    {
+      "name": "Access search (when in a cell or when a cell is selected)",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+F"
+      }
+    },
+    {
+      "name": "Move between unlocked cells on a protected sheet",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Tab"
+      }
+    },
+    {
+      "name": "Edit the selected cell",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "F2"
+      }
+    },
+    {
+      "name": "Complete a cell entry and move forward in the selection",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Enter"
+      }
+    },
+    {
+      "name": "Fill the selected cell range with the text that you type",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Enter"
+      }
+    },
+    {
+      "name": "Complete a cell entry and move up in the selection",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Enter"
+      }
+    },
+    {
+      "name": "Complete a cell entry and move to the right in the selection",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Tab"
+      }
+    },
+    {
+      "name": "Complete a cell entry and move to the left in the selection",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Tab"
+      }
+    },
+    {
+      "name": "Cancel a cell entry",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Esc"
+      }
+    },
+    {
+      "name": "Delete the character to the left of the insertion point or delete the selection",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Delete"
+      }
+    },
+    {
+      "name": "Delete the character to the right of the insertion point or delete the selection. Note: Some smaller keyboards do not have this key",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Delete"
+      }
+    },
+    {
+      "name": "Delete text to the end of the line. Note: Some smaller keyboards do not have this key",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Delete"
+      }
+    },
+    {
+      "name": "Move to the beginning of the line",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Home"
+      }
+    },
+    {
+      "name": "Insert a note",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+F2"
+      }
+    },
+    {
+      "name": "Open and edit a cell note",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+F2"
+      }
+    },
+    {
+      "name": "Insert a threaded comment",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+F2"
+      }
+    },
+    {
+      "name": "Open and reply to a threaded comment",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+F2"
+      }
+    },
+    {
+      "name": "Fill down",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+D"
+      }
+    },
+    {
+      "name": "Fill to the right",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+R"
+      }
+    },
+    {
+      "name": "Define a name",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+L"
+      }
+    },
+    {
+      "name": "Turn on or off tooltips for checking formulas directly in the formula bar",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+P"
+      }
+    },
+    {
+      "name": "Edit the active cell and then clear it or delete the preceding character in the active cell as you edit the cell contents",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Delete"
+      }
+    },
+    {
+      "name": "Complete a cell entry",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Enter"
+      }
+    },
+    {
+      "name": "Enter a formula as an array formula",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+Enter"
+      }
+    },
+    {
+      "name": "Display the Formula Builder after you type a valid function name in a formula",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+A"
+      }
+    },
+    {
+      "name": "Insert a hyperlink",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+K"
+      }
+    },
+    {
+      "name": "Edit the active cell and position the insertion point at the end of the line",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+U"
+      }
+    },
+    {
+      "name": "Open the Formula Builder",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+F3"
+      }
+    },
+    {
+      "name": "Calculate the active sheet",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+F9"
+      }
+    },
+    {
+      "name": "Display the context menu",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+F10"
+      }
+    },
+    {
+      "name": "Start a formula",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "="
+      }
+    },
+    {
+      "name": "Toggle the formula reference style between absolute, relative, and mixed",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+T"
+      }
+    },
+    {
+      "name": "Insert the AutoSum formula",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+T"
+      }
+    },
+    {
+      "name": "Enter the date",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+;"
+      }
+    },
+    {
+      "name": "Enter the time",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+;"
+      }
+    },
+    {
+      "name": "Alternate between displaying cell values and displaying cell formulas",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+`"
+      }
+    },
+    {
+      "name": "Display the AutoComplete list",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Down"
+      }
+    },
+    {
+      "name": "Open the Smart Lookup pane",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Cmd+Alt+L"
+      }
+    },
+    {
+      "name": "Check dependent formulas, and then calculate all cells in all open workbooks",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Shift+F9"
+      }
+    },
+    {
+      "name": "Create a table",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+T"
+      }
+    },
+    {
+      "name": "Insert a line break in a cell",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+Enter"
+      }
+    },
+    {
+      "name": "Insert special characters like symbols, including emoji",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Cmd+Space"
+      }
+    },
+    {
+      "name": "Increase font size",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+."
+      }
+    },
+    {
+      "name": "Decrease font size",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+,"
+      }
+    },
+    {
+      "name": "Align center",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+E"
+      }
+    },
+    {
+      "name": "Align left",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+L"
+      }
+    },
+    {
+      "name": "Display the Modify Cell Style dialog box",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+L"
+      }
+    },
+    {
+      "name": "Apply the currency format with two decimal places (negative numbers appear in red with parentheses)",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+4"
+      }
+    },
+    {
+      "name": "Apply the exponential number format with two decimal places",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+6"
+      }
+    },
+    {
+      "name": "Apply the time format with the hour and minute, and indicate AM or PM",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+2"
+      }
+    },
+    {
+      "name": "Apply the outline border around the selected cells",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+0"
+      }
+    },
+    {
+      "name": "Add an outline border to the right of the selection",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+Right"
+      }
+    },
+    {
+      "name": "Add an outline border to the left of the selection",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+Left"
+      }
+    },
+    {
+      "name": "Add an outline border to the top of the selection",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+Up"
+      }
+    },
+    {
+      "name": "Add an outline border to the bottom of the selection",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+Down"
+      }
+    },
+    {
+      "name": "Remove outline borders",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+-"
+      }
+    },
+    {
+      "name": "Apply or remove bold formatting",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+B"
+      }
+    },
+    {
+      "name": "Apply or remove italic formatting",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+I"
+      }
+    },
+    {
+      "name": "Apply or remove underline formatting",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+U"
+      }
+    },
+    {
+      "name": "Hide a column",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+0"
+      }
+    },
+    {
+      "name": "Unhide a column",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+0"
+      }
+    },
+    {
+      "name": "Hide a row",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+9"
+      }
+    },
+    {
+      "name": "Unhide a row",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+9"
+      }
+    },
+    {
+      "name": "Edit the active cell",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+U"
+      }
+    },
+    {
+      "name": "Cancel an entry in the cell or the formula bar",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Esc"
+      }
+    },
+    {
+      "name": "Paste text into the active cell",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+V"
+      }
+    },
+    {
+      "name": "Give selected cells the current cell's entry",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Enter"
+      }
+    },
+    {
+      "name": "Extend the selection to the beginning of the row",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Home"
+      }
+    },
+    {
+      "name": "Extend the selection to the beginning of the sheet",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Home"
+      }
+    },
+    {
+      "name": "Extend the selection to the last cell used on the sheet (lower-right corner)",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+End"
+      }
+    },
+    {
+      "name": "Select the entire column",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Space"
+      }
+    },
+    {
+      "name": "Select the entire row",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Space"
+      }
+    },
+    {
+      "name": "Select the current region or entire sheet. Press more than once to expand the selection",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+A"
+      }
+    },
+    {
+      "name": "Select only visible cells",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+8"
+      }
+    },
+    {
+      "name": "Select only the active cell when multiple cells are selected",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Delete"
+      }
+    },
+    {
+      "name": "Extend the selection down one screen",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+PageDown"
+      }
+    },
+    {
+      "name": "Extend the selection up one screen",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+PageUp"
+      }
+    },
+    {
+      "name": "Alternate between hiding objects, displaying objects, and displaying placeholders for objects",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+6"
+      }
+    },
+    {
+      "name": "Turn on the capability to extend a selection by using the arrow keys",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "F8"
+      }
+    },
+    {
+      "name": "Add another range of cells to the selection",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+F8"
+      }
+    },
+    {
+      "name": "Select the current array, which is the array that the active cell belongs to",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+/"
+      }
+    },
+    {
+      "name": "Select cells in a row that don't match the value in the active cell in that row. You must select the row starting with the active cell",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+\\"
+      }
+    },
+    {
+      "name": "Select only cells that are directly referred to by formulas in the selection",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+["
+      }
+    },
+    {
+      "name": "Select all cells that are directly or indirectly referred to by formulas in the selection",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+["
+      }
+    },
+    {
+      "name": "Select only cells with formulas that refer directly to the active cell",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+]"
+      }
+    },
+    {
+      "name": "Select all cells with formulas that refer directly or indirectly to the active cell",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+]"
+      }
+    },
+    {
+      "name": "Copy a selection",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+C"
+      }
+    },
+    {
+      "name": "Paste a selection",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+V"
+      }
+    },
+    {
+      "name": "Cut a selection",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+X"
+      }
+    },
+    {
+      "name": "Clear a selection",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Delete"
+      }
+    },
+    {
+      "name": "Delete the selection",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+-"
+      }
+    },
+    {
+      "name": "Move from top to bottom within the selection (down)",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Enter"
+      }
+    },
+    {
+      "name": "Move from bottom to top within the selection (up)",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Enter"
+      }
+    },
+    {
+      "name": "Move from left to right within the selection, or move down one cell if only one column is selected",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Tab"
+      }
+    },
+    {
+      "name": "Move from right to left within the selection, or move up one cell if only one column is selected",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Tab"
+      }
+    },
+    {
+      "name": "Move clockwise to the next corner of the selection",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+."
+      }
+    },
+    {
+      "name": "Group selected cells",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+K"
+      }
+    },
+    {
+      "name": "Ungroup selected cells",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+J"
+      }
+    },
+    {
+      "name": "Insert a new chart sheet",
+      "context": "Chart",
+      "mac": {
+        "type": "keys",
+        "chord": "F11"
+      }
+    },
+    {
+      "name": "Open the Sort dialog box",
+      "context": "PivotTable",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+R"
+      }
+    },
+    {
+      "name": "Add or remove a filter",
+      "context": "PivotTable",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+F"
+      }
+    },
+    {
+      "name": "Display the Filter list or PivotTable page field pop-up menu for the selected cell",
+      "context": "PivotTable",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Down"
+      }
+    },
+    {
+      "name": "Display or hide outline symbols",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+8"
+      }
+    },
+    {
+      "name": "Hide selected rows",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+9"
+      }
+    },
+    {
+      "name": "Unhide selected rows",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+9"
+      }
+    },
+    {
+      "name": "Hide selected columns",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+0"
+      }
+    },
+    {
+      "name": "Unhide selected columns",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+0"
+      }
+    },
+    {
+      "name": "Insert a note or open and edit a cell note",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+F2"
+      }
+    },
+    {
+      "name": "Insert a threaded comment or open and reply to a threaded comment",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+F2"
+      }
+    },
+    {
+      "name": "Open the Save dialog box",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+F2"
+      }
+    },
+    {
+      "name": "Close a window or a dialog box",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+F4"
+      }
+    },
+    {
+      "name": "Move to the Search Sheet dialog box",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+F5"
+      }
+    },
+    {
+      "name": "Switch focus between the worksheet, ribbon, task pane, and status bar",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "F6"
+      }
+    },
+    {
+      "name": "Extend the selection",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "F8"
+      }
+    },
+    {
+      "name": "Add to the selection",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+F8"
+      }
+    },
+    {
+      "name": "Display the Macro dialog box",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+F8"
+      }
+    },
+    {
+      "name": "Minimize the active window",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+F9"
+      }
+    },
+    {
+      "name": "Display the context menu, or \"right click\" menu",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+F10"
+      }
+    },
+    {
+      "name": "Display a pop-up menu (on object button menu), such as by clicking the button after you paste into a sheet",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+F10"
+      }
+    },
+    {
+      "name": "Maximize or restore the active window",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+F10"
+      }
+    },
+    {
+      "name": "Insert a new chart sheet",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "F11"
+      }
+    },
+    {
+      "name": "Insert an Excel 4.0 macro sheet",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+F11"
+      }
+    },
+    {
+      "name": "Toggle Drawing mode on and off",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Ctrl+Z"
+      }
+    }
+  ],
+  "defaults": {
+    "TUNE_CW": {
+      "name": "Move to the next sheet in the workbook",
+      "action": {
+        "type": "keys",
+        "chord": "Ctrl+PageDown"
+      },
+      "accel": "light"
+    },
+    "TUNE_CCW": {
+      "name": "Move to the previous sheet in the workbook",
+      "action": {
+        "type": "keys",
+        "chord": "Ctrl+PageUp"
+      },
+      "accel": "light"
+    },
+    "TUNE_TAP_1F": {
+      "name": "Save a workbook",
+      "action": {
+        "type": "keys",
+        "chord": "Ctrl+S"
+      }
+    },
+    "TUNE_SWIPE_LEFT": {
+      "name": "Undo recent action",
+      "action": {
+        "type": "keys",
+        "chord": "Ctrl+Z"
+      }
+    },
+    "TUNE_SWIPE_RIGHT": {
+      "name": "Repeat the last command or action",
+      "action": {
+        "type": "keys",
+        "chord": "Ctrl+Y"
+      }
+    }
+  }
+}
