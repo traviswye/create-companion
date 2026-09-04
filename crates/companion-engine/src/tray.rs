@@ -142,7 +142,7 @@ impl Tray {
         });
         self.pause.set_checked(s.paused);
         let _ = self.icon.set_tooltip(Some(format!(
-            "Naya Companion\nProfile: {}{state}",
+            "Create Companion\nProfile: {}{state}",
             s.profile
         )));
     }

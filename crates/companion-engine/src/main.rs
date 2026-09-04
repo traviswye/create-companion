@@ -1,4 +1,4 @@
-//! Naya Companion background engine.
+//! Create Companion background engine.
 //!
 //! ```text
 //! naya-companion                     # tray + engine, config at %APPDATA%\NayaCompanion\config.toml
@@ -81,7 +81,7 @@ fn init_logging(level: &str) -> Result<tracing_appender::non_blocking::WorkerGua
 
 #[cfg(not(windows))]
 fn main() -> Result<()> {
-    anyhow::bail!("Naya Companion currently supports Windows only (macOS is Phase 5)")
+    anyhow::bail!("Create Companion currently supports Windows only (macOS is Phase 5)")
 }
 
 #[cfg(windows)]

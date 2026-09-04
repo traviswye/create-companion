@@ -77,7 +77,7 @@ export function Inputs(props: {
     setArmedState(v);
   };
   const [newModule, setNewModule] = useState<string>("TUNE");
-  const [newGesture, setNewGesture] = useState<string>("TAP");
+  const [newGesture, setNewGesture] = useState<string>("PRESS");
   const [newKey, setNewKey] = useState<string>("F13");
   const [newMods, setNewMods] = useState<Mods>("none");
   const [msg, setMsg] = useState<string | null>(null);
@@ -259,7 +259,7 @@ export function Inputs(props: {
                     value={newModule}
                     onChange={(e) => {
                       setNewModule(e.target.value);
-                      if (!gesturesFor(e.target.value).includes(newGesture)) setNewGesture("TAP");
+                      if (!gesturesFor(e.target.value).includes(newGesture)) setNewGesture("PRESS");
                     }}
                   >
                     {MODULES.map((m) => (

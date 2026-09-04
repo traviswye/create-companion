@@ -328,5 +328,5 @@ pub fn run() {
             Ok(())
         })
         .run(tauri::generate_context!())
-        .expect("error while running Naya Companion UI");
+        .expect("error while running Create Companion UI");
 }

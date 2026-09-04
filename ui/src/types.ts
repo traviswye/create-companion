@@ -110,7 +110,7 @@ export interface EngineMsg {
 }
 
 export const MODULES = ["TUNE", "LEFT_TOUCH", "RIGHT_TOUCH"] as const;
-export const GESTURES = ["CW", "CCW", "PRESS", "TAP", "DOUBLE_TAP", "SWIPE_LEFT", "SWIPE_RIGHT", "SWIPE_UP", "SWIPE_DOWN"] as const;
+export const GESTURES = ["CW", "CCW", "PRESS", "DOUBLE_TAP", "SWIPE_LEFT", "SWIPE_RIGHT", "SWIPE_UP", "SWIPE_DOWN"] as const;
 export const FUNCTION_KEYS = ["F13", "F14", "F15", "F16", "F17", "F18", "F19", "F20", "F21", "F22", "F23", "F24"] as const;
 export const MODS: Mods[] = ["none", "shift", "ctrl", "alt", "ctrl_shift"];
 
@@ -138,8 +138,8 @@ const MODULE_LABEL: Record<string, string> = {
 const GESTURE_LABEL: Record<string, string> = {
   CW: "Clockwise",
   CCW: "Counterclockwise",
-  PRESS: "Press",
-  TAP: "Tap",
+  PRESS: "Tap",
+  TAP: "Tap (alt)",
   DOUBLE_TAP: "Double tap",
   SWIPE_LEFT: "Swipe left",
   SWIPE_RIGHT: "Swipe right",
