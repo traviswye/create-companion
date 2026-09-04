@@ -62,6 +62,27 @@ fn engine_state() -> EngineState {
     ENGINE_STATE.lock().map(|s| s.clone()).unwrap_or_default()
 }
 
+/// Write half of the engine pipe, while connected.
+static ENGINE_TX: Mutex<Option<Box<dyn std::io::Write + Send>>> = Mutex::new(None);
+
+/// Send one command object to the engine (`{"cmd":"learn","on":true}`).
+#[tauri::command]
+fn engine_send(command: serde_json::Value) -> Result<(), String> {
+    let mut guard = ENGINE_TX.lock().map_err(|_| "engine link poisoned")?;
+    let Some(tx) = guard.as_mut() else {
+        return Err("engine not connected".into());
+    };
+    let line = serde_json::to_string(&command).map_err(err)? + "\n";
+    tx.write_all(line.as_bytes()).map_err(err)?;
+    tx.flush().map_err(err)
+}
+
+/// Write a text file chosen through the save dialog (exports).
+#[tauri::command]
+fn write_text_file(path: String, contents: String) -> Result<(), String> {
+    std::fs::write(&path, contents).map_err(err)
+}
+
 fn config_file() -> PathBuf {
     dirs::config_dir()
         .unwrap_or_else(|| PathBuf::from("."))
@@ -257,13 +278,20 @@ fn spawn_engine_listener(app: AppHandle) {
                 };
                 match Stream::connect(name) {
                     Ok(stream) => {
+                        let (recv, send) = stream.split();
+                        if let Ok(mut g) = ENGINE_TX.lock() {
+                            *g = Some(Box::new(send));
+                        }
                         emit(serde_json::json!({"type": "connected"}));
-                        let reader = BufReader::new(stream);
+                        let reader = BufReader::new(recv);
                         for line in reader.lines() {
                             let Ok(line) = line else { break };
                             if let Ok(v) = serde_json::from_str::<serde_json::Value>(&line) {
                                 emit(v);
                             }
+                        }
+                        if let Ok(mut g) = ENGINE_TX.lock() {
+                            *g = None;
                         }
                         emit(serde_json::json!({"type": "disconnected"}));
                     }
@@ -289,6 +317,8 @@ pub fn run() {
             validate_chord,
             open_config_folder,
             engine_state,
+            engine_send,
+            write_text_file,
         ])
         .setup(|app| {
             spawn_engine_listener(app.handle().clone());

@@ -21,6 +21,9 @@ use std::sync::{Arc, Mutex};
 pub enum Control {
     Reload(Box<Config>),
     SetPaused(bool),
+    /// Arm learn mode: the next F13-F24 press is reported over IPC as
+    /// `learned` and learn mode disarms itself.
+    SetLearn(bool),
     Quit,
 }
 
@@ -173,6 +176,7 @@ pub fn run(
     foreground: impl Fn() -> Option<AppIdentity>,
     foreground_title: impl Fn() -> Option<String>,
     on_table_change: impl Fn(&TransportTable),
+    on_learn: impl Fn(bool),
     ipc: crossbeam_channel::Sender<IpcMessage>,
     mut sink: impl ActionSink,
 ) -> Result<()> {
@@ -199,6 +203,7 @@ pub fn run(
 
     let mut last_app: Option<AppIdentity> = None;
     let mut last_profile = String::new();
+    let mut learning = false;
     loop {
         select! {
             recv(control) -> msg => match msg {
@@ -229,10 +234,28 @@ pub fn run(
                     update(&|s| s.paused = p);
                     tracing::info!(paused = p, "pause state changed");
                 }
+                Ok(Control::SetLearn(on)) => {
+                    learning = on;
+                    on_learn(on);
+                    tracing::info!(learning = on, "learn mode");
+                }
                 Ok(Control::Quit) | Err(_) => break,
             },
             recv(events) -> ev => {
                 let Ok(raw) = ev else { break };
+                if learning && raw.pressed {
+                    learning = false;
+                    on_learn(false);
+                    tracing::info!(?raw.code, "learned input");
+                    let _ = ipc.send(IpcMessage::Learned {
+                        key: raw.code.key,
+                        mods: raw.code.mods,
+                    });
+                }
+                if !raw.reserved {
+                    // Learn-mode observation of an unreserved key: never act on it.
+                    continue;
+                }
                 let app = foreground();
                 // Titles are read only when a profile asks for them, only on a
                 // dial event, and never persisted (scope §20).
@@ -306,6 +329,7 @@ mod tests {
             code: TransportCode { key, mods },
             pressed: true,
             at,
+            reserved: true,
         }
     }
 

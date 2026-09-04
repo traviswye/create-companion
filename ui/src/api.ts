@@ -24,6 +24,8 @@ export const api = {
   validateChord: (chord: string) => invoke<string>("validate_chord", { chord }),
   openConfigFolder: () => invoke<void>("open_config_folder"),
   engineState: () => invoke<{ connected: boolean; hello?: EngineMsg; status?: EngineMsg }>("engine_state"),
+  engineSend: (command: Record<string, unknown>) => invoke<void>("engine_send", { command }),
+  writeTextFile: (path: string, contents: string) => invoke<void>("write_text_file", { path, contents }),
   onEngine: (cb: (m: EngineMsg) => void): Promise<UnlistenFn> =>
     listen<EngineMsg>("engine", (e) => cb(e.payload)),
 };

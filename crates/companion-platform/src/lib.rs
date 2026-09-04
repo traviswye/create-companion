@@ -13,6 +13,10 @@ pub struct RawTransportEvent {
     pub code: TransportCode,
     pub pressed: bool,
     pub at: Instant,
+    /// True when the key is in the transport table (and was swallowed).
+    /// False only in learn mode, where unreserved F-keys are reported but
+    /// passed through to the foreground app.
+    pub reserved: bool,
 }
 
 #[derive(Debug, thiserror::Error)]

@@ -178,5 +178,7 @@ table.map .actions { white-space: nowrap; text-align: right; }
 table.map .keys { white-space: nowrap; }
 table.map .name-muted { color: var(--muted); }
 table.map td.action { min-width: 120px; }
-.card { overflow-x: auto; }
+.tablewrap { overflow-x: auto; }
 table.map .ev > div:first-child { white-space: nowrap; }
+.nav-add { display: grid; grid-template-columns: 1fr auto; gap: 6px; }
+.nav-add button.on { background: var(--accent-soft); border-color: var(--accent); }

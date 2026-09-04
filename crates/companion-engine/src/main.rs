@@ -136,6 +136,7 @@ fn main() -> Result<()> {
             version: env!("CARGO_PKG_VERSION").into(),
             config: config_path.display().to_string(),
         },
+        ctrl_tx.clone(),
     ) {
         tracing::warn!(
             "IPC server unavailable, the configuration UI will not see live status: {e:#}"
@@ -173,6 +174,7 @@ fn main() -> Result<()> {
                     foreground_app,
                     foreground_title,
                     hook::set_reserved,
+                    hook::set_learn,
                     ipc_tx,
                     SendInputSink,
                 )

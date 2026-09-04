@@ -93,6 +93,7 @@ export interface EngineMsg {
     | "event"
     | "config_applied"
     | "config_rejected"
+    | "learned"
     | "connected"
     | "disconnected";
   version?: string;
@@ -103,6 +104,25 @@ export interface EngineMsg {
   action?: string;
   repeat?: number;
   error?: string;
+  /** `learned`: the key and modifier namespace the module sent. */
+  key?: string;
+  mods?: Mods;
+}
+
+export const MODULES = ["TUNE", "LEFT_TOUCH", "RIGHT_TOUCH"] as const;
+export const GESTURES = ["CW", "CCW", "PRESS", "TAP", "DOUBLE_TAP", "SWIPE_LEFT", "SWIPE_RIGHT", "SWIPE_UP", "SWIPE_DOWN"] as const;
+export const FUNCTION_KEYS = ["F13", "F14", "F15", "F16", "F17", "F18", "F19", "F20", "F21", "F22", "F23", "F24"] as const;
+export const MODS: Mods[] = ["none", "shift", "ctrl", "alt", "ctrl_shift"];
+
+export function moduleLabel(m: string): string {
+  return MODULE_LABEL[m] ?? m;
+}
+export function gestureLabel(g: string): string {
+  return GESTURE_LABEL[g] ?? g;
+}
+/** Dial rotation only exists on the Tune. */
+export function gesturesFor(module: string): readonly string[] {
+  return module === "TUNE" ? GESTURES : GESTURES.filter((g) => g !== "CW" && g !== "CCW");
 }
 
 export interface WindowInfo {

@@ -37,11 +37,17 @@ cargo run -- --allow-injected  # treat synthetic F-keys as transport (testing wi
   **Keys** it sends. Click an action to change it: the app's own shortcuts, the generic catalog,
   a recorded shortcut, media, scroll, launch. Add an application from the running windows or by
   window title for websites. Edits autosave and the engine applies them live. Turn the dial
-  while it is open and the detected input is shown with a one-click edit. The window is not
-  resident; close it and only the engine remains.
+  while it is open and the detected input is shown with a one-click edit. **Inputs** (pinned at the
+  bottom of the list) edits which key each module gesture sends, with a Learn button that captures
+  the next F13–F24 press and an "Export for OpenFlow…" JSON of the gesture-to-key table to flash on
+  the module. The window is not resident; close it and only the engine remains.
 - **Logs**: `%LOCALAPPDATA%\NayaCompanion\logs\companion.log.<date>` (and stderr in debug
   builds). `RUST_LOG=debug` shows every decoded event; otherwise `[engine] log_level` applies.
-- Only F-keys listed under `[transport]` are intercepted. Everything else passes through.
+- Only F-keys listed under `[transport]` (the Inputs screen) are intercepted. Everything else passes through.
+- **Modules side by side**: the whole keyboard is one USB device, so a Tune and a Touch sending the
+  same bare F-key cannot be told apart. Give each module its own modifier namespace when flashing
+  (Tune on plain keys, Left Touch on Shift+F-keys, Right Touch on Ctrl+F-keys); the engine keys its
+  transport table on key plus modifier and releases the modifier before sending the mapped chord.
 
 ### Bundled profiles
 

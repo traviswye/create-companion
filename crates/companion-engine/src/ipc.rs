@@ -1,8 +1,7 @@
-//! Local IPC for the configuration UI: a named pipe (`\\.\pipe\NayaCompanion`
-//! on Windows, a Unix socket elsewhere) that broadcasts newline-delimited JSON.
+//! Local IPC for the configuration UI: a named pipe (`\\.\pipe\NayaCompanion.sock`
+//! on Windows, a Unix socket elsewhere) carrying newline-delimited JSON.
 //!
-//! The engine only *talks*; the UI reads and writes the config file itself and
-//! the engine's file watcher picks changes up. Messages:
+//! Engine -> UI (broadcast to every client):
 //!
 //! ```json
 //! {"type":"hello","version":"0.1.0","config":"C:\\...\\config.toml"}
@@ -10,13 +9,25 @@
 //! {"type":"event","event":"TUNE_CW","profile":"Browser","action":"Ctrl+Tab","repeat":1}
 //! {"type":"config_applied"}
 //! {"type":"config_rejected","error":"..."}
+//! {"type":"learned","key":"F20","mods":"shift"}
 //! ```
+//!
+//! UI -> engine (one JSON object per line):
+//!
+//! ```json
+//! {"cmd":"learn","on":true}
+//! ```
+//!
+//! Config edits never go over the pipe; the UI writes the file and the
+//! engine's watcher applies it.
 
+use crate::pipeline::Control;
 use anyhow::{Context, Result};
+use companion_core::transport::{FunctionKey, Modifiers};
 use crossbeam_channel::{Receiver, Sender};
 use interprocess::local_socket::{prelude::*, GenericNamespaced, ListenerOptions, ToNsName};
-use serde::Serialize;
-use std::io::Write;
+use serde::{Deserialize, Serialize};
+use std::io::{BufRead, BufReader, Write};
 use std::sync::{Arc, Mutex};
 
 pub const SOCKET_NAME: &str = "NayaCompanion.sock";
@@ -42,6 +53,16 @@ pub enum IpcMessage {
     ConfigRejected {
         error: String,
     },
+    Learned {
+        key: FunctionKey,
+        mods: Modifiers,
+    },
+}
+
+#[derive(Debug, Deserialize)]
+#[serde(tag = "cmd", rename_all = "snake_case")]
+enum IpcCommand {
+    Learn { on: bool },
 }
 
 type Clients = Arc<Mutex<Vec<Sender<String>>>>;
@@ -49,8 +70,9 @@ type Clients = Arc<Mutex<Vec<Sender<String>>>>;
 type LastStatus = Arc<Mutex<Option<String>>>;
 
 /// Start the server. Every message received on `rx` is fanned out to all
-/// connected clients; `hello` is sent to each client on connect.
-pub fn start(rx: Receiver<IpcMessage>, hello: IpcMessage) -> Result<()> {
+/// connected clients; `hello` is sent to each client on connect. Commands
+/// from clients are translated into [`Control`] messages on `ctrl`.
+pub fn start(rx: Receiver<IpcMessage>, hello: IpcMessage, ctrl: Sender<Control>) -> Result<()> {
     let name = SOCKET_NAME
         .to_ns_name::<GenericNamespaced>()
         .context("socket name")?;
@@ -62,7 +84,7 @@ pub fn start(rx: Receiver<IpcMessage>, hello: IpcMessage) -> Result<()> {
     let hello_line = serde_json::to_string(&hello)? + "\n";
     let last_status: LastStatus = Arc::new(Mutex::new(None));
 
-    // Accept loop: one writer thread per client.
+    // Accept loop: one writer thread and one reader thread per client.
     {
         let clients = Arc::clone(&clients);
         let last_status = Arc::clone(&last_status);
@@ -70,19 +92,20 @@ pub fn start(rx: Receiver<IpcMessage>, hello: IpcMessage) -> Result<()> {
             .name("naya-ipc-accept".into())
             .spawn(move || {
                 for conn in listener.incoming() {
-                    let mut stream = match conn {
+                    let stream = match conn {
                         Ok(s) => s,
                         Err(e) => {
                             tracing::debug!("ipc accept error: {e}");
                             continue;
                         }
                     };
-                    if stream.write_all(hello_line.as_bytes()).is_err() {
+                    let (recv, mut send) = stream.split();
+                    if send.write_all(hello_line.as_bytes()).is_err() {
                         continue;
                     }
                     let replay = last_status.lock().ok().and_then(|s| s.clone());
                     if let Some(line) = replay {
-                        if stream.write_all(line.as_bytes()).is_err() {
+                        if send.write_all(line.as_bytes()).is_err() {
                             continue;
                         }
                     }
@@ -91,13 +114,32 @@ pub fn start(rx: Receiver<IpcMessage>, hello: IpcMessage) -> Result<()> {
                         c.push(tx);
                     }
                     std::thread::Builder::new()
-                        .name("naya-ipc-client".into())
+                        .name("naya-ipc-client-w".into())
                         .spawn(move || {
                             for line in rx.iter() {
-                                if stream.write_all(line.as_bytes()).is_err() {
+                                if send.write_all(line.as_bytes()).is_err() {
                                     break;
                                 }
                             }
+                        })
+                        .ok();
+                    let ctrl = ctrl.clone();
+                    std::thread::Builder::new()
+                        .name("naya-ipc-client-r".into())
+                        .spawn(move || {
+                            for line in BufReader::new(recv).lines() {
+                                let Ok(line) = line else { break };
+                                match serde_json::from_str::<IpcCommand>(&line) {
+                                    Ok(IpcCommand::Learn { on }) => {
+                                        if ctrl.send(Control::SetLearn(on)).is_err() {
+                                            break;
+                                        }
+                                    }
+                                    Err(e) => tracing::debug!("ipc: ignoring {line:?}: {e}"),
+                                }
+                            }
+                            // A client that goes away never leaves learn mode armed.
+                            let _ = ctrl.send(Control::SetLearn(false));
                         })
                         .ok();
                     tracing::debug!("ipc client connected");

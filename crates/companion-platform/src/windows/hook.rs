@@ -31,6 +31,9 @@ use windows::Win32::UI::WindowsAndMessaging::{
 static SENDER: OnceLock<Sender<RawTransportEvent>> = OnceLock::new();
 static RESERVED: [AtomicBool; 12] = [const { AtomicBool::new(false) }; 12];
 static ALLOW_INJECTED: AtomicBool = AtomicBool::new(false);
+/// Learn mode: report every F13-F24 press (reserved or not) so the UI can
+/// discover what a module sends. Unreserved keys are not swallowed.
+static LEARN: AtomicBool = AtomicBool::new(false);
 static HOOK_THREAD_ID: AtomicU32 = AtomicU32::new(0);
 
 /// Publish which function keys the hook should swallow. Safe to call while
@@ -46,6 +49,11 @@ pub fn set_reserved(table: &TransportTable) {
 /// transport. Off by default so our own synthetic output can never loop back.
 pub fn set_allow_injected(allow: bool) {
     ALLOW_INJECTED.store(allow, Ordering::Relaxed);
+}
+
+/// Arm or disarm learn mode (see [`LEARN`]).
+pub fn set_learn(on: bool) {
+    LEARN.store(on, Ordering::Relaxed);
 }
 
 fn current_modifiers() -> Modifiers {
@@ -71,9 +79,11 @@ unsafe extern "system" fn hook_proc(code: i32, wparam: WPARAM, lparam: LPARAM) -
         // SAFETY: for WH_KEYBOARD_LL with HC_ACTION, lparam points to a KBDLLHOOKSTRUCT.
         let info = unsafe { &*(lparam.0 as *const KBDLLHOOKSTRUCT) };
         let vk = info.vkCode as u16;
-        if (0x7C..=0x87).contains(&vk) && RESERVED[(vk - 0x7C) as usize].load(Ordering::Relaxed) {
+        if (0x7C..=0x87).contains(&vk) {
+            let reserved = RESERVED[(vk - 0x7C) as usize].load(Ordering::Relaxed);
+            let learning = LEARN.load(Ordering::Relaxed);
             let injected = (info.flags & LLKHF_INJECTED).0 != 0;
-            if !injected || ALLOW_INJECTED.load(Ordering::Relaxed) {
+            if (reserved || learning) && (!injected || ALLOW_INJECTED.load(Ordering::Relaxed)) {
                 if let (Some(tx), Some(key)) = (SENDER.get(), FunctionKey::from_windows_vk(vk)) {
                     let pressed = (info.flags & LLKHF_UP).0 == 0;
                     let ev = RawTransportEvent {
@@ -83,11 +93,14 @@ unsafe extern "system" fn hook_proc(code: i32, wparam: WPARAM, lparam: LPARAM) -
                         },
                         pressed,
                         at: Instant::now(),
+                        reserved,
                     };
                     let _ = tx.try_send(ev);
                 }
-                // Swallow: the transport key must not reach the foreground app.
-                return LRESULT(1);
+                if reserved {
+                    // Swallow: the transport key must not reach the foreground app.
+                    return LRESULT(1);
+                }
             }
         }
     }

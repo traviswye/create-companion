@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { ActionPicker } from "./ActionPicker";
 import { AddApp } from "./AddApp";
+import { Inputs, type Learned } from "./Inputs";
 import { api } from "./api";
 import {
   describeAction,
@@ -22,6 +23,7 @@ type NavTab = "active" | "available";
 
 const ACCELS: Accel[] = ["none", "light", "medium", "aggressive"];
 const DEFAULT = -1; // selected index for the default profile
+const INPUTS = -2; // the Inputs (transport) editor
 
 function isEnabled(p: Profile) {
   return p.enabled !== false;
@@ -64,6 +66,7 @@ export default function App() {
   const [adding, setAdding] = useState(false);
   const [flash, setFlash] = useState<string | null>(null);
   const [loadErr, setLoadErr] = useState<string | null>(null);
+  const [learned, setLearned] = useState<Learned | null>(null);
   const saveTimer = useRef<number | null>(null);
 
   useEffect(() => {
@@ -106,6 +109,9 @@ export default function App() {
           case "config_rejected":
             setSave({ kind: "error", msg: m.error ?? "engine rejected the configuration" });
             break;
+          case "learned":
+            setLearned((l) => ({ key: m.key!, mods: m.mods ?? "none", seq: (l?.seq ?? 0) + 1 }));
+            break;
         }
       })
       .then(async (u) => {
@@ -128,9 +134,14 @@ export default function App() {
   }, []);
 
   const profile: Profile | null = useMemo(() => {
-    if (!cfg) return null;
+    if (!cfg || sel === INPUTS) return null;
     return sel === DEFAULT ? cfg.default_profile : cfg.profiles[sel] ?? null;
   }, [cfg, sel]);
+
+  function setTransport(transport: Config["transport"]) {
+    setCfg((c) => (c ? { ...c, transport } : c));
+    setSave({ kind: "dirty" });
+  }
 
   const events = useMemo(() => (cfg ? Object.keys(cfg.transport).sort((a, b) => eventSortKey(a) - eventSortKey(b)) : []), [cfg]);
 
@@ -176,7 +187,9 @@ export default function App() {
       setSave({ kind: "saving" });
       try {
         await api.saveConfig(cfg);
-        setSave({ kind: "saved" });
+        // An edit made while this save was in flight has already set "dirty"
+        // again; leave that alone so it gets its own save.
+        setSave((s) => (s.kind === "saving" ? { kind: "saved" } : s));
       } catch (e) {
         setSave({ kind: "error", msg: String(e) });
       }
@@ -239,11 +252,13 @@ export default function App() {
       </div>
     );
   }
-  if (!cfg || !profile) return <div style={{ padding: 30 }} className="muted">Loading…</div>;
+  if (!cfg || (sel !== INPUTS && !profile)) return <div style={{ padding: 30 }} className="muted">Loading…</div>;
 
+  const showInputs = sel === INPUTS;
+  const prof = (profile ?? cfg.default_profile) as Profile;
   const isDefault = sel === DEFAULT;
   const liveName = engine.profile;
-  const selectedDisabled = !isDefault && !isEnabled(profile);
+  const selectedDisabled = !isDefault && !showInputs && !isEnabled(prof);
 
   const ProfileRow = ({ i }: { i: number }) => {
     const p = cfg.profiles[i];
@@ -327,6 +342,9 @@ export default function App() {
         </div>
         <div className="nav-add">
           <button onClick={() => setAdding(true)}>＋ Add application</button>
+          <button className={showInputs ? "on" : ""} onClick={() => setSel(INPUTS)} title="Which key each module gesture sends">
+            Inputs
+          </button>
         </div>
         <div className="sidebar-foot">
           <div>
@@ -340,11 +358,30 @@ export default function App() {
       </aside>
 
       <main className="main">
+        {showInputs ? (
+          <>
+            <div className="topbar">
+              <h1>Inputs</h1>
+              <span className={"save-state " + (save.kind === "applied" ? "applied" : save.kind === "error" ? "error" : "")}>
+                {save.kind === "idle" && "Changes save automatically"}
+                {save.kind === "dirty" && "Editing…"}
+                {save.kind === "saving" && "Saving…"}
+                {save.kind === "saved" && (engine.connected ? "Saved · waiting for engine…" : "Saved")}
+                {save.kind === "applied" && "Saved · applied by engine ✓"}
+                {save.kind === "error" && `Error: ${save.msg}`}
+              </span>
+            </div>
+            <div className="content">
+              <Inputs transport={cfg.transport} onChange={setTransport} engineConnected={engine.connected} learned={learned} />
+            </div>
+          </>
+        ) : (
+          <>
         <div className="topbar">
           {isDefault ? (
-            <h1>{profile.name}</h1>
+            <h1>{prof.name}</h1>
           ) : (
-            <input className="title" value={profile.name} onChange={(e) => update((p) => ({ ...p, name: e.target.value }))} />
+            <input className="title" value={prof.name} onChange={(e) => update((p) => ({ ...p, name: e.target.value }))} />
           )}
           {selectedDisabled && (
             <button className="primary" onClick={() => setEnabled(sel, true)}>
@@ -376,7 +413,7 @@ export default function App() {
                   in {last.profile} → {last.action}
                 </span>
                 <span style={{ flex: 1 }} />
-                <button onClick={() => setPicker(last.event)}>Change for {profile.name}</button>
+                <button onClick={() => setPicker(last.event)}>Change for {prof.name}</button>
               </>
             ) : (
               <>
@@ -396,9 +433,9 @@ export default function App() {
             <div className="card">
               <h2>Matches</h2>
               <div className="body" style={{ display: "grid", gap: 10 }}>
-                <ChipEditor label="Windows executable" placeholder="app.exe" values={profile.match.windows_exe} onChange={(v) => editMatch("windows_exe", v)} mono />
-                <ChipEditor label="Window title contains" placeholder="YouTube" values={profile.match.window_title} onChange={(v) => editMatch("window_title", v)} />
-                <ChipEditor label="macOS bundle id" placeholder="com.example.App" values={profile.match.macos_bundle} onChange={(v) => editMatch("macos_bundle", v)} mono />
+                <ChipEditor label="Windows executable" placeholder="app.exe" values={prof.match.windows_exe} onChange={(v) => editMatch("windows_exe", v)} mono />
+                <ChipEditor label="Window title contains" placeholder="YouTube" values={prof.match.window_title} onChange={(v) => editMatch("window_title", v)} />
+                <ChipEditor label="macOS bundle id" placeholder="com.example.App" values={prof.match.macos_bundle} onChange={(v) => editMatch("macos_bundle", v)} mono />
               </div>
             </div>
           )}
@@ -411,6 +448,7 @@ export default function App() {
                 {isDefault ? "Used whenever no app profile overrides an event" : "Unset rows use the Default profile"}
               </span>
             </h2>
+            <div className="tablewrap">
             <table className="map">
               <thead>
                 <tr>
@@ -424,7 +462,7 @@ export default function App() {
               <tbody>
                 {events.map((ev) => {
                   const [mod, gesture] = eventLabel(ev);
-                  const b = profile.bindings[ev];
+                  const b = prof.bindings[ev];
                   const inherited = !b && !isDefault ? cfg.default_profile.bindings[ev] : undefined;
                   const shown = b ?? inherited;
                   const repeatable = b && (b.action.type === "keys" || b.action.type === "media" || b.action.type === "scroll");
@@ -483,18 +521,21 @@ export default function App() {
                 })}
               </tbody>
             </table>
+            </div>
           </div>
 
           <div className="muted" style={{ fontSize: 12 }}>
-            Config file: <span className="mono">{path}</span>. Transport keys (which F-key each gesture sends) are edited there for now.
+            Config file: <span className="mono">{path}</span>. Which key each gesture sends is set under <b>Inputs</b>.
           </div>
         </div>
+          </>
+        )}
       </main>
 
       {picker && (
         <ActionPicker
           event={picker}
-          current={profile.bindings[picker]}
+          current={prof.bindings[picker]}
           catalog={catalog}
           appName={appEntry?.name}
           appActions={appEntry?.actions ?? []}
