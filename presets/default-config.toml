@@ -231,7 +231,7 @@ action = { type = "keys", chord = "X" }
 [[profiles]]
 name = "Adobe Premiere Pro"
 enabled = true
-match = { windows_exe = ["Adobe Premiere Pro.exe"], macos_bundle = ["com.adobe.PremierePro.CC"] }
+match = { windows_exe = ["Adobe Premiere Pro.exe"], macos_bundle = ["com.adobe.PremierePro.CC", "com.adobe.PremierePro"] }
 
 [profiles.bindings.TUNE_CW]
 name = "Step forward one frame"
@@ -266,7 +266,7 @@ action = { type = "keys", chord = "-" }
 [[profiles]]
 name = "DaVinci Resolve"
 enabled = true
-match = { windows_exe = ["Resolve.exe"], macos_bundle = ["com.blackmagic-design.DaVinciResolve"] }
+match = { windows_exe = ["Resolve.exe", "DaVinci Resolve.exe"], macos_bundle = ["com.blackmagic-design.DaVinciResolve", "com.blackmagicdesign.resolve"] }
 
 [profiles.bindings.TUNE_CW]
 name = "Next frame"
@@ -301,7 +301,7 @@ action = { type = "keys", chord = "Ctrl+-" }
 [[profiles]]
 name = "Autodesk Fusion 360"
 enabled = true
-match = { windows_exe = ["Fusion360.exe"], macos_bundle = ["com.autodesk.fusion360"] }
+match = { windows_exe = ["Fusion360.exe", "Fusion.exe"], macos_bundle = ["com.autodesk.fusion360"] }
 
 [profiles.bindings.TUNE_CW]
 name = "Zoom in"
@@ -363,7 +363,7 @@ action = { type = "keys", chord = "Down" }
 [[profiles]]
 name = "VS Code"
 enabled = true
-match = { windows_exe = ["Code.exe", "Code - Insiders.exe"], macos_bundle = ["com.microsoft.VSCode"] }
+match = { windows_exe = ["Code.exe", "Code - Insiders.exe"], macos_bundle = ["com.microsoft.VSCode", "com.microsoft.VSCodeInsiders"] }
 
 [profiles.bindings.TUNE_CW]
 name = "Next editor tab"

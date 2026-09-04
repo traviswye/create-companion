@@ -1,0 +1,2204 @@
+{
+  "id": "sublime",
+  "name": "Sublime Text",
+  "kind": "app",
+  "category": "Development",
+  "match": {
+    "windows_exe": [
+      "sublime_text.exe"
+    ],
+    "macos_bundle": [
+      "com.sublimetext.4"
+    ],
+    "window_title": []
+  },
+  "sources": [
+    "https://www.sublimetext.com/docs/",
+    "https://www.sublimetext.com/docs/key_bindings.html",
+    "https://docs.sublimetext.io/reference/keyboard_shortcuts_win.html",
+    "https://docs.sublimetext.io/reference/keyboard_shortcuts_osx.html"
+  ],
+  "note": "Sublime Text 4. Taken from the key bindings Sublime ships inside Packages/Default.sublime-package - Default (Windows).sublime-keymap and Default (OSX).sublime-keymap - labelled with the captions from Main.sublime-menu, covering the File, Edit, Selection, Find, View, Goto and Tools menus. Only unconditional bindings are used; entries carrying a `context` clause are situational overrides and are left out. Numpad-only bindings (keypad_enter, keypad_plus, keypad_minus) and bindings on keys the chord grammar has no name for (quote, parenthesis and brace auto-pairing) are dropped. Where Sublime ships more than one unconditional binding for a command (Ctrl+C and Ctrl+Insert for copy) the one built on the platform's primary modifier is listed. Nested menu entries are named \"Submenu: Command\"; menu entries that carry no caption of their own take Sublime's own derived caption (the command name in title case). Menu entries whose label is dynamic - the recent-file, open-file, bookmark and build-system lists - are omitted.",
+  "actions": [
+    {
+      "name": "New File",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+N"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+N"
+      }
+    },
+    {
+      "name": "Open File",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+O"
+      }
+    },
+    {
+      "name": "Open",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+O"
+      }
+    },
+    {
+      "name": "Open Recent: Reopen Closed File",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+T"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+T"
+      }
+    },
+    {
+      "name": "Save",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+S"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+S"
+      }
+    },
+    {
+      "name": "Save As",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+S"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+S"
+      }
+    },
+    {
+      "name": "Save All",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+S"
+      }
+    },
+    {
+      "name": "New Window",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+N"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+N"
+      }
+    },
+    {
+      "name": "Close Window",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+W"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+W"
+      }
+    },
+    {
+      "name": "Close File",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+W"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+W"
+      }
+    },
+    {
+      "name": "Undo",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Z"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Z"
+      }
+    },
+    {
+      "name": "Redo",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Y"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Y"
+      }
+    },
+    {
+      "name": "Undo Selection: Soft Undo",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+U"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+U"
+      }
+    },
+    {
+      "name": "Undo Selection: Soft Redo",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+U"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+U"
+      }
+    },
+    {
+      "name": "Cut",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+X"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+X"
+      }
+    },
+    {
+      "name": "Copy",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+C"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+C"
+      }
+    },
+    {
+      "name": "Paste",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+V"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+V"
+      }
+    },
+    {
+      "name": "Paste and Indent",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+V"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+V"
+      }
+    },
+    {
+      "name": "Paste from History",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+K",
+          "Ctrl+V"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Cmd+K",
+          "Cmd+V"
+        ]
+      }
+    },
+    {
+      "name": "Line: Indent",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+]"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+]"
+      }
+    },
+    {
+      "name": "Line: Unindent",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+["
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+["
+      }
+    },
+    {
+      "name": "Line: Reindent",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+K",
+          "Ctrl+]"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Cmd+K",
+          "Cmd+]"
+        ]
+      }
+    },
+    {
+      "name": "Line: Swap Line Up",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Up"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Cmd+Up"
+      }
+    },
+    {
+      "name": "Line: Swap Line Down",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Down"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Cmd+Down"
+      }
+    },
+    {
+      "name": "Line: Duplicate Line",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+D"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+D"
+      }
+    },
+    {
+      "name": "Line: Delete Line",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+K"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+K"
+      }
+    },
+    {
+      "name": "Line: Join Lines",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+J"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+J"
+      }
+    },
+    {
+      "name": "Comment: Toggle Comment",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+/"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+/"
+      }
+    },
+    {
+      "name": "Comment: Toggle Block Comment",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+/"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+/"
+      }
+    },
+    {
+      "name": "Text: Revert Hunk",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+K",
+          "Ctrl+Z"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Cmd+K",
+          "Cmd+Z"
+        ]
+      }
+    },
+    {
+      "name": "Text: Revert Modification",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+K",
+          "Ctrl+Shift+Z"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Cmd+K",
+          "Shift+Cmd+Z"
+        ]
+      }
+    },
+    {
+      "name": "Text: Toggle Inline Diff",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+K",
+          "Ctrl+/"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Cmd+K",
+          "Cmd+/"
+        ]
+      }
+    },
+    {
+      "name": "Text: Insert Line Before",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Enter"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+Enter"
+      }
+    },
+    {
+      "name": "Text: Delete Word Forward",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Delete"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Delete"
+      }
+    },
+    {
+      "name": "Text: Delete Word Backward",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Backspace"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Backspace"
+      }
+    },
+    {
+      "name": "Text: Delete Line",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+K"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+K"
+      }
+    },
+    {
+      "name": "Text: Delete to End",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+K",
+          "Ctrl+K"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Cmd+K",
+          "Cmd+K"
+        ]
+      }
+    },
+    {
+      "name": "Text: Delete to Beginning",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+K",
+          "Ctrl+Backspace"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Cmd+K",
+          "Cmd+Backspace"
+        ]
+      }
+    },
+    {
+      "name": "Text: Transpose",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+T"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+T"
+      }
+    },
+    {
+      "name": "Tag: Close Tag",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+."
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+."
+      }
+    },
+    {
+      "name": "Tag: Wrap Selection With Tag",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+W"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+W"
+      }
+    },
+    {
+      "name": "Mark: Set Mark",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+K",
+          "Ctrl+Space"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Cmd+K",
+          "Cmd+M"
+        ]
+      }
+    },
+    {
+      "name": "Mark: Select to Mark",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+K",
+          "Ctrl+A"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Cmd+K",
+          "Cmd+A"
+        ]
+      }
+    },
+    {
+      "name": "Mark: Delete to Mark",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+K",
+          "Ctrl+W"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Cmd+K",
+          "Cmd+W"
+        ]
+      }
+    },
+    {
+      "name": "Mark: Swap with Mark",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+K",
+          "Ctrl+X"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Cmd+K",
+          "Cmd+X"
+        ]
+      }
+    },
+    {
+      "name": "Mark: Clear Mark",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+K",
+          "Ctrl+G"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Cmd+K",
+          "Cmd+G"
+        ]
+      }
+    },
+    {
+      "name": "Mark: Yank",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+K",
+          "Ctrl+Y"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Cmd+K",
+          "Cmd+Y"
+        ]
+      }
+    },
+    {
+      "name": "Code Folding: Fold",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+["
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+["
+      }
+    },
+    {
+      "name": "Code Folding: Unfold",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+]"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+]"
+      }
+    },
+    {
+      "name": "Code Folding: Unfold All",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+K",
+          "Ctrl+0"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Cmd+K",
+          "Cmd+0"
+        ]
+      }
+    },
+    {
+      "name": "Code Folding: Fold All",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+K",
+          "Ctrl+1"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Cmd+K",
+          "Cmd+1"
+        ]
+      }
+    },
+    {
+      "name": "Code Folding: Fold Level 2",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+K",
+          "Ctrl+2"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Cmd+K",
+          "Cmd+2"
+        ]
+      }
+    },
+    {
+      "name": "Code Folding: Fold Level 3",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+K",
+          "Ctrl+3"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Cmd+K",
+          "Cmd+3"
+        ]
+      }
+    },
+    {
+      "name": "Code Folding: Fold Level 4",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+K",
+          "Ctrl+4"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Cmd+K",
+          "Cmd+4"
+        ]
+      }
+    },
+    {
+      "name": "Code Folding: Fold Level 5",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+K",
+          "Ctrl+5"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Cmd+K",
+          "Cmd+5"
+        ]
+      }
+    },
+    {
+      "name": "Code Folding: Fold Level 6",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+K",
+          "Ctrl+6"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Cmd+K",
+          "Cmd+6"
+        ]
+      }
+    },
+    {
+      "name": "Code Folding: Fold Level 7",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+K",
+          "Ctrl+7"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Cmd+K",
+          "Cmd+7"
+        ]
+      }
+    },
+    {
+      "name": "Code Folding: Fold Level 8",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+K",
+          "Ctrl+8"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Cmd+K",
+          "Cmd+8"
+        ]
+      }
+    },
+    {
+      "name": "Code Folding: Fold Level 9",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+K",
+          "Ctrl+9"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Cmd+K",
+          "Cmd+9"
+        ]
+      }
+    },
+    {
+      "name": "Code Folding: Fold Tag Attributes",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+K",
+          "Ctrl+T"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Cmd+K",
+          "Cmd+T"
+        ]
+      }
+    },
+    {
+      "name": "Convert Case: Upper Case",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+K",
+          "Ctrl+U"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Cmd+K",
+          "Cmd+U"
+        ]
+      }
+    },
+    {
+      "name": "Convert Case: Lower Case",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+K",
+          "Ctrl+L"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Cmd+K",
+          "Cmd+L"
+        ]
+      }
+    },
+    {
+      "name": "Wrap: Wrap Paragraph at Ruler",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Q"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+Q"
+      }
+    },
+    {
+      "name": "Show Completions",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Space"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Space"
+      }
+    },
+    {
+      "name": "Sort Lines",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F9"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "F5"
+      }
+    },
+    {
+      "name": "Sort Lines (Case Sensitive)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+F9"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+F5"
+      }
+    },
+    {
+      "name": "Split into Lines",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+L"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+L"
+      }
+    },
+    {
+      "name": "Select All",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+A"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+A"
+      }
+    },
+    {
+      "name": "Expand Selection",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+A"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+A"
+      }
+    },
+    {
+      "name": "Expand Selection to Line",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+L"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+L"
+      }
+    },
+    {
+      "name": "Expand Selection to Line Upward",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+L"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+L"
+      }
+    },
+    {
+      "name": "Expand Selection to Word",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+D"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+D"
+      }
+    },
+    {
+      "name": "Expand Selection to Scope",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Space"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+Space"
+      }
+    },
+    {
+      "name": "Expand Selection to Brackets",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+M"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+M"
+      }
+    },
+    {
+      "name": "Add Previous Line",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Up"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Up"
+      }
+    },
+    {
+      "name": "Add Next Line",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Down"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Down"
+      }
+    },
+    {
+      "name": "Tab Selection: Unselect Others",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+J",
+          "Ctrl+Up"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Cmd+J",
+          "Cmd+Up"
+        ]
+      }
+    },
+    {
+      "name": "Tab Selection: Unselect to Left",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+J",
+          "Ctrl+Left"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Cmd+J",
+          "Cmd+Left"
+        ]
+      }
+    },
+    {
+      "name": "Tab Selection: Unselect to Right",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+J",
+          "Ctrl+Right"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Cmd+J",
+          "Cmd+Right"
+        ]
+      }
+    },
+    {
+      "name": "Tab Selection: Select to Left",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+J",
+          "Ctrl+Shift+Left"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Cmd+J",
+          "Shift+Cmd+Left"
+        ]
+      }
+    },
+    {
+      "name": "Tab Selection: Select to Right",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+J",
+          "Ctrl+Shift+Right"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Cmd+J",
+          "Shift+Cmd+Right"
+        ]
+      }
+    },
+    {
+      "name": "Tab Selection: Focus to Left",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+J",
+          "Ctrl+PageUp"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Cmd+J",
+          "Shift+Cmd+["
+        ]
+      }
+    },
+    {
+      "name": "Tab Selection: Focus to Right",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+J",
+          "Ctrl+PageDown"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Cmd+J",
+          "Shift+Cmd+]"
+        ]
+      }
+    },
+    {
+      "name": "Find",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+F"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+F"
+      }
+    },
+    {
+      "name": "Find Next",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F3"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+G"
+      }
+    },
+    {
+      "name": "Find Previous",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+F3"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+G"
+      }
+    },
+    {
+      "name": "Incremental Find",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+I"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+I"
+      }
+    },
+    {
+      "name": "Replace",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+H"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+F"
+      }
+    },
+    {
+      "name": "Replace Next",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+H"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+E"
+      }
+    },
+    {
+      "name": "Quick Find",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+F3"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+G"
+      }
+    },
+    {
+      "name": "Quick Find All",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+F3"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Cmd+G"
+      }
+    },
+    {
+      "name": "Quick Add Next",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+D"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+D"
+      }
+    },
+    {
+      "name": "Quick Skip Next",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+K",
+          "Ctrl+D"
+        ]
+      }
+    },
+    {
+      "name": "Use Selection for Find",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+E"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+E"
+      }
+    },
+    {
+      "name": "Use Selection for Replace",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+E"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+E"
+      }
+    },
+    {
+      "name": "Find in Files",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+F"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+F"
+      }
+    },
+    {
+      "name": "Find Results: Next Result",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F4"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "F4"
+      }
+    },
+    {
+      "name": "Find Results: Previous Result",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+F4"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+F4"
+      }
+    },
+    {
+      "name": "Side Bar: Toggle Side Bar",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+K",
+          "Ctrl+B"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Cmd+K",
+          "Cmd+B"
+        ]
+      }
+    },
+    {
+      "name": "Show Console",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+`"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+`"
+      }
+    },
+    {
+      "name": "Toggle Full Screen",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F11"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Cmd+F"
+      }
+    },
+    {
+      "name": "Toggle Distraction Free",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+F11"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Cmd+F"
+      }
+    },
+    {
+      "name": "Layout: Single",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+1"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+1"
+      }
+    },
+    {
+      "name": "Layout: Columns: 2",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+2"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+2"
+      }
+    },
+    {
+      "name": "Layout: Columns: 3",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+3"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+3"
+      }
+    },
+    {
+      "name": "Layout: Columns: 4",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+4"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+4"
+      }
+    },
+    {
+      "name": "Layout: Rows: 2",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+8"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+Cmd+2"
+      }
+    },
+    {
+      "name": "Layout: Rows: 3",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+9"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+Cmd+3"
+      }
+    },
+    {
+      "name": "Layout: Grid: 4",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+5"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+5"
+      }
+    },
+    {
+      "name": "Groups: Move File to New Group",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+K",
+          "Ctrl+Up"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Cmd+K",
+          "Cmd+Up"
+        ]
+      }
+    },
+    {
+      "name": "Groups: New Group",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+K",
+          "Ctrl+Shift+Up"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Cmd+K",
+          "Shift+Cmd+Up"
+        ]
+      }
+    },
+    {
+      "name": "Groups: Close Group",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+K",
+          "Ctrl+Down"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Cmd+K",
+          "Cmd+Down"
+        ]
+      }
+    },
+    {
+      "name": "Focus Group: Next",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+K",
+          "Ctrl+Right"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Cmd+K",
+          "Cmd+Right"
+        ]
+      }
+    },
+    {
+      "name": "Focus Group: Previous",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+K",
+          "Ctrl+Left"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Cmd+K",
+          "Cmd+Left"
+        ]
+      }
+    },
+    {
+      "name": "Focus Group: Group 1",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+1"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+1"
+      }
+    },
+    {
+      "name": "Focus Group: Group 2",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+2"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+2"
+      }
+    },
+    {
+      "name": "Focus Group: Group 3",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+3"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+3"
+      }
+    },
+    {
+      "name": "Focus Group: Group 4",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+4"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+4"
+      }
+    },
+    {
+      "name": "Move File to Group: Next",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+K",
+          "Ctrl+Shift+Right"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Cmd+K",
+          "Shift+Cmd+Right"
+        ]
+      }
+    },
+    {
+      "name": "Move File to Group: Previous",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+K",
+          "Ctrl+Shift+Left"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Cmd+K",
+          "Shift+Cmd+Left"
+        ]
+      }
+    },
+    {
+      "name": "Move File to Group: Group 1",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+1"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+1"
+      }
+    },
+    {
+      "name": "Move File to Group: Group 2",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+2"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+2"
+      }
+    },
+    {
+      "name": "Move File to Group: Group 3",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+3"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+3"
+      }
+    },
+    {
+      "name": "Move File to Group: Group 4",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+4"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+4"
+      }
+    },
+    {
+      "name": "Next Misspelling",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+F6"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+F6"
+      }
+    },
+    {
+      "name": "Previous Misspelling",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+F6"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+F6"
+      }
+    },
+    {
+      "name": "Goto Anything",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+P"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+T"
+      }
+    },
+    {
+      "name": "Goto Symbol",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+R"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+R"
+      }
+    },
+    {
+      "name": "Goto Symbol in Project",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+R"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+R"
+      }
+    },
+    {
+      "name": "Goto Definition",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F12"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+Down"
+      }
+    },
+    {
+      "name": "Goto Reference",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+F12"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+Cmd+Down"
+      }
+    },
+    {
+      "name": "Goto Line",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+G"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+G"
+      }
+    },
+    {
+      "name": "Next Modification",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+."
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+."
+      }
+    },
+    {
+      "name": "Previous Modification",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+,"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+,"
+      }
+    },
+    {
+      "name": "Jump Back",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+-"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+-"
+      }
+    },
+    {
+      "name": "Jump Forward",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+-"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+-"
+      }
+    },
+    {
+      "name": "Switch File: Next File",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+PageDown"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+]"
+      }
+    },
+    {
+      "name": "Switch File: Previous File",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+PageUp"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+["
+      }
+    },
+    {
+      "name": "Switch File: Next File in Stack",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Tab"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Tab"
+      }
+    },
+    {
+      "name": "Switch File: Previous File in Stack",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Tab"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Tab"
+      }
+    },
+    {
+      "name": "Switch File: Switch Header/Implementation",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+O"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+Up"
+      }
+    },
+    {
+      "name": "Scroll: Scroll to Selection",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+K",
+          "Ctrl+C"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Cmd+K",
+          "Cmd+C"
+        ]
+      }
+    },
+    {
+      "name": "Scroll: Line Up",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Up"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Up"
+      }
+    },
+    {
+      "name": "Scroll: Line Down",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Down"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Down"
+      }
+    },
+    {
+      "name": "Bookmarks: Toggle Bookmark",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+F2"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+F2"
+      }
+    },
+    {
+      "name": "Bookmarks: Next Bookmark",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F2"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "F2"
+      }
+    },
+    {
+      "name": "Bookmarks: Previous Bookmark",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+F2"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+F2"
+      }
+    },
+    {
+      "name": "Bookmarks: Clear Bookmarks",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+F2"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+F2"
+      }
+    },
+    {
+      "name": "Bookmarks: Select All Bookmarks",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+F2"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+F2"
+      }
+    },
+    {
+      "name": "Jump to Matching Bracket",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+M"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+M"
+      }
+    },
+    {
+      "name": "Command Palette",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+P"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+P"
+      }
+    },
+    {
+      "name": "Build",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+B"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+B"
+      }
+    },
+    {
+      "name": "Build With",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+B"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+B"
+      }
+    },
+    {
+      "name": "Cancel Build",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+C"
+      }
+    },
+    {
+      "name": "Build Results: Next Result",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F4"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "F4"
+      }
+    },
+    {
+      "name": "Build Results: Previous Result",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+F4"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+F4"
+      }
+    },
+    {
+      "name": "Record Macro",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Q"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Q"
+      }
+    },
+    {
+      "name": "Playback Macro",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Q"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Q"
+      }
+    },
+    {
+      "name": "Developer: Show Scope Name",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Shift+P"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+P"
+      }
+    }
+  ],
+  "defaults": {
+    "TUNE_CW": {
+      "name": "Next File",
+      "action": {
+        "type": "keys",
+        "chord": "Ctrl+PageDown"
+      }
+    },
+    "TUNE_CCW": {
+      "name": "Previous File",
+      "action": {
+        "type": "keys",
+        "chord": "Ctrl+PageUp"
+      }
+    },
+    "TUNE_TAP_1F": {
+      "name": "Command Palette",
+      "action": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+P"
+      }
+    },
+    "TUNE_SWIPE_LEFT": {
+      "name": "Jump Back",
+      "action": {
+        "type": "keys",
+        "chord": "Alt+-"
+      }
+    },
+    "TUNE_SWIPE_RIGHT": {
+      "name": "Jump Forward",
+      "action": {
+        "type": "keys",
+        "chord": "Alt+Shift+-"
+      }
+    }
+  }
+}

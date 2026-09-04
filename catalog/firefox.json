@@ -1,0 +1,972 @@
+{
+  "id": "firefox",
+  "name": "Mozilla Firefox",
+  "kind": "app",
+  "category": "Browser",
+  "match": {
+    "windows_exe": [
+      "firefox.exe"
+    ],
+    "macos_bundle": [
+      "org.mozilla.firefox"
+    ],
+    "window_title": []
+  },
+  "sources": [
+    "https://support.mozilla.org/en-US/kb/keyboard-shortcuts-perform-firefox-tasks-quickly",
+    "https://www-archive.mozilla.org/support/firefox/keyboard",
+    "https://firefox-source-docs.mozilla.org/devtools-user/keyboard_shortcuts/index.html"
+  ],
+  "note": "The current SUMO article (first source URL, named in the brief) returned Mozilla's bot-verification \"Client Challenge\" interstitial to every fetch attempt from this environment, including via the Wayback Machine's own crawl of that URL, so it could not be read directly. Its content was instead sourced from Mozilla's own archived classic shortcuts reference (www-archive.mozilla.org, still an official Mozilla domain) for the core navigation/editing list, cross-checked against current behavior; a few shortcuts that page listed but modern Firefox has dropped (DOM Inspector, New Mail Message, the standalone search bar's Ctrl+Up/Down engine switcher) were left out, and Ctrl+H's Mac chord was corrected to Cmd+Shift+H (Cmd+H is reserved by macOS for Hide). \"Select tab [1 to 9]\" is expanded into 9 explicit actions. Reopen Closed Tab, New Private Window, Library, Bookmarks Toolbar toggle, Quit, Clear Recent History and the Add-ons Manager were confirmed current via Mozilla Support search results and added since the base list predates them. The Developer Tools section is complete from Mozilla's official devtools docs; its deeper per-pane editor shortcuts (Inspector's HTML/CSS pane navigation, Console autocomplete, Debugger source-editor bindings) were left out as internal editing minutiae rather than app-level commands. Generic single-key/OS text-editing entries the old list carried (Copy, Cut, Paste, Select All, Undo, Redo, Delete, plain arrow-key scrolling) were left out as not Firefox-specific. Skipped throughout as not expressible: mouse-only shortcuts.",
+  "actions": [
+    {
+      "name": "Add Bookmark",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+D"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+D"
+      }
+    },
+    {
+      "name": "Back",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Left"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Left"
+      }
+    },
+    {
+      "name": "Forward",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Right"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Right"
+      }
+    },
+    {
+      "name": "Show / hide the Bookmarks sidebar",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+B"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+B"
+      }
+    },
+    {
+      "name": "Page Info",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+I"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+I"
+      }
+    },
+    {
+      "name": "Caret Browsing",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F7"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "F7"
+      }
+    },
+    {
+      "name": "Close Tab",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+W"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+W"
+      }
+    },
+    {
+      "name": "Close Window",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+W"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+W"
+      }
+    },
+    {
+      "name": "Complete .com Address",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Enter"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Enter"
+      }
+    },
+    {
+      "name": "Complete .net Address",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Enter"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Enter"
+      }
+    },
+    {
+      "name": "Complete .org Address",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Enter"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+Enter"
+      }
+    },
+    {
+      "name": "Decrease Text Size (zoom out)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+-"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+-"
+      }
+    },
+    {
+      "name": "Delete Individual Form Auto-Complete Entry",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Delete"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Delete"
+      }
+    },
+    {
+      "name": "Downloads",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+J"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+J"
+      },
+      "linux": {
+        "type": "keys",
+        "chord": "Ctrl+Y"
+      }
+    },
+    {
+      "name": "Find Again (find next)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+G"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+G"
+      }
+    },
+    {
+      "name": "Find As You Type (links only)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "'"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "'"
+      }
+    },
+    {
+      "name": "Find As You Type (text)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "/"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "/"
+      }
+    },
+    {
+      "name": "Find Previous",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+G"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+G"
+      }
+    },
+    {
+      "name": "Find in This Page",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+F"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+F"
+      }
+    },
+    {
+      "name": "Go to Bottom of Page",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "End"
+      }
+    },
+    {
+      "name": "Go to Top of Page",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Home"
+      }
+    },
+    {
+      "name": "Toggle Full Screen",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F11"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "F11"
+      }
+    },
+    {
+      "name": "Help",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F1"
+      }
+    },
+    {
+      "name": "History",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+H"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+H"
+      }
+    },
+    {
+      "name": "Home Page",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Home"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Home"
+      }
+    },
+    {
+      "name": "Increase Text Size (zoom in)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+="
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+="
+      }
+    },
+    {
+      "name": "Cycle to the next toolbar / content pane",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F6"
+      }
+    },
+    {
+      "name": "Cycle to the previous toolbar / content pane",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+F6"
+      }
+    },
+    {
+      "name": "New Tab",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+T"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+T"
+      }
+    },
+    {
+      "name": "Next Tab",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Tab"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+Tab"
+      }
+    },
+    {
+      "name": "New Window",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+N"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+N"
+      }
+    },
+    {
+      "name": "Open File",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+O"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+O"
+      }
+    },
+    {
+      "name": "Open Link (in a focused link)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Enter"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Enter"
+      }
+    },
+    {
+      "name": "Open Link in New Tab",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Enter"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Enter"
+      }
+    },
+    {
+      "name": "Open Link in New Window",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Enter"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Enter"
+      }
+    },
+    {
+      "name": "Open Address in New Tab / Save Link Target As",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Enter"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Enter"
+      }
+    },
+    {
+      "name": "Page Source (view source)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+U"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+U"
+      }
+    },
+    {
+      "name": "Previous Tab",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Tab"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+Tab"
+      }
+    },
+    {
+      "name": "Print",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+P"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+P"
+      }
+    },
+    {
+      "name": "Reload",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+R"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+R"
+      }
+    },
+    {
+      "name": "Reload (override cache)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+R"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+R"
+      }
+    },
+    {
+      "name": "Restore Text Size (reset zoom)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+0"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+0"
+      }
+    },
+    {
+      "name": "Save Page As",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+S"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+S"
+      }
+    },
+    {
+      "name": "Select Location Bar",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+L"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+L"
+      }
+    },
+    {
+      "name": "Stop",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Esc"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Esc"
+      }
+    },
+    {
+      "name": "Web Search",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+K"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+K"
+      }
+    },
+    {
+      "name": "Select tab 1",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+1"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+1"
+      },
+      "linux": {
+        "type": "keys",
+        "chord": "Alt+1"
+      }
+    },
+    {
+      "name": "Select tab 2",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+2"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+2"
+      },
+      "linux": {
+        "type": "keys",
+        "chord": "Alt+2"
+      }
+    },
+    {
+      "name": "Select tab 3",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+3"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+3"
+      },
+      "linux": {
+        "type": "keys",
+        "chord": "Alt+3"
+      }
+    },
+    {
+      "name": "Select tab 4",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+4"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+4"
+      },
+      "linux": {
+        "type": "keys",
+        "chord": "Alt+4"
+      }
+    },
+    {
+      "name": "Select tab 5",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+5"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+5"
+      },
+      "linux": {
+        "type": "keys",
+        "chord": "Alt+5"
+      }
+    },
+    {
+      "name": "Select tab 6",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+6"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+6"
+      },
+      "linux": {
+        "type": "keys",
+        "chord": "Alt+6"
+      }
+    },
+    {
+      "name": "Select tab 7",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+7"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+7"
+      },
+      "linux": {
+        "type": "keys",
+        "chord": "Alt+7"
+      }
+    },
+    {
+      "name": "Select tab 8",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+8"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+8"
+      },
+      "linux": {
+        "type": "keys",
+        "chord": "Alt+8"
+      }
+    },
+    {
+      "name": "Select the last tab",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+9"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+9"
+      },
+      "linux": {
+        "type": "keys",
+        "chord": "Alt+9"
+      }
+    },
+    {
+      "name": "Reopen Closed Tab",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+T"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+T"
+      }
+    },
+    {
+      "name": "New Private Window",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+P"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+P"
+      }
+    },
+    {
+      "name": "Show all Bookmarks (Library)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+O"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+O"
+      }
+    },
+    {
+      "name": "Show / hide the Bookmarks Toolbar",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+B"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+B"
+      }
+    },
+    {
+      "name": "Quit Firefox",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Q"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Q"
+      }
+    },
+    {
+      "name": "Clear Recent History",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Delete"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+Delete"
+      }
+    },
+    {
+      "name": "Open Add-ons Manager",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+A"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+A"
+      }
+    },
+    {
+      "name": "Open / bring forward the Toolbox (last-used tool)",
+      "context": "Developer Tools",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+I"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+I"
+      }
+    },
+    {
+      "name": "Open the Web Console",
+      "context": "Developer Tools",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+K"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+K"
+      }
+    },
+    {
+      "name": "Toggle the element picker (Inspect Element)",
+      "context": "Developer Tools",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+C"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+C"
+      }
+    },
+    {
+      "name": "Open the Style Editor",
+      "context": "Developer Tools",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+F7"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+F7"
+      }
+    },
+    {
+      "name": "Open the Profiler",
+      "context": "Developer Tools",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+F5"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+F5"
+      }
+    },
+    {
+      "name": "Open the Network Monitor",
+      "context": "Developer Tools",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+E"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+E"
+      }
+    },
+    {
+      "name": "Toggle Responsive Design Mode",
+      "context": "Developer Tools",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+M"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+M"
+      }
+    },
+    {
+      "name": "Open the Browser Console",
+      "context": "Developer Tools",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+J"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+J"
+      }
+    },
+    {
+      "name": "Open the Browser Toolbox",
+      "context": "Developer Tools",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Shift+I"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+Shift+I"
+      }
+    },
+    {
+      "name": "Open the Storage Inspector",
+      "context": "Developer Tools",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+F9"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+F9"
+      }
+    },
+    {
+      "name": "Open the Debugger",
+      "context": "Developer Tools",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Z"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+Z"
+      }
+    }
+  ],
+  "defaults": {
+    "TUNE_CW": {
+      "name": "Next Tab",
+      "action": {
+        "type": "keys",
+        "chord": "Ctrl+Tab"
+      },
+      "accel": "light"
+    },
+    "TUNE_CCW": {
+      "name": "Previous Tab",
+      "action": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Tab"
+      },
+      "accel": "light"
+    },
+    "TUNE_TAP_1F": {
+      "name": "New Tab",
+      "action": {
+        "type": "keys",
+        "chord": "Ctrl+T"
+      }
+    },
+    "TUNE_SWIPE_LEFT": {
+      "name": "Back",
+      "action": {
+        "type": "keys",
+        "chord": "Alt+Left"
+      }
+    },
+    "TUNE_SWIPE_RIGHT": {
+      "name": "Forward",
+      "action": {
+        "type": "keys",
+        "chord": "Alt+Right"
+      }
+    },
+    "TUNE_SWIPE_UP": {
+      "name": "Increase Text Size (zoom in)",
+      "action": {
+        "type": "keys",
+        "chord": "Ctrl+="
+      }
+    },
+    "TUNE_SWIPE_DOWN": {
+      "name": "Decrease Text Size (zoom out)",
+      "action": {
+        "type": "keys",
+        "chord": "Ctrl+-"
+      }
+    }
+  }
+}

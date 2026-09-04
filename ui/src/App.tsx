@@ -29,6 +29,13 @@ function isEnabled(p: Profile) {
   return p.enabled !== false;
 }
 
+function currentOs(): "windows" | "macos" | "linux" {
+  const p = navigator.platform.toLowerCase();
+  if (p.startsWith("win")) return "windows";
+  if (p.startsWith("mac")) return "macos";
+  return "linux";
+}
+
 function matchText(p: { name: string; match: Profile["match"] }) {
   return [p.name, ...p.match.windows_exe, ...p.match.window_title, ...p.match.macos_bundle].join(" ").toLowerCase();
 }
@@ -170,8 +177,15 @@ export default function App() {
 
   const events = useMemo(() => (cfg ? Object.keys(cfg.transport).sort((a, b) => eventSortKey(a) - eventSortKey(b)) : []), [cfg]);
 
-  /** The catalog entry that corresponds to the selected profile, if any. */
-  const appEntry = useMemo(() => (profile && sel !== DEFAULT ? catalogFor(apps, profile) : undefined), [apps, profile, sel]);
+  /**
+   * The catalog entry that corresponds to the selected profile: the app's own
+   * entry, or for the Default profile the running OS's system shortcuts.
+   */
+  const appEntry = useMemo(() => {
+    if (!profile) return undefined;
+    if (sel === DEFAULT) return apps.find((a) => a.kind === "system" && a.os?.includes(currentOs()));
+    return catalogFor(apps, profile);
+  }, [apps, profile, sel]);
 
   // ---- nav lists ---------------------------------------------------------
   const nav = useMemo(() => {
@@ -185,7 +199,8 @@ export default function App() {
       (isEnabled(p) ? active : disabled).push(i);
     });
     const known = new Set(cfg.profiles.map((p) => catalogFor(apps, p)?.id).filter(Boolean));
-    const available = apps.filter((a) => !known.has(a.id)).filter((a) => hit(matchText(a)));
+    // System entries are not profiles; they feed the Default profile's picker.
+    const available = apps.filter((a) => a.kind !== "system" && !known.has(a.id)).filter((a) => hit(matchText(a)));
     return { active, disabled, available };
   }, [cfg, apps, navQ]);
 

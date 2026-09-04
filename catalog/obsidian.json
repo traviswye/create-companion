@@ -1,0 +1,106 @@
+{
+  "id": "obsidian",
+  "name": "Obsidian",
+  "kind": "app",
+  "category": "Productivity",
+  "match": {
+    "windows_exe": [
+      "Obsidian.exe"
+    ],
+    "macos_bundle": [
+      "md.obsidian"
+    ],
+    "window_title": []
+  },
+  "sources": [
+    "https://obsidian.md/help/hotkeys",
+    "https://obsidian.md/help/editing-shortcuts",
+    "https://obsidian.md/help/tabs",
+    "https://obsidian.md/help/plugins/command-palette",
+    "https://obsidian.md/help/plugins/quick-switcher",
+    "https://obsidian.md/help/plugins/search",
+    "https://obsidian.md/help/properties"
+  ],
+  "note": "Obsidian's own commands (open note, toggle sidebar, daily note, templates, backlinks, outline, etc.) are unbound by default and only get a hotkey once a user sets one in Settings -> Hotkeys, so they are not listed here. 'Editing shortcuts' covers OS/framework-level text editing and is documented as not customizable within Obsidian; bold/italic are documented for Mac only. Skipped as not expressible: Alt/Option+click for multiple cursors and Fn+Up/Down for page scroll on Mac (Fn is not a supported modifier in this grammar).",
+  "actions": [
+    { "name": "Command palette", "context": "", "windows": { "type": "keys", "chord": "Ctrl+P" }, "mac": { "type": "keys", "chord": "Cmd+P" } },
+    { "name": "Quick switcher", "context": "", "windows": { "type": "keys", "chord": "Ctrl+O" }, "mac": { "type": "keys", "chord": "Cmd+O" } },
+    { "name": "Search across all notes", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Shift+F" }, "mac": { "type": "keys", "chord": "Cmd+Shift+F" } },
+    { "name": "New tab", "context": "", "windows": { "type": "keys", "chord": "Ctrl+T" }, "mac": { "type": "keys", "chord": "Cmd+T" } },
+    { "name": "Next tab", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Tab" }, "mac": { "type": "keys", "chord": "Ctrl+Tab" } },
+    { "name": "Previous tab", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Shift+Tab" }, "mac": { "type": "keys", "chord": "Ctrl+Shift+Tab" } },
+    { "name": "Go to tab 1", "context": "", "windows": { "type": "keys", "chord": "Ctrl+1" }, "mac": { "type": "keys", "chord": "Cmd+1" } },
+    { "name": "Go to tab 2", "context": "", "windows": { "type": "keys", "chord": "Ctrl+2" }, "mac": { "type": "keys", "chord": "Cmd+2" } },
+    { "name": "Go to tab 3", "context": "", "windows": { "type": "keys", "chord": "Ctrl+3" }, "mac": { "type": "keys", "chord": "Cmd+3" } },
+    { "name": "Go to tab 4", "context": "", "windows": { "type": "keys", "chord": "Ctrl+4" }, "mac": { "type": "keys", "chord": "Cmd+4" } },
+    { "name": "Go to tab 5", "context": "", "windows": { "type": "keys", "chord": "Ctrl+5" }, "mac": { "type": "keys", "chord": "Cmd+5" } },
+    { "name": "Go to tab 6", "context": "", "windows": { "type": "keys", "chord": "Ctrl+6" }, "mac": { "type": "keys", "chord": "Cmd+6" } },
+    { "name": "Go to tab 7", "context": "", "windows": { "type": "keys", "chord": "Ctrl+7" }, "mac": { "type": "keys", "chord": "Cmd+7" } },
+    { "name": "Go to tab 8", "context": "", "windows": { "type": "keys", "chord": "Ctrl+8" }, "mac": { "type": "keys", "chord": "Cmd+8" } },
+    { "name": "Go to last tab", "context": "", "windows": { "type": "keys", "chord": "Ctrl+9" }, "mac": { "type": "keys", "chord": "Cmd+9" } },
+    { "name": "Reopen recently closed tab", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Shift+T" }, "mac": { "type": "keys", "chord": "Cmd+Shift+T" } },
+    { "name": "Copy", "context": "", "windows": { "type": "keys", "chord": "Ctrl+C" }, "mac": { "type": "keys", "chord": "Cmd+C" } },
+    { "name": "Cut", "context": "", "windows": { "type": "keys", "chord": "Ctrl+X" }, "mac": { "type": "keys", "chord": "Cmd+X" } },
+    { "name": "Paste", "context": "", "windows": { "type": "keys", "chord": "Ctrl+V" }, "mac": { "type": "keys", "chord": "Cmd+V" } },
+    { "name": "Paste without formatting", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Shift+V" }, "mac": { "type": "keys", "chord": "Cmd+Shift+V" } },
+    { "name": "Undo", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Z" }, "mac": { "type": "keys", "chord": "Cmd+Z" } },
+    { "name": "Redo", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Shift+Z" }, "mac": { "type": "keys", "chord": "Cmd+Shift+Z" } },
+    { "name": "Copy paragraph (no selection)", "context": "", "windows": { "type": "keys", "chord": "Ctrl+C" }, "mac": { "type": "keys", "chord": "Cmd+C" } },
+    { "name": "Cut paragraph (no selection)", "context": "", "windows": { "type": "keys", "chord": "Ctrl+X" }, "mac": { "type": "keys", "chord": "Cmd+X" } },
+    { "name": "Bold text", "context": "", "mac": { "type": "keys", "chord": "Cmd+B" } },
+    { "name": "Italic text", "context": "", "mac": { "type": "keys", "chord": "Cmd+I" } },
+    { "name": "Delete the previous word", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Backspace" }, "mac": { "type": "keys", "chord": "Alt+Backspace" } },
+    { "name": "Delete the next word", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Delete" }, "mac": { "type": "keys", "chord": "Alt+Delete" } },
+    { "name": "Delete the current line (no selection)", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Shift+K" }, "mac": { "type": "keys", "chord": "Cmd+Shift+K" } },
+    { "name": "Delete to the beginning of the line", "context": "", "mac": { "type": "keys", "chord": "Cmd+Backspace" } },
+    { "name": "Delete to the end of the line", "context": "", "mac": { "type": "keys", "chord": "Cmd+Delete" } },
+    { "name": "Move cursor left", "context": "", "windows": { "type": "keys", "chord": "Left" }, "mac": { "type": "keys", "chord": "Left" } },
+    { "name": "Move cursor right", "context": "", "windows": { "type": "keys", "chord": "Right" }, "mac": { "type": "keys", "chord": "Right" } },
+    { "name": "Move to beginning of previous word", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Left" }, "mac": { "type": "keys", "chord": "Alt+Left" } },
+    { "name": "Move to end of next word", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Right" }, "mac": { "type": "keys", "chord": "Alt+Right" } },
+    { "name": "Move to beginning of line", "context": "", "windows": { "type": "keys", "chord": "Home" }, "mac": { "type": "keys", "chord": "Cmd+Left" } },
+    { "name": "Move to end of line", "context": "", "windows": { "type": "keys", "chord": "End" }, "mac": { "type": "keys", "chord": "Cmd+Right" } },
+    { "name": "Move to previous line", "context": "", "windows": { "type": "keys", "chord": "Up" }, "mac": { "type": "keys", "chord": "Up" } },
+    { "name": "Move to next line", "context": "", "windows": { "type": "keys", "chord": "Down" }, "mac": { "type": "keys", "chord": "Down" } },
+    { "name": "Move to beginning of note", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Home" }, "mac": { "type": "keys", "chord": "Cmd+Up" } },
+    { "name": "Move to end of note", "context": "", "windows": { "type": "keys", "chord": "Ctrl+End" }, "mac": { "type": "keys", "chord": "Cmd+Down" } },
+    { "name": "Move up one page", "context": "", "windows": { "type": "keys", "chord": "PageUp" } },
+    { "name": "Move down one page", "context": "", "windows": { "type": "keys", "chord": "PageDown" } },
+    { "name": "Simplify selection", "context": "", "windows": { "type": "keys", "chord": "Esc" }, "mac": { "type": "keys", "chord": "Esc" } },
+    { "name": "Select all", "context": "", "windows": { "type": "keys", "chord": "Ctrl+A" }, "mac": { "type": "keys", "chord": "Cmd+A" } },
+    { "name": "Extend selection left", "context": "", "windows": { "type": "keys", "chord": "Shift+Left" }, "mac": { "type": "keys", "chord": "Shift+Left" } },
+    { "name": "Extend selection right", "context": "", "windows": { "type": "keys", "chord": "Shift+Right" }, "mac": { "type": "keys", "chord": "Shift+Right" } },
+    { "name": "Extend selection to beginning of previous word", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Shift+Left" }, "mac": { "type": "keys", "chord": "Alt+Shift+Left" } },
+    { "name": "Extend selection to end of next word", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Shift+Right" }, "mac": { "type": "keys", "chord": "Alt+Shift+Right" } },
+    { "name": "Extend selection to beginning of line", "context": "", "windows": { "type": "keys", "chord": "Shift+Home" }, "mac": { "type": "keys", "chord": "Cmd+Shift+Left" } },
+    { "name": "Extend selection to end of line", "context": "", "windows": { "type": "keys", "chord": "Shift+End" }, "mac": { "type": "keys", "chord": "Cmd+Shift+Right" } },
+    { "name": "Extend selection to beginning of note", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Shift+Home" }, "mac": { "type": "keys", "chord": "Cmd+Shift+Up" } },
+    { "name": "Extend selection to end of note", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Shift+End" }, "mac": { "type": "keys", "chord": "Cmd+Shift+Down" } },
+    { "name": "Extend selection one page up", "context": "", "windows": { "type": "keys", "chord": "Shift+PageUp" }, "mac": { "type": "keys", "chord": "Ctrl+Shift+Up" } },
+    { "name": "Extend selection one page down", "context": "", "windows": { "type": "keys", "chord": "Shift+PageDown" }, "mac": { "type": "keys", "chord": "Ctrl+Shift+Down" } },
+    { "name": "Add new property", "context": "Properties", "windows": { "type": "keys", "chord": "Ctrl+;" }, "mac": { "type": "keys", "chord": "Cmd+;" } }
+  ],
+  "defaults": {
+    "TUNE_CW": {
+      "name": "Next tab",
+      "action": {
+        "type": "keys",
+        "chord": "Ctrl+Tab"
+      }
+    },
+    "TUNE_CCW": {
+      "name": "Previous tab",
+      "action": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Tab"
+      }
+    },
+    "TUNE_TAP_1F": {
+      "name": "Command palette",
+      "action": {
+        "type": "keys",
+        "chord": "Ctrl+P"
+      }
+    }
+  }
+}

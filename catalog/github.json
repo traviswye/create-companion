@@ -1,0 +1,787 @@
+{
+  "id": "github",
+  "name": "GitHub",
+  "kind": "site",
+  "category": "Development",
+  "match": {
+    "windows_exe": [
+      "chrome.exe",
+      "msedge.exe",
+      "firefox.exe",
+      "brave.exe",
+      "vivaldi.exe"
+    ],
+    "macos_bundle": [
+      "com.google.Chrome",
+      "com.microsoft.edgemac",
+      "org.mozilla.firefox",
+      "com.brave.Browser",
+      "com.apple.Safari"
+    ],
+    "window_title": [
+      "GitHub"
+    ]
+  },
+  "sources": [
+    "https://docs.github.com/en/get-started/accessibility/keyboard-shortcuts",
+    "https://docs.github.com/en/get-started/accessibility/github-command-palette"
+  ],
+  "note": "Extracted from GitHub Docs 'Keyboard shortcuts' (17 sections) and 'GitHub Command Palette' pages, 2026-09-04. Where a shortcut was documented with two interchangeable forms ('S or /', 'O or Enter', 'Shift+T or T', 'Shift+F or F', arrow keys or H/J/K/L in Network graph), only the first/primary form is listed. Two shortcuts written as a bare punctuation character not in the chord grammar ('>' to open github.dev/command mode in a new tab) are represented by their physical key equivalent 'Shift+.'. Skipped as not expressible by the chord grammar: mouse-only shortcuts (Alt/Shift/Ctrl+Shift + click, click-then-shift-click), the generic 'use arrow keys to highlight results' entries in the command palette, the '#', '!', '@', '?' single-character command-palette triggers (punctuation not in the allowed key set), and 'Ctrl+. then Ctrl+[saved reply number]' (the second chord has no fixed key). 'Toggle between Edit file and Preview changes tabs' in Source code editing is documented Mac-only (Cmd+Shift+P) with no Windows/Linux form given, so only mac is listed for that one action.",
+  "actions": [
+    {
+      "name": "Focus the search bar",
+      "context": "",
+      "windows": { "type": "keys", "chord": "S" },
+      "mac": { "type": "keys", "chord": "S" }
+    },
+    {
+      "name": "Go to your notifications",
+      "context": "",
+      "windows": { "type": "sequence", "chords": ["G", "N"] },
+      "mac": { "type": "sequence", "chords": ["G", "N"] }
+    },
+    {
+      "name": "Move focus from an element to its hovercard",
+      "context": "",
+      "windows": { "type": "keys", "chord": "Alt+Up" },
+      "mac": { "type": "keys", "chord": "Alt+Up" }
+    },
+    {
+      "name": "Close hovercard and refocus on the element",
+      "context": "",
+      "windows": { "type": "keys", "chord": "Esc" },
+      "mac": { "type": "keys", "chord": "Esc" }
+    },
+    {
+      "name": "Go to the Code tab",
+      "context": "Repositories",
+      "windows": { "type": "sequence", "chords": ["G", "C"] },
+      "mac": { "type": "sequence", "chords": ["G", "C"] }
+    },
+    {
+      "name": "Go to the Issues tab",
+      "context": "Repositories",
+      "windows": { "type": "sequence", "chords": ["G", "I"] },
+      "mac": { "type": "sequence", "chords": ["G", "I"] }
+    },
+    {
+      "name": "Go to the Pull requests tab",
+      "context": "Repositories",
+      "windows": { "type": "sequence", "chords": ["G", "P"] },
+      "mac": { "type": "sequence", "chords": ["G", "P"] }
+    },
+    {
+      "name": "Go to the Actions tab",
+      "context": "Repositories",
+      "windows": { "type": "sequence", "chords": ["G", "A"] },
+      "mac": { "type": "sequence", "chords": ["G", "A"] }
+    },
+    {
+      "name": "Go to the Wiki tab",
+      "context": "Repositories",
+      "windows": { "type": "sequence", "chords": ["G", "W"] },
+      "mac": { "type": "sequence", "chords": ["G", "W"] }
+    },
+    {
+      "name": "Go to the Discussions tab",
+      "context": "Repositories",
+      "windows": { "type": "sequence", "chords": ["G", "G"] },
+      "mac": { "type": "sequence", "chords": ["G", "G"] }
+    },
+    {
+      "name": "Go to the Security and quality tab",
+      "context": "Repositories",
+      "windows": { "type": "sequence", "chords": ["G", "S"] },
+      "mac": { "type": "sequence", "chords": ["G", "S"] }
+    },
+    {
+      "name": "Open repository or pull request in github.dev editor",
+      "context": "Source code editing",
+      "windows": { "type": "keys", "chord": "." },
+      "mac": { "type": "keys", "chord": "." }
+    },
+    {
+      "name": "Open repository or pull request in github.dev in new tab",
+      "context": "Source code editing",
+      "windows": { "type": "keys", "chord": "Shift+." },
+      "mac": { "type": "keys", "chord": "Shift+." }
+    },
+    {
+      "name": "Insert Markdown bold formatting",
+      "context": "Source code editing",
+      "windows": { "type": "keys", "chord": "Ctrl+B" },
+      "mac": { "type": "keys", "chord": "Cmd+B" }
+    },
+    {
+      "name": "Insert Markdown code formatting",
+      "context": "Source code editing",
+      "windows": { "type": "keys", "chord": "Ctrl+E" },
+      "mac": { "type": "keys", "chord": "Cmd+E" }
+    },
+    {
+      "name": "Insert Markdown italic formatting",
+      "context": "Source code editing",
+      "windows": { "type": "keys", "chord": "Ctrl+I" },
+      "mac": { "type": "keys", "chord": "Cmd+I" }
+    },
+    {
+      "name": "Insert Markdown link formatting",
+      "context": "Source code editing",
+      "windows": { "type": "keys", "chord": "Ctrl+K" },
+      "mac": { "type": "keys", "chord": "Cmd+K" }
+    },
+    {
+      "name": "Insert ordered list formatting",
+      "context": "Source code editing",
+      "windows": { "type": "keys", "chord": "Ctrl+Shift+7" },
+      "mac": { "type": "keys", "chord": "Cmd+Shift+7" }
+    },
+    {
+      "name": "Insert unordered list formatting",
+      "context": "Source code editing",
+      "windows": { "type": "keys", "chord": "Ctrl+Shift+8" },
+      "mac": { "type": "keys", "chord": "Cmd+Shift+8" }
+    },
+    {
+      "name": "Insert quote formatting",
+      "context": "Source code editing",
+      "windows": { "type": "keys", "chord": "Ctrl+Shift+." },
+      "mac": { "type": "keys", "chord": "Cmd+Shift+." }
+    },
+    {
+      "name": "Open source code file in Edit file tab",
+      "context": "Source code editing",
+      "windows": { "type": "keys", "chord": "E" },
+      "mac": { "type": "keys", "chord": "E" }
+    },
+    {
+      "name": "Start searching in file editor",
+      "context": "Source code editing",
+      "windows": { "type": "keys", "chord": "Ctrl+F" },
+      "mac": { "type": "keys", "chord": "Cmd+F" }
+    },
+    {
+      "name": "Find next",
+      "context": "Source code editing",
+      "windows": { "type": "keys", "chord": "Ctrl+G" },
+      "mac": { "type": "keys", "chord": "Cmd+G" }
+    },
+    {
+      "name": "Find previous",
+      "context": "Source code editing",
+      "windows": { "type": "keys", "chord": "Ctrl+Shift+G" },
+      "mac": { "type": "keys", "chord": "Cmd+Shift+G" }
+    },
+    {
+      "name": "Replace",
+      "context": "Source code editing",
+      "windows": { "type": "keys", "chord": "Ctrl+Shift+F" },
+      "mac": { "type": "keys", "chord": "Cmd+Alt+F" }
+    },
+    {
+      "name": "Replace all",
+      "context": "Source code editing",
+      "windows": { "type": "keys", "chord": "Ctrl+Shift+R" },
+      "mac": { "type": "keys", "chord": "Cmd+Shift+Alt+F" }
+    },
+    {
+      "name": "Jump to line",
+      "context": "Source code editing",
+      "windows": { "type": "keys", "chord": "Alt+G" },
+      "mac": { "type": "keys", "chord": "Alt+G" }
+    },
+    {
+      "name": "Undo",
+      "context": "Source code editing",
+      "windows": { "type": "keys", "chord": "Ctrl+Z" },
+      "mac": { "type": "keys", "chord": "Cmd+Z" }
+    },
+    {
+      "name": "Redo",
+      "context": "Source code editing",
+      "windows": { "type": "keys", "chord": "Ctrl+Y" },
+      "mac": { "type": "keys", "chord": "Cmd+Y" }
+    },
+    {
+      "name": "Toggle between Edit file and Preview changes tabs",
+      "context": "Source code editing",
+      "mac": { "type": "keys", "chord": "Cmd+Shift+P" }
+    },
+    {
+      "name": "Write a commit message",
+      "context": "Source code editing",
+      "windows": { "type": "keys", "chord": "Ctrl+S" },
+      "mac": { "type": "keys", "chord": "Cmd+S" }
+    },
+    {
+      "name": "Activate the file finder",
+      "context": "Source code browsing",
+      "windows": { "type": "keys", "chord": "T" },
+      "mac": { "type": "keys", "chord": "T" }
+    },
+    {
+      "name": "Jump to a line in your code",
+      "context": "Source code browsing",
+      "windows": { "type": "keys", "chord": "L" },
+      "mac": { "type": "keys", "chord": "L" }
+    },
+    {
+      "name": "Switch to a new branch or tag",
+      "context": "Source code browsing",
+      "windows": { "type": "keys", "chord": "W" },
+      "mac": { "type": "keys", "chord": "W" }
+    },
+    {
+      "name": "Expand a URL to its canonical form",
+      "context": "Source code browsing",
+      "windows": { "type": "keys", "chord": "Y" },
+      "mac": { "type": "keys", "chord": "Y" }
+    },
+    {
+      "name": "Show or hide comments on diffs",
+      "context": "Source code browsing",
+      "windows": { "type": "keys", "chord": "I" },
+      "mac": { "type": "keys", "chord": "I" }
+    },
+    {
+      "name": "Show or hide annotations on diffs",
+      "context": "Source code browsing",
+      "windows": { "type": "keys", "chord": "A" },
+      "mac": { "type": "keys", "chord": "A" }
+    },
+    {
+      "name": "Open blame view",
+      "context": "Source code browsing",
+      "windows": { "type": "keys", "chord": "B" },
+      "mac": { "type": "keys", "chord": "B" }
+    },
+    {
+      "name": "Highlight the currently selected line",
+      "context": "Navigating within code files",
+      "windows": { "type": "keys", "chord": "Shift+J" },
+      "mac": { "type": "keys", "chord": "Shift+J" }
+    },
+    {
+      "name": "Open the line menu",
+      "context": "Navigating within code files",
+      "windows": { "type": "keys", "chord": "Shift+Alt+C" },
+      "mac": { "type": "keys", "chord": "Shift+Alt+C" }
+    },
+    {
+      "name": "Highlight code symbol and all occurrences",
+      "context": "Navigating within code files",
+      "windows": { "type": "keys", "chord": "Ctrl+Enter" },
+      "mac": { "type": "keys", "chord": "Cmd+Enter" }
+    },
+    {
+      "name": "Insert Markdown bold formatting",
+      "context": "Comments",
+      "windows": { "type": "keys", "chord": "Ctrl+B" },
+      "mac": { "type": "keys", "chord": "Cmd+B" }
+    },
+    {
+      "name": "Insert Markdown italic formatting",
+      "context": "Comments",
+      "windows": { "type": "keys", "chord": "Ctrl+I" },
+      "mac": { "type": "keys", "chord": "Cmd+I" }
+    },
+    {
+      "name": "Insert Markdown code formatting",
+      "context": "Comments",
+      "windows": { "type": "keys", "chord": "Ctrl+E" },
+      "mac": { "type": "keys", "chord": "Cmd+E" }
+    },
+    {
+      "name": "Insert Markdown link formatting",
+      "context": "Comments",
+      "windows": { "type": "keys", "chord": "Ctrl+K" },
+      "mac": { "type": "keys", "chord": "Cmd+K" }
+    },
+    {
+      "name": "Create Markdown link from highlighted text",
+      "context": "Comments",
+      "windows": { "type": "keys", "chord": "Ctrl+V" },
+      "mac": { "type": "keys", "chord": "Cmd+V" }
+    },
+    {
+      "name": "Toggle Write and Preview tabs",
+      "context": "Comments",
+      "windows": { "type": "keys", "chord": "Ctrl+Shift+P" },
+      "mac": { "type": "keys", "chord": "Cmd+Shift+P" }
+    },
+    {
+      "name": "Paste HTML link as plain text",
+      "context": "Comments",
+      "windows": { "type": "keys", "chord": "Ctrl+Shift+V" },
+      "mac": { "type": "keys", "chord": "Cmd+Shift+V" }
+    },
+    {
+      "name": "Paste HTML link as plain text (alternate shortcut)",
+      "context": "Comments",
+      "windows": { "type": "keys", "chord": "Ctrl+Shift+Alt+V" },
+      "mac": { "type": "keys", "chord": "Cmd+Shift+Alt+V" }
+    },
+    {
+      "name": "Insert ordered list formatting",
+      "context": "Comments",
+      "windows": { "type": "keys", "chord": "Ctrl+Shift+7" },
+      "mac": { "type": "keys", "chord": "Cmd+Shift+7" }
+    },
+    {
+      "name": "Insert unordered list formatting",
+      "context": "Comments",
+      "windows": { "type": "keys", "chord": "Ctrl+Shift+8" },
+      "mac": { "type": "keys", "chord": "Cmd+Shift+8" }
+    },
+    {
+      "name": "Submit a comment",
+      "context": "Comments",
+      "windows": { "type": "keys", "chord": "Ctrl+Enter" },
+      "mac": { "type": "keys", "chord": "Cmd+Enter" }
+    },
+    {
+      "name": "Insert quote formatting",
+      "context": "Comments",
+      "windows": { "type": "keys", "chord": "Ctrl+Shift+." },
+      "mac": { "type": "keys", "chord": "Cmd+Shift+." }
+    },
+    {
+      "name": "Insert a suggestion",
+      "context": "Comments",
+      "windows": { "type": "keys", "chord": "Ctrl+G" },
+      "mac": { "type": "keys", "chord": "Cmd+G" }
+    },
+    {
+      "name": "Quote the selected text in your reply",
+      "context": "Comments",
+      "windows": { "type": "keys", "chord": "R" },
+      "mac": { "type": "keys", "chord": "R" }
+    },
+    {
+      "name": "Create an issue",
+      "context": "Issue and pull request lists",
+      "windows": { "type": "keys", "chord": "C" },
+      "mac": { "type": "keys", "chord": "C" }
+    },
+    {
+      "name": "Focus cursor on issues or pull requests search bar",
+      "context": "Issue and pull request lists",
+      "windows": { "type": "keys", "chord": "Ctrl+/" },
+      "mac": { "type": "keys", "chord": "Cmd+/" }
+    },
+    {
+      "name": "Filter by author",
+      "context": "Issue and pull request lists",
+      "windows": { "type": "keys", "chord": "U" },
+      "mac": { "type": "keys", "chord": "U" }
+    },
+    {
+      "name": "Filter by or edit labels",
+      "context": "Issue and pull request lists",
+      "windows": { "type": "keys", "chord": "L" },
+      "mac": { "type": "keys", "chord": "L" }
+    },
+    {
+      "name": "Filter by or edit milestones",
+      "context": "Issue and pull request lists",
+      "windows": { "type": "keys", "chord": "M" },
+      "mac": { "type": "keys", "chord": "M" }
+    },
+    {
+      "name": "Filter by or edit assignee",
+      "context": "Issue and pull request lists",
+      "windows": { "type": "keys", "chord": "A" },
+      "mac": { "type": "keys", "chord": "A" }
+    },
+    {
+      "name": "Open issue",
+      "context": "Issue and pull request lists",
+      "windows": { "type": "keys", "chord": "O" },
+      "mac": { "type": "keys", "chord": "O" }
+    },
+    {
+      "name": "Request a reviewer",
+      "context": "Issues and pull requests",
+      "windows": { "type": "keys", "chord": "Q" },
+      "mac": { "type": "keys", "chord": "Q" }
+    },
+    {
+      "name": "Set a milestone",
+      "context": "Issues and pull requests",
+      "windows": { "type": "keys", "chord": "M" },
+      "mac": { "type": "keys", "chord": "M" }
+    },
+    {
+      "name": "Apply a label",
+      "context": "Issues and pull requests",
+      "windows": { "type": "keys", "chord": "L" },
+      "mac": { "type": "keys", "chord": "L" }
+    },
+    {
+      "name": "Set an assignee",
+      "context": "Issues and pull requests",
+      "windows": { "type": "keys", "chord": "A" },
+      "mac": { "type": "keys", "chord": "A" }
+    },
+    {
+      "name": "Link an issue or pull request from the same repository",
+      "context": "Issues and pull requests",
+      "windows": { "type": "keys", "chord": "X" },
+      "mac": { "type": "keys", "chord": "X" }
+    },
+    {
+      "name": "Toggle Write and Preview tabs",
+      "context": "Issues and pull requests",
+      "windows": { "type": "keys", "chord": "Ctrl+Shift+P" },
+      "mac": { "type": "keys", "chord": "Cmd+Shift+P" }
+    },
+    {
+      "name": "Create a new sub-issue",
+      "context": "Issues and pull requests",
+      "windows": { "type": "keys", "chord": "Alt+Shift+C" },
+      "mac": { "type": "keys", "chord": "Alt+Shift+C" }
+    },
+    {
+      "name": "Add an existing issue as sub-issue",
+      "context": "Issues and pull requests",
+      "windows": { "type": "keys", "chord": "Alt+Shift+A" },
+      "mac": { "type": "keys", "chord": "Alt+Shift+A" }
+    },
+    {
+      "name": "Edit parent issue",
+      "context": "Issues and pull requests",
+      "windows": { "type": "keys", "chord": "Alt+Shift+P" },
+      "mac": { "type": "keys", "chord": "Alt+Shift+P" }
+    },
+    {
+      "name": "Open the Commits dropdown menu",
+      "context": "Files changed tab in pull requests",
+      "windows": { "type": "keys", "chord": "C" },
+      "mac": { "type": "keys", "chord": "C" }
+    },
+    {
+      "name": "Move cursor to filter changed files field",
+      "context": "Files changed tab in pull requests",
+      "windows": { "type": "keys", "chord": "T" },
+      "mac": { "type": "keys", "chord": "T" }
+    },
+    {
+      "name": "Submit a review comment",
+      "context": "Files changed tab in pull requests",
+      "windows": { "type": "keys", "chord": "Ctrl+Shift+Enter" },
+      "mac": { "type": "keys", "chord": "Cmd+Shift+Enter" }
+    },
+    {
+      "name": "Focus filter field",
+      "context": "Navigating a project",
+      "windows": { "type": "keys", "chord": "Ctrl+F" },
+      "mac": { "type": "keys", "chord": "Cmd+F" }
+    },
+    {
+      "name": "Move focus to the left",
+      "context": "Navigating a project",
+      "windows": { "type": "keys", "chord": "Left" },
+      "mac": { "type": "keys", "chord": "Left" }
+    },
+    {
+      "name": "Move focus to the right",
+      "context": "Navigating a project",
+      "windows": { "type": "keys", "chord": "Right" },
+      "mac": { "type": "keys", "chord": "Right" }
+    },
+    {
+      "name": "Move focus up",
+      "context": "Navigating a project",
+      "windows": { "type": "keys", "chord": "Up" },
+      "mac": { "type": "keys", "chord": "Up" }
+    },
+    {
+      "name": "Move focus down",
+      "context": "Navigating a project",
+      "windows": { "type": "keys", "chord": "Down" },
+      "mac": { "type": "keys", "chord": "Down" }
+    },
+    {
+      "name": "Toggle edit mode for the focused cell",
+      "context": "Manipulating a project",
+      "windows": { "type": "keys", "chord": "Enter" },
+      "mac": { "type": "keys", "chord": "Enter" }
+    },
+    {
+      "name": "Cancel editing for the focused cell",
+      "context": "Manipulating a project",
+      "windows": { "type": "keys", "chord": "Esc" },
+      "mac": { "type": "keys", "chord": "Esc" }
+    },
+    {
+      "name": "Open row actions menu",
+      "context": "Manipulating a project",
+      "windows": { "type": "keys", "chord": "Ctrl+Shift+\\" },
+      "mac": { "type": "keys", "chord": "Cmd+Shift+\\" }
+    },
+    {
+      "name": "Select item",
+      "context": "Manipulating a project",
+      "windows": { "type": "keys", "chord": "Shift+Space" },
+      "mac": { "type": "keys", "chord": "Shift+Space" }
+    },
+    {
+      "name": "Add cell or card below to selection",
+      "context": "Manipulating a project",
+      "windows": { "type": "keys", "chord": "Shift+Down" },
+      "mac": { "type": "keys", "chord": "Shift+Down" }
+    },
+    {
+      "name": "Add cell or card above to selection",
+      "context": "Manipulating a project",
+      "windows": { "type": "keys", "chord": "Shift+Up" },
+      "mac": { "type": "keys", "chord": "Shift+Up" }
+    },
+    {
+      "name": "Open selected item",
+      "context": "Manipulating a project",
+      "windows": { "type": "keys", "chord": "Space" },
+      "mac": { "type": "keys", "chord": "Space" }
+    },
+    {
+      "name": "Archive selected items",
+      "context": "Manipulating a project",
+      "windows": { "type": "keys", "chord": "E" },
+      "mac": { "type": "keys", "chord": "E" }
+    },
+    {
+      "name": "Start moving the selected card(s)",
+      "context": "Moving cards on the board layout",
+      "windows": { "type": "keys", "chord": "Enter" },
+      "mac": { "type": "keys", "chord": "Enter" }
+    },
+    {
+      "name": "Cancel the move in progress",
+      "context": "Moving cards on the board layout",
+      "windows": { "type": "keys", "chord": "Esc" },
+      "mac": { "type": "keys", "chord": "Esc" }
+    },
+    {
+      "name": "Complete the move in progress",
+      "context": "Moving cards on the board layout",
+      "windows": { "type": "keys", "chord": "Enter" },
+      "mac": { "type": "keys", "chord": "Enter" }
+    },
+    {
+      "name": "Move a single card down",
+      "context": "Moving cards on the board layout",
+      "windows": { "type": "keys", "chord": "Down" },
+      "mac": { "type": "keys", "chord": "Down" }
+    },
+    {
+      "name": "Move a single card to the bottom of the column",
+      "context": "Moving cards on the board layout",
+      "windows": { "type": "keys", "chord": "Ctrl+Down" },
+      "mac": { "type": "keys", "chord": "Cmd+Down" }
+    },
+    {
+      "name": "Move a single card up",
+      "context": "Moving cards on the board layout",
+      "windows": { "type": "keys", "chord": "Up" },
+      "mac": { "type": "keys", "chord": "Up" }
+    },
+    {
+      "name": "Move a single card to the top of the column",
+      "context": "Moving cards on the board layout",
+      "windows": { "type": "keys", "chord": "Ctrl+Up" },
+      "mac": { "type": "keys", "chord": "Cmd+Up" }
+    },
+    {
+      "name": "Move card(s) left",
+      "context": "Moving cards on the board layout",
+      "windows": { "type": "keys", "chord": "Left" },
+      "mac": { "type": "keys", "chord": "Left" }
+    },
+    {
+      "name": "Move card(s) to the leftmost column",
+      "context": "Moving cards on the board layout",
+      "windows": { "type": "keys", "chord": "Ctrl+Left" },
+      "mac": { "type": "keys", "chord": "Cmd+Left" }
+    },
+    {
+      "name": "Move card(s) right",
+      "context": "Moving cards on the board layout",
+      "windows": { "type": "keys", "chord": "Right" },
+      "mac": { "type": "keys", "chord": "Right" }
+    },
+    {
+      "name": "Move card(s) to the rightmost column",
+      "context": "Moving cards on the board layout",
+      "windows": { "type": "keys", "chord": "Ctrl+Right" },
+      "mac": { "type": "keys", "chord": "Cmd+Right" }
+    },
+    {
+      "name": "Get suggestions for your workflow file",
+      "context": "GitHub Actions",
+      "windows": { "type": "keys", "chord": "Ctrl+Space" },
+      "mac": { "type": "keys", "chord": "Cmd+Space" }
+    },
+    {
+      "name": "Go to the workflow file",
+      "context": "GitHub Actions",
+      "windows": { "type": "sequence", "chords": ["G", "F"] },
+      "mac": { "type": "sequence", "chords": ["G", "F"] }
+    },
+    {
+      "name": "Toggle timestamps in logs",
+      "context": "GitHub Actions",
+      "windows": { "type": "keys", "chord": "Shift+T" },
+      "mac": { "type": "keys", "chord": "Shift+T" }
+    },
+    {
+      "name": "Toggle full-screen logs",
+      "context": "GitHub Actions",
+      "windows": { "type": "keys", "chord": "Shift+F" },
+      "mac": { "type": "keys", "chord": "Shift+F" }
+    },
+    {
+      "name": "Exit full-screen logs",
+      "context": "GitHub Actions",
+      "windows": { "type": "keys", "chord": "Esc" },
+      "mac": { "type": "keys", "chord": "Esc" }
+    },
+    {
+      "name": "Mark as done",
+      "context": "Notifications",
+      "windows": { "type": "keys", "chord": "E" },
+      "mac": { "type": "keys", "chord": "E" }
+    },
+    {
+      "name": "Mark as unread",
+      "context": "Notifications",
+      "windows": { "type": "keys", "chord": "Shift+U" },
+      "mac": { "type": "keys", "chord": "Shift+U" }
+    },
+    {
+      "name": "Mark as read",
+      "context": "Notifications",
+      "windows": { "type": "keys", "chord": "Shift+I" },
+      "mac": { "type": "keys", "chord": "Shift+I" }
+    },
+    {
+      "name": "Unsubscribe",
+      "context": "Notifications",
+      "windows": { "type": "keys", "chord": "Shift+M" },
+      "mac": { "type": "keys", "chord": "Shift+M" }
+    },
+    {
+      "name": "Scroll left",
+      "context": "Network graph",
+      "windows": { "type": "keys", "chord": "Left" },
+      "mac": { "type": "keys", "chord": "Left" }
+    },
+    {
+      "name": "Scroll right",
+      "context": "Network graph",
+      "windows": { "type": "keys", "chord": "Right" },
+      "mac": { "type": "keys", "chord": "Right" }
+    },
+    {
+      "name": "Scroll up",
+      "context": "Network graph",
+      "windows": { "type": "keys", "chord": "Up" },
+      "mac": { "type": "keys", "chord": "Up" }
+    },
+    {
+      "name": "Scroll down",
+      "context": "Network graph",
+      "windows": { "type": "keys", "chord": "Down" },
+      "mac": { "type": "keys", "chord": "Down" }
+    },
+    {
+      "name": "Scroll all the way left",
+      "context": "Network graph",
+      "windows": { "type": "keys", "chord": "Shift+H" },
+      "mac": { "type": "keys", "chord": "Shift+Left" }
+    },
+    {
+      "name": "Scroll all the way right",
+      "context": "Network graph",
+      "windows": { "type": "keys", "chord": "Shift+L" },
+      "mac": { "type": "keys", "chord": "Shift+Right" }
+    },
+    {
+      "name": "Scroll all the way up",
+      "context": "Network graph",
+      "windows": { "type": "keys", "chord": "Shift+K" },
+      "mac": { "type": "keys", "chord": "Shift+Up" }
+    },
+    {
+      "name": "Scroll all the way down",
+      "context": "Network graph",
+      "windows": { "type": "keys", "chord": "Shift+J" },
+      "mac": { "type": "keys", "chord": "Shift+Down" }
+    },
+    {
+      "name": "Open the command palette",
+      "context": "Command palette",
+      "windows": { "type": "keys", "chord": "Ctrl+K" },
+      "mac": { "type": "keys", "chord": "Cmd+K" }
+    },
+    {
+      "name": "Open the command palette (Markdown editor)",
+      "context": "Command palette",
+      "windows": { "type": "keys", "chord": "Ctrl+Alt+K" },
+      "mac": { "type": "keys", "chord": "Cmd+Alt+K" }
+    },
+    {
+      "name": "Narrow scope to a repository",
+      "context": "Command palette",
+      "windows": { "type": "keys", "chord": "Tab" },
+      "mac": { "type": "keys", "chord": "Tab" }
+    },
+    {
+      "name": "Expand scope by removing the last item",
+      "context": "Command palette",
+      "windows": { "type": "keys", "chord": "Backspace" },
+      "mac": { "type": "keys", "chord": "Backspace" }
+    },
+    {
+      "name": "Clear scope and search text",
+      "context": "Command palette",
+      "windows": { "type": "keys", "chord": "Ctrl+Backspace" },
+      "mac": { "type": "keys", "chord": "Cmd+Delete" }
+    },
+    {
+      "name": "Navigate to the highlighted result",
+      "context": "Command palette",
+      "windows": { "type": "keys", "chord": "Enter" },
+      "mac": { "type": "keys", "chord": "Enter" }
+    },
+    {
+      "name": "Open the highlighted result in a new tab",
+      "context": "Command palette",
+      "windows": { "type": "keys", "chord": "Ctrl+Enter" },
+      "mac": { "type": "keys", "chord": "Cmd+Enter" }
+    },
+    {
+      "name": "Search files in the current repository",
+      "context": "Command palette",
+      "windows": { "type": "keys", "chord": "/" },
+      "mac": { "type": "keys", "chord": "/" }
+    },
+    {
+      "name": "Open the command palette in command mode",
+      "context": "Command palette",
+      "windows": { "type": "keys", "chord": "Ctrl+Shift+K" },
+      "mac": { "type": "keys", "chord": "Cmd+Shift+K" }
+    },
+    {
+      "name": "Close the command palette",
+      "context": "Command palette",
+      "windows": { "type": "keys", "chord": "Esc" },
+      "mac": { "type": "keys", "chord": "Esc" }
+    },
+    {
+      "name": "Copy result URL to clipboard",
+      "context": "Command palette",
+      "windows": { "type": "keys", "chord": "Ctrl+C" },
+      "mac": { "type": "keys", "chord": "Cmd+C" }
+    }
+  ]
+}

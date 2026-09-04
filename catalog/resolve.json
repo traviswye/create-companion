@@ -5,148 +5,21 @@
   "category": "Video",
   "match": {
     "windows_exe": [
-      "Resolve.exe"
+      "Resolve.exe",
+      "DaVinci Resolve.exe"
     ],
     "macos_bundle": [
-      "com.blackmagic-design.DaVinciResolve"
+      "com.blackmagic-design.DaVinciResolve",
+      "com.blackmagicdesign.resolve"
     ],
     "window_title": []
   },
-  "sources": [],
-  "note": "hand-authored 2026-09-04; expand from official documentation",
+  "sources": [
+    "https://documents.blackmagicdesign.com/UserManuals/DaVinci_Resolve_21_Reference_Manual.pdf",
+    "https://www.blackmagicdesign.com/support/family/davinci-resolve-and-fusion"
+  ],
+  "note": "DaVinci Resolve 21. Blackmagic publishes no single consolidated shortcut list: the Keyboard Customization window inside the application is the reference, and the Reference Manual documents that window rather than its contents. These entries are therefore transcribed from the manual's own shortcut tables - the \"Keyboard Shortcuts in This Chapter\" tables of chapters 42, 43, 45, 46 and 51, the Edit page panel-focus table in chapter 40, and the Photo page shortcut tables in chapters 26/29 - plus a few shortcuts the manual states in prose (Shift-Z, Command-Plus/Minus, Shift-Command-A, Option-Command-K). Coverage is therefore strongest on the Edit page; the Color, Fusion, Fairlight and Deliver pages have no documented shortcut table in the manual and are not represented. The manual writes every shortcut in macOS notation and gives the conversion rule itself (\"About Keyboard Shortcuts\"): Option becomes Alt and Command becomes Ctrl on Windows and Linux, and the macOS Control key is unused by default; the Windows column here is that conversion. The manual's macOS \"Delete\" is the backspace key and \"Forward Delete\" the delete key, written here as Backspace and Delete. Left out because the chord grammar cannot express them: rows that are a bare modifier (Shift, Command, Command-Shift as drag modifiers) and the Media Pool arrow-key row that covers all four arrows at once. The transport bindings kept in `defaults` (arrow-key frame stepping, Space) are Resolve's long-standing defaults but are not in these tables.",
   "actions": [
-    {
-      "name": "Next frame",
-      "context": "",
-      "windows": {
-        "type": "keys",
-        "chord": "Right"
-      },
-      "mac": {
-        "type": "keys",
-        "chord": "Right"
-      }
-    },
-    {
-      "name": "Previous frame",
-      "context": "",
-      "windows": {
-        "type": "keys",
-        "chord": "Left"
-      },
-      "mac": {
-        "type": "keys",
-        "chord": "Left"
-      }
-    },
-    {
-      "name": "Play / stop",
-      "context": "",
-      "windows": {
-        "type": "keys",
-        "chord": "Space"
-      },
-      "mac": {
-        "type": "keys",
-        "chord": "Space"
-      }
-    },
-    {
-      "name": "Back one second",
-      "context": "",
-      "windows": {
-        "type": "keys",
-        "chord": "Shift+Left"
-      },
-      "mac": {
-        "type": "keys",
-        "chord": "Shift+Left"
-      }
-    },
-    {
-      "name": "Forward one second",
-      "context": "",
-      "windows": {
-        "type": "keys",
-        "chord": "Shift+Right"
-      },
-      "mac": {
-        "type": "keys",
-        "chord": "Shift+Right"
-      }
-    },
-    {
-      "name": "Zoom in timeline",
-      "context": "",
-      "windows": {
-        "type": "keys",
-        "chord": "Ctrl+="
-      },
-      "mac": {
-        "type": "keys",
-        "chord": "Ctrl+="
-      }
-    },
-    {
-      "name": "Zoom out timeline",
-      "context": "",
-      "windows": {
-        "type": "keys",
-        "chord": "Ctrl+-"
-      },
-      "mac": {
-        "type": "keys",
-        "chord": "Ctrl+-"
-      }
-    },
-    {
-      "name": "Add marker",
-      "context": "",
-      "windows": {
-        "type": "keys",
-        "chord": "M"
-      },
-      "mac": {
-        "type": "keys",
-        "chord": "M"
-      }
-    },
-    {
-      "name": "Split clip",
-      "context": "",
-      "windows": {
-        "type": "keys",
-        "chord": "Ctrl+\\"
-      },
-      "mac": {
-        "type": "keys",
-        "chord": "Ctrl+\\"
-      }
-    },
-    {
-      "name": "Mark in",
-      "context": "",
-      "windows": {
-        "type": "keys",
-        "chord": "I"
-      },
-      "mac": {
-        "type": "keys",
-        "chord": "I"
-      }
-    },
-    {
-      "name": "Mark out",
-      "context": "",
-      "windows": {
-        "type": "keys",
-        "chord": "O"
-      },
-      "mac": {
-        "type": "keys",
-        "chord": "O"
-      }
-    },
     {
       "name": "Undo",
       "context": "",
@@ -156,7 +29,7 @@
       },
       "mac": {
         "type": "keys",
-        "chord": "Ctrl+Z"
+        "chord": "Cmd+Z"
       }
     },
     {
@@ -164,16 +37,352 @@
       "context": "",
       "windows": {
         "type": "keys",
-        "chord": "Ctrl+Shift+Z"
+        "chord": "Shift+Ctrl+Z"
       },
       "mac": {
         "type": "keys",
-        "chord": "Ctrl+Shift+Z"
+        "chord": "Shift+Cmd+Z"
       }
     },
     {
-      "name": "Next edit",
+      "name": "Keyboard Customization",
       "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Ctrl+K"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+K"
+      }
+    },
+    {
+      "name": "Media Folders",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+1"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+1"
+      }
+    },
+    {
+      "name": "Media Clips",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+2"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+2"
+      }
+    },
+    {
+      "name": "Source Viewer",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+3"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+3"
+      }
+    },
+    {
+      "name": "Timeline",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+4"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+4"
+      }
+    },
+    {
+      "name": "Timeline Viewer",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+5"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+5"
+      }
+    },
+    {
+      "name": "Effects",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+6"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+6"
+      }
+    },
+    {
+      "name": "Edit Index",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+7"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+7"
+      }
+    },
+    {
+      "name": "Inspector",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+9"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+9"
+      }
+    },
+    {
+      "name": "Toggle between Source and Timeline Viewers",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "Q"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Q"
+      }
+    },
+    {
+      "name": "Select all clips in the Media Pool browser area",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+A"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+A"
+      }
+    },
+    {
+      "name": "Open selected clip or timeline into the Source Viewer",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "Enter"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Enter"
+      }
+    },
+    {
+      "name": "Set In point",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "I"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "I"
+      }
+    },
+    {
+      "name": "Set Out point",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "O"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "O"
+      }
+    },
+    {
+      "name": "Set video-only In point",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+I"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+I"
+      }
+    },
+    {
+      "name": "Set video-only Out point",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+O"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+O"
+      }
+    },
+    {
+      "name": "Set audio-only In point",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Ctrl+I"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+I"
+      }
+    },
+    {
+      "name": "Set audio-only Out point",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Ctrl+O"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+O"
+      }
+    },
+    {
+      "name": "Move playhead to In point",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+I"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+I"
+      }
+    },
+    {
+      "name": "Move playhead to Out point",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+O"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+O"
+      }
+    },
+    {
+      "name": "Play and stop",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "Space"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Space"
+      }
+    },
+    {
+      "name": "Play reverse",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "J"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "J"
+      }
+    },
+    {
+      "name": "Stop",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "K"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "K"
+      }
+    },
+    {
+      "name": "Play forward",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "L"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "L"
+      }
+    },
+    {
+      "name": "Play again",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+L"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+L"
+      }
+    },
+    {
+      "name": "Stop and go to last position of the playhead",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+K"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+K"
+      }
+    },
+    {
+      "name": "Play around current selection",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "/"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "/"
+      }
+    },
+    {
+      "name": "Go to previous clip or edit",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "Up"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Up"
+      }
+    },
+    {
+      "name": "Go to next clip or edit",
+      "context": "Edit page",
       "windows": {
         "type": "keys",
         "chord": "Down"
@@ -184,8 +393,1628 @@
       }
     },
     {
-      "name": "Previous edit",
-      "context": "",
+      "name": "Add marker",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "M"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "M"
+      }
+    },
+    {
+      "name": "Add marker and open Modify Marker while pausing playback",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+M"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+M"
+      }
+    },
+    {
+      "name": "Modify marker",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+M"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+M"
+      }
+    },
+    {
+      "name": "Delete marker",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+M"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+M"
+      }
+    },
+    {
+      "name": "Go to previous marker",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Up"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Up"
+      }
+    },
+    {
+      "name": "Go to next marker",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Down"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Down"
+      }
+    },
+    {
+      "name": "Create subclip",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+B"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+B"
+      }
+    },
+    {
+      "name": "Select nearest edit to playhead",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "V"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "V"
+      }
+    },
+    {
+      "name": "Select clip intersecting playhead",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+V"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+V"
+      }
+    },
+    {
+      "name": "Select incoming, outgoing, or centered part of edit",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "U"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "U"
+      }
+    },
+    {
+      "name": "Toggle selection among video+audio, video only, and audio only",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+U"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+U"
+      }
+    },
+    {
+      "name": "Select nearest video edit point to the playhead",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+E"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+E"
+      }
+    },
+    {
+      "name": "Select nearest audio edit point to the playhead",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+E"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+E"
+      }
+    },
+    {
+      "name": "Deselect all edit points",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Ctrl+A"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+A"
+      }
+    },
+    {
+      "name": "Select clips forward on all tracks",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Y"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Y"
+      }
+    },
+    {
+      "name": "Select clips backward on all tracks",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Ctrl+Y"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+Y"
+      }
+    },
+    {
+      "name": "Select clips forward on current track",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "Y"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Y"
+      }
+    },
+    {
+      "name": "Select clips backward on current track",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Y"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Y"
+      }
+    },
+    {
+      "name": "Delete clip and leave gap (lift edit)",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "Backspace"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Backspace"
+      }
+    },
+    {
+      "name": "Ripple delete",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "Delete"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Delete"
+      }
+    },
+    {
+      "name": "Insert edit; adds a cut at the position of the playhead",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+\\"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+\\"
+      }
+    },
+    {
+      "name": "Toggle timeline snapping off and on",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "N"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "N"
+      }
+    },
+    {
+      "name": "Toggle linked selection off and on",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Ctrl+L"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+L"
+      }
+    },
+    {
+      "name": "Set video destination control to track 1",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+1"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+1"
+      }
+    },
+    {
+      "name": "Set video destination control to track 2",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+2"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+2"
+      }
+    },
+    {
+      "name": "Set video destination control to track 3",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+3"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+3"
+      }
+    },
+    {
+      "name": "Set video destination control to track 4",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+4"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+4"
+      }
+    },
+    {
+      "name": "Set video destination control to track 5",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+5"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+5"
+      }
+    },
+    {
+      "name": "Set video destination control to track 6",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+6"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+6"
+      }
+    },
+    {
+      "name": "Set video destination control to track 7",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+7"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+7"
+      }
+    },
+    {
+      "name": "Set video destination control to track 8",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+8"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+8"
+      }
+    },
+    {
+      "name": "Set audio destination control to track 1",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Ctrl+1"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+1"
+      }
+    },
+    {
+      "name": "Set audio destination control to track 2",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Ctrl+2"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+2"
+      }
+    },
+    {
+      "name": "Set audio destination control to track 3",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Ctrl+3"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+3"
+      }
+    },
+    {
+      "name": "Set audio destination control to track 4",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Ctrl+4"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+4"
+      }
+    },
+    {
+      "name": "Set audio destination control to track 5",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Ctrl+5"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+5"
+      }
+    },
+    {
+      "name": "Set audio destination control to track 6",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Ctrl+6"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+6"
+      }
+    },
+    {
+      "name": "Set audio destination control to track 7",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Ctrl+7"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+7"
+      }
+    },
+    {
+      "name": "Set audio destination control to track 8",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Ctrl+8"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+8"
+      }
+    },
+    {
+      "name": "Toggle lock for video track 1",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+1"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+1"
+      }
+    },
+    {
+      "name": "Toggle lock for video track 2",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+2"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+2"
+      }
+    },
+    {
+      "name": "Toggle lock for video track 3",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+3"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+3"
+      }
+    },
+    {
+      "name": "Toggle lock for video track 4",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+4"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+4"
+      }
+    },
+    {
+      "name": "Toggle lock for video track 5",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+5"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+5"
+      }
+    },
+    {
+      "name": "Toggle lock for video track 6",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+6"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+6"
+      }
+    },
+    {
+      "name": "Toggle lock for video track 7",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+7"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+7"
+      }
+    },
+    {
+      "name": "Toggle lock for video track 8",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+8"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+8"
+      }
+    },
+    {
+      "name": "Toggle lock for all video tracks",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+9"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+9"
+      }
+    },
+    {
+      "name": "Toggle lock for audio track 1",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+F1"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+F1"
+      }
+    },
+    {
+      "name": "Toggle lock for audio track 2",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+F2"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+F2"
+      }
+    },
+    {
+      "name": "Toggle lock for audio track 3",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+F3"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+F3"
+      }
+    },
+    {
+      "name": "Toggle lock for audio track 4",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+F4"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+F4"
+      }
+    },
+    {
+      "name": "Toggle lock for audio track 5",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+F5"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+F5"
+      }
+    },
+    {
+      "name": "Toggle lock for audio track 6",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+F6"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+F6"
+      }
+    },
+    {
+      "name": "Toggle lock for audio track 7",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+F7"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+F7"
+      }
+    },
+    {
+      "name": "Toggle lock for audio track 8",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+F8"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+F8"
+      }
+    },
+    {
+      "name": "Toggle lock for all audio tracks",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+F9"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+F9"
+      }
+    },
+    {
+      "name": "Insert Edit",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "F9"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "F9"
+      }
+    },
+    {
+      "name": "Overwrite Edit",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "F10"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "F10"
+      }
+    },
+    {
+      "name": "Replace Edit",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "F11"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "F11"
+      }
+    },
+    {
+      "name": "Place On Top Edit",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "F12"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "F12"
+      }
+    },
+    {
+      "name": "Ripple Overwrite",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+F10"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+F10"
+      }
+    },
+    {
+      "name": "Fit to Fill",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+F11"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+F11"
+      }
+    },
+    {
+      "name": "Append To End Edit",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+F12"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+F12"
+      }
+    },
+    {
+      "name": "Selection tool/mode",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "A"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "A"
+      }
+    },
+    {
+      "name": "Nudge selected edit or clip one frame left",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": ","
+      },
+      "mac": {
+        "type": "keys",
+        "chord": ","
+      }
+    },
+    {
+      "name": "Nudge selected edit or clip one frame right",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "."
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "."
+      }
+    },
+    {
+      "name": "Nudge selected edit or clip five frames left",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+,"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+,"
+      }
+    },
+    {
+      "name": "Nudge selected edit or clip five frames right",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+."
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+."
+      }
+    },
+    {
+      "name": "Trim Start to Playhead",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+["
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+["
+      }
+    },
+    {
+      "name": "Trim End to Playhead",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+]"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+]"
+      }
+    },
+    {
+      "name": "Extend edit to playhead",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "E"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "E"
+      }
+    },
+    {
+      "name": "Razor blade tool",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "B"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "B"
+      }
+    },
+    {
+      "name": "Change clip duration",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+D"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+D"
+      }
+    },
+    {
+      "name": "Disable/Enable selected clips",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "D"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "D"
+      }
+    },
+    {
+      "name": "Cut selected clips, leave gap",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+X"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+X"
+      }
+    },
+    {
+      "name": "Ripple cut selection",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Ctrl+X"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+X"
+      }
+    },
+    {
+      "name": "Copy selected clips",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+C"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+C"
+      }
+    },
+    {
+      "name": "Paste clips",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+V"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+V"
+      }
+    },
+    {
+      "name": "Paste insert clips",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Ctrl+V"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+V"
+      }
+    },
+    {
+      "name": "Delete In point",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+I"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+I"
+      }
+    },
+    {
+      "name": "Delete Out point",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+O"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+O"
+      }
+    },
+    {
+      "name": "Set In and Out points to match the current clip selection in the Timeline",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+A"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+A"
+      }
+    },
+    {
+      "name": "Set In and Out points to fit the current clip at the playhead",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "X"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "X"
+      }
+    },
+    {
+      "name": "Delete both In and Out points",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+X"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+X"
+      }
+    },
+    {
+      "name": "Move video destination control up a track",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Ctrl+Up"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+Up"
+      }
+    },
+    {
+      "name": "Move video destination control down a track",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Ctrl+Down"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+Down"
+      }
+    },
+    {
+      "name": "Move audio destination control up a track",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Ctrl+Up"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+Up"
+      }
+    },
+    {
+      "name": "Move audio destination control down a track",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Ctrl+Down"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+Down"
+      }
+    },
+    {
+      "name": "Toggle video auto-select for track 1",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+F1"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+F1"
+      }
+    },
+    {
+      "name": "Toggle video auto-select for track 2",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+F2"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+F2"
+      }
+    },
+    {
+      "name": "Toggle video auto-select for track 3",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+F3"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+F3"
+      }
+    },
+    {
+      "name": "Toggle video auto-select for track 4",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+F4"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+F4"
+      }
+    },
+    {
+      "name": "Toggle video auto-select for track 5",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+F5"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+F5"
+      }
+    },
+    {
+      "name": "Toggle video auto-select for track 6",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+F6"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+F6"
+      }
+    },
+    {
+      "name": "Toggle video auto-select for track 7",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+F7"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+F7"
+      }
+    },
+    {
+      "name": "Toggle video auto-select for track 8",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+F8"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+F8"
+      }
+    },
+    {
+      "name": "Toggle all video auto-select controls off or on",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+F9"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+F9"
+      }
+    },
+    {
+      "name": "Toggle audio auto-select for track 1",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Ctrl+F1"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+F1"
+      }
+    },
+    {
+      "name": "Toggle audio auto-select for track 2",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Ctrl+F2"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+F2"
+      }
+    },
+    {
+      "name": "Toggle audio auto-select for track 3",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Ctrl+F3"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+F3"
+      }
+    },
+    {
+      "name": "Toggle audio auto-select for track 4",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Ctrl+F4"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+F4"
+      }
+    },
+    {
+      "name": "Toggle audio auto-select for track 5",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Ctrl+F5"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+F5"
+      }
+    },
+    {
+      "name": "Toggle audio auto-select for track 6",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Ctrl+F6"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+F6"
+      }
+    },
+    {
+      "name": "Toggle audio auto-select for track 7",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Ctrl+F7"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+F7"
+      }
+    },
+    {
+      "name": "Toggle audio auto-select for track 8",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Ctrl+F8"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+F8"
+      }
+    },
+    {
+      "name": "Toggle all audio auto-select controls off or on",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Ctrl+F9"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+F9"
+      }
+    },
+    {
+      "name": "Toggle Switch to Timeline After Edit",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+Q"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+Q"
+      }
+    },
+    {
+      "name": "Trim mode",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "T"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "T"
+      }
+    },
+    {
+      "name": "Fast trim forward at 100% speed",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+L"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+L"
+      }
+    },
+    {
+      "name": "Fast trim reverse at 100% speed",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+J"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+J"
+      }
+    },
+    {
+      "name": "Dynamic trim or resize mode",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "W"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "W"
+      }
+    },
+    {
+      "name": "Toggle between Slip and Slide mode",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "S"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "S"
+      }
+    },
+    {
+      "name": "Toggle looped playback off and on",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+/"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+/"
+      }
+    },
+    {
+      "name": "Ripple Trim Start",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Ctrl+["
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+["
+      }
+    },
+    {
+      "name": "Ripple Trim End",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Ctrl+]"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+]"
+      }
+    },
+    {
+      "name": "Zoom in to the Timeline",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Plus"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Plus"
+      }
+    },
+    {
+      "name": "Zoom out of the Timeline",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Minus"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Minus"
+      }
+    },
+    {
+      "name": "Frame every clip into the width of the Timeline",
+      "context": "Edit page",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Z"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Z"
+      }
+    },
+    {
+      "name": "Image Capture",
+      "context": "Photo page",
+      "windows": {
+        "type": "keys",
+        "chord": "C"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "C"
+      }
+    },
+    {
+      "name": "Assign 1 star rating",
+      "context": "Photo page",
+      "windows": {
+        "type": "keys",
+        "chord": "1"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "1"
+      }
+    },
+    {
+      "name": "Assign 2 star rating",
+      "context": "Photo page",
+      "windows": {
+        "type": "keys",
+        "chord": "2"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "2"
+      }
+    },
+    {
+      "name": "Assign 3 star rating",
+      "context": "Photo page",
+      "windows": {
+        "type": "keys",
+        "chord": "3"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "3"
+      }
+    },
+    {
+      "name": "Assign 4 star rating",
+      "context": "Photo page",
+      "windows": {
+        "type": "keys",
+        "chord": "4"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "4"
+      }
+    },
+    {
+      "name": "Assign 5 star rating",
+      "context": "Photo page",
+      "windows": {
+        "type": "keys",
+        "chord": "5"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "5"
+      }
+    },
+    {
+      "name": "Remove all stars",
+      "context": "Photo page",
+      "windows": {
+        "type": "keys",
+        "chord": "0"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "0"
+      }
+    },
+    {
+      "name": "Tag clip as Good Take",
+      "context": "Photo page",
+      "windows": {
+        "type": "keys",
+        "chord": "S"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "S"
+      }
+    },
+    {
+      "name": "Tag clip as Rejected Take",
+      "context": "Photo page",
+      "windows": {
+        "type": "keys",
+        "chord": "X"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "X"
+      }
+    },
+    {
+      "name": "Rotate Left",
+      "context": "Photo page",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+["
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+["
+      }
+    },
+    {
+      "name": "Rotate Right",
+      "context": "Photo page",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+]"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+]"
+      }
+    },
+    {
+      "name": "Flip Horizontal",
+      "context": "Photo page",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+["
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+["
+      }
+    },
+    {
+      "name": "Flip Vertical",
+      "context": "Photo page",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+]"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+]"
+      }
+    },
+    {
+      "name": "Reset Photo",
+      "context": "Photo page",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+R"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+R"
+      }
+    },
+    {
+      "name": "Remove All Photo Effects",
+      "context": "Photo page",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+R"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+R"
+      }
+    },
+    {
+      "name": "Remove and Reset All",
+      "context": "Photo page",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Ctrl+R"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+R"
+      }
+    },
+    {
+      "name": "Select Next Photo",
+      "context": "Photo page",
       "windows": {
         "type": "keys",
         "chord": "Up"
@@ -193,6 +2022,42 @@
       "mac": {
         "type": "keys",
         "chord": "Up"
+      }
+    },
+    {
+      "name": "Select Previous Photo",
+      "context": "Photo page",
+      "windows": {
+        "type": "keys",
+        "chord": "Down"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Down"
+      }
+    },
+    {
+      "name": "Select all photos in an album",
+      "context": "Photo page",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+A"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+A"
+      }
+    },
+    {
+      "name": "Open the Effects Search dialog",
+      "context": "Photo page",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Space"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Space"
       }
     }
   ],

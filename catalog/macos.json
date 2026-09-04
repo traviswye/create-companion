@@ -1,0 +1,956 @@
+{
+  "id": "macos",
+  "name": "macOS",
+  "kind": "system",
+  "category": "System",
+  "os": [
+    "macos"
+  ],
+  "sources": [
+    "https://support.apple.com/en-us/102650",
+    "https://support.apple.com/en-us/102646"
+  ],
+  "note": "Apple writes Command as Cmd, Option as Alt and Control as Ctrl here. The Mac Delete key (backwards delete) is written Backspace, which is the key the chord grammar names. Finder-window shortcuts live in catalog/finder.json. Left out because the chord grammar cannot express them: every Fn shortcut (Fn-A, Fn-C, Fn-D, Fn-E, Fn-H, Fn-N, Fn-Q, Fn-Fn, Fn-Shift-A, Fn-F11, Fn-Delete, Fn with the arrow keys), every Power button and Touch ID combination, the hardware-key combinations (Brightness, Volume, Keyboard Brightness, Mission Control), Command+Command (press twice), Control-Shift held for Dock magnification (modifier-only), the open-ended \"Arrow keys\" and \"Control-Arrow keys\" rows, and every click/double-click/drag shortcut.",
+  "actions": [
+    {
+      "name": "Cut the selected item and copy it to the Clipboard",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+X"
+      }
+    },
+    {
+      "name": "Copy the selected item to the Clipboard",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+C"
+      }
+    },
+    {
+      "name": "Paste the contents of the Clipboard into the current document or app",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+V"
+      }
+    },
+    {
+      "name": "Undo the previous command",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Z"
+      }
+    },
+    {
+      "name": "Redo",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+Z"
+      }
+    },
+    {
+      "name": "Select All items",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+A"
+      }
+    },
+    {
+      "name": "Find items in a document or open a Find window",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+F"
+      }
+    },
+    {
+      "name": "Find Again: find the next occurrence of the item previously found",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+G"
+      }
+    },
+    {
+      "name": "Find the previous occurrence",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+G"
+      }
+    },
+    {
+      "name": "Hide the windows of the front app",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+H"
+      }
+    },
+    {
+      "name": "View the front app but hide all other apps",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+H"
+      }
+    },
+    {
+      "name": "Minimize the front window to the Dock",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+M"
+      }
+    },
+    {
+      "name": "Minimize all windows of the front app",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+M"
+      }
+    },
+    {
+      "name": "Open the selected item, or open a dialog to select a file to open",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+O"
+      }
+    },
+    {
+      "name": "Open a print dialog so that you can print the current document",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+P"
+      }
+    },
+    {
+      "name": "Quit the current app",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Q"
+      }
+    },
+    {
+      "name": "Save the current document",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+S"
+      }
+    },
+    {
+      "name": "Open a new tab",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+T"
+      }
+    },
+    {
+      "name": "Close the front window",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+W"
+      }
+    },
+    {
+      "name": "Close all windows of the app",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+W"
+      }
+    },
+    {
+      "name": "Force quit an app",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+Esc"
+      }
+    },
+    {
+      "name": "Show or hide the Spotlight search field",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Space"
+      }
+    },
+    {
+      "name": "Show the Character Viewer, from which you can choose emoji and other symbols",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Cmd+Space"
+      }
+    },
+    {
+      "name": "Use or stop using the app in full screen, if supported by the app",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Cmd+F"
+      }
+    },
+    {
+      "name": "Use Quick Look to preview the selected item",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Space"
+      }
+    },
+    {
+      "name": "Switch to the next most recently used app among your open apps",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Tab"
+      }
+    },
+    {
+      "name": "Switch between the windows of the app you're using",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+`"
+      }
+    },
+    {
+      "name": "Open settings (preferences) for the front app",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+,"
+      }
+    },
+    {
+      "name": "Capture the entire screen",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+3"
+      }
+    },
+    {
+      "name": "Capture a portion of the screen",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+4"
+      }
+    },
+    {
+      "name": "Capture a window or menu",
+      "context": "",
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Shift+Cmd+4",
+          "Space"
+        ]
+      }
+    },
+    {
+      "name": "Open the Screenshot app",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+5"
+      }
+    },
+    {
+      "name": "Save a screenshot to the Clipboard instead of desktop",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Cmd+3"
+      }
+    },
+    {
+      "name": "Lock your screen",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Cmd+Q"
+      }
+    },
+    {
+      "name": "Log out of your macOS user account",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+Q"
+      }
+    },
+    {
+      "name": "Log out immediately without confirming",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+Cmd+Q"
+      }
+    },
+    {
+      "name": "Show or hide the Dock",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+D"
+      }
+    },
+    {
+      "name": "Open Mission Control",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Up"
+      }
+    },
+    {
+      "name": "Show all windows of the front app",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Down"
+      }
+    },
+    {
+      "name": "Select the previous or next input source",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Space"
+      }
+    },
+    {
+      "name": "Select the previous or next input source (Ctrl+Alt+Space)",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Space"
+      }
+    },
+    {
+      "name": "Boldface the selected text, or turn boldfacing on or off",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+B"
+      }
+    },
+    {
+      "name": "Italicize the selected text, or turn italics on or off",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+I"
+      }
+    },
+    {
+      "name": "Add a web link",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+K"
+      }
+    },
+    {
+      "name": "Underline the selected text, or turn underlining on or off",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+U"
+      }
+    },
+    {
+      "name": "Show or hide the Fonts window",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+T"
+      }
+    },
+    {
+      "name": "Select the Desktop folder",
+      "context": "Open or Save dialog",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+D"
+      }
+    },
+    {
+      "name": "Show or hide the definition of the selected word",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Cmd+D"
+      }
+    },
+    {
+      "name": "Show the Spelling and Grammar window",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+;"
+      }
+    },
+    {
+      "name": "Find misspelled words in the document",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+;"
+      }
+    },
+    {
+      "name": "Delete the word to the left of the insertion point",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Backspace"
+      }
+    },
+    {
+      "name": "Delete the character to the left of the insertion point",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+H"
+      }
+    },
+    {
+      "name": "Delete the character to the right of the insertion point",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+D"
+      }
+    },
+    {
+      "name": "Cut the selected text, or the text between the insertion point and the end of the paragraph",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+K"
+      }
+    },
+    {
+      "name": "Move the insertion point to the beginning of the document",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Up"
+      }
+    },
+    {
+      "name": "Move the insertion point to the end of the document",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Down"
+      }
+    },
+    {
+      "name": "Move the insertion point to the beginning of the current line",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Left"
+      }
+    },
+    {
+      "name": "Move the insertion point to the end of the current line",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Right"
+      }
+    },
+    {
+      "name": "Move the insertion point to the beginning of the previous word",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Left"
+      }
+    },
+    {
+      "name": "Move the insertion point to the end of the next word",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Right"
+      }
+    },
+    {
+      "name": "Select the text between the insertion point and the beginning of the document",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+Up"
+      }
+    },
+    {
+      "name": "Select the text between the insertion point and the end of the document",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+Down"
+      }
+    },
+    {
+      "name": "Select the text between the insertion point and the beginning of the current line",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+Left"
+      }
+    },
+    {
+      "name": "Select the text between the insertion point and the end of the current line",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+Right"
+      }
+    },
+    {
+      "name": "Extend text selection to the nearest character at the same horizontal location on the line above",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Up"
+      }
+    },
+    {
+      "name": "Extend text selection to the nearest character at the same horizontal location on the line below",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Down"
+      }
+    },
+    {
+      "name": "Extend text selection one character to the left",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Left"
+      }
+    },
+    {
+      "name": "Extend text selection one character to the right",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Right"
+      }
+    },
+    {
+      "name": "Extend text selection to the beginning of the current paragraph, then to the beginning of the following paragraph if pressed again",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+Up"
+      }
+    },
+    {
+      "name": "Extend text selection to the end of the current paragraph, then to the end of the following paragraph if pressed again",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+Down"
+      }
+    },
+    {
+      "name": "Extend text selection to the beginning of the current word, then to the beginning of the following word if pressed again",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+Left"
+      }
+    },
+    {
+      "name": "Extend text selection to the end of the current word, then to the end of the following word if pressed again",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+Right"
+      }
+    },
+    {
+      "name": "Move to the beginning of the line or paragraph",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+A"
+      }
+    },
+    {
+      "name": "Move to the end of a line or paragraph",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+E"
+      }
+    },
+    {
+      "name": "Move one character forward",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+F"
+      }
+    },
+    {
+      "name": "Move one character backward",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+B"
+      }
+    },
+    {
+      "name": "Center the cursor or selection in the visible area",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+L"
+      }
+    },
+    {
+      "name": "Move up one line",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+P"
+      }
+    },
+    {
+      "name": "Move down one line",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+N"
+      }
+    },
+    {
+      "name": "Insert a new line after the insertion point",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+O"
+      }
+    },
+    {
+      "name": "Swap the character behind the insertion point with the character in front of the insertion point",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+T"
+      }
+    },
+    {
+      "name": "Left align",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+["
+      }
+    },
+    {
+      "name": "Right align",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+]"
+      }
+    },
+    {
+      "name": "Center align",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+\\"
+      }
+    },
+    {
+      "name": "Go to the search field",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+F"
+      }
+    },
+    {
+      "name": "Show or hide a toolbar in the app",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+T"
+      }
+    },
+    {
+      "name": "Copy Style: copy the formatting settings of the selected item to the Clipboard",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+C"
+      }
+    },
+    {
+      "name": "Paste Style: apply the copied style to the selected item",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+V"
+      }
+    },
+    {
+      "name": "Paste and Match Style: apply the style of the surrounding content to the item pasted within that content",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+Cmd+V"
+      }
+    },
+    {
+      "name": "Show or hide the inspector window",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+I"
+      }
+    },
+    {
+      "name": "Page setup: show a window for selecting document settings",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+P"
+      }
+    },
+    {
+      "name": "Show the Save As dialog, or duplicate the current document",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+S"
+      }
+    },
+    {
+      "name": "Decrease the size of the selected item",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+-"
+      }
+    },
+    {
+      "name": "Increase the size of the selected item",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+Plus"
+      }
+    },
+    {
+      "name": "Increase the size of the selected item (Cmd+=)",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+="
+      }
+    },
+    {
+      "name": "Open the Help menu",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+/"
+      }
+    },
+    {
+      "name": "Invert colors",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Cmd+8"
+      }
+    },
+    {
+      "name": "Reduce contrast",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Cmd+,"
+      }
+    },
+    {
+      "name": "Increase contrast",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Cmd+."
+      }
+    },
+    {
+      "name": "Move focus to the menu bar",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+F2"
+      }
+    },
+    {
+      "name": "Move focus to the Dock",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+F3"
+      }
+    },
+    {
+      "name": "Move focus to the active window or next window",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+F4"
+      }
+    },
+    {
+      "name": "Move focus to the window toolbar",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+F5"
+      }
+    },
+    {
+      "name": "Move focus to the floating window",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+F6"
+      }
+    },
+    {
+      "name": "Move focus to the previous panel",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+F6"
+      }
+    },
+    {
+      "name": "Change Tab navigation behavior",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+F7"
+      }
+    },
+    {
+      "name": "Move focus to the status menu in the menu bar",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+F8"
+      }
+    },
+    {
+      "name": "Activate the previous open window in the front app",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+`"
+      }
+    },
+    {
+      "name": "Move focus to the window drawer",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+`"
+      }
+    },
+    {
+      "name": "Move to next control",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Tab"
+      }
+    },
+    {
+      "name": "Move to previous control",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Tab"
+      }
+    },
+    {
+      "name": "Move to next control when a text field is selected",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Tab"
+      }
+    },
+    {
+      "name": "Move to previous grouping of controls",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Tab"
+      }
+    },
+    {
+      "name": "Show the Accessibility Shortcuts panel",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+F5"
+      }
+    }
+  ],
+  "defaults": {
+    "TUNE_CW": {
+      "name": "Volume up",
+      "action": {
+        "type": "media",
+        "key": "volume_up"
+      },
+      "accel": "light"
+    },
+    "TUNE_CCW": {
+      "name": "Volume down",
+      "action": {
+        "type": "media",
+        "key": "volume_down"
+      },
+      "accel": "light"
+    },
+    "TUNE_TAP_1F": {
+      "name": "Mute",
+      "action": {
+        "type": "media",
+        "key": "mute"
+      }
+    }
+  }
+}

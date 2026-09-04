@@ -1,0 +1,110 @@
+{
+  "id": "twitch",
+  "name": "Twitch",
+  "kind": "site",
+  "category": "Video",
+  "match": {
+    "windows_exe": [
+      "chrome.exe",
+      "msedge.exe",
+      "firefox.exe",
+      "brave.exe",
+      "vivaldi.exe"
+    ],
+    "macos_bundle": [
+      "com.google.Chrome",
+      "com.microsoft.edgemac",
+      "org.mozilla.firefox",
+      "com.brave.Browser",
+      "com.apple.Safari"
+    ],
+    "window_title": [
+      "Twitch"
+    ]
+  },
+  "sources": [
+    "https://help.twitch.tv/s/article/chat-basics",
+    "https://www.twitch.tv/"
+  ],
+  "note": "Twitch's Help Center has no dedicated article documenting video-player keyboard shortcuts (searched help.twitch.tv for 'keyboard shortcuts', 'hotkeys', and 'video player controls'; none exists as of 2026-09-04). The player-control shortcuts below (Play/Pause, Mute, Captions, Theatre Mode, Fullscreen, skip-to-content) were instead taken directly from the accessibility tooltips (aria-label/title text) built into twitch.tv's own player and site chrome, which is the only place Twitch documents them. Shortcuts widely repeated by third-party sites (J/L or Left/Right arrow seek by 5-10 s, comma/period frame-step, Up/Down arrow volume) could not be confirmed against any official Twitch source or the live player's own tooltips and were left out per the no-invention rule. Also skipped: 'Hold Alt to pause chat' (a hold-state tied to an opt-in Chat Settings toggle, not a discrete keypress the chord grammar can express) and plain Up/Down arrow navigation of the @mention autocomplete suggestion list (generic textbox autocomplete behavior, not a distinct product shortcut). Chat reply shortcuts are current as of the Chat Basics article's last revision (9 Jul 2026).",
+  "actions": [
+    {
+      "name": "Play / pause",
+      "context": "",
+      "windows": { "type": "keys", "chord": "K" },
+      "mac": { "type": "keys", "chord": "K" }
+    },
+    {
+      "name": "Mute",
+      "context": "",
+      "windows": { "type": "keys", "chord": "M" },
+      "mac": { "type": "keys", "chord": "M" }
+    },
+    {
+      "name": "Captions",
+      "context": "",
+      "windows": { "type": "keys", "chord": "C" },
+      "mac": { "type": "keys", "chord": "C" }
+    },
+    {
+      "name": "Theatre Mode",
+      "context": "",
+      "windows": { "type": "keys", "chord": "Alt+T" },
+      "mac": { "type": "keys", "chord": "Alt+T" }
+    },
+    {
+      "name": "Fullscreen",
+      "context": "",
+      "windows": { "type": "keys", "chord": "F" },
+      "mac": { "type": "keys", "chord": "F" }
+    },
+    {
+      "name": "Menu for skipping to content",
+      "context": "",
+      "windows": { "type": "keys", "chord": "Alt+P" },
+      "mac": { "type": "keys", "chord": "Alt+P" }
+    },
+    {
+      "name": "Send message",
+      "context": "Chat",
+      "windows": { "type": "keys", "chord": "Enter" },
+      "mac": { "type": "keys", "chord": "Enter" }
+    },
+    {
+      "name": "Start reply to selected user",
+      "context": "Chat",
+      "windows": { "type": "keys", "chord": "Alt+Enter" },
+      "mac": { "type": "keys", "chord": "Alt+Enter" }
+    },
+    {
+      "name": "Previous message in reply history",
+      "context": "Chat",
+      "windows": { "type": "keys", "chord": "Alt+Up" },
+      "mac": { "type": "keys", "chord": "Alt+Up" }
+    },
+    {
+      "name": "Next message in reply history",
+      "context": "Chat",
+      "windows": { "type": "keys", "chord": "Alt+Down" },
+      "mac": { "type": "keys", "chord": "Alt+Down" }
+    }
+  ],
+  "defaults": {
+    "TUNE_TAP_1F": {
+      "name": "Play / pause",
+      "action": { "type": "keys", "chord": "K" }
+    },
+    "TUNE_SWIPE_UP": {
+      "name": "Fullscreen",
+      "action": { "type": "keys", "chord": "F" }
+    },
+    "TUNE_SWIPE_DOWN": {
+      "name": "Mute",
+      "action": { "type": "keys", "chord": "M" }
+    },
+    "TUNE_SWIPE_LEFT": {
+      "name": "Theatre Mode",
+      "action": { "type": "keys", "chord": "Alt+T" }
+    }
+  }
+}

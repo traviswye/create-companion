@@ -1,0 +1,1045 @@
+{
+  "id": "chrome",
+  "name": "Google Chrome",
+  "kind": "app",
+  "category": "Browser",
+  "match": {
+    "windows_exe": [
+      "chrome.exe"
+    ],
+    "macos_bundle": [
+      "com.google.Chrome"
+    ],
+    "window_title": []
+  },
+  "sources": [
+    "https://support.google.com/chrome/answer/157179"
+  ],
+  "note": "From Google's \"Chrome keyboard shortcuts\" support page (Windows/Linux and Mac tabs). Where the vendor lists multiple alternate chords for one action (e.g. \"Ctrl+W or Ctrl+F4\"), only the primary chord is recorded, since one action carries one chord per platform. \"Ctrl+1 through Ctrl+8\" is expanded into 8 explicit tab-jump actions. Skipped as not expressible: all Mouse-shortcut entries (drag-and-drop, click/right-click combinations, mouse-wheel zoom/scroll) and the Fn-key-dependent Mac full-screen shortcut (Fn+F).",
+  "actions": [
+    {
+      "name": "Open a new window",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+N"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+N"
+      }
+    },
+    {
+      "name": "Open a new window in Incognito mode",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+N"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+N"
+      }
+    },
+    {
+      "name": "Open a new tab, and jump to it",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+T"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+T"
+      }
+    },
+    {
+      "name": "Reopen previously closed tabs in the order they were closed",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+T"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+T"
+      }
+    },
+    {
+      "name": "Jump to the next open tab",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Tab"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+Right"
+      }
+    },
+    {
+      "name": "Jump to the previous open tab",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Tab"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+Left"
+      }
+    },
+    {
+      "name": "Jump to tab 1",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+1"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+1"
+      }
+    },
+    {
+      "name": "Jump to tab 2",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+2"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+2"
+      }
+    },
+    {
+      "name": "Jump to tab 3",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+3"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+3"
+      }
+    },
+    {
+      "name": "Jump to tab 4",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+4"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+4"
+      }
+    },
+    {
+      "name": "Jump to tab 5",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+5"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+5"
+      }
+    },
+    {
+      "name": "Jump to tab 6",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+6"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+6"
+      }
+    },
+    {
+      "name": "Jump to tab 7",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+7"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+7"
+      }
+    },
+    {
+      "name": "Jump to tab 8",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+8"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+8"
+      }
+    },
+    {
+      "name": "Jump to the rightmost (last) tab",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+9"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+9"
+      }
+    },
+    {
+      "name": "Open your home page in the current tab",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Home"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+H"
+      }
+    },
+    {
+      "name": "Open the previous page from your browsing history",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Left"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Left"
+      }
+    },
+    {
+      "name": "Open the next page from your browsing history",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Right"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Right"
+      }
+    },
+    {
+      "name": "Close the current tab",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+W"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+W"
+      }
+    },
+    {
+      "name": "Close the current window",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+W"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+W"
+      }
+    },
+    {
+      "name": "Minimize the current window",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+Space",
+          "N"
+        ]
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+M"
+      }
+    },
+    {
+      "name": "Maximize the current window",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+Space",
+          "X"
+        ]
+      }
+    },
+    {
+      "name": "Quit Google Chrome",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+F",
+          "X"
+        ]
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Q"
+      }
+    },
+    {
+      "name": "Move the current tab left",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+PageUp"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+PageUp"
+      }
+    },
+    {
+      "name": "Move the current tab right",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+PageDown"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+PageDown"
+      }
+    },
+    {
+      "name": "Turn on full-screen mode",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F11"
+      }
+    },
+    {
+      "name": "Turn off full-screen mode",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F11"
+      }
+    },
+    {
+      "name": "Select multiple tabs",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "F6",
+          "F6",
+          "Ctrl+Shift+H"
+        ]
+      }
+    },
+    {
+      "name": "Open the Chrome menu",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+F"
+      }
+    },
+    {
+      "name": "Show or hide the Bookmarks bar",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+B"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+B"
+      }
+    },
+    {
+      "name": "Open the Bookmarks Manager",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+O"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+B"
+      }
+    },
+    {
+      "name": "Open the History page in a new tab",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+H"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Y"
+      }
+    },
+    {
+      "name": "Open the Downloads page in a new tab",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+J"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+J"
+      }
+    },
+    {
+      "name": "Open the Chrome Task Manager",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Esc"
+      }
+    },
+    {
+      "name": "Set focus on the first item in the Chrome toolbar",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+T"
+      }
+    },
+    {
+      "name": "Set focus on the rightmost item in the Chrome toolbar",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F10"
+      }
+    },
+    {
+      "name": "Switch focus to unfocused dialog and toolbars",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F6"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+Up"
+      }
+    },
+    {
+      "name": "Open the Find Bar to search the current page",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+F"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+F"
+      }
+    },
+    {
+      "name": "Jump to the next match to your Find Bar search",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+G"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+G"
+      }
+    },
+    {
+      "name": "Jump to the previous match to your Find Bar search",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+G"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+G"
+      }
+    },
+    {
+      "name": "Search for the currently selected text (Find Bar open)",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+E"
+      }
+    },
+    {
+      "name": "Open Developer Tools",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+J"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+I"
+      }
+    },
+    {
+      "name": "Open the Delete Browsing Data options",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Delete"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+Delete"
+      }
+    },
+    {
+      "name": "Open the Chrome Help Center in a new tab",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F1"
+      }
+    },
+    {
+      "name": "Log in as a different user or browse as a Guest",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+M"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+M"
+      }
+    },
+    {
+      "name": "Open a feedback form",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+I"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+Shift+I"
+      }
+    },
+    {
+      "name": "Turn on caret browsing",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F7"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "F7"
+      }
+    },
+    {
+      "name": "Skip to web contents",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+F6"
+      }
+    },
+    {
+      "name": "Focus on inactive dialogs",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+A"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+Shift+A"
+      }
+    },
+    {
+      "name": "Open split view in the active tab",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+N"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+N"
+      }
+    },
+    {
+      "name": "Open the Settings page in a new tab",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+,"
+      }
+    },
+    {
+      "name": "Hide Google Chrome",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+H"
+      }
+    },
+    {
+      "name": "Jump to the main menu bar",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+F2"
+      }
+    },
+    {
+      "name": "Add www. and .com to a site name, and open it in the current tab",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Enter"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Enter"
+      }
+    },
+    {
+      "name": "Add www. and .com to a site name, and open it in a new window",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Enter"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Enter"
+      }
+    },
+    {
+      "name": "Open a new tab and perform a Google search",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Enter"
+      }
+    },
+    {
+      "name": "Open the typed website in a new background tab",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Enter"
+      }
+    },
+    {
+      "name": "Jump to the address bar",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+L"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+L"
+      }
+    },
+    {
+      "name": "Search from anywhere on the page",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+K"
+      }
+    },
+    {
+      "name": "Remove predictions from your address bar",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Down",
+          "Shift+Delete"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Down",
+          "Shift+Delete"
+        ]
+      }
+    },
+    {
+      "name": "Move cursor to the address bar",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+F5"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+F5"
+      }
+    },
+    {
+      "name": "Compose a new email message with a link to the current page",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+I"
+      }
+    },
+    {
+      "name": "Open options to print the current page",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+P"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+P"
+      }
+    },
+    {
+      "name": "Open options to save the current page",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+S"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+S"
+      }
+    },
+    {
+      "name": "Open the Page Setup dialog",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+P"
+      }
+    },
+    {
+      "name": "Reload the current page",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+R"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+R"
+      }
+    },
+    {
+      "name": "Reload the current page, ignoring cached content",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+R"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+R"
+      }
+    },
+    {
+      "name": "Stop the page loading",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Esc"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Esc"
+      }
+    },
+    {
+      "name": "Browse clickable items moving forward",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Tab"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Tab"
+      }
+    },
+    {
+      "name": "Browse clickable items moving backward",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Tab"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Tab"
+      }
+    },
+    {
+      "name": "Open a file from your computer in Chrome",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+O"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+O"
+      }
+    },
+    {
+      "name": "Display non-editable HTML source code for the current page",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+U"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+U"
+      }
+    },
+    {
+      "name": "Open the JavaScript Console",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+J"
+      }
+    },
+    {
+      "name": "Save your current webpage as a bookmark",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+D"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+D"
+      }
+    },
+    {
+      "name": "Save all open tabs as bookmarks in a new folder",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+D"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+D"
+      }
+    },
+    {
+      "name": "Make everything on the page bigger (zoom in)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+="
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+="
+      }
+    },
+    {
+      "name": "Make everything on the page smaller (zoom out)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+-"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+-"
+      }
+    },
+    {
+      "name": "Return everything on the page to default size (reset zoom)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+0"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+0"
+      }
+    },
+    {
+      "name": "Scroll down a webpage, a screen at a time",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Space"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Space"
+      }
+    },
+    {
+      "name": "Scroll up a webpage, a screen at a time",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Space"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Space"
+      }
+    },
+    {
+      "name": "Go to the top of the page",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Home"
+      }
+    },
+    {
+      "name": "Go to the bottom of the page",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "End"
+      }
+    },
+    {
+      "name": "Move your cursor to the beginning of the previous word in a text field",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Left"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Left"
+      }
+    },
+    {
+      "name": "Move your cursor to the next word in a text field",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Right"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Right"
+      }
+    },
+    {
+      "name": "Delete the previous word in a text field",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Backspace"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Delete"
+      }
+    },
+    {
+      "name": "Open the Home page in the current tab",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Home"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+H"
+      }
+    },
+    {
+      "name": "Search the web",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+F"
+      }
+    }
+  ],
+  "defaults": {
+    "TUNE_CW": {
+      "name": "Jump to the next open tab",
+      "action": {
+        "type": "keys",
+        "chord": "Ctrl+Tab"
+      },
+      "accel": "light"
+    },
+    "TUNE_CCW": {
+      "name": "Jump to the previous open tab",
+      "action": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Tab"
+      },
+      "accel": "light"
+    },
+    "TUNE_TAP_1F": {
+      "name": "Open a new tab, and jump to it",
+      "action": {
+        "type": "keys",
+        "chord": "Ctrl+T"
+      }
+    },
+    "TUNE_SWIPE_LEFT": {
+      "name": "Open the previous page from your browsing history",
+      "action": {
+        "type": "keys",
+        "chord": "Alt+Left"
+      }
+    },
+    "TUNE_SWIPE_RIGHT": {
+      "name": "Open the next page from your browsing history",
+      "action": {
+        "type": "keys",
+        "chord": "Alt+Right"
+      }
+    },
+    "TUNE_SWIPE_UP": {
+      "name": "Make everything on the page bigger (zoom in)",
+      "action": {
+        "type": "keys",
+        "chord": "Ctrl+="
+      }
+    },
+    "TUNE_SWIPE_DOWN": {
+      "name": "Make everything on the page smaller (zoom out)",
+      "action": {
+        "type": "keys",
+        "chord": "Ctrl+-"
+      }
+    }
+  }
+}

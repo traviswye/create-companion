@@ -1,0 +1,2130 @@
+{
+  "id": "google_slides",
+  "name": "Google Slides",
+  "kind": "site",
+  "category": "Office",
+  "match": {
+    "windows_exe": [
+      "chrome.exe",
+      "msedge.exe",
+      "firefox.exe",
+      "brave.exe",
+      "vivaldi.exe"
+    ],
+    "macos_bundle": [
+      "com.google.Chrome",
+      "com.microsoft.edgemac",
+      "org.mozilla.firefox",
+      "com.brave.Browser",
+      "com.apple.Safari"
+    ],
+    "window_title": [
+      "Google Slides"
+    ]
+  },
+  "sources": [
+    "https://support.google.com/docs/answer/1696717?hl=en&co=GENIE.Platform%3DDesktop"
+  ],
+  "note": "Current web editor, PC/ChromeOS and Mac columns. 'Video Player | Seek to a specific point' (Shift+0..Shift+9, jumping to 0%-90% of the clip) is expanded into 10 individual actions. 'Go to a specific slide' (type a number, then Enter) and 'return from a blank slide' (press any key) are not expressible as a fixed chord and are omitted, as are the mouse-drag-only object shortcuts (suppress guides, duplicate/resize/rotate while dragging with a modifier held).",
+  "actions": [
+    {
+      "name": "New slide",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+M"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+M"
+      }
+    },
+    {
+      "name": "Duplicate slide",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+D"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+D"
+      }
+    },
+    {
+      "name": "Undo",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Z"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Z"
+      }
+    },
+    {
+      "name": "Redo",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Y"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Y"
+      }
+    },
+    {
+      "name": "Copy",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+C"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+C"
+      }
+    },
+    {
+      "name": "Cut",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+X"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+X"
+      }
+    },
+    {
+      "name": "Paste",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+V"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+V"
+      }
+    },
+    {
+      "name": "Copy formatting",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+C"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+C"
+      }
+    },
+    {
+      "name": "Paste formatting",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+V"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+V"
+      }
+    },
+    {
+      "name": "Insert or edit link",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+K"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+K"
+      }
+    },
+    {
+      "name": "Open link",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Enter"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Enter"
+      }
+    },
+    {
+      "name": "Delete",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Delete"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Delete"
+      }
+    },
+    {
+      "name": "Select all",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+A"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+A"
+      }
+    },
+    {
+      "name": "Select none",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+Alt+U",
+          "Ctrl+Alt+A"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+Cmd+U",
+          "Ctrl+Cmd+A"
+        ]
+      }
+    },
+    {
+      "name": "Find",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+F"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+F"
+      }
+    },
+    {
+      "name": "Find and replace",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+H"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+H"
+      }
+    },
+    {
+      "name": "Find again",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+G"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+G"
+      }
+    },
+    {
+      "name": "Find previous",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+G"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+G"
+      }
+    },
+    {
+      "name": "Open",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+O"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+O"
+      }
+    },
+    {
+      "name": "Print",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+P"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+P"
+      }
+    },
+    {
+      "name": "Save",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+S"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+S"
+      }
+    },
+    {
+      "name": "Show shortcuts",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+/"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+/"
+      }
+    },
+    {
+      "name": "Tool finder",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+/"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+/"
+      }
+    },
+    {
+      "name": "Hide / show menus",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+F"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+F"
+      }
+    },
+    {
+      "name": "Turn on captions",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+C"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+C"
+      }
+    },
+    {
+      "name": "Alt text",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Y"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+Y"
+      }
+    },
+    {
+      "name": "Move to previous slide",
+      "context": "Filmstrip",
+      "windows": {
+        "type": "keys",
+        "chord": "Up"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Up"
+      }
+    },
+    {
+      "name": "Move to next slide",
+      "context": "Filmstrip",
+      "windows": {
+        "type": "keys",
+        "chord": "Down"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Down"
+      }
+    },
+    {
+      "name": "Move focus to first slide",
+      "context": "Filmstrip",
+      "windows": {
+        "type": "keys",
+        "chord": "Home"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Home"
+      }
+    },
+    {
+      "name": "Move focus to last slide",
+      "context": "Filmstrip",
+      "windows": {
+        "type": "keys",
+        "chord": "End"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "End"
+      }
+    },
+    {
+      "name": "Move slide up",
+      "context": "Filmstrip",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Up"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Up"
+      }
+    },
+    {
+      "name": "Move slide down",
+      "context": "Filmstrip",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Down"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Down"
+      }
+    },
+    {
+      "name": "Move slide to beginning",
+      "context": "Filmstrip",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Up"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+Up"
+      }
+    },
+    {
+      "name": "Move slide to end",
+      "context": "Filmstrip",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Down"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+Down"
+      }
+    },
+    {
+      "name": "Select previous slide",
+      "context": "Filmstrip",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Up"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Up"
+      }
+    },
+    {
+      "name": "Select next slide",
+      "context": "Filmstrip",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Down"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Down"
+      }
+    },
+    {
+      "name": "Select first slide",
+      "context": "Filmstrip",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Home"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Home"
+      }
+    },
+    {
+      "name": "Select last slide",
+      "context": "Filmstrip",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+End"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+End"
+      }
+    },
+    {
+      "name": "Zoom in",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Plus"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Plus"
+      }
+    },
+    {
+      "name": "Zoom out",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+-"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+-"
+      }
+    },
+    {
+      "name": "Zoom 100%",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+0"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+0"
+      }
+    },
+    {
+      "name": "Move to filmstrip",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Shift+F"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+Shift+F"
+      }
+    },
+    {
+      "name": "Move to canvas",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Shift+C"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+Shift+C"
+      }
+    },
+    {
+      "name": "Open speaker notes",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Shift+S"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+Shift+S"
+      }
+    },
+    {
+      "name": "HTML view",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Shift+P"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+Shift+P"
+      }
+    },
+    {
+      "name": "Open animations panel",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Shift+B"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+Shift+B"
+      }
+    },
+    {
+      "name": "Continue animation preview",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Enter"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Enter"
+      }
+    },
+    {
+      "name": "Open explore",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Shift+I"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+Shift+I"
+      }
+    },
+    {
+      "name": "Go to next side panel",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+."
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+."
+      }
+    },
+    {
+      "name": "Go to previous side panel",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+,"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+,"
+      }
+    },
+    {
+      "name": "Open dictionary",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Y"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+Y"
+      }
+    },
+    {
+      "name": "Open revision history",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Shift+H"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+Shift+H"
+      }
+    },
+    {
+      "name": "Move focus to popup",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+Alt+E",
+          "Ctrl+Alt+P"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+Cmd+E",
+          "Ctrl+Cmd+P"
+        ]
+      }
+    },
+    {
+      "name": "Play selected video",
+      "context": "Video selected",
+      "windows": {
+        "type": "keys",
+        "chord": "Enter"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Enter"
+      }
+    },
+    {
+      "name": "Present slides",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+F5"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Enter"
+      }
+    },
+    {
+      "name": "Exit current mode",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Esc"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Esc"
+      }
+    },
+    {
+      "name": "Context menu",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+\\"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+\\"
+      }
+    },
+    {
+      "name": "File menu",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+F"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+F"
+      }
+    },
+    {
+      "name": "Edit menu",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+E"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+E"
+      }
+    },
+    {
+      "name": "View menu",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+V"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+V"
+      }
+    },
+    {
+      "name": "Insert menu",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+I"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+I"
+      }
+    },
+    {
+      "name": "Format menu",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+O"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+O"
+      }
+    },
+    {
+      "name": "Tools menu",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+T"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+T"
+      }
+    },
+    {
+      "name": "Help menu",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+H"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+H"
+      }
+    },
+    {
+      "name": "Accessibility menu",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+A"
+      }
+    },
+    {
+      "name": "Input tools menu",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Shift+K"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+Shift+K"
+      }
+    },
+    {
+      "name": "Toggle input controls",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+K"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+K"
+      }
+    },
+    {
+      "name": "Insert comment",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+M"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+M"
+      }
+    },
+    {
+      "name": "Enter current comment",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Enter"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Enter"
+      }
+    },
+    {
+      "name": "Next comment",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+Alt+N",
+          "Ctrl+Alt+C"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+Cmd+N",
+          "Ctrl+Cmd+C"
+        ]
+      }
+    },
+    {
+      "name": "Previous comment",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+Alt+P",
+          "Ctrl+Alt+C"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+Cmd+P",
+          "Ctrl+Cmd+C"
+        ]
+      }
+    },
+    {
+      "name": "Open discussion thread",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Shift+A"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+Shift+A"
+      }
+    },
+    {
+      "name": "Hide comment",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Shift+J"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+Shift+J"
+      }
+    },
+    {
+      "name": "Reply to comment",
+      "context": "Comment selected",
+      "windows": {
+        "type": "keys",
+        "chord": "R"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "R"
+      }
+    },
+    {
+      "name": "Next comment",
+      "context": "Comment selected",
+      "windows": {
+        "type": "keys",
+        "chord": "J"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "J"
+      }
+    },
+    {
+      "name": "Previous comment",
+      "context": "Comment selected",
+      "windows": {
+        "type": "keys",
+        "chord": "K"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "K"
+      }
+    },
+    {
+      "name": "Resolve comment",
+      "context": "Comment selected",
+      "windows": {
+        "type": "keys",
+        "chord": "E"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "E"
+      }
+    },
+    {
+      "name": "Exit comment",
+      "context": "Comment selected",
+      "windows": {
+        "type": "keys",
+        "chord": "U"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "U"
+      }
+    },
+    {
+      "name": "Bold",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+B"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+B"
+      }
+    },
+    {
+      "name": "Italic",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+I"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+I"
+      }
+    },
+    {
+      "name": "Underline",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+U"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+U"
+      }
+    },
+    {
+      "name": "Subscript",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+,"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+,"
+      }
+    },
+    {
+      "name": "Superscript",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+."
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+."
+      }
+    },
+    {
+      "name": "Strikethrough",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+5"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+X"
+      }
+    },
+    {
+      "name": "Clear formatting",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+\\"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+\\"
+      }
+    },
+    {
+      "name": "Increase font size",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+."
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+."
+      }
+    },
+    {
+      "name": "Decrease font size",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+,"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+,"
+      }
+    },
+    {
+      "name": "Left align",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+L"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+L"
+      }
+    },
+    {
+      "name": "Right align",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+R"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+R"
+      }
+    },
+    {
+      "name": "Center align",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+E"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+E"
+      }
+    },
+    {
+      "name": "Justify",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+J"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+J"
+      }
+    },
+    {
+      "name": "Move paragraph down",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+Down"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+Down"
+      }
+    },
+    {
+      "name": "Move paragraph up",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+Up"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+Up"
+      }
+    },
+    {
+      "name": "Increase indent",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+]"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+]"
+      }
+    },
+    {
+      "name": "Decrease indent",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+["
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+["
+      }
+    },
+    {
+      "name": "Bulleted list",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+8"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+8"
+      }
+    },
+    {
+      "name": "Numbered list",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+7"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+7"
+      }
+    },
+    {
+      "name": "Select list item",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+Alt+Shift+E",
+          "Ctrl+Alt+Shift+I"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+Cmd+Shift+E",
+          "Ctrl+Cmd+Shift+I"
+        ]
+      }
+    },
+    {
+      "name": "Select list items at current level",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+Alt+Shift+E",
+          "Ctrl+Alt+Shift+O"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+Cmd+Shift+E",
+          "Ctrl+Cmd+Shift+O"
+        ]
+      }
+    },
+    {
+      "name": "Next text formatting change",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+Alt+N",
+          "Ctrl+Alt+W"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+Cmd+N",
+          "Ctrl+Cmd+W"
+        ]
+      }
+    },
+    {
+      "name": "Previous text formatting change",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+Alt+P",
+          "Ctrl+Alt+W"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+Cmd+P",
+          "Ctrl+Cmd+W"
+        ]
+      }
+    },
+    {
+      "name": "Next misspelling",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+'"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+'"
+      }
+    },
+    {
+      "name": "Previous misspelling",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+;"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+;"
+      }
+    },
+    {
+      "name": "Duplicate",
+      "context": "Object selected",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+D"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+D"
+      }
+    },
+    {
+      "name": "Group",
+      "context": "Object selected",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+G"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+G"
+      }
+    },
+    {
+      "name": "Ungroup",
+      "context": "Object selected",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Shift+G"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+Shift+G"
+      }
+    },
+    {
+      "name": "Send backward",
+      "context": "Object selected",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Down"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Down"
+      }
+    },
+    {
+      "name": "Bring forward",
+      "context": "Object selected",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Up"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Up"
+      }
+    },
+    {
+      "name": "Send to back",
+      "context": "Object selected",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Down"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+Down"
+      }
+    },
+    {
+      "name": "Bring to front",
+      "context": "Object selected",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Up"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+Up"
+      }
+    },
+    {
+      "name": "Select next shape",
+      "context": "Object selected",
+      "windows": {
+        "type": "keys",
+        "chord": "Tab"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Tab"
+      }
+    },
+    {
+      "name": "Select previous shape",
+      "context": "Object selected",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Tab"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Tab"
+      }
+    },
+    {
+      "name": "Nudge up by one pixel",
+      "context": "Object selected",
+      "windows": {
+        "type": "keys",
+        "chord": "Up"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Up"
+      }
+    },
+    {
+      "name": "Nudge down by one pixel",
+      "context": "Object selected",
+      "windows": {
+        "type": "keys",
+        "chord": "Down"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Down"
+      }
+    },
+    {
+      "name": "Nudge left by one pixel",
+      "context": "Object selected",
+      "windows": {
+        "type": "keys",
+        "chord": "Left"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Left"
+      }
+    },
+    {
+      "name": "Nudge right by one pixel",
+      "context": "Object selected",
+      "windows": {
+        "type": "keys",
+        "chord": "Right"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Right"
+      }
+    },
+    {
+      "name": "Nudge up by larger increment",
+      "context": "Object selected",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Up"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Up"
+      }
+    },
+    {
+      "name": "Nudge down by larger increment",
+      "context": "Object selected",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Down"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Down"
+      }
+    },
+    {
+      "name": "Nudge left by larger increment",
+      "context": "Object selected",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Left"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Left"
+      }
+    },
+    {
+      "name": "Nudge right by larger increment",
+      "context": "Object selected",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Right"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Right"
+      }
+    },
+    {
+      "name": "Rotate counterclockwise by 1 degree",
+      "context": "Object selected",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+Left"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+Left"
+      }
+    },
+    {
+      "name": "Rotate clockwise by 1 degree",
+      "context": "Object selected",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+Right"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+Right"
+      }
+    },
+    {
+      "name": "Rotate counterclockwise by 15 degrees",
+      "context": "Object selected",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Left"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Left"
+      }
+    },
+    {
+      "name": "Rotate clockwise by 15 degrees",
+      "context": "Object selected",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Right"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Right"
+      }
+    },
+    {
+      "name": "Resize larger horizontally",
+      "context": "Object selected",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+B"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Ctrl+B"
+      }
+    },
+    {
+      "name": "Resize larger vertically",
+      "context": "Object selected",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+I"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Ctrl+I"
+      }
+    },
+    {
+      "name": "Resize smaller",
+      "context": "Object selected",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+J"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Ctrl+J"
+      }
+    },
+    {
+      "name": "Resize larger",
+      "context": "Object selected",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+K"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Ctrl+K"
+      }
+    },
+    {
+      "name": "Resize smaller vertically",
+      "context": "Object selected",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+9"
+      }
+    },
+    {
+      "name": "Resize smaller horizontally",
+      "context": "Object selected",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+W"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Ctrl+W"
+      }
+    },
+    {
+      "name": "Exit crop mode",
+      "context": "Object selected",
+      "windows": {
+        "type": "keys",
+        "chord": "Enter"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Enter"
+      }
+    },
+    {
+      "name": "Stop presenting",
+      "context": "Presenting",
+      "windows": {
+        "type": "keys",
+        "chord": "Esc"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Esc"
+      }
+    },
+    {
+      "name": "Next",
+      "context": "Presenting",
+      "windows": {
+        "type": "keys",
+        "chord": "Right"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Right"
+      }
+    },
+    {
+      "name": "Previous",
+      "context": "Presenting",
+      "windows": {
+        "type": "keys",
+        "chord": "Left"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Left"
+      }
+    },
+    {
+      "name": "First slide",
+      "context": "Presenting",
+      "windows": {
+        "type": "keys",
+        "chord": "Home"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Home"
+      }
+    },
+    {
+      "name": "Last slide",
+      "context": "Presenting",
+      "windows": {
+        "type": "keys",
+        "chord": "End"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "End"
+      }
+    },
+    {
+      "name": "Open speaker notes",
+      "context": "Presenting",
+      "windows": {
+        "type": "keys",
+        "chord": "S"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "S"
+      }
+    },
+    {
+      "name": "Open audience tools",
+      "context": "Presenting",
+      "windows": {
+        "type": "keys",
+        "chord": "A"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "A"
+      }
+    },
+    {
+      "name": "Toggle laser pointer",
+      "context": "Presenting",
+      "windows": {
+        "type": "keys",
+        "chord": "L"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "L"
+      }
+    },
+    {
+      "name": "Print",
+      "context": "Presenting",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+P"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+P"
+      }
+    },
+    {
+      "name": "Toggle captions",
+      "context": "Presenting",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+C"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+C"
+      }
+    },
+    {
+      "name": "Toggle full screen",
+      "context": "Presenting",
+      "windows": {
+        "type": "keys",
+        "chord": "F11"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+F"
+      }
+    },
+    {
+      "name": "Blank black slide",
+      "context": "Presenting",
+      "windows": {
+        "type": "keys",
+        "chord": "B"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "B"
+      }
+    },
+    {
+      "name": "Blank white slide",
+      "context": "Presenting",
+      "windows": {
+        "type": "keys",
+        "chord": "W"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "W"
+      }
+    },
+    {
+      "name": "Toggle play / pause",
+      "context": "Video selected",
+      "windows": {
+        "type": "keys",
+        "chord": "K"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "K"
+      }
+    },
+    {
+      "name": "Rewind 10 seconds",
+      "context": "Video selected",
+      "windows": {
+        "type": "keys",
+        "chord": "U"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "U"
+      }
+    },
+    {
+      "name": "Fast forward 10 seconds",
+      "context": "Video selected",
+      "windows": {
+        "type": "keys",
+        "chord": "O"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "O"
+      }
+    },
+    {
+      "name": "Previous frame (paused)",
+      "context": "Video selected",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+,"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+,"
+      }
+    },
+    {
+      "name": "Next frame (paused)",
+      "context": "Video selected",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+."
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+."
+      }
+    },
+    {
+      "name": "Decrease playback rate",
+      "context": "Video selected",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+,"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+,"
+      }
+    },
+    {
+      "name": "Increase playback rate",
+      "context": "Video selected",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+."
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+."
+      }
+    },
+    {
+      "name": "Toggle captions",
+      "context": "Video selected",
+      "windows": {
+        "type": "keys",
+        "chord": "C"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "C"
+      }
+    },
+    {
+      "name": "Toggle full screen",
+      "context": "Video selected",
+      "windows": {
+        "type": "keys",
+        "chord": "F"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "F"
+      }
+    },
+    {
+      "name": "Toggle mute",
+      "context": "Video selected",
+      "windows": {
+        "type": "keys",
+        "chord": "M"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "M"
+      }
+    },
+    {
+      "name": "Seek to 0%",
+      "context": "Video selected",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+0"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+0"
+      }
+    },
+    {
+      "name": "Seek to 10%",
+      "context": "Video selected",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+1"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+1"
+      }
+    },
+    {
+      "name": "Seek to 20%",
+      "context": "Video selected",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+2"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+2"
+      }
+    },
+    {
+      "name": "Seek to 30%",
+      "context": "Video selected",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+3"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+3"
+      }
+    },
+    {
+      "name": "Seek to 40%",
+      "context": "Video selected",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+4"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+4"
+      }
+    },
+    {
+      "name": "Seek to 50%",
+      "context": "Video selected",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+5"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+5"
+      }
+    },
+    {
+      "name": "Seek to 60%",
+      "context": "Video selected",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+6"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+6"
+      }
+    },
+    {
+      "name": "Seek to 70%",
+      "context": "Video selected",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+7"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+7"
+      }
+    },
+    {
+      "name": "Seek to 80%",
+      "context": "Video selected",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+8"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+8"
+      }
+    },
+    {
+      "name": "Seek to 90%",
+      "context": "Video selected",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+9"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+9"
+      }
+    },
+    {
+      "name": "Verbalize selection",
+      "context": "Screen reader",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+X"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Cmd+X"
+      }
+    },
+    {
+      "name": "Enable screen reader",
+      "context": "Screen reader",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Z"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+Z"
+      }
+    },
+    {
+      "name": "Enable braille",
+      "context": "Screen reader",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+H"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+H"
+      }
+    },
+    {
+      "name": "Verbalize from cursor",
+      "context": "Screen reader",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+R"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Cmd+R"
+      }
+    },
+    {
+      "name": "Announce formatting",
+      "context": "Screen reader",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+Alt+A",
+          "Ctrl+Alt+F"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+Cmd+A",
+          "Ctrl+Cmd+F"
+        ]
+      }
+    }
+  ],
+  "defaults": {
+    "TUNE_CW": {
+      "name": "Move to next slide",
+      "action": {
+        "type": "keys",
+        "chord": "Down"
+      },
+      "accel": "medium"
+    },
+    "TUNE_CCW": {
+      "name": "Move to previous slide",
+      "action": {
+        "type": "keys",
+        "chord": "Up"
+      },
+      "accel": "medium"
+    },
+    "TUNE_TAP_1F": {
+      "name": "New slide",
+      "action": {
+        "type": "keys",
+        "chord": "Ctrl+M"
+      }
+    }
+  }
+}

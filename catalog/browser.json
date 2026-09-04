@@ -20,8 +20,10 @@
     ],
     "window_title": []
   },
-  "sources": [],
-  "note": "hand-authored 2026-09-04; expand from official documentation",
+  "sources": [
+    "https://support.google.com/chrome/answer/157179"
+  ],
+  "note": "Combined browser profile used by the first-run config (Chromium-family chords). Per-browser entries chrome/edge/firefox/safari/brave/vivaldi carry the complete lists.",
   "actions": [
     {
       "name": "Next tab",

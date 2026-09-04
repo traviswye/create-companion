@@ -1,0 +1,178 @@
+{
+  "id": "netflix",
+  "name": "Netflix",
+  "kind": "site",
+  "category": "Video",
+  "match": {
+    "windows_exe": [
+      "chrome.exe",
+      "msedge.exe",
+      "firefox.exe",
+      "brave.exe",
+      "vivaldi.exe"
+    ],
+    "macos_bundle": [
+      "com.google.Chrome",
+      "com.microsoft.edgemac",
+      "org.mozilla.firefox",
+      "com.brave.Browser",
+      "com.apple.Safari"
+    ],
+    "window_title": [
+      "Netflix"
+    ]
+  },
+  "sources": [
+    "https://help.netflix.com/en/node/24855"
+  ],
+  "note": "Official Help Center article documents 9 shortcuts total; 'Play / Pause' also accepts Enter (Space bar used here, matching the site's primary/most common binding) and the article notes Space/Esc also work in the separate Windows 10/11 native app (out of scope for this browser-based 'site' entry). No mode-specific (e.g. subtitles menu) shortcuts are documented.",
+  "actions": [
+    {
+      "name": "Play / pause",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Space"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Space"
+      }
+    },
+    {
+      "name": "Full screen",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "F"
+      }
+    },
+    {
+      "name": "Exit full screen",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Esc"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Esc"
+      }
+    },
+    {
+      "name": "Rewind 10 seconds",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Left"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Left"
+      }
+    },
+    {
+      "name": "Fast forward 10 seconds",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Right"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Right"
+      }
+    },
+    {
+      "name": "Increase volume",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Up"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Up"
+      }
+    },
+    {
+      "name": "Decrease volume",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Down"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Down"
+      }
+    },
+    {
+      "name": "Mute",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "M"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "M"
+      }
+    },
+    {
+      "name": "Skip intro",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "S"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "S"
+      }
+    }
+  ],
+  "defaults": {
+    "TUNE_CW": {
+      "name": "Fast forward 10 seconds",
+      "action": {
+        "type": "keys",
+        "chord": "Right"
+      },
+      "accel": "medium"
+    },
+    "TUNE_CCW": {
+      "name": "Rewind 10 seconds",
+      "action": {
+        "type": "keys",
+        "chord": "Left"
+      },
+      "accel": "medium"
+    },
+    "TUNE_TAP_1F": {
+      "name": "Play / pause",
+      "action": {
+        "type": "keys",
+        "chord": "Space"
+      }
+    },
+    "TUNE_SWIPE_UP": {
+      "name": "Increase volume",
+      "action": {
+        "type": "keys",
+        "chord": "Up"
+      }
+    },
+    "TUNE_SWIPE_DOWN": {
+      "name": "Decrease volume",
+      "action": {
+        "type": "keys",
+        "chord": "Down"
+      }
+    }
+  }
+}

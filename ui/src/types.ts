@@ -63,7 +63,10 @@ export interface AppAction {
 export interface AppEntry {
   id: string;
   name: string;
-  kind: "app" | "site";
+  kind: "app" | "site" | "system";
+  category?: string;
+  /** System entries only: which OS's shortcuts these are. */
+  os?: ("windows" | "macos" | "linux")[];
   match: AppMatch;
   defaults: Record<string, Binding>;
   actions: AppAction[];

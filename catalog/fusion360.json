@@ -5,92 +5,20 @@
   "category": "CAD / 3D",
   "match": {
     "windows_exe": [
-      "Fusion360.exe"
+      "Fusion360.exe",
+      "Fusion.exe"
     ],
     "macos_bundle": [
       "com.autodesk.fusion360"
     ],
     "window_title": []
   },
-  "sources": [],
-  "note": "hand-authored 2026-09-04; expand from official documentation",
+  "sources": [
+    "https://help.autodesk.com/view/fusion360/ENU/?guid=GUID-F0491540-0324-470A-B651-2238D0EFAC30",
+    "https://help.autodesk.com/cloudhelp/ENU/Fusion-GetStarted/files/GUID-F0491540-0324-470A-B651-2238D0EFAC30.htm"
+  ],
+  "note": "From the Autodesk Knowledge Network topic \"Fusion keyboard shortcuts reference\". Mouse-driven bindings are omitted because the chord grammar cannot express them: Pan / Zoom / Orbit (middle mouse button), the Edit Form extrude gestures (Alt+Drag, Alt+Ctrl+Drag) and the double-click variants of the Form loop / range selections (the documented key alternative, e.g. Alt+P, is kept). \"Sketch Coincident Constraint at Midpoint\" is documented as holding Shift alone, which is a modifier and not a chord.",
   "actions": [
-    {
-      "name": "Zoom in",
-      "context": "",
-      "windows": {
-        "type": "scroll",
-        "direction": "up",
-        "lines": 1
-      },
-      "mac": {
-        "type": "scroll",
-        "direction": "up",
-        "lines": 1
-      }
-    },
-    {
-      "name": "Zoom out",
-      "context": "",
-      "windows": {
-        "type": "scroll",
-        "direction": "down",
-        "lines": 1
-      },
-      "mac": {
-        "type": "scroll",
-        "direction": "down",
-        "lines": 1
-      }
-    },
-    {
-      "name": "Fit view",
-      "context": "",
-      "windows": {
-        "type": "keys",
-        "chord": "F6"
-      },
-      "mac": {
-        "type": "keys",
-        "chord": "F6"
-      }
-    },
-    {
-      "name": "Undo",
-      "context": "",
-      "windows": {
-        "type": "keys",
-        "chord": "Ctrl+Z"
-      },
-      "mac": {
-        "type": "keys",
-        "chord": "Ctrl+Z"
-      }
-    },
-    {
-      "name": "Redo",
-      "context": "",
-      "windows": {
-        "type": "keys",
-        "chord": "Ctrl+Y"
-      },
-      "mac": {
-        "type": "keys",
-        "chord": "Ctrl+Y"
-      }
-    },
-    {
-      "name": "Sketch",
-      "context": "",
-      "windows": {
-        "type": "keys",
-        "chord": "S"
-      },
-      "mac": {
-        "type": "keys",
-        "chord": "S"
-      }
-    },
     {
       "name": "Extrude",
       "context": "",
@@ -101,6 +29,186 @@
       "mac": {
         "type": "keys",
         "chord": "E"
+      }
+    },
+    {
+      "name": "Hole",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "H"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "H"
+      }
+    },
+    {
+      "name": "Press Pull",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Q"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Q"
+      }
+    },
+    {
+      "name": "Model Fillet",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "F"
+      }
+    },
+    {
+      "name": "Move",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "M"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "M"
+      }
+    },
+    {
+      "name": "Toggle Visibility",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "V"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "V"
+      }
+    },
+    {
+      "name": "Display Component Colors",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+N"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+N"
+      }
+    },
+    {
+      "name": "Model Toolbox",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "S"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "S"
+      }
+    },
+    {
+      "name": "Appearance",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "A"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "A"
+      }
+    },
+    {
+      "name": "Joint",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "J"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "J"
+      }
+    },
+    {
+      "name": "As-built Joint",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+J"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+J"
+      }
+    },
+    {
+      "name": "Line",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "L"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "L"
+      }
+    },
+    {
+      "name": "2-point Rectangle",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "R"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "R"
+      }
+    },
+    {
+      "name": "Center Diameter Circle",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "C"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "C"
+      }
+    },
+    {
+      "name": "Trim",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "T"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "T"
+      }
+    },
+    {
+      "name": "Offset",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "O"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "O"
       }
     },
     {
@@ -116,8 +224,1616 @@
       }
     },
     {
-      "name": "Hide / show",
+      "name": "Project",
       "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "P"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "P"
+      }
+    },
+    {
+      "name": "Normal / Construction",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "X"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "X"
+      }
+    },
+    {
+      "name": "Sketch Dimension",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "D"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "D"
+      }
+    },
+    {
+      "name": "Scripts and Add-ins",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+S"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+S"
+      }
+    },
+    {
+      "name": "Window Selection",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "1"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "1"
+      }
+    },
+    {
+      "name": "Freeform Selection",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "2"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "2"
+      }
+    },
+    {
+      "name": "Paint Selection",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "3"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "3"
+      }
+    },
+    {
+      "name": "Delete",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Delete"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Delete"
+      }
+    },
+    {
+      "name": "Compute All",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+B"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+B"
+      }
+    },
+    {
+      "name": "New Design",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+N"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+N"
+      }
+    },
+    {
+      "name": "Open",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+O"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+O"
+      }
+    },
+    {
+      "name": "Save (Version)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+S"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+S"
+      }
+    },
+    {
+      "name": "Recovery Save",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+S"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+S"
+      }
+    },
+    {
+      "name": "Cycle open document tabs",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Tab"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Tab"
+      }
+    },
+    {
+      "name": "Show/Hide ViewCube",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+V"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+V"
+      }
+    },
+    {
+      "name": "Show/Hide Browser",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+B"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+B"
+      }
+    },
+    {
+      "name": "Show/Hide Comments",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+A"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+A"
+      }
+    },
+    {
+      "name": "Show/Hide Text Commands",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+C"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+C"
+      }
+    },
+    {
+      "name": "Show/Hide Navigation bar",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+N"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+N"
+      }
+    },
+    {
+      "name": "Show/Hide Data Panel",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+P"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+P"
+      }
+    },
+    {
+      "name": "Reset to Default Layout",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+R"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+R"
+      }
+    },
+    {
+      "name": "Undo",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Z"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Z"
+      }
+    },
+    {
+      "name": "Redo",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Y"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+Z"
+      }
+    },
+    {
+      "name": "Copy",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+C"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+C"
+      }
+    },
+    {
+      "name": "Paste",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+V"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+V"
+      }
+    },
+    {
+      "name": "Cut",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+X"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+X"
+      }
+    },
+    {
+      "name": "Open or close Autodesk Assistant",
+      "context": "Autodesk Assistant",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+H"
+      }
+    },
+    {
+      "name": "Zoom in",
+      "context": "Autodesk Assistant",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl++"
+      }
+    },
+    {
+      "name": "Zoom out",
+      "context": "Autodesk Assistant",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+-"
+      }
+    },
+    {
+      "name": "Move up in the workspace list",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+["
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+["
+      }
+    },
+    {
+      "name": "Move down in the workspace list",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+]"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+]"
+      }
+    },
+    {
+      "name": "Expand to Face Group",
+      "context": "Direct Mesh Editing",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+G"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+G"
+      }
+    },
+    {
+      "name": "Expand to Connected",
+      "context": "Direct Mesh Editing",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+C"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+C"
+      }
+    },
+    {
+      "name": "Grow Selection",
+      "context": "Direct Mesh Editing",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Up"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Up"
+      }
+    },
+    {
+      "name": "Shrink Selection",
+      "context": "Direct Mesh Editing",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Down"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Down"
+      }
+    },
+    {
+      "name": "Invert",
+      "context": "Direct Mesh Editing",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+N"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+N"
+      }
+    },
+    {
+      "name": "Toggle Box mode",
+      "context": "Form",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+1"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+1"
+      }
+    },
+    {
+      "name": "Toggle Control Frame mode",
+      "context": "Form",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+2"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+2"
+      }
+    },
+    {
+      "name": "Toggle Smooth mode",
+      "context": "Form",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+3"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+3"
+      }
+    },
+    {
+      "name": "Grow selection",
+      "context": "Form",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Up"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Up"
+      }
+    },
+    {
+      "name": "Shrink selection",
+      "context": "Form",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Down"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Down"
+      }
+    },
+    {
+      "name": "Loop selection (Faces)",
+      "context": "Form",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+P"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+P"
+      }
+    },
+    {
+      "name": "Loop selection (Edges)",
+      "context": "Form",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+P"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+P"
+      }
+    },
+    {
+      "name": "Loop selection (Vertices)",
+      "context": "Form",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+P"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+P"
+      }
+    },
+    {
+      "name": "Loop grow selection (Faces)",
+      "context": "Form",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+O"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+O"
+      }
+    },
+    {
+      "name": "Loop grow selection (Edges)",
+      "context": "Form",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+O"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+O"
+      }
+    },
+    {
+      "name": "Loop grow selection (Vertices)",
+      "context": "Form",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+O"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+O"
+      }
+    },
+    {
+      "name": "Ring selection (Edges)",
+      "context": "Form",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+L"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+L"
+      }
+    },
+    {
+      "name": "Ring grow selection (Edges)",
+      "context": "Form",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+K"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+K"
+      }
+    },
+    {
+      "name": "Ring shrink selection (Edges)",
+      "context": "Form",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+J"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+J"
+      }
+    },
+    {
+      "name": "Previous U",
+      "context": "Form",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Left"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Cmd+Left"
+      }
+    },
+    {
+      "name": "Next U",
+      "context": "Form",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Right"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Cmd+Right"
+      }
+    },
+    {
+      "name": "Previous V",
+      "context": "Form",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Down"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Cmd+Down"
+      }
+    },
+    {
+      "name": "Next V",
+      "context": "Form",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Up"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Cmd+Up"
+      }
+    },
+    {
+      "name": "Range selection",
+      "context": "Form",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+M"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+M"
+      }
+    },
+    {
+      "name": "Invert selection",
+      "context": "Form",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+N"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+N"
+      }
+    },
+    {
+      "name": "Feature selection (Faces)",
+      "context": "Form",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+H"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+H"
+      }
+    },
+    {
+      "name": "New Generative Study",
+      "context": "Generative Design workspace",
+      "windows": {
+        "type": "keys",
+        "chord": "N"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "N"
+      }
+    },
+    {
+      "name": "Study Settings",
+      "context": "Generative Design workspace",
+      "windows": {
+        "type": "keys",
+        "chord": "E"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "E"
+      }
+    },
+    {
+      "name": "Structural Constraints",
+      "context": "Generative Design workspace",
+      "windows": {
+        "type": "keys",
+        "chord": "C"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "C"
+      }
+    },
+    {
+      "name": "Structural Loads",
+      "context": "Generative Design workspace",
+      "windows": {
+        "type": "keys",
+        "chord": "L"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "L"
+      }
+    },
+    {
+      "name": "Appearance",
+      "context": "Render workspace",
+      "windows": {
+        "type": "keys",
+        "chord": "A"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "A"
+      }
+    },
+    {
+      "name": "Transform Components",
+      "context": "Animation workspace",
+      "windows": {
+        "type": "keys",
+        "chord": "M"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "M"
+      }
+    },
+    {
+      "name": "Auto Explode All Levels",
+      "context": "Animation workspace",
+      "windows": {
+        "type": "keys",
+        "chord": "U"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "U"
+      }
+    },
+    {
+      "name": "Manual Explode",
+      "context": "Animation workspace",
+      "windows": {
+        "type": "keys",
+        "chord": "E"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "E"
+      }
+    },
+    {
+      "name": "View",
+      "context": "Animation workspace",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+R"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+R"
+      }
+    },
+    {
+      "name": "Publish Video",
+      "context": "Animation workspace",
+      "windows": {
+        "type": "keys",
+        "chord": "P"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "P"
+      }
+    },
+    {
+      "name": "Ambient Temperature (e-cooling only)",
+      "context": "Simulation workspace",
+      "windows": {
+        "type": "keys",
+        "chord": "A"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "A"
+      }
+    },
+    {
+      "name": "DOF View",
+      "context": "Simulation workspace",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+D"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+D"
+      }
+    },
+    {
+      "name": "Fan (e-cooling only)",
+      "context": "Simulation workspace",
+      "windows": {
+        "type": "keys",
+        "chord": "F"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "F"
+      }
+    },
+    {
+      "name": "Force",
+      "context": "Simulation workspace",
+      "windows": {
+        "type": "keys",
+        "chord": "F"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "F"
+      }
+    },
+    {
+      "name": "Groups View",
+      "context": "Simulation workspace",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+G"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+G"
+      }
+    },
+    {
+      "name": "Model View",
+      "context": "Simulation workspace",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+L"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+L"
+      }
+    },
+    {
+      "name": "New Simulation Study",
+      "context": "Simulation workspace",
+      "windows": {
+        "type": "keys",
+        "chord": "N"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "N"
+      }
+    },
+    {
+      "name": "Results View",
+      "context": "Simulation workspace",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+R"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+R"
+      }
+    },
+    {
+      "name": "Settings",
+      "context": "Simulation workspace",
+      "windows": {
+        "type": "keys",
+        "chord": "E"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "E"
+      }
+    },
+    {
+      "name": "Structural Constraint",
+      "context": "Simulation workspace",
+      "windows": {
+        "type": "keys",
+        "chord": "C"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "C"
+      }
+    },
+    {
+      "name": "Structural Loads",
+      "context": "Simulation workspace",
+      "windows": {
+        "type": "keys",
+        "chord": "L"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "L"
+      }
+    },
+    {
+      "name": "Temperature Thresholds (e-cooling only)",
+      "context": "Simulation workspace",
+      "windows": {
+        "type": "keys",
+        "chord": "T"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "T"
+      }
+    },
+    {
+      "name": "Thermal Loads",
+      "context": "Simulation workspace",
+      "windows": {
+        "type": "keys",
+        "chord": "H"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "H"
+      }
+    },
+    {
+      "name": "Generate Toolpath",
+      "context": "Manufacture workspace",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+G"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+G"
+      }
+    },
+    {
+      "name": "Duplicate",
+      "context": "Manufacture workspace",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+D"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+D"
+      }
+    },
+    {
+      "name": "Show Log",
+      "context": "Manufacture workspace",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+L"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+L"
+      }
+    },
+    {
+      "name": "Scripts and Add-Ins",
+      "context": "Manufacture workspace",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+S"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+S"
+      }
+    },
+    {
+      "name": "Projected View",
+      "context": "Drawing workspace",
+      "windows": {
+        "type": "keys",
+        "chord": "P"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "P"
+      }
+    },
+    {
+      "name": "Move",
+      "context": "Drawing workspace",
+      "windows": {
+        "type": "keys",
+        "chord": "M"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "M"
+      }
+    },
+    {
+      "name": "Delete",
+      "context": "Drawing workspace",
+      "windows": {
+        "type": "keys",
+        "chord": "Delete"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Delete"
+      }
+    },
+    {
+      "name": "Center Mark",
+      "context": "Drawing workspace",
+      "windows": {
+        "type": "keys",
+        "chord": "C"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "C"
+      }
+    },
+    {
+      "name": "Dimension",
+      "context": "Drawing workspace",
+      "windows": {
+        "type": "keys",
+        "chord": "D"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "D"
+      }
+    },
+    {
+      "name": "Text",
+      "context": "Drawing workspace",
+      "windows": {
+        "type": "keys",
+        "chord": "T"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "T"
+      }
+    },
+    {
+      "name": "Balloon",
+      "context": "Drawing workspace",
+      "windows": {
+        "type": "keys",
+        "chord": "B"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "B"
+      }
+    },
+    {
+      "name": "Activate command line",
+      "context": "Electronics workspace",
+      "windows": {
+        "type": "keys",
+        "chord": "/"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "/"
+      }
+    },
+    {
+      "name": "Add Hole",
+      "context": "Electronics workspace",
+      "windows": {
+        "type": "keys",
+        "chord": "H"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "H"
+      }
+    },
+    {
+      "name": "Add Text",
+      "context": "Electronics workspace",
+      "windows": {
+        "type": "keys",
+        "chord": "T"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "T"
+      }
+    },
+    {
+      "name": "Bus",
+      "context": "Electronics workspace",
+      "windows": {
+        "type": "keys",
+        "chord": "B"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "B"
+      }
+    },
+    {
+      "name": "Change",
+      "context": "Electronics workspace",
+      "windows": {
+        "type": "keys",
+        "chord": "C"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "C"
+      }
+    },
+    {
+      "name": "Copy",
+      "context": "Electronics workspace",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+C"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+C"
+      }
+    },
+    {
+      "name": "Delete",
+      "context": "Electronics workspace",
+      "windows": {
+        "type": "keys",
+        "chord": "Delete"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Backspace"
+      }
+    },
+    {
+      "name": "Dimension",
+      "context": "Electronics workspace",
+      "windows": {
+        "type": "keys",
+        "chord": "D"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "D"
+      }
+    },
+    {
+      "name": "DRC",
+      "context": "Electronics workspace",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+D"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+D"
+      }
+    },
+    {
+      "name": "ERC",
+      "context": "Electronics workspace",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+E"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+E"
+      }
+    },
+    {
+      "name": "Errors",
+      "context": "Electronics workspace",
+      "windows": {
+        "type": "keys",
+        "chord": "E"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "E"
+      }
+    },
+    {
+      "name": "Flip Board",
+      "context": "Electronics workspace",
+      "windows": {
+        "type": "keys",
+        "chord": "F"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "F"
+      }
+    },
+    {
+      "name": "Grid",
+      "context": "Electronics workspace",
+      "windows": {
+        "type": "keys",
+        "chord": "G"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "G"
+      }
+    },
+    {
+      "name": "Label",
+      "context": "Electronics workspace",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+L"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+L"
+      }
+    },
+    {
+      "name": "Manual Route",
+      "context": "Electronics workspace",
+      "windows": {
+        "type": "keys",
+        "chord": "R"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "R"
+      }
+    },
+    {
+      "name": "Move",
+      "context": "Electronics workspace",
+      "windows": {
+        "type": "keys",
+        "chord": "M"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "M"
+      }
+    },
+    {
+      "name": "Name",
+      "context": "Electronics workspace",
+      "windows": {
+        "type": "keys",
+        "chord": "N"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "N"
+      }
+    },
+    {
+      "name": "Net",
+      "context": "Electronics workspace",
+      "windows": {
+        "type": "keys",
+        "chord": "R"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "R"
+      }
+    },
+    {
+      "name": "New Device",
+      "context": "Electronics workspace",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Ctrl+3"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+3"
+      }
+    },
+    {
+      "name": "New Footprint",
+      "context": "Electronics workspace",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Ctrl+2"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+2"
+      }
+    },
+    {
+      "name": "New Symbol",
+      "context": "Electronics workspace",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Ctrl+1"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+1"
+      }
+    },
+    {
+      "name": "Package 3D Create",
+      "context": "Electronics workspace",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Ctrl+4"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+4"
+      }
+    },
+    {
+      "name": "Pad",
+      "context": "Electronics workspace",
+      "windows": {
+        "type": "keys",
+        "chord": "O"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "O"
+      }
+    },
+    {
+      "name": "Pad Array",
+      "context": "Electronics workspace",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+O"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+O"
+      }
+    },
+    {
+      "name": "PCB 3D View",
+      "context": "Electronics workspace",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+3"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+3"
+      }
+    },
+    {
+      "name": "Pin",
+      "context": "Electronics workspace",
+      "windows": {
+        "type": "keys",
+        "chord": "P"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "P"
+      }
+    },
+    {
+      "name": "Pin Array",
+      "context": "Electronics workspace",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+P"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+P"
+      }
+    },
+    {
+      "name": "Place Component",
+      "context": "Electronics workspace",
+      "windows": {
+        "type": "keys",
+        "chord": "A"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "A"
+      }
+    },
+    {
+      "name": "Redo",
+      "context": "Electronics workspace",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Y"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+Z"
+      }
+    },
+    {
+      "name": "Ripup",
+      "context": "Electronics workspace",
+      "windows": {
+        "type": "keys",
+        "chord": "U"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "U"
+      }
+    },
+    {
+      "name": "Ripup All Polygons",
+      "context": "Electronics workspace",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+P"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+P"
+      }
+    },
+    {
+      "name": "Route Diff Pair",
+      "context": "Electronics workspace",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+R"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+R"
+      }
+    },
+    {
+      "name": "Route Multi",
+      "context": "Electronics workspace",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+R"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+R"
+      }
+    },
+    {
+      "name": "Run Script",
+      "context": "Electronics workspace",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+S"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+S"
+      }
+    },
+    {
+      "name": "Run ULP",
+      "context": "Electronics workspace",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+U"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+U"
+      }
+    },
+    {
+      "name": "Shortcut Dialog",
+      "context": "Electronics workspace",
+      "windows": {
+        "type": "keys",
+        "chord": "S"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "S"
+      }
+    },
+    {
+      "name": "SMD",
+      "context": "Electronics workspace",
+      "windows": {
+        "type": "keys",
+        "chord": "P"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "P"
+      }
+    },
+    {
+      "name": "SMD Array",
+      "context": "Electronics workspace",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+P"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+P"
+      }
+    },
+    {
+      "name": "Stop",
+      "context": "Electronics workspace",
+      "windows": {
+        "type": "keys",
+        "chord": "Esc"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Esc"
+      }
+    },
+    {
+      "name": "Switch Sch Doc",
+      "context": "Electronics workspace",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+1"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+1"
+      }
+    },
+    {
+      "name": "Switch PCB Doc",
+      "context": "Electronics workspace",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+2"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+2"
+      }
+    },
+    {
+      "name": "Switch to Next Layer",
+      "context": "Electronics workspace",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Down"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Down"
+      }
+    },
+    {
+      "name": "Switch to Previous Layer",
+      "context": "Electronics workspace",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Up"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Up"
+      }
+    },
+    {
+      "name": "Undo",
+      "context": "Electronics workspace",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Z"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Z"
+      }
+    },
+    {
+      "name": "Value",
+      "context": "Electronics workspace",
       "windows": {
         "type": "keys",
         "chord": "V"
@@ -128,15 +1844,27 @@
       }
     },
     {
-      "name": "Display mode",
-      "context": "",
+      "name": "Via",
+      "context": "Electronics workspace",
       "windows": {
         "type": "keys",
-        "chord": "Ctrl+Alt+V"
+        "chord": "Alt+V"
       },
       "mac": {
         "type": "keys",
-        "chord": "Ctrl+Alt+V"
+        "chord": "Alt+V"
+      }
+    },
+    {
+      "name": "Zoom to Fit",
+      "context": "Electronics workspace",
+      "windows": {
+        "type": "keys",
+        "chord": "F6"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "F6"
       }
     }
   ],

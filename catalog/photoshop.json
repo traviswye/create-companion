@@ -12,8 +12,10 @@
     ],
     "window_title": []
   },
-  "sources": [],
-  "note": "hand-authored 2026-09-04; expand from official documentation",
+  "sources": [
+    "https://github.com/waldobronchart/ShortcutMapper"
+  ],
+  "note": "Default bindings hand-authored 2026-09-04; the full shortcut list comes from the ShortcutMapper import in reference/app-shortcuts.json",
   "actions": [
     {
       "name": "Increase Brush Size",

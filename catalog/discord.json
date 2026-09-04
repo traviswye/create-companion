@@ -12,129 +12,53 @@
     ],
     "window_title": []
   },
-  "sources": [],
-  "note": "hand-authored 2026-09-04; expand from official documentation",
+  "sources": [
+    "https://support.discord.com/hc/en-us/articles/31232432266647-Discord-Commands-Shortcuts-and-Navigation-Guide",
+    "https://discord.com/blog/how-to-use-keyboard-shortcuts-on-discord-create-custom-keybinds"
+  ],
+  "note": "Skipped: Toggle mentions popout (Ctrl/Cmd+Alt+@) — @ is not an expressible key in this grammar. 'Start/stop inline code block' has no documented Mac chord. Message-action shortcuts (reply, pin, forward, delete, add reaction) require a message to be hovered/selected first.",
   "actions": [
-    {
-      "name": "Next channel",
-      "context": "",
-      "windows": {
-        "type": "keys",
-        "chord": "Alt+Down"
-      },
-      "mac": {
-        "type": "keys",
-        "chord": "Alt+Down"
-      }
-    },
-    {
-      "name": "Previous channel",
-      "context": "",
-      "windows": {
-        "type": "keys",
-        "chord": "Alt+Up"
-      },
-      "mac": {
-        "type": "keys",
-        "chord": "Alt+Up"
-      }
-    },
-    {
-      "name": "Toggle mute",
-      "context": "",
-      "windows": {
-        "type": "keys",
-        "chord": "Ctrl+Shift+M"
-      },
-      "mac": {
-        "type": "keys",
-        "chord": "Ctrl+Shift+M"
-      }
-    },
-    {
-      "name": "Previous server",
-      "context": "",
-      "windows": {
-        "type": "keys",
-        "chord": "Ctrl+Alt+Up"
-      },
-      "mac": {
-        "type": "keys",
-        "chord": "Ctrl+Alt+Up"
-      }
-    },
-    {
-      "name": "Next server",
-      "context": "",
-      "windows": {
-        "type": "keys",
-        "chord": "Ctrl+Alt+Down"
-      },
-      "mac": {
-        "type": "keys",
-        "chord": "Ctrl+Alt+Down"
-      }
-    },
-    {
-      "name": "Toggle deafen",
-      "context": "",
-      "windows": {
-        "type": "keys",
-        "chord": "Ctrl+Shift+D"
-      },
-      "mac": {
-        "type": "keys",
-        "chord": "Ctrl+Shift+D"
-      }
-    },
-    {
-      "name": "Mark server read",
-      "context": "",
-      "windows": {
-        "type": "keys",
-        "chord": "Shift+Esc"
-      },
-      "mac": {
-        "type": "keys",
-        "chord": "Shift+Esc"
-      }
-    },
-    {
-      "name": "Unread channel",
-      "context": "",
-      "windows": {
-        "type": "keys",
-        "chord": "Alt+Shift+Down"
-      },
-      "mac": {
-        "type": "keys",
-        "chord": "Alt+Shift+Down"
-      }
-    },
-    {
-      "name": "Search",
-      "context": "",
-      "windows": {
-        "type": "keys",
-        "chord": "Ctrl+K"
-      },
-      "mac": {
-        "type": "keys",
-        "chord": "Ctrl+K"
-      }
-    },
-    {
-      "name": "Answer call",
-      "context": "",
-      "windows": {
-        "type": "keys",
-        "chord": "Ctrl+Enter"
-      },
-      "mac": {
-        "type": "keys",
-        "chord": "Ctrl+Enter"
-      }
-    }
+    { "name": "Open User Settings", "context": "", "windows": { "type": "keys", "chord": "Ctrl+," }, "mac": { "type": "keys", "chord": "Cmd+," } },
+    { "name": "Open Keyboard Shortcuts menu", "context": "", "windows": { "type": "keys", "chord": "Ctrl+/" }, "mac": { "type": "keys", "chord": "Cmd+/" } },
+    { "name": "Create or join a server", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Shift+N" }, "mac": { "type": "keys", "chord": "Cmd+Shift+N" } },
+    { "name": "Navigate back", "context": "", "windows": { "type": "keys", "chord": "Alt+Left" }, "mac": { "type": "keys", "chord": "Alt+Left" } },
+    { "name": "Search within current channel", "context": "", "windows": { "type": "keys", "chord": "Ctrl+F" }, "mac": { "type": "keys", "chord": "Cmd+F" } },
+    { "name": "Search across all channels", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Shift+F" }, "mac": { "type": "keys", "chord": "Cmd+Shift+F" } },
+    { "name": "Open emoji picker", "context": "", "windows": { "type": "keys", "chord": "Ctrl+E" }, "mac": { "type": "keys", "chord": "Cmd+E" } },
+    { "name": "Open GIF picker", "context": "", "windows": { "type": "keys", "chord": "Ctrl+G" }, "mac": { "type": "keys", "chord": "Cmd+G" } },
+    { "name": "Open sticker picker", "context": "", "windows": { "type": "keys", "chord": "Ctrl+S" }, "mac": { "type": "keys", "chord": "Cmd+S" } },
+    { "name": "Browse channel history back", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Up" }, "mac": { "type": "keys", "chord": "Cmd+Up" } },
+    { "name": "Browse channel history forward", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Down" }, "mac": { "type": "keys", "chord": "Cmd+Down" } },
+    { "name": "Edit your last message", "context": "", "windows": { "type": "keys", "chord": "Shift+Up" }, "mac": { "type": "keys", "chord": "Alt+Up" } },
+    { "name": "Cancel message or mark channel as read", "context": "", "windows": { "type": "keys", "chord": "Esc" }, "mac": { "type": "keys", "chord": "Esc" } },
+    { "name": "Previous channel", "context": "", "windows": { "type": "keys", "chord": "Alt+Up" }, "mac": { "type": "keys", "chord": "Alt+Up" } },
+    { "name": "Next channel", "context": "", "windows": { "type": "keys", "chord": "Alt+Down" }, "mac": { "type": "keys", "chord": "Alt+Down" } },
+    { "name": "Quick switcher for channels/DMs", "context": "", "windows": { "type": "keys", "chord": "Ctrl+K" }, "mac": { "type": "keys", "chord": "Cmd+K" } },
+    { "name": "Mute / unmute microphone", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Shift+M" }, "mac": { "type": "keys", "chord": "Cmd+Shift+M" } },
+    { "name": "Deafen / undeafen audio", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Shift+D" }, "mac": { "type": "keys", "chord": "Cmd+Shift+D" } },
+    { "name": "Next server", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Alt+Right" }, "mac": { "type": "keys", "chord": "Cmd+Alt+Down" } },
+    { "name": "Previous server", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Alt+Left" }, "mac": { "type": "keys", "chord": "Cmd+Alt+Up" } },
+    { "name": "Navigate interactive elements", "context": "", "windows": { "type": "keys", "chord": "Tab" }, "mac": { "type": "keys", "chord": "Tab" } },
+    { "name": "Activate selected element (Enter)", "context": "", "windows": { "type": "keys", "chord": "Enter" }, "mac": { "type": "keys", "chord": "Return" } },
+    { "name": "Activate selected element (Space)", "context": "", "windows": { "type": "keys", "chord": "Space" }, "mac": { "type": "keys", "chord": "Space" } },
+    { "name": "Toggle pins popout", "context": "", "windows": { "type": "keys", "chord": "Ctrl+P" }, "mac": { "type": "keys", "chord": "Cmd+P" } },
+    { "name": "Toggle channel member list", "context": "", "windows": { "type": "keys", "chord": "Ctrl+U" }, "mac": { "type": "keys", "chord": "Cmd+U" } },
+    { "name": "Upload a file", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Shift+U" }, "mac": { "type": "keys", "chord": "Cmd+Shift+U" } },
+    { "name": "Get help", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Shift+H" }, "mac": { "type": "keys", "chord": "Cmd+Shift+H" } },
+    { "name": "Bold text", "context": "Message box", "windows": { "type": "keys", "chord": "Ctrl+B" }, "mac": { "type": "keys", "chord": "Cmd+B" } },
+    { "name": "Italic text", "context": "Message box", "windows": { "type": "keys", "chord": "Ctrl+I" }, "mac": { "type": "keys", "chord": "Cmd+I" } },
+    { "name": "Underline text", "context": "Message box", "windows": { "type": "keys", "chord": "Ctrl+U" }, "mac": { "type": "keys", "chord": "Cmd+U" } },
+    { "name": "Start/stop inline code block", "context": "Message box", "windows": { "type": "keys", "chord": "Ctrl+Shift+M" } },
+    { "name": "Delete message", "context": "", "windows": { "type": "keys", "chord": "Backspace" }, "mac": { "type": "keys", "chord": "Backspace" } },
+    { "name": "Reply to message", "context": "", "windows": { "type": "keys", "chord": "R" }, "mac": { "type": "keys", "chord": "R" } },
+    { "name": "Pin message", "context": "", "windows": { "type": "keys", "chord": "P" }, "mac": { "type": "keys", "chord": "P" } },
+    { "name": "Forward message", "context": "", "windows": { "type": "keys", "chord": "F" }, "mac": { "type": "keys", "chord": "F" } },
+    { "name": "Add reaction", "context": "", "windows": { "type": "keys", "chord": "Plus" }, "mac": { "type": "keys", "chord": "Plus" } },
+    { "name": "Answer call", "context": "Incoming call", "windows": { "type": "keys", "chord": "Ctrl+Enter" }, "mac": { "type": "keys", "chord": "Cmd+Enter" } },
+    { "name": "Decline call", "context": "Incoming call", "windows": { "type": "keys", "chord": "Esc" }, "mac": { "type": "keys", "chord": "Esc" } },
+    { "name": "Call DM contact", "context": "", "windows": { "type": "keys", "chord": "Ctrl+'" }, "mac": { "type": "keys", "chord": "Ctrl+'" } },
+    { "name": "Return to voice call", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Shift+Alt+V" }, "mac": { "type": "keys", "chord": "Cmd+Shift+Alt+V" } },
+    { "name": "Open soundboard", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Shift+B" }, "mac": { "type": "keys", "chord": "Cmd+Shift+B" } }
   ],
   "defaults": {
     "TUNE_CW": {

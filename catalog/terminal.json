@@ -18,165 +18,69 @@
     ],
     "window_title": []
   },
-  "sources": [],
-  "note": "hand-authored 2026-09-04; expand from official documentation",
+  "sources": [
+    "https://learn.microsoft.com/en-us/windows/terminal/customize-settings/actions"
+  ],
+  "note": "Windows Terminal only; the docs give no macOS bindings, so all actions are windows-only. Includes only commands that have an explicit default key binding on the actions page (many commands, e.g. closeTab, tabSearch, renameTab, moveTab, movePane, exportBuffer, are documented but unbound by default and are omitted). Where a command has multiple default bindings (e.g. Copy also on Ctrl+Shift+C/Ctrl+Insert/Enter, Paste also on Ctrl+Shift+V/Shift+Insert, font size also on the numpad +/- keys), only the primary binding is listed except where a second binding is independently well known (Toggle full screen also on F11).",
   "actions": [
-    {
-      "name": "Newer command (history)",
-      "context": "",
-      "windows": {
-        "type": "keys",
-        "chord": "Down"
-      },
-      "mac": {
-        "type": "keys",
-        "chord": "Down"
-      }
-    },
-    {
-      "name": "Older command (history)",
-      "context": "",
-      "windows": {
-        "type": "keys",
-        "chord": "Up"
-      },
-      "mac": {
-        "type": "keys",
-        "chord": "Up"
-      }
-    },
-    {
-      "name": "Clear line",
-      "context": "",
-      "windows": {
-        "type": "keys",
-        "chord": "Esc"
-      },
-      "mac": {
-        "type": "keys",
-        "chord": "Esc"
-      }
-    },
-    {
-      "name": "Previous tab",
-      "context": "",
-      "windows": {
-        "type": "keys",
-        "chord": "Ctrl+Shift+Tab"
-      },
-      "mac": {
-        "type": "keys",
-        "chord": "Ctrl+Shift+Tab"
-      }
-    },
-    {
-      "name": "Next tab",
-      "context": "",
-      "windows": {
-        "type": "keys",
-        "chord": "Ctrl+Tab"
-      },
-      "mac": {
-        "type": "keys",
-        "chord": "Ctrl+Tab"
-      }
-    },
-    {
-      "name": "Font bigger",
-      "context": "",
-      "windows": {
-        "type": "keys",
-        "chord": "Ctrl+="
-      },
-      "mac": {
-        "type": "keys",
-        "chord": "Ctrl+="
-      }
-    },
-    {
-      "name": "Font smaller",
-      "context": "",
-      "windows": {
-        "type": "keys",
-        "chord": "Ctrl+-"
-      },
-      "mac": {
-        "type": "keys",
-        "chord": "Ctrl+-"
-      }
-    },
-    {
-      "name": "New tab",
-      "context": "",
-      "windows": {
-        "type": "keys",
-        "chord": "Ctrl+Shift+T"
-      },
-      "mac": {
-        "type": "keys",
-        "chord": "Ctrl+Shift+T"
-      }
-    },
-    {
-      "name": "Close tab",
-      "context": "",
-      "windows": {
-        "type": "keys",
-        "chord": "Ctrl+Shift+W"
-      },
-      "mac": {
-        "type": "keys",
-        "chord": "Ctrl+Shift+W"
-      }
-    },
-    {
-      "name": "Find",
-      "context": "",
-      "windows": {
-        "type": "keys",
-        "chord": "Ctrl+Shift+F"
-      },
-      "mac": {
-        "type": "keys",
-        "chord": "Ctrl+Shift+F"
-      }
-    },
-    {
-      "name": "Command palette",
-      "context": "",
-      "windows": {
-        "type": "keys",
-        "chord": "Ctrl+Shift+P"
-      },
-      "mac": {
-        "type": "keys",
-        "chord": "Ctrl+Shift+P"
-      }
-    },
-    {
-      "name": "Split pane",
-      "context": "",
-      "windows": {
-        "type": "keys",
-        "chord": "Alt+Shift+D"
-      },
-      "mac": {
-        "type": "keys",
-        "chord": "Alt+Shift+D"
-      }
-    },
-    {
-      "name": "Cancel command",
-      "context": "",
-      "windows": {
-        "type": "keys",
-        "chord": "Ctrl+C"
-      },
-      "mac": {
-        "type": "keys",
-        "chord": "Ctrl+C"
-      }
-    }
+    { "name": "Close window", "context": "", "windows": { "type": "keys", "chord": "Alt+F4" } },
+    { "name": "Find", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Shift+F" } },
+    { "name": "Open the dropdown", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Shift+Space" } },
+    { "name": "Open settings UI", "context": "", "windows": { "type": "keys", "chord": "Ctrl+," } },
+    { "name": "Open settings file", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Shift+," } },
+    { "name": "Open default settings file", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Alt+," } },
+    { "name": "Open system menu", "context": "", "windows": { "type": "keys", "chord": "Alt+Space" } },
+    { "name": "Toggle full screen", "context": "", "windows": { "type": "keys", "chord": "Alt+Enter" } },
+    { "name": "Toggle full screen (F11)", "context": "", "windows": { "type": "keys", "chord": "F11" } },
+    { "name": "Duplicate tab", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Shift+D" } },
+    { "name": "New tab", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Shift+T" } },
+    { "name": "New tab, profile 1", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Shift+1" } },
+    { "name": "New tab, profile 2", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Shift+2" } },
+    { "name": "New tab, profile 3", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Shift+3" } },
+    { "name": "New tab, profile 4", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Shift+4" } },
+    { "name": "New tab, profile 5", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Shift+5" } },
+    { "name": "New tab, profile 6", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Shift+6" } },
+    { "name": "New tab, profile 7", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Shift+7" } },
+    { "name": "New tab, profile 8", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Shift+8" } },
+    { "name": "New tab, profile 9", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Shift+9" } },
+    { "name": "Next tab", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Tab" } },
+    { "name": "Previous tab", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Shift+Tab" } },
+    { "name": "Switch to tab 1", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Alt+1" } },
+    { "name": "Switch to tab 2", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Alt+2" } },
+    { "name": "Switch to tab 3", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Alt+3" } },
+    { "name": "Switch to tab 4", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Alt+4" } },
+    { "name": "Switch to tab 5", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Alt+5" } },
+    { "name": "Switch to tab 6", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Alt+6" } },
+    { "name": "Switch to tab 7", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Alt+7" } },
+    { "name": "Switch to tab 8", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Alt+8" } },
+    { "name": "New window", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Shift+N" } },
+    { "name": "Split pane (duplicate, auto)", "context": "", "windows": { "type": "keys", "chord": "Alt+Shift+D" } },
+    { "name": "Split pane (duplicate, down)", "context": "", "windows": { "type": "keys", "chord": "Alt+Shift+-" } },
+    { "name": "Split pane (duplicate, right)", "context": "", "windows": { "type": "keys", "chord": "Alt+Shift+Plus" } },
+    { "name": "Close pane", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Shift+W" } },
+    { "name": "Move focus down", "context": "", "windows": { "type": "keys", "chord": "Alt+Down" } },
+    { "name": "Move focus left", "context": "", "windows": { "type": "keys", "chord": "Alt+Left" } },
+    { "name": "Move focus right", "context": "", "windows": { "type": "keys", "chord": "Alt+Right" } },
+    { "name": "Move focus up", "context": "", "windows": { "type": "keys", "chord": "Alt+Up" } },
+    { "name": "Move focus to previous pane", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Alt+Left" } },
+    { "name": "Resize pane down", "context": "", "windows": { "type": "keys", "chord": "Alt+Shift+Down" } },
+    { "name": "Resize pane left", "context": "", "windows": { "type": "keys", "chord": "Alt+Shift+Left" } },
+    { "name": "Resize pane right", "context": "", "windows": { "type": "keys", "chord": "Alt+Shift+Right" } },
+    { "name": "Resize pane up", "context": "", "windows": { "type": "keys", "chord": "Alt+Shift+Up" } },
+    { "name": "Copy", "context": "", "windows": { "type": "keys", "chord": "Ctrl+C" } },
+    { "name": "Copy (alternate binding)", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Shift+C" } },
+    { "name": "Paste", "context": "", "windows": { "type": "keys", "chord": "Ctrl+V" } },
+    { "name": "Select all", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Shift+A" } },
+    { "name": "Toggle mark mode", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Shift+M" } },
+    { "name": "Scroll up", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Shift+Up" } },
+    { "name": "Scroll down", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Shift+Down" } },
+    { "name": "Scroll up a page", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Shift+PageUp" } },
+    { "name": "Scroll down a page", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Shift+PageDown" } },
+    { "name": "Scroll to the earliest history", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Shift+Home" } },
+    { "name": "Scroll to the latest history", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Shift+End" } },
+    { "name": "Increase font size", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Plus" } },
+    { "name": "Decrease font size", "context": "", "windows": { "type": "keys", "chord": "Ctrl+-" } },
+    { "name": "Reset font size", "context": "", "windows": { "type": "keys", "chord": "Ctrl+0" } }
   ],
   "defaults": {
     "TUNE_CW": {

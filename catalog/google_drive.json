@@ -1,0 +1,974 @@
+{
+  "id": "google_drive",
+  "name": "Google Drive",
+  "kind": "site",
+  "category": "Files",
+  "match": {
+    "windows_exe": [
+      "chrome.exe",
+      "msedge.exe",
+      "firefox.exe",
+      "brave.exe",
+      "vivaldi.exe"
+    ],
+    "macos_bundle": [
+      "com.google.Chrome",
+      "com.microsoft.edgemac",
+      "org.mozilla.firefox",
+      "com.brave.Browser",
+      "com.apple.Safari"
+    ],
+    "window_title": [
+      "Google Drive"
+    ]
+  },
+  "sources": [
+    "https://support.google.com/drive/answer/2563044?hl=en&co=GENIE.Platform%3DDesktop"
+  ],
+  "note": "Google Drive on the web, current UI. Two-key navigation shortcuts (e.g. 'g then n') are modeled as sequences; where the vendor's Mac column literally shows 'control' rather than 'command' for a chord (the create/upload menu family), that is kept as documented. First-letter-of-filename navigation and drag-and-drop / mouse-modifier shortcuts are omitted.",
+  "actions": [
+    {
+      "name": "Go to navigation panel (folders list)",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+G",
+          "N"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Alt+G",
+          "N"
+        ]
+      }
+    },
+    {
+      "name": "Go to items view",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+G",
+          "F"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Alt+G",
+          "F"
+        ]
+      }
+    },
+    {
+      "name": "Switch between grid and list view",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+V",
+          "L"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Alt+V",
+          "L"
+        ]
+      }
+    },
+    {
+      "name": "Go to page content",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+G",
+          "C"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Alt+G",
+          "C"
+        ]
+      }
+    },
+    {
+      "name": "Go to details pane",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+G",
+          "D"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Alt+G",
+          "D"
+        ]
+      }
+    },
+    {
+      "name": "Go to top of application (Google bar)",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+G",
+          "T"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Alt+G",
+          "T"
+        ]
+      }
+    },
+    {
+      "name": "Go to download status",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+G",
+          "A"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Alt+G",
+          "A"
+        ]
+      }
+    },
+    {
+      "name": "Go to upload status",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+G",
+          "U"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Alt+G",
+          "U"
+        ]
+      }
+    },
+    {
+      "name": "Show or hide approvals pane",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+V",
+          "E"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Alt+V",
+          "E"
+        ]
+      }
+    },
+    {
+      "name": "Show or hide details pane",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+V",
+          "D"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Alt+V",
+          "D"
+        ]
+      }
+    },
+    {
+      "name": "Show or hide activity pane",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+V",
+          "A"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Alt+V",
+          "A"
+        ]
+      }
+    },
+    {
+      "name": "Select or deselect item",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Space"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Space"
+      }
+    },
+    {
+      "name": "Select next item down",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Down"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Down"
+      }
+    },
+    {
+      "name": "Select next item up",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Up"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Up"
+      }
+    },
+    {
+      "name": "Select next item to the left",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Left"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Left"
+      }
+    },
+    {
+      "name": "Select next item to the right",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Right"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Right"
+      }
+    },
+    {
+      "name": "Extend selection down",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Down"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Down"
+      }
+    },
+    {
+      "name": "Extend selection up",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Up"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Up"
+      }
+    },
+    {
+      "name": "Extend selection left",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Left"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Left"
+      }
+    },
+    {
+      "name": "Extend selection right",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Right"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Right"
+      }
+    },
+    {
+      "name": "Select all visible items",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+A"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+A"
+      }
+    },
+    {
+      "name": "Clear all selections",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Esc"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Esc"
+      }
+    },
+    {
+      "name": "Move down without changing selection",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Down"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Down"
+      }
+    },
+    {
+      "name": "Move up without changing selection",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Up"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Up"
+      }
+    },
+    {
+      "name": "Move left without changing selection",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Left"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Left"
+      }
+    },
+    {
+      "name": "Move right without changing selection",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Right"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Right"
+      }
+    },
+    {
+      "name": "Open selected items",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Enter"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Enter"
+      }
+    },
+    {
+      "name": "Open selected items in new tab",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Enter"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Enter"
+      }
+    },
+    {
+      "name": "Rename selected items",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F2"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "F2"
+      }
+    },
+    {
+      "name": "Share selected items",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+A"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+A"
+      }
+    },
+    {
+      "name": "Move selected items to new folder",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+M"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+M"
+      }
+    },
+    {
+      "name": "Star or unstar selected items",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+S"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+S"
+      }
+    },
+    {
+      "name": "Create shortcut(s) to selected items",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+R"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+R"
+      }
+    },
+    {
+      "name": "Remove selected items",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Delete"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Delete"
+      }
+    },
+    {
+      "name": "Copy selected items",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+C"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+C"
+      }
+    },
+    {
+      "name": "Cut selected items to the clipboard",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+X"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+X"
+      }
+    },
+    {
+      "name": "Paste (move) selected items from the clipboard",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+V"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+V"
+      }
+    },
+    {
+      "name": "Paste items from the clipboard as a shortcut",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+V"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+V"
+      }
+    },
+    {
+      "name": "Copy selected item URLs to the clipboard",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+L"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+L"
+      }
+    },
+    {
+      "name": "Copy selected item titles to the clipboard",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+C"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+C"
+      }
+    },
+    {
+      "name": "Upload file",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+C",
+          "U"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+C",
+          "U"
+        ]
+      }
+    },
+    {
+      "name": "Upload folder",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+C",
+          "I"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+C",
+          "I"
+        ]
+      }
+    },
+    {
+      "name": "New Google Doc",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+C",
+          "T"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+C",
+          "T"
+        ]
+      }
+    },
+    {
+      "name": "New Google Slides presentation",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+C",
+          "P"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+C",
+          "P"
+        ]
+      }
+    },
+    {
+      "name": "New Google Sheet",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+C",
+          "S"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+C",
+          "S"
+        ]
+      }
+    },
+    {
+      "name": "New Google Drawing",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+C",
+          "D"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+C",
+          "D"
+        ]
+      }
+    },
+    {
+      "name": "New folder",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+C",
+          "F"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+C",
+          "F"
+        ]
+      }
+    },
+    {
+      "name": "New Google Form",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+C",
+          "O"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+C",
+          "O"
+        ]
+      }
+    },
+    {
+      "name": "Create menu",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+N"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+N"
+      }
+    },
+    {
+      "name": "More actions menu",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+F10"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+F10"
+      }
+    },
+    {
+      "name": "Current folder actions menu",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+A"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+A"
+      }
+    },
+    {
+      "name": "Sort menu",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+R"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+R"
+      }
+    },
+    {
+      "name": "Settings menu",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+S"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+S"
+      }
+    },
+    {
+      "name": "Display keyboard shortcuts list",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+/"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+/"
+      }
+    },
+    {
+      "name": "Choose next visual density",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+T",
+          "Q"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+T",
+          "Q"
+        ]
+      }
+    },
+    {
+      "name": "Find / find next",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+F"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+F"
+      }
+    },
+    {
+      "name": "Print",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+P"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+P"
+      }
+    },
+    {
+      "name": "Undo last action",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Z"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Z"
+      }
+    },
+    {
+      "name": "Redo last undone action",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Y"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Y"
+      }
+    },
+    {
+      "name": "Show last message",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+G",
+          "K"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Alt+G",
+          "K"
+        ]
+      }
+    },
+    {
+      "name": "Search your Drive",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "/"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "/"
+      }
+    },
+    {
+      "name": "Preview selected item",
+      "context": "Preview mode",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+P"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+P"
+      }
+    },
+    {
+      "name": "Close preview",
+      "context": "Preview mode",
+      "windows": {
+        "type": "keys",
+        "chord": "Esc"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Esc"
+      }
+    },
+    {
+      "name": "Play / pause",
+      "context": "Preview mode",
+      "windows": {
+        "type": "keys",
+        "chord": "Space"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Space"
+      }
+    },
+    {
+      "name": "Zoom in",
+      "context": "Preview mode",
+      "windows": {
+        "type": "keys",
+        "chord": "="
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "="
+      }
+    },
+    {
+      "name": "Zoom out",
+      "context": "Preview mode",
+      "windows": {
+        "type": "keys",
+        "chord": "-"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "-"
+      }
+    }
+  ],
+  "defaults": {
+    "TUNE_CW": {
+      "name": "Select next item down",
+      "action": {
+        "type": "keys",
+        "chord": "Down"
+      },
+      "accel": "medium"
+    },
+    "TUNE_CCW": {
+      "name": "Select next item up",
+      "action": {
+        "type": "keys",
+        "chord": "Up"
+      },
+      "accel": "medium"
+    },
+    "TUNE_TAP_1F": {
+      "name": "Open selected items",
+      "action": {
+        "type": "keys",
+        "chord": "Enter"
+      }
+    }
+  }
+}

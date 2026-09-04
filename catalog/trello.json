@@ -1,0 +1,90 @@
+{
+  "id": "trello",
+  "name": "Trello",
+  "kind": "site",
+  "category": "Productivity",
+  "match": {
+    "windows_exe": [
+      "chrome.exe",
+      "msedge.exe",
+      "firefox.exe",
+      "brave.exe",
+      "vivaldi.exe"
+    ],
+    "macos_bundle": [
+      "com.google.Chrome",
+      "com.microsoft.edgemac",
+      "org.mozilla.firefox",
+      "com.brave.Browser",
+      "com.apple.Safari"
+    ],
+    "window_title": [
+      "Trello"
+    ]
+  },
+  "sources": [
+    "https://support.atlassian.com/trello/docs/keyboard-shortcuts-in-trello/",
+    "https://trello.com/shortcuts"
+  ],
+  "note": "\"Bulk select cards\" (Shift+Click) and \"Scroll sideways\" (Shift + mouse wheel) are mouse-dependent and not expressible in the chord grammar; skipped. \"Navigate cards\" and \"Navigate card backs\" also document vim-style aliases (j/k) for the same up/down/left/right actions as the arrow keys; only the arrow-key chord is listed per action since the grammar has no way to express two alternate bindings for one action.",
+  "actions": [
+    { "name": "Select card below", "context": "Board view", "windows": { "type": "keys", "chord": "Down" }, "mac": { "type": "keys", "chord": "Down" } },
+    { "name": "Select card above", "context": "Board view", "windows": { "type": "keys", "chord": "Up" }, "mac": { "type": "keys", "chord": "Up" } },
+    { "name": "Select card to the left", "context": "Board view", "windows": { "type": "keys", "chord": "Left" }, "mac": { "type": "keys", "chord": "Left" } },
+    { "name": "Select card to the right", "context": "Board view", "windows": { "type": "keys", "chord": "Right" }, "mac": { "type": "keys", "chord": "Right" } },
+    { "name": "Open previous card", "context": "Card detail view", "windows": { "type": "keys", "chord": "Left" }, "mac": { "type": "keys", "chord": "Left" } },
+    { "name": "Open next card", "context": "Card detail view", "windows": { "type": "keys", "chord": "Right" }, "mac": { "type": "keys", "chord": "Right" } },
+    { "name": "Copy card", "context": "Board view", "windows": { "type": "sequence", "chords": ["Ctrl+C", "Ctrl+V"] }, "mac": { "type": "sequence", "chords": ["Cmd+C", "Cmd+V"] } },
+    { "name": "Move card", "context": "Board view", "windows": { "type": "sequence", "chords": ["Ctrl+X", "Ctrl+V"] }, "mac": { "type": "sequence", "chords": ["Cmd+X", "Cmd+V"] } },
+    { "name": "Create new card with text", "context": "Board view", "windows": { "type": "keys", "chord": "Ctrl+V" }, "mac": { "type": "keys", "chord": "Cmd+V" } },
+    { "name": "Attach link", "context": "Card detail view", "windows": { "type": "keys", "chord": "Ctrl+V" }, "mac": { "type": "keys", "chord": "Cmd+V" } },
+    { "name": "Toggle board menu", "context": "Board view", "windows": { "type": "keys", "chord": "]" }, "mac": { "type": "keys", "chord": "]" } },
+    { "name": "Open header boards menu", "context": "", "windows": { "type": "keys", "chord": "B" }, "mac": { "type": "keys", "chord": "B" } },
+    { "name": "Focus search box", "context": "", "windows": { "type": "keys", "chord": "/" }, "mac": { "type": "keys", "chord": "/" } },
+    { "name": "Archive card", "context": "", "windows": { "type": "keys", "chord": "C" }, "mac": { "type": "keys", "chord": "C" } },
+    { "name": "Due date", "context": "", "windows": { "type": "keys", "chord": "D" }, "mac": { "type": "keys", "chord": "D" } },
+    { "name": "Add checklist", "context": "Card detail view", "windows": { "type": "keys", "chord": "-" }, "mac": { "type": "keys", "chord": "-" } },
+    { "name": "Quick edit mode", "context": "Board view", "windows": { "type": "keys", "chord": "E" }, "mac": { "type": "keys", "chord": "E" } },
+    { "name": "Close menu / Cancel editing", "context": "", "windows": { "type": "keys", "chord": "Esc" }, "mac": { "type": "keys", "chord": "Esc" } },
+    { "name": "Save text", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Enter" }, "mac": { "type": "keys", "chord": "Cmd+Enter" } },
+    { "name": "Open card", "context": "Board view", "windows": { "type": "keys", "chord": "Enter" }, "mac": { "type": "keys", "chord": "Enter" } },
+    { "name": "Open new card after creating", "context": "Board view", "windows": { "type": "keys", "chord": "Shift+Enter" }, "mac": { "type": "keys", "chord": "Shift+Enter" } },
+    { "name": "Open card filter menu", "context": "Board view", "windows": { "type": "keys", "chord": "F" }, "mac": { "type": "keys", "chord": "F" } },
+    { "name": "Label", "context": "", "windows": { "type": "keys", "chord": "L" }, "mac": { "type": "keys", "chord": "L" } },
+    { "name": "Apply / remove Green label", "context": "", "windows": { "type": "keys", "chord": "1" }, "mac": { "type": "keys", "chord": "1" } },
+    { "name": "Apply / remove Yellow label", "context": "", "windows": { "type": "keys", "chord": "2" }, "mac": { "type": "keys", "chord": "2" } },
+    { "name": "Apply / remove Orange label", "context": "", "windows": { "type": "keys", "chord": "3" }, "mac": { "type": "keys", "chord": "3" } },
+    { "name": "Apply / remove Red label", "context": "", "windows": { "type": "keys", "chord": "4" }, "mac": { "type": "keys", "chord": "4" } },
+    { "name": "Apply / remove Purple label", "context": "", "windows": { "type": "keys", "chord": "5" }, "mac": { "type": "keys", "chord": "5" } },
+    { "name": "Apply / remove Blue label", "context": "", "windows": { "type": "keys", "chord": "6" }, "mac": { "type": "keys", "chord": "6" } },
+    { "name": "Apply / remove Sky label", "context": "", "windows": { "type": "keys", "chord": "7" }, "mac": { "type": "keys", "chord": "7" } },
+    { "name": "Apply / remove Lime label", "context": "", "windows": { "type": "keys", "chord": "8" }, "mac": { "type": "keys", "chord": "8" } },
+    { "name": "Apply / remove Pink label", "context": "", "windows": { "type": "keys", "chord": "9" }, "mac": { "type": "keys", "chord": "9" } },
+    { "name": "Apply / remove Black label", "context": "", "windows": { "type": "keys", "chord": "0" }, "mac": { "type": "keys", "chord": "0" } },
+    { "name": "Toggle label names", "context": "Board view", "windows": { "type": "keys", "chord": ";" }, "mac": { "type": "keys", "chord": ";" } },
+    { "name": "Add / remove members", "context": "", "windows": { "type": "keys", "chord": "M" }, "mac": { "type": "keys", "chord": "M" } },
+    { "name": "Insert new card", "context": "Board view", "windows": { "type": "keys", "chord": "N" }, "mac": { "type": "keys", "chord": "N" } },
+    { "name": "Move card to bottom of left list", "context": "Board view", "windows": { "type": "keys", "chord": "," }, "mac": { "type": "keys", "chord": "," } },
+    { "name": "Move card to bottom of right list", "context": "Board view", "windows": { "type": "keys", "chord": "." }, "mac": { "type": "keys", "chord": "." } },
+    { "name": "Move card to top of left list", "context": "Board view", "windows": { "type": "keys", "chord": "Shift+," }, "mac": { "type": "keys", "chord": "Shift+," } },
+    { "name": "Move card to top of right list", "context": "Board view", "windows": { "type": "keys", "chord": "Shift+." }, "mac": { "type": "keys", "chord": "Shift+." } },
+    { "name": "My cards filter", "context": "Board view", "windows": { "type": "keys", "chord": "Q" }, "mac": { "type": "keys", "chord": "Q" } },
+    { "name": "Watch", "context": "", "windows": { "type": "keys", "chord": "S" }, "mac": { "type": "keys", "chord": "S" } },
+    { "name": "Assign self", "context": "", "windows": { "type": "keys", "chord": "Space" }, "mac": { "type": "keys", "chord": "Space" } },
+    { "name": "Edit title", "context": "", "windows": { "type": "keys", "chord": "T" }, "mac": { "type": "keys", "chord": "T" } },
+    { "name": "Vote", "context": "", "windows": { "type": "keys", "chord": "V" }, "mac": { "type": "keys", "chord": "V" } },
+    { "name": "Clear all filters", "context": "Board view", "windows": { "type": "keys", "chord": "X" }, "mac": { "type": "keys", "chord": "X" } },
+    { "name": "Open shortcuts page", "context": "", "windows": { "type": "keys", "chord": "Shift+/" }, "mac": { "type": "keys", "chord": "Shift+/" } },
+    { "name": "Autocomplete members", "context": "Card detail view", "windows": { "type": "keys", "chord": "Shift+2" }, "mac": { "type": "keys", "chord": "Shift+2" } },
+    { "name": "Undo action", "context": "", "windows": { "type": "keys", "chord": "Z" }, "mac": { "type": "keys", "chord": "Z" } },
+    { "name": "Redo action", "context": "", "windows": { "type": "keys", "chord": "Shift+Z" }, "mac": { "type": "keys", "chord": "Shift+Z" } },
+    { "name": "Repeat action", "context": "", "windows": { "type": "keys", "chord": "R" }, "mac": { "type": "keys", "chord": "R" } }
+  ],
+  "defaults": {
+    "TUNE_CW": { "name": "Select card below", "action": { "type": "keys", "chord": "Down" }, "accel": "light" },
+    "TUNE_CCW": { "name": "Select card above", "action": { "type": "keys", "chord": "Up" }, "accel": "light" },
+    "TUNE_TAP_1F": { "name": "Open card", "action": { "type": "keys", "chord": "Enter" } },
+    "TUNE_SWIPE_LEFT": { "name": "Select card to the left", "action": { "type": "keys", "chord": "Left" } },
+    "TUNE_SWIPE_RIGHT": { "name": "Select card to the right", "action": { "type": "keys", "chord": "Right" } }
+  }
+}

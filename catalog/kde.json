@@ -1,0 +1,655 @@
+{
+  "id": "kde",
+  "name": "KDE Plasma",
+  "kind": "system",
+  "category": "System",
+  "os": [
+    "linux"
+  ],
+  "sources": [
+    "https://docs.kde.org/stable_kf6/en/khelpcenter/fundamentals/kbd.html",
+    "https://docs.kde.org/stable_kf6/en/plasma-desktop/plasma-desktop/shortcuts.html"
+  ],
+  "note": "KDE Plasma defaults. KDE's Meta key is written Win. The Alt+D chords are two-step sequences, so they are recorded as type \"sequence\". Left out: the bare Meta key (Application Launcher), because a modifier alone is not a chord; and \"Peek at Desktop\", which the Plasma Desktop page gives the same Ctrl+F12 binding the Fundamentals page calls \"Show Desktop\". The Plasma Desktop shortcuts page labels Meta+= as Zoom out and Meta+- as Zoom in, which contradicts the Fundamentals page; the Fundamentals wording (Meta+= Zoom In) is used here. Spectacle screenshot and Klipper clipboard defaults are not listed in the KDE documentation pages above, so they are not included.",
+  "actions": [
+    {
+      "name": "Run Command Interface",
+      "context": "",
+      "linux": {
+        "type": "keys",
+        "chord": "Alt+Space"
+      }
+    },
+    {
+      "name": "Run Command Interface (Alt+F2)",
+      "context": "",
+      "linux": {
+        "type": "keys",
+        "chord": "Alt+F2"
+      }
+    },
+    {
+      "name": "System Activity",
+      "context": "",
+      "linux": {
+        "type": "keys",
+        "chord": "Ctrl+Esc"
+      }
+    },
+    {
+      "name": "Close",
+      "context": "",
+      "linux": {
+        "type": "keys",
+        "chord": "Alt+F4"
+      }
+    },
+    {
+      "name": "Quit",
+      "context": "",
+      "linux": {
+        "type": "keys",
+        "chord": "Ctrl+Q"
+      }
+    },
+    {
+      "name": "Force Quit",
+      "context": "",
+      "linux": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Esc"
+      }
+    },
+    {
+      "name": "Present Windows",
+      "context": "",
+      "linux": {
+        "type": "keys",
+        "chord": "Ctrl+F10"
+      }
+    },
+    {
+      "name": "Present Windows on current desktop",
+      "context": "",
+      "linux": {
+        "type": "keys",
+        "chord": "Ctrl+F9"
+      }
+    },
+    {
+      "name": "Present Windows of current application only",
+      "context": "",
+      "linux": {
+        "type": "keys",
+        "chord": "Ctrl+F7"
+      }
+    },
+    {
+      "name": "Show Desktop",
+      "context": "",
+      "linux": {
+        "type": "keys",
+        "chord": "Ctrl+F12"
+      }
+    },
+    {
+      "name": "Activate Window Demanding Attention",
+      "context": "",
+      "linux": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+A"
+      }
+    },
+    {
+      "name": "Walk through windows",
+      "context": "",
+      "linux": {
+        "type": "keys",
+        "chord": "Alt+Tab"
+      }
+    },
+    {
+      "name": "Walk through windows (Reverse)",
+      "context": "",
+      "linux": {
+        "type": "keys",
+        "chord": "Alt+Shift+Tab"
+      }
+    },
+    {
+      "name": "Open the Window Operations menu",
+      "context": "",
+      "linux": {
+        "type": "keys",
+        "chord": "Alt+F3"
+      }
+    },
+    {
+      "name": "Switch to Window Above",
+      "context": "",
+      "linux": {
+        "type": "keys",
+        "chord": "Win+Alt+Up"
+      }
+    },
+    {
+      "name": "Switch to Window Below",
+      "context": "",
+      "linux": {
+        "type": "keys",
+        "chord": "Win+Alt+Down"
+      }
+    },
+    {
+      "name": "Switch to Window to the Left",
+      "context": "",
+      "linux": {
+        "type": "keys",
+        "chord": "Win+Alt+Left"
+      }
+    },
+    {
+      "name": "Switch to Window to the Right",
+      "context": "",
+      "linux": {
+        "type": "keys",
+        "chord": "Win+Alt+Right"
+      }
+    },
+    {
+      "name": "Zoom In",
+      "context": "",
+      "linux": {
+        "type": "keys",
+        "chord": "Win+="
+      }
+    },
+    {
+      "name": "Zoom Out",
+      "context": "",
+      "linux": {
+        "type": "keys",
+        "chord": "Win+-"
+      }
+    },
+    {
+      "name": "Zoom Normal",
+      "context": "",
+      "linux": {
+        "type": "keys",
+        "chord": "Win+0"
+      }
+    },
+    {
+      "name": "Pan Up",
+      "context": "",
+      "linux": {
+        "type": "keys",
+        "chord": "Win+Up"
+      }
+    },
+    {
+      "name": "Pan Down",
+      "context": "",
+      "linux": {
+        "type": "keys",
+        "chord": "Win+Down"
+      }
+    },
+    {
+      "name": "Pan left, move window to monitor to the left",
+      "context": "",
+      "linux": {
+        "type": "keys",
+        "chord": "Win+Left"
+      }
+    },
+    {
+      "name": "Pan right, move window to monitor to the right",
+      "context": "",
+      "linux": {
+        "type": "keys",
+        "chord": "Win+Right"
+      }
+    },
+    {
+      "name": "Maximize/Restore window",
+      "context": "",
+      "linux": {
+        "type": "keys",
+        "chord": "Win+PageUp"
+      }
+    },
+    {
+      "name": "Minimize window",
+      "context": "",
+      "linux": {
+        "type": "keys",
+        "chord": "Win+PageDown"
+      }
+    },
+    {
+      "name": "Manage Activities",
+      "context": "",
+      "linux": {
+        "type": "keys",
+        "chord": "Win+Q"
+      }
+    },
+    {
+      "name": "Manage Activities (Alt+D, Alt+A)",
+      "context": "",
+      "linux": {
+        "type": "sequence",
+        "chords": [
+          "Alt+D",
+          "Alt+A"
+        ]
+      }
+    },
+    {
+      "name": "Next Activity",
+      "context": "",
+      "linux": {
+        "type": "keys",
+        "chord": "Win+Tab"
+      }
+    },
+    {
+      "name": "Previous Activity",
+      "context": "",
+      "linux": {
+        "type": "keys",
+        "chord": "Win+Shift+Tab"
+      }
+    },
+    {
+      "name": "Switch to Desktop 1",
+      "context": "",
+      "linux": {
+        "type": "keys",
+        "chord": "Ctrl+F1"
+      }
+    },
+    {
+      "name": "Switch to Desktop 2",
+      "context": "",
+      "linux": {
+        "type": "keys",
+        "chord": "Ctrl+F2"
+      }
+    },
+    {
+      "name": "Switch to Desktop 3",
+      "context": "",
+      "linux": {
+        "type": "keys",
+        "chord": "Ctrl+F3"
+      }
+    },
+    {
+      "name": "Switch to Desktop 4",
+      "context": "",
+      "linux": {
+        "type": "keys",
+        "chord": "Ctrl+F4"
+      }
+    },
+    {
+      "name": "Add Widgets",
+      "context": "",
+      "linux": {
+        "type": "sequence",
+        "chords": [
+          "Alt+D",
+          "A"
+        ]
+      }
+    },
+    {
+      "name": "Remove this Widget",
+      "context": "",
+      "linux": {
+        "type": "sequence",
+        "chords": [
+          "Alt+D",
+          "R"
+        ]
+      }
+    },
+    {
+      "name": "Lock/Unlock Widgets",
+      "context": "",
+      "linux": {
+        "type": "sequence",
+        "chords": [
+          "Alt+D",
+          "L"
+        ]
+      }
+    },
+    {
+      "name": "Widget Settings",
+      "context": "",
+      "linux": {
+        "type": "sequence",
+        "chords": [
+          "Alt+D",
+          "S"
+        ]
+      }
+    },
+    {
+      "name": "Next Widget",
+      "context": "",
+      "linux": {
+        "type": "sequence",
+        "chords": [
+          "Alt+D",
+          "N"
+        ]
+      }
+    },
+    {
+      "name": "Previous Widget",
+      "context": "",
+      "linux": {
+        "type": "sequence",
+        "chords": [
+          "Alt+D",
+          "P"
+        ]
+      }
+    },
+    {
+      "name": "Run the Associated Application",
+      "context": "",
+      "linux": {
+        "type": "sequence",
+        "chords": [
+          "Alt+D",
+          "T"
+        ]
+      }
+    },
+    {
+      "name": "Remove this Activity",
+      "context": "",
+      "linux": {
+        "type": "sequence",
+        "chords": [
+          "Alt+D",
+          "Alt+R"
+        ]
+      }
+    },
+    {
+      "name": "Desktop Settings",
+      "context": "",
+      "linux": {
+        "type": "sequence",
+        "chords": [
+          "Alt+D",
+          "Alt+S"
+        ]
+      }
+    },
+    {
+      "name": "Help",
+      "context": "",
+      "linux": {
+        "type": "keys",
+        "chord": "F1"
+      }
+    },
+    {
+      "name": "What's This?",
+      "context": "",
+      "linux": {
+        "type": "keys",
+        "chord": "Shift+F1"
+      }
+    },
+    {
+      "name": "Refresh",
+      "context": "",
+      "linux": {
+        "type": "keys",
+        "chord": "F5"
+      }
+    },
+    {
+      "name": "Select All",
+      "context": "",
+      "linux": {
+        "type": "keys",
+        "chord": "Ctrl+A"
+      }
+    },
+    {
+      "name": "Undo",
+      "context": "",
+      "linux": {
+        "type": "keys",
+        "chord": "Ctrl+Z"
+      }
+    },
+    {
+      "name": "Redo",
+      "context": "",
+      "linux": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Z"
+      }
+    },
+    {
+      "name": "Cut",
+      "context": "",
+      "linux": {
+        "type": "keys",
+        "chord": "Ctrl+X"
+      }
+    },
+    {
+      "name": "Copy",
+      "context": "",
+      "linux": {
+        "type": "keys",
+        "chord": "Ctrl+C"
+      }
+    },
+    {
+      "name": "Paste",
+      "context": "",
+      "linux": {
+        "type": "keys",
+        "chord": "Ctrl+V"
+      }
+    },
+    {
+      "name": "New",
+      "context": "",
+      "linux": {
+        "type": "keys",
+        "chord": "Ctrl+N"
+      }
+    },
+    {
+      "name": "Print",
+      "context": "",
+      "linux": {
+        "type": "keys",
+        "chord": "Ctrl+P"
+      }
+    },
+    {
+      "name": "Save",
+      "context": "",
+      "linux": {
+        "type": "keys",
+        "chord": "Ctrl+S"
+      }
+    },
+    {
+      "name": "Find",
+      "context": "",
+      "linux": {
+        "type": "keys",
+        "chord": "Ctrl+F"
+      }
+    },
+    {
+      "name": "Close Document/Tab",
+      "context": "",
+      "linux": {
+        "type": "keys",
+        "chord": "Ctrl+W"
+      }
+    },
+    {
+      "name": "Undo",
+      "context": "File manager",
+      "linux": {
+        "type": "keys",
+        "chord": "Ctrl+Z"
+      }
+    },
+    {
+      "name": "Cut",
+      "context": "File manager",
+      "linux": {
+        "type": "keys",
+        "chord": "Ctrl+X"
+      }
+    },
+    {
+      "name": "Copy",
+      "context": "File manager",
+      "linux": {
+        "type": "keys",
+        "chord": "Ctrl+C"
+      }
+    },
+    {
+      "name": "Paste",
+      "context": "File manager",
+      "linux": {
+        "type": "keys",
+        "chord": "Ctrl+V"
+      }
+    },
+    {
+      "name": "Select All",
+      "context": "File manager",
+      "linux": {
+        "type": "keys",
+        "chord": "Ctrl+A"
+      }
+    },
+    {
+      "name": "Replace Location",
+      "context": "File manager",
+      "linux": {
+        "type": "keys",
+        "chord": "Ctrl+L"
+      }
+    },
+    {
+      "name": "Invert Selection",
+      "context": "File manager",
+      "linux": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+A"
+      }
+    },
+    {
+      "name": "Back",
+      "context": "File manager",
+      "linux": {
+        "type": "keys",
+        "chord": "Alt+Left"
+      }
+    },
+    {
+      "name": "Forward",
+      "context": "File manager",
+      "linux": {
+        "type": "keys",
+        "chord": "Alt+Right"
+      }
+    },
+    {
+      "name": "Up (to folder that contains this one)",
+      "context": "File manager",
+      "linux": {
+        "type": "keys",
+        "chord": "Alt+Up"
+      }
+    },
+    {
+      "name": "Home Folder",
+      "context": "File manager",
+      "linux": {
+        "type": "keys",
+        "chord": "Alt+Home"
+      }
+    },
+    {
+      "name": "Move to Trash",
+      "context": "File manager",
+      "linux": {
+        "type": "keys",
+        "chord": "Delete"
+      }
+    },
+    {
+      "name": "Delete Permanently",
+      "context": "File manager",
+      "linux": {
+        "type": "keys",
+        "chord": "Shift+Delete"
+      }
+    },
+    {
+      "name": "Lock Screen",
+      "context": "",
+      "linux": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+L"
+      }
+    },
+    {
+      "name": "Leave",
+      "context": "",
+      "linux": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Delete"
+      }
+    }
+  ],
+  "defaults": {
+    "TUNE_CW": {
+      "name": "Volume up",
+      "action": {
+        "type": "media",
+        "key": "volume_up"
+      },
+      "accel": "light"
+    },
+    "TUNE_CCW": {
+      "name": "Volume down",
+      "action": {
+        "type": "media",
+        "key": "volume_down"
+      },
+      "accel": "light"
+    },
+    "TUNE_TAP_1F": {
+      "name": "Mute",
+      "action": {
+        "type": "media",
+        "key": "mute"
+      }
+    }
+  }
+}
