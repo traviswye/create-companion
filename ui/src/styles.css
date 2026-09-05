@@ -203,3 +203,6 @@ table.map .ev > div:first-child { white-space: nowrap; }
 .profile-item[draggable="true"] { cursor: grab; }
 .profile-item.dragover { box-shadow: inset 0 2px 0 var(--accent); }
 .nav-hint { padding: 8px 12px; font-size: 11px; color: var(--muted); line-height: 1.4; }
+
+.detect.warn { background: var(--accent-soft); border-color: var(--accent); color: var(--text); }
+.detect .big.mono { font-family: ui-monospace, Consolas, monospace; }

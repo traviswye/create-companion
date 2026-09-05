@@ -9,6 +9,7 @@ use companion_core::accel::{AccelCurve, RotaryState};
 use companion_core::action::Action;
 use companion_core::event::SemanticEvent;
 use companion_core::profile::{AppContext, AppIdentity, ProfileResolver};
+use companion_core::transport::TransportCode;
 use companion_core::transport::TransportTable;
 use companion_core::Config;
 use companion_platform::{ActionSink, PlatformError, RawTransportEvent};
@@ -91,6 +92,11 @@ impl Engine {
     /// Whether any profile needs the foreground window title.
     pub fn uses_titles(&self) -> bool {
         self.resolver.uses_titles()
+    }
+
+    /// Whether this exact key + modifier namespace is one of the configured inputs.
+    pub fn is_assigned(&self, code: TransportCode) -> bool {
+        self.table.decode(code).is_some()
     }
 
     /// Decide and act on one raw transport event. Returns `None` when nothing
@@ -252,8 +258,17 @@ pub fn run(
                         mods: raw.code.mods,
                     });
                 }
-                if !raw.reserved {
-                    // Learn-mode observation of an unreserved key: never act on it.
+                if !raw.reserved || !engine.is_assigned(raw.code) {
+                    // The keyboard sent an F-key (or a modifier namespace of one)
+                    // that no input uses. Never act on it; tell the UI so the
+                    // user can see it arrived and add it under Inputs.
+                    if raw.pressed {
+                        tracing::info!(?raw.code, reserved = raw.reserved, "unassigned input");
+                        let _ = ipc.send(IpcMessage::Unassigned {
+                            key: raw.code.key,
+                            mods: raw.code.mods,
+                        });
+                    }
                     continue;
                 }
                 let app = foreground();

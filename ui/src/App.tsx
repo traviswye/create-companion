@@ -134,6 +134,10 @@ export default function App() {
   const [flash, setFlash] = useState<string | null>(null);
   const [loadErr, setLoadErr] = useState<string | null>(null);
   const [learned, setLearned] = useState<Learned | null>(null);
+  /** Last F-key the keyboard sent that no input uses. */
+  const [unassigned, setUnassigned] = useState<(Learned & { at: number }) | null>(null);
+  /** Hand an unassigned key to the Inputs add row. */
+  const [suggest, setSuggest] = useState<Learned | null>(null);
   const saveTimer = useRef<number | null>(null);
 
   useEffect(() => {
@@ -167,6 +171,7 @@ export default function App() {
             break;
           case "event":
             setLast({ event: m.event!, profile: m.profile!, action: m.action!, at: Date.now() });
+            setUnassigned(null);
             setFlash(m.event!);
             window.setTimeout(() => setFlash(null), 900);
             break;
@@ -178,6 +183,9 @@ export default function App() {
             break;
           case "learned":
             setLearned((l) => ({ key: m.key!, mods: m.mods ?? "none", seq: (l?.seq ?? 0) + 1 }));
+            break;
+          case "unassigned":
+            setUnassigned((u) => ({ key: m.key!, mods: m.mods ?? "none", seq: (u?.seq ?? 0) + 1, at: Date.now() }));
             break;
         }
       })
@@ -532,7 +540,21 @@ export default function App() {
               </span>
             </div>
             <div className="content">
-              <Inputs transport={cfg.transport} onChange={setTransport} onRename={renameEvent} engineConnected={engine.connected} learned={learned} />
+              {unassigned && (
+                <div className="detect warn">
+                  <span className="muted">Received</span>
+                  <span className="big mono">{transportLabel({ key: unassigned.key, mods: unassigned.mods })}</span>
+                  <span className="muted">from the keyboard; no input uses it yet.</span>
+                  <span style={{ flex: 1 }} />
+                  <button className="primary" onClick={() => setSuggest({ key: unassigned.key, mods: unassigned.mods, seq: unassigned.seq })}>
+                    Use it in the new row
+                  </button>
+                  <button className="ghost" onClick={() => setUnassigned(null)} title="Dismiss">
+                    ✕
+                  </button>
+                </div>
+              )}
+              <Inputs transport={cfg.transport} onChange={setTransport} onRename={renameEvent} engineConnected={engine.connected} learned={learned} suggest={suggest} />
             </div>
           </>
         ) : (
@@ -582,6 +604,27 @@ export default function App() {
               </>
             )}
           </div>
+
+          {unassigned && (
+            <div className="detect warn">
+              <span className="muted">Received</span>
+              <span className="big mono">{transportLabel({ key: unassigned.key, mods: unassigned.mods })}</span>
+              <span className="muted">from the keyboard, but no input uses that key and modifier combination, so nothing happened.</span>
+              <span style={{ flex: 1 }} />
+              <button
+                className="primary"
+                onClick={() => {
+                  setSuggest({ key: unassigned.key, mods: unassigned.mods, seq: unassigned.seq });
+                  setSel(INPUTS);
+                }}
+              >
+                Add it under Inputs
+              </button>
+              <button className="ghost" onClick={() => setUnassigned(null)} title="Dismiss">
+                ✕
+              </button>
+            </div>
+          )}
 
           {selectedDisabled && (
             <div className="detect idle">

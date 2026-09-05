@@ -57,6 +57,11 @@ pub enum IpcMessage {
         key: FunctionKey,
         mods: Modifiers,
     },
+    /// An F13-F24 press (with its modifier namespace) that no input uses.
+    Unassigned {
+        key: FunctionKey,
+        mods: Modifiers,
+    },
 }
 
 #[derive(Debug, Deserialize)]

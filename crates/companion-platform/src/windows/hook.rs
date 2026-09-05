@@ -77,7 +77,10 @@ unsafe extern "system" fn hook_proc(code: i32, wparam: WPARAM, lparam: LPARAM) -
             let reserved = RESERVED[(vk - 0x7C) as usize].load(Ordering::Relaxed);
             let learning = LEARN.load(Ordering::Relaxed);
             let injected = (info.flags & LLKHF_INJECTED).0 != 0;
-            if (reserved || learning) && (!injected || ALLOW_INJECTED.load(Ordering::Relaxed)) {
+            // Every F13-F24 event is reported so the UI can say "the keyboard sent
+            // Shift+F16 but no input uses it"; only reserved keys are swallowed.
+            let _ = learning;
+            if !injected || ALLOW_INJECTED.load(Ordering::Relaxed) {
                 if let (Some(tx), Some(key)) = (SENDER.get(), FunctionKey::from_windows_vk(vk)) {
                     let pressed = (info.flags & LLKHF_UP).0 == 0;
                     let ev = RawTransportEvent {

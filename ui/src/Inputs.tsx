@@ -118,6 +118,8 @@ export function Inputs(props: {
   onRename: (from: string, to: string) => void;
   engineConnected: boolean;
   learned: Learned | null;
+  /** A key the keyboard sent that no input uses: prefill the add row with it. */
+  suggest?: Learned | null;
 }) {
   const events = useMemo(() => Object.keys(props.transport).sort((a, b) => eventSortKey(a) - eventSortKey(b)), [props.transport]);
   const [armed, setArmedState] = useState<string | null>(null); // event being learned, or "new"
@@ -163,6 +165,15 @@ export function Inputs(props: {
     setArmed(null);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [props.learned?.seq]);
+
+  // An unassigned key was handed over from the detect banner: prefill the add row.
+  useEffect(() => {
+    if (!props.suggest) return;
+    setNewKey(props.suggest.key);
+    setNewMods(props.suggest.mods ?? "none");
+    setMsg({ text: `${transportLabel({ key: props.suggest.key, mods: props.suggest.mods })} came from the keyboard. Pick the module and gesture it belongs to, then press Add.`, ok: true });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [props.suggest?.seq]);
 
   function setCode(ev: string, code: TransportCode) {
     const owner = used.get(codeKey(code));

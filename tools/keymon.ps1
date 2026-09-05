@@ -69,10 +69,13 @@ public static class KeyMon {
       bool isF = k.vkCode >= 0x7C && k.vkCode <= 0x87;
       bool isMod = (k.vkCode >= 0xA0 && k.vkCode <= 0xA5) || k.vkCode == 0x5B || k.vkCode == 0x5C;
       if (!OnlyF || isF || isMod) {
-        Console.WriteLine("{0:HH:mm:ss.fff}  {1,-4} {2,-8} vk=0x{3:X2} sc=0x{4:X3} {5} mods-at-this-instant={6}{7}",
+        // k.time is the tick count Windows stamped when the key arrived from the
+        // driver; a gap between it and 'now' is delivery lag, not the keyboard.
+        long lag = (long)((uint)Environment.TickCount - k.time);
+        Console.WriteLine("{0:HH:mm:ss.fff}  hw+{8,4}ms  {1,-4} {2,-8} vk=0x{3:X2} sc=0x{4:X3} {5} mods-at-this-instant={6}{7}",
           DateTime.Now, up ? "UP" : "DOWN", Name(k.vkCode), k.vkCode, k.scanCode,
           injected ? "INJECTED" : "physical", Mods(),
-          isF ? (k.flags & 0x01) != 0 ? "  (extended)" : "" : "");
+          isF ? (k.flags & 0x01) != 0 ? "  (extended)" : "" : "", lag);
       }
     }
     return CallNextHookEx(Hook, code, wParam, lParam);
@@ -92,7 +95,7 @@ public static class KeyMon {
 
 [KeyMon]::Install([bool]$OnlyFKeys)
 Write-Host "Listening for keys (hook installed). Press the module gestures now." -ForegroundColor Cyan
-Write-Host "Columns: time, DOWN/UP, key, virtual key, scan code, physical|INJECTED, modifier state the engine would read." -ForegroundColor DarkGray
+Write-Host "Columns: time, delivery lag since the driver stamped the key, DOWN/UP, key, virtual key, scan code, physical|INJECTED, modifier state the engine would read." -ForegroundColor DarkGray
 Write-Host ("Stop: " + $(if ($Seconds -gt 0) { "automatically after $Seconds s" } else { "Ctrl+C" })) -ForegroundColor DarkGray
 $end = if ($Seconds -gt 0) { (Get-Date).AddSeconds($Seconds) } else { [DateTime]::MaxValue }
 try {

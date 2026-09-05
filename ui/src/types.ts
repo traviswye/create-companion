@@ -142,6 +142,7 @@ export interface EngineMsg {
     | "config_applied"
     | "config_rejected"
     | "learned"
+    | "unassigned"
     | "connected"
     | "disconnected";
   version?: string;
@@ -152,7 +153,7 @@ export interface EngineMsg {
   action?: string;
   repeat?: number;
   error?: string;
-  /** `learned`: the key and modifier namespace the module sent. */
+  /** `learned` / `unassigned`: the key and modifier namespace the module sent. */
   key?: string;
   mods?: Mods;
 }
