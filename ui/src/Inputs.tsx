@@ -30,7 +30,7 @@ import {
   type TransportCode,
 } from "./types";
 import type { GestureId, ModuleId } from "./events";
-import { SortHeader } from "./App";
+import { SortHeader, Switch } from "./App";
 
 export interface Learned {
   key: string;
@@ -382,6 +382,9 @@ export function Inputs(props: {
                 </th>
                 <th style={{ width: 110 }}>Fingers</th>
                 <th>Sends</th>
+                <th style={{ width: 140 }} title="Only 2-finger swipes stream; everything else sends one key per gesture">
+                  Follow swipe
+                </th>
                 <th style={{ width: 150 }}></th>
               </tr>
             </thead>
@@ -407,13 +410,20 @@ export function Inputs(props: {
                         <ModToggles value={t.mods} onChange={(mods) => setCode(ev, { ...t, mods })} />
                         <KeySelect value={t.key} onChange={(key) => setCode(ev, { ...t, key })} />
                         <kbd>{transportLabel(t)}</kbd>
-                        {streams(ev) && (
-                          <label className="follow" title="The Tune sends a 2-finger swipe as a run of keys scaled to how far the fingers travel. Off: one action per swipe. On: every key acts, so volume or scroll follows the swipe. Each profile can override this.">
-                            <input type="checkbox" checked={!!t.follow} onChange={(e) => setCode(ev, { ...t, follow: e.target.checked })} />
-                            follow the swipe
-                          </label>
-                        )}
                       </div>
+                    </td>
+                    <td>
+                      {streams(ev) ? (
+                        <Switch
+                          checked={!!t.follow}
+                          on="Follow swipe"
+                          off="One per swipe"
+                          title="The Tune sends a 2-finger swipe as a run of keys scaled to how far the fingers travel. Off: one action per swipe. On: every key acts, so volume or scroll follows the swipe. This is the default for every profile; a profile can flip it for itself."
+                          onChange={(v) => setCode(ev, { ...t, follow: v })}
+                        />
+                      ) : (
+                        <span className="muted">—</span>
+                      )}
                     </td>
                     <td className="actions">
                       <button className={"ghost " + (armed === ev ? "primary" : "")} disabled={!props.engineConnected && armed !== ev} onClick={() => toggleLearn(ev)} title="Press the gesture on the module; the key it sends fills this row">
@@ -479,13 +489,14 @@ export function Inputs(props: {
                         <kbd>{transportLabel({ key: newKey, mods: newMods })}</kbd>
                       </>
                     )}
-                    {halvesOf(newGesture).some((g) => streams(makeEvent(newModule, g, newFingers))) && (
-                      <label className="follow" title="Off: one action per swipe. On: every key of the run acts.">
-                        <input type="checkbox" checked={newFollow} onChange={(e) => setNewFollow(e.target.checked)} />
-                        follow the swipe
-                      </label>
-                    )}
                   </div>
+                </td>
+                <td>
+                  {halvesOf(newGesture).some((g) => streams(makeEvent(newModule, g, newFingers))) ? (
+                    <Switch checked={newFollow} on="Follow swipe" off="One per swipe" title="Off: one action per swipe. On: every key of the run acts." onChange={setNewFollow} />
+                  ) : (
+                    <span className="muted">—</span>
+                  )}
                 </td>
                 <td className="actions">
                   <button className={"ghost " + (armed === "new" ? "primary" : "")} disabled={!props.engineConnected && armed !== "new"} onClick={() => toggleLearn("new")}>

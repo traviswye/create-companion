@@ -747,7 +747,7 @@ export default function App() {
                   </th>
                   <th>Action</th>
                   <th style={{ width: 130 }}>Keys</th>
-                  <th style={{ width: 150 }}>Acceleration</th>
+                  <th style={{ width: 150 }}>Repeat</th>
                   <th style={{ width: 90 }}></th>
                 </tr>
               </thead>
@@ -792,15 +792,19 @@ export default function App() {
                       </td>
                       <td>
                         {b && streams(ev) ? (
-                          <select
-                            value={b.follow === true ? "follow" : b.follow === false ? "collapse" : "default"}
-                            onChange={(e) => setFollow(ev, e.target.value === "default" ? null : e.target.value === "follow")}
-                            title="The Tune sends a 2-finger swipe as a run of keys scaled to the finger travel. Collapse: one action per swipe. Follow: every key acts, so the action tracks the swipe's length."
-                          >
-                            <option value="default">Input default ({cfg.transport[ev]?.follow ? "follow" : "collapse"})</option>
-                            <option value="collapse">Collapse to one</option>
-                            <option value="follow">Follow the swipe</option>
-                          </select>
+                          (() => {
+                            const inputDefault = !!cfg.transport[ev]?.follow;
+                            const effective = b.follow ?? inputDefault;
+                            return (
+                              <Switch
+                                checked={effective}
+                                on="Follow swipe"
+                                off="One per swipe"
+                                title="The Tune sends a 2-finger swipe as a run of keys scaled to the finger travel. Off: one action per swipe. On: every key acts, so the action tracks the swipe's length. Starts as the input's setting; flipping it here applies to this profile only."
+                                onChange={(v) => setFollow(ev, v === inputDefault ? null : v)}
+                              />
+                            );
+                          })()
                         ) : b ? (
                           <select value={b.accel ?? "none"} disabled={!repeatable} onChange={(e) => setAccel(ev, e.target.value as Accel)} title={repeatable ? "" : "Only key, media and scroll actions repeat"}>
                             {ACCELS.map((a) => (
@@ -856,6 +860,19 @@ export default function App() {
       )}
       {adding && <AddApp onAdd={addProfile} onClose={() => setAdding(false)} />}
     </div>
+  );
+}
+
+/** A two-state toggle with a label that names the current state. */
+export function Switch(props: { checked: boolean; onChange: (v: boolean) => void; on: string; off: string; title?: string }) {
+  return (
+    <label className={"switch " + (props.checked ? "on" : "")} title={props.title}>
+      <input type="checkbox" checked={props.checked} onChange={(e) => props.onChange(e.target.checked)} />
+      <span className="track">
+        <span className="knob" />
+      </span>
+      <span className="switch-label">{props.checked ? props.on : props.off}</span>
+    </label>
   );
 }
 
