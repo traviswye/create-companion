@@ -176,7 +176,10 @@ fn backfill_names(cfg: &mut Config) {
 fn save_config(config: serde_json::Value) -> Result<(), String> {
     let cfg: Config = serde_json::from_value(config).map_err(|e| format!("invalid config: {e}"))?;
     cfg.transport_table().map_err(|e| e.to_string())?;
-    for p in std::iter::once(&cfg.default_profile).chain(cfg.profiles.iter()) {
+    for p in std::iter::once(&cfg.default_profile)
+        .chain(std::iter::once(&cfg.god_mode))
+        .chain(cfg.profiles.iter())
+    {
         for (ev, b) in &p.bindings {
             if let companion_core::action::Action::Keys { chord, .. } = &b.action {
                 chord

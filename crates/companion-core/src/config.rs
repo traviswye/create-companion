@@ -40,10 +40,25 @@ pub struct Config {
     /// once; duplicate codes are caught when building the table.
     #[serde(default)]
     pub transport: BTreeMap<SemanticEvent, TransportCode>,
+    /// The fallback profile ("System"): used when no app profile binds an event.
     #[serde(default)]
     pub default_profile: Profile,
+    /// The override profile ("God Mode"): its bindings win everywhere, whatever
+    /// is in the foreground. Meant for gestures reserved for system-wide use.
+    #[serde(default = "god_mode_default")]
+    pub god_mode: Profile,
     #[serde(default)]
     pub profiles: Vec<Profile>,
+}
+
+pub const GOD_MODE_NAME: &str = "God Mode";
+pub const SYSTEM_PROFILE_NAME: &str = "System";
+
+fn god_mode_default() -> Profile {
+    Profile {
+        name: GOD_MODE_NAME.to_string(),
+        ..Profile::default()
+    }
 }
 
 fn current_version() -> u32 {
@@ -66,11 +81,17 @@ pub enum ConfigError {
 
 impl Config {
     pub fn from_toml(text: &str) -> Result<Self, ConfigError> {
-        let cfg: Config = toml::from_str(text)?;
+        let mut cfg: Config = toml::from_str(text)?;
         if cfg.schema_version > CURRENT_SCHEMA_VERSION {
             return Err(ConfigError::TooNew(cfg.schema_version));
         }
-        // Future: migrations for schema_version < CURRENT run here.
+        // Migrations. The fallback profile was called "Default" until 2026-09-05.
+        if cfg.default_profile.name.is_empty() || cfg.default_profile.name == "Default" {
+            cfg.default_profile.name = SYSTEM_PROFILE_NAME.to_string();
+        }
+        if cfg.god_mode.name.is_empty() {
+            cfg.god_mode.name = GOD_MODE_NAME.to_string();
+        }
         cfg.transport_table()?; // validate duplicates eagerly
         Ok(cfg)
     }
@@ -88,7 +109,11 @@ impl Config {
     }
 
     pub fn resolver(&self) -> ProfileResolver {
-        ProfileResolver::new(self.default_profile.clone(), self.profiles.clone())
+        ProfileResolver::with_god_mode(
+            self.default_profile.clone(),
+            self.god_mode.clone(),
+            self.profiles.clone(),
+        )
     }
 }
 

@@ -81,6 +81,8 @@ export interface Config {
   engine: { start_at_login: boolean; log_level: string };
   transport: Record<string, TransportCode>;
   default_profile: Profile;
+  /** Overrides every other profile, whatever is in the foreground. */
+  god_mode: Profile;
   profiles: Profile[];
 }
 

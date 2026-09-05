@@ -159,12 +159,39 @@ impl Profile {
 #[derive(Debug, Clone)]
 pub struct ProfileResolver {
     default: Profile,
+    /// Bindings here beat every app profile, whatever is in the foreground.
+    god: Profile,
     apps: Vec<Profile>,
 }
 
 impl ProfileResolver {
     pub fn new(default: Profile, apps: Vec<Profile>) -> Self {
-        Self { default, apps }
+        Self::with_god_mode(
+            default,
+            Profile {
+                name: "God Mode".into(),
+                ..Profile::default()
+            },
+            apps,
+        )
+    }
+
+    pub fn with_god_mode(default: Profile, god: Profile, apps: Vec<Profile>) -> Self {
+        Self { default, god, apps }
+    }
+
+    pub fn god_mode(&self) -> &Profile {
+        &self.god
+    }
+
+    /// The override binding for an event, if God Mode has one (exact finger
+    /// count first, then the any-count form).
+    pub fn god_binding(&self, ev: SemanticEvent) -> Option<&Binding> {
+        self.god.binding(ev).or_else(|| {
+            (ev.fingers.is_some())
+                .then(|| self.god.binding(ev.without_fingers()))
+                .flatten()
+        })
     }
 
     /// Most specific match wins: a profile with a title rule beats one that
@@ -193,6 +220,9 @@ impl ProfileResolver {
     /// serves every count of that gesture, so `TUNE_SWIPE_LEFT_3F` falls back
     /// to `TUNE_SWIPE_LEFT`.
     pub fn binding(&self, ctx: &AppContext, ev: SemanticEvent) -> Option<&Binding> {
+        if let Some(b) = self.god_binding(ev) {
+            return Some(b);
+        }
         let app = self.resolve(ctx);
         let any = ev.without_fingers();
         app.binding(ev)
@@ -333,6 +363,38 @@ mod tests {
         let r = resolver();
         let ctx = AppContext::app(AppIdentity::MacBundle("com.google.Chrome".into()));
         assert_eq!(r.resolve(&ctx).name, "Chrome");
+    }
+
+    #[test]
+    fn god_mode_binding_wins_everywhere() {
+        let mut r = resolver();
+        let ev: SemanticEvent = "TUNE_CW".parse().unwrap();
+        let chrome = win("chrome.exe");
+        // Chrome binds the dial itself...
+        assert!(r.resolve(&chrome).name != r.god_mode().name);
+        let before = r.binding(&chrome, ev).unwrap().action.clone();
+        // ...but a God Mode binding takes over, in Chrome and on the desktop.
+        r.god.bindings.insert(
+            ev,
+            Binding {
+                action: Action::Keys {
+                    chord: KeyChord("Alt+Tab".into()),
+                    hold_ms: None,
+                },
+                accel: Default::default(),
+                name: None,
+            },
+        );
+        let after = r.binding(&chrome, ev).unwrap().action.clone();
+        assert_ne!(before, after);
+        assert_eq!(
+            after,
+            Action::Keys {
+                chord: KeyChord("Alt+Tab".into()),
+                hold_ms: None
+            }
+        );
+        assert_eq!(r.binding(&AppContext::default(), ev).unwrap().action, after);
     }
 
     #[test]

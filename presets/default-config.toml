@@ -27,7 +27,7 @@ TUNE_SWIPE_DOWN = { key = "F17" }
 # LEFT_TOUCH_SWIPE_LEFT = { key = "F20", mods = "shift" }
 
 [default_profile]
-name = "Default"
+name = "System"
 
 [default_profile.bindings.TUNE_CW]
 name = "Volume up"
@@ -58,6 +58,11 @@ action = { type = "media", key = "play_pause" }
 [default_profile.bindings.TUNE_SWIPE_DOWN]
 name = "Task view"
 action = { type = "keys", chord = "Win+Tab" }
+
+# God Mode: bindings here override any and every other profile, whatever is in
+# the foreground. Only bind gestures you do not plan to use for anything else.
+[god_mode]
+name = "God Mode"
 
 [[profiles]]
 name = "Browser"

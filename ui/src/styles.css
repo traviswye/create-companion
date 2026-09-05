@@ -206,3 +206,6 @@ table.map .ev > div:first-child { white-space: nowrap; }
 
 .detect.warn { background: var(--accent-soft); border-color: var(--accent); color: var(--text); }
 .detect .big.mono { font-family: ui-monospace, Consolas, monospace; }
+
+.profile-item.god .star { color: var(--accent); }
+.profile-item.god .name { font-weight: 600; }

@@ -355,7 +355,7 @@ export function ActionPicker(props: {
               </div>
               <div className="row" onClick={() => props.onPick(null)}>
                 <div>
-                  Use the Default profile's action
+                  Use the System profile's action
                   <div className="sub">Remove this app-specific mapping.</div>
                 </div>
               </div>

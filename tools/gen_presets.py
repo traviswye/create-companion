@@ -58,7 +58,7 @@ DEFAULT_CONFIG_PROFILES = [
 ]
 
 DEFAULT_PROFILE = {
-    "name": "Default",
+    "name": "System",
     "bindings": {
         "TUNE_CW": {"name": "Volume up", "action": {"type": "media", "key": "volume_up"}, "accel": "light"},
         "TUNE_CCW": {"name": "Volume down", "action": {"type": "media", "key": "volume_down"}, "accel": "light"},
@@ -410,6 +410,13 @@ def build_default_config(files: dict[str, dict]) -> str:
         "",
     ]
     L += emit_bindings("default_profile", DEFAULT_PROFILE["bindings"])
+    L += [
+        "# God Mode: bindings here override any and every other profile, whatever is in",
+        "# the foreground. Only bind gestures you do not plan to use for anything else.",
+        "[god_mode]",
+        'name = "God Mode"',
+        "",
+    ]
     for aid in DEFAULT_CONFIG_PROFILES:
         c = files[aid]
         L.append("[[profiles]]")

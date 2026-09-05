@@ -29,6 +29,7 @@ type NavTab = "active" | "available";
 const ACCELS: Accel[] = ["none", "light", "medium", "aggressive"];
 const DEFAULT = -1; // selected index for the default profile
 const INPUTS = -2; // the Inputs (transport) editor
+const GOD = -3; // the God Mode override profile
 
 function isEnabled(p: Profile) {
   return p.enabled !== false;
@@ -216,7 +217,7 @@ export default function App() {
 
   const profile: Profile | null = useMemo(() => {
     if (!cfg || sel === INPUTS) return null;
-    return sel === DEFAULT ? cfg.default_profile : cfg.profiles[sel] ?? null;
+    return sel === DEFAULT ? cfg.default_profile : sel === GOD ? cfg.god_mode : cfg.profiles[sel] ?? null;
   }, [cfg, sel]);
 
   function setTransport(transport: Config["transport"]) {
@@ -243,6 +244,7 @@ export default function App() {
         ...c,
         transport,
         default_profile: { ...c.default_profile, bindings: ren(c.default_profile.bindings) },
+        god_mode: { ...c.god_mode, bindings: ren(c.god_mode.bindings) },
         profiles: c.profiles.map((p) => ({ ...p, bindings: ren(p.bindings) })),
       };
     });
@@ -257,7 +259,7 @@ export default function App() {
    */
   const appEntry = useMemo(() => {
     if (!profile) return undefined;
-    if (sel === DEFAULT) {
+    if (sel === DEFAULT || sel === GOD) {
       const own = apps.find((a) => a.kind === "system" && a.os?.includes(currentOs()));
       if (!allPlatforms || !own) return own;
       // Browsing all platforms: the other systems' shortcuts join the list.
@@ -291,6 +293,7 @@ export default function App() {
       setCfg((c) => {
         if (!c) return c;
         if (target === DEFAULT) return { ...c, default_profile: fn(c.default_profile) };
+        if (target === GOD) return { ...c, god_mode: fn(c.god_mode) };
         const profiles = c.profiles.slice();
         profiles[target] = fn(profiles[target]);
         return { ...c, profiles };
@@ -396,8 +399,11 @@ export default function App() {
   const showInputs = sel === INPUTS;
   const prof = (profile ?? cfg.default_profile) as Profile;
   const isDefault = sel === DEFAULT;
+  const isGod = sel === GOD;
+  /** System and God Mode: always on, no match rules, cannot be removed. */
+  const fixed = isDefault || isGod;
   const liveName = engine.profile;
-  const selectedDisabled = !isDefault && !showInputs && !isEnabled(prof);
+  const selectedDisabled = !fixed && !showInputs && !isEnabled(prof);
 
   const ProfileRow = ({ i, draggable }: { i: number; draggable?: boolean }) => {
     const p = cfg.profiles[i];
@@ -467,7 +473,14 @@ export default function App() {
         <div className="profiles">
           {navTab === "active" && (
             <>
-              <div className={"profile-item " + (isDefault ? "active " : "") + (liveName === cfg.default_profile.name ? "live" : "")} onClick={() => setSel(DEFAULT)}>
+              <div className={"profile-item god " + (isGod ? "active " : "") + (liveName === cfg.god_mode.name ? "live" : "")} onClick={() => setSel(GOD)} title="Overrides every other profile, whatever is in the foreground">
+                <span className="star on" title="Always active, everywhere" style={{ cursor: "default" }}>
+                  ⚡
+                </span>
+                <span className="name">{cfg.god_mode.name}</span>
+                <span className="badge">{countLabel(undefined, cfg.god_mode)}</span>
+              </div>
+              <div className={"profile-item " + (isDefault ? "active " : "") + (liveName === cfg.default_profile.name ? "live" : "")} onClick={() => setSel(DEFAULT)} title="Used whenever no app profile binds a gesture">
                 <span className="star on" title="Always active" style={{ cursor: "default" }}>
                   ★
                 </span>
@@ -566,7 +579,7 @@ export default function App() {
         ) : (
           <>
         <div className="topbar">
-          {isDefault ? (
+          {fixed ? (
             <h1>{prof.name}</h1>
           ) : (
             <input className="title" value={prof.name} onChange={(e) => update((p) => ({ ...p, name: e.target.value }))} />
@@ -584,7 +597,7 @@ export default function App() {
             {save.kind === "applied" && "Saved · applied by engine ✓"}
             {save.kind === "error" && `Error: ${save.msg}`}
           </span>
-          {!isDefault && (
+          {!fixed && (
             <button onClick={() => removeProfile(sel)} title="Delete this profile and its mappings">
               Remove
             </button>
@@ -644,7 +657,15 @@ export default function App() {
             </div>
           )}
 
-          {!isDefault && (
+          {isGod && (
+            <div className="detect warn">
+              <span>
+                <b>Binding to this profile overrides any and every other profile</b>, whatever is in the foreground. Only bind gestures you don't plan to use for any other profile. Good for system-wide moves such as switching windows or desktops.
+              </span>
+            </div>
+          )}
+
+          {!fixed && (
             <div className="card">
               <h2>Matches</h2>
               <div className="body" style={{ display: "grid", gap: 10 }}>
@@ -660,7 +681,7 @@ export default function App() {
               Mappings
               <span className="spacer" />
               <span className="muted" style={{ textTransform: "none", letterSpacing: 0 }}>
-                {isDefault ? "Used whenever no app profile overrides an event" : "Unset rows use the Default profile"}
+                {isGod ? "Bound rows win in every app; unbound rows do nothing here" : isDefault ? "Used whenever no app profile overrides an event" : `Unset rows use the ${cfg.default_profile.name} profile`}
               </span>
             </h2>
             <div className="tablewrap">
@@ -678,7 +699,8 @@ export default function App() {
                 {events.map((ev) => {
                   const [mod, gesture] = eventLabel(ev);
                   const b = prof.bindings[ev];
-                  const inherited = !b && !isDefault ? cfg.default_profile.bindings[ev] : undefined;
+                  const inherited = !b && !fixed ? cfg.default_profile.bindings[ev] : undefined;
+                  const god = !isGod ? cfg.god_mode.bindings[ev] : undefined;
                   const shown = b ?? inherited;
                   const repeatable = b && (b.action.type === "keys" || b.action.type === "media" || b.action.type === "scroll");
                   const actionName = shown ? shown.name ?? (shown.action.type === "keys" ? "Custom shortcut" : describeAction(shown.action)) : "Not bound";
@@ -691,10 +713,14 @@ export default function App() {
                         </div>
                       </td>
                       <td className="action" onClick={() => setPicker(ev)}>
-                        {b ? (
+                        {god ? (
+                          <span className="inherit" title={`${cfg.god_mode.name} binds this gesture, so it wins here. Change or unbind it in ${cfg.god_mode.name}.`}>
+                            ⚡ {cfg.god_mode.name}: {god.name ?? (god.action.type === "keys" ? "Custom shortcut" : describeAction(god.action))}
+                          </span>
+                        ) : b ? (
                           <span className={shown?.name ? "" : "name-muted"}>{actionName}</span>
                         ) : (
-                          <span className="inherit">{inherited ? `Default: ${actionName}` : "Not bound"}</span>
+                          <span className="inherit">{inherited ? `${cfg.default_profile.name}: ${actionName}` : "Not bound"}</span>
                         )}
                       </td>
                       <td className="keys">
@@ -726,7 +752,7 @@ export default function App() {
                           Change
                         </button>
                         {b && (
-                          <button className="ghost" title={isDefault ? "Unbind" : "Use Default"} onClick={() => setBinding(ev, null)}>
+                          <button className="ghost" title={fixed ? "Unbind" : `Use ${cfg.default_profile.name}`} onClick={() => setBinding(ev, null)}>
                             ✕
                           </button>
                         )}
@@ -803,7 +829,7 @@ function CatalogPreview(props: { entry: AppEntry; events: string[]; transport: C
             {a.match.window_title.map((v) => (
               <span key={"t" + v} className="chip" title="Window title contains">title: {v}</span>
             ))}
-            {a.kind === "system" && <span className="muted">System shortcuts: used by the Default profile.</span>}
+            {a.kind === "system" && <span className="muted">System shortcuts: used by the System profile.</span>}
           </div>
         </div>
 
@@ -812,7 +838,7 @@ function CatalogPreview(props: { entry: AppEntry; events: string[]; transport: C
             Default mappings
             <span className="spacer" />
             <span className="muted" style={{ textTransform: "none", letterSpacing: 0 }}>
-              {defaults.length ? "What Enable will set up; every row can be changed afterwards" : "No bundled mappings; Enable creates an empty profile that uses Default"}
+              {defaults.length ? "What Enable will set up; every row can be changed afterwards" : "No bundled mappings; Enable creates an empty profile that falls back to System"}
             </span>
           </h2>
           {defaults.length > 0 && (

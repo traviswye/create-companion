@@ -138,9 +138,14 @@ impl Engine {
             self.unbound = Some((event, profile_name));
             return None;
         };
+        let profile_name = if self.resolver.god_binding(event).is_some() {
+            self.resolver.god_mode().name.clone()
+        } else {
+            profile_name
+        };
 
         // The firmware's namespace modifier is still held; release it before
-        // the action's own chord goes out (PLAN.md §4.3).
+        // the action's own chord goes out (PLAN.md Â§4.3).
         if !raw.code.mods.is_empty() {
             if let Err(e) = sink.release_modifiers(raw.code.mods) {
                 tracing::warn!("could not release transport modifiers: {e}");
@@ -285,7 +290,7 @@ pub fn run(
                 }
                 let app = foreground();
                 // Titles are read only when a profile asks for them, only on a
-                // dial event, and never persisted (scope §20).
+                // dial event, and never persisted (scope Â§20).
                 let title = if engine.uses_titles() { foreground_title() } else { None };
                 let ctx = AppContext { id: app.clone(), title };
                 if app != last_app {
@@ -386,7 +391,7 @@ mod tests {
                 &mut sink,
             )
             .unwrap();
-        assert_eq!(h.profile, "Default");
+        assert_eq!(h.profile, "System");
         assert_eq!(sink.calls.last().unwrap(), "exec VolumeUp x1");
 
         // Fast second detent: Light curve accelerates volume.
