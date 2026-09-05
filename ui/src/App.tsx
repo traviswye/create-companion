@@ -492,18 +492,18 @@ export default function App() {
                 <span className="name">{cfg.god_mode.name}</span>
                 <span className="badge">{countLabel(undefined, cfg.god_mode)}</span>
               </div>
-              {nav.active.map((i) => (
-                <ProfileRow key={i} i={i} draggable={!navQ} />
-              ))}
-              {nav.active.length === 0 && navQ && <div className="nav-empty">No active profile matches "{navQ}".</div>}
-              <div className={"profile-item " + (isDefault ? "active " : "") + (liveName === cfg.default_profile.name ? "live" : "")} onClick={() => setSel(DEFAULT)} title="The fallback: used only when no app profile binds a gesture, so it always sits last">
+              <div className={"profile-item " + (isDefault ? "active " : "") + (liveName === cfg.default_profile.name ? "live" : "")} onClick={() => setSel(DEFAULT)} title="Used whenever no app profile binds a gesture">
                 <span className="star on" title="Always active" style={{ cursor: "default" }}>
                   ★
                 </span>
                 <span className="name">{cfg.default_profile.name}</span>
                 <span className="badge">{countLabel(apps.find((a) => a.kind === "system" && a.os?.includes(currentOs())), cfg.default_profile)}</span>
               </div>
-              {nav.active.length > 1 && !navQ && <div className="nav-hint">Top wins. Drag app profiles to set their priority. Specific rules win first: a site title beats an app, one app beats a group.</div>}
+              {nav.active.map((i) => (
+                <ProfileRow key={i} i={i} draggable={!navQ} />
+              ))}
+              {nav.active.length === 0 && navQ && <div className="nav-empty">No active profile matches "{navQ}".</div>}
+              {nav.active.length > 1 && !navQ && <div className="nav-hint">Drag to set priority. Specific rules win first: a site title beats an app, one app beats a group.</div>}
             </>
           )}
           {navTab === "available" && (
