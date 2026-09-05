@@ -8,11 +8,17 @@ import {
   fingersLabel,
   FUNCTION_KEYS,
   gestureLabel,
-  gesturesFor,
   makeEvent,
   MODULES,
   moduleLabel,
   nayaBehavior,
+  choicesFor,
+  choiceLabel,
+  halvesOf,
+  isPair,
+  pairOf,
+  PAIRS,
+  type GestureChoice,
   parseEvent,
   parseMods,
   takesFingers,
@@ -48,13 +54,21 @@ function nayaAction(t: TransportCode): { actionType: string; actionCode: string 
 
 function KeySelect({ value, onChange }: { value: string; onChange: (v: string) => void }) {
   return (
-    <select className="mono" value={value} onChange={(e) => onChange(e.target.value)} title="F21–F24 do not exist on macOS">
-      {FUNCTION_KEYS.map((k) => (
-        <option key={k} value={k}>
-          {k}
-          {MAC_OK.has(k) ? "" : " (Windows only)"}
-        </option>
-      ))}
+    <select className="mono" value={value} onChange={(e) => onChange(e.target.value)} title={MAC_OK.has(value) ? "" : "F21–F24 do not exist on macOS"}>
+      <optgroup label="Windows and macOS">
+        {FUNCTION_KEYS.filter((k) => MAC_OK.has(k)).map((k) => (
+          <option key={k} value={k}>
+            {k}
+          </option>
+        ))}
+      </optgroup>
+      <optgroup label="Windows only">
+        {FUNCTION_KEYS.filter((k) => !MAC_OK.has(k)).map((k) => (
+          <option key={k} value={k}>
+            {k}
+          </option>
+        ))}
+      </optgroup>
     </select>
   );
 }
@@ -113,9 +127,11 @@ export function Inputs(props: {
     setArmedState(v);
   };
   const [newModule, setNewModule] = useState<ModuleId>("TUNE");
-  const [newGesture, setNewGesture] = useState<GestureId>("TAP");
+  const [newGesture, setNewGesture] = useState<GestureChoice>("TAP");
   const [newFingers, setNewFingers] = useState<number | null>(1);
   const [newKey, setNewKey] = useState<string>("F13");
+  /** Second key of a pair (the `+` half); the first key is the `-` half. */
+  const [newKey2, setNewKey2] = useState<string>("F14");
   const [newMods, setNewMods] = useState<Mods>("none");
   const [msg, setMsg] = useState<{ text: string; ok: boolean } | null>(null);
 
@@ -176,19 +192,34 @@ export function Inputs(props: {
     props.onChange(t);
   }
 
+  /** The events the add row would create (two for a pair) with their keys. */
+  function pendingRows(): [string, TransportCode][] {
+    const keys = [newKey, newKey2];
+    return halvesOf(newGesture).map((g, i) => [makeEvent(newModule, g, newFingers), { key: keys[i], mods: newMods }]);
+  }
+
   function add() {
-    const ev = makeEvent(newModule, newGesture, newFingers);
-    if (props.transport[ev]) {
-      setMsg({ text: `${describe(ev)} already has a key. Edit it in the list.`, ok: false });
-      return;
+    const rows = pendingRows();
+    for (const [ev] of rows) {
+      if (props.transport[ev]) {
+        setMsg({ text: `${describe(ev)} already has a key. Edit it in the list.`, ok: false });
+        return;
+      }
     }
-    const code: TransportCode = { key: newKey, mods: newMods };
-    if (used.has(codeKey(code))) {
-      setMsg({ text: `${transportLabel(code)} is already used by ${describe(used.get(codeKey(code))!)}.`, ok: false });
-      return;
+    const seen = new Set<string>();
+    for (const [, code] of rows) {
+      if (used.has(codeKey(code))) {
+        setMsg({ text: `${transportLabel(code)} is already used by ${describe(used.get(codeKey(code))!)}.`, ok: false });
+        return;
+      }
+      if (seen.has(codeKey(code))) {
+        setMsg({ text: `Both directions of ${choiceLabel(newGesture)} are set to ${transportLabel(code)}; pick two different keys.`, ok: false });
+        return;
+      }
+      seen.add(codeKey(code));
     }
     setMsg(null);
-    props.onChange({ ...props.transport, [ev]: code });
+    props.onChange({ ...props.transport, ...Object.fromEntries(rows) });
   }
 
   async function toggleLearn(target: string) {
@@ -297,8 +328,8 @@ export function Inputs(props: {
           <table className="map">
             <thead>
               <tr>
-                <th style={{ width: "22%" }}>Gesture</th>
-                <th style={{ width: 120 }}>Fingers</th>
+                <th style={{ width: "24%" }}>Gesture</th>
+                <th style={{ width: 110 }}>Fingers</th>
                 <th>Sends</th>
                 <th style={{ width: 150 }}></th>
               </tr>
@@ -312,13 +343,16 @@ export function Inputs(props: {
                   <tr key={ev} className={armed === ev ? "flash" : ""}>
                     <td className="ev">
                       <div>{gestureLabel(p.gesture)}</div>
-                      <div className="module">{moduleLabel(p.module)}</div>
+                      <div className="module">
+                        {moduleLabel(p.module)}
+                        {pairOf(p.gesture) && ` · ${PAIRS[pairOf(p.gesture)!].label}`}
+                      </div>
                     </td>
                     <td>
                       <FingerSelect gesture={p.gesture} value={p.fingers} onChange={(n) => setFingers(ev, n)} />
                     </td>
                     <td>
-                      <div style={{ display: "flex", gap: 8, alignItems: "center", flexWrap: "wrap" }}>
+                      <div className="sends">
                         <ModToggles value={t.mods} onChange={(mods) => setCode(ev, { ...t, mods })} />
                         <KeySelect value={t.key} onChange={(key) => setCode(ev, { ...t, key })} />
                         <kbd>{transportLabel(t)}</kbd>
@@ -337,13 +371,13 @@ export function Inputs(props: {
               })}
               <tr>
                 <td className="ev">
-                  <div style={{ display: "flex", gap: 6 }}>
+                  <div style={{ display: "flex", gap: 6, flexWrap: "wrap" }}>
                     <select
                       value={newModule}
                       onChange={(e) => {
                         const m = e.target.value as ModuleId;
                         setNewModule(m);
-                        if (!gesturesFor(m).includes(newGesture)) setNewGesture("TAP");
+                        if (!choicesFor(m).includes(newGesture)) setNewGesture("TAP");
                       }}
                     >
                       {MODULES.map((m) => (
@@ -355,35 +389,46 @@ export function Inputs(props: {
                     <select
                       value={newGesture}
                       onChange={(e) => {
-                        const g = e.target.value as GestureId;
-                        setNewGesture(g);
-                        const opts = fingerOptions(g);
+                        const c = e.target.value as GestureChoice;
+                        setNewGesture(c);
+                        const opts = fingerOptions(halvesOf(c)[0]);
                         setNewFingers(opts.length === 0 ? null : newFingers && opts.includes(newFingers) ? newFingers : opts[0]);
                       }}
                     >
-                      {gesturesFor(newModule).map((g) => (
-                        <option key={g} value={g}>
-                          {gestureLabel(g)}
+                      {choicesFor(newModule).map((c) => (
+                        <option key={c} value={c}>
+                          {choiceLabel(c)}
                         </option>
                       ))}
                     </select>
                   </div>
                 </td>
                 <td>
-                  <FingerSelect gesture={newGesture} value={newFingers} onChange={setNewFingers} />
+                  <FingerSelect gesture={halvesOf(newGesture)[0]} value={newFingers} onChange={setNewFingers} />
                 </td>
                 <td>
-                  <div style={{ display: "flex", gap: 8, alignItems: "center", flexWrap: "wrap" }}>
+                  <div className="sends">
                     <ModToggles value={newMods} onChange={setNewMods} />
-                    <KeySelect value={newKey} onChange={setNewKey} />
-                    <kbd>{transportLabel({ key: newKey, mods: newMods })}</kbd>
+                    {isPair(newGesture) ? (
+                      <>
+                        <span className="muted">{gestureLabel(halvesOf(newGesture)[0])}</span>
+                        <KeySelect value={newKey} onChange={setNewKey} />
+                        <span className="muted">{gestureLabel(halvesOf(newGesture)[1])}</span>
+                        <KeySelect value={newKey2} onChange={setNewKey2} />
+                      </>
+                    ) : (
+                      <>
+                        <KeySelect value={newKey} onChange={setNewKey} />
+                        <kbd>{transportLabel({ key: newKey, mods: newMods })}</kbd>
+                      </>
+                    )}
                   </div>
                 </td>
                 <td className="actions">
                   <button className={"ghost " + (armed === "new" ? "primary" : "")} disabled={!props.engineConnected && armed !== "new"} onClick={() => toggleLearn("new")}>
                     {armed === "new" ? "Waiting…" : "Learn"}
                   </button>
-                  <button className="primary" onClick={add} disabled={!!props.transport[makeEvent(newModule, newGesture, newFingers)]} title={props.transport[makeEvent(newModule, newGesture, newFingers)] ? "This gesture already has a key" : ""}>
+                  <button className="primary" onClick={add} disabled={pendingRows().some(([ev]) => props.transport[ev])} title={pendingRows().some(([ev]) => props.transport[ev]) ? "This gesture already has a key" : ""}>
                     Add
                   </button>
                 </td>

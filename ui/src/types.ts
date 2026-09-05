@@ -173,7 +173,8 @@ export function buildMods(set: Set<string>): Mods {
 export function modsLabel(m: Mods | undefined): string {
   return MOD_ORDER.filter((t) => parseMods(m).has(t)).map((t) => MOD_TOKEN_LABEL[t]).join("+");
 }
-export { MODULES, GESTURES, moduleLabel, gestureLabel, gesturesFor, eventLabel, eventSortKey, parseEvent, makeEvent, fingerOptions, takesFingers, fingersLabel, nayaBehavior } from "./events";
+export { MODULES, GESTURES, PAIRS, moduleLabel, gestureLabel, gesturesFor, choicesFor, choiceLabel, halvesOf, isPair, pairOf, eventLabel, eventSortKey, parseEvent, makeEvent, fingerOptions, takesFingers, fingersLabel, nayaBehavior } from "./events";
+export type { GestureChoice, PairId } from "./events";
 
 export interface WindowInfo {
   exe: string;

@@ -70,6 +70,7 @@ pub enum Gesture {
     SwipeRight,
     SwipeUp,
     SwipeDown,
+    /// The `pinch&spread` axis split into keys: `-` is pinch, `+` is spread.
     Pinch,
     Spread,
     /// The `horizontal` axis split into keys: `-` is left, `+` is right.
@@ -214,8 +215,8 @@ impl SemanticEvent {
             Gesture::SwipeRight => ("swipe_right", None),
             Gesture::SwipeUp => ("swipe_up", None),
             Gesture::SwipeDown => ("swipe_down", None),
-            Gesture::Pinch => ("pinch", None),
-            Gesture::Spread => ("spread", None),
+            Gesture::Pinch => ("pinch&spread", Some('-')),
+            Gesture::Spread => ("pinch&spread", Some('+')),
             Gesture::ScrollLeft => ("horizontal", Some('-')),
             Gesture::ScrollRight => ("horizontal", Some('+')),
             Gesture::ScrollUp => ("vertical", Some('-')),
@@ -374,7 +375,11 @@ mod tests {
         );
         assert_eq!(
             b("RIGHT_TOUCH_PINCH_2F"),
-            Some(("pinch:touch:2_fingers".into(), None))
+            Some(("pinch&spread:touch:2_fingers".into(), Some('-')))
+        );
+        assert_eq!(
+            b("TUNE_SPREAD_3F"),
+            Some(("pinch&spread:tune:3_fingers".into(), Some('+')))
         );
         assert_eq!(b("TUNE_SWIPE_LEFT"), None, "finger count required");
     }

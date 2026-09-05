@@ -81,6 +81,44 @@ export function gesturesFor(module: ModuleId): GestureId[] {
   return GESTURES.filter((g) => gestureAvailable(module, g));
 }
 
+/**
+ * Gestures the firmware treats as one axis with two directions. Each half is
+ * its own transport key, but the user thinks of (and Naya names) the pair:
+ * `rotate:tune:dial`, `pinch&spread:...`, `vertical:...`, `horizontal:...`.
+ * `halves` is [minus, plus].
+ */
+export const PAIRS = {
+  ROTATE: { label: "Dial (rotate)", halves: ["CCW", "CW"] as [GestureId, GestureId] },
+  PINCH_SPREAD: { label: "Pinch & spread", halves: ["PINCH", "SPREAD"] as [GestureId, GestureId] },
+  SCROLL_V: { label: "Scroll up & down", halves: ["SCROLL_UP", "SCROLL_DOWN"] as [GestureId, GestureId] },
+  SCROLL_H: { label: "Scroll left & right", halves: ["SCROLL_LEFT", "SCROLL_RIGHT"] as [GestureId, GestureId] },
+} as const;
+export type PairId = keyof typeof PAIRS;
+/** What the add row offers: a discrete gesture or a pair. */
+export type GestureChoice = GestureId | PairId;
+
+const DISCRETE: GestureId[] = ["TAP", "DOUBLE_TAP", "SWIPE_LEFT", "SWIPE_RIGHT", "SWIPE_UP", "SWIPE_DOWN"];
+
+export function isPair(c: GestureChoice): c is PairId {
+  return c in PAIRS;
+}
+/** The gestures a choice stands for: a pair's two halves, or the gesture itself. */
+export function halvesOf(c: GestureChoice): GestureId[] {
+  return isPair(c) ? [...PAIRS[c].halves] : [c];
+}
+export function choicesFor(module: ModuleId): GestureChoice[] {
+  const pairs = (Object.keys(PAIRS) as PairId[]).filter((p) => PAIRS[p].halves.every((g) => gestureAvailable(module, g)));
+  return [...DISCRETE, ...pairs];
+}
+export function choiceLabel(c: GestureChoice): string {
+  return isPair(c) ? PAIRS[c].label : gestureLabel(c);
+}
+/** The pair a gesture belongs to, if any (for labelling rows). */
+export function pairOf(g: GestureId): PairId | null {
+  for (const p of Object.keys(PAIRS) as PairId[]) if ((PAIRS[p].halves as readonly string[]).includes(g)) return p;
+  return null;
+}
+
 /** Finger counts a gesture can be flashed for. Pinch/spread need two hands' worth. */
 export function fingerOptions(g: GestureId): number[] {
   if (!takesFingers(g)) return [];
@@ -136,8 +174,8 @@ export function nayaBehavior(id: string): { behavior: string; half: "-" | "+" | 
     SWIPE_RIGHT: ["swipe_right", null],
     SWIPE_UP: ["swipe_up", null],
     SWIPE_DOWN: ["swipe_down", null],
-    PINCH: ["pinch", null],
-    SPREAD: ["spread", null],
+    PINCH: ["pinch&spread", "-"],
+    SPREAD: ["pinch&spread", "+"],
     SCROLL_LEFT: ["horizontal", "-"],
     SCROLL_RIGHT: ["horizontal", "+"],
     SCROLL_UP: ["vertical", "-"],
