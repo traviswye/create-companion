@@ -219,7 +219,32 @@ export function Inputs(props: {
       seen.add(codeKey(code));
     }
     setMsg(null);
-    props.onChange({ ...props.transport, ...Object.fromEntries(rows) });
+    const next = { ...props.transport, ...Object.fromEntries(rows) };
+    props.onChange(next);
+    advanceAddRow(next);
+  }
+
+  /**
+   * After an Add, move the add row on to the next gesture that has no key yet
+   * (same module, same finger count where possible) and the next unused keys,
+   * so it is ready for another entry instead of pointing at the row just made.
+   */
+  function advanceAddRow(t: Record<string, TransportCode>) {
+    const taken = new Set(Object.values(t).map(codeKey));
+    const free = FUNCTION_KEYS.filter((k) => !taken.has(codeKey({ key: k, mods: newMods })));
+    setNewKey(free[0] ?? newKey);
+    setNewKey2(free[1] ?? free[0] ?? newKey2);
+    for (const c of choicesFor(newModule)) {
+      const opts = fingerOptions(halvesOf(c)[0]);
+      const counts: (number | null)[] = opts.length === 0 ? [null] : newFingers && opts.includes(newFingers) ? [newFingers, ...opts.filter((n) => n !== newFingers)] : opts;
+      for (const n of counts) {
+        if (halvesOf(c).every((g) => !t[makeEvent(newModule, g, n)])) {
+          setNewGesture(c);
+          setNewFingers(n);
+          return;
+        }
+      }
+    }
   }
 
   async function toggleLearn(target: string) {
