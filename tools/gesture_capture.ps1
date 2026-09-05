@@ -20,6 +20,7 @@
 .EXAMPLE
   powershell -ExecutionPolicy Bypass -File D:\CreateCompanion\tools\gesture_capture.ps1
   powershell -ExecutionPolicy Bypass -File D:\CreateCompanion\tools\gesture_capture.ps1 -Gestures "2-finger swipe up","3-finger tap" -Seconds 4
+  powershell -ExecutionPolicy Bypass -File D:\CreateCompanion\tools\gesture_capture.ps1 -Only TUNE_CCW,TUNE_SWIPE_LEFT_2F -Append
   python D:\CreateCompanion\tools\keymon_analyze.py D:\CreateCompanion\capture.log
 #>
 param(
@@ -27,6 +28,8 @@ param(
   [int]$Seconds = 3,
   [string]$Out = "D:\CreateCompanion\capture.log",
   [string]$Config = "$env:APPDATA\CreateCompanion\config.toml",
+  [string[]]$Only,   # event ids or name fragments to test, e.g. TUNE_CCW,"swipe down (1"
+  [switch]$Append,   # add to the log instead of starting a new one
   [switch]$DryRun    # print the gesture plan and exit
 )
 
@@ -124,6 +127,12 @@ if ($Gestures) {
   Write-Host "No config at $Config and no -Gestures given." -ForegroundColor Red; exit 1
 }
 
+if ($Only) {
+  $Only = @($Only | ForEach-Object { $_ -split "," } | Where-Object { $_ })  # -File passes "a,b" as one string
+  $plan = @($plan | Where-Object { $g = $_; ($Only | Where-Object { $g.Event -eq $_ -or $g.Name -like "*$_*" }).Count -gt 0 })
+  if ($plan.Count -eq 0) { Write-Host "Nothing matches -Only $($Only -join ', ')" -ForegroundColor Red; exit 1 }
+}
+
 if ($DryRun) {
   Write-Host "Plan ($($plan.Count) gestures):"
   $plan | ForEach-Object { Write-Host ("  {0,-42} {1}" -f $_.Name, $_.Expect) }
@@ -131,7 +140,8 @@ if ($DryRun) {
 }
 
 [GCap]::Install()
-"# gesture capture $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')  post-first-key window ${Seconds}s" | Out-File $Out -Encoding utf8
+$stamp = "# gesture capture $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')  post-first-key window ${Seconds}s"
+if ($Append) { $stamp | Out-File $Out -Append -Encoding utf8 } else { $stamp | Out-File $Out -Encoding utf8 }
 Write-Host "Guided capture: $($plan.Count) gestures, $Seconds s after the first key each. Log: $Out" -ForegroundColor Cyan
 Write-Host "At each prompt: press Enter, then perform the gesture ONCE. Press S to skip a gesture, Q to quit." -ForegroundColor DarkGray
 Write-Host ""
