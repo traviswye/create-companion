@@ -4,7 +4,9 @@ Usage:
     powershell -File tools/keymon.ps1 -Seconds 40 -OnlyFKeys | Tee-Object -FilePath burst.log
     python tools/keymon_analyze.py burst.log [--window 100]
 
-For every burst (a run of F13-F24 events with gaps under 300 ms) it prints:
+With a gesture_capture.ps1 log, events are grouped by their "### gesture:"
+header (one capture per prompt); with a plain keymon log they are grouped into
+bursts (runs of F13-F24 events with gaps under 300 ms). For each group it prints:
   - how many F-key presses it holds and which keys
   - the modifier pattern: PER-EVENT (a modifier press and release around each
     F-key: safe), SPANNING (one modifier press covering several F-keys: the
@@ -23,20 +25,48 @@ MODS = {"LShift", "RShift", "Shift", "LCtrl", "RCtrl", "Ctrl", "LAlt", "RAlt", "
 LINE = re.compile(r"^(\d\d:\d\d:\d\d\.\d{3})\s+(?:hw\+\s*(-?\d+)ms\s+)?(DOWN|UP)\s+(\S+)\s+vk=0x([0-9A-F]+)")
 
 
+SECTION = re.compile(r"^###\s+gesture:\s+(.*?)(?:\s+expect=(\S+))?\s*(\[.*\])?\s*$")
+
+
 def parse(path):
+    """Events, each tagged with the gesture section it belongs to (None for a plain keymon log)."""
     events = []
+    section = None
     for raw in open(path, encoding="utf-8", errors="replace"):
-        m = LINE.match(raw.strip("\ufeff \r\n"))
+        line = raw.strip("\ufeff \r\n")
+        sm = SECTION.match(line)
+        if sm:
+            section = (sm.group(1) + (" " + sm.group(3) if sm.group(3) else ""), sm.group(2))
+            events.append({"section": section, "marker": True})
+            continue
+        m = LINE.match(line)
         if not m:
             continue
         t = datetime.strptime(m.group(1), "%H:%M:%S.%f")
         ms = t.hour * 3600000 + t.minute * 60000 + t.second * 1000 + t.microsecond // 1000
-        events.append({"ms": ms, "lag": int(m.group(2) or 0), "down": m.group(3) == "DOWN", "key": m.group(4), "vk": int(m.group(5), 16)})
+        events.append({"ms": ms, "lag": int(m.group(2) or 0), "down": m.group(3) == "DOWN", "key": m.group(4), "vk": int(m.group(5), 16), "section": section})
     return events
 
 
 def is_f(e):
     return 0x7C <= e["vk"] <= 0x87
+
+
+def groups(events):
+    """(label, expect, events) per gesture section, or per timing burst."""
+    if any(e.get("marker") for e in events):
+        out, cur, label = [], [], None
+        for e in events:
+            if e.get("marker"):
+                if label is not None:
+                    out.append((label[0], label[1], cur))
+                label, cur = e["section"], []
+            else:
+                cur.append(e)
+        if label is not None:
+            out.append((label[0], label[1], cur))
+        return out
+    return [(f"burst {i}", None, b) for i, b in enumerate(bursts(events), 1)]
 
 
 def bursts(events):
@@ -57,8 +87,11 @@ def analyze(path, window):
     if not events:
         print("no keymon lines found in", path)
         return
-    print(f"{len(events)} events, window {window} ms\n")
-    for n, b in enumerate(bursts(events), 1):
+    print(f"{len([e for e in events if not e.get('marker')])} events, window {window} ms\n")
+    for label, expect, b in groups(events):
+        if not b:
+            print(f"{label}: no events captured\n")
+            continue
         f_down = [e for e in b if is_f(e) and e["down"]]
         mod_down = [e for e in b if e["key"] in MODS and e["down"]]
         mod_up = [e for e in b if e["key"] in MODS and not e["down"]]
@@ -86,7 +119,22 @@ def analyze(path, window):
                     misclassified.append((e["key"], age, "+".join(sorted(down_since))))
         span = b[-1]["ms"] - b[0]["ms"]
         lag = max(e["lag"] for e in b)
-        print(f"burst {n}: {len(f_down)} F-key presses ({', '.join(keys)}) over {span} ms, max delivery lag {lag} ms")
+        print(f"{label}: {len(f_down)} F-key presses ({', '.join(keys)}) over {span} ms, max delivery lag {lag} ms")
+        if expect:
+            # what arrived, as key or mods+key, against what the config says this gesture sends
+            seen = set()
+            held = {}
+            for e in b:
+                if e["key"] in MODS:
+                    held[e["key"].lstrip("LR")] = e["down"]
+                elif is_f(e) and e["down"]:
+                    mods = "+".join(sorted(k for k, d in held.items() if d))
+                    seen.add(f"{mods}+{e['key']}" if mods else e["key"])
+            verdict = "MATCH" if seen == {expect} else "MISMATCH"
+            print(f"  expected {expect}, got {', '.join(sorted(seen)) or 'nothing'}: {verdict}")
+        if len(f_down) > 1:
+            gaps_between = [f_down[i]["ms"] - f_down[i - 1]["ms"] for i in range(1, len(f_down))]
+            print(f"  {len(f_down)} presses from one gesture: gaps between presses {min(gaps_between)}-{max(gaps_between)} ms (a firmware burst if you performed it once)")
         print(f"  modifier pattern: {pattern}  ({len(mod_down)} modifier presses, {len(mod_up)} releases)")
         if gaps:
             print(f"  modifier-to-key gap: max {max(gaps)} ms, mean {sum(gaps) / len(gaps):.1f} ms")
