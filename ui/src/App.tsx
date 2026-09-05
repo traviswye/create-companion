@@ -42,6 +42,17 @@ function entryOnOs(a: AppEntry, os: Os): boolean {
   return a.match.windows_exe.length > 0;
 }
 
+/**
+ * The one figure every sidebar row shows: how many documented shortcuts the
+ * catalog has for it. A profile without a catalog entry (added by hand) shows
+ * how many of its inputs are mapped instead.
+ */
+function countLabel(entry: AppEntry | undefined, p?: Profile): string {
+  if (entry) return `${entry.actions.length.toLocaleString()} shortcuts`;
+  const n = p ? Object.keys(p.bindings).length : 0;
+  return n === 1 ? "1 mapping" : `${n} mappings`;
+}
+
 /** The platforms an entry runs on, for the tag shown when browsing all platforms. */
 function entryPlatforms(a: AppEntry): string {
   if (a.kind === "system") return (a.os ?? []).map((o) => OS_NAME[o]).join(" · ");
@@ -370,8 +381,7 @@ export default function App() {
           {on ? "★" : "☆"}
         </button>
         <span className="name">{p.name}</span>
-        {p.match.window_title.length > 0 && <span className="badge">site</span>}
-        {!on && Object.keys(p.bindings).length > 0 && <span className="badge">customized</span>}
+        <span className="badge">{countLabel(catalogFor(apps, p), p)}</span>
       </div>
     );
   };
@@ -402,7 +412,7 @@ export default function App() {
                   ★
                 </span>
                 <span className="name">{cfg.default_profile.name}</span>
-                <span className="badge">fallback</span>
+                <span className="badge">{countLabel(apps.find((a) => a.kind === "system" && a.os?.includes(currentOs())), cfg.default_profile)}</span>
               </div>
               {nav.active.map((i) => (
                 <ProfileRow key={i} i={i} />
@@ -432,7 +442,7 @@ export default function App() {
                   </button>
                   <span className="name">{a.name}</span>
                   <span className="badge">
-                    {a.kind === "site" ? "site" : `${a.actions.length} shortcuts`}
+                    {countLabel(a)}
                     {allPlatforms && !entryOnOs(a, nav.os) && <span className="ostag">{entryPlatforms(a)}</span>}
                   </span>
                 </div>
