@@ -456,8 +456,9 @@ export default function App() {
     <div className="app">
       <aside className="sidebar">
         <div className="brand">
-          <span className={"dot " + (engine.connected ? "on" : "")} title={engine.connected ? "Engine connected" : "Engine not running"} />
+          <img className="logo" src="/icon.png" alt="" />
           Create Companion
+          <span className={"dot " + (engine.connected ? "on" : "")} title={engine.connected ? "Engine connected" : "Engine not running"} />
         </div>
         <div className="nav-tools">
           <input placeholder="Search apps and sites…" value={navQ} onChange={(e) => setNavQ(e.target.value)} />

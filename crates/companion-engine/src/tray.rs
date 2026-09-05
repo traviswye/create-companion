@@ -50,33 +50,12 @@ struct Ids {
     quit: MenuId,
 }
 
-/// 32x32 RGBA: a filled ring, the closest thing to a dial we can draw in code.
+/// 32x32 RGBA of the Track glyph (assets/icon.png), pre-rendered by
+/// tools/make_icons.py so no image decoder is needed at runtime.
 fn make_icon() -> Result<Icon> {
-    const N: usize = 32;
-    let mut rgba = vec![0u8; N * N * 4];
-    let c = (N as f32 - 1.0) / 2.0;
-    for y in 0..N {
-        for x in 0..N {
-            let d = ((x as f32 - c).powi(2) + (y as f32 - c).powi(2)).sqrt();
-            let (r, g, b, a) = if (5.5..=14.5).contains(&d) {
-                (235, 235, 235, 255)
-            } else if (14.5..15.5).contains(&d) || (4.5..5.5).contains(&d) {
-                (235, 235, 235, 120) // soft edge
-            } else {
-                (0, 0, 0, 0)
-            };
-            // A notch at 12 o'clock so it reads as a dial.
-            let notch = (x as f32 - c).abs() < 1.6 && y < 9 && y > 2;
-            let (r, g, b, a) = if notch {
-                (30, 30, 30, 255)
-            } else {
-                (r, g, b, a)
-            };
-            let i = (y * N + x) * 4;
-            rgba[i..i + 4].copy_from_slice(&[r, g, b, a]);
-        }
-    }
-    Icon::from_rgba(rgba, N as u32, N as u32).context("building tray icon")
+    const N: u32 = 32;
+    const RGBA: &[u8] = include_bytes!("../../../assets/tray-32.rgba");
+    Icon::from_rgba(RGBA.to_vec(), N, N).context("building tray icon")
 }
 
 impl Tray {

@@ -12,6 +12,7 @@ fn main() {
             embed_manifest(manifest).expect("embedding the Windows manifest");
             // Product name / description shown by Task Manager and file properties.
             let mut res = winresource::WindowsResource::new();
+            res.set_icon("../../assets/icon.ico");
             res.set("ProductName", "Create Companion")
                 .set("FileDescription", "Create Companion engine")
                 .set("CompanyName", "Create Companion")
@@ -22,4 +23,6 @@ fn main() {
         }
     }
     println!("cargo:rerun-if-changed=build.rs");
+    println!("cargo:rerun-if-changed=../../assets/icon.ico");
+    println!("cargo:rerun-if-changed=../../assets/tray-32.rgba");
 }
