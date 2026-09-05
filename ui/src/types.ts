@@ -58,6 +58,7 @@ export interface AppAction {
   context: string;
   windows?: Action;
   mac?: Action;
+  linux?: Action;
 }
 
 /** An application or website the catalog knows about (presets/apps.json). */
@@ -88,6 +89,49 @@ export interface CatalogEntry {
   category: string;
   windows?: Action;
   mac?: Action;
+  linux?: Action;
+}
+
+export type Os = "windows" | "macos" | "linux";
+export const OS_NAME: Record<Os, string> = { windows: "Windows", macos: "macOS", linux: "Linux" };
+export type ActionColumn = "windows" | "mac" | "linux";
+export const COLUMN_OS: Record<ActionColumn, Os> = { windows: "windows", mac: "macos", linux: "linux" };
+
+/** Which action column applies on this OS. */
+export function osColumn(os: Os): ActionColumn {
+  return os === "macos" ? "mac" : os === "linux" ? "linux" : "windows";
+}
+
+/**
+ * The chord to show for an action on `os`. Linux falls back to the Windows
+ * column. With `allPlatforms`, an action documented only for another OS is
+ * returned too, tagged with that OS so the row can say so.
+ */
+export function actionFor(a: { windows?: Action; mac?: Action; linux?: Action }, os: Os, allPlatforms: boolean): { action: Action; os?: Os } | undefined {
+  const col = osColumn(os);
+  const own = col === "linux" ? a.linux ?? a.windows : a[col];
+  if (own) return { action: own };
+  if (!allPlatforms) return undefined;
+  for (const c of ["windows", "mac", "linux"] as ActionColumn[]) {
+    if (c !== col && a[c]) return { action: a[c]!, os: COLUMN_OS[c] };
+  }
+  return undefined;
+}
+
+const ALL_PLATFORMS_KEY = "cc.allPlatforms";
+export function loadAllPlatforms(): boolean {
+  try {
+    return localStorage.getItem(ALL_PLATFORMS_KEY) === "1";
+  } catch {
+    return false;
+  }
+}
+export function storeAllPlatforms(v: boolean) {
+  try {
+    localStorage.setItem(ALL_PLATFORMS_KEY, v ? "1" : "0");
+  } catch {
+    /* per-viewer convenience only */
+  }
 }
 
 export interface EngineMsg {
