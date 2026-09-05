@@ -230,6 +230,7 @@ mod tests {
         Binding {
             action: Action::Keys {
                 chord: KeyChord(s.into()),
+                hold_ms: None,
             },
             accel: AccelPreset::None,
             name: None,
@@ -404,7 +405,7 @@ mod tests {
         d2.bindings.insert(three, keys("Ctrl+Left"));
         let r2 = ProfileResolver::new(d2, vec![]);
         match &r2.binding(&win("x.exe"), three).unwrap().action {
-            Action::Keys { chord } => assert_eq!(chord.0, "Ctrl+Left"),
+            Action::Keys { chord, .. } => assert_eq!(chord.0, "Ctrl+Left"),
             other => panic!("{other:?}"),
         }
     }

@@ -43,6 +43,11 @@ pub trait ActionSink: Send {
     /// With `Shift+F19` the firmware's Shift is still down when we act, so a
     /// mapped `Ctrl+T` would otherwise arrive as `Ctrl+Shift+T`.
     fn release_modifiers(&mut self, mods: Modifiers) -> Result<(), PlatformError>;
+
+    /// Let go of modifiers a holding `Keys` action left down (timeout path).
+    fn release_held(&mut self) -> Result<(), PlatformError> {
+        Ok(())
+    }
 }
 
 #[cfg(windows)]

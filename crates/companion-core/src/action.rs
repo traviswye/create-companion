@@ -37,8 +37,18 @@ pub enum ScrollDirection {
 pub enum Action {
     /// Do nothing. Useful to explicitly silence an event in one app.
     Noop,
-    /// Press and release a chord.
-    Keys { chord: KeyChord },
+    /// Press and release a chord. With `hold_ms`, the chord's modifiers stay
+    /// down afterwards (Alt+Tab-style switching): later chords run on top of
+    /// them, a holding chord with other modifiers swaps them, and they are let
+    /// go by a `Release` action or after `hold_ms` of quiet.
+    Keys {
+        chord: KeyChord,
+        #[serde(default, skip_serializing_if = "Option::is_none")]
+        hold_ms: Option<u32>,
+    },
+    /// Let go of modifiers a holding `Keys` action left down (in the Alt+Tab
+    /// switcher this selects the highlighted window).
+    Release,
     /// Several chords in order (e.g. `Esc`, then `Ctrl+K`).
     Sequence { chords: Vec<KeyChord> },
     /// Consumer-control / system key.

@@ -21,7 +21,8 @@ export type ScrollDirection = "up" | "down" | "left" | "right";
 
 export type Action =
   | { type: "noop" }
-  | { type: "keys"; chord: string }
+  | { type: "keys"; chord: string; hold_ms?: number }
+  | { type: "release" }
   | { type: "sequence"; chords: string[] }
   | { type: "media"; key: MediaKey }
   | { type: "scroll"; direction: ScrollDirection; lines?: number }
@@ -200,7 +201,9 @@ export function describeAction(a: Action | undefined): string {
     case "noop":
       return "Do nothing";
     case "keys":
-      return a.chord;
+      return a.hold_ms ? `${a.chord} (hold ${(a.hold_ms / 1000).toFixed(1)} s)` : a.chord;
+    case "release":
+      return "Release held keys";
     case "sequence":
       return a.chords.join(", ");
     case "media":

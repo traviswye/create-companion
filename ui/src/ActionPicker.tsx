@@ -5,6 +5,17 @@ import { OS_NAME, actionFor, describeAction, eventLabel, type Action, type AppAc
 
 type Tab = "app" | "search" | "shortcut" | "media" | "scroll" | "launch" | "other";
 
+/** `Shift+Ctrl+t` and `Ctrl+Shift+T` compare equal. */
+function canonChord(c: string): string {
+  const parts = c.split("+").map((p) => p.trim()).filter(Boolean);
+  if (parts.length === 0) return "";
+  const key = parts.pop()!;
+  const alias: Record<string, string> = { control: "ctrl", option: "alt", opt: "alt", command: "cmd", win: "cmd", meta: "cmd", super: "cmd", windows: "cmd" };
+  const mods = parts.map((m) => m.toLowerCase()).map((m) => alias[m] ?? m).sort();
+  const k = key.length === 1 ? key.toUpperCase() : key.toLowerCase();
+  return [...mods, k].join("+");
+}
+
 const MEDIA: { key: MediaKey; name: string }[] = [
   { key: "volume_up", name: "Volume up" },
   { key: "volume_down", name: "Volume down" },
@@ -23,6 +34,8 @@ export function ActionPicker(props: {
   appActions: AppAction[];
   /** The running OS: its chord column is offered first. */
   os: Os;
+  /** The running OS's system shortcuts, for naming a recorded chord. */
+  systemActions?: AppAction[];
   /** Also offer actions documented only for other platforms (tagged). */
   allPlatforms: boolean;
   onAllPlatforms: (v: boolean) => void;
@@ -36,6 +49,30 @@ export function ActionPicker(props: {
   const [chord, setChord] = useState(props.current?.action.type === "keys" ? props.current.action.chord : "");
   const [chordName, setChordName] = useState(props.current?.action.type === "keys" ? props.current.name ?? "" : "");
   const [chordErr, setChordErr] = useState<string | null>(null);
+  const [hold, setHold] = useState(props.current?.action.type === "keys" && !!props.current.action.hold_ms);
+  const [holdSec, setHoldSec] = useState(props.current?.action.type === "keys" && props.current.action.hold_ms ? props.current.action.hold_ms / 1000 : 1.5);
+  /** A documented action whose chord equals what was typed or recorded. */
+  const known = useMemo(() => {
+    const want = canonChord(chord);
+    if (!want) return null;
+    const pools: { name: string; ctx?: string; a: { windows?: Action; mac?: Action; linux?: Action } }[] = [
+      ...props.appActions.map((a) => ({ name: a.name, ctx: props.appName, a })),
+      ...(props.systemActions ?? []).map((a) => ({ name: a.name, ctx: "System", a })),
+      ...props.catalog.map((c) => ({ name: c.name, ctx: c.category, a: c })),
+    ];
+    for (const p of pools) {
+      const act = actionFor(p.a, props.os, false)?.action;
+      if (act?.type === "keys" && canonChord(act.chord) === want) return p;
+    }
+    return null;
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [chord, props.appActions, props.systemActions, props.catalog, props.os]);
+  // Fill the name from the catalog unless the user typed their own.
+  const [nameTouched, setNameTouched] = useState(!!chordName);
+  useEffect(() => {
+    if (!nameTouched) setChordName(known?.name ?? "");
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [known?.name]);
   const [armed, setArmed] = useState(false);
   const [program, setProgram] = useState(props.current?.action.type === "launch" ? props.current.action.program : "");
   const [args, setArgs] = useState(props.current?.action.type === "launch" ? (props.current.action.args ?? []).join(" ") : "");
@@ -95,7 +132,8 @@ export function ActionPicker(props: {
   async function pickChord() {
     try {
       const normalized = await api.validateChord(chord);
-      props.onPick({ type: "keys", chord: normalized }, chordName.trim() || undefined);
+      const action: Action = hold ? { type: "keys", chord: normalized, hold_ms: Math.round(Math.max(0.2, Math.min(30, holdSec)) * 1000) } : { type: "keys", chord: normalized };
+      props.onPick(action, chordName.trim() || undefined);
     } catch (e) {
       setChordErr(String(e));
     }
@@ -219,10 +257,35 @@ export function ActionPicker(props: {
                 </div>
                 <div className="field">
                   <label>What it does (optional)</label>
-                  <input placeholder="e.g. Toggle sidebar" value={chordName} onChange={(e) => setChordName(e.target.value)} onKeyDown={(e) => e.key === "Enter" && chord && pickChord()} />
+                  <input
+                    placeholder="e.g. Toggle sidebar"
+                    value={chordName}
+                    onChange={(e) => {
+                      setChordName(e.target.value);
+                      setNameTouched(e.target.value.length > 0);
+                    }}
+                    onKeyDown={(e) => e.key === "Enter" && chord && pickChord()}
+                  />
                 </div>
               </div>
+              {known && (
+                <div className="muted">
+                  Matches <b>{known.name}</b>
+                  {known.ctx ? ` (${known.ctx})` : ""}.
+                </div>
+              )}
               {chordErr && <div className="error">{chordErr}</div>}
+              <div className="field">
+                <label className="inline" style={{ gap: 8, alignItems: "center" }}>
+                  <input type="checkbox" checked={hold} onChange={(e) => setHold(e.target.checked)} />
+                  Keep the modifiers held afterwards for
+                  <input type="number" min={0.2} max={30} step={0.1} value={holdSec} disabled={!hold} onChange={(e) => setHoldSec(Number(e.target.value) || 1.5)} style={{ width: 70 }} />
+                  seconds
+                </label>
+                <div className="muted">
+                  For Alt+Tab-style switching: the dial keeps stepping while Alt stays down; the keys are let go after this quiet period, or right away by a "Release held keys" action (under Other) or any gesture bound to one.
+                </div>
+              </div>
               <div className="field">
                 <div className="inline">
                   <button className="primary" disabled={!chord} onClick={pickChord}>
@@ -286,6 +349,12 @@ export function ActionPicker(props: {
 
           {tab === "other" && (
             <div className="list">
+              <div className="row" onClick={() => props.onPick({ type: "release" }, "Release held keys")}>
+                <div>
+                  Release held keys
+                  <div className="sub">Let go of modifiers kept down by a "hold" shortcut. In the Alt+Tab switcher this selects the highlighted window.</div>
+                </div>
+              </div>
               <div className="row" onClick={() => props.onPick({ type: "noop" }, "Do nothing")}>
                 <div>
                   Do nothing

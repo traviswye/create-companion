@@ -178,7 +178,7 @@ fn save_config(config: serde_json::Value) -> Result<(), String> {
     cfg.transport_table().map_err(|e| e.to_string())?;
     for p in std::iter::once(&cfg.default_profile).chain(cfg.profiles.iter()) {
         for (ev, b) in &p.bindings {
-            if let companion_core::action::Action::Keys { chord } = &b.action {
+            if let companion_core::action::Action::Keys { chord, .. } = &b.action {
                 chord
                     .0
                     .parse::<companion_core::keys::ParsedChord>()

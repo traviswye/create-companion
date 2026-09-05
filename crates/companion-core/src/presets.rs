@@ -33,7 +33,7 @@ mod tests {
             let action: Action = serde_json::from_value(a.clone())
                 .unwrap_or_else(|e| panic!("{where_}: not an Action: {e}"));
             let chords: Vec<&str> = match &action {
-                Action::Keys { chord } => vec![chord.0.as_str()],
+                Action::Keys { chord, .. } => vec![chord.0.as_str()],
                 Action::Sequence { chords } => chords.iter().map(|c| c.0.as_str()).collect(),
                 _ => vec![],
             };
@@ -85,7 +85,7 @@ mod tests {
         for p in all {
             assert!(!p.name.is_empty());
             for (ev, b) in &p.bindings {
-                if let Action::Keys { chord } = &b.action {
+                if let Action::Keys { chord, .. } = &b.action {
                     chord
                         .0
                         .parse::<ParsedChord>()

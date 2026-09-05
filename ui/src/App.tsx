@@ -754,6 +754,7 @@ export default function App() {
           catalog={catalog}
           appName={appEntry?.name}
           appActions={appEntry?.actions ?? []}
+          systemActions={apps.find((a) => a.kind === "system" && a.os?.includes(currentOs()))?.actions ?? []}
           os={currentOs()}
           allPlatforms={allPlatforms}
           onAllPlatforms={setAllPlatforms}

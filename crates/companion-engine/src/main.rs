@@ -177,7 +177,7 @@ fn main() -> Result<()> {
                     hook::set_reserved,
                     hook::set_learn,
                     ipc_tx,
-                    SendInputSink,
+                    SendInputSink::default(),
                 )
             })
             .context("spawning pipeline thread")?
