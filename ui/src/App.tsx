@@ -128,7 +128,7 @@ export default function App() {
   };
   const [save, setSave] = useState<SaveState>({ kind: "idle" });
   const [engine, setEngine] = useState<{ connected: boolean; profile?: string; paused?: boolean; version?: string }>({ connected: false });
-  const [last, setLast] = useState<{ event: string; profile: string; action: string; at: number } | null>(null);
+  const [last, setLast] = useState<{ event: string; profile: string; action: string; at: number; unbound?: boolean } | null>(null);
   const [picker, setPicker] = useState<string | null>(null);
   const [adding, setAdding] = useState(false);
   const [flash, setFlash] = useState<string | null>(null);
@@ -183,6 +183,12 @@ export default function App() {
             break;
           case "learned":
             setLearned((l) => ({ key: m.key!, mods: m.mods ?? "none", seq: (l?.seq ?? 0) + 1 }));
+            break;
+          case "unbound":
+            setLast({ event: m.event!, profile: m.profile!, action: "", at: Date.now(), unbound: true });
+            setUnassigned(null);
+            setFlash(m.event!);
+            window.setTimeout(() => setFlash(null), 900);
             break;
           case "unassigned":
             setUnassigned((u) => ({ key: m.key!, mods: m.mods ?? "none", seq: (u?.seq ?? 0) + 1, at: Date.now() }));
@@ -586,16 +592,22 @@ export default function App() {
         </div>
 
         <div className="content">
-          <div className={"detect " + (last ? "" : "idle")}>
+          <div className={"detect " + (last ? (last.unbound ? "warn" : "") : "idle")}>
             {last ? (
               <>
                 <span className="muted">Detected</span>
                 <span className="big">{eventLabel(last.event).join(" / ")}</span>
-                <span className="muted">
-                  in {last.profile} → {last.action}
-                </span>
+                {last.unbound ? (
+                  <span className="muted">in {last.profile}, but nothing is bound for it, so nothing happened.</span>
+                ) : (
+                  <span className="muted">
+                    in {last.profile} → {last.action}
+                  </span>
+                )}
                 <span style={{ flex: 1 }} />
-                <button onClick={() => setPicker(last.event)}>Change for {prof.name}</button>
+                <button className={last.unbound ? "primary" : ""} onClick={() => setPicker(last.event)}>
+                  {last.unbound ? `Bind it for ${prof.name}` : `Change for ${prof.name}`}
+                </button>
               </>
             ) : (
               <>

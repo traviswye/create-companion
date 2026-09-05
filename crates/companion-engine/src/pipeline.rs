@@ -53,6 +53,9 @@ pub struct Engine {
     resolver: ProfileResolver,
     rotary: HashMap<SemanticEvent, RotaryState>,
     paused: bool,
+    /// Set by `handle` when a decoded event had no binding anywhere, so the
+    /// caller can tell the UI ("detected, but nothing is bound for it").
+    unbound: Option<(SemanticEvent, String)>,
 }
 
 impl Engine {
@@ -60,6 +63,7 @@ impl Engine {
         Ok(Self {
             table: cfg.transport_table().context("building transport table")?,
             resolver: cfg.resolver(),
+            unbound: None,
             rotary: HashMap::new(),
             paused: false,
         })
@@ -94,6 +98,11 @@ impl Engine {
         self.resolver.uses_titles()
     }
 
+    /// The event `handle` most recently decoded but found no binding for.
+    pub fn take_unbound(&mut self) -> Option<(SemanticEvent, String)> {
+        self.unbound.take()
+    }
+
     /// Whether this exact key + modifier namespace is one of the configured inputs.
     pub fn is_assigned(&self, code: TransportCode) -> bool {
         self.table.decode(code).is_some()
@@ -107,6 +116,7 @@ impl Engine {
         ctx: &AppContext,
         sink: &mut dyn ActionSink,
     ) -> Option<Handled> {
+        self.unbound = None;
         if !raw.pressed {
             return None; // Phase 3 will use key-up for hold / long-press.
         }
@@ -124,7 +134,8 @@ impl Engine {
         let profile = self.resolver.resolve(ctx);
         let profile_name = profile.name.clone();
         let Some(binding) = self.resolver.binding(ctx, event) else {
-            tracing::debug!(%event, profile = %profile_name, "no binding");
+            tracing::info!(%event, profile = %profile_name, "no binding");
+            self.unbound = Some((event, profile_name));
             return None;
         };
 
@@ -303,6 +314,11 @@ pub fn run(
                     update(&|s| {
                         s.last_event = Some(ev_name.clone());
                         s.last_action = Some(action.clone());
+                    });
+                } else if let Some((ev, profile)) = engine.take_unbound() {
+                    let _ = ipc.send(IpcMessage::Unbound {
+                        event: ev.to_string(),
+                        profile,
                     });
                 }
             }

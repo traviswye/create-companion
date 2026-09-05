@@ -143,6 +143,7 @@ export interface EngineMsg {
     | "config_rejected"
     | "learned"
     | "unassigned"
+    | "unbound"
     | "connected"
     | "disconnected";
   version?: string;

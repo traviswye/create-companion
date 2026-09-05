@@ -62,6 +62,11 @@ pub enum IpcMessage {
         key: FunctionKey,
         mods: Modifiers,
     },
+    /// A recognised gesture that has no binding in the active profile or Default.
+    Unbound {
+        event: String,
+        profile: String,
+    },
 }
 
 #[derive(Debug, Deserialize)]
