@@ -288,7 +288,7 @@ Count = actions in the generated catalog. Twins (`<id>_web`) are browser version
 ## Caveats worth a human look
 
 - **Fn shortcuts** (macOS Globe key) are included in the `mac` column. The engine can send them on macOS (Phase 5); Windows rejects them.
-- **Task View / DisplayFusion** (added 2026-09-05): Task View is matched by explorer.exe plus the titles "Task View" / "Task Switching" (verified by a foreground probe). DisplayFusion's six default hotkeys are documented; its Alt+Tab handler's navigation keys are not, so that entry's Tune defaults assume stock-switcher keys and need a hands-on check.
+- **Task View / DisplayFusion** (added 2026-09-05): Task View is matched by explorer.exe plus the titles "Task View" / "Task Switching" (verified by a foreground probe). DisplayFusion's six default hotkeys are documented; its Alt+Tab handler was checked by hand: arrows work while Alt is held, and it also captures Ctrl+Alt+Tab, showing a stays-open popup that ignores arrows (disable its handler to get Windows' sticky switcher back).
 
 - **Fn shortcuts** (macOS Globe key) are included in the `mac` column: Control Center Fn+C, Notification Center Fn+N, Quick Note Fn+Q, Dictation Fn+D, Show Desktop Fn+H, Fn+arrow navigation, and app-specific Fn alternates in Office, FL Studio and others. The engine can send them on macOS (Phase 5); Windows rejects them. Serif (Affinity) restructured its docs, so its Fn rows could not be re-sourced.
 
