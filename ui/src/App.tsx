@@ -119,6 +119,8 @@ export default function App() {
   };
   const [navTab, setNavTab] = useState<NavTab>("active");
   const [navQ, setNavQ] = useState("");
+  const [dragging, setDragging] = useState<number | null>(null);
+  const [dragOver, setDragOver] = useState<number | null>(null);
   const [allPlatforms, setAllPlatformsState] = useState<boolean>(loadAllPlatforms);
   const setAllPlatforms = (v: boolean) => {
     setAllPlatformsState(v);
@@ -337,6 +339,24 @@ export default function App() {
     if (enabled) setSel(i);
   }
 
+  /** Move profile `from` to sit where `to` is (config order = tie-break priority). */
+  function moveProfile(from: number, to: number) {
+    setCfg((c) => {
+      if (!c) return c;
+      const list = [...c.profiles];
+      const [item] = list.splice(from, 1);
+      list.splice(to, 0, item);
+      return { ...c, profiles: list };
+    });
+    // Keep the selection on the same profile.
+    if (sel === from) setSelRaw(to);
+    else if (sel >= 0) {
+      if (from < sel && to >= sel) setSelRaw(sel - 1);
+      else if (from > sel && to <= sel) setSelRaw(sel + 1);
+    }
+    setSave({ kind: "dirty" });
+  }
+
   function removeProfile(i: number) {
     setCfg((c) => (c ? { ...c, profiles: c.profiles.filter((_, k) => k !== i) } : c));
     setSel(DEFAULT);
@@ -365,11 +385,37 @@ export default function App() {
   const liveName = engine.profile;
   const selectedDisabled = !isDefault && !showInputs && !isEnabled(prof);
 
-  const ProfileRow = ({ i }: { i: number }) => {
+  const ProfileRow = ({ i, draggable }: { i: number; draggable?: boolean }) => {
     const p = cfg.profiles[i];
     const on = isEnabled(p);
     return (
-      <div className={"profile-item " + (sel === i ? "active " : "") + (liveName === p.name ? "live " : "") + (on ? "" : "dim")} onClick={() => setSel(i)}>
+      <div
+        className={"profile-item " + (sel === i ? "active " : "") + (liveName === p.name ? "live " : "") + (on ? "" : "dim ") + (dragOver === i ? "dragover" : "")}
+        onClick={() => setSel(i)}
+        draggable={draggable}
+        title={draggable ? "Drag to change priority: when two profiles match the same window and are equally specific, the higher one wins" : undefined}
+        onDragStart={(e) => {
+          if (!draggable) return;
+          setDragging(i);
+          e.dataTransfer.effectAllowed = "move";
+        }}
+        onDragOver={(e) => {
+          if (dragging === null || !draggable) return;
+          e.preventDefault();
+          if (dragOver !== i) setDragOver(i);
+        }}
+        onDragLeave={() => dragOver === i && setDragOver(null)}
+        onDrop={(e) => {
+          e.preventDefault();
+          if (dragging !== null && dragging !== i) moveProfile(dragging, i);
+          setDragging(null);
+          setDragOver(null);
+        }}
+        onDragEnd={() => {
+          setDragging(null);
+          setDragOver(null);
+        }}
+      >
         <button
           className={"star " + (on ? "on" : "")}
           title={on ? "Disable this profile (keeps its mappings)" : "Enable this profile"}
@@ -415,9 +461,10 @@ export default function App() {
                 <span className="badge">{countLabel(apps.find((a) => a.kind === "system" && a.os?.includes(currentOs())), cfg.default_profile)}</span>
               </div>
               {nav.active.map((i) => (
-                <ProfileRow key={i} i={i} />
+                <ProfileRow key={i} i={i} draggable={!navQ} />
               ))}
               {nav.active.length === 0 && navQ && <div className="nav-empty">No active profile matches "{navQ}".</div>}
+              {nav.active.length > 1 && !navQ && <div className="nav-hint">Drag to set priority. Specific rules win first: a site title beats an app, one app beats a group.</div>}
             </>
           )}
           {navTab === "available" && (

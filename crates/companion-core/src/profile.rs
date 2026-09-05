@@ -73,6 +73,15 @@ impl AppMatch {
         !self.has_app_rule() && !self.has_title_rule()
     }
 
+    /// How narrowly this rule targets: higher wins when several profiles
+    /// match the same window. A title rule is the most specific thing a rule
+    /// can have; among app rules, one that names a single executable is
+    /// more specific than a group ("Browser" listing seven browsers).
+    pub fn specificity(&self) -> (bool, i32) {
+        let apps = (self.windows_exe.len() + self.macos_bundle.len()) as i32;
+        (self.has_title_rule(), -apps)
+    }
+
     pub fn matches(&self, ctx: &AppContext) -> bool {
         if self.is_empty() {
             return false;
@@ -159,8 +168,10 @@ impl ProfileResolver {
     }
 
     /// Most specific match wins: a profile with a title rule beats one that
-    /// matches on the executable alone (YouTube-in-Chrome beats Browser).
-    /// Ties go to config order.
+    /// matches on the executable alone (YouTube-in-Chrome beats Browser), and
+    /// a profile naming one executable beats a group that lists several
+    /// (Google Chrome beats Browser). Remaining ties go to config order, which
+    /// the UI lets the user drag.
     pub fn resolve(&self, ctx: &AppContext) -> &Profile {
         let mut best: Option<&Profile> = None;
         for p in &self.apps {
@@ -169,9 +180,7 @@ impl ProfileResolver {
             }
             match best {
                 None => best = Some(p),
-                Some(b) if !b.app_match.has_title_rule() && p.app_match.has_title_rule() => {
-                    best = Some(p)
-                }
+                Some(b) if p.app_match.specificity() > b.app_match.specificity() => best = Some(p),
                 _ => {}
             }
         }
@@ -323,6 +332,44 @@ mod tests {
         let r = resolver();
         let ctx = AppContext::app(AppIdentity::MacBundle("com.google.Chrome".into()));
         assert_eq!(r.resolve(&ctx).name, "Chrome");
+    }
+
+    #[test]
+    fn single_exe_profile_beats_a_group_listed_earlier() {
+        let group = Profile {
+            name: "Browser".into(),
+            enabled: true,
+            app_match: AppMatch {
+                windows_exe: vec![
+                    "chrome.exe".into(),
+                    "msedge.exe".into(),
+                    "firefox.exe".into(),
+                ],
+                macos_bundle: vec![],
+                window_title: vec![],
+            },
+            bindings: Default::default(),
+        };
+        let one = Profile {
+            name: "Google Chrome".into(),
+            enabled: true,
+            app_match: AppMatch {
+                windows_exe: vec!["chrome.exe".into()],
+                macos_bundle: vec![],
+                window_title: vec![],
+            },
+            bindings: Default::default(),
+        };
+        let r = ProfileResolver::new(Profile::default(), vec![group.clone(), one.clone()]);
+        assert_eq!(r.resolve(&win("chrome.exe")).name, "Google Chrome");
+        assert_eq!(r.resolve(&win("msedge.exe")).name, "Browser");
+        // Same specificity: config order decides.
+        let twin = Profile {
+            name: "Chrome again".into(),
+            ..one.clone()
+        };
+        let r = ProfileResolver::new(Profile::default(), vec![group, twin, one]);
+        assert_eq!(r.resolve(&win("chrome.exe")).name, "Chrome again");
     }
 
     #[test]
