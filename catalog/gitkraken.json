@@ -1,0 +1,347 @@
+{
+  "id": "gitkraken",
+  "name": "GitKraken Desktop",
+  "kind": "app",
+  "category": "Development",
+  "match": {
+    "windows_exe": [
+      "gitkraken.exe"
+    ],
+    "macos_bundle": [
+      "com.axosoft.gitkraken"
+    ],
+    "window_title": []
+  },
+  "sources": [
+    "https://help.gitkraken.com/gitkraken-desktop/keyboard-shortcuts/"
+  ],
+  "note": "From the official GitKraken Desktop keyboard-shortcuts reference. Alternate bindings printed beside a primary one are omitted in favour of the primary: the vi-style J/K/H/L keys for Select previous/next/right/left item (arrows kept instead), Ctrl+Shift+Z / Cmd+Shift+Z for Redo (Ctrl+Y / Cmd+Y kept instead), and Ctrl++ / Cmd++ for Increase Zoom (Ctrl+= / Cmd+= kept instead). 'Swap to Tab #1-9' is documented as a single range entry and is expanded here into nine individual actions (Tab 1 through Tab 9). 'Open current repo in File Manager' is documented with Alt+O on both Windows/Linux and Mac (not Cmd/Option) in the source; recorded verbatim.",
+  "actions": [
+    {
+      "name": "Open keyboard shortcuts",
+      "context": "",
+      "windows": { "type": "keys", "chord": "Ctrl+/" },
+      "mac": { "type": "keys", "chord": "Cmd+/" }
+    },
+    {
+      "name": "Create branch",
+      "context": "Repo Actions",
+      "windows": { "type": "keys", "chord": "Ctrl+B" },
+      "mac": { "type": "keys", "chord": "Cmd+B" }
+    },
+    {
+      "name": "Fetch all",
+      "context": "Repo Actions",
+      "windows": { "type": "keys", "chord": "Ctrl+L" },
+      "mac": { "type": "keys", "chord": "Cmd+L" }
+    },
+    {
+      "name": "Stage the current file",
+      "context": "Repo Actions",
+      "windows": { "type": "keys", "chord": "S" },
+      "mac": { "type": "keys", "chord": "S" }
+    },
+    {
+      "name": "Stage all files",
+      "context": "Repo Actions",
+      "windows": { "type": "keys", "chord": "Ctrl+Shift+S" },
+      "mac": { "type": "keys", "chord": "Cmd+Shift+S" }
+    },
+    {
+      "name": "Unstage the current file",
+      "context": "Repo Actions",
+      "windows": { "type": "keys", "chord": "U" },
+      "mac": { "type": "keys", "chord": "U" }
+    },
+    {
+      "name": "Unstage all files",
+      "context": "Repo Actions",
+      "windows": { "type": "keys", "chord": "Ctrl+Shift+U" },
+      "mac": { "type": "keys", "chord": "Cmd+Shift+U" }
+    },
+    {
+      "name": "Commit staged files with current message",
+      "context": "Repo Actions",
+      "windows": { "type": "keys", "chord": "Ctrl+Enter" },
+      "mac": { "type": "keys", "chord": "Cmd+Enter" }
+    },
+    {
+      "name": "Stage all files and commit with current message",
+      "context": "Repo Actions",
+      "windows": { "type": "keys", "chord": "Ctrl+Shift+Enter" },
+      "mac": { "type": "keys", "chord": "Cmd+Shift+Enter" }
+    },
+    {
+      "name": "Focus commit message box",
+      "context": "Repo Actions",
+      "windows": { "type": "keys", "chord": "Ctrl+Shift+M" },
+      "mac": { "type": "keys", "chord": "Cmd+Shift+M" }
+    },
+    {
+      "name": "Select previous item",
+      "context": "Navigation",
+      "windows": { "type": "keys", "chord": "Down" },
+      "mac": { "type": "keys", "chord": "Down" }
+    },
+    {
+      "name": "Select next item",
+      "context": "Navigation",
+      "windows": { "type": "keys", "chord": "Up" },
+      "mac": { "type": "keys", "chord": "Up" }
+    },
+    {
+      "name": "Select the item to the right",
+      "context": "Navigation",
+      "windows": { "type": "keys", "chord": "Right" },
+      "mac": { "type": "keys", "chord": "Right" }
+    },
+    {
+      "name": "Select the item to the left",
+      "context": "Navigation",
+      "windows": { "type": "keys", "chord": "Left" },
+      "mac": { "type": "keys", "chord": "Left" }
+    },
+    {
+      "name": "Select next item in branch",
+      "context": "Navigation",
+      "windows": { "type": "keys", "chord": "Shift+Down" },
+      "mac": { "type": "keys", "chord": "Shift+Down" }
+    },
+    {
+      "name": "Select previous item in branch",
+      "context": "Navigation",
+      "windows": { "type": "keys", "chord": "Shift+Up" },
+      "mac": { "type": "keys", "chord": "Shift+Up" }
+    },
+    {
+      "name": "Select first commit in graph",
+      "context": "Navigation",
+      "windows": { "type": "keys", "chord": "Ctrl+Home" },
+      "mac": { "type": "keys", "chord": "Cmd+Up" }
+    },
+    {
+      "name": "Select last commit in graph",
+      "context": "Navigation",
+      "windows": { "type": "keys", "chord": "Ctrl+End" },
+      "mac": { "type": "keys", "chord": "Cmd+Down" }
+    },
+    {
+      "name": "Undo",
+      "context": "Navigation",
+      "windows": { "type": "keys", "chord": "Ctrl+Z" },
+      "mac": { "type": "keys", "chord": "Cmd+Z" }
+    },
+    {
+      "name": "Redo",
+      "context": "Navigation",
+      "windows": { "type": "keys", "chord": "Ctrl+Y" },
+      "mac": { "type": "keys", "chord": "Cmd+Y" }
+    },
+    {
+      "name": "Toggle Command Palette",
+      "context": "Command Palette",
+      "windows": { "type": "keys", "chord": "Ctrl+P" },
+      "mac": { "type": "keys", "chord": "Cmd+P" }
+    },
+    {
+      "name": "Search commits",
+      "context": "Command Palette",
+      "windows": { "type": "keys", "chord": "Ctrl+F" },
+      "mac": { "type": "keys", "chord": "Cmd+F" }
+    },
+    {
+      "name": "Open repo via Command Palette",
+      "context": "Command Palette",
+      "windows": { "type": "keys", "chord": "Ctrl+Shift+O" },
+      "mac": { "type": "keys", "chord": "Cmd+Shift+O" }
+    },
+    {
+      "name": "Search file to view history and blame",
+      "context": "Command Palette",
+      "windows": { "type": "keys", "chord": "Ctrl+Shift+H" },
+      "mac": { "type": "keys", "chord": "Cmd+Shift+H" }
+    },
+    {
+      "name": "Focus the Left Panel filter bar",
+      "context": "Command Palette",
+      "windows": { "type": "keys", "chord": "Ctrl+Alt+F" },
+      "mac": { "type": "keys", "chord": "Cmd+Alt+F" }
+    },
+    {
+      "name": "Open current repo in terminal",
+      "context": "Command Palette",
+      "windows": { "type": "keys", "chord": "Alt+T" },
+      "mac": { "type": "keys", "chord": "Alt+T" }
+    },
+    {
+      "name": "Open current repo in File Manager",
+      "context": "Command Palette",
+      "windows": { "type": "keys", "chord": "Alt+O" },
+      "mac": { "type": "keys", "chord": "Alt+O" }
+    },
+    {
+      "name": "Open diff or merge tool",
+      "context": "Command Palette",
+      "windows": { "type": "keys", "chord": "Ctrl+D" },
+      "mac": { "type": "keys", "chord": "Cmd+D" }
+    },
+    {
+      "name": "Close current repo",
+      "context": "Command Palette",
+      "windows": { "type": "keys", "chord": "Ctrl+W" },
+      "mac": { "type": "keys", "chord": "Cmd+W" }
+    },
+    {
+      "name": "Search within file (if file content has focus)",
+      "context": "Command Palette",
+      "windows": { "type": "keys", "chord": "Ctrl+F" },
+      "mac": { "type": "keys", "chord": "Cmd+F" }
+    },
+    {
+      "name": "Toggle Fullscreen Mode",
+      "context": "Interface",
+      "windows": { "type": "keys", "chord": "F11" },
+      "mac": { "type": "keys", "chord": "Ctrl+Cmd+F" }
+    },
+    {
+      "name": "Increase Zoom",
+      "context": "Interface",
+      "windows": { "type": "keys", "chord": "Ctrl+=" },
+      "mac": { "type": "keys", "chord": "Cmd+=" }
+    },
+    {
+      "name": "Decrease Zoom",
+      "context": "Interface",
+      "windows": { "type": "keys", "chord": "Ctrl+-" },
+      "mac": { "type": "keys", "chord": "Cmd+-" }
+    },
+    {
+      "name": "Reset zoom",
+      "context": "Interface",
+      "windows": { "type": "keys", "chord": "Ctrl+0" },
+      "mac": { "type": "keys", "chord": "Cmd+0" }
+    },
+    {
+      "name": "Toggle the Left Panel",
+      "context": "Interface",
+      "windows": { "type": "keys", "chord": "Ctrl+J" },
+      "mac": { "type": "keys", "chord": "Cmd+J" }
+    },
+    {
+      "name": "Toggle the Commit Detail panel",
+      "context": "Interface",
+      "windows": { "type": "keys", "chord": "Ctrl+K" },
+      "mac": { "type": "keys", "chord": "Cmd+K" }
+    },
+    {
+      "name": "Focus the search bar",
+      "context": "Interface",
+      "windows": { "type": "keys", "chord": "Ctrl+F" },
+      "mac": { "type": "keys", "chord": "Cmd+F" }
+    },
+    {
+      "name": "Focus the Left Panel filter bar",
+      "context": "Interface",
+      "windows": { "type": "keys", "chord": "Ctrl+Alt+F" },
+      "mac": { "type": "keys", "chord": "Cmd+Alt+F" }
+    },
+    {
+      "name": "Close the current panel (if one is open)",
+      "context": "Interface",
+      "windows": { "type": "keys", "chord": "Esc" },
+      "mac": { "type": "keys", "chord": "Esc" }
+    },
+    {
+      "name": "New Tab",
+      "context": "Tabs",
+      "windows": { "type": "keys", "chord": "Ctrl+T" },
+      "mac": { "type": "keys", "chord": "Cmd+T" }
+    },
+    {
+      "name": "Close Tab",
+      "context": "Tabs",
+      "windows": { "type": "keys", "chord": "Ctrl+W" },
+      "mac": { "type": "keys", "chord": "Cmd+W" }
+    },
+    {
+      "name": "Swap to Tab 1",
+      "context": "Tabs",
+      "windows": { "type": "keys", "chord": "Ctrl+1" },
+      "mac": { "type": "keys", "chord": "Cmd+1" }
+    },
+    {
+      "name": "Swap to Tab 2",
+      "context": "Tabs",
+      "windows": { "type": "keys", "chord": "Ctrl+2" },
+      "mac": { "type": "keys", "chord": "Cmd+2" }
+    },
+    {
+      "name": "Swap to Tab 3",
+      "context": "Tabs",
+      "windows": { "type": "keys", "chord": "Ctrl+3" },
+      "mac": { "type": "keys", "chord": "Cmd+3" }
+    },
+    {
+      "name": "Swap to Tab 4",
+      "context": "Tabs",
+      "windows": { "type": "keys", "chord": "Ctrl+4" },
+      "mac": { "type": "keys", "chord": "Cmd+4" }
+    },
+    {
+      "name": "Swap to Tab 5",
+      "context": "Tabs",
+      "windows": { "type": "keys", "chord": "Ctrl+5" },
+      "mac": { "type": "keys", "chord": "Cmd+5" }
+    },
+    {
+      "name": "Swap to Tab 6",
+      "context": "Tabs",
+      "windows": { "type": "keys", "chord": "Ctrl+6" },
+      "mac": { "type": "keys", "chord": "Cmd+6" }
+    },
+    {
+      "name": "Swap to Tab 7",
+      "context": "Tabs",
+      "windows": { "type": "keys", "chord": "Ctrl+7" },
+      "mac": { "type": "keys", "chord": "Cmd+7" }
+    },
+    {
+      "name": "Swap to Tab 8",
+      "context": "Tabs",
+      "windows": { "type": "keys", "chord": "Ctrl+8" },
+      "mac": { "type": "keys", "chord": "Cmd+8" }
+    },
+    {
+      "name": "Swap to Tab 9",
+      "context": "Tabs",
+      "windows": { "type": "keys", "chord": "Ctrl+9" },
+      "mac": { "type": "keys", "chord": "Cmd+9" }
+    },
+    {
+      "name": "Jump to next open tab",
+      "context": "Tabs",
+      "windows": { "type": "keys", "chord": "Ctrl+Tab" },
+      "mac": { "type": "keys", "chord": "Cmd+Tab" }
+    },
+    {
+      "name": "Jump to previous open tab",
+      "context": "Tabs",
+      "windows": { "type": "keys", "chord": "Ctrl+Shift+Tab" },
+      "mac": { "type": "keys", "chord": "Cmd+Shift+Tab" }
+    }
+  ],
+  "defaults": {
+    "TUNE_CW": {
+      "name": "Jump to next open tab",
+      "action": { "type": "keys", "chord": "Ctrl+Tab" }
+    },
+    "TUNE_CCW": {
+      "name": "Jump to previous open tab",
+      "action": { "type": "keys", "chord": "Ctrl+Shift+Tab" }
+    },
+    "TUNE_TAP_1F": {
+      "name": "Toggle Command Palette",
+      "action": { "type": "keys", "chord": "Ctrl+P" }
+    }
+  }
+}

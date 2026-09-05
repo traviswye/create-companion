@@ -1,0 +1,71 @@
+{
+  "id": "google_keep",
+  "name": "Google Keep",
+  "kind": "site",
+  "category": "Productivity",
+  "match": {
+    "windows_exe": [
+      "chrome.exe",
+      "msedge.exe",
+      "firefox.exe",
+      "brave.exe",
+      "vivaldi.exe"
+    ],
+    "macos_bundle": [
+      "com.google.Chrome",
+      "com.microsoft.edgemac",
+      "org.mozilla.firefox",
+      "com.brave.Browser",
+      "com.apple.Safari"
+    ],
+    "window_title": [
+      "Google Keep"
+    ]
+  },
+  "sources": [
+    "https://support.google.com/keep/answer/12862970"
+  ],
+  "note": "Mac column of the support article says the same functions apply with Cmd replacing Ctrl; that substitution is applied here to every Ctrl-chord (select all, grid view, finish editing's Ctrl+Enter alternate, toggle checkboxes, indent/dedent). '?' and '@' are written per this catalog's chord grammar as Shift+/ and Shift+2 (the un-shifted keys that produce them on a US keyboard), matching the convention already used elsewhere in this catalog; '#' (Trash note) is likewise written as Shift+3. 'Finish editing' also accepts Ctrl+Enter/Cmd+Enter per the source; Esc is used here as the primary binding. Not expressible, so left out: none.",
+  "actions": [
+    { "name": "Navigate to next note", "context": "", "windows": { "type": "keys", "chord": "J" }, "mac": { "type": "keys", "chord": "J" } },
+    { "name": "Navigate to previous note", "context": "", "windows": { "type": "keys", "chord": "K" }, "mac": { "type": "keys", "chord": "K" } },
+    { "name": "Move note to next position", "context": "", "windows": { "type": "keys", "chord": "Shift+J" }, "mac": { "type": "keys", "chord": "Shift+J" } },
+    { "name": "Move note to previous position", "context": "", "windows": { "type": "keys", "chord": "Shift+K" }, "mac": { "type": "keys", "chord": "Shift+K" } },
+    { "name": "Navigate to next list item", "context": "", "windows": { "type": "keys", "chord": "N" }, "mac": { "type": "keys", "chord": "N" } },
+    { "name": "Navigate to previous list item", "context": "", "windows": { "type": "keys", "chord": "P" }, "mac": { "type": "keys", "chord": "P" } },
+    { "name": "Move list item to next position", "context": "", "windows": { "type": "keys", "chord": "Shift+N" }, "mac": { "type": "keys", "chord": "Shift+N" } },
+    { "name": "Move list item to previous position", "context": "", "windows": { "type": "keys", "chord": "Shift+P" }, "mac": { "type": "keys", "chord": "Shift+P" } },
+    { "name": "Compose a new note", "context": "", "windows": { "type": "keys", "chord": "C" }, "mac": { "type": "keys", "chord": "C" } },
+    { "name": "Compose a new list", "context": "", "windows": { "type": "keys", "chord": "L" }, "mac": { "type": "keys", "chord": "L" } },
+    { "name": "Search notes", "context": "", "windows": { "type": "keys", "chord": "/" }, "mac": { "type": "keys", "chord": "/" } },
+    { "name": "Select all notes", "context": "", "windows": { "type": "keys", "chord": "Ctrl+A" }, "mac": { "type": "keys", "chord": "Cmd+A" } },
+    { "name": "Open keyboard shortcut help", "context": "", "windows": { "type": "keys", "chord": "Shift+/" }, "mac": { "type": "keys", "chord": "Shift+/" } },
+    { "name": "Send feedback", "context": "", "windows": { "type": "keys", "chord": "Shift+2" }, "mac": { "type": "keys", "chord": "Shift+2" } },
+    { "name": "Archive note", "context": "", "windows": { "type": "keys", "chord": "E" }, "mac": { "type": "keys", "chord": "E" } },
+    { "name": "Trash note", "context": "", "windows": { "type": "keys", "chord": "Shift+3" }, "mac": { "type": "keys", "chord": "Shift+3" } },
+    { "name": "Pin or unpin notes", "context": "", "windows": { "type": "keys", "chord": "F" }, "mac": { "type": "keys", "chord": "F" } },
+    { "name": "Select note", "context": "", "windows": { "type": "keys", "chord": "X" }, "mac": { "type": "keys", "chord": "X" } },
+    { "name": "Open note", "context": "", "windows": { "type": "keys", "chord": "Enter" }, "mac": { "type": "keys", "chord": "Enter" } },
+    { "name": "Toggle between list and grid view", "context": "", "windows": { "type": "keys", "chord": "Ctrl+G" }, "mac": { "type": "keys", "chord": "Cmd+G" } },
+    { "name": "Finish editing", "context": "Editor", "windows": { "type": "keys", "chord": "Esc" }, "mac": { "type": "keys", "chord": "Esc" } },
+    { "name": "Toggle checkboxes", "context": "Editor", "windows": { "type": "keys", "chord": "Ctrl+Shift+8" }, "mac": { "type": "keys", "chord": "Cmd+Shift+8" } },
+    { "name": "Indent list item", "context": "Editor", "windows": { "type": "keys", "chord": "Ctrl+]" }, "mac": { "type": "keys", "chord": "Cmd+]" } },
+    { "name": "Dedent list item", "context": "Editor", "windows": { "type": "keys", "chord": "Ctrl+[" }, "mac": { "type": "keys", "chord": "Cmd+[" } }
+  ],
+  "defaults": {
+    "TUNE_CW": {
+      "name": "Navigate to next note",
+      "action": { "type": "keys", "chord": "J" },
+      "accel": "light"
+    },
+    "TUNE_CCW": {
+      "name": "Navigate to previous note",
+      "action": { "type": "keys", "chord": "K" },
+      "accel": "light"
+    },
+    "TUNE_TAP_1F": {
+      "name": "Compose a new note",
+      "action": { "type": "keys", "chord": "C" }
+    }
+  }
+}

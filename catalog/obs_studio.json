@@ -1,0 +1,241 @@
+{
+  "id": "obs_studio",
+  "name": "OBS Studio",
+  "kind": "app",
+  "category": "Video",
+  "match": {
+    "windows_exe": [
+      "obs64.exe"
+    ],
+    "macos_bundle": [
+      "com.obsproject.obs-studio"
+    ],
+    "window_title": []
+  },
+  "sources": [
+    "https://obsproject.com/kb/keyboard-shortcuts"
+  ],
+  "note": "The OBS Knowledge Base documents these fixed default shortcuts for editing sources and the preview window. Cropping/stretching/disabling snapping and moving/zooming the preview (Alt+drag, Shift+drag, Ctrl+drag, Space+drag, Space+scroll) require a mouse drag or scroll and are not included, as the chord grammar cannot express mouse-drag combinations. OBS's stream/recording/scene/hotkey actions (Start Streaming, Start Recording, switch scene, mute source, etc.) are configured per-install under Settings > Hotkeys and ship with no default key assigned, so they are not included as they have no documented default chord.",
+  "actions": [
+    {
+      "name": "Quit OBS Studio",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Q"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Q"
+      }
+    },
+    {
+      "name": "Undo edit",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Z"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Z"
+      }
+    },
+    {
+      "name": "Redo edit",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Z"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+Z"
+      }
+    },
+    {
+      "name": "Copy source",
+      "context": "Sources list",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+C"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+C"
+      }
+    },
+    {
+      "name": "Paste source",
+      "context": "Sources list",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+V"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+V"
+      }
+    },
+    {
+      "name": "Remove source",
+      "context": "Sources list",
+      "windows": {
+        "type": "keys",
+        "chord": "Delete"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Backspace"
+      }
+    },
+    {
+      "name": "Move source up in sources list",
+      "context": "Sources list",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Up"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Up"
+      }
+    },
+    {
+      "name": "Move source down in sources list",
+      "context": "Sources list",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Down"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Down"
+      }
+    },
+    {
+      "name": "Move source to top of sources list",
+      "context": "Sources list",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Home"
+      }
+    },
+    {
+      "name": "Move source to bottom of sources list",
+      "context": "Sources list",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+End"
+      }
+    },
+    {
+      "name": "Edit transform",
+      "context": "Sources list",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+E"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+E"
+      }
+    },
+    {
+      "name": "Reset transform",
+      "context": "Sources list",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+R"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+R"
+      }
+    },
+    {
+      "name": "Fit to screen",
+      "context": "Sources list",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+F"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+F"
+      }
+    },
+    {
+      "name": "Stretch to screen",
+      "context": "Sources list",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+S"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+S"
+      }
+    },
+    {
+      "name": "Center to screen",
+      "context": "Sources list",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+D"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+D"
+      }
+    },
+    {
+      "name": "Nudge source up",
+      "context": "Preview window, bounding box selected",
+      "windows": {
+        "type": "keys",
+        "chord": "Up"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Up"
+      }
+    },
+    {
+      "name": "Nudge source down",
+      "context": "Preview window, bounding box selected",
+      "windows": {
+        "type": "keys",
+        "chord": "Down"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Down"
+      }
+    },
+    {
+      "name": "Nudge source left",
+      "context": "Preview window, bounding box selected",
+      "windows": {
+        "type": "keys",
+        "chord": "Left"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Left"
+      }
+    },
+    {
+      "name": "Nudge source right",
+      "context": "Preview window, bounding box selected",
+      "windows": {
+        "type": "keys",
+        "chord": "Right"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Right"
+      }
+    }
+  ]
+}

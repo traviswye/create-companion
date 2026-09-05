@@ -1,0 +1,99 @@
+{
+  "id": "chatgpt",
+  "name": "ChatGPT",
+  "kind": "site",
+  "category": "AI",
+  "match": {
+    "windows_exe": [
+      "chrome.exe",
+      "msedge.exe",
+      "firefox.exe",
+      "brave.exe",
+      "vivaldi.exe"
+    ],
+    "macos_bundle": [
+      "com.google.Chrome",
+      "com.microsoft.edgemac",
+      "org.mozilla.firefox",
+      "com.brave.Browser",
+      "com.apple.Safari"
+    ],
+    "window_title": [
+      "ChatGPT"
+    ]
+  },
+  "sources": [
+    "https://learn.chatgpt.com/docs/reference/commands"
+  ],
+  "note": "OpenAI's Help Center article this catalog entry was originally scoped to ('Keyboard shortcuts in ChatGPT', the list shown in-app by Ctrl+/) has been retired; its URL now redirects to an unrelated capabilities-overview article. The current official source is OpenAI's 'Commands' reference on learn.chatgpt.com, which documents the shared ChatGPT/Work/Codex desktop app's shortcut map per platform (macOS shown; Windows/Linux use the standard Cmd→Ctrl, Option→Alt substitution, which the page states explicitly follows OS convention). Only entries plausible for the chatgpt.com web page are included; left out as Codex-only, Work-only, or desktop-app-chrome (not meaningful inside a browser tab): terminal/file-tree/review-panel/environment commands, the embedded browser panel, approval-request Enter/Esc, Quit/Close-tab/Toggle-full-screen/Open-folder/Appshot, 'Switch to Chat, Work, or Codex' (ambiguous outside the unified desktop app and collides with the Ctrl+1-9 'Go to chat' range below), 'Toggle Activity view' (unclear whether this surface exists on the web), and 'Search chats' (documented with no default binding). 'Open recent chat 1–6' and 'Go to chat 1–9' are each expanded from the source's numeric ranges into one action per number.",
+  "actions": [
+    { "name": "Open command menu", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Shift+P" }, "mac": { "type": "keys", "chord": "Cmd+Shift+P" } },
+    { "name": "Open command menu (alternate)", "context": "", "windows": { "type": "keys", "chord": "Ctrl+K" }, "mac": { "type": "keys", "chord": "Cmd+K" } },
+    { "name": "Open settings", "context": "", "windows": { "type": "keys", "chord": "Ctrl+," }, "mac": { "type": "keys", "chord": "Cmd+," } },
+    { "name": "Open keyboard shortcuts", "context": "", "windows": { "type": "keys", "chord": "Ctrl+/" }, "mac": { "type": "keys", "chord": "Cmd+/" } },
+    { "name": "Navigate back", "context": "", "windows": { "type": "keys", "chord": "Ctrl+[" }, "mac": { "type": "keys", "chord": "Cmd+[" } },
+    { "name": "Navigate forward", "context": "", "windows": { "type": "keys", "chord": "Ctrl+]" }, "mac": { "type": "keys", "chord": "Cmd+]" } },
+    { "name": "Increase font size", "context": "", "windows": { "type": "keys", "chord": "Ctrl+=" }, "mac": { "type": "keys", "chord": "Cmd+=" } },
+    { "name": "Decrease font size", "context": "", "windows": { "type": "keys", "chord": "Ctrl+-" }, "mac": { "type": "keys", "chord": "Cmd+-" } },
+    { "name": "Reset font size", "context": "", "windows": { "type": "keys", "chord": "Ctrl+0" }, "mac": { "type": "keys", "chord": "Cmd+0" } },
+    { "name": "Toggle sidebar", "context": "", "windows": { "type": "keys", "chord": "Ctrl+B" }, "mac": { "type": "keys", "chord": "Cmd+B" } },
+    { "name": "Undo last app action", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Z" }, "mac": { "type": "keys", "chord": "Cmd+Z" } },
+    { "name": "Redo last app action", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Shift+Z" }, "mac": { "type": "keys", "chord": "Cmd+Shift+Z" } },
+    { "name": "New chat", "context": "", "windows": { "type": "keys", "chord": "Ctrl+N" }, "mac": { "type": "keys", "chord": "Cmd+N" } },
+    { "name": "New chat (alternate)", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Shift+O" }, "mac": { "type": "keys", "chord": "Cmd+Shift+O" } },
+    { "name": "Quick chat", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Alt+N" }, "mac": { "type": "keys", "chord": "Cmd+Alt+N" } },
+    { "name": "New temporary chat", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Shift+N" }, "mac": { "type": "keys", "chord": "Cmd+Shift+N" } },
+    { "name": "Archive chat", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Shift+A" }, "mac": { "type": "keys", "chord": "Cmd+Shift+A" } },
+    { "name": "Mark chat as unread", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Shift+U" }, "mac": { "type": "keys", "chord": "Cmd+Shift+U" } },
+    { "name": "Pin or unpin chat", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Alt+P" }, "mac": { "type": "keys", "chord": "Cmd+Alt+P" } },
+    { "name": "Rename chat", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Alt+R" }, "mac": { "type": "keys", "chord": "Cmd+Alt+R" } },
+    { "name": "Find in chat", "context": "", "windows": { "type": "keys", "chord": "Ctrl+F" }, "mac": { "type": "keys", "chord": "Cmd+F" } },
+    { "name": "Find next match", "context": "Find in chat", "windows": { "type": "keys", "chord": "Ctrl+G" }, "mac": { "type": "keys", "chord": "Cmd+G" } },
+    { "name": "Find previous match", "context": "Find in chat", "windows": { "type": "keys", "chord": "Ctrl+Shift+G" }, "mac": { "type": "keys", "chord": "Cmd+Shift+G" } },
+    { "name": "Previous chat or tab", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Shift+Tab" }, "mac": { "type": "keys", "chord": "Ctrl+Shift+Tab" } },
+    { "name": "Previous chat or tab (alternate)", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Shift+[" }, "mac": { "type": "keys", "chord": "Cmd+Shift+[" } },
+    { "name": "Previous chat or tab (alternate 2)", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Alt+Left" }, "mac": { "type": "keys", "chord": "Cmd+Alt+Left" } },
+    { "name": "Next chat or tab", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Tab" }, "mac": { "type": "keys", "chord": "Ctrl+Tab" } },
+    { "name": "Next chat or tab (alternate)", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Shift+]" }, "mac": { "type": "keys", "chord": "Cmd+Shift+]" } },
+    { "name": "Next chat or tab (alternate 2)", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Alt+Right" }, "mac": { "type": "keys", "chord": "Cmd+Alt+Right" } },
+    { "name": "Open recent chat 1", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Alt+1" }, "mac": { "type": "keys", "chord": "Cmd+Alt+1" } },
+    { "name": "Open recent chat 2", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Alt+2" }, "mac": { "type": "keys", "chord": "Cmd+Alt+2" } },
+    { "name": "Open recent chat 3", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Alt+3" }, "mac": { "type": "keys", "chord": "Cmd+Alt+3" } },
+    { "name": "Open recent chat 4", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Alt+4" }, "mac": { "type": "keys", "chord": "Cmd+Alt+4" } },
+    { "name": "Open recent chat 5", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Alt+5" }, "mac": { "type": "keys", "chord": "Cmd+Alt+5" } },
+    { "name": "Open recent chat 6", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Alt+6" }, "mac": { "type": "keys", "chord": "Cmd+Alt+6" } },
+    { "name": "Go to chat 1", "context": "", "windows": { "type": "keys", "chord": "Ctrl+1" }, "mac": { "type": "keys", "chord": "Cmd+1" } },
+    { "name": "Go to chat 2", "context": "", "windows": { "type": "keys", "chord": "Ctrl+2" }, "mac": { "type": "keys", "chord": "Cmd+2" } },
+    { "name": "Go to chat 3", "context": "", "windows": { "type": "keys", "chord": "Ctrl+3" }, "mac": { "type": "keys", "chord": "Cmd+3" } },
+    { "name": "Go to chat 4", "context": "", "windows": { "type": "keys", "chord": "Ctrl+4" }, "mac": { "type": "keys", "chord": "Cmd+4" } },
+    { "name": "Go to chat 5", "context": "", "windows": { "type": "keys", "chord": "Ctrl+5" }, "mac": { "type": "keys", "chord": "Cmd+5" } },
+    { "name": "Go to chat 6", "context": "", "windows": { "type": "keys", "chord": "Ctrl+6" }, "mac": { "type": "keys", "chord": "Cmd+6" } },
+    { "name": "Go to chat 7", "context": "", "windows": { "type": "keys", "chord": "Ctrl+7" }, "mac": { "type": "keys", "chord": "Cmd+7" } },
+    { "name": "Go to chat 8", "context": "", "windows": { "type": "keys", "chord": "Ctrl+8" }, "mac": { "type": "keys", "chord": "Cmd+8" } },
+    { "name": "Go to chat 9", "context": "", "windows": { "type": "keys", "chord": "Ctrl+9" }, "mac": { "type": "keys", "chord": "Cmd+9" } },
+    { "name": "Open model picker", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Shift+M" }, "mac": { "type": "keys", "chord": "Ctrl+Shift+M" } },
+    { "name": "Open project picker", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Alt+Shift+O" }, "mac": { "type": "keys", "chord": "Cmd+Alt+Shift+O" } },
+    { "name": "Start voice chat", "context": "When voice chat is available", "windows": { "type": "keys", "chord": "Ctrl+Shift+V" }, "mac": { "type": "keys", "chord": "Ctrl+Shift+V" } },
+    { "name": "Start dictation", "context": "When dictation is available", "windows": { "type": "keys", "chord": "Ctrl+Shift+D" }, "mac": { "type": "keys", "chord": "Ctrl+Shift+D" } },
+    { "name": "Restore previous composer prompt", "context": "Composer empty", "windows": { "type": "keys", "chord": "Up" }, "mac": { "type": "keys", "chord": "Up" } },
+    { "name": "Copy chat deep link", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Alt+L" }, "mac": { "type": "keys", "chord": "Cmd+Alt+L" } }
+  ],
+  "defaults": {
+    "TUNE_CW": {
+      "name": "Next chat or tab",
+      "action": { "type": "keys", "chord": "Ctrl+Tab" }
+    },
+    "TUNE_CCW": {
+      "name": "Previous chat or tab",
+      "action": { "type": "keys", "chord": "Ctrl+Shift+Tab" }
+    },
+    "TUNE_TAP_1F": {
+      "name": "New chat",
+      "action": { "type": "keys", "chord": "Ctrl+Shift+O" }
+    },
+    "TUNE_SWIPE_UP": {
+      "name": "Toggle sidebar",
+      "action": { "type": "keys", "chord": "Ctrl+B" }
+    }
+  }
+}

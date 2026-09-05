@@ -1,0 +1,578 @@
+{
+  "id": "blender",
+  "name": "Blender",
+  "kind": "app",
+  "category": "CAD / 3D",
+  "match": {
+    "windows_exe": [
+      "blender.exe"
+    ],
+    "macos_bundle": [
+      "org.blenderfoundation.blender"
+    ],
+    "window_title": []
+  },
+  "sources": [
+    "https://github.com/waldobronchart/ShortcutMapper",
+    "https://docs.blender.org/manual/en/latest/interface/keymap/index.html",
+    "https://docs.blender.org/manual/en/latest/interface/keymap/introduction.html",
+    "https://docs.blender.org/manual/en/latest/interface/keymap/blender_default.html",
+    "https://projects.blender.org/blender/blender-manual/src/branch/main/manual/interface/keymap"
+  ],
+  "note": "Default bindings hand-authored 2026-09-04; the full shortcut list comes from the ShortcutMapper import in reference/app-shortcuts.json. Extended 2026-09-04 with every chord the Blender Manual's own Keymap chapter documents: the Keymap index page (interface/keymap/index.html, which is where the older introduction.html now lands after the manual merged the introduction into the index) and the Default Keymap page it links to (interface/keymap/blender_default.html). Manual version en/latest, which builds as the Blender 5.3 Manual; the pages were read from the manual's own source repository (projects.blender.org/blender/blender-manual, main branch, manual/interface/keymap/*.rst) because docs.blender.org sits behind a bot challenge. The context is the manual's own section heading - Hovering (the Properties table of shortcuts pressed while the cursor is over an editable field), Common Editing Keys, Common Editor Keys, 3D Viewport, Edit Mode, Animation, Python Scripting - and \"\" for the General and macOS tables, which are window-level. Undo (Ctrl-Z) and Redo (Shift-Ctrl-Z) already existed in this file and were not added again. Rows that document a pair or a range are split into one action per key: Ctrl-PageUp / Ctrl-PageDown became Next Workspace and Previous Workspace, and the Edit Mode \"1 - 3\" row became one action each for editing vertices, edges and faces. Left out because the chord grammar cannot express them: every mouse row (LMB, RMB, MMB, Shift-MMB, Ctrl-MMB, Ctrl-Wheel), the whole Dragging section (Ctrl, Shift and Shift-Ctrl are held during a drag, not pressed as a chord), the Alt-held-while-editing row, and the double-tap A alternative for Select none, which is kept only as Alt-A. Blender's numpad bindings are numpad-only keys (Numpad0-Numpad9, NumpadPlus and friends, per the manual's own Keyboard conventions) and are skipped; note the Default Keymap page documents no numpad rows anyway. Also left out: the F5-F8 and F10 rows, which the manual marks \"Reserved for user actions\" rather than naming a command; the Spacebar row, which the manual says is user configurable; and the \"Hold Shift\" and \"Hold Ctrl\" variants of the Edit Mode 1-3 row, for which the manual gives no command names. Cmd-Comma (Preferences) is the one macOS-specific key the manual documents, so it is the only action here with a mac chord; the manual's general remark that Cmd may be used instead of Ctrl on macOS \"for all but a few exceptions\" does not name the exceptions, so no mac chords were inferred from it. Linux equals Windows throughout, so no linux chords are emitted. The Industry Compatible keymap page (interface/keymap/industry_compatible.html) is linked from the same index but describes an alternative, non-default keymap whose keys conflict with the default one (Backspace instead of X to delete, Tab for Menu Search), so none of its rows are included.",
+  "actions": [
+    {
+      "name": "Next frame",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Right"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Right"
+      }
+    },
+    {
+      "name": "Previous frame",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Left"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Left"
+      }
+    },
+    {
+      "name": "Play animation",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Space"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Space"
+      }
+    },
+    {
+      "name": "Undo",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Z"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Z"
+      }
+    },
+    {
+      "name": "Redo",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Z"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Z"
+      }
+    },
+    {
+      "name": "Jump to next keyframe",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Up"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Up"
+      }
+    },
+    {
+      "name": "Jump to previous keyframe",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Down"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Down"
+      }
+    },
+    {
+      "name": "Copy the (single) value of the field",
+      "context": "Hovering",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+C"
+      }
+    },
+    {
+      "name": "Paste the (single) value of the field",
+      "context": "Hovering",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+V"
+      }
+    },
+    {
+      "name": "Copy the entire vector or color of the field",
+      "context": "Hovering",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+C"
+      }
+    },
+    {
+      "name": "Paste the entire vector or color of the field",
+      "context": "Hovering",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+V"
+      }
+    },
+    {
+      "name": "Reset the value to its default",
+      "context": "Hovering",
+      "windows": {
+        "type": "keys",
+        "chord": "Backspace"
+      }
+    },
+    {
+      "name": "Invert the value's sign (multiply by -1.0)",
+      "context": "Hovering",
+      "windows": {
+        "type": "keys",
+        "chord": "-"
+      }
+    },
+    {
+      "name": "Activates menus and toggles checkboxes",
+      "context": "Hovering",
+      "windows": {
+        "type": "keys",
+        "chord": "Enter"
+      }
+    },
+    {
+      "name": "Open file",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+O"
+      }
+    },
+    {
+      "name": "Save file",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+S"
+      }
+    },
+    {
+      "name": "New file",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+N"
+      }
+    },
+    {
+      "name": "Quit",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Q"
+      }
+    },
+    {
+      "name": "Help (context sensitive)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F1"
+      }
+    },
+    {
+      "name": "Rename active item",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F2"
+      }
+    },
+    {
+      "name": "Menu Search",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F3"
+      }
+    },
+    {
+      "name": "File context menu",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F4"
+      }
+    },
+    {
+      "name": "Adjust Last Operation",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F9"
+      }
+    },
+    {
+      "name": "Show render window",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F11"
+      }
+    },
+    {
+      "name": "Render the current frame",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F12"
+      }
+    },
+    {
+      "name": "Quick access (favorites)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Q"
+      }
+    },
+    {
+      "name": "Toggle Maximize Area",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Space"
+      }
+    },
+    {
+      "name": "Next Workspace",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+PageUp"
+      }
+    },
+    {
+      "name": "Previous Workspace",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+PageDown"
+      }
+    },
+    {
+      "name": "Playback animation (reverse)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Space"
+      }
+    },
+    {
+      "name": "Delete the selected item with a confirmation dialog",
+      "context": "Common Editing Keys",
+      "windows": {
+        "type": "keys",
+        "chord": "X"
+      }
+    },
+    {
+      "name": "Delete the selected item without a confirmation dialog",
+      "context": "Common Editing Keys",
+      "windows": {
+        "type": "keys",
+        "chord": "Delete"
+      }
+    },
+    {
+      "name": "Select all",
+      "context": "Common Editor Keys",
+      "windows": {
+        "type": "keys",
+        "chord": "A"
+      }
+    },
+    {
+      "name": "Select none",
+      "context": "Common Editor Keys",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+A"
+      }
+    },
+    {
+      "name": "Invert selection",
+      "context": "Common Editor Keys",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+I"
+      }
+    },
+    {
+      "name": "Hide selected items",
+      "context": "Common Editor Keys",
+      "windows": {
+        "type": "keys",
+        "chord": "H"
+      }
+    },
+    {
+      "name": "Hide unselected items",
+      "context": "Common Editor Keys",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+H"
+      }
+    },
+    {
+      "name": "Reveal hidden items",
+      "context": "Common Editor Keys",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+H"
+      }
+    },
+    {
+      "name": "Toggle Toolbar",
+      "context": "Common Editor Keys",
+      "windows": {
+        "type": "keys",
+        "chord": "T"
+      }
+    },
+    {
+      "name": "Toggle Sidebar",
+      "context": "Common Editor Keys",
+      "windows": {
+        "type": "keys",
+        "chord": "N"
+      }
+    },
+    {
+      "name": "Toggle Edit mode",
+      "context": "3D Viewport",
+      "windows": {
+        "type": "keys",
+        "chord": "Tab"
+      }
+    },
+    {
+      "name": "Toggle Pose mode for armatures, or show a mode switching pie menu for others",
+      "context": "3D Viewport",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Tab"
+      }
+    },
+    {
+      "name": "Show 3D Viewport navigation pie menu",
+      "context": "3D Viewport",
+      "windows": {
+        "type": "keys",
+        "chord": "`"
+      }
+    },
+    {
+      "name": "Toggle gizmos",
+      "context": "3D Viewport",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+`"
+      }
+    },
+    {
+      "name": "Start Fly/Walk Navigation",
+      "context": "3D Viewport",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+`"
+      }
+    },
+    {
+      "name": "Switch to editing vertices",
+      "context": "Edit Mode",
+      "windows": {
+        "type": "keys",
+        "chord": "1"
+      }
+    },
+    {
+      "name": "Switch to editing edges",
+      "context": "Edit Mode",
+      "windows": {
+        "type": "keys",
+        "chord": "2"
+      }
+    },
+    {
+      "name": "Switch to editing faces",
+      "context": "Edit Mode",
+      "windows": {
+        "type": "keys",
+        "chord": "3"
+      }
+    },
+    {
+      "name": "Insert a keyframe",
+      "context": "Animation",
+      "windows": {
+        "type": "keys",
+        "chord": "I"
+      }
+    },
+    {
+      "name": "Clear the keyframe",
+      "context": "Animation",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+I"
+      }
+    },
+    {
+      "name": "Clear all keyframes",
+      "context": "Animation",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+I"
+      }
+    },
+    {
+      "name": "Assign a driver",
+      "context": "Animation",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+D"
+      }
+    },
+    {
+      "name": "Clear the driver",
+      "context": "Animation",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+D"
+      }
+    },
+    {
+      "name": "Add the property to the current keying set",
+      "context": "Animation",
+      "windows": {
+        "type": "keys",
+        "chord": "K"
+      }
+    },
+    {
+      "name": "Remove the property from the current keying set",
+      "context": "Animation",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+K"
+      }
+    },
+    {
+      "name": "Copy the Python command of an operator button",
+      "context": "Python Scripting",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+C"
+      }
+    },
+    {
+      "name": "Copy the relative data path of a field",
+      "context": "Python Scripting",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+C"
+      }
+    },
+    {
+      "name": "Copy the full data path of a field",
+      "context": "Python Scripting",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Alt+C"
+      }
+    },
+    {
+      "name": "Preferences",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+,"
+      }
+    }
+  ],
+  "defaults": {
+    "TUNE_CW": {
+      "name": "Next frame",
+      "action": {
+        "type": "keys",
+        "chord": "Right"
+      },
+      "accel": "medium"
+    },
+    "TUNE_CCW": {
+      "name": "Previous frame",
+      "action": {
+        "type": "keys",
+        "chord": "Left"
+      },
+      "accel": "medium"
+    },
+    "TUNE_TAP_1F": {
+      "name": "Play animation",
+      "action": {
+        "type": "keys",
+        "chord": "Space"
+      }
+    },
+    "TUNE_SWIPE_LEFT": {
+      "name": "Undo",
+      "action": {
+        "type": "keys",
+        "chord": "Ctrl+Z"
+      }
+    },
+    "TUNE_SWIPE_RIGHT": {
+      "name": "Redo",
+      "action": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Z"
+      }
+    },
+    "TUNE_SWIPE_UP": {
+      "name": "Jump to next keyframe",
+      "action": {
+        "type": "keys",
+        "chord": "Up"
+      }
+    },
+    "TUNE_SWIPE_DOWN": {
+      "name": "Jump to previous keyframe",
+      "action": {
+        "type": "keys",
+        "chord": "Down"
+      }
+    }
+  }
+}

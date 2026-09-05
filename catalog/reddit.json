@@ -1,0 +1,63 @@
+{
+  "id": "reddit",
+  "name": "Reddit",
+  "kind": "site",
+  "category": "Social",
+  "match": {
+    "windows_exe": [
+      "chrome.exe",
+      "msedge.exe",
+      "firefox.exe",
+      "brave.exe",
+      "vivaldi.exe"
+    ],
+    "macos_bundle": [
+      "com.google.Chrome",
+      "com.microsoft.edgemac",
+      "org.mozilla.firefox",
+      "com.brave.Browser",
+      "com.apple.Safari"
+    ],
+    "window_title": [
+      "Reddit"
+    ]
+  },
+  "sources": [
+    "https://support.reddithelp.com/hc/en-us/articles/38744650091412-How-to-use-keyboard-shortcuts-hotkeys"
+  ],
+  "note": "Covers the current (redesigned) reddit.com only; hotkeys aren't available on old Reddit. The vendor's 'Submit comment/post' row reads CMD + ENTER and its own note says 'For Windows users, any mention of CMD (used on Mac) will automatically translate to ALT', so it is recorded here as Alt+Enter on Windows / Cmd+Enter on Mac. The Media section's 'Play/Pause' row lists SPACE or K, but K already means 'Previous post or comment' at the top level, so only Space is listed as a chord here (K remains documented behavior, just not separately encodable). Not expressible in the chord grammar, so left out: none observed — the full documented set is chord-expressible.",
+  "actions": [
+    { "name": "Show shortcuts", "context": "", "windows": { "type": "keys", "chord": "Shift+/" }, "mac": { "type": "keys", "chord": "Shift+/" } },
+    { "name": "Next post or comment", "context": "", "windows": { "type": "keys", "chord": "J" }, "mac": { "type": "keys", "chord": "J" } },
+    { "name": "Previous post or comment", "context": "", "windows": { "type": "keys", "chord": "K" }, "mac": { "type": "keys", "chord": "K" } },
+    { "name": "Expand/Collapse content", "context": "Compact mode", "windows": { "type": "keys", "chord": "X" }, "mac": { "type": "keys", "chord": "X" } },
+    { "name": "Copy post or comment link", "context": "", "windows": { "type": "keys", "chord": "L" }, "mac": { "type": "keys", "chord": "L" } },
+    { "name": "Upvote", "context": "", "windows": { "type": "keys", "chord": "A" }, "mac": { "type": "keys", "chord": "A" } },
+    { "name": "Downvote", "context": "", "windows": { "type": "keys", "chord": "Z" }, "mac": { "type": "keys", "chord": "Z" } },
+    { "name": "Reply to comment", "context": "", "windows": { "type": "keys", "chord": "R" }, "mac": { "type": "keys", "chord": "R" } },
+    { "name": "Save/Unsave post or comment", "context": "", "windows": { "type": "keys", "chord": "S" }, "mac": { "type": "keys", "chord": "S" } },
+    { "name": "Hide post", "context": "", "windows": { "type": "keys", "chord": "H" }, "mac": { "type": "keys", "chord": "H" } },
+    { "name": "Open/Close navigation", "context": "", "windows": { "type": "keys", "chord": "Q" }, "mac": { "type": "keys", "chord": "Q" } },
+    { "name": "Collapse/Expand comment", "context": "", "windows": { "type": "keys", "chord": "F" }, "mac": { "type": "keys", "chord": "F" } },
+    { "name": "Create post", "context": "", "windows": { "type": "keys", "chord": "C" }, "mac": { "type": "keys", "chord": "C" } },
+    { "name": "Submit comment/post", "context": "", "windows": { "type": "keys", "chord": "Alt+Enter" }, "mac": { "type": "keys", "chord": "Cmd+Enter" } },
+    { "name": "Play/Pause", "context": "Video player", "windows": { "type": "keys", "chord": "Space" }, "mac": { "type": "keys", "chord": "Space" } },
+    { "name": "Toggle fullscreen mode", "context": "Video player", "windows": { "type": "keys", "chord": "F" }, "mac": { "type": "keys", "chord": "F" } },
+    { "name": "Rewind 5 seconds", "context": "Video player", "windows": { "type": "keys", "chord": "Left" }, "mac": { "type": "keys", "chord": "Left" } },
+    { "name": "Fast-forward 5 seconds", "context": "Video player", "windows": { "type": "keys", "chord": "Right" }, "mac": { "type": "keys", "chord": "Right" } },
+    { "name": "Increase volume", "context": "Video player", "windows": { "type": "keys", "chord": "Up" }, "mac": { "type": "keys", "chord": "Up" } },
+    { "name": "Decrease volume", "context": "Video player", "windows": { "type": "keys", "chord": "Down" }, "mac": { "type": "keys", "chord": "Down" } },
+    { "name": "Rewind 10 seconds", "context": "Video player", "windows": { "type": "keys", "chord": "J" }, "mac": { "type": "keys", "chord": "J" } },
+    { "name": "Fast-forward 10 seconds", "context": "Video player", "windows": { "type": "keys", "chord": "L" }, "mac": { "type": "keys", "chord": "L" } },
+    { "name": "Restart", "context": "Video player", "windows": { "type": "keys", "chord": "0" }, "mac": { "type": "keys", "chord": "0" } },
+    { "name": "Mute/Unmute", "context": "Video player", "windows": { "type": "keys", "chord": "M" }, "mac": { "type": "keys", "chord": "M" } },
+    { "name": "Captions", "context": "Video player", "windows": { "type": "keys", "chord": "C" }, "mac": { "type": "keys", "chord": "C" } }
+  ],
+  "defaults": {
+    "TUNE_CW": { "name": "Next post or comment", "action": { "type": "keys", "chord": "J" }, "accel": "medium" },
+    "TUNE_CCW": { "name": "Previous post or comment", "action": { "type": "keys", "chord": "K" }, "accel": "medium" },
+    "TUNE_TAP_1F": { "name": "Upvote", "action": { "type": "keys", "chord": "A" } },
+    "TUNE_SWIPE_UP": { "name": "Upvote", "action": { "type": "keys", "chord": "A" } },
+    "TUNE_SWIPE_DOWN": { "name": "Downvote", "action": { "type": "keys", "chord": "Z" } }
+  }
+}

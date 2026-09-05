@@ -1,0 +1,249 @@
+{
+  "id": "google_meet",
+  "name": "Google Meet",
+  "kind": "site",
+  "category": "Communication",
+  "match": {
+    "windows_exe": [
+      "chrome.exe",
+      "msedge.exe",
+      "firefox.exe",
+      "brave.exe",
+      "vivaldi.exe"
+    ],
+    "macos_bundle": [
+      "com.google.Chrome",
+      "com.microsoft.edgemac",
+      "org.mozilla.firefox",
+      "com.brave.Browser",
+      "com.apple.Safari"
+    ],
+    "window_title": [
+      "Meet"
+    ]
+  },
+  "sources": [
+    "https://support.google.com/a/users/answer/9896256?hl=en&co=GENIE.Platform%3DDesktop",
+    "https://support.google.com/meet/answer/9298571?hl=en"
+  ],
+  "note": "Google does not publicly document a keyboard shortcut to leave a call.",
+  "actions": [
+    {
+      "name": "Turn on captions",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "C"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "C"
+      }
+    },
+    {
+      "name": "Turn off captions",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+C"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+C"
+      }
+    },
+    {
+      "name": "Open picture-in-picture mode",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+M"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+M"
+      }
+    },
+    {
+      "name": "Turn on or off camera",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+E"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+E"
+      }
+    },
+    {
+      "name": "Start presenting",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+T"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Cmd+T"
+      }
+    },
+    {
+      "name": "Mute or unmute microphone",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+D"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+D"
+      }
+    },
+    {
+      "name": "Increase participant tiles",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+K"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Cmd+K"
+      }
+    },
+    {
+      "name": "Decrease participant tiles",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+J"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Cmd+J"
+      }
+    },
+    {
+      "name": "Show or hide meeting chat window",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+C"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Cmd+C"
+      }
+    },
+    {
+      "name": "Show or hide participants",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+P"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Cmd+P"
+      }
+    },
+    {
+      "name": "Raise or lower your hand",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+H"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Cmd+H"
+      }
+    },
+    {
+      "name": "Minimize or expand your video",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+M"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Cmd+M"
+      }
+    },
+    {
+      "name": "Push to talk (hold)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Space"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Space"
+      }
+    },
+    {
+      "name": "Announce who is currently speaking",
+      "context": "Screen reader",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+S"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Cmd+S"
+      }
+    },
+    {
+      "name": "Announce current information about the room",
+      "context": "Screen reader",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+I"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Cmd+I"
+      }
+    },
+    {
+      "name": "Change how you want to hear reactions",
+      "context": "Screen reader",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+R"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+R"
+      }
+    }
+  ],
+  "defaults": {
+    "TUNE_CW": {
+      "name": "Increase participant tiles",
+      "action": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+K"
+      },
+      "accel": "light"
+    },
+    "TUNE_CCW": {
+      "name": "Decrease participant tiles",
+      "action": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+J"
+      },
+      "accel": "light"
+    },
+    "TUNE_TAP_1F": {
+      "name": "Mute or unmute microphone",
+      "action": {
+        "type": "keys",
+        "chord": "Ctrl+D"
+      }
+    }
+  }
+}

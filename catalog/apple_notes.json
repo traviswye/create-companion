@@ -1,0 +1,444 @@
+{
+  "id": "apple_notes",
+  "name": "Notes",
+  "kind": "app",
+  "category": "Productivity",
+  "match": {
+    "windows_exe": [],
+    "macos_bundle": [
+      "com.apple.Notes"
+    ],
+    "window_title": []
+  },
+  "sources": [
+    "https://support.apple.com/guide/notes/keyboard-shortcuts-apd46c25187e/mac"
+  ],
+  "note": "Mac only; Apple Notes has no Windows client. 'Create a Quick Note' (Fn+Q) is now included, since the chord grammar accepts Fn as a mac-only modifier. Skipped as not expressible: the trackpad/mouse swipe gestures for pinning, deleting, and sharing a note. 'Select range of cells in row/column' (Shift+arrow keys, either direction) and 'Select entire table' (Cmd+A, Cmd+A — a double-press of the same chord) are omitted as ambiguous/duplicative of already-listed selection shortcuts.",
+  "actions": [
+    {
+      "name": "Create a new note",
+      "context": "General",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+N"
+      }
+    },
+    {
+      "name": "Create a Quick Note",
+      "context": "General",
+      "mac": {
+        "type": "keys",
+        "chord": "Fn+Q"
+      }
+    },
+    {
+      "name": "Duplicate a note",
+      "context": "General",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+D"
+      }
+    },
+    {
+      "name": "Create a new folder",
+      "context": "General",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+N"
+      }
+    },
+    {
+      "name": "Show the main Notes window",
+      "context": "General",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+0"
+      }
+    },
+    {
+      "name": "Show notes in a list",
+      "context": "General",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+1"
+      }
+    },
+    {
+      "name": "Show notes in gallery view",
+      "context": "General",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+2"
+      }
+    },
+    {
+      "name": "Show attachments",
+      "context": "General",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+3"
+      }
+    },
+    {
+      "name": "Search all notes",
+      "context": "General",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+F"
+      }
+    },
+    {
+      "name": "Move between sidebar, notes list, and search field",
+      "context": "General",
+      "mac": {
+        "type": "keys",
+        "chord": "Tab"
+      }
+    },
+    {
+      "name": "Begin typing in selected note",
+      "context": "General",
+      "mac": {
+        "type": "keys",
+        "chord": "Enter"
+      }
+    },
+    {
+      "name": "Print a note",
+      "context": "General",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+P"
+      }
+    },
+    {
+      "name": "Show or hide highlights in shared note",
+      "context": "General",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Cmd+I"
+      }
+    },
+    {
+      "name": "Show or hide activity list in shared note",
+      "context": "General",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Cmd+K"
+      }
+    },
+    {
+      "name": "Go forward to linked note",
+      "context": "General",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+]"
+      }
+    },
+    {
+      "name": "Return to note containing linked note",
+      "context": "General",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+["
+      }
+    },
+    {
+      "name": "Attach a file",
+      "context": "Edit notes",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+A"
+      }
+    },
+    {
+      "name": "Create a link to a webpage",
+      "context": "Edit notes",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+K"
+      }
+    },
+    {
+      "name": "Insert a table",
+      "context": "Edit notes",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+T"
+      }
+    },
+    {
+      "name": "Apply Title format",
+      "context": "Edit notes",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+T"
+      }
+    },
+    {
+      "name": "Apply Heading format",
+      "context": "Edit notes",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+H"
+      }
+    },
+    {
+      "name": "Apply Subheading format",
+      "context": "Edit notes",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+J"
+      }
+    },
+    {
+      "name": "Apply Body format",
+      "context": "Edit notes",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+B"
+      }
+    },
+    {
+      "name": "Apply Monostyled format",
+      "context": "Edit notes",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+M"
+      }
+    },
+    {
+      "name": "Apply Bulleted List format",
+      "context": "Edit notes",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+7"
+      }
+    },
+    {
+      "name": "Apply Dashed List format",
+      "context": "Edit notes",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+8"
+      }
+    },
+    {
+      "name": "Apply Numbered List format",
+      "context": "Edit notes",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+9"
+      }
+    },
+    {
+      "name": "Apply Checklist format",
+      "context": "Edit notes",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+L"
+      }
+    },
+    {
+      "name": "Apply Block Quote format",
+      "context": "Edit notes",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+'"
+      }
+    },
+    {
+      "name": "Increase font size",
+      "context": "Edit notes",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Plus"
+      }
+    },
+    {
+      "name": "Decrease font size",
+      "context": "Edit notes",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Minus"
+      }
+    },
+    {
+      "name": "Increase list level",
+      "context": "Edit notes",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+]"
+      }
+    },
+    {
+      "name": "Decrease list level",
+      "context": "Edit notes",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+["
+      }
+    },
+    {
+      "name": "Add line break to list/checklist item",
+      "context": "Edit notes",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Enter"
+      }
+    },
+    {
+      "name": "Insert tab character in list item",
+      "context": "Edit notes",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Tab"
+      }
+    },
+    {
+      "name": "Mark or unmark checklist item",
+      "context": "Edit notes",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+U"
+      }
+    },
+    {
+      "name": "Move list/checklist item up",
+      "context": "Edit notes",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Cmd+Up"
+      }
+    },
+    {
+      "name": "Move list/checklist item down",
+      "context": "Edit notes",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Cmd+Down"
+      }
+    },
+    {
+      "name": "Zoom in on note contents",
+      "context": "Edit notes",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+."
+      }
+    },
+    {
+      "name": "Zoom out on note contents",
+      "context": "Edit notes",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+,"
+      }
+    },
+    {
+      "name": "Change note contents to default size",
+      "context": "Edit notes",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+0"
+      }
+    },
+    {
+      "name": "Move down one row or add new row",
+      "context": "Tables",
+      "mac": {
+        "type": "keys",
+        "chord": "Enter"
+      }
+    },
+    {
+      "name": "Move up one row",
+      "context": "Tables",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Enter"
+      }
+    },
+    {
+      "name": "Add new paragraph in cell",
+      "context": "Tables",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Enter"
+      }
+    },
+    {
+      "name": "Add new row above current",
+      "context": "Tables",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+Up"
+      }
+    },
+    {
+      "name": "Add new row below current",
+      "context": "Tables",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+Down"
+      }
+    },
+    {
+      "name": "Add new column to the right",
+      "context": "Tables",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+Right"
+      }
+    },
+    {
+      "name": "Add new column to the left",
+      "context": "Tables",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+Left"
+      }
+    },
+    {
+      "name": "Move to next cell right",
+      "context": "Tables",
+      "mac": {
+        "type": "keys",
+        "chord": "Tab"
+      }
+    },
+    {
+      "name": "Move to next cell left",
+      "context": "Tables",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Tab"
+      }
+    },
+    {
+      "name": "Add tab character in cell",
+      "context": "Tables",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Tab"
+      }
+    },
+    {
+      "name": "Select content of current cell",
+      "context": "Tables",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+A"
+      }
+    }
+  ],
+  "defaults": {
+    "TUNE_TAP_1F": {
+      "name": "Create a new note",
+      "action": {
+        "type": "keys",
+        "chord": "Cmd+N"
+      }
+    }
+  }
+}

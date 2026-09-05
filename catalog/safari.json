@@ -1,0 +1,455 @@
+{
+  "id": "safari",
+  "name": "Safari",
+  "kind": "app",
+  "category": "Browser",
+  "match": {
+    "macos_bundle": [
+      "com.apple.Safari"
+    ],
+    "window_title": []
+  },
+  "sources": [
+    "https://support.apple.com/guide/safari/keyboard-shortcuts-and-gestures-cpsh003/mac"
+  ],
+  "note": "From Apple's Safari User Guide, \"Keyboard shortcuts and gestures\" page (Mac only). Skipped as not expressible: every gesture and mouse/trackpad-combination entry (drag, Option-click, force click, click-and-hold, swipe), and multi-way toggles the source states only as a modifier (e.g. \"Option key + View menu selection\"). \"Select one of first eight tabs\" (Cmd+1 to Cmd+8) is expanded into 8 explicit actions.",
+  "actions": [
+    {
+      "name": "Scroll down a screen",
+      "context": "Scroll",
+      "mac": {
+        "type": "keys",
+        "chord": "Space"
+      }
+    },
+    {
+      "name": "Scroll up a screen",
+      "context": "Scroll",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Space"
+      }
+    },
+    {
+      "name": "Scroll to the top-left corner",
+      "context": "Scroll",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Up"
+      }
+    },
+    {
+      "name": "Scroll to the bottom-left corner",
+      "context": "Scroll",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Down"
+      }
+    },
+    {
+      "name": "Search the current webpage",
+      "context": "Current webpage",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+F"
+      }
+    },
+    {
+      "name": "Highlight the next field or pop-up menu",
+      "context": "Current webpage",
+      "mac": {
+        "type": "keys",
+        "chord": "Tab"
+      }
+    },
+    {
+      "name": "Highlight the next field, pop-up menu, or clickable item",
+      "context": "Current webpage",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Tab"
+      }
+    },
+    {
+      "name": "Restore the current webpage address while typing",
+      "context": "Current webpage",
+      "mac": {
+        "type": "keys",
+        "chord": "Esc"
+      }
+    },
+    {
+      "name": "Select the Smart Search field",
+      "context": "Current webpage",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+L"
+      }
+    },
+    {
+      "name": "Print the current webpage",
+      "context": "Current webpage",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+P"
+      }
+    },
+    {
+      "name": "Copy the selected item",
+      "context": "Current webpage",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+C"
+      }
+    },
+    {
+      "name": "Paste the most recently copied item",
+      "context": "Current webpage",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+V"
+      }
+    },
+    {
+      "name": "Show tab overview",
+      "context": "Tabs",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+\\"
+      }
+    },
+    {
+      "name": "Open a webpage in a new tab and make it active",
+      "context": "Tabs",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+Enter"
+      }
+    },
+    {
+      "name": "Go to the next tab",
+      "context": "Tabs",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Tab"
+      }
+    },
+    {
+      "name": "Go to the previous tab",
+      "context": "Tabs",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Tab"
+      }
+    },
+    {
+      "name": "Select tab 1",
+      "context": "Tabs",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+1"
+      }
+    },
+    {
+      "name": "Select tab 2",
+      "context": "Tabs",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+2"
+      }
+    },
+    {
+      "name": "Select tab 3",
+      "context": "Tabs",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+3"
+      }
+    },
+    {
+      "name": "Select tab 4",
+      "context": "Tabs",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+4"
+      }
+    },
+    {
+      "name": "Select tab 5",
+      "context": "Tabs",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+5"
+      }
+    },
+    {
+      "name": "Select tab 6",
+      "context": "Tabs",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+6"
+      }
+    },
+    {
+      "name": "Select tab 7",
+      "context": "Tabs",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+7"
+      }
+    },
+    {
+      "name": "Select tab 8",
+      "context": "Tabs",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+8"
+      }
+    },
+    {
+      "name": "Select the last tab",
+      "context": "Tabs",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+9"
+      }
+    },
+    {
+      "name": "Close the active tab",
+      "context": "Tabs",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+W"
+      }
+    },
+    {
+      "name": "Reopen the last tab you closed",
+      "context": "Tabs",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+T"
+      }
+    },
+    {
+      "name": "Go to your homepage",
+      "context": "Settings",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+H"
+      }
+    },
+    {
+      "name": "Open Safari settings",
+      "context": "Settings",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+,"
+      }
+    },
+    {
+      "name": "Go back to the previous webpage",
+      "context": "History",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+["
+      }
+    },
+    {
+      "name": "Go forward to the next webpage",
+      "context": "History",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+]"
+      }
+    },
+    {
+      "name": "Exit full-screen view",
+      "context": "Zoom",
+      "mac": {
+        "type": "keys",
+        "chord": "Esc"
+      }
+    },
+    {
+      "name": "Zoom website content in",
+      "context": "Zoom",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Plus"
+      }
+    },
+    {
+      "name": "Zoom website content out",
+      "context": "Zoom",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Minus"
+      }
+    },
+    {
+      "name": "Switch to another Safari window",
+      "context": "Window",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+`"
+      }
+    },
+    {
+      "name": "Reopen the last window you closed",
+      "context": "Window",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+T"
+      }
+    },
+    {
+      "name": "Show or hide the Reading List sidebar",
+      "context": "Reading List",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Cmd+2"
+      }
+    },
+    {
+      "name": "Add the current webpage to the Reading List",
+      "context": "Reading List",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+D"
+      }
+    },
+    {
+      "name": "Open Reader",
+      "context": "Reading List",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+R"
+      }
+    },
+    {
+      "name": "Close Reader",
+      "context": "Reading List",
+      "mac": {
+        "type": "keys",
+        "chord": "Esc"
+      }
+    },
+    {
+      "name": "Show or hide the Bookmarks sidebar",
+      "context": "Bookmarks sidebar",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Cmd+1"
+      }
+    },
+    {
+      "name": "Select the next bookmark or folder",
+      "context": "Bookmarks sidebar",
+      "mac": {
+        "type": "keys",
+        "chord": "Down"
+      }
+    },
+    {
+      "name": "Select the previous bookmark or folder",
+      "context": "Bookmarks sidebar",
+      "mac": {
+        "type": "keys",
+        "chord": "Up"
+      }
+    },
+    {
+      "name": "Open the selected bookmark",
+      "context": "Bookmarks sidebar",
+      "mac": {
+        "type": "keys",
+        "chord": "Space"
+      }
+    },
+    {
+      "name": "Open the selected folder",
+      "context": "Bookmarks sidebar",
+      "mac": {
+        "type": "keys",
+        "chord": "Right"
+      }
+    },
+    {
+      "name": "Close the selected folder",
+      "context": "Bookmarks sidebar",
+      "mac": {
+        "type": "keys",
+        "chord": "Left"
+      }
+    },
+    {
+      "name": "Cancel editing a bookmark name",
+      "context": "Bookmarks sidebar",
+      "mac": {
+        "type": "keys",
+        "chord": "Esc"
+      }
+    },
+    {
+      "name": "Finish editing a bookmark name",
+      "context": "Bookmarks sidebar",
+      "mac": {
+        "type": "keys",
+        "chord": "Enter"
+      }
+    }
+  ],
+  "defaults": {
+    "TUNE_CW": {
+      "name": "Go to the next tab",
+      "action": {
+        "type": "keys",
+        "chord": "Ctrl+Tab"
+      },
+      "accel": "light"
+    },
+    "TUNE_CCW": {
+      "name": "Go to the previous tab",
+      "action": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Tab"
+      },
+      "accel": "light"
+    },
+    "TUNE_TAP_1F": {
+      "name": "Reopen the last tab you closed",
+      "action": {
+        "type": "keys",
+        "chord": "Cmd+Shift+T"
+      }
+    },
+    "TUNE_SWIPE_LEFT": {
+      "name": "Go back to the previous webpage",
+      "action": {
+        "type": "keys",
+        "chord": "Cmd+["
+      }
+    },
+    "TUNE_SWIPE_RIGHT": {
+      "name": "Go forward to the next webpage",
+      "action": {
+        "type": "keys",
+        "chord": "Cmd+]"
+      }
+    },
+    "TUNE_SWIPE_UP": {
+      "name": "Zoom website content in",
+      "action": {
+        "type": "keys",
+        "chord": "Cmd+Plus"
+      }
+    },
+    "TUNE_SWIPE_DOWN": {
+      "name": "Zoom website content out",
+      "action": {
+        "type": "keys",
+        "chord": "Cmd+Minus"
+      }
+    }
+  }
+}

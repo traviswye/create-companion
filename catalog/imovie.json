@@ -1,0 +1,555 @@
+{
+  "id": "imovie",
+  "name": "iMovie",
+  "kind": "app",
+  "category": "Video",
+  "match": {
+    "macos_bundle": [
+      "com.apple.iMovieApp"
+    ],
+    "window_title": []
+  },
+  "sources": [
+    "https://support.apple.com/guide/imovie/keyboard-shortcuts-movd9d8f91e8/mac"
+  ],
+  "note": "Every row of Apple's \"Keyboard shortcuts in iMovie on Mac\" page. That page names its commands only by what they do, so the action names are Apple's own Action column, trimmed to its first line (the explanatory sentence Apple prints under a few of them is dropped). The context is the page's own heading (Get information, Import and export, Play video, Manage projects and events, Select and edit video, Work with audio, Edit text, iMovie window); \"Play the selected item full screen\" is listed under two of them, as it is on Apple's page. Apple writes \"Delete\" for the backspace key, which is written here as Backspace. iMovie is macOS only, so only \"mac\" is filled in. One row is left out because it is not a key chord: \"Select part of a clip\" (hold down the R key and drag).",
+  "actions": [
+    {
+      "name": "Open the iMovie Help menu",
+      "context": "Get information",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+/"
+      }
+    },
+    {
+      "name": "Import media",
+      "context": "Import and export",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+I"
+      }
+    },
+    {
+      "name": "Play video beginning from the frame beneath the playhead or skimmer",
+      "context": "Play video",
+      "mac": {
+        "type": "keys",
+        "chord": "Space"
+      }
+    },
+    {
+      "name": "Play the selection",
+      "context": "Play video",
+      "mac": {
+        "type": "keys",
+        "chord": "/"
+      }
+    },
+    {
+      "name": "Play the selected event, clip, or project from the beginning",
+      "context": "Play video",
+      "mac": {
+        "type": "keys",
+        "chord": "\\"
+      }
+    },
+    {
+      "name": "Move the playhead one frame forward",
+      "context": "Play video",
+      "mac": {
+        "type": "keys",
+        "chord": "Right"
+      }
+    },
+    {
+      "name": "Move the playhead one frame backward",
+      "context": "Play video",
+      "mac": {
+        "type": "keys",
+        "chord": "Left"
+      }
+    },
+    {
+      "name": "When playing a clip in the browser, jump forward to the next clip",
+      "context": "Play video",
+      "mac": {
+        "type": "keys",
+        "chord": "Down"
+      }
+    },
+    {
+      "name": "When playing a clip in the timeline, jump to the beginning of the current clip, or jump to the previous clip if the playhead is near the beginning of the current clip",
+      "context": "Play video",
+      "mac": {
+        "type": "keys",
+        "chord": "Up"
+      }
+    },
+    {
+      "name": "Play the selected item full screen",
+      "context": "Play video",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+F"
+      }
+    },
+    {
+      "name": "Exit full-screen view",
+      "context": "Play video",
+      "mac": {
+        "type": "keys",
+        "chord": "Esc"
+      }
+    },
+    {
+      "name": "Loop playback",
+      "context": "Play video",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+L"
+      }
+    },
+    {
+      "name": "Show or hide clip information when skimming in the browser",
+      "context": "Play video",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Y"
+      }
+    },
+    {
+      "name": "Create a new movie project",
+      "context": "Manage projects and events",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+N"
+      }
+    },
+    {
+      "name": "Move to Trash",
+      "context": "Manage projects and events",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Backspace"
+      }
+    },
+    {
+      "name": "Open settings",
+      "context": "Manage projects and events",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+,"
+      }
+    },
+    {
+      "name": "Select all clips",
+      "context": "Select and edit video",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+A"
+      }
+    },
+    {
+      "name": "Select an entire clip",
+      "context": "Select and edit video",
+      "mac": {
+        "type": "keys",
+        "chord": "X"
+      }
+    },
+    {
+      "name": "Deselect all clips",
+      "context": "Select and edit video",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+A"
+      }
+    },
+    {
+      "name": "Add the selection to the movie",
+      "context": "Select and edit video",
+      "mac": {
+        "type": "keys",
+        "chord": "E"
+      }
+    },
+    {
+      "name": "Connect the selection to the clip at the playhead position",
+      "context": "Select and edit video",
+      "mac": {
+        "type": "keys",
+        "chord": "Q"
+      }
+    },
+    {
+      "name": "Insert the selection in the movie at the playhead position",
+      "context": "Select and edit video",
+      "mac": {
+        "type": "keys",
+        "chord": "W"
+      }
+    },
+    {
+      "name": "Automatically improve the video and audio quality of the selected clip",
+      "context": "Select and edit video",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+E"
+      }
+    },
+    {
+      "name": "Cut the selected frames",
+      "context": "Select and edit video",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+X"
+      }
+    },
+    {
+      "name": "Copy the selected frames",
+      "context": "Select and edit video",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+C"
+      }
+    },
+    {
+      "name": "Paste the selected frames",
+      "context": "Select and edit video",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+/"
+      }
+    },
+    {
+      "name": "Trim a clip in the timeline to the selected range",
+      "context": "Select and edit video",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+/"
+      }
+    },
+    {
+      "name": "Divide a clip at the playhead position",
+      "context": "Select and edit video",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+B"
+      }
+    },
+    {
+      "name": "Reset speed adjustments",
+      "context": "Select and edit video",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+R"
+      }
+    },
+    {
+      "name": "Paste all adjustments",
+      "context": "Select and edit video",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+V"
+      }
+    },
+    {
+      "name": "Paste color correction adjustments",
+      "context": "Select and edit video",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+C"
+      }
+    },
+    {
+      "name": "Paste crop adjustments",
+      "context": "Select and edit video",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+R"
+      }
+    },
+    {
+      "name": "Paste volume adjustments",
+      "context": "Select and edit video",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+A"
+      }
+    },
+    {
+      "name": "Paste the video effect",
+      "context": "Select and edit video",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+L"
+      }
+    },
+    {
+      "name": "Paste the audio effect",
+      "context": "Select and edit video",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+O"
+      }
+    },
+    {
+      "name": "Paste speed adjustments",
+      "context": "Select and edit video",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+S"
+      }
+    },
+    {
+      "name": "Paste video overlay settings",
+      "context": "Select and edit video",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+U"
+      }
+    },
+    {
+      "name": "Paste the map style",
+      "context": "Select and edit video",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+M"
+      }
+    },
+    {
+      "name": "Rate the selection as favorite",
+      "context": "Select and edit video",
+      "mac": {
+        "type": "keys",
+        "chord": "F"
+      }
+    },
+    {
+      "name": "Unmark selected frames",
+      "context": "Select and edit video",
+      "mac": {
+        "type": "keys",
+        "chord": "U"
+      }
+    },
+    {
+      "name": "Rate the selection as rejected, or delete the selection from the timeline",
+      "context": "Select and edit video",
+      "mac": {
+        "type": "keys",
+        "chord": "Backspace"
+      }
+    },
+    {
+      "name": "Open or close the clip trimmer when a clip is selected",
+      "context": "Select and edit video",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+\\"
+      }
+    },
+    {
+      "name": "Open or close the precision editor",
+      "context": "Select and edit video",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+/"
+      }
+    },
+    {
+      "name": "Show the Cinematic Editor",
+      "context": "Select and edit video",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+F"
+      }
+    },
+    {
+      "name": "Open voiceover controls in the viewer",
+      "context": "Work with audio",
+      "mac": {
+        "type": "keys",
+        "chord": "V"
+      }
+    },
+    {
+      "name": "Turn on or silence audio while skimming video",
+      "context": "Work with audio",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+S"
+      }
+    },
+    {
+      "name": "Mute audio in a clip",
+      "context": "Work with audio",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+M"
+      }
+    },
+    {
+      "name": "Detach audio from a clip",
+      "context": "Work with audio",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+B"
+      }
+    },
+    {
+      "name": "Undo the last action",
+      "context": "Work with audio",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Z"
+      }
+    },
+    {
+      "name": "Redo the last action",
+      "context": "Work with audio",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+Z"
+      }
+    },
+    {
+      "name": "Copy the selected text",
+      "context": "Edit text",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+C"
+      }
+    },
+    {
+      "name": "Cut the selected text",
+      "context": "Edit text",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+X"
+      }
+    },
+    {
+      "name": "Paste the copied text",
+      "context": "Edit text",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+V"
+      }
+    },
+    {
+      "name": "Minimize the iMovie window",
+      "context": "iMovie window",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+M"
+      }
+    },
+    {
+      "name": "Go to Library view (the default main window view)",
+      "context": "iMovie window",
+      "mac": {
+        "type": "keys",
+        "chord": "1"
+      }
+    },
+    {
+      "name": "Go to Projects view",
+      "context": "iMovie window",
+      "mac": {
+        "type": "keys",
+        "chord": "2"
+      }
+    },
+    {
+      "name": "Show or hide the Libraries list",
+      "context": "iMovie window",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+1"
+      }
+    },
+    {
+      "name": "Show my media in the browser",
+      "context": "iMovie window",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+1"
+      }
+    },
+    {
+      "name": "Show audio in the browser",
+      "context": "iMovie window",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+2"
+      }
+    },
+    {
+      "name": "Show titles in the browser",
+      "context": "iMovie window",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+3"
+      }
+    },
+    {
+      "name": "Show maps and backgrounds in the browser",
+      "context": "iMovie window",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+4"
+      }
+    },
+    {
+      "name": "Show sound effects in the browser",
+      "context": "iMovie window",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+5"
+      }
+    },
+    {
+      "name": "Show transitions in the browser",
+      "context": "iMovie window",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+6"
+      }
+    },
+    {
+      "name": "Play the selected item full screen",
+      "context": "iMovie window",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+F"
+      }
+    }
+  ],
+  "defaults": {
+    "TUNE_CW": {
+      "name": "Move the playhead one frame forward",
+      "action": {
+        "type": "keys",
+        "chord": "Right"
+      },
+      "accel": "medium"
+    },
+    "TUNE_CCW": {
+      "name": "Move the playhead one frame backward",
+      "action": {
+        "type": "keys",
+        "chord": "Left"
+      },
+      "accel": "medium"
+    },
+    "TUNE_TAP_1F": {
+      "name": "Play video beginning from the frame beneath the playhead or skimmer",
+      "action": {
+        "type": "keys",
+        "chord": "Space"
+      }
+    }
+  }
+}

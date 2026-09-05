@@ -1,0 +1,3446 @@
+{
+  "id": "cinema4d",
+  "name": "Maxon Cinema 4D",
+  "kind": "app",
+  "category": "CAD / 3D",
+  "match": {
+    "windows_exe": [
+      "Cinema 4D.exe"
+    ],
+    "macos_bundle": [
+      "net.maxon.cinema4d"
+    ],
+    "window_title": []
+  },
+  "sources": [
+    "https://help.maxon.net/c4d/en-us/Content/html/Shortcuts.html",
+    "https://help.maxon.net/c4d/2026/en-us/Content/html/5224.html"
+  ],
+  "note": "From the Cinema 4D \"Keyboard Shortcuts\" page of the Maxon help. That page states \"Mac users please press the CMD key instead of the CTRL key\", so the mac chords are the Windows chords with Ctrl replaced by Cmd. Section headings are used as context; the \"General\" section is context \"\". Two-key entries such as \"M S\" (Bevel) or \"N A\" (Gouraud Shading) are sequence actions. Left out because the chord grammar cannot express them: every mouse binding (LMB/RMB/MMB, Alt+MMB camera moves, \"Create marker in Timeline CTRL + LMB\", \"Replace material with another ALT + Drag&Drop\", \"Interactively change animation time J + LMB\", the Sculpt Stencil T + mouse bindings and the MMB brush size/hardness drags); the modifier-only bindings (\"Smoothing with all brushes SHIFT\", \"Invert brush effect CTRL\", \"Magnifying glass ALT\", \"Change parameter values faster/slower with arrows ALT or SHIFT\"); \"Scale (along Normals) M #\" (# is not in the key set); and \"Move Track by 1 pixel Arrow keys\", \"Switch symmetry modes ALT + X,Y,Z\" and \"Changing the views F1, F2, F3, F4, F5\", which name several keys at once. Where the page lists two alternatives the first is kept (e.g. Bridge \"B, M B\" is kept as B). Four rows repeat a name already used in the same section with a different key and were dropped as ambiguous: \"Go To Previous Key F\", \"Go To Start ALT + F\", \"Go To End ALT + G\" and the second \"Disconnect U D\". \"Delete\" is documented as \"Backspace/Remove\" and \"Jump to Start\" as \"Pos 1\" (the Home key).",
+  "actions": [
+    {
+      "name": "Dope Sheet/F Curve Mode Switching",
+      "context": "Animation - Timeline",
+      "windows": {
+        "type": "keys",
+        "chord": "Tab"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Tab"
+      }
+    },
+    {
+      "name": "Record Active Objects",
+      "context": "Animation - Timeline",
+      "windows": {
+        "type": "keys",
+        "chord": "F9"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "F9"
+      }
+    },
+    {
+      "name": "Record Current State",
+      "context": "Animation - Timeline",
+      "windows": {
+        "type": "keys",
+        "chord": "Q"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Q"
+      }
+    },
+    {
+      "name": "Play backwards/Stop",
+      "context": "Animation - Timeline",
+      "windows": {
+        "type": "keys",
+        "chord": "F6"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "F6"
+      }
+    },
+    {
+      "name": "Stop",
+      "context": "Animation - Timeline",
+      "windows": {
+        "type": "keys",
+        "chord": "F7"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "F7"
+      }
+    },
+    {
+      "name": "Play forward/Stop",
+      "context": "Animation - Timeline",
+      "windows": {
+        "type": "keys",
+        "chord": "F8"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "F8"
+      }
+    },
+    {
+      "name": "Autokeying",
+      "context": "Animation - Timeline",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+F9"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+F9"
+      }
+    },
+    {
+      "name": "Go To Start",
+      "context": "Animation - Timeline",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+F"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+F"
+      }
+    },
+    {
+      "name": "Go To Previous Key",
+      "context": "Animation - Timeline",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+F"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+F"
+      }
+    },
+    {
+      "name": "Go To Next Key",
+      "context": "Animation - Timeline",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+G"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+G"
+      }
+    },
+    {
+      "name": "Go To Next Frame",
+      "context": "Animation - Timeline",
+      "windows": {
+        "type": "keys",
+        "chord": "G"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "G"
+      }
+    },
+    {
+      "name": "Go To End",
+      "context": "Animation - Timeline",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+G"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+G"
+      }
+    },
+    {
+      "name": "Jump To First Marker",
+      "context": "Animation - Timeline",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+P"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+P"
+      }
+    },
+    {
+      "name": "Jump To Last Marker",
+      "context": "Animation - Timeline",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+O"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+O"
+      }
+    },
+    {
+      "name": "Show selected",
+      "context": "Animation - Timeline",
+      "windows": {
+        "type": "keys",
+        "chord": "S"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "S"
+      }
+    },
+    {
+      "name": "Show all",
+      "context": "Animation - Timeline",
+      "windows": {
+        "type": "keys",
+        "chord": "H"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "H"
+      }
+    },
+    {
+      "name": "Go To Current Frame",
+      "context": "Animation - Timeline",
+      "windows": {
+        "type": "keys",
+        "chord": "O"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "O"
+      }
+    },
+    {
+      "name": "Show preview",
+      "context": "Animation - Timeline",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+H"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+H"
+      }
+    },
+    {
+      "name": "Go To next marker",
+      "context": "Animation - Timeline",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+N"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+N"
+      }
+    },
+    {
+      "name": "Go To previous marker",
+      "context": "Animation - Timeline",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+P"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+P"
+      }
+    },
+    {
+      "name": "Go To first marker",
+      "context": "Animation - Timeline",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Ctrl+P"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+P"
+      }
+    },
+    {
+      "name": "Go To last marker",
+      "context": "Animation - Timeline",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Ctrl+O"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+O"
+      }
+    },
+    {
+      "name": "Range tool",
+      "context": "Animation - Timeline",
+      "windows": {
+        "type": "keys",
+        "chord": "R"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "R"
+      }
+    },
+    {
+      "name": "Ripple Edit",
+      "context": "Animation - Timeline",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+R"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+R"
+      }
+    },
+    {
+      "name": "Automatic mode",
+      "context": "Animation - Timeline",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+A"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+A"
+      }
+    },
+    {
+      "name": "Show search bar",
+      "context": "Animation - Timeline",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+F"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+F"
+      }
+    },
+    {
+      "name": "Show filter",
+      "context": "Animation - Timeline",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+U"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+U"
+      }
+    },
+    {
+      "name": "Auto tangents",
+      "context": "Animation - Timeline",
+      "windows": {
+        "type": "keys",
+        "chord": "A"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "A"
+      }
+    },
+    {
+      "name": "Break tangents",
+      "context": "Animation - Timeline",
+      "windows": {
+        "type": "keys",
+        "chord": "B"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "B"
+      }
+    },
+    {
+      "name": "Zero angle (tangent)",
+      "context": "Animation - Timeline",
+      "windows": {
+        "type": "keys",
+        "chord": "0"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "0"
+      }
+    },
+    {
+      "name": "Zero length (tangent)",
+      "context": "Animation - Timeline",
+      "windows": {
+        "type": "keys",
+        "chord": "L"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "L"
+      }
+    },
+    {
+      "name": "Clamp",
+      "context": "Animation - Timeline",
+      "windows": {
+        "type": "keys",
+        "chord": "C"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "C"
+      }
+    },
+    {
+      "name": "Linear",
+      "context": "Animation - Timeline",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+L"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+L"
+      }
+    },
+    {
+      "name": "Step",
+      "context": "Animation - Timeline",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+T"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+T"
+      }
+    },
+    {
+      "name": "Soft",
+      "context": "Animation - Timeline",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+S"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+S"
+      }
+    },
+    {
+      "name": "Ease In",
+      "context": "Animation - Timeline",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+I"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+I"
+      }
+    },
+    {
+      "name": "Ease Ease",
+      "context": "Animation - Timeline",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+E"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+E"
+      }
+    },
+    {
+      "name": "Ease Out",
+      "context": "Animation - Timeline",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+O"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+O"
+      }
+    },
+    {
+      "name": "New Attribute Manager",
+      "context": "Attribute Manager",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+F5"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+F5"
+      }
+    },
+    {
+      "name": "Turn brush clockwise",
+      "context": "BodyPaint 3D",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+."
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+."
+      }
+    },
+    {
+      "name": "Rotate Brush Counterclockwise",
+      "context": "BodyPaint 3D",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+["
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+["
+      }
+    },
+    {
+      "name": "Increase brush size",
+      "context": "BodyPaint 3D",
+      "windows": {
+        "type": "keys",
+        "chord": ","
+      },
+      "mac": {
+        "type": "keys",
+        "chord": ","
+      }
+    },
+    {
+      "name": "Reduce brush size",
+      "context": "BodyPaint 3D",
+      "windows": {
+        "type": "keys",
+        "chord": "."
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "."
+      }
+    },
+    {
+      "name": "Increase brush hardness",
+      "context": "BodyPaint 3D",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+."
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+."
+      }
+    },
+    {
+      "name": "Reduce brush hardness",
+      "context": "BodyPaint 3D",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+,"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+,"
+      }
+    },
+    {
+      "name": "Increase brush opacity",
+      "context": "BodyPaint 3D",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+."
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+."
+      }
+    },
+    {
+      "name": "Reduce brush opacity",
+      "context": "BodyPaint 3D",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+,"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+,"
+      }
+    },
+    {
+      "name": "Non-Uniform Scale",
+      "context": "BodyPaint 3D",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+T"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+T"
+      }
+    },
+    {
+      "name": "UV Transform",
+      "context": "BodyPaint 3D",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+T"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+T"
+      }
+    },
+    {
+      "name": "Texture View: Show All",
+      "context": "BodyPaint 3D",
+      "windows": {
+        "type": "keys",
+        "chord": "H"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "H"
+      }
+    },
+    {
+      "name": "Object Manager",
+      "context": "Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+F1"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+F1"
+      }
+    },
+    {
+      "name": "Material Manager",
+      "context": "Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+F2"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+F2"
+      }
+    },
+    {
+      "name": "Node Editor",
+      "context": "Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+F2"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Alt+F2"
+      }
+    },
+    {
+      "name": "Timeline",
+      "context": "Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+F3"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+F3"
+      }
+    },
+    {
+      "name": "Layer Manager",
+      "context": "Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+F4"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+F4"
+      }
+    },
+    {
+      "name": "Attribute manager",
+      "context": "Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+F5"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+F5"
+      }
+    },
+    {
+      "name": "Picture Viewer",
+      "context": "Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+F6"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+F6"
+      }
+    },
+    {
+      "name": "Coordinates Manager",
+      "context": "Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+F7"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+F7"
+      }
+    },
+    {
+      "name": "Structure Manager",
+      "context": "Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+F9"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+F9"
+      }
+    },
+    {
+      "name": "Script Manager",
+      "context": "Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+F10"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+F10"
+      }
+    },
+    {
+      "name": "Command Manager",
+      "context": "Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+F12"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+F12"
+      }
+    },
+    {
+      "name": "Change coordinate system",
+      "context": "Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "W"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "W"
+      }
+    },
+    {
+      "name": "Close window",
+      "context": "Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+W"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+W"
+      }
+    },
+    {
+      "name": "Delete",
+      "context": "Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Delete"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Delete"
+      }
+    },
+    {
+      "name": "Quick command Selection",
+      "context": "Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "V"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "V"
+      }
+    },
+    {
+      "name": "Toggle Parent Generator",
+      "context": "Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Q"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Q"
+      }
+    },
+    {
+      "name": "Open Help via parameter/element",
+      "context": "Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+F1"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+F1"
+      }
+    },
+    {
+      "name": "New Project",
+      "context": "File",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+N"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+N"
+      }
+    },
+    {
+      "name": "Merge Project",
+      "context": "File",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Ctrl+O"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+O"
+      }
+    },
+    {
+      "name": "Open Project",
+      "context": "File",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+O"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+O"
+      }
+    },
+    {
+      "name": "Close all Projects",
+      "context": "File",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Ctrl+F4"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+F4"
+      }
+    },
+    {
+      "name": "Save Project As",
+      "context": "File",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Ctrl+S"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+S"
+      }
+    },
+    {
+      "name": "Save Project",
+      "context": "File",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+S"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+S"
+      }
+    },
+    {
+      "name": "Save Incremental",
+      "context": "File",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+S"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+S"
+      }
+    },
+    {
+      "name": "Exit Program",
+      "context": "File",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Q"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Q"
+      }
+    },
+    {
+      "name": "Load Materials",
+      "context": "Material Manager",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Ctrl+O"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+O"
+      }
+    },
+    {
+      "name": "New Material",
+      "context": "Material Manager",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+N"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+N"
+      }
+    },
+    {
+      "name": "New physical material",
+      "context": "Material Manager",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Ctrl+N"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+N"
+      }
+    },
+    {
+      "name": "New Node Material",
+      "context": "Material Manager",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+N"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+N"
+      }
+    },
+    {
+      "name": "Switch between last tool and Selection",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Space"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Space"
+      }
+    },
+    {
+      "name": "Switch between the last two tools",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Space"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Space"
+      }
+    },
+    {
+      "name": "Full-Screen Mode",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Tab"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Tab"
+      }
+    },
+    {
+      "name": "Commander",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+C"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+C"
+      }
+    },
+    {
+      "name": "Commander",
+      "context": "Node Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "C"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "C"
+      }
+    },
+    {
+      "name": "Group Nodes",
+      "context": "Node Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+G"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+G"
+      }
+    },
+    {
+      "name": "Ungroup Objects",
+      "context": "Node Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+G"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+G"
+      }
+    },
+    {
+      "name": "Arrange all Nodes",
+      "context": "Node Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+L"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+L"
+      }
+    },
+    {
+      "name": "Arrange selected Nodes",
+      "context": "Node Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "L"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "L"
+      }
+    },
+    {
+      "name": "Subsequent Nodes select",
+      "context": "Node Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+S"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+S"
+      }
+    },
+    {
+      "name": "Center Selected",
+      "context": "Node Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+S"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+S"
+      }
+    },
+    {
+      "name": "Show Selected",
+      "context": "Node Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "S"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "S"
+      }
+    },
+    {
+      "name": "Show all",
+      "context": "Node Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "H"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "H"
+      }
+    },
+    {
+      "name": "Zoom in",
+      "context": "Node Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "+"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "+"
+      }
+    },
+    {
+      "name": "Zoom out",
+      "context": "Node Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "-"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "-"
+      }
+    },
+    {
+      "name": "Select Connected Nodes",
+      "context": "Node Editor",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "U",
+          "W"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "U",
+          "W"
+        ]
+      }
+    },
+    {
+      "name": "Merge Object",
+      "context": "Object Manager",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Ctrl+O"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+O"
+      }
+    },
+    {
+      "name": "Scroll to first active",
+      "context": "Object Manager",
+      "windows": {
+        "type": "keys",
+        "chord": "S"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "S"
+      }
+    },
+    {
+      "name": "Show Search Bar",
+      "context": "Object Manager",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+F"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+F"
+      }
+    },
+    {
+      "name": "Show Filter",
+      "context": "Object Manager",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+U"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+U"
+      }
+    },
+    {
+      "name": "Scene Information",
+      "context": "Object Manager",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+I"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+I"
+      }
+    },
+    {
+      "name": "Group Objects",
+      "context": "Object Manager",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+G"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+G"
+      }
+    },
+    {
+      "name": "Ungroup Objects",
+      "context": "Object Manager",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+G"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+G"
+      }
+    },
+    {
+      "name": "Parent Enable/disable Generator",
+      "context": "Object Manager",
+      "windows": {
+        "type": "keys",
+        "chord": "Q"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Q"
+      }
+    },
+    {
+      "name": "Open image",
+      "context": "Picture Viewer",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+O"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+O"
+      }
+    },
+    {
+      "name": "Save image as",
+      "context": "Picture Viewer",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+S"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+S"
+      }
+    },
+    {
+      "name": "Full-screen mode",
+      "context": "Picture Viewer",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+F"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+F"
+      }
+    },
+    {
+      "name": "Play forward",
+      "context": "Picture Viewer",
+      "windows": {
+        "type": "keys",
+        "chord": "Space"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Space"
+      }
+    },
+    {
+      "name": "Define as A",
+      "context": "Picture Viewer",
+      "windows": {
+        "type": "keys",
+        "chord": "A"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "A"
+      }
+    },
+    {
+      "name": "Define as B",
+      "context": "Picture Viewer",
+      "windows": {
+        "type": "keys",
+        "chord": "B"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "B"
+      }
+    },
+    {
+      "name": "AB swap",
+      "context": "Picture Viewer",
+      "windows": {
+        "type": "keys",
+        "chord": "S"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "S"
+      }
+    },
+    {
+      "name": "Set as preview start",
+      "context": "Picture Viewer",
+      "windows": {
+        "type": "keys",
+        "chord": "I"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "I"
+      }
+    },
+    {
+      "name": "Set as preview end",
+      "context": "Picture Viewer",
+      "windows": {
+        "type": "keys",
+        "chord": "O"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "O"
+      }
+    },
+    {
+      "name": "Zoom in",
+      "context": "Picture Viewer",
+      "windows": {
+        "type": "keys",
+        "chord": "+"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "+"
+      }
+    },
+    {
+      "name": "Zoom out",
+      "context": "Picture Viewer",
+      "windows": {
+        "type": "keys",
+        "chord": "-"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "-"
+      }
+    },
+    {
+      "name": "Auto-zoom mode",
+      "context": "Picture Viewer",
+      "windows": {
+        "type": "keys",
+        "chord": "H"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "H"
+      }
+    },
+    {
+      "name": "Add ASCII file",
+      "context": "Structure Manager",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Ctrl+O"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+O"
+      }
+    },
+    {
+      "name": "Jump Last Selection",
+      "context": "Structure Manager",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+N"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+N"
+      }
+    },
+    {
+      "name": "Jump Next Selection",
+      "context": "Structure Manager",
+      "windows": {
+        "type": "keys",
+        "chord": "N"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "N"
+      }
+    },
+    {
+      "name": "Jump Page up",
+      "context": "Structure Manager",
+      "windows": {
+        "type": "keys",
+        "chord": "PageUp"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "PageUp"
+      }
+    },
+    {
+      "name": "Jump Page down",
+      "context": "Structure Manager",
+      "windows": {
+        "type": "keys",
+        "chord": "PageDown"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "PageDown"
+      }
+    },
+    {
+      "name": "Jump to End",
+      "context": "Structure Manager",
+      "windows": {
+        "type": "keys",
+        "chord": "End"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "End"
+      }
+    },
+    {
+      "name": "Jump to Start",
+      "context": "Structure Manager",
+      "windows": {
+        "type": "keys",
+        "chord": "Home"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Home"
+      }
+    },
+    {
+      "name": "Vertex Map",
+      "context": "Structure Manager",
+      "windows": {
+        "type": "keys",
+        "chord": "V"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "V"
+      }
+    },
+    {
+      "name": "Points",
+      "context": "Structure Manager",
+      "windows": {
+        "type": "keys",
+        "chord": "P"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "P"
+      }
+    },
+    {
+      "name": "Polygons",
+      "context": "Structure Manager",
+      "windows": {
+        "type": "keys",
+        "chord": "O"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "O"
+      }
+    },
+    {
+      "name": "UVW",
+      "context": "Structure Manager",
+      "windows": {
+        "type": "keys",
+        "chord": "U"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "U"
+      }
+    },
+    {
+      "name": "Move camera",
+      "context": "Viewport",
+      "windows": {
+        "type": "keys",
+        "chord": "1"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "1"
+      }
+    },
+    {
+      "name": "Scale camera",
+      "context": "Viewport",
+      "windows": {
+        "type": "keys",
+        "chord": "2"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "2"
+      }
+    },
+    {
+      "name": "Rotate camera",
+      "context": "Viewport",
+      "windows": {
+        "type": "keys",
+        "chord": "3"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "3"
+      }
+    },
+    {
+      "name": "Zoom to selected elements",
+      "context": "Viewport",
+      "windows": {
+        "type": "keys",
+        "chord": "S"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "S"
+      }
+    },
+    {
+      "name": "Zoom to selected object",
+      "context": "Viewport",
+      "windows": {
+        "type": "keys",
+        "chord": "O"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "O"
+      }
+    },
+    {
+      "name": "Zoom to geometry",
+      "context": "Viewport",
+      "windows": {
+        "type": "keys",
+        "chord": "H"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "H"
+      }
+    },
+    {
+      "name": "Show/hide axes",
+      "context": "Viewport",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+D"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+D"
+      }
+    },
+    {
+      "name": "View presets",
+      "context": "Viewport",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+V"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+V"
+      }
+    },
+    {
+      "name": "View presets (all)",
+      "context": "Viewport",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+V"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+V"
+      }
+    },
+    {
+      "name": "Similar view presets",
+      "context": "Viewport",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+V"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Alt+V"
+      }
+    },
+    {
+      "name": "Render view",
+      "context": "Viewport",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+R"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+R"
+      }
+    },
+    {
+      "name": "Undo view",
+      "context": "Viewport",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Ctrl+Z"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+Z"
+      }
+    },
+    {
+      "name": "Restore view",
+      "context": "Viewport",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Ctrl+Y"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+Y"
+      }
+    },
+    {
+      "name": "Redraw",
+      "context": "Viewport",
+      "windows": {
+        "type": "keys",
+        "chord": "A"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "A"
+      }
+    },
+    {
+      "name": "All views",
+      "context": "Viewport",
+      "windows": {
+        "type": "keys",
+        "chord": "F5"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "F5"
+      }
+    },
+    {
+      "name": "Toggle active view",
+      "context": "Viewport",
+      "windows": {
+        "type": "keys",
+        "chord": "PageUp"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "PageUp"
+      }
+    },
+    {
+      "name": "Isoline Editing",
+      "context": "Viewport",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+A"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+A"
+      }
+    },
+    {
+      "name": "Gouraud Shading",
+      "context": "Viewport",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "N",
+          "A"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "N",
+          "A"
+        ]
+      }
+    },
+    {
+      "name": "Gouraud Shading (Lines)",
+      "context": "Viewport",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "N",
+          "B"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "N",
+          "B"
+        ]
+      }
+    },
+    {
+      "name": "Quick Shading",
+      "context": "Viewport",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "N",
+          "C"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "N",
+          "C"
+        ]
+      }
+    },
+    {
+      "name": "Quick Shading (Lines)",
+      "context": "Viewport",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "N",
+          "D"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "N",
+          "D"
+        ]
+      }
+    },
+    {
+      "name": "Constant Shading",
+      "context": "Viewport",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "N",
+          "E"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "N",
+          "E"
+        ]
+      }
+    },
+    {
+      "name": "Hidden Lines",
+      "context": "Viewport",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "N",
+          "F"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "N",
+          "F"
+        ]
+      }
+    },
+    {
+      "name": "Lines",
+      "context": "Viewport",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "N",
+          "G"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "N",
+          "G"
+        ]
+      }
+    },
+    {
+      "name": "Wireframe",
+      "context": "Viewport",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "N",
+          "H"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "N",
+          "H"
+        ]
+      }
+    },
+    {
+      "name": "Isoparms",
+      "context": "Viewport",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "N",
+          "I"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "N",
+          "I"
+        ]
+      }
+    },
+    {
+      "name": "Box",
+      "context": "Viewport",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "N",
+          "K"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "N",
+          "K"
+        ]
+      }
+    },
+    {
+      "name": "Skeleton",
+      "context": "Viewport",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "N",
+          "L"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "N",
+          "L"
+        ]
+      }
+    },
+    {
+      "name": "Display Tag",
+      "context": "Viewport",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "N",
+          "O"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "N",
+          "O"
+        ]
+      }
+    },
+    {
+      "name": "Backface Culling",
+      "context": "Viewport",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "N",
+          "P"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "N",
+          "P"
+        ]
+      }
+    },
+    {
+      "name": "Textures",
+      "context": "Viewport",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "N",
+          "Q"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "N",
+          "Q"
+        ]
+      }
+    },
+    {
+      "name": "X-Ray",
+      "context": "Viewport",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "N",
+          "R"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "N",
+          "R"
+        ]
+      }
+    },
+    {
+      "name": "Footage full-screen",
+      "context": "Motion Tracer",
+      "windows": {
+        "type": "keys",
+        "chord": "H"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "H"
+      }
+    },
+    {
+      "name": "Show selected",
+      "context": "Motion Tracer",
+      "windows": {
+        "type": "keys",
+        "chord": "S"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "S"
+      }
+    },
+    {
+      "name": "New script",
+      "context": "Script Manager",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+N"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+N"
+      }
+    },
+    {
+      "name": "Open script",
+      "context": "Script Manager",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+O"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+O"
+      }
+    },
+    {
+      "name": "Save script",
+      "context": "Script Manager",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+S"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+S"
+      }
+    },
+    {
+      "name": "Save script as",
+      "context": "Script Manager",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+S"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+S"
+      }
+    },
+    {
+      "name": "Browser default settings",
+      "context": "Asset Browser",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+E"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+E"
+      }
+    },
+    {
+      "name": "Go To Search Bar",
+      "context": "Asset Browser",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+F"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+F"
+      }
+    },
+    {
+      "name": "Enable/Disable symmetry globally",
+      "context": "Modeling",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+W"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+W"
+      }
+    },
+    {
+      "name": "Create point",
+      "context": "Modeling",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "M",
+          "A"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "M",
+          "A"
+        ]
+      }
+    },
+    {
+      "name": "Brush",
+      "context": "Modeling",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "M",
+          "C"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "M",
+          "C"
+        ]
+      }
+    },
+    {
+      "name": "Close polygon hole",
+      "context": "Modeling",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "M",
+          "D"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "M",
+          "D"
+        ]
+      }
+    },
+    {
+      "name": "Create polygon",
+      "context": "Modeling",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "M",
+          "E"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "M",
+          "E"
+        ]
+      }
+    },
+    {
+      "name": "Cut edges",
+      "context": "Modeling",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "M",
+          "F"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "M",
+          "F"
+        ]
+      }
+    },
+    {
+      "name": "Smoothing",
+      "context": "Modeling",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "M",
+          "G"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "M",
+          "G"
+        ]
+      }
+    },
+    {
+      "name": "Magnet",
+      "context": "Modeling",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "M",
+          "I"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "M",
+          "I"
+        ]
+      }
+    },
+    {
+      "name": "Dissolve",
+      "context": "Modeling",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "M",
+          "N"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "M",
+          "N"
+        ]
+      }
+    },
+    {
+      "name": "Symmetrize",
+      "context": "Modeling",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "M",
+          "H"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "M",
+          "H"
+        ]
+      }
+    },
+    {
+      "name": "Set point value",
+      "context": "Modeling",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "M",
+          "U"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "M",
+          "U"
+        ]
+      }
+    },
+    {
+      "name": "Slide",
+      "context": "Modeling",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "M",
+          "O"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "M",
+          "O"
+        ]
+      }
+    },
+    {
+      "name": "Sew",
+      "context": "Modeling",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "M",
+          "P"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "M",
+          "P"
+        ]
+      }
+    },
+    {
+      "name": "Merge",
+      "context": "Modeling",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "M",
+          "Q"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "M",
+          "Q"
+        ]
+      }
+    },
+    {
+      "name": "Set SDS weighting",
+      "context": "Modeling",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "M",
+          "R"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "M",
+          "R"
+        ]
+      }
+    },
+    {
+      "name": "Bevel",
+      "context": "Modeling",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "M",
+          "S"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "M",
+          "S"
+        ]
+      }
+    },
+    {
+      "name": "Spin Edge",
+      "context": "Modeling",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "M",
+          "V"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "M",
+          "V"
+        ]
+      }
+    },
+    {
+      "name": "Matrix Extrude",
+      "context": "Modeling",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "M",
+          "X"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "M",
+          "X"
+        ]
+      }
+    },
+    {
+      "name": "Smooth Shift",
+      "context": "Modeling",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "M",
+          "Y"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "M",
+          "Y"
+        ]
+      }
+    },
+    {
+      "name": "Move (along Normals)",
+      "context": "Modeling",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "M",
+          "-"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "M",
+          "-"
+        ]
+      }
+    },
+    {
+      "name": "Rotate (around Normals)",
+      "context": "Modeling",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "M",
+          ","
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "M",
+          ","
+        ]
+      }
+    },
+    {
+      "name": "Connect points/edges",
+      "context": "Modeling",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "M",
+          "M"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "M",
+          "M"
+        ]
+      }
+    },
+    {
+      "name": "Bridge",
+      "context": "Modeling",
+      "windows": {
+        "type": "keys",
+        "chord": "B"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "B"
+      }
+    },
+    {
+      "name": "Line Cut",
+      "context": "Modeling",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "K",
+          "K"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "K",
+          "K"
+        ]
+      }
+    },
+    {
+      "name": "Plane Cut",
+      "context": "Modeling",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "K",
+          "J"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "K",
+          "J"
+        ]
+      }
+    },
+    {
+      "name": "Loop/path cut",
+      "context": "Modeling",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "K",
+          "L"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "K",
+          "L"
+        ]
+      }
+    },
+    {
+      "name": "Extrude",
+      "context": "Modeling",
+      "windows": {
+        "type": "keys",
+        "chord": "D"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "D"
+      }
+    },
+    {
+      "name": "Extrude Inner",
+      "context": "Modeling",
+      "windows": {
+        "type": "keys",
+        "chord": "I"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "I"
+      }
+    },
+    {
+      "name": "Optimize",
+      "context": "Modeling",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "U",
+          "O"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "U",
+          "O"
+        ]
+      }
+    },
+    {
+      "name": "Disconnect",
+      "context": "Modeling",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "U",
+          "P"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "U",
+          "P"
+        ]
+      }
+    },
+    {
+      "name": "Reverse Normals",
+      "context": "Modeling",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "U",
+          "R"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "U",
+          "R"
+        ]
+      }
+    },
+    {
+      "name": "Dissolve N-gons",
+      "context": "Modeling",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "U",
+          "E"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "U",
+          "E"
+        ]
+      }
+    },
+    {
+      "name": "Subdivide",
+      "context": "Modeling",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "U",
+          "S"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "U",
+          "S"
+        ]
+      }
+    },
+    {
+      "name": "Melt",
+      "context": "Modeling",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "U",
+          "Z"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "U",
+          "Z"
+        ]
+      }
+    },
+    {
+      "name": "Shrink",
+      "context": "Modeling",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "U",
+          "C"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "U",
+          "C"
+        ]
+      }
+    },
+    {
+      "name": "N-Gon triangulation",
+      "context": "Modeling",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "U",
+          "T"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "U",
+          "T"
+        ]
+      }
+    },
+    {
+      "name": "Align Normals",
+      "context": "Modeling",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "U",
+          "A"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "U",
+          "A"
+        ]
+      }
+    },
+    {
+      "name": "Retriangulate N-Gons",
+      "context": "Modeling",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "U",
+          "G"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "U",
+          "G"
+        ]
+      }
+    },
+    {
+      "name": "Un-triangulate",
+      "context": "Modeling",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "U",
+          "U"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "U",
+          "U"
+        ]
+      }
+    },
+    {
+      "name": "Mirror Selection",
+      "context": "Modeling",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "U",
+          "V"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "U",
+          "V"
+        ]
+      }
+    },
+    {
+      "name": "Select Connected",
+      "context": "Modeling",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "U",
+          "W"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "U",
+          "W"
+        ]
+      }
+    },
+    {
+      "name": "Invert Selection",
+      "context": "Modeling",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "U",
+          "I"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "U",
+          "I"
+        ]
+      }
+    },
+    {
+      "name": "Convert Selection",
+      "context": "Modeling",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "U",
+          "X"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "U",
+          "X"
+        ]
+      }
+    },
+    {
+      "name": "Symmetrize Selection",
+      "context": "Modeling",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "U",
+          "V"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "U",
+          "V"
+        ]
+      }
+    },
+    {
+      "name": "Outline Selection",
+      "context": "Modeling",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "U",
+          "Q"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "U",
+          "Q"
+        ]
+      }
+    },
+    {
+      "name": "Fill Selection",
+      "context": "Modeling",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "U",
+          "F"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "U",
+          "F"
+        ]
+      }
+    },
+    {
+      "name": "Enlarge Selection",
+      "context": "Modeling",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "U",
+          "Y"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "U",
+          "Y"
+        ]
+      }
+    },
+    {
+      "name": "Ring Selection",
+      "context": "Modeling",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "U",
+          "B"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "U",
+          "B"
+        ]
+      }
+    },
+    {
+      "name": "Loop Selection",
+      "context": "Modeling",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "U",
+          "L"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "U",
+          "L"
+        ]
+      }
+    },
+    {
+      "name": "Path Selection",
+      "context": "Modeling",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "U",
+          "M"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "U",
+          "M"
+        ]
+      }
+    },
+    {
+      "name": "Phong Break Selection",
+      "context": "Modeling",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "U",
+          "N"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "U",
+          "N"
+        ]
+      }
+    },
+    {
+      "name": "Shrink Selection",
+      "context": "Modeling",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "U",
+          "K"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "U",
+          "K"
+        ]
+      }
+    },
+    {
+      "name": "Volume Mesh",
+      "context": "Modeling",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "U",
+          "H"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "U",
+          "H"
+        ]
+      }
+    },
+    {
+      "name": "Convert Primitive",
+      "context": "Modeling",
+      "windows": {
+        "type": "keys",
+        "chord": "C"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "C"
+      }
+    },
+    {
+      "name": "Move object",
+      "context": "Modeling",
+      "windows": {
+        "type": "keys",
+        "chord": "4"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "4"
+      }
+    },
+    {
+      "name": "Scale object",
+      "context": "Modeling",
+      "windows": {
+        "type": "keys",
+        "chord": "5"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "5"
+      }
+    },
+    {
+      "name": "Rotate object",
+      "context": "Modeling",
+      "windows": {
+        "type": "keys",
+        "chord": "6"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "6"
+      }
+    },
+    {
+      "name": "Move Parent",
+      "context": "Modeling",
+      "windows": {
+        "type": "keys",
+        "chord": "7"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "7"
+      }
+    },
+    {
+      "name": "Move tool",
+      "context": "Modeling",
+      "windows": {
+        "type": "keys",
+        "chord": "E"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "E"
+      }
+    },
+    {
+      "name": "Rotate",
+      "context": "Modeling",
+      "windows": {
+        "type": "keys",
+        "chord": "R"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "R"
+      }
+    },
+    {
+      "name": "Scale",
+      "context": "Modeling",
+      "windows": {
+        "type": "keys",
+        "chord": "T"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "T"
+      }
+    },
+    {
+      "name": "Toggle active tool",
+      "context": "Modeling",
+      "windows": {
+        "type": "keys",
+        "chord": "Space"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Space"
+      }
+    },
+    {
+      "name": "Switch modeling mode",
+      "context": "Modeling",
+      "windows": {
+        "type": "keys",
+        "chord": "Enter"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Enter"
+      }
+    },
+    {
+      "name": "Undo (action)",
+      "context": "Modeling",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Z"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Z"
+      }
+    },
+    {
+      "name": "X-axis / Heading",
+      "context": "Modeling",
+      "windows": {
+        "type": "keys",
+        "chord": "X"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "X"
+      }
+    },
+    {
+      "name": "Y-axis / Pitch",
+      "context": "Modeling",
+      "windows": {
+        "type": "keys",
+        "chord": "Y"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Y"
+      }
+    },
+    {
+      "name": "Z-axis / Bank",
+      "context": "Modeling",
+      "windows": {
+        "type": "keys",
+        "chord": "Z"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Z"
+      }
+    },
+    {
+      "name": "Modeling Settings",
+      "context": "Modeling",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+M"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+M"
+      }
+    },
+    {
+      "name": "Snapping on/off",
+      "context": "Modeling",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+S"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+S"
+      }
+    },
+    {
+      "name": "Quantize on/off",
+      "context": "Modeling",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Q"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Q"
+      }
+    },
+    {
+      "name": "Lock workplane on/off",
+      "context": "Modeling",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+X"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+X"
+      }
+    },
+    {
+      "name": "Select all",
+      "context": "Modeling",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+A"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+A"
+      }
+    },
+    {
+      "name": "Deselect all",
+      "context": "Modeling",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Ctrl+A"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+A"
+      }
+    },
+    {
+      "name": "Freehand Selection",
+      "context": "Modeling",
+      "windows": {
+        "type": "keys",
+        "chord": "8"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "8"
+      }
+    },
+    {
+      "name": "Live Selection",
+      "context": "Modeling",
+      "windows": {
+        "type": "keys",
+        "chord": "9"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "9"
+      }
+    },
+    {
+      "name": "Rectangle Selection",
+      "context": "Modeling",
+      "windows": {
+        "type": "keys",
+        "chord": "0"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "0"
+      }
+    },
+    {
+      "name": "Render Viewport",
+      "context": "Render",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+R"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+R"
+      }
+    },
+    {
+      "name": "Render in Picture Viewer",
+      "context": "Render",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+R"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+R"
+      }
+    },
+    {
+      "name": "Render to Picture Viewer (TR)",
+      "context": "Render",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Ctrl+R"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+R"
+      }
+    },
+    {
+      "name": "Interactive render region",
+      "context": "Render",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+R"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+R"
+      }
+    },
+    {
+      "name": "Create Preview",
+      "context": "Render",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+B"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+B"
+      }
+    },
+    {
+      "name": "Render presets",
+      "context": "Render",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+B"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+B"
+      }
+    },
+    {
+      "name": "Switch wireframe mode",
+      "context": "Sculpt",
+      "windows": {
+        "type": "keys",
+        "chord": "W"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "W"
+      }
+    },
+    {
+      "name": "Show/hide template",
+      "context": "Sculpt",
+      "windows": {
+        "type": "keys",
+        "chord": "Q"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Q"
+      }
+    }
+  ],
+  "defaults": {
+    "TUNE_CW": {
+      "name": "Zoom in",
+      "action": {
+        "type": "scroll",
+        "direction": "up",
+        "lines": 1
+      },
+      "accel": "light"
+    },
+    "TUNE_CCW": {
+      "name": "Zoom out",
+      "action": {
+        "type": "scroll",
+        "direction": "down",
+        "lines": 1
+      },
+      "accel": "light"
+    },
+    "TUNE_TAP_1F": {
+      "name": "Zoom to geometry",
+      "action": {
+        "type": "keys",
+        "chord": "H"
+      }
+    },
+    "TUNE_SWIPE_LEFT": {
+      "name": "Undo (action)",
+      "action": {
+        "type": "keys",
+        "chord": "Shift+Z"
+      }
+    }
+  }
+}

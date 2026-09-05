@@ -1,0 +1,489 @@
+{
+  "id": "gnome",
+  "name": "GNOME",
+  "kind": "system",
+  "category": "System",
+  "os": [
+    "linux"
+  ],
+  "sources": [
+    "https://help.gnome.org/users/gnome-help/stable/shell-keyboard-shortcuts.html.en",
+    "https://help.gnome.org/users/gnome-help/stable/keyboard-shortcuts-set.html.en"
+  ],
+  "note": "GNOME Shell defaults as shipped by Ubuntu. GNOME's Super key is written Win. Rows GNOME lists as Disabled by default are left out (Decrease/Increase text size, high contrast, on-screen keyboard, hide all normal windows, workspaces 2-4, raise/lower window, maximize horizontally/vertically, toggle fullscreen, window on all workspaces, switch windows, switch windows of an application). Left out because the chord grammar cannot express them: the bare Super key (Activities overview) and the Launchers section, which is bound to hardware keys (Explorer, Calculator, Mail, WWW, Search, Tools); the Print-key screenshot shortcuts (Print, Alt+Print, Shift+Print), because there is no Print Screen key in the grammar; and the Sound and Media rows with no matching media key (pause, stop, eject, launch media player, microphone mute).",
+  "actions": [
+    {
+      "name": "Show all applications",
+      "context": "",
+      "linux": {
+        "type": "keys",
+        "chord": "Win+A"
+      }
+    },
+    {
+      "name": "Show the system menu",
+      "context": "",
+      "linux": {
+        "type": "keys",
+        "chord": "Win+S"
+      }
+    },
+    {
+      "name": "Show the notification list",
+      "context": "",
+      "linux": {
+        "type": "keys",
+        "chord": "Win+V"
+      }
+    },
+    {
+      "name": "Show the run command prompt",
+      "context": "",
+      "linux": {
+        "type": "keys",
+        "chord": "Alt+F2"
+      }
+    },
+    {
+      "name": "Focus the active notification",
+      "context": "",
+      "linux": {
+        "type": "keys",
+        "chord": "Win+N"
+      }
+    },
+    {
+      "name": "Lock screen",
+      "context": "",
+      "linux": {
+        "type": "keys",
+        "chord": "Win+L"
+      }
+    },
+    {
+      "name": "Show the Power Off dialog",
+      "context": "",
+      "linux": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Delete"
+      }
+    },
+    {
+      "name": "Restore the keyboard shortcuts",
+      "context": "",
+      "linux": {
+        "type": "keys",
+        "chord": "Win+Esc"
+      }
+    },
+    {
+      "name": "Switch applications",
+      "context": "",
+      "linux": {
+        "type": "keys",
+        "chord": "Win+Tab"
+      }
+    },
+    {
+      "name": "Switch between windows from the same application",
+      "context": "",
+      "linux": {
+        "type": "keys",
+        "chord": "Win+`"
+      }
+    },
+    {
+      "name": "Switch system controls",
+      "context": "",
+      "linux": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Tab"
+      }
+    },
+    {
+      "name": "Switch system controls directly",
+      "context": "",
+      "linux": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Esc"
+      }
+    },
+    {
+      "name": "Switch windows directly",
+      "context": "",
+      "linux": {
+        "type": "keys",
+        "chord": "Alt+Esc"
+      }
+    },
+    {
+      "name": "Switch windows of an app directly",
+      "context": "",
+      "linux": {
+        "type": "keys",
+        "chord": "Alt+F6"
+      }
+    },
+    {
+      "name": "Move to workspace on the left",
+      "context": "",
+      "linux": {
+        "type": "keys",
+        "chord": "Win+PageUp"
+      }
+    },
+    {
+      "name": "Move to workspace on the right",
+      "context": "",
+      "linux": {
+        "type": "keys",
+        "chord": "Win+PageDown"
+      }
+    },
+    {
+      "name": "Move window one workspace to the left",
+      "context": "",
+      "linux": {
+        "type": "keys",
+        "chord": "Shift+Win+PageUp"
+      }
+    },
+    {
+      "name": "Move window one workspace to the right",
+      "context": "",
+      "linux": {
+        "type": "keys",
+        "chord": "Shift+Win+PageDown"
+      }
+    },
+    {
+      "name": "Move window one monitor to the left",
+      "context": "",
+      "linux": {
+        "type": "keys",
+        "chord": "Shift+Win+Left"
+      }
+    },
+    {
+      "name": "Move window one monitor to the right",
+      "context": "",
+      "linux": {
+        "type": "keys",
+        "chord": "Shift+Win+Right"
+      }
+    },
+    {
+      "name": "Move window one monitor up",
+      "context": "",
+      "linux": {
+        "type": "keys",
+        "chord": "Shift+Win+Up"
+      }
+    },
+    {
+      "name": "Move window one monitor down",
+      "context": "",
+      "linux": {
+        "type": "keys",
+        "chord": "Shift+Win+Down"
+      }
+    },
+    {
+      "name": "Move window to workspace 1",
+      "context": "",
+      "linux": {
+        "type": "keys",
+        "chord": "Shift+Win+Home"
+      }
+    },
+    {
+      "name": "Move window to last workspace",
+      "context": "",
+      "linux": {
+        "type": "keys",
+        "chord": "Shift+Win+End"
+      }
+    },
+    {
+      "name": "Switch to workspace 1",
+      "context": "",
+      "linux": {
+        "type": "keys",
+        "chord": "Win+Home"
+      }
+    },
+    {
+      "name": "Switch to last workspace",
+      "context": "",
+      "linux": {
+        "type": "keys",
+        "chord": "Win+End"
+      }
+    },
+    {
+      "name": "Activate the window menu",
+      "context": "",
+      "linux": {
+        "type": "keys",
+        "chord": "Alt+Space"
+      }
+    },
+    {
+      "name": "Close window",
+      "context": "",
+      "linux": {
+        "type": "keys",
+        "chord": "Alt+F4"
+      }
+    },
+    {
+      "name": "Move window",
+      "context": "",
+      "linux": {
+        "type": "keys",
+        "chord": "Alt+F7"
+      }
+    },
+    {
+      "name": "Resize window",
+      "context": "",
+      "linux": {
+        "type": "keys",
+        "chord": "Alt+F8"
+      }
+    },
+    {
+      "name": "Toggle maximization state",
+      "context": "",
+      "linux": {
+        "type": "keys",
+        "chord": "Alt+F10"
+      }
+    },
+    {
+      "name": "Maximize window",
+      "context": "",
+      "linux": {
+        "type": "keys",
+        "chord": "Win+Up"
+      }
+    },
+    {
+      "name": "Restore window",
+      "context": "",
+      "linux": {
+        "type": "keys",
+        "chord": "Win+Down"
+      }
+    },
+    {
+      "name": "Hide window",
+      "context": "",
+      "linux": {
+        "type": "keys",
+        "chord": "Win+H"
+      }
+    },
+    {
+      "name": "View split on left",
+      "context": "",
+      "linux": {
+        "type": "keys",
+        "chord": "Win+Left"
+      }
+    },
+    {
+      "name": "View split on right",
+      "context": "",
+      "linux": {
+        "type": "keys",
+        "chord": "Win+Right"
+      }
+    },
+    {
+      "name": "Switch to next input source",
+      "context": "",
+      "linux": {
+        "type": "keys",
+        "chord": "Win+Space"
+      }
+    },
+    {
+      "name": "Switch to previous input source",
+      "context": "",
+      "linux": {
+        "type": "keys",
+        "chord": "Shift+Win+Space"
+      }
+    },
+    {
+      "name": "Turn screen reader on or off",
+      "context": "",
+      "linux": {
+        "type": "keys",
+        "chord": "Alt+Win+S"
+      }
+    },
+    {
+      "name": "Turn zoom on or off",
+      "context": "",
+      "linux": {
+        "type": "keys",
+        "chord": "Alt+Win+8"
+      }
+    },
+    {
+      "name": "Zoom in",
+      "context": "",
+      "linux": {
+        "type": "keys",
+        "chord": "Alt+Win+="
+      }
+    },
+    {
+      "name": "Zoom out",
+      "context": "",
+      "linux": {
+        "type": "keys",
+        "chord": "Alt+Win+-"
+      }
+    },
+    {
+      "name": "Record a short screencast",
+      "context": "",
+      "linux": {
+        "type": "keys",
+        "chord": "Shift+Ctrl+Alt+R"
+      }
+    },
+    {
+      "name": "Select all text or items in a list",
+      "context": "",
+      "linux": {
+        "type": "keys",
+        "chord": "Ctrl+A"
+      }
+    },
+    {
+      "name": "Cut (remove) selected text or items and place it on the clipboard",
+      "context": "",
+      "linux": {
+        "type": "keys",
+        "chord": "Ctrl+X"
+      }
+    },
+    {
+      "name": "Copy selected text or items to the clipboard",
+      "context": "",
+      "linux": {
+        "type": "keys",
+        "chord": "Ctrl+C"
+      }
+    },
+    {
+      "name": "Paste the contents of the clipboard",
+      "context": "",
+      "linux": {
+        "type": "keys",
+        "chord": "Ctrl+V"
+      }
+    },
+    {
+      "name": "Undo the last action",
+      "context": "",
+      "linux": {
+        "type": "keys",
+        "chord": "Ctrl+Z"
+      }
+    },
+    {
+      "name": "Copy the highlighted text or commands to the clipboard",
+      "context": "Terminal",
+      "linux": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+C"
+      }
+    },
+    {
+      "name": "Paste the contents of the clipboard",
+      "context": "Terminal",
+      "linux": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+V"
+      }
+    },
+    {
+      "name": "Volume up",
+      "context": "",
+      "linux": {
+        "type": "media",
+        "key": "volume_up"
+      }
+    },
+    {
+      "name": "Volume down",
+      "context": "",
+      "linux": {
+        "type": "media",
+        "key": "volume_down"
+      }
+    },
+    {
+      "name": "Volume mute",
+      "context": "",
+      "linux": {
+        "type": "media",
+        "key": "mute"
+      }
+    },
+    {
+      "name": "Play (or play/pause)",
+      "context": "",
+      "linux": {
+        "type": "media",
+        "key": "play_pause"
+      }
+    },
+    {
+      "name": "Next track",
+      "context": "",
+      "linux": {
+        "type": "media",
+        "key": "next_track"
+      }
+    },
+    {
+      "name": "Previous track",
+      "context": "",
+      "linux": {
+        "type": "media",
+        "key": "previous_track"
+      }
+    }
+  ],
+  "defaults": {
+    "TUNE_CW": {
+      "name": "Volume up",
+      "action": {
+        "type": "media",
+        "key": "volume_up"
+      },
+      "accel": "light"
+    },
+    "TUNE_CCW": {
+      "name": "Volume down",
+      "action": {
+        "type": "media",
+        "key": "volume_down"
+      },
+      "accel": "light"
+    },
+    "TUNE_TAP_1F": {
+      "name": "Volume mute",
+      "action": {
+        "type": "media",
+        "key": "mute"
+      }
+    }
+  }
+}

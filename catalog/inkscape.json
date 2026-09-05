@@ -1,0 +1,2412 @@
+{
+  "id": "inkscape",
+  "name": "Inkscape",
+  "kind": "app",
+  "category": "Creative",
+  "match": {
+    "windows_exe": [
+      "inkscape.exe"
+    ],
+    "macos_bundle": [
+      "org.inkscape.Inkscape"
+    ],
+    "window_title": []
+  },
+  "sources": [
+    "https://inkscape.org/doc/keys.html"
+  ],
+  "note": "From Inkscape's official \"Inkscape keyboard and mouse reference\" (version 1.4.x, last revised 2024-10-05), which mirrors share/inkscape/keys/inkscape.xml. Only the keyboard entries are kept; the reference's mouse entries (click, drag, double-click, right-click, middle-click and mouse-wheel bindings, and every \"modifier + drag\" row) are left out because the chord grammar cannot express them. Also left out: rows whose key is \"arrows\" or \"Ctrl+arrows\" and similar, which name four keys at once; every \"keypad N\" row (the Display/Color mode, Split Canvas, X-Ray Mode and Align sections are keypad-only); the \"Left Ctrl\" / \"Right Ctrl\" / \"Left Alt\" / \"Right Alt\" node-handle rows, which distinguish the physical left and right modifier; and rows whose key is a character outside the grammar's key set (* ! ? # % | & ^ ( ) { } < >), which drops for example union (Ctrl+plus is kept where it is the listed key), \"invert selection\" (!), \"open command palette\" (?), \"toggle grids visibility\" (#), \"toggle snapping\" (%) and the inset/outset rows. Where the reference lists several equivalent keys for one action, the first expressible one is kept (so \"s, F1 - Selector\" becomes S). Section names are used as context for the tool and dialog sections; the application-wide sections (Tools, Canvas, Document, Palette, File, Window, Extensions, Layers, Object, Path) use an empty context, except where that would make two actions share a name, in which case the section name is used. One row, \"Pen (Bezier) tool\", is printed as \"B+Shift+F6\" where every other tool row reads \"<letter>, <F-key>\"; it is read as the two alternatives B and Shift+F6 and only B is kept. The reference documents one set of chords and gives no separate Mac ones, so only `windows` is filled in.",
+  "actions": [
+    {
+      "name": "Selector",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "S"
+      }
+    },
+    {
+      "name": "Selector (temporary)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Space"
+      }
+    },
+    {
+      "name": "Node tool",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "N"
+      }
+    },
+    {
+      "name": "Shape Builder tool",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "X"
+      }
+    },
+    {
+      "name": "Rectangle tool",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "R"
+      }
+    },
+    {
+      "name": "Ellipse/arc tool",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "E"
+      }
+    },
+    {
+      "name": "Star tool",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+F9"
+      }
+    },
+    {
+      "name": "3D box tool",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+F4"
+      }
+    },
+    {
+      "name": "Spiral tool",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "I"
+      }
+    },
+    {
+      "name": "Pen (Bezier) tool",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "B"
+      }
+    },
+    {
+      "name": "Pencil (Freehand) tool",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "P"
+      }
+    },
+    {
+      "name": "Calligraphy tool",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "C"
+      }
+    },
+    {
+      "name": "Text tool",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "T"
+      }
+    },
+    {
+      "name": "Gradient tool",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "G"
+      }
+    },
+    {
+      "name": "Dropper tool",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "D"
+      }
+    },
+    {
+      "name": "Paint Bucket tool",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "U"
+      }
+    },
+    {
+      "name": "Tweak tool",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "W"
+      }
+    },
+    {
+      "name": "Spray tool",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "A"
+      }
+    },
+    {
+      "name": "Eraser tool",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+E"
+      }
+    },
+    {
+      "name": "Connector tool",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "O"
+      }
+    },
+    {
+      "name": "Measure tool",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "M"
+      }
+    },
+    {
+      "name": "Zoom tool",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F3"
+      }
+    },
+    {
+      "name": "Fill and Stroke",
+      "context": "Dialogs",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+F"
+      }
+    },
+    {
+      "name": "Swatches",
+      "context": "Dialogs",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+W"
+      }
+    },
+    {
+      "name": "Text and Font",
+      "context": "Dialogs",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+T"
+      }
+    },
+    {
+      "name": "Transform",
+      "context": "Dialogs",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+M"
+      }
+    },
+    {
+      "name": "Layers and Objects",
+      "context": "Dialogs",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+L"
+      }
+    },
+    {
+      "name": "Symbols",
+      "context": "Dialogs",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Y"
+      }
+    },
+    {
+      "name": "Align and Distribute",
+      "context": "Dialogs",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+A"
+      }
+    },
+    {
+      "name": "Object Properties",
+      "context": "Dialogs",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+O"
+      }
+    },
+    {
+      "name": "Undo History",
+      "context": "Dialogs",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+H"
+      }
+    },
+    {
+      "name": "XML Editor",
+      "context": "Dialogs",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+X"
+      }
+    },
+    {
+      "name": "Selectors and CSS dialog",
+      "context": "Dialogs",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Q"
+      }
+    },
+    {
+      "name": "Document Properties",
+      "context": "Dialogs",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+D"
+      }
+    },
+    {
+      "name": "Inkscape Preferences",
+      "context": "Dialogs",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+P"
+      }
+    },
+    {
+      "name": "Export",
+      "context": "Dialogs",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+E"
+      }
+    },
+    {
+      "name": "Find/Replace",
+      "context": "Dialogs",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+F"
+      }
+    },
+    {
+      "name": "Trace Bitmap",
+      "context": "Dialogs",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+B"
+      }
+    },
+    {
+      "name": "Check Spelling",
+      "context": "Dialogs",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+K"
+      }
+    },
+    {
+      "name": "toggle dialogs",
+      "context": "Dialogs",
+      "windows": {
+        "type": "keys",
+        "chord": "F12"
+      }
+    },
+    {
+      "name": "return to the canvas",
+      "context": "Dialogs",
+      "windows": {
+        "type": "keys",
+        "chord": "Esc"
+      }
+    },
+    {
+      "name": "close the dialog",
+      "context": "Dialogs",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+F4"
+      }
+    },
+    {
+      "name": "jump to next widget",
+      "context": "Dialogs",
+      "windows": {
+        "type": "keys",
+        "chord": "Tab"
+      }
+    },
+    {
+      "name": "jump to previous widget",
+      "context": "Dialogs",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Tab"
+      }
+    },
+    {
+      "name": "set the new value",
+      "context": "Dialogs",
+      "windows": {
+        "type": "keys",
+        "chord": "Enter"
+      }
+    },
+    {
+      "name": "activate current button or list",
+      "context": "Dialogs",
+      "windows": {
+        "type": "keys",
+        "chord": "Space"
+      }
+    },
+    {
+      "name": "in a multi-tab dialog, switch tabs",
+      "context": "Dialogs",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+PageUp"
+      }
+    },
+    {
+      "name": "open a search field in a dialog with a list",
+      "context": "Dialogs",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+F"
+      }
+    },
+    {
+      "name": "expand direct children of the currently selected element",
+      "context": "Dialogs",
+      "windows": {
+        "type": "keys",
+        "chord": "+"
+      }
+    },
+    {
+      "name": "collapse the currently selected element",
+      "context": "Dialogs",
+      "windows": {
+        "type": "keys",
+        "chord": "-"
+      }
+    },
+    {
+      "name": "select the topmost/lowermost visible element in the list",
+      "context": "Dialogs",
+      "windows": {
+        "type": "keys",
+        "chord": "Home"
+      }
+    },
+    {
+      "name": "select the previous/next visible element in the list",
+      "context": "Dialogs",
+      "windows": {
+        "type": "keys",
+        "chord": "Up"
+      }
+    },
+    {
+      "name": "select element on previous/next page of list",
+      "context": "Dialogs",
+      "windows": {
+        "type": "keys",
+        "chord": "PageUp"
+      }
+    },
+    {
+      "name": "set the attribute's value",
+      "context": "Dialogs",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Enter"
+      }
+    },
+    {
+      "name": "confirm (select, apply or open)",
+      "context": "Dialogs",
+      "windows": {
+        "type": "keys",
+        "chord": "Space"
+      }
+    },
+    {
+      "name": "expand/contract selected group or layer",
+      "context": "Dialogs",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Left"
+      }
+    },
+    {
+      "name": "move current selection up or down in z-order",
+      "context": "Dialogs",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Up"
+      }
+    },
+    {
+      "name": "jump to the first editable field",
+      "context": "Tool controls bar",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+X"
+      }
+    },
+    {
+      "name": "jump to next field",
+      "context": "Tool controls bar",
+      "windows": {
+        "type": "keys",
+        "chord": "Tab"
+      }
+    },
+    {
+      "name": "jump to previous field",
+      "context": "Tool controls bar",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Tab"
+      }
+    },
+    {
+      "name": "change value by 0.1",
+      "context": "Tool controls bar",
+      "windows": {
+        "type": "keys",
+        "chord": "Up"
+      }
+    },
+    {
+      "name": "change value by 5.0",
+      "context": "Tool controls bar",
+      "windows": {
+        "type": "keys",
+        "chord": "PageUp"
+      }
+    },
+    {
+      "name": "accept the new value",
+      "context": "Tool controls bar",
+      "windows": {
+        "type": "keys",
+        "chord": "Enter"
+      }
+    },
+    {
+      "name": "cancel changes, return to canvas",
+      "context": "Tool controls bar",
+      "windows": {
+        "type": "keys",
+        "chord": "Esc"
+      }
+    },
+    {
+      "name": "cancel changes",
+      "context": "Tool controls bar",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Z"
+      }
+    },
+    {
+      "name": "zoom in",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "="
+      }
+    },
+    {
+      "name": "zoom out",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "-"
+      }
+    },
+    {
+      "name": "activate zoom field",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Z"
+      }
+    },
+    {
+      "name": "quick zoom",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Q"
+      }
+    },
+    {
+      "name": "zoom 1:1",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "1"
+      }
+    },
+    {
+      "name": "zoom 1:2",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "2"
+      }
+    },
+    {
+      "name": "zoom to selection",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "3"
+      }
+    },
+    {
+      "name": "zoom to drawing",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "4"
+      }
+    },
+    {
+      "name": "zoom to page",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "5"
+      }
+    },
+    {
+      "name": "zoom to page width",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+E"
+      }
+    },
+    {
+      "name": "center page in view (without changing zoom level)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+4"
+      }
+    },
+    {
+      "name": "(back quote) previous zoom",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "`"
+      }
+    },
+    {
+      "name": "next zoom",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+`"
+      }
+    },
+    {
+      "name": "delete guide",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Delete"
+      }
+    },
+    {
+      "name": "Quick preview",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F"
+      }
+    },
+    {
+      "name": "close command palette",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Esc"
+      }
+    },
+    {
+      "name": "resize page to current selection, or to the drawing if nothing is selected",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+R"
+      }
+    },
+    {
+      "name": "create new document",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+N"
+      }
+    },
+    {
+      "name": "open template selection to create new document",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+N"
+      }
+    },
+    {
+      "name": "open a document",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+O"
+      }
+    },
+    {
+      "name": "export to various image formats",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+E"
+      }
+    },
+    {
+      "name": "import bitmap or vector",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+I"
+      }
+    },
+    {
+      "name": "print document",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+P"
+      }
+    },
+    {
+      "name": "save document",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+S"
+      }
+    },
+    {
+      "name": "save under a new name",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+S"
+      }
+    },
+    {
+      "name": "save a copy",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Alt+S"
+      }
+    },
+    {
+      "name": "exit Inkscape",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Q"
+      }
+    },
+    {
+      "name": "toggle rulers",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+R"
+      }
+    },
+    {
+      "name": "toggle scrollbars",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+B"
+      }
+    },
+    {
+      "name": "toggle palette",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+P"
+      }
+    },
+    {
+      "name": "toggle fullscreen",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F11"
+      }
+    },
+    {
+      "name": "toggle toolbars",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+F11"
+      }
+    },
+    {
+      "name": "toggle toolbars and fullscreen",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+F11"
+      }
+    },
+    {
+      "name": "main menu",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F10"
+      }
+    },
+    {
+      "name": "drop-down (context) menu",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+F10"
+      }
+    },
+    {
+      "name": "close document window",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+F4"
+      }
+    },
+    {
+      "name": "next document window",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Tab"
+      }
+    },
+    {
+      "name": "previous document window",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Tab"
+      }
+    },
+    {
+      "name": "previous extension",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Q"
+      }
+    },
+    {
+      "name": "previous extension settings",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+Q"
+      }
+    },
+    {
+      "name": "create new layer",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+N"
+      }
+    },
+    {
+      "name": "move to layer above",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+PageUp"
+      }
+    },
+    {
+      "name": "move to layer below",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+PageDown"
+      }
+    },
+    {
+      "name": "raise layer",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+PageUp"
+      }
+    },
+    {
+      "name": "lower layer",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+PageDown"
+      }
+    },
+    {
+      "name": "raise layer to top",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Home"
+      }
+    },
+    {
+      "name": "lower layer to bottom",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+End"
+      }
+    },
+    {
+      "name": "undo",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Z"
+      }
+    },
+    {
+      "name": "redo",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Y"
+      }
+    },
+    {
+      "name": "copy selection",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+C"
+      }
+    },
+    {
+      "name": "cut selection",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+X"
+      }
+    },
+    {
+      "name": "paste clipboard",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+V"
+      }
+    },
+    {
+      "name": "paste in place",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+V"
+      }
+    },
+    {
+      "name": "paste style",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+V"
+      }
+    },
+    {
+      "name": "duplicate selection",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+D"
+      }
+    },
+    {
+      "name": "duplicate and transform",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+D"
+      }
+    },
+    {
+      "name": "reapply transform",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+T"
+      }
+    },
+    {
+      "name": "clone object",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+D"
+      }
+    },
+    {
+      "name": "unlink clone",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+D"
+      }
+    },
+    {
+      "name": "select original",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+D"
+      }
+    },
+    {
+      "name": "create a bitmap copy",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+B"
+      }
+    },
+    {
+      "name": "trace bitmap",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+B"
+      }
+    },
+    {
+      "name": "object(s) to pattern",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+I"
+      }
+    },
+    {
+      "name": "pattern to object(s)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+I"
+      }
+    },
+    {
+      "name": "swap fill and stroke styles",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+X"
+      }
+    },
+    {
+      "name": "set clip",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+M"
+      }
+    },
+    {
+      "name": "set inverse clip (Live Path Effect)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+M"
+      }
+    },
+    {
+      "name": "release clip",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+M"
+      }
+    },
+    {
+      "name": "object(s) to guide(s)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+G"
+      }
+    },
+    {
+      "name": "group selected objects",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+U"
+      }
+    },
+    {
+      "name": "ungroup selected group(s)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+G"
+      }
+    },
+    {
+      "name": "raise selection to top",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Home"
+      }
+    },
+    {
+      "name": "lower selection to bottom",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "End"
+      }
+    },
+    {
+      "name": "raise selection one step",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "PageUp"
+      }
+    },
+    {
+      "name": "lower selection one step",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "PageDown"
+      }
+    },
+    {
+      "name": "convert selected object(s) to path",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+C"
+      }
+    },
+    {
+      "name": "convert stroke to path",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+C"
+      }
+    },
+    {
+      "name": "union",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl++"
+      }
+    },
+    {
+      "name": "difference",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+-"
+      }
+    },
+    {
+      "name": "division (cut)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+/"
+      }
+    },
+    {
+      "name": "cut path",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+/"
+      }
+    },
+    {
+      "name": "split path",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Alt+K"
+      }
+    },
+    {
+      "name": "fracture",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+F"
+      }
+    },
+    {
+      "name": "flatten",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+F"
+      }
+    },
+    {
+      "name": "create dynamic offset",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+J"
+      }
+    },
+    {
+      "name": "create linked offset",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+J"
+      }
+    },
+    {
+      "name": "select source",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+D"
+      }
+    },
+    {
+      "name": "combine paths",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+K"
+      }
+    },
+    {
+      "name": "break paths apart",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+K"
+      }
+    },
+    {
+      "name": "simplify",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+L"
+      }
+    },
+    {
+      "name": "show next editable path effect parameter",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "7"
+      }
+    },
+    {
+      "name": "paste path effect",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+7"
+      }
+    },
+    {
+      "name": "select next object",
+      "context": "Selector",
+      "windows": {
+        "type": "keys",
+        "chord": "Tab"
+      }
+    },
+    {
+      "name": "select previous object",
+      "context": "Selector",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Tab"
+      }
+    },
+    {
+      "name": "select all (current layer)",
+      "context": "Selector",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+A"
+      }
+    },
+    {
+      "name": "select all (all layers)",
+      "context": "Selector",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+A"
+      }
+    },
+    {
+      "name": "select all with same type (all layers)",
+      "context": "Selector",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+A"
+      }
+    },
+    {
+      "name": "deselect",
+      "context": "Selector",
+      "windows": {
+        "type": "keys",
+        "chord": "Esc"
+      }
+    },
+    {
+      "name": "delete selection",
+      "context": "Selector",
+      "windows": {
+        "type": "keys",
+        "chord": "Backspace"
+      }
+    },
+    {
+      "name": "enter group",
+      "context": "Selector",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Enter"
+      }
+    },
+    {
+      "name": "go to parent group/layer",
+      "context": "Selector",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Backspace"
+      }
+    },
+    {
+      "name": "toggle scale/rotation handles",
+      "context": "Selector",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+S"
+      }
+    },
+    {
+      "name": "scale selection up by the scale step",
+      "context": "Selector",
+      "windows": {
+        "type": "keys",
+        "chord": "."
+      }
+    },
+    {
+      "name": "scale selection down by the scale step",
+      "context": "Selector",
+      "windows": {
+        "type": "keys",
+        "chord": ","
+      }
+    },
+    {
+      "name": "scale selection to 200%",
+      "context": "Selector",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+."
+      }
+    },
+    {
+      "name": "scale selection to 50%",
+      "context": "Selector",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+,"
+      }
+    },
+    {
+      "name": "scale selection up by 1 pixel",
+      "context": "Selector",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+."
+      }
+    },
+    {
+      "name": "scale selection down by 1 pixel",
+      "context": "Selector",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+,"
+      }
+    },
+    {
+      "name": "rotate selection by the angle step",
+      "context": "Selector",
+      "windows": {
+        "type": "keys",
+        "chord": "["
+      }
+    },
+    {
+      "name": "rotate selection by 90 degrees",
+      "context": "Selector",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+["
+      }
+    },
+    {
+      "name": "rotate selection by 1 pixel",
+      "context": "Selector",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+["
+      }
+    },
+    {
+      "name": "flip selection horizontally",
+      "context": "Selector",
+      "windows": {
+        "type": "keys",
+        "chord": "H"
+      }
+    },
+    {
+      "name": "flip selection vertically",
+      "context": "Selector",
+      "windows": {
+        "type": "keys",
+        "chord": "V"
+      }
+    },
+    {
+      "name": "cancel rubberband, move, transformation",
+      "context": "Selector",
+      "windows": {
+        "type": "keys",
+        "chord": "Esc"
+      }
+    },
+    {
+      "name": "select next node",
+      "context": "Node tool",
+      "windows": {
+        "type": "keys",
+        "chord": "Tab"
+      }
+    },
+    {
+      "name": "select previous node",
+      "context": "Node tool",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Tab"
+      }
+    },
+    {
+      "name": "select all nodes in subpath(s)",
+      "context": "Node tool",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+A"
+      }
+    },
+    {
+      "name": "select all nodes in path",
+      "context": "Node tool",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+A"
+      }
+    },
+    {
+      "name": "deselect all nodes",
+      "context": "Node tool",
+      "windows": {
+        "type": "keys",
+        "chord": "Esc"
+      }
+    },
+    {
+      "name": "grow/shrink selection (spatial)",
+      "context": "Node tool",
+      "windows": {
+        "type": "keys",
+        "chord": "PageUp"
+      }
+    },
+    {
+      "name": "grow/shrink selection (along path)",
+      "context": "Node tool",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+PageUp"
+      }
+    },
+    {
+      "name": "rotate both handles by the angle step",
+      "context": "Node tool",
+      "windows": {
+        "type": "keys",
+        "chord": "["
+      }
+    },
+    {
+      "name": "toggle handles",
+      "context": "Node tool",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+H"
+      }
+    },
+    {
+      "name": "scale nodes up by the scale step",
+      "context": "Node tool",
+      "windows": {
+        "type": "keys",
+        "chord": "."
+      }
+    },
+    {
+      "name": "scale nodes down by the scale step",
+      "context": "Node tool",
+      "windows": {
+        "type": "keys",
+        "chord": ","
+      }
+    },
+    {
+      "name": "scale nodes up by 1 pixel",
+      "context": "Node tool",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+."
+      }
+    },
+    {
+      "name": "scale nodes down by 1 pixel",
+      "context": "Node tool",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+,"
+      }
+    },
+    {
+      "name": "rotate nodes by the angle step",
+      "context": "Node tool",
+      "windows": {
+        "type": "keys",
+        "chord": "["
+      }
+    },
+    {
+      "name": "rotate nodes by 1 pixel",
+      "context": "Node tool",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+["
+      }
+    },
+    {
+      "name": "flip nodes horizontally",
+      "context": "Node tool",
+      "windows": {
+        "type": "keys",
+        "chord": "H"
+      }
+    },
+    {
+      "name": "flip nodes vertically",
+      "context": "Node tool",
+      "windows": {
+        "type": "keys",
+        "chord": "V"
+      }
+    },
+    {
+      "name": "make line",
+      "context": "Node tool",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+L"
+      }
+    },
+    {
+      "name": "make curve",
+      "context": "Node tool",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+U"
+      }
+    },
+    {
+      "name": "make cusp",
+      "context": "Node tool",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+C"
+      }
+    },
+    {
+      "name": "make smooth",
+      "context": "Node tool",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+S"
+      }
+    },
+    {
+      "name": "make symmetric",
+      "context": "Node tool",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Y"
+      }
+    },
+    {
+      "name": "make auto",
+      "context": "Node tool",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+A"
+      }
+    },
+    {
+      "name": "join selected nodes",
+      "context": "Node tool",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+J"
+      }
+    },
+    {
+      "name": "join selected end nodes with new segment",
+      "context": "Node tool",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+J"
+      }
+    },
+    {
+      "name": "break selected node(s)",
+      "context": "Node tool",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+B"
+      }
+    },
+    {
+      "name": "delete selected node(s), trying to keep shape if not too cusp",
+      "context": "Node tool",
+      "windows": {
+        "type": "keys",
+        "chord": "Backspace"
+      }
+    },
+    {
+      "name": "delete selected node(s), replacing them by a straight line segment",
+      "context": "Node tool",
+      "windows": {
+        "type": "keys",
+        "chord": "Delete"
+      }
+    },
+    {
+      "name": "delete selected node(s), invert shape-keeping behavior",
+      "context": "Node tool",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Backspace"
+      }
+    },
+    {
+      "name": "delete segment",
+      "context": "Node tool",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Backspace"
+      }
+    },
+    {
+      "name": "insert new node(s)",
+      "context": "Node tool",
+      "windows": {
+        "type": "keys",
+        "chord": "Insert"
+      }
+    },
+    {
+      "name": "duplicate selected node(s)",
+      "context": "Node tool",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+D"
+      }
+    },
+    {
+      "name": "copy selected node(s) to clipboard",
+      "context": "Node tool",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+C"
+      }
+    },
+    {
+      "name": "insert nodes from clipboard",
+      "context": "Node tool",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+V"
+      }
+    },
+    {
+      "name": "reverse path direction",
+      "context": "Node tool",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+R"
+      }
+    },
+    {
+      "name": "cancel rubberband or move",
+      "context": "Node tool",
+      "windows": {
+        "type": "keys",
+        "chord": "Esc"
+      }
+    },
+    {
+      "name": "apply changes and leave Shape Builder tool",
+      "context": "Shape Builder tool",
+      "windows": {
+        "type": "keys",
+        "chord": "Enter"
+      }
+    },
+    {
+      "name": "leave Shape Builder tool without changes",
+      "context": "Shape Builder tool",
+      "windows": {
+        "type": "keys",
+        "chord": "Esc"
+      }
+    },
+    {
+      "name": "deselect",
+      "context": "Ellipse tool",
+      "windows": {
+        "type": "keys",
+        "chord": "Esc"
+      }
+    },
+    {
+      "name": "deselect",
+      "context": "Star tool",
+      "windows": {
+        "type": "keys",
+        "chord": "Esc"
+      }
+    },
+    {
+      "name": "deselect",
+      "context": "3D box tool",
+      "windows": {
+        "type": "keys",
+        "chord": "Esc"
+      }
+    },
+    {
+      "name": "rotate X-PLs (if parallel) by the angle step",
+      "context": "3D box tool",
+      "windows": {
+        "type": "keys",
+        "chord": "["
+      }
+    },
+    {
+      "name": "rotate X-PLs (if parallel) by 1 pixel",
+      "context": "3D box tool",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+["
+      }
+    },
+    {
+      "name": "deselect",
+      "context": "Spiral tool",
+      "windows": {
+        "type": "keys",
+        "chord": "Esc"
+      }
+    },
+    {
+      "name": "make last segment line",
+      "context": "Pen (Bezier) tool",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+L"
+      }
+    },
+    {
+      "name": "make last segment curve",
+      "context": "Pen (Bezier) tool",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+U"
+      }
+    },
+    {
+      "name": "finish current path",
+      "context": "Pen (Bezier) tool",
+      "windows": {
+        "type": "keys",
+        "chord": "Enter"
+      }
+    },
+    {
+      "name": "finish and close current path",
+      "context": "Pen (Bezier) tool",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Enter"
+      }
+    },
+    {
+      "name": "cancel current line",
+      "context": "Pen (Bezier) tool",
+      "windows": {
+        "type": "keys",
+        "chord": "Esc"
+      }
+    },
+    {
+      "name": "erase last segment of current line",
+      "context": "Pen (Bezier) tool",
+      "windows": {
+        "type": "keys",
+        "chord": "Backspace"
+      }
+    },
+    {
+      "name": "adjust pen width by 1",
+      "context": "Calligraphy tool",
+      "windows": {
+        "type": "keys",
+        "chord": "Left"
+      }
+    },
+    {
+      "name": "set pen width to its minimum or maximum",
+      "context": "Calligraphy tool",
+      "windows": {
+        "type": "keys",
+        "chord": "Home"
+      }
+    },
+    {
+      "name": "adjust pen angle",
+      "context": "Calligraphy tool",
+      "windows": {
+        "type": "keys",
+        "chord": "Up"
+      }
+    },
+    {
+      "name": "deselect",
+      "context": "Calligraphy tool",
+      "windows": {
+        "type": "keys",
+        "chord": "Esc"
+      }
+    },
+    {
+      "name": "deselect the text object",
+      "context": "Text tool",
+      "windows": {
+        "type": "keys",
+        "chord": "Esc"
+      }
+    },
+    {
+      "name": "move cursor by one word",
+      "context": "Text tool",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Left"
+      }
+    },
+    {
+      "name": "move cursor by one paragraph",
+      "context": "Text tool",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Up"
+      }
+    },
+    {
+      "name": "go to beginning/end of line",
+      "context": "Text tool",
+      "windows": {
+        "type": "keys",
+        "chord": "Home"
+      }
+    },
+    {
+      "name": "go to beginning/end of text",
+      "context": "Text tool",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Home"
+      }
+    },
+    {
+      "name": "move cursor by one screen",
+      "context": "Text tool",
+      "windows": {
+        "type": "keys",
+        "chord": "PageUp"
+      }
+    },
+    {
+      "name": "flow text into frame",
+      "context": "Text tool",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+W"
+      }
+    },
+    {
+      "name": "unflow text from frame",
+      "context": "Text tool",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+W"
+      }
+    },
+    {
+      "name": "select external frame",
+      "context": "Text tool",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+D"
+      }
+    },
+    {
+      "name": "select path from text",
+      "context": "Text tool",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+D"
+      }
+    },
+    {
+      "name": "start a new line or paragraph",
+      "context": "Text tool",
+      "windows": {
+        "type": "keys",
+        "chord": "Enter"
+      }
+    },
+    {
+      "name": "toggle Unicode entry",
+      "context": "Text tool",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+U"
+      }
+    },
+    {
+      "name": "insert no-break space",
+      "context": "Text tool",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Space"
+      }
+    },
+    {
+      "name": "select to beginning/end of line",
+      "context": "Text tool",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Home"
+      }
+    },
+    {
+      "name": "select to beginning/end of text",
+      "context": "Text tool",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Home"
+      }
+    },
+    {
+      "name": "select one screen up/down",
+      "context": "Text tool",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+PageUp"
+      }
+    },
+    {
+      "name": "select all text",
+      "context": "Text tool",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+A"
+      }
+    },
+    {
+      "name": "make selection bold",
+      "context": "Text tool",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+B"
+      }
+    },
+    {
+      "name": "make selection italic",
+      "context": "Text tool",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+I"
+      }
+    },
+    {
+      "name": "rotate character(s) by 90 degrees",
+      "context": "Text tool",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+["
+      }
+    },
+    {
+      "name": "rotate character(s) by 1 pixel",
+      "context": "Text tool",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+["
+      }
+    },
+    {
+      "name": "select next handle",
+      "context": "Gradient tool",
+      "windows": {
+        "type": "keys",
+        "chord": "Tab"
+      }
+    },
+    {
+      "name": "select previous handle",
+      "context": "Gradient tool",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Tab"
+      }
+    },
+    {
+      "name": "select all handles",
+      "context": "Gradient tool",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+A"
+      }
+    },
+    {
+      "name": "deselect all handles",
+      "context": "Gradient tool",
+      "windows": {
+        "type": "keys",
+        "chord": "Esc"
+      }
+    },
+    {
+      "name": "insert new stop(s)",
+      "context": "Gradient tool",
+      "windows": {
+        "type": "keys",
+        "chord": "Insert"
+      }
+    },
+    {
+      "name": "delete selected stops",
+      "context": "Gradient tool",
+      "windows": {
+        "type": "keys",
+        "chord": "Delete"
+      }
+    },
+    {
+      "name": "simplify selected stops",
+      "context": "Gradient tool",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+L"
+      }
+    },
+    {
+      "name": "reverse gradient definition",
+      "context": "Gradient tool",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+R"
+      }
+    },
+    {
+      "name": "select all mesh corners",
+      "context": "Mesh tool",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+A"
+      }
+    },
+    {
+      "name": "toggle selected sides between Beziers and lines",
+      "context": "Mesh tool",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+B"
+      }
+    },
+    {
+      "name": "make selected sides elliptical by changing the length of handles",
+      "context": "Mesh tool",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+C"
+      }
+    },
+    {
+      "name": "subdivide mesh between two selected corners",
+      "context": "Mesh tool",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+I"
+      }
+    },
+    {
+      "name": "toggle on/off tensor points (square markers) for selected (all four surrounding corners) patches",
+      "context": "Mesh tool",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+G"
+      }
+    },
+    {
+      "name": "pick color underneath mesh at selected corners",
+      "context": "Mesh tool",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+K"
+      }
+    },
+    {
+      "name": "eliminate \"Mach Banding\" optical illusion by making color transition smooth around a corner by changing length of Bezier handles",
+      "context": "Mesh tool",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+J"
+      }
+    },
+    {
+      "name": "copy color",
+      "context": "Dropper tool",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+C"
+      }
+    },
+    {
+      "name": "move mode",
+      "context": "Tweak tool",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+M"
+      }
+    },
+    {
+      "name": "move in/out mode",
+      "context": "Tweak tool",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+I"
+      }
+    },
+    {
+      "name": "move jitter mode",
+      "context": "Tweak tool",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Z"
+      }
+    },
+    {
+      "name": "rotate mode",
+      "context": "Tweak tool",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+["
+      }
+    },
+    {
+      "name": "duplicate/delete mode",
+      "context": "Tweak tool",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+D"
+      }
+    },
+    {
+      "name": "push path mode",
+      "context": "Tweak tool",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+P"
+      }
+    },
+    {
+      "name": "shrink/grow path mode",
+      "context": "Tweak tool",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+S"
+      }
+    },
+    {
+      "name": "attract/repel path mode",
+      "context": "Tweak tool",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+A"
+      }
+    },
+    {
+      "name": "roughen mode",
+      "context": "Tweak tool",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+R"
+      }
+    },
+    {
+      "name": "color paint mode",
+      "context": "Tweak tool",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+C"
+      }
+    },
+    {
+      "name": "color jitter mode",
+      "context": "Tweak tool",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+J"
+      }
+    },
+    {
+      "name": "blur mode",
+      "context": "Tweak tool",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+B"
+      }
+    },
+    {
+      "name": "adjust brush width by 1",
+      "context": "Tweak tool",
+      "windows": {
+        "type": "keys",
+        "chord": "Left"
+      }
+    },
+    {
+      "name": "set brush width to its minimum or maximum",
+      "context": "Tweak tool",
+      "windows": {
+        "type": "keys",
+        "chord": "Home"
+      }
+    },
+    {
+      "name": "adjust tweaking force",
+      "context": "Tweak tool",
+      "windows": {
+        "type": "keys",
+        "chord": "Up"
+      }
+    },
+    {
+      "name": "copy mode",
+      "context": "Spray tool",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+J"
+      }
+    },
+    {
+      "name": "clone mode",
+      "context": "Spray tool",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+K"
+      }
+    },
+    {
+      "name": "single path mode",
+      "context": "Spray tool",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+L"
+      }
+    },
+    {
+      "name": "adjust spray width by 1",
+      "context": "Spray tool",
+      "windows": {
+        "type": "keys",
+        "chord": "Left"
+      }
+    },
+    {
+      "name": "adjust spray population by 1",
+      "context": "Spray tool",
+      "windows": {
+        "type": "keys",
+        "chord": "Up"
+      }
+    },
+    {
+      "name": "set spray width to its minimum or maximum",
+      "context": "Spray tool",
+      "windows": {
+        "type": "keys",
+        "chord": "Home"
+      }
+    },
+    {
+      "name": "adjust eraser width by 1",
+      "context": "Eraser tool",
+      "windows": {
+        "type": "keys",
+        "chord": "Left"
+      }
+    },
+    {
+      "name": "set eraser width to its minimum or maximum",
+      "context": "Eraser tool",
+      "windows": {
+        "type": "keys",
+        "chord": "Home"
+      }
+    },
+    {
+      "name": "delete a selected page",
+      "context": "Pages tool",
+      "windows": {
+        "type": "keys",
+        "chord": "Backspace"
+      }
+    }
+  ],
+  "defaults": {
+    "TUNE_CW": {
+      "name": "zoom in",
+      "action": {
+        "type": "keys",
+        "chord": "+"
+      },
+      "accel": "light"
+    },
+    "TUNE_CCW": {
+      "name": "zoom out",
+      "action": {
+        "type": "keys",
+        "chord": "-"
+      },
+      "accel": "light"
+    },
+    "TUNE_TAP_1F": {
+      "name": "zoom to page",
+      "action": {
+        "type": "keys",
+        "chord": "5"
+      }
+    },
+    "TUNE_SWIPE_LEFT": {
+      "name": "undo",
+      "action": {
+        "type": "keys",
+        "chord": "Ctrl+Z"
+      }
+    },
+    "TUNE_SWIPE_RIGHT": {
+      "name": "redo",
+      "action": {
+        "type": "keys",
+        "chord": "Ctrl+Y"
+      }
+    }
+  }
+}

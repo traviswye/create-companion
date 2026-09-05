@@ -1,0 +1,100 @@
+{
+  "id": "foobar2000",
+  "name": "foobar2000",
+  "kind": "app",
+  "category": "Music",
+  "match": {
+    "windows_exe": [
+      "foobar2000.exe"
+    ],
+    "macos_bundle": [],
+    "window_title": []
+  },
+  "sources": [
+    "https://wiki.hydrogenaudio.org/index.php?title=Foobar2000:Preferences:Keyboard_Shortcuts"
+  ],
+  "note": "Windows only; there is no official macOS build. foobar2000's keyboard shortcuts are entirely user-assignable via Preferences > Keyboard Shortcuts, and the vendor wiki documents only nine predefined shortcuts that ship in a fresh install (all non-global/local — they only fire while foobar2000 is the active window); everything else (media keys, playback transport, volume) is unbound out of the box and left for the user to assign, so it is not listed here per the same convention the Obsidian catalog entry uses for unbound commands.",
+  "actions": [
+    {
+      "name": "File / Preferences",
+      "context": "Main menu",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+P"
+      }
+    },
+    {
+      "name": "Edit / Search",
+      "context": "Main menu",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+F"
+      }
+    },
+    {
+      "name": "View / Always on Top",
+      "context": "Main menu",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+A"
+      }
+    },
+    {
+      "name": "File / New playlist",
+      "context": "Main menu",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+N"
+      }
+    },
+    {
+      "name": "File / Remove playlist",
+      "context": "Main menu",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+W"
+      }
+    },
+    {
+      "name": "File / Open...",
+      "context": "Main menu",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+O"
+      }
+    },
+    {
+      "name": "File / Save playlist...",
+      "context": "Main menu",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+S"
+      }
+    },
+    {
+      "name": "File / Add location...",
+      "context": "Main menu",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+U"
+      }
+    },
+    {
+      "name": "Properties",
+      "context": "Context menu",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Enter"
+      }
+    }
+  ],
+  "defaults": {
+    "TUNE_TAP_1F": {
+      "name": "File / Open...",
+      "action": {
+        "type": "keys",
+        "chord": "Ctrl+O"
+      }
+    }
+  }
+}

@@ -1,0 +1,1212 @@
+{
+  "id": "audacity",
+  "name": "Audacity",
+  "kind": "app",
+  "category": "Music",
+  "match": {
+    "windows_exe": [
+      "Audacity.exe"
+    ],
+    "macos_bundle": [
+      "org.audacityteam.audacity"
+    ],
+    "window_title": []
+  },
+  "sources": [
+    "https://manual.audacityteam.org/man/keyboard_shortcut_reference.html"
+  ],
+  "note": "Only the default 'Standard' keyboard shortcut set is included, per the manual; the extended 'Full' set (the shortcuts available in Audacity 2.1.3 and earlier) is disabled by default and is not included. Mac chords follow the manual's stated substitution rule (Ctrl -> Cmd/⌘, Alt -> Option) except where the manual documents a different Mac shortcut: 'Add Label at Playback Position' is Cmd+. and 'Preferences' is Cmd+, on Mac. 'Toggle/Select Numpad Enter' and mouse-driven items (Command-click the checkbox, drag gestures) are not documented on this page and are not included.",
+  "actions": [
+    {
+      "name": "New",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+N"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+N"
+      }
+    },
+    {
+      "name": "Open",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+O"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+O"
+      }
+    },
+    {
+      "name": "Close",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+W"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+W"
+      }
+    },
+    {
+      "name": "Save Project",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+S"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+S"
+      }
+    },
+    {
+      "name": "Export Audio",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+E"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+E"
+      }
+    },
+    {
+      "name": "Exit",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Q"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Q"
+      }
+    },
+    {
+      "name": "Undo",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Z"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Z"
+      }
+    },
+    {
+      "name": "Redo",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Y"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Y"
+      }
+    },
+    {
+      "name": "Cut",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+X"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+X"
+      }
+    },
+    {
+      "name": "Delete",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+K"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+K"
+      }
+    },
+    {
+      "name": "Copy",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+C"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+C"
+      }
+    },
+    {
+      "name": "Paste",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+V"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+V"
+      }
+    },
+    {
+      "name": "Duplicate",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+D"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+D"
+      }
+    },
+    {
+      "name": "Cut and Leave Gap",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+X"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+X"
+      }
+    },
+    {
+      "name": "Delete and Leave Gap",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+K"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+K"
+      }
+    },
+    {
+      "name": "Silence Audio",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+L"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+L"
+      }
+    },
+    {
+      "name": "Trim Audio",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+T"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+T"
+      }
+    },
+    {
+      "name": "Split",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+I"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+I"
+      }
+    },
+    {
+      "name": "Add Label at Selection",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+B"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+B"
+      }
+    },
+    {
+      "name": "Add Label at Playback Position",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+M"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+."
+      }
+    },
+    {
+      "name": "Preferences",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+P"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+,"
+      }
+    },
+    {
+      "name": "Select All",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+A"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+A"
+      }
+    },
+    {
+      "name": "Select in All Tracks",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+K"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+K"
+      }
+    },
+    {
+      "name": "Select in All Sync-Locked Tracks",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Y"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+Y"
+      }
+    },
+    {
+      "name": "Select Left at Playback Position",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "["
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "["
+      }
+    },
+    {
+      "name": "Select Right at Playback Position",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "]"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "]"
+      }
+    },
+    {
+      "name": "Select Track Start to Cursor",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+J"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+J"
+      }
+    },
+    {
+      "name": "Select Cursor to Track End",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+K"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+K"
+      }
+    },
+    {
+      "name": "Select at Zero Crossings",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Z"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Z"
+      }
+    },
+    {
+      "name": "Select Previous Clip",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+,"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+,"
+      }
+    },
+    {
+      "name": "Select Next Clip",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+."
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+."
+      }
+    },
+    {
+      "name": "Zoom In",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+1"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+1"
+      }
+    },
+    {
+      "name": "Zoom Normal",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+2"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+2"
+      }
+    },
+    {
+      "name": "Zoom Out",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+3"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+3"
+      }
+    },
+    {
+      "name": "Zoom to Selection",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+E"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+E"
+      }
+    },
+    {
+      "name": "Zoom Toggle",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Z"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Z"
+      }
+    },
+    {
+      "name": "Fit to Width",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+F"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+F"
+      }
+    },
+    {
+      "name": "Fit to Height",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+F"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+F"
+      }
+    },
+    {
+      "name": "Collapse All Tracks",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+C"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+C"
+      }
+    },
+    {
+      "name": "Expand Collapsed Tracks",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+X"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+X"
+      }
+    },
+    {
+      "name": "Play / Stop",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Space"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Space"
+      }
+    },
+    {
+      "name": "Play / Stop and Set Cursor",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "X"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "X"
+      }
+    },
+    {
+      "name": "Play Once / Stop",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Space"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Space"
+      }
+    },
+    {
+      "name": "Pause",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "P"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "P"
+      }
+    },
+    {
+      "name": "Record",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "R"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "R"
+      }
+    },
+    {
+      "name": "Record New Track",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+R"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+R"
+      }
+    },
+    {
+      "name": "Timer Record",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+T"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+T"
+      }
+    },
+    {
+      "name": "Punch and Roll Record",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+D"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+D"
+      }
+    },
+    {
+      "name": "Selection Start",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Left"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Left"
+      }
+    },
+    {
+      "name": "Selection End",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Right"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Right"
+      }
+    },
+    {
+      "name": "Track Start",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "J"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "J"
+      }
+    },
+    {
+      "name": "Track End",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "K"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "K"
+      }
+    },
+    {
+      "name": "Project Start",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Home"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Home"
+      }
+    },
+    {
+      "name": "Project End",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "End"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "End"
+      }
+    },
+    {
+      "name": "Loop On / Off",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "L"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "L"
+      }
+    },
+    {
+      "name": "Clear Loop",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+L"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Alt+L"
+      }
+    },
+    {
+      "name": "Set Loop to Selection",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+L"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+L"
+      }
+    },
+    {
+      "name": "Mute All Tracks",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+U"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+U"
+      }
+    },
+    {
+      "name": "Unmute All Tracks",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+U"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+U"
+      }
+    },
+    {
+      "name": "Mute Tracks",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+U"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+U"
+      }
+    },
+    {
+      "name": "Unmute Tracks",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Shift+U"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+Shift+U"
+      }
+    },
+    {
+      "name": "Repeat Last Effect",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+R"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+R"
+      }
+    },
+    {
+      "name": "Contrast",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+T"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+T"
+      }
+    },
+    {
+      "name": "Enable Full Screen",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F11"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "F11"
+      }
+    },
+    {
+      "name": "Play to Selection",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "B"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "B"
+      }
+    },
+    {
+      "name": "Play Cut Preview",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "C"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "C"
+      }
+    },
+    {
+      "name": "Selection Tool",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F1"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "F1"
+      }
+    },
+    {
+      "name": "Envelope Tool",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F2"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "F2"
+      }
+    },
+    {
+      "name": "Draw Tool",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F3"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "F3"
+      }
+    },
+    {
+      "name": "Zoom Tool",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F4"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "F4"
+      }
+    },
+    {
+      "name": "Multi Tool",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F6"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "F6"
+      }
+    },
+    {
+      "name": "Delete Key",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Backspace"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Backspace"
+      }
+    },
+    {
+      "name": "Delete Key2",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Delete"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Delete"
+      }
+    },
+    {
+      "name": "Move to Previous Label",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Left"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Left"
+      }
+    },
+    {
+      "name": "Move to Next Label",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Right"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Right"
+      }
+    },
+    {
+      "name": "Selection to Start",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Home"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Home"
+      }
+    },
+    {
+      "name": "Selection to End",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+End"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+End"
+      }
+    },
+    {
+      "name": "Selection Extend Left",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Left"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Left"
+      }
+    },
+    {
+      "name": "Selection Extend Right",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Right"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Right"
+      }
+    },
+    {
+      "name": "Selection Contract Left",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Right"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+Right"
+      }
+    },
+    {
+      "name": "Selection Contract Right",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Left"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+Left"
+      }
+    },
+    {
+      "name": "Move Backward from Toolbars to Tracks",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+F6"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+F6"
+      }
+    },
+    {
+      "name": "Move Forward from Toolbars to Tracks",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+F6"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+F6"
+      }
+    },
+    {
+      "name": "Move Focus to Previous Track",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Up"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Up"
+      }
+    },
+    {
+      "name": "Move Focus to Next Track",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Down"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Down"
+      }
+    },
+    {
+      "name": "Toggle Focused Track",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Enter"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Enter"
+      }
+    },
+    {
+      "name": "Cursor Left",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Left"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Left"
+      }
+    },
+    {
+      "name": "Cursor Right",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Right"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Right"
+      }
+    },
+    {
+      "name": "Cursor Short Jump Left",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": ","
+      },
+      "mac": {
+        "type": "keys",
+        "chord": ","
+      }
+    },
+    {
+      "name": "Cursor Short Jump Right",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "."
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "."
+      }
+    },
+    {
+      "name": "Cursor Long Jump Left",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+,"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+,"
+      }
+    },
+    {
+      "name": "Cursor Long Jump Right",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+."
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+."
+      }
+    },
+    {
+      "name": "Change Gain on Focused Track",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+G"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+G"
+      }
+    },
+    {
+      "name": "Open Menu on Focused Track",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+M"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+M"
+      }
+    },
+    {
+      "name": "Mute / Unmute Focused Track",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+U"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+U"
+      }
+    },
+    {
+      "name": "Solo / Unsolo Focused Track",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+S"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+S"
+      }
+    }
+  ],
+  "defaults": {
+    "TUNE_CW": {
+      "name": "Zoom In",
+      "action": {
+        "type": "keys",
+        "chord": "Ctrl+1"
+      },
+      "accel": "light"
+    },
+    "TUNE_CCW": {
+      "name": "Zoom Out",
+      "action": {
+        "type": "keys",
+        "chord": "Ctrl+3"
+      },
+      "accel": "light"
+    },
+    "TUNE_TAP_1F": {
+      "name": "Play / Stop",
+      "action": {
+        "type": "keys",
+        "chord": "Space"
+      }
+    },
+    "TUNE_SWIPE_LEFT": {
+      "name": "Move to Previous Label",
+      "action": {
+        "type": "keys",
+        "chord": "Alt+Left"
+      }
+    },
+    "TUNE_SWIPE_RIGHT": {
+      "name": "Move to Next Label",
+      "action": {
+        "type": "keys",
+        "chord": "Alt+Right"
+      }
+    }
+  }
+}

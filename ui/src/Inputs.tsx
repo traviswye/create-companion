@@ -2,6 +2,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { open } from "@tauri-apps/plugin-dialog";
 import { api } from "./api";
 import {
+  buildMods,
   eventSortKey,
   fingerOptions,
   fingersLabel,
@@ -9,12 +10,13 @@ import {
   gestureLabel,
   gesturesFor,
   makeEvent,
-  MODS,
   MODULES,
   moduleLabel,
   nayaBehavior,
   parseEvent,
+  parseMods,
   takesFingers,
+  TRANSPORT_MODS,
   transportLabel,
   type Mods,
   type TransportCode,
@@ -27,47 +29,57 @@ export interface Learned {
   seq: number;
 }
 
-const MOD_LABEL: Record<Mods, string> = {
-  none: "no modifier",
-  shift: "Shift +",
-  ctrl: "Ctrl +",
-  alt: "Alt +",
-  ctrl_shift: "Ctrl + Shift +",
-};
-
-const NAYA_MODS: Record<Mods, string[]> = { none: [], shift: ["LSHIFT"], ctrl: ["LCTRL"], alt: ["LALT"], ctrl_shift: ["LCTRL", "LSHIFT"] };
+const MOD_BUTTON: Record<string, string> = { ctrl: "Ctrl", shift: "Shift", alt: "Alt", cmd: "Cmd / Win", fn: "Fn (macOS)" };
+/** Naya keycode tokens for the modifiers a module can send. */
+const NAYA_MOD: Record<string, string> = { ctrl: "LCTRL", shift: "LSHIFT", alt: "LALT", cmd: "LGUI" };
+/** macOS has virtual key codes for F13–F20 only. */
+const MAC_OK = new Set(["F13", "F14", "F15", "F16", "F17", "F18", "F19", "F20"]);
 
 /** Naya-style chord token, the vocabulary OpenFlow's encoder speaks. */
 function nayaChord(t: TransportCode): string {
-  return [...NAYA_MODS[t.mods ?? "none"], t.key].join(" + ");
+  const toks = [...parseMods(t.mods)].filter((m) => NAYA_MOD[m]).map((m) => NAYA_MOD[m]);
+  return [...toks, t.key].join(" + ");
 }
 
 /** An OpenFlow module-profile action for one transport code. */
 function nayaAction(t: TransportCode): { actionType: string; actionCode: string } {
-  return (t.mods ?? "none") === "none" ? { actionType: "key", actionCode: t.key } : { actionType: "shortcut_alias", actionCode: nayaChord(t) };
+  return parseMods(t.mods).size === 0 ? { actionType: "key", actionCode: t.key } : { actionType: "shortcut_alias", actionCode: nayaChord(t) };
 }
 
 function KeySelect({ value, onChange }: { value: string; onChange: (v: string) => void }) {
   return (
-    <select className="mono" value={value} onChange={(e) => onChange(e.target.value)}>
+    <select className="mono" value={value} onChange={(e) => onChange(e.target.value)} title="F21–F24 do not exist on macOS">
       {FUNCTION_KEYS.map((k) => (
         <option key={k} value={k}>
           {k}
+          {MAC_OK.has(k) ? "" : " (Windows only)"}
         </option>
       ))}
     </select>
   );
 }
 
-function ModSelect({ value, onChange }: { value: Mods; onChange: (v: Mods) => void }) {
+/** Toggle buttons for the namespace modifiers a module can hold with its key. */
+function ModToggles({ value, onChange }: { value: Mods | undefined; onChange: (v: Mods) => void }) {
+  const set = parseMods(value);
   return (
-    <select value={value} onChange={(e) => onChange(e.target.value as Mods)}>
-      {MODS.map((m) => (
-        <option key={m} value={m}>
-          {MOD_LABEL[m]}
-        </option>
+    <div className="modtoggles">
+      {TRANSPORT_MODS.map((m) => (
+        <button
+          key={m}
+          type="button"
+          className={set.has(m) ? "on" : ""}
+          onClick={() => {
+            const next = new Set(set);
+            if (next.has(m)) next.delete(m);
+            else next.add(m);
+            onChange(buildMods(next));
+          }}
+        >
+          {MOD_BUTTON[m]}
+        </button>
       ))}
-    </select>
+    </div>
   );
 }
 
@@ -107,7 +119,7 @@ export function Inputs(props: {
   const [newMods, setNewMods] = useState<Mods>("none");
   const [msg, setMsg] = useState<{ text: string; ok: boolean } | null>(null);
 
-  const codeKey = (c: TransportCode) => `${c.mods ?? "none"}+${c.key}`;
+  const codeKey = (c: TransportCode) => `${buildMods(parseMods(c.mods))}+${c.key}`;
   const used = useMemo(() => {
     const m = new Map<string, string>();
     for (const ev of events) m.set(codeKey(props.transport[ev]), ev);
@@ -214,6 +226,7 @@ export function Inputs(props: {
           skipped.push(`${describe(ev)}: set a finger count first`);
           continue;
         }
+        if (parseMods(props.transport[ev].mods).has("fn")) skipped.push(`${describe(ev)}: Fn has no keycode in the module profile format; exported without it`);
         const action = nayaAction(props.transport[ev]);
         if (nb.half) {
           const pair = (bindings[nb.behavior] ??= { actionType: "value", actionCode: "", split: {} });
@@ -255,7 +268,8 @@ export function Inputs(props: {
       <div className="detect idle">
         <span>
           Each gesture is flashed on the module (with OpenFlow) to send one key. List the same keys here; only these are intercepted, every other key passes
-          through. Use a modifier to keep two modules apart, e.g. Tune on plain keys, Left Touch on Shift. Set the finger count to export a module profile.
+          through. Hold modifiers on the module to keep two modules apart, e.g. Tune on plain keys, Left Touch on Shift, Right Touch on Cmd. On macOS use
+          F13–F20 only (F21–F24 do not exist there). Set the finger count to export a module profile.
         </span>
       </div>
 
@@ -283,8 +297,8 @@ export function Inputs(props: {
           <table className="map">
             <thead>
               <tr>
-                <th style={{ width: "24%" }}>Gesture</th>
-                <th style={{ width: 130 }}>Fingers</th>
+                <th style={{ width: "22%" }}>Gesture</th>
+                <th style={{ width: 120 }}>Fingers</th>
                 <th>Sends</th>
                 <th style={{ width: 150 }}></th>
               </tr>
@@ -304,8 +318,8 @@ export function Inputs(props: {
                       <FingerSelect gesture={p.gesture} value={p.fingers} onChange={(n) => setFingers(ev, n)} />
                     </td>
                     <td>
-                      <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
-                        <ModSelect value={t.mods ?? "none"} onChange={(mods) => setCode(ev, { ...t, mods })} />
+                      <div style={{ display: "flex", gap: 8, alignItems: "center", flexWrap: "wrap" }}>
+                        <ModToggles value={t.mods} onChange={(mods) => setCode(ev, { ...t, mods })} />
                         <KeySelect value={t.key} onChange={(key) => setCode(ev, { ...t, key })} />
                         <kbd>{transportLabel(t)}</kbd>
                       </div>
@@ -359,8 +373,8 @@ export function Inputs(props: {
                   <FingerSelect gesture={newGesture} value={newFingers} onChange={setNewFingers} />
                 </td>
                 <td>
-                  <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
-                    <ModSelect value={newMods} onChange={setNewMods} />
+                  <div style={{ display: "flex", gap: 8, alignItems: "center", flexWrap: "wrap" }}>
+                    <ModToggles value={newMods} onChange={setNewMods} />
                     <KeySelect value={newKey} onChange={setNewKey} />
                     <kbd>{transportLabel({ key: newKey, mods: newMods })}</kbd>
                   </div>

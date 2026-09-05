@@ -11,11 +11,62 @@ pub fn default_config() -> Config {
     Config::from_toml(DEFAULT_CONFIG_TOML).expect("bundled default-config.toml is valid")
 }
 
+/// The per-application catalog (`presets/apps.json`), embedded so the UI can
+/// serve it and so the test below can validate every chord in it.
+pub const APPS_CATALOG_JSON: &str = include_str!("../../../presets/apps.json");
+
 #[cfg(test)]
 mod tests {
     use super::*;
     use crate::action::Action;
     use crate::keys::ParsedChord;
+
+    /// Every chord in the generated app catalog must parse with the engine's
+    /// parser, or it would fail the moment a user picked it.
+    #[test]
+    fn apps_catalog_chords_parse() {
+        let v: serde_json::Value = serde_json::from_str(APPS_CATALOG_JSON).unwrap();
+        let apps = v["apps"].as_array().expect("apps array");
+        assert!(apps.len() >= 12);
+        let mut checked = 0usize;
+        let mut check_action = |a: &serde_json::Value, where_: String| {
+            let action: Action = serde_json::from_value(a.clone())
+                .unwrap_or_else(|e| panic!("{where_}: not an Action: {e}"));
+            let chords: Vec<&str> = match &action {
+                Action::Keys { chord } => vec![chord.0.as_str()],
+                Action::Sequence { chords } => chords.iter().map(|c| c.0.as_str()).collect(),
+                _ => vec![],
+            };
+            for c in chords {
+                c.parse::<ParsedChord>()
+                    .unwrap_or_else(|e| panic!("{where_}: chord `{c}`: {e}"));
+                checked += 1;
+            }
+        };
+        for app in apps {
+            let id = app["id"].as_str().unwrap_or("?");
+            for act in app["actions"].as_array().unwrap_or(&vec![]) {
+                for plat in ["windows", "mac", "linux"] {
+                    if let Some(a) = act.get(plat) {
+                        if !a.is_null() {
+                            check_action(a, format!("{id}/{}/{plat}", act["name"]));
+                        }
+                    }
+                }
+            }
+            if let Some(defaults) = app["defaults"].as_object() {
+                for (ev, b) in defaults {
+                    ev.parse::<crate::event::SemanticEvent>()
+                        .unwrap_or_else(|e| panic!("{id}/defaults/{ev}: {e}"));
+                    check_action(&b["action"], format!("{id}/defaults/{ev}"));
+                }
+            }
+        }
+        assert!(
+            checked > 1000,
+            "expected thousands of chords, checked {checked}"
+        );
+    }
 
     #[test]
     fn bundled_default_config_is_valid() {

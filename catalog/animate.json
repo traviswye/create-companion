@@ -1,0 +1,671 @@
+{
+  "id": "animate",
+  "name": "Adobe Animate",
+  "kind": "app",
+  "category": "Creative",
+  "match": {
+    "windows_exe": [
+      "Animate.exe"
+    ],
+    "macos_bundle": [
+      "com.adobe.Animate"
+    ],
+    "window_title": []
+  },
+  "sources": [
+    "https://helpx.adobe.com/animate/desktop/introduction-to-animate/animate-keyboard-shortcuts.html",
+    "https://helpx.adobe.com/animate/desktop/workspace-and-workflow/keyboard-shortcuts.html"
+  ],
+  "note": "Every row of Adobe's \"Adobe Animate keyboard shortcuts\" page, whose five tables (File, View, Windows, Edit and modify, Miscellaneous actions) are used as the context. That page draws each key as a small image rather than as text, so the chords here are read from the image file names; two of those names are Adobe's own typos or house spellings and are written out in the ordinary way: \"DOWN-ARROE\" is the Down Arrow key and \"Left-Big-Bracket\" is the [ key. Command names keep Adobe's wording, including the lower-case start of \"suppresses highlighting of selected items\" and the trailing ellipsis dropped from \"Import Image/Sound/etc...\". Two rows are left out because they are mouse gestures: increasing the onion skin marker size and shifting the onion skin range, both Ctrl-drag or Shift-drag. helpx.adobe.com/animate/using/keyboard-shortcuts.html redirects to the workspace page, which explains how to customise shortcuts and lists none of its own.",
+  "actions": [
+    {
+      "name": "Import Image/Sound/etc",
+      "context": "File",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+R"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+R"
+      }
+    },
+    {
+      "name": "Export Movie",
+      "context": "File",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Shift+S"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+Cmd+S"
+      }
+    },
+    {
+      "name": "Open as Library",
+      "context": "File",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+O"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+O"
+      }
+    },
+    {
+      "name": "View movie at 100% size",
+      "context": "View",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+1"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+1"
+      }
+    },
+    {
+      "name": "Show Frame",
+      "context": "View",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+2"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+2"
+      }
+    },
+    {
+      "name": "Show All",
+      "context": "View",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+3"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+3"
+      }
+    },
+    {
+      "name": "Show/Hide Library",
+      "context": "Windows",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+L"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+L"
+      }
+    },
+    {
+      "name": "Comment selection",
+      "context": "Windows",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+M"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+M"
+      }
+    },
+    {
+      "name": "Toggle between Edit Movie and Edit Symbol Mode",
+      "context": "Windows",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+E"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+E"
+      }
+    },
+    {
+      "name": "Show/Hide Timeline",
+      "context": "Windows",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+T"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+T"
+      }
+    },
+    {
+      "name": "Group",
+      "context": "Edit and modify",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+G"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+G"
+      }
+    },
+    {
+      "name": "Ungroup",
+      "context": "Edit and modify",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+G"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+G"
+      }
+    },
+    {
+      "name": "Break Apart",
+      "context": "Edit and modify",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+B"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+B"
+      }
+    },
+    {
+      "name": "Paste in Place",
+      "context": "Edit and modify",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+V"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+V"
+      }
+    },
+    {
+      "name": "Duplicate",
+      "context": "Edit and modify",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+D"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+D"
+      }
+    },
+    {
+      "name": "Select All",
+      "context": "Edit and modify",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+A"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+A"
+      }
+    },
+    {
+      "name": "Deselect All",
+      "context": "Edit and modify",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+A"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+A"
+      }
+    },
+    {
+      "name": "Import Library",
+      "context": "Edit and modify",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+O"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+O"
+      }
+    },
+    {
+      "name": "Align Window",
+      "context": "Edit and modify",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+K"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+K"
+      }
+    },
+    {
+      "name": "Save As",
+      "context": "Edit and modify",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+S"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+S"
+      }
+    },
+    {
+      "name": "Scale and Rotate",
+      "context": "Edit and modify",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+S"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+S"
+      }
+    },
+    {
+      "name": "Remove Transform",
+      "context": "Edit and modify",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Z"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+Z"
+      }
+    },
+    {
+      "name": "Move Ahead",
+      "context": "Edit and modify",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Up"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Up"
+      }
+    },
+    {
+      "name": "Move Behind",
+      "context": "Edit and modify",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Down"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Down"
+      }
+    },
+    {
+      "name": "Bring to Front",
+      "context": "Edit and modify",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Up"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+Up"
+      }
+    },
+    {
+      "name": "Send to Back",
+      "context": "Edit and modify",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Down"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+Down"
+      }
+    },
+    {
+      "name": "Show or hide Transform Panel",
+      "context": "Edit and modify",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+T"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+T"
+      }
+    },
+    {
+      "name": "Narrower letterspacing (kerning)",
+      "context": "Edit and modify",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Left"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+Left"
+      }
+    },
+    {
+      "name": "Wider letterspacing (kerning)",
+      "context": "Edit and modify",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Right"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+Right"
+      }
+    },
+    {
+      "name": "Remove rotation or scaling from the selected objects",
+      "context": "Miscellaneous actions",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Z"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+Z"
+      }
+    },
+    {
+      "name": "Rotate the selection to 90 degrees left",
+      "context": "Miscellaneous actions",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+7"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+7"
+      }
+    },
+    {
+      "name": "Scale and/or rotate the selection using numeric values",
+      "context": "Miscellaneous actions",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+S"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+S"
+      }
+    },
+    {
+      "name": "Auto formats the editor code",
+      "context": "Miscellaneous actions",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+F"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+F"
+      }
+    },
+    {
+      "name": "Show hidden characters",
+      "context": "Miscellaneous actions",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+8"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+8"
+      }
+    },
+    {
+      "name": "suppresses highlighting of selected items",
+      "context": "Miscellaneous actions",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+E"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+E"
+      }
+    },
+    {
+      "name": "Show or hide the rulers",
+      "context": "Miscellaneous actions",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Shift+R"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+Cmd+R"
+      }
+    },
+    {
+      "name": "Show Frame Script Navigator",
+      "context": "Miscellaneous actions",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+["
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+["
+      }
+    },
+    {
+      "name": "Show or hide the tweening shape hints",
+      "context": "Miscellaneous actions",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+I"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+I"
+      }
+    },
+    {
+      "name": "Show a smaller area of the drawing with more detail",
+      "context": "Miscellaneous actions",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+="
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+="
+      }
+    },
+    {
+      "name": "Show a larger area of the drawing with less detail",
+      "context": "Miscellaneous actions",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+-"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+-"
+      }
+    },
+    {
+      "name": "Show or hide the Align panel",
+      "context": "Miscellaneous actions",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+K"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+K"
+      }
+    },
+    {
+      "name": "Show or hide the Color panel",
+      "context": "Miscellaneous actions",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+F9"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+F9"
+      }
+    },
+    {
+      "name": "Show or hide the Compiler Errors panel",
+      "context": "Miscellaneous actions",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+F2"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+F2"
+      }
+    },
+    {
+      "name": "Open a new window in the front most simulation that is a duplicate of the active window",
+      "context": "Miscellaneous actions",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+K"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+K"
+      }
+    },
+    {
+      "name": "Show or hide the History panel",
+      "context": "Miscellaneous actions",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+F10"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+F10"
+      }
+    },
+    {
+      "name": "Show or hide Info Panel",
+      "context": "Miscellaneous actions",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+I"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+I"
+      }
+    },
+    {
+      "name": "Show or hide the Library panel for this document",
+      "context": "Miscellaneous actions",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+L"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+L"
+      }
+    },
+    {
+      "name": "Show or hide the Property Inspector",
+      "context": "Miscellaneous actions",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+F3"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+F3"
+      }
+    },
+    {
+      "name": "Show or change a list of the scenes in the current movie",
+      "context": "Miscellaneous actions",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+F2"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+F2"
+      }
+    },
+    {
+      "name": "Select colors from swatches and manage swatches",
+      "context": "Miscellaneous actions",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+F9"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+F9"
+      }
+    },
+    {
+      "name": "Show or hide the animation timeline and layers controls",
+      "context": "Miscellaneous actions",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+T"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+T"
+      }
+    },
+    {
+      "name": "Show or hide the drawing toolbar",
+      "context": "Miscellaneous actions",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+F2"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+F2"
+      }
+    }
+  ],
+  "defaults": {
+    "TUNE_CW": {
+      "name": "Show a smaller area of the drawing with more detail",
+      "action": {
+        "type": "keys",
+        "chord": "Ctrl+="
+      },
+      "accel": "light"
+    },
+    "TUNE_CCW": {
+      "name": "Show a larger area of the drawing with less detail",
+      "action": {
+        "type": "keys",
+        "chord": "Ctrl+-"
+      },
+      "accel": "light"
+    },
+    "TUNE_TAP_1F": {
+      "name": "Show or hide the animation timeline and layers controls",
+      "action": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+T"
+      }
+    }
+  }
+}

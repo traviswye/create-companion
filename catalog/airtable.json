@@ -1,0 +1,90 @@
+{
+  "id": "airtable",
+  "name": "Airtable",
+  "kind": "site",
+  "category": "Productivity",
+  "match": {
+    "windows_exe": [
+      "chrome.exe",
+      "msedge.exe",
+      "firefox.exe",
+      "brave.exe",
+      "vivaldi.exe"
+    ],
+    "macos_bundle": [
+      "com.google.Chrome",
+      "com.microsoft.edgemac",
+      "org.mozilla.firefox",
+      "com.brave.Browser",
+      "com.apple.Safari"
+    ],
+    "window_title": [
+      "Airtable"
+    ]
+  },
+  "sources": [
+    "https://support.airtable.com/articles/7980233311-airtable-keyboard-shortcuts"
+  ],
+  "note": "Not expressible, so left out: \"Toggles extensions\" (Ctrl+Shift / Cmd+Shift — the source documents no third key to complete the chord); the \"Screenshot tools\" entry (OS-level screen capture, not an Airtable shortcut — PrtScn isn't in the chord grammar's key list, and the source's Windows section confusingly reads \"Press Cmd Prtscn\" under a Windows heading, an apparent copy/paste error in the vendor's own doc); \"Select adjacent/non-adjacent fields\" (Shift+Click, Ctrl/Cmd+Click) and \"Select multiple records\" in Gantt view (Shift+Click / Ctrl/Cmd+Click) — mouse-dependent; \"Scrolls one screen up or down\" (Fn+Up/Fn+Down) — Fn isn't a supported modifier; \"Scrolls one screen left or right\" (Alt+PageUp/PageDown/Alt+Fn+Up/Alt+Fn+Down) — ambiguous which key maps to which direction, and the Fn variants aren't expressible; \"Duplicate a record or field\" (hold Alt/Opt while dragging) — mouse drag. \"Manually move records up and down in order\" is documented with the same Option glyph under both the Mac and Windows sections; interpreted as Alt+Up / Alt+Down on Windows (Alt being the Windows equivalent of Mac Option) since Windows shortcuts otherwise consistently substitute Ctrl for Cmd and Alt for Opt throughout the source. \"Redo action\" and \"Open find bar\" each have two documented bindings and are listed as separate actions (base + \"(alternate)\"). \"Move to previous/next record\" in Expanded record view is documented as Cmd/Ctrl+Shift+< (also written Cmd/Ctrl+Shift+,) and Cmd/Ctrl+Shift+> (also written Cmd/Ctrl+Shift+.); since < and > aren't in the chord grammar's key list, the comma/period spelling (the physical keys) is used.",
+  "actions": [
+    { "name": "Undo action", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Z" }, "mac": { "type": "keys", "chord": "Cmd+Z" } },
+    { "name": "Redo action", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Y" }, "mac": { "type": "keys", "chord": "Cmd+Y" } },
+    { "name": "Redo action (alternate)", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Shift+Z" }, "mac": { "type": "keys", "chord": "Cmd+Shift+Z" } },
+    { "name": "Print the current table view or expanded record", "context": "", "windows": { "type": "keys", "chord": "Ctrl+P" }, "mac": { "type": "keys", "chord": "Cmd+P" } },
+    { "name": "Open the table switcher", "context": "", "windows": { "type": "keys", "chord": "Ctrl+J" }, "mac": { "type": "keys", "chord": "Cmd+J" } },
+    { "name": "Open the quick base switcher", "context": "", "windows": { "type": "keys", "chord": "Ctrl+K" }, "mac": { "type": "keys", "chord": "Cmd+K" } },
+    { "name": "Open the view switcher", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Shift+K" }, "mac": { "type": "keys", "chord": "Cmd+Shift+K" } },
+    { "name": "Open the filter menu", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Shift+F" }, "mac": { "type": "keys", "chord": "Cmd+Shift+F" } },
+    { "name": "Open the grouped records menu", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Shift+D" }, "mac": { "type": "keys", "chord": "Cmd+Shift+D" } },
+    { "name": "Open the sort menu", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Shift+S" }, "mac": { "type": "keys", "chord": "Cmd+Shift+S" } },
+    { "name": "Open find bar", "context": "", "windows": { "type": "keys", "chord": "Ctrl+F" }, "mac": { "type": "keys", "chord": "Cmd+F" } },
+    { "name": "Open find bar (alternate)", "context": "", "windows": { "type": "keys", "chord": "Ctrl+G" }, "mac": { "type": "keys", "chord": "Cmd+G" } },
+    { "name": "Set the selected date/datetime field to now", "context": "", "windows": { "type": "keys", "chord": "Ctrl+;" }, "mac": { "type": "keys", "chord": "Cmd+;" } },
+    { "name": "Move focus to previous element", "context": "", "windows": { "type": "keys", "chord": "Shift+Tab" }, "mac": { "type": "keys", "chord": "Shift+Tab" } },
+    { "name": "Move focus to next element", "context": "", "windows": { "type": "keys", "chord": "Tab" }, "mac": { "type": "keys", "chord": "Tab" } },
+    { "name": "Copy a cell or range of cells", "context": "Grid view", "windows": { "type": "keys", "chord": "Ctrl+C" }, "mac": { "type": "keys", "chord": "Cmd+C" } },
+    { "name": "Cut a cell or range of cells", "context": "Grid view", "windows": { "type": "keys", "chord": "Ctrl+X" }, "mac": { "type": "keys", "chord": "Cmd+X" } },
+    { "name": "Paste a cell", "context": "Grid view", "windows": { "type": "keys", "chord": "Ctrl+V" }, "mac": { "type": "keys", "chord": "Cmd+V" } },
+    { "name": "Select all occurrences of a variable or text", "context": "Grid view", "windows": { "type": "keys", "chord": "Ctrl+D" }, "mac": { "type": "keys", "chord": "Cmd+D" } },
+    { "name": "Expand the active record", "context": "Grid view", "windows": { "type": "keys", "chord": "Space" }, "mac": { "type": "keys", "chord": "Space" } },
+    { "name": "Expand the active cell", "context": "Grid view", "windows": { "type": "keys", "chord": "Shift+Space" }, "mac": { "type": "keys", "chord": "Shift+Space" } },
+    { "name": "Jump to left edge of table", "context": "Grid view", "windows": { "type": "keys", "chord": "Ctrl+Left" }, "mac": { "type": "keys", "chord": "Cmd+Left" } },
+    { "name": "Jump to right edge of table", "context": "Grid view", "windows": { "type": "keys", "chord": "Ctrl+Right" }, "mac": { "type": "keys", "chord": "Cmd+Right" } },
+    { "name": "Jump to top of table", "context": "Grid view", "windows": { "type": "keys", "chord": "Ctrl+Up" }, "mac": { "type": "keys", "chord": "Cmd+Up" } },
+    { "name": "Jump to bottom of table", "context": "Grid view", "windows": { "type": "keys", "chord": "Ctrl+Down" }, "mac": { "type": "keys", "chord": "Cmd+Down" } },
+    { "name": "Jump to left edge and select cells", "context": "Grid view", "windows": { "type": "keys", "chord": "Ctrl+Shift+Left" }, "mac": { "type": "keys", "chord": "Cmd+Shift+Left" } },
+    { "name": "Jump to right edge and select cells", "context": "Grid view", "windows": { "type": "keys", "chord": "Ctrl+Shift+Right" }, "mac": { "type": "keys", "chord": "Cmd+Shift+Right" } },
+    { "name": "Jump to top and select cells", "context": "Grid view", "windows": { "type": "keys", "chord": "Ctrl+Shift+Up" }, "mac": { "type": "keys", "chord": "Cmd+Shift+Up" } },
+    { "name": "Jump to bottom and select cells", "context": "Grid view", "windows": { "type": "keys", "chord": "Ctrl+Shift+Down" }, "mac": { "type": "keys", "chord": "Cmd+Shift+Down" } },
+    { "name": "Select cell range to the left", "context": "Grid view", "windows": { "type": "keys", "chord": "Shift+Left" }, "mac": { "type": "keys", "chord": "Shift+Left" } },
+    { "name": "Select cell range to the right", "context": "Grid view", "windows": { "type": "keys", "chord": "Shift+Right" }, "mac": { "type": "keys", "chord": "Shift+Right" } },
+    { "name": "Select cell range upward", "context": "Grid view", "windows": { "type": "keys", "chord": "Shift+Up" }, "mac": { "type": "keys", "chord": "Shift+Up" } },
+    { "name": "Select cell range downward", "context": "Grid view", "windows": { "type": "keys", "chord": "Shift+Down" }, "mac": { "type": "keys", "chord": "Shift+Down" } },
+    { "name": "Insert a record below the selected cell", "context": "Grid view", "windows": { "type": "keys", "chord": "Shift+Enter" }, "mac": { "type": "keys", "chord": "Shift+Enter" } },
+    { "name": "Insert a record at the end of an unsorted or ungrouped view", "context": "Grid view", "windows": { "type": "keys", "chord": "Ctrl+Shift+Enter" }, "mac": { "type": "keys", "chord": "Cmd+Shift+Enter" } },
+    { "name": "Edit the selected cell", "context": "Grid view", "windows": { "type": "keys", "chord": "Enter" }, "mac": { "type": "keys", "chord": "Enter" } },
+    { "name": "Edit the selected cell (alternate)", "context": "Grid view", "windows": { "type": "keys", "chord": "F2" }, "mac": { "type": "keys", "chord": "F2" } },
+    { "name": "Move record up", "context": "Grid view", "windows": { "type": "keys", "chord": "Alt+Up" }, "mac": { "type": "keys", "chord": "Alt+Up" } },
+    { "name": "Move record down", "context": "Grid view", "windows": { "type": "keys", "chord": "Alt+Down" }, "mac": { "type": "keys", "chord": "Alt+Down" } },
+    { "name": "Open attachment upload window", "context": "Attachment field, Grid view", "windows": { "type": "keys", "chord": "Enter" }, "mac": { "type": "keys", "chord": "Enter" } },
+    { "name": "Paste and upload attachment from clipboard", "context": "Attachment field, Grid view", "windows": { "type": "keys", "chord": "Ctrl+V" }, "mac": { "type": "keys", "chord": "Cmd+V" } },
+    { "name": "Scroll to top of gallery", "context": "Gallery view", "windows": { "type": "keys", "chord": "Ctrl+Up" }, "mac": { "type": "keys", "chord": "Cmd+Up" } },
+    { "name": "Scroll to bottom of gallery", "context": "Gallery view", "windows": { "type": "keys", "chord": "Ctrl+Down" }, "mac": { "type": "keys", "chord": "Cmd+Down" } },
+    { "name": "Scroll to previous stack", "context": "Kanban view", "windows": { "type": "keys", "chord": "Left" }, "mac": { "type": "keys", "chord": "Left" } },
+    { "name": "Scroll to next stack", "context": "Kanban view", "windows": { "type": "keys", "chord": "Right" }, "mac": { "type": "keys", "chord": "Right" } },
+    { "name": "Scroll to first stack", "context": "Kanban view", "windows": { "type": "keys", "chord": "Ctrl+Left" }, "mac": { "type": "keys", "chord": "Cmd+Left" } },
+    { "name": "Scroll to last stack", "context": "Kanban view", "windows": { "type": "keys", "chord": "Ctrl+Right" }, "mac": { "type": "keys", "chord": "Cmd+Right" } },
+    { "name": "Scroll all stacks to top", "context": "Kanban view", "windows": { "type": "keys", "chord": "Ctrl+Up" }, "mac": { "type": "keys", "chord": "Cmd+Up" } },
+    { "name": "Scroll all stacks to bottom", "context": "Kanban view", "windows": { "type": "keys", "chord": "Ctrl+Down" }, "mac": { "type": "keys", "chord": "Cmd+Down" } },
+    { "name": "Delete selected records", "context": "Gantt view", "windows": { "type": "keys", "chord": "Ctrl+Delete" }, "mac": { "type": "keys", "chord": "Cmd+Delete" } },
+    { "name": "Create a new record in the create record flow", "context": "Gantt view", "windows": { "type": "keys", "chord": "Enter" }, "mac": { "type": "keys", "chord": "Enter" } },
+    { "name": "Move to previous record", "context": "Expanded record", "windows": { "type": "keys", "chord": "Ctrl+Shift+," }, "mac": { "type": "keys", "chord": "Cmd+Shift+," } },
+    { "name": "Move to next record", "context": "Expanded record", "windows": { "type": "keys", "chord": "Ctrl+Shift+." }, "mac": { "type": "keys", "chord": "Cmd+Shift+." } },
+    { "name": "Close an expanded record", "context": "Expanded record", "windows": { "type": "keys", "chord": "Esc" }, "mac": { "type": "keys", "chord": "Esc" } }
+  ],
+  "defaults": {
+    "TUNE_CW": { "name": "Move focus to next element", "action": { "type": "keys", "chord": "Tab" }, "accel": "light" },
+    "TUNE_CCW": { "name": "Move focus to previous element", "action": { "type": "keys", "chord": "Shift+Tab" }, "accel": "light" },
+    "TUNE_TAP_1F": { "name": "Expand the active record", "action": { "type": "keys", "chord": "Space" } }
+  }
+}

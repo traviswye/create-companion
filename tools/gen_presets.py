@@ -1,15 +1,15 @@
 #!/usr/bin/env python3
-"""Generate the bundled presets from the reference data.
+"""Generate the bundled presets.
 
-Outputs (checked in, regenerate when the reference data or the tables below change):
+Inputs:
+  catalog/<id>.json          one file per app / site / system (see catalog/README.md)
+  reference/action-chords.json   NayaFlow's action vocabulary -> generic catalog
+  reference/app-shortcuts.json   ShortcutMapper import (20 apps, MIT) -> merged into apps
+
+Outputs (checked in, regenerate when inputs change):
   presets/actions.json         generic action catalog (browser / system / text / ...)
-  presets/apps.json            per-application catalog: match rules, the app's own
-                               shortcuts (from ShortcutMapper), and default bindings
+  presets/apps.json            per-application catalog: match rules, shortcuts, defaults
   presets/default-config.toml  first-run config embedded in the engine
-
-Sources (reference/, a snapshot of NayaOS docs/reference; see reference/ATTRIBUTION.md):
-  action-chords.json   NayaFlow's action vocabulary with per-platform chords
-  app-shortcuts.json   ShortcutMapper import: 5,311 shortcuts across 20 apps (MIT)
 """
 from __future__ import annotations
 
@@ -21,6 +21,7 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent
+CATALOG = ROOT / "catalog"
 # Snapshot of the NayaOS reference data lives in ./reference; when this folder
 # sits inside the NayaOS monorepo, prefer the live copy there.
 _MONOREPO_REF = ROOT.parent / "docs" / "reference"
@@ -46,11 +47,69 @@ CATEGORY = {
     "file-manager": "Files", "terminal": "Terminal",
 }
 
+BROWSER_EXE = ["chrome.exe", "msedge.exe", "firefox.exe", "brave.exe", "vivaldi.exe"]
+BROWSER_BUNDLE = ["com.google.Chrome", "com.microsoft.edgemac", "org.mozilla.firefox",
+                  "com.brave.Browser", "com.apple.Safari"]
 
-def translate(chord: str) -> str | None:
+# Profiles that ship enabled in the first-run config, in this order.
+DEFAULT_CONFIG_PROFILES = [
+    "browser", "youtube", "terminal", "photoshop", "lightroom", "premiere", "resolve",
+    "fusion360", "blender", "vscode", "discord", "spotify",
+]
+
+DEFAULT_PROFILE = {
+    "name": "Default",
+    "bindings": {
+        "TUNE_CW": {"name": "Volume up", "action": {"type": "media", "key": "volume_up"}, "accel": "light"},
+        "TUNE_CCW": {"name": "Volume down", "action": {"type": "media", "key": "volume_down"}, "accel": "light"},
+        "TUNE_TAP_1F": {"name": "Mute", "action": {"type": "media", "key": "mute"}},
+        "TUNE_SWIPE_LEFT": {"name": "Previous track", "action": {"type": "media", "key": "previous_track"}},
+        "TUNE_SWIPE_RIGHT": {"name": "Next track", "action": {"type": "media", "key": "next_track"}},
+        "TUNE_SWIPE_UP": {"name": "Play / pause", "action": {"type": "media", "key": "play_pause"}},
+        "TUNE_SWIPE_DOWN": {"name": "Task view", "action": {"type": "keys", "chord": "Win+Tab"}},
+    },
+}
+
+# ShortcutMapper app name -> (id, display name, exe list, bundle list). An id
+# that also has a catalog file gets the ShortcutMapper rows appended to it.
+SHORTCUTMAPPER_APPS = {
+    "Adobe After Effects": ("after_effects", "Adobe After Effects", ["AfterFX.exe"], ["com.adobe.AfterEffects"]),
+    "Adobe Illustrator": ("illustrator", "Adobe Illustrator", ["Illustrator.exe"], ["com.adobe.illustrator"]),
+    "Adobe Lightroom": ("lightroom", None, None, None),
+    "Adobe Photoshop": ("photoshop", None, None, None),
+    "Autodesk 3dsMax": ("3dsmax", "Autodesk 3ds Max", ["3dsmax.exe"], []),
+    "Autodesk Maya": ("maya", "Autodesk Maya", ["maya.exe"], ["com.autodesk.maya"]),
+    "Blender": ("blender", None, None, None),
+    "Euro Truck Simulator 2": ("ets2", "Euro Truck Simulator 2", ["eurotrucks2.exe"], ["com.scssoft.eurotrucks2"]),
+    "JetBrains AppCode": ("appcode", "JetBrains AppCode", [], ["com.jetbrains.AppCode"]),
+    "JetBrains CLion": ("clion", "JetBrains CLion", ["clion64.exe"], ["com.jetbrains.CLion"]),
+    "JetBrains IntelliJ IDEA": ("intellij", "JetBrains IntelliJ IDEA", ["idea64.exe"], ["com.jetbrains.intellij"]),
+    "JetBrains PhpStorm": ("phpstorm", "JetBrains PhpStorm", ["phpstorm64.exe"], ["com.jetbrains.PhpStorm"]),
+    "JetBrains PyCharm": ("pycharm", "JetBrains PyCharm", ["pycharm64.exe"], ["com.jetbrains.pycharm"]),
+    "JetBrains RubyMine": ("rubymine", "JetBrains RubyMine", ["rubymine64.exe"], ["com.jetbrains.rubymine"]),
+    "JetBrains WebStorm": ("webstorm", "JetBrains WebStorm", ["webstorm64.exe"], ["com.jetbrains.WebStorm"]),
+    "SideFx Houdini": ("houdini", "SideFX Houdini", ["houdini.exe", "houdinifx.exe"], ["com.sidefx.houdini"]),
+    "SketchUp": ("sketchup", "SketchUp", ["SketchUp.exe"], ["com.sketchup.SketchUp.2024"]),
+    "Sublime Text": ("sublime", "Sublime Text", ["sublime_text.exe"], ["com.sublimetext.4"]),
+    "The Foundry Nuke": ("nuke", "The Foundry Nuke", [], ["com.thefoundry.Nuke"]),
+    "Unity 3D": ("unity", "Unity", ["Unity.exe"], ["com.unity3d.UnityEditor5.x"]),
+}
+SM_CATEGORY = {
+    "after_effects": "Video", "illustrator": "Creative", "3dsmax": "CAD / 3D", "maya": "CAD / 3D",
+    "ets2": "Games", "appcode": "Development", "clion": "Development", "intellij": "Development",
+    "phpstorm": "Development", "pycharm": "Development", "rubymine": "Development",
+    "webstorm": "Development", "houdini": "CAD / 3D", "sketchup": "CAD / 3D",
+    "sublime": "Development", "nuke": "Video", "unity": "Development",
+}
+
+
+def translate(chord: str, mac: bool = False) -> str | None:
+    """Naya token chord -> our chord grammar. On macOS LGUI is the Command key."""
     out = []
     for tok in (t.strip() for t in chord.split("+")):
-        if tok in TOKENS:
+        if mac and tok in ("LGUI", "RGUI"):
+            out.append("Cmd")
+        elif tok in TOKENS:
             out.append(TOKENS[tok])
         elif re.fullmatch(r"[A-Z]", tok):
             out.append(tok)
@@ -60,16 +119,24 @@ def translate(chord: str) -> str | None:
             out.append(tok)
         else:
             return None  # KP_*, CLICK, consumer keys: not a plain chord
-    mods = [t for t in out if t in ("Ctrl", "Shift", "Alt", "Win")]
-    keys_ = [t for t in out if t not in ("Ctrl", "Shift", "Alt", "Win")]
+    mod_names = ("Ctrl", "Shift", "Alt", "Win", "Cmd")
+    mods = [t for t in out if t in mod_names]
+    keys_ = [t for t in out if t not in mod_names]
     if len(keys_) != 1:
         return None
-    order = {"Ctrl": 0, "Shift": 1, "Alt": 2, "Win": 3}
+    order = {"Ctrl": 0, "Shift": 1, "Alt": 2, "Win": 3, "Cmd": 3}
     return "+".join(sorted(set(mods), key=order.get) + keys_)
 
 
 def slug(s: str) -> str:
     return re.sub(r"[^a-z0-9]+", "_", s.lower()).strip("_")
+
+
+def context_rank(ctx: str) -> int:
+    c = ctx.lower()
+    if c in ("", "global context", "main ui", "houdini", "screen", "window", "global"):
+        return 0
+    return 1
 
 
 # ---- generic catalog --------------------------------------------------------
@@ -85,7 +152,7 @@ def build_catalog() -> list[dict]:
         win = translate(a["win"]["chord"])
         if not win:
             continue
-        mac = translate(a["mac"]["chord"]) if "mac" in a else None
+        mac = translate(a["mac"]["chord"], mac=True) if "mac" in a else None
         ident = f"{ctx.replace('-', '_')}.{a['action'].lower()}"
         if ident in seen:
             continue
@@ -118,301 +185,89 @@ def build_catalog() -> list[dict]:
 
 
 # ---- applications -----------------------------------------------------------
-# Hand-authored apps. Bindings: (event, name, action, accel).
 
-def keys(chord: str) -> dict:
-    return {"type": "keys", "chord": chord}
-
-
-def media(key: str) -> dict:
-    return {"type": "media", "key": key}
-
-
-def scroll(direction: str) -> dict:
-    return {"type": "scroll", "direction": direction, "lines": 1}
+def load_catalog_files() -> dict[str, dict]:
+    files: dict[str, dict] = {}
+    for f in sorted(CATALOG.glob("*.json")):
+        d = json.loads(f.read_text(encoding="utf-8"))
+        if d.get("id") != f.stem:
+            raise SystemExit(f"{f.name}: id {d.get('id')!r} does not match the file name")
+        files[f.stem] = d
+    return files
 
 
-DEFAULT_PROFILE = {
-    "name": "Default",
-    "bindings": [
-        ("TUNE_CW", "Volume up", media("volume_up"), "light"),
-        ("TUNE_CCW", "Volume down", media("volume_down"), "light"),
-        ("TUNE_TAP_1F", "Mute", media("mute"), None),
-        ("TUNE_SWIPE_LEFT", "Previous track", media("previous_track"), None),
-        ("TUNE_SWIPE_RIGHT", "Next track", media("next_track"), None),
-        ("TUNE_SWIPE_UP", "Play / pause", media("play_pause"), None),
-        ("TUNE_SWIPE_DOWN", "Task view", keys("Win+Tab"), None),
-    ],
-}
+class ActionSink:
+    """Collects an app's actions with stable, unique ids."""
 
-BROWSER_EXE = ["chrome.exe", "msedge.exe", "firefox.exe", "brave.exe", "vivaldi.exe"]
-BROWSER_BUNDLE = ["com.google.Chrome", "com.microsoft.edgemac", "org.mozilla.firefox",
-                  "com.brave.Browser", "com.apple.Safari"]
+    def __init__(self, app_id: str):
+        self.app_id = app_id
+        self.rows: list[dict] = []
+        self.ids: set[str] = set()
 
-# id, name, kind, match, bindings. Order = order in the default config.
-PROFILES = [
-    {
-        "id": "browser", "name": "Browser", "kind": "app",
-        "windows_exe": BROWSER_EXE, "macos_bundle": BROWSER_BUNDLE,
-        "bindings": [
-            ("TUNE_CW", "Next tab", keys("Ctrl+Tab"), None),
-            ("TUNE_CCW", "Previous tab", keys("Ctrl+Shift+Tab"), None),
-            ("TUNE_TAP_1F", "New tab", keys("Ctrl+T"), None),
-            ("TUNE_SWIPE_LEFT", "Back", keys("Alt+Left"), None),
-            ("TUNE_SWIPE_RIGHT", "Forward", keys("Alt+Right"), None),
-            ("TUNE_SWIPE_UP", "Zoom in", keys("Ctrl+="), None),
-            ("TUNE_SWIPE_DOWN", "Zoom out", keys("Ctrl+-"), None),
-        ],
-    },
-    {
-        "id": "youtube", "name": "YouTube", "kind": "site",
-        "windows_exe": BROWSER_EXE, "macos_bundle": BROWSER_BUNDLE, "window_title": ["YouTube"],
-        "bindings": [
-            ("TUNE_CW", "Seek forward 5 s", keys("Right"), "medium"),
-            ("TUNE_CCW", "Seek back 5 s", keys("Left"), "medium"),
-            ("TUNE_TAP_1F", "Play / pause", keys("K"), None),
-            ("TUNE_SWIPE_LEFT", "Previous video", keys("Shift+P"), None),
-            ("TUNE_SWIPE_RIGHT", "Next video", keys("Shift+N"), None),
-            ("TUNE_SWIPE_UP", "Playback speed up", keys("Shift+."), None),
-            ("TUNE_SWIPE_DOWN", "Playback speed down", keys("Shift+,"), None),
-        ],
-        "actions": [
-            ("Seek forward 10 s", keys("L")), ("Seek back 10 s", keys("J")),
-            ("Mute", keys("M")), ("Fullscreen", keys("F")), ("Captions", keys("C")),
-            ("Theater mode", keys("T")), ("Miniplayer", keys("I")),
-            ("Frame forward (paused)", keys(".")), ("Frame back (paused)", keys(",")),
-        ],
-    },
-    {
-        "id": "terminal", "name": "Terminal", "kind": "app",
-        "windows_exe": ["WindowsTerminal.exe", "powershell.exe", "pwsh.exe", "cmd.exe",
-                        "conhost.exe", "OpenConsole.exe"],
-        "macos_bundle": ["com.apple.Terminal", "com.googlecode.iterm2"],
-        "bindings": [
-            ("TUNE_CW", "Newer command (history)", keys("Down"), None),
-            ("TUNE_CCW", "Older command (history)", keys("Up"), None),
-            ("TUNE_TAP_1F", "Clear line", keys("Esc"), None),
-            ("TUNE_SWIPE_LEFT", "Previous tab", keys("Ctrl+Shift+Tab"), None),
-            ("TUNE_SWIPE_RIGHT", "Next tab", keys("Ctrl+Tab"), None),
-            ("TUNE_SWIPE_UP", "Font bigger", keys("Ctrl+="), None),
-            ("TUNE_SWIPE_DOWN", "Font smaller", keys("Ctrl+-"), None),
-        ],
-        "actions": [
-            ("New tab", keys("Ctrl+Shift+T")), ("Close tab", keys("Ctrl+Shift+W")),
-            ("Find", keys("Ctrl+Shift+F")), ("Command palette", keys("Ctrl+Shift+P")),
-            ("Split pane", keys("Alt+Shift+D")), ("Cancel command", keys("Ctrl+C")),
-        ],
-    },
-    {
-        "id": "photoshop", "name": "Adobe Photoshop", "kind": "app",
-        "windows_exe": ["Photoshop.exe"], "macos_bundle": ["com.adobe.Photoshop"],
-        "bindings": [
-            ("TUNE_CW", "Increase Brush Size", keys("]"), "medium"),
-            ("TUNE_CCW", "Decrease Brush Size", keys("["), "medium"),
-            ("TUNE_TAP_1F", "Brush Tool", keys("B"), None),
-            ("TUNE_SWIPE_LEFT", "Undo", keys("Ctrl+Z"), None),
-            ("TUNE_SWIPE_RIGHT", "Redo", keys("Ctrl+Shift+Z"), None),
-            ("TUNE_SWIPE_UP", "Increase Brush Hardness", keys("Shift+]"), None),
-            ("TUNE_SWIPE_DOWN", "Decrease Brush Hardness", keys("Shift+["), None),
-        ],
-    },
-    {
-        "id": "lightroom", "name": "Adobe Lightroom", "kind": "app",
-        "windows_exe": ["Lightroom.exe", "LightroomClassic.exe"],
-        "macos_bundle": ["com.adobe.LightroomClassicCC7", "com.adobe.lightroomCC"],
-        "bindings": [
-            ("TUNE_CW", "Next Photo in Filmstrip", keys("Right"), None),
-            ("TUNE_CCW", "Previous Photo in Filmstrip", keys("Left"), None),
-            ("TUNE_TAP_1F", "Toggle Zoom View", keys("Z"), None),
-            ("TUNE_SWIPE_LEFT", "Undo", keys("Ctrl+Z"), None),
-            ("TUNE_SWIPE_RIGHT", "Redo", keys("Ctrl+Y"), None),
-            ("TUNE_SWIPE_UP", "Flag as pick", keys("P"), None),
-            ("TUNE_SWIPE_DOWN", "Flag as reject", keys("X"), None),
-        ],
-    },
-    {
-        "id": "premiere", "name": "Adobe Premiere Pro", "kind": "app",
-        "windows_exe": ["Adobe Premiere Pro.exe"], "macos_bundle": ["com.adobe.PremierePro.CC"],
-        "bindings": [
-            ("TUNE_CW", "Step forward one frame", keys("Right"), "medium"),
-            ("TUNE_CCW", "Step back one frame", keys("Left"), "medium"),
-            ("TUNE_TAP_1F", "Play / stop", keys("Space"), None),
-            ("TUNE_SWIPE_LEFT", "Step back five frames", keys("Shift+Left"), None),
-            ("TUNE_SWIPE_RIGHT", "Step forward five frames", keys("Shift+Right"), None),
-            ("TUNE_SWIPE_UP", "Zoom in timeline", keys("="), None),
-            ("TUNE_SWIPE_DOWN", "Zoom out timeline", keys("-"), None),
-        ],
-        "actions": [
-            ("Add marker", keys("M")), ("Ripple delete", keys("Shift+Delete")),
-            ("Razor at playhead", keys("Ctrl+K")), ("Go to in point", keys("Shift+I")),
-            ("Go to out point", keys("Shift+O")), ("Undo", keys("Ctrl+Z")), ("Redo", keys("Ctrl+Shift+Z")),
-        ],
-    },
-    {
-        "id": "resolve", "name": "DaVinci Resolve", "kind": "app",
-        "windows_exe": ["Resolve.exe"], "macos_bundle": ["com.blackmagic-design.DaVinciResolve"],
-        "bindings": [
-            ("TUNE_CW", "Next frame", keys("Right"), "medium"),
-            ("TUNE_CCW", "Previous frame", keys("Left"), "medium"),
-            ("TUNE_TAP_1F", "Play / stop", keys("Space"), None),
-            ("TUNE_SWIPE_LEFT", "Back one second", keys("Shift+Left"), None),
-            ("TUNE_SWIPE_RIGHT", "Forward one second", keys("Shift+Right"), None),
-            ("TUNE_SWIPE_UP", "Zoom in timeline", keys("Ctrl+="), None),
-            ("TUNE_SWIPE_DOWN", "Zoom out timeline", keys("Ctrl+-"), None),
-        ],
-        "actions": [
-            ("Add marker", keys("M")), ("Split clip", keys("Ctrl+\\")), ("Mark in", keys("I")),
-            ("Mark out", keys("O")), ("Undo", keys("Ctrl+Z")), ("Redo", keys("Ctrl+Shift+Z")),
-            ("Next edit", keys("Down")), ("Previous edit", keys("Up")),
-        ],
-    },
-    {
-        "id": "fusion360", "name": "Autodesk Fusion 360", "kind": "app",
-        "windows_exe": ["Fusion360.exe"], "macos_bundle": ["com.autodesk.fusion360"],
-        "bindings": [
-            ("TUNE_CW", "Zoom in", scroll("up"), "light"),
-            ("TUNE_CCW", "Zoom out", scroll("down"), "light"),
-            ("TUNE_TAP_1F", "Fit view", keys("F6"), None),
-            ("TUNE_SWIPE_LEFT", "Undo", keys("Ctrl+Z"), None),
-            ("TUNE_SWIPE_RIGHT", "Redo", keys("Ctrl+Y"), None),
-        ],
-        "actions": [
-            ("Sketch", keys("S")), ("Extrude", keys("E")), ("Measure", keys("I")),
-            ("Hide / show", keys("V")), ("Display mode", keys("Ctrl+Alt+V")),
-        ],
-    },
-    {
-        "id": "blender", "name": "Blender", "kind": "app",
-        "windows_exe": ["blender.exe"], "macos_bundle": ["org.blenderfoundation.blender"],
-        "bindings": [
-            ("TUNE_CW", "Next frame", keys("Right"), "medium"),
-            ("TUNE_CCW", "Previous frame", keys("Left"), "medium"),
-            ("TUNE_TAP_1F", "Play animation", keys("Space"), None),
-            ("TUNE_SWIPE_LEFT", "Undo", keys("Ctrl+Z"), None),
-            ("TUNE_SWIPE_RIGHT", "Redo", keys("Ctrl+Shift+Z"), None),
-            ("TUNE_SWIPE_UP", "Jump to next keyframe", keys("Up"), None),
-            ("TUNE_SWIPE_DOWN", "Jump to previous keyframe", keys("Down"), None),
-        ],
-    },
-    {
-        "id": "vscode", "name": "VS Code", "kind": "app",
-        "windows_exe": ["Code.exe", "Code - Insiders.exe"], "macos_bundle": ["com.microsoft.VSCode"],
-        "bindings": [
-            ("TUNE_CW", "Next editor tab", keys("Ctrl+PageDown"), None),
-            ("TUNE_CCW", "Previous editor tab", keys("Ctrl+PageUp"), None),
-            ("TUNE_TAP_1F", "Command palette", keys("Ctrl+Shift+P"), None),
-            ("TUNE_SWIPE_LEFT", "Go back", keys("Alt+Left"), None),
-            ("TUNE_SWIPE_RIGHT", "Go forward", keys("Alt+Right"), None),
-            ("TUNE_SWIPE_UP", "Previous problem", keys("Shift+F8"), None),
-            ("TUNE_SWIPE_DOWN", "Next problem", keys("F8"), None),
-        ],
-        "actions_from_category": "VS Code",
-    },
-    {
-        "id": "discord", "name": "Discord", "kind": "app",
-        "windows_exe": ["Discord.exe"], "macos_bundle": ["com.hnc.Discord"],
-        "bindings": [
-            ("TUNE_CW", "Next channel", keys("Alt+Down"), None),
-            ("TUNE_CCW", "Previous channel", keys("Alt+Up"), None),
-            ("TUNE_TAP_1F", "Toggle mute", keys("Ctrl+Shift+M"), None),
-            ("TUNE_SWIPE_LEFT", "Previous server", keys("Ctrl+Alt+Up"), None),
-            ("TUNE_SWIPE_RIGHT", "Next server", keys("Ctrl+Alt+Down"), None),
-            ("TUNE_SWIPE_UP", "Toggle deafen", keys("Ctrl+Shift+D"), None),
-        ],
-        "actions": [
-            ("Mark server read", keys("Shift+Esc")), ("Unread channel", keys("Alt+Shift+Down")),
-            ("Search", keys("Ctrl+K")), ("Answer call", keys("Ctrl+Enter")),
-        ],
-    },
-    {
-        "id": "spotify", "name": "Spotify", "kind": "app",
-        "windows_exe": ["Spotify.exe"], "macos_bundle": ["com.spotify.client"],
-        "bindings": [
-            ("TUNE_CW", "Volume up (app)", keys("Ctrl+Up"), "light"),
-            ("TUNE_CCW", "Volume down (app)", keys("Ctrl+Down"), "light"),
-            ("TUNE_TAP_1F", "Play / pause", keys("Space"), None),
-            ("TUNE_SWIPE_LEFT", "Previous track", keys("Ctrl+Left"), None),
-            ("TUNE_SWIPE_RIGHT", "Next track", keys("Ctrl+Right"), None),
-            ("TUNE_SWIPE_UP", "Save to Liked Songs", keys("Alt+Shift+B"), None),
-        ],
-        "actions": [
-            ("Seek forward", keys("Shift+Right")), ("Seek back", keys("Shift+Left")),
-            ("Shuffle", keys("Ctrl+S")), ("Repeat", keys("Ctrl+R")), ("Search", keys("Ctrl+L")),
-        ],
-    },
-]
-
-# ShortcutMapper app name -> (id, display name, match rules). Ids that also
-# appear in PROFILES get the shortcuts attached to that profile's app entry.
-SHORTCUTMAPPER_APPS = {
-    "Adobe After Effects": ("after_effects", "Adobe After Effects", ["AfterFX.exe"], ["com.adobe.AfterEffects"]),
-    "Adobe Illustrator": ("illustrator", "Adobe Illustrator", ["Illustrator.exe"], ["com.adobe.illustrator"]),
-    "Adobe Lightroom": ("lightroom", None, None, None),
-    "Adobe Photoshop": ("photoshop", None, None, None),
-    "Autodesk 3dsMax": ("3dsmax", "Autodesk 3ds Max", ["3dsmax.exe"], []),
-    "Autodesk Maya": ("maya", "Autodesk Maya", ["maya.exe"], ["com.autodesk.maya"]),
-    "Blender": ("blender", None, None, None),
-    "Euro Truck Simulator 2": ("ets2", "Euro Truck Simulator 2", ["eurotrucks2.exe"], ["com.scssoft.eurotrucks2"]),
-    "JetBrains AppCode": ("appcode", "JetBrains AppCode", [], ["com.jetbrains.AppCode"]),
-    "JetBrains CLion": ("clion", "JetBrains CLion", ["clion64.exe"], ["com.jetbrains.CLion"]),
-    "JetBrains IntelliJ IDEA": ("intellij", "JetBrains IntelliJ IDEA", ["idea64.exe"], ["com.jetbrains.intellij"]),
-    "JetBrains PhpStorm": ("phpstorm", "JetBrains PhpStorm", ["phpstorm64.exe"], ["com.jetbrains.PhpStorm"]),
-    "JetBrains PyCharm": ("pycharm", "JetBrains PyCharm", ["pycharm64.exe"], ["com.jetbrains.pycharm"]),
-    "JetBrains RubyMine": ("rubymine", "JetBrains RubyMine", ["rubymine64.exe"], ["com.jetbrains.rubymine"]),
-    "JetBrains WebStorm": ("webstorm", "JetBrains WebStorm", ["webstorm64.exe"], ["com.jetbrains.WebStorm"]),
-    "SideFx Houdini": ("houdini", "SideFX Houdini", ["houdini.exe", "houdinifx.exe"], ["com.sidefx.houdini"]),
-    "SketchUp": ("sketchup", "SketchUp", ["SketchUp.exe"], ["com.sketchup.SketchUp.2024"]),
-    "Sublime Text": ("sublime", "Sublime Text", ["sublime_text.exe"], ["com.sublimetext.4"]),
-    "The Foundry Nuke": ("nuke", "The Foundry Nuke", [], ["com.thefoundry.Nuke"]),
-    "Unity 3D": ("unity", "Unity", ["Unity.exe"], ["com.unity3d.UnityEditor5.x"]),
-}
+    def add(self, name: str, context: str, windows=None, mac=None, linux=None) -> None:
+        base = f"{self.app_id}.{slug(name)}"
+        ident = base
+        if ident in self.ids and context:
+            ident = f"{base}_{slug(context)}"
+        n = 2
+        while ident in self.ids:
+            ident = f"{base}_{n}"
+            n += 1
+        self.ids.add(ident)
+        row = {"id": ident, "name": name, "context": context}
+        if windows is not None:
+            row["windows"] = windows
+        if mac is not None:
+            row["mac"] = mac
+        if linux is not None:
+            row["linux"] = linux
+        self.rows.append(row)
 
 
-def context_rank(ctx: str) -> int:
-    c = ctx.lower()
-    if c in ("global context", "main ui", "houdini", "screen", "window"):
-        return 0
-    return 1
-
-
-def build_apps(catalog: list[dict]) -> list[dict]:
+def build_apps(generic: list[dict], files: dict[str, dict]) -> list[dict]:
     apps: dict[str, dict] = {}
-    for p in PROFILES:
+
+    for aid, c in files.items():
+        sink = ActionSink(aid)
         entry = {
-            "id": p["id"],
-            "name": p["name"],
-            "kind": p["kind"],
+            "id": aid,
+            "name": c["name"],
+            "kind": c.get("kind", "app"),
+            "category": c.get("category", ""),
             "match": {
-                "windows_exe": p.get("windows_exe", []),
-                "macos_bundle": p.get("macos_bundle", []),
-                "window_title": p.get("window_title", []),
+                "windows_exe": c.get("match", {}).get("windows_exe", []),
+                "macos_bundle": c.get("match", {}).get("macos_bundle", []),
+                "window_title": c.get("match", {}).get("window_title", []),
             },
-            "defaults": {
-                ev: {"name": name, "action": action, **({"accel": accel} if accel else {})}
-                for ev, name, action, accel in p["bindings"]
-            },
+            "sources": c.get("sources", []),
+            "defaults": c.get("defaults", {}),
             "actions": [],
         }
-        seen: set[str] = set()
-        # The default bindings are actions too, so the picker's app tab shows them.
-        for _ev, name, action, _accel in p["bindings"]:
-            aid = f"{p['id']}.{slug(name)}"
-            if aid not in seen:
-                seen.add(aid)
-                entry["actions"].append({"id": aid, "name": name, "context": "", "windows": action, "mac": action})
-        for name, action in p.get("actions", []):
-            aid = f"{p['id']}.{slug(name)}"
-            if aid not in seen:
-                seen.add(aid)
-                entry["actions"].append({"id": aid, "name": name, "context": "", "windows": action, "mac": action})
-        if cat := p.get("actions_from_category"):
-            for c in catalog:
-                if c["category"] == cat:
-                    aid = f"{p['id']}.{slug(c['name'])}"
-                    if aid not in seen:
-                        seen.add(aid)
-                        entry["actions"].append({"id": aid, "name": c["name"], "context": "", "windows": c["windows"], "mac": c.get("mac")})
-        apps[p["id"]] = entry
+        if c.get("os"):
+            entry["os"] = c["os"]
+        if c.get("title_required"):
+            entry["title_required"] = True
+        # Documented actions first (they carry the correct per-platform chords);
+        # then any default binding whose name has no action yet, on the
+        # platforms the app matches on (a Mac-only app has no Windows column).
+        for a in c.get("actions", []):
+            if any(r["name"].lower() == a["name"].lower() and r["context"].lower() == a.get("context", "").lower() for r in sink.rows):
+                continue
+            sink.add(a["name"], a.get("context", ""), windows=a.get("windows"), mac=a.get("mac"), linux=a.get("linux"))
+        on_windows = bool(entry["match"]["windows_exe"]) or entry["kind"] == "site" or "windows" in (c.get("os") or [])
+        on_mac = bool(entry["match"]["macos_bundle"]) or entry["kind"] == "site" or "macos" in (c.get("os") or [])
+        if not on_windows and not on_mac:
+            on_windows = on_mac = True
+        for _ev, b in entry["defaults"].items():
+            if b.get("name") and not any(r["name"].lower() == b["name"].lower() for r in sink.rows):
+                sink.add(b["name"], "", windows=b["action"] if on_windows else None, mac=b["action"] if on_mac else None)
+        if cat := c.get("actions_from_category"):
+            for g in generic:
+                if g["category"] == cat and not any(r["name"].lower() == g["name"].lower() for r in sink.rows):
+                    sink.add(g["name"], "", windows=g["windows"], mac=g.get("mac"))
+        entry["actions"] = sink.rows
+        entry["_sink"] = sink
+        apps[aid] = entry
 
     sm = json.loads((REF / "app-shortcuts.json").read_text(encoding="utf-8"))["apps"]
     imported = 0
@@ -422,45 +277,66 @@ def build_apps(catalog: list[dict]) -> list[dict]:
             continue
         if aid not in apps:
             apps[aid] = {
-                "id": aid, "name": display, "kind": "app",
+                "id": aid, "name": display, "kind": "app", "category": SM_CATEGORY.get(aid, ""),
                 "match": {"windows_exe": exes, "macos_bundle": bundles, "window_title": []},
+                "sources": ["https://github.com/waldobronchart/ShortcutMapper"],
                 "defaults": {},
                 "actions": [],
+                "_sink": ActionSink(aid),
             }
         entry = apps[aid]
-        seen = {a["id"] for a in entry["actions"]}
+        sink: ActionSink = entry["_sink"]
+        existing = {(r["name"].lower(), r["context"].lower()) for r in sink.rows}
         rows = []
         for action_name, a in src["actions"].items():
             win = translate(a["windows"]["chord"]) if "windows" in a else None
-            mac = translate(a["mac"]["chord"]) if "mac" in a else None
+            mac = translate(a["mac"]["chord"], mac=True) if "mac" in a else None
             if not win and not mac:
                 continue
             ctx = a.get("context", "")
-            base = f"{aid}.{slug(action_name)}"
-            ident = base
-            n = 2
-            while ident in seen:
-                ident = f"{base}_{slug(ctx) or n}"
-                if ident in seen:
-                    ident = f"{base}_{n}"
-                    n += 1
-            seen.add(ident)
-            row = {"id": ident, "name": action_name, "context": ctx}
-            if win:
-                row["windows"] = {"type": "keys", "chord": win}
-            if mac:
-                row["mac"] = {"type": "keys", "chord": mac}
-            rows.append(row)
+            if (action_name.lower(), ctx.lower()) in existing:
+                continue
+            rows.append((action_name, ctx, win, mac))
             imported += 1
-        rows.sort(key=lambda r: (context_rank(r["context"]), r["context"], r["name"]))
-        entry["actions"].extend(rows)
+        rows.sort(key=lambda r: (context_rank(r[1]), r[1], r[0]))
+        for action_name, ctx, win, mac in rows:
+            sink.add(action_name, ctx,
+                     windows={"type": "keys", "chord": win} if win else None,
+                     mac={"type": "keys", "chord": mac} if mac else None)
+        entry["actions"] = sink.rows
+        if "https://github.com/waldobronchart/ShortcutMapper" not in entry["sources"]:
+            entry["sources"].append("https://github.com/waldobronchart/ShortcutMapper")
         entry["source"] = "ShortcutMapper"
 
-    ordered = [apps[p["id"]] for p in PROFILES] + sorted(
-        (a for k, a in apps.items() if k not in {p["id"] for p in PROFILES}), key=lambda a: a["name"].lower()
-    )
-    print(f"apps.json: {len(ordered)} apps, {imported} ShortcutMapper shortcuts imported")
-    return ordered
+    for e in apps.values():
+        e.pop("_sink", None)
+
+    # An app that also runs in a browser: split into the desktop entry (matched
+    # on exe / bundle) and a site twin (matched on window title inside a browser)
+    # sharing the same actions and defaults. A desktop-exe rule combined with a
+    # title rule would otherwise never match inside Chrome.
+    twins = {}
+    for aid, e in list(apps.items()):
+        if e.get("title_required"):
+            continue  # the title narrows the desktop match (tmux inside a terminal); no twin
+        if e["kind"] == "app" and e["match"]["window_title"] and (e["match"]["windows_exe"] or e["match"]["macos_bundle"]):
+            twin = json.loads(json.dumps(e))
+            twin["id"] = f"{aid}_web"
+            twin["name"] = f"{e['name']} (web)"
+            twin["kind"] = "site"
+            twin["match"] = {"windows_exe": list(BROWSER_EXE), "macos_bundle": list(BROWSER_BUNDLE), "window_title": e["match"]["window_title"]}
+            for r in twin["actions"]:
+                r["id"] = r["id"].replace(f"{aid}.", f"{aid}_web.", 1)
+            twin["twin_of"] = aid
+            twins[twin["id"]] = twin
+            e["match"]["window_title"] = []
+    apps.update(twins)
+
+    first = [apps[i] for i in DEFAULT_CONFIG_PROFILES if i in apps]
+    rest = sorted((a for k, a in apps.items() if k not in DEFAULT_CONFIG_PROFILES), key=lambda a: a["name"].lower())
+    total = sum(len(a["actions"]) for a in apps.values())
+    print(f"apps.json: {len(apps)} apps, {total} actions ({imported} from ShortcutMapper)")
+    return first + rest
 
 
 # ---- default config ---------------------------------------------------------
@@ -469,30 +345,29 @@ def toml_str(s: str) -> str:
     return json.dumps(s)  # JSON string escaping is valid TOML basic-string escaping
 
 
-def toml_inline(d: dict) -> str:
-    parts = []
-    for k, v in d.items():
-        if isinstance(v, str):
-            parts.append(f"{k} = {toml_str(v)}")
-        elif isinstance(v, bool):
-            parts.append(f"{k} = {'true' if v else 'false'}")
-        elif isinstance(v, int):
-            parts.append(f"{k} = {v}")
-        elif isinstance(v, list):
-            parts.append(f"{k} = [" + ", ".join(toml_str(x) for x in v) + "]")
-        else:
-            raise TypeError(k)
-    return "{ " + ", ".join(parts) + " }"
+def toml_value(v) -> str:
+    if isinstance(v, str):
+        return toml_str(v)
+    if isinstance(v, bool):
+        return "true" if v else "false"
+    if isinstance(v, int):
+        return str(v)
+    if isinstance(v, list):
+        return "[" + ", ".join(toml_value(x) for x in v) + "]"
+    if isinstance(v, dict):
+        return "{ " + ", ".join(f"{k} = {toml_value(x)}" for k, x in v.items()) + " }"
+    raise TypeError(type(v))
 
 
-def emit_bindings(prefix: str, bindings) -> list[str]:
+def emit_bindings(prefix: str, bindings: dict) -> list[str]:
     lines = []
-    for event, name, action, accel in bindings:
+    for event, b in bindings.items():
         lines.append(f"[{prefix}.bindings.{event}]")
-        lines.append(f"name = {toml_str(name)}")
-        lines.append(f"action = {toml_inline(action)}")
-        if accel:
-            lines.append(f"accel = {toml_str(accel)}")
+        if b.get("name"):
+            lines.append(f"name = {toml_str(b['name'])}")
+        lines.append(f"action = {toml_value(b['action'])}")
+        if b.get("accel"):
+            lines.append(f"accel = {toml_str(b['accel'])}")
         lines.append("")
     return lines
 
@@ -527,7 +402,7 @@ TUNE_SWIPE_DOWN = { key = "F17" }
 """
 
 
-def build_default_config() -> str:
+def build_default_config(files: dict[str, dict]) -> str:
     L = HEADER.splitlines() + [
         "",
         "[default_profile]",
@@ -535,35 +410,40 @@ def build_default_config() -> str:
         "",
     ]
     L += emit_bindings("default_profile", DEFAULT_PROFILE["bindings"])
-    for p in PROFILES:
+    for aid in DEFAULT_CONFIG_PROFILES:
+        c = files[aid]
         L.append("[[profiles]]")
-        L.append(f"name = {toml_str(p['name'])}")
+        L.append(f"name = {toml_str(c['name'])}")
         L.append("enabled = true")
-        m = {"windows_exe": p.get("windows_exe", []), "macos_bundle": p.get("macos_bundle", [])}
-        if p.get("window_title"):
-            m["window_title"] = p["window_title"]
-        L.append("match = " + toml_inline(m))
+        m = {"windows_exe": c["match"].get("windows_exe", []), "macos_bundle": c["match"].get("macos_bundle", [])}
+        if c["match"].get("window_title"):
+            m["window_title"] = c["match"]["window_title"]
+        L.append("match = " + toml_value(m))
         L.append("")
-        L += emit_bindings("profiles", p["bindings"])
+        L += emit_bindings("profiles", c.get("defaults", {}))
     return "\n".join(L).rstrip() + "\n"
 
 
 def main() -> int:
     OUT.mkdir(exist_ok=True)
-    catalog = build_catalog()
+    generic = build_catalog()
     (OUT / "actions.json").write_text(
         json.dumps({"_meta": {"source": "tools/gen_presets.py from reference/action-chords.json",
-                              "count": len(catalog)},
-                    "actions": catalog}, indent=1) + "\n", encoding="utf-8")
-    apps = build_apps(catalog)
+                              "count": len(generic)},
+                    "actions": generic}, indent=1) + "\n", encoding="utf-8")
+    files = load_catalog_files()
+    missing = [i for i in DEFAULT_CONFIG_PROFILES if i not in files]
+    if missing:
+        raise SystemExit(f"catalog files missing for default-config profiles: {missing}")
+    apps = build_apps(generic, files)
     (OUT / "apps.json").write_text(
-        json.dumps({"_meta": {"source": "tools/gen_presets.py: hand-authored profiles + reference/app-shortcuts.json (ShortcutMapper, MIT)",
+        json.dumps({"_meta": {"source": "tools/gen_presets.py: catalog/*.json + reference/app-shortcuts.json (ShortcutMapper, MIT)",
                               "count": len(apps)},
-                    "apps": apps}, separators=(",", ":")) + "\n", encoding="utf-8")
-    cfg = build_default_config()
+                    "apps": apps}, separators=(",", ":"), ensure_ascii=False) + "\n", encoding="utf-8")
+    cfg = build_default_config(files)
     tomllib.loads(cfg)  # syntax check
     (OUT / "default-config.toml").write_text(cfg, encoding="utf-8", newline="\n")
-    print(f"actions.json: {len(catalog)} actions; default-config.toml: {len(PROFILES)} app profiles")
+    print(f"actions.json: {len(generic)} actions; default-config.toml: {len(DEFAULT_CONFIG_PROFILES)} app profiles")
     return 0
 
 

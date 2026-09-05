@@ -1,0 +1,99 @@
+{
+  "id": "postman",
+  "name": "Postman",
+  "kind": "app",
+  "category": "Development",
+  "match": {
+    "windows_exe": [
+      "Postman.exe"
+    ],
+    "macos_bundle": [
+      "com.postmanlabs.mac"
+    ],
+    "window_title": []
+  },
+  "sources": [
+    "https://web.archive.org/web/20190824112746/https://learning.getpostman.com/docs/postman/launching_postman/keyboard_shortcuts/",
+    "https://learning.postman.com/docs/getting-started/basics/navigating-postman/"
+  ],
+  "note": "Postman's Learning Center retired its dedicated 'Keyboard Shortcuts' reference page (learning.getpostman.com/docs/postman/launching_postman/keyboard_shortcuts) and folded a handful of shortcut mentions into the prose 'Navigating Postman' page; the full Windows/Linux-vs-macOS shortcut table used here is taken from the Internet Archive's snapshot of that retired page (2019-08-24), cross-checked against the current app's Settings > Shortcuts tab behavior, plus newer shortcuts (Search Postman, Command Palette, Tab search, Find and replace) documented on the current 'Navigating Postman' page. 'Switch To Tab at Position' (Cmd/Ctrl+1 through 8) is expanded into 8 explicit actions. The data editor's two same-named 'Select current row' rows (Shift+Right / Shift+Left) are disambiguated with a direction suffix. Skipped as not expressible: mouse/click-modifier combos (Open request from sidebar in new tab: Alt+Cmd+click / Ctrl+Shift+click; multi-select click: Cmd/Ctrl+click; open element/link in new browser tab: Cmd+Shift+click / Ctrl+Shift+click and Cmd+click / Ctrl+click; data editor 'Select specific rows': Cmd/Ctrl+click) and the data editor's generic 'Navigation' row (arrow keys + Tab, not a single chord).",
+  "actions": [
+    { "name": "Open new tab", "context": "Tabs", "windows": { "type": "keys", "chord": "Ctrl+T" }, "mac": { "type": "keys", "chord": "Cmd+T" } },
+    { "name": "Close tab", "context": "Tabs", "windows": { "type": "keys", "chord": "Ctrl+W" }, "mac": { "type": "keys", "chord": "Cmd+W" } },
+    { "name": "Force close tab", "context": "Tabs", "windows": { "type": "keys", "chord": "Ctrl+Alt+W" }, "mac": { "type": "keys", "chord": "Cmd+Alt+W" } },
+    { "name": "Switch to next tab", "context": "Tabs", "windows": { "type": "keys", "chord": "Ctrl+Shift+]" }, "mac": { "type": "keys", "chord": "Shift+Cmd+]" } },
+    { "name": "Switch to previous tab", "context": "Tabs", "windows": { "type": "keys", "chord": "Ctrl+Shift+[" }, "mac": { "type": "keys", "chord": "Shift+Cmd+[" } },
+    { "name": "Switch to tab 1", "context": "Tabs", "windows": { "type": "keys", "chord": "Ctrl+1" }, "mac": { "type": "keys", "chord": "Cmd+1" } },
+    { "name": "Switch to tab 2", "context": "Tabs", "windows": { "type": "keys", "chord": "Ctrl+2" }, "mac": { "type": "keys", "chord": "Cmd+2" } },
+    { "name": "Switch to tab 3", "context": "Tabs", "windows": { "type": "keys", "chord": "Ctrl+3" }, "mac": { "type": "keys", "chord": "Cmd+3" } },
+    { "name": "Switch to tab 4", "context": "Tabs", "windows": { "type": "keys", "chord": "Ctrl+4" }, "mac": { "type": "keys", "chord": "Cmd+4" } },
+    { "name": "Switch to tab 5", "context": "Tabs", "windows": { "type": "keys", "chord": "Ctrl+5" }, "mac": { "type": "keys", "chord": "Cmd+5" } },
+    { "name": "Switch to tab 6", "context": "Tabs", "windows": { "type": "keys", "chord": "Ctrl+6" }, "mac": { "type": "keys", "chord": "Cmd+6" } },
+    { "name": "Switch to tab 7", "context": "Tabs", "windows": { "type": "keys", "chord": "Ctrl+7" }, "mac": { "type": "keys", "chord": "Cmd+7" } },
+    { "name": "Switch to tab 8", "context": "Tabs", "windows": { "type": "keys", "chord": "Ctrl+8" }, "mac": { "type": "keys", "chord": "Cmd+8" } },
+    { "name": "Switch to last tab", "context": "Tabs", "windows": { "type": "keys", "chord": "Ctrl+9" }, "mac": { "type": "keys", "chord": "Cmd+9" } },
+    { "name": "Search tabs / recently closed tabs", "context": "Tabs", "windows": { "type": "keys", "chord": "Shift+Ctrl+A" }, "mac": { "type": "keys", "chord": "Shift+Cmd+A" } },
+
+    { "name": "Request URL", "context": "Request", "windows": { "type": "keys", "chord": "Ctrl+L" }, "mac": { "type": "keys", "chord": "Cmd+L" } },
+    { "name": "Save request", "context": "Request", "windows": { "type": "keys", "chord": "Ctrl+S" }, "mac": { "type": "keys", "chord": "Cmd+S" } },
+    { "name": "Save request as", "context": "Request", "windows": { "type": "keys", "chord": "Ctrl+Shift+S" }, "mac": { "type": "keys", "chord": "Shift+Cmd+S" } },
+    { "name": "Send request", "context": "Request", "windows": { "type": "keys", "chord": "Ctrl+Enter" }, "mac": { "type": "keys", "chord": "Cmd+Enter" } },
+    { "name": "Send and download request", "context": "Request", "windows": { "type": "keys", "chord": "Ctrl+Alt+Enter" }, "mac": { "type": "keys", "chord": "Alt+Cmd+Enter" } },
+    { "name": "Scroll to request", "context": "Request", "windows": { "type": "keys", "chord": "Ctrl+Alt+Up" }, "mac": { "type": "keys", "chord": "Alt+Cmd+Up" } },
+    { "name": "Scroll to response", "context": "Request", "windows": { "type": "keys", "chord": "Ctrl+Alt+Down" }, "mac": { "type": "keys", "chord": "Alt+Cmd+Down" } },
+    { "name": "Beautify raw request body", "context": "Request", "windows": { "type": "keys", "chord": "Ctrl+B" }, "mac": { "type": "keys", "chord": "Cmd+B" } },
+
+    { "name": "Search sidebar", "context": "Sidebar", "windows": { "type": "keys", "chord": "Ctrl+F" }, "mac": { "type": "keys", "chord": "Cmd+F" } },
+    { "name": "Toggle sidebar", "context": "Sidebar", "windows": { "type": "keys", "chord": "Ctrl+\\" }, "mac": { "type": "keys", "chord": "Cmd+\\" } },
+    { "name": "Next item", "context": "Sidebar", "windows": { "type": "keys", "chord": "Down" }, "mac": { "type": "keys", "chord": "Down" } },
+    { "name": "Previous item", "context": "Sidebar", "windows": { "type": "keys", "chord": "Up" }, "mac": { "type": "keys", "chord": "Up" } },
+    { "name": "Expand item", "context": "Sidebar", "windows": { "type": "keys", "chord": "Right" }, "mac": { "type": "keys", "chord": "Right" } },
+    { "name": "Collapse item", "context": "Sidebar", "windows": { "type": "keys", "chord": "Left" }, "mac": { "type": "keys", "chord": "Left" } },
+    { "name": "Select item", "context": "Sidebar", "windows": { "type": "keys", "chord": "Enter" }, "mac": { "type": "keys", "chord": "Enter" } },
+    { "name": "Rename item", "context": "Sidebar", "windows": { "type": "keys", "chord": "Ctrl+E" }, "mac": { "type": "keys", "chord": "Cmd+E" } },
+    { "name": "Group items", "context": "Sidebar", "windows": { "type": "keys", "chord": "Ctrl+G" }, "mac": { "type": "keys", "chord": "Cmd+G" } },
+    { "name": "Cut item", "context": "Sidebar", "windows": { "type": "keys", "chord": "Ctrl+X" }, "mac": { "type": "keys", "chord": "Cmd+X" } },
+    { "name": "Copy item", "context": "Sidebar", "windows": { "type": "keys", "chord": "Ctrl+C" }, "mac": { "type": "keys", "chord": "Cmd+C" } },
+    { "name": "Paste item", "context": "Sidebar", "windows": { "type": "keys", "chord": "Ctrl+V" }, "mac": { "type": "keys", "chord": "Cmd+V" } },
+    { "name": "Duplicate item", "context": "Sidebar", "windows": { "type": "keys", "chord": "Ctrl+D" }, "mac": { "type": "keys", "chord": "Cmd+D" } },
+    { "name": "Delete item", "context": "Sidebar", "windows": { "type": "keys", "chord": "Delete" }, "mac": { "type": "keys", "chord": "Backspace" } },
+
+    { "name": "Zoom in", "context": "Interface", "windows": { "type": "keys", "chord": "Ctrl+Plus" }, "mac": { "type": "keys", "chord": "Cmd+Plus" } },
+    { "name": "Zoom out", "context": "Interface", "windows": { "type": "keys", "chord": "Ctrl+-" }, "mac": { "type": "keys", "chord": "Cmd+-" } },
+    { "name": "Reset zoom", "context": "Interface", "windows": { "type": "keys", "chord": "Ctrl+0" }, "mac": { "type": "keys", "chord": "Cmd+0" } },
+    { "name": "Toggle two-pane view", "context": "Interface", "windows": { "type": "keys", "chord": "Ctrl+Alt+V" }, "mac": { "type": "keys", "chord": "Alt+Cmd+V" } },
+    { "name": "Switch to sidebar", "context": "Interface", "windows": { "type": "keys", "chord": "Ctrl+Alt+1" }, "mac": { "type": "keys", "chord": "Alt+Cmd+1" } },
+    { "name": "Switch to builder", "context": "Interface", "windows": { "type": "keys", "chord": "Ctrl+Alt+2" }, "mac": { "type": "keys", "chord": "Alt+Cmd+2" } },
+
+    { "name": "New requester window", "context": "Windows and Modals", "windows": { "type": "keys", "chord": "Ctrl+N" }, "mac": { "type": "keys", "chord": "Cmd+N" } },
+    { "name": "New runner window", "context": "Windows and Modals", "windows": { "type": "keys", "chord": "Ctrl+Shift+N" }, "mac": { "type": "keys", "chord": "Shift+Cmd+N" } },
+    { "name": "New console window", "context": "Windows and Modals", "windows": { "type": "keys", "chord": "Ctrl+Alt+C" }, "mac": { "type": "keys", "chord": "Alt+Cmd+C" } },
+    { "name": "Import", "context": "Windows and Modals", "windows": { "type": "keys", "chord": "Ctrl+O" }, "mac": { "type": "keys", "chord": "Cmd+O" } },
+    { "name": "Manage environments", "context": "Windows and Modals", "windows": { "type": "keys", "chord": "Ctrl+Alt+E" }, "mac": { "type": "keys", "chord": "Alt+Cmd+E" } },
+    { "name": "Settings", "context": "Windows and Modals", "windows": { "type": "keys", "chord": "Ctrl+," }, "mac": { "type": "keys", "chord": "Cmd+," } },
+    { "name": "Submit modal", "context": "Windows and Modals", "windows": { "type": "keys", "chord": "Ctrl+Enter" }, "mac": { "type": "keys", "chord": "Cmd+Enter" } },
+    { "name": "Open shortcut help", "context": "Windows and Modals", "windows": { "type": "keys", "chord": "Ctrl+/" }, "mac": { "type": "keys", "chord": "Cmd+/" } },
+
+    { "name": "Duplicate row", "context": "Data Editor", "windows": { "type": "keys", "chord": "Ctrl+D" }, "mac": { "type": "keys", "chord": "Cmd+D" } },
+    { "name": "Select previous rows", "context": "Data Editor", "windows": { "type": "keys", "chord": "Shift+Up" }, "mac": { "type": "keys", "chord": "Shift+Up" } },
+    { "name": "Select next rows", "context": "Data Editor", "windows": { "type": "keys", "chord": "Shift+Down" }, "mac": { "type": "keys", "chord": "Shift+Down" } },
+    { "name": "Select current row (right)", "context": "Data Editor", "windows": { "type": "keys", "chord": "Shift+Right" }, "mac": { "type": "keys", "chord": "Shift+Right" } },
+    { "name": "Select current row (left)", "context": "Data Editor", "windows": { "type": "keys", "chord": "Shift+Left" }, "mac": { "type": "keys", "chord": "Shift+Left" } },
+    { "name": "Move row(s) up", "context": "Data Editor", "windows": { "type": "keys", "chord": "Ctrl+Shift+Up" }, "mac": { "type": "keys", "chord": "Cmd+Shift+Up" } },
+    { "name": "Move row(s) down", "context": "Data Editor", "windows": { "type": "keys", "chord": "Ctrl+Shift+Down" }, "mac": { "type": "keys", "chord": "Cmd+Shift+Down" } },
+    { "name": "Copy row(s)", "context": "Data Editor", "windows": { "type": "keys", "chord": "Ctrl+C" }, "mac": { "type": "keys", "chord": "Cmd+C" } },
+    { "name": "Cut row(s)", "context": "Data Editor", "windows": { "type": "keys", "chord": "Ctrl+X" }, "mac": { "type": "keys", "chord": "Cmd+X" } },
+    { "name": "Paste row(s)", "context": "Data Editor", "windows": { "type": "keys", "chord": "Ctrl+V" }, "mac": { "type": "keys", "chord": "Cmd+V" } },
+    { "name": "Delete row(s)", "context": "Data Editor", "windows": { "type": "keys", "chord": "Delete" }, "mac": { "type": "keys", "chord": "Backspace" } },
+    { "name": "Deselect rows", "context": "Data Editor", "windows": { "type": "keys", "chord": "Esc" }, "mac": { "type": "keys", "chord": "Esc" } },
+
+    { "name": "Search Postman", "context": "", "windows": { "type": "keys", "chord": "Ctrl+K" }, "mac": { "type": "keys", "chord": "Cmd+K" } },
+    { "name": "Command palette", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Shift+P" }, "mac": { "type": "keys", "chord": "Cmd+Shift+P" } },
+    { "name": "Find and replace", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Shift+F" }, "mac": { "type": "keys", "chord": "Cmd+Shift+F" } }
+  ],
+  "defaults": {
+    "TUNE_CW": { "name": "Switch to next tab", "action": { "type": "keys", "chord": "Ctrl+Shift+]" } },
+    "TUNE_CCW": { "name": "Switch to previous tab", "action": { "type": "keys", "chord": "Ctrl+Shift+[" } },
+    "TUNE_TAP_1F": { "name": "Send request", "action": { "type": "keys", "chord": "Ctrl+Enter" } }
+  }
+}

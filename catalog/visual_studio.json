@@ -1,0 +1,6714 @@
+{
+  "id": "visual_studio",
+  "name": "Visual Studio",
+  "kind": "app",
+  "category": "Development",
+  "match": {
+    "windows_exe": [
+      "devenv.exe"
+    ],
+    "window_title": []
+  },
+  "sources": [
+    "https://learn.microsoft.com/en-us/visualstudio/ide/default-keyboard-shortcuts-in-visual-studio?view=vs-2022",
+    "https://raw.githubusercontent.com/MicrosoftDocs/visualstudio-docs/main/docs/ide/default-keyboard-shortcuts-in-visual-studio.md"
+  ],
+  "note": "Visual Studio 2022, General Development profile, from the Microsoft Learn \"Keyboard shortcuts in Visual Studio\" reference (Popular, Global and Context-specific tables). Menu groups in the Global tables are recorded with an empty context; Debug and the panel/context-menu tables keep their name as the context, as do all Context-specific tables. Where Microsoft lists several bindings for one command the first expressible one is kept. Omitted because the chord grammar cannot express them: everything using the Break key (Build.Cancel Ctrl+Break, Debug.BreakAll Ctrl+Alt+Break, F# Interactive Ctrl+Break, the four SSDT/Query \"stop\" commands Alt+Break) and everything using a numpad key (Azure Ctrl+Num *, Ctrl+R and Ctrl+Num *, Ctrl+D; Debug.ShowNextStatement Alt+Num *; Class diagram Collapse/Expand Num -/Num +; Workflow Designer Zoom in/out Ctrl+Num +/Ctrl+Num -). Graphics Diagnostics \"Capture frame\" and Text Editor \"Select current word\" are listed by Microsoft as \"None\". Commands documented only for Visual Studio 2019 or 2017 (Build selection, Function breakpoint, Surround with) are left out. Three labels name two different commands (\"Open file\", \"Navigate backward\", \"Navigate forward\", also \"Rename\"); the second one carries its menu name as context.",
+  "actions": [
+    {
+      "name": "Navigate backward",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+3"
+      }
+    },
+    {
+      "name": "Navigate forward",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+4"
+      }
+    },
+    {
+      "name": "New diagram",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+\\",
+          "Ctrl+N"
+        ]
+      }
+    },
+    {
+      "name": "Build solution",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+B"
+      }
+    },
+    {
+      "name": "Compile",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+F7"
+      }
+    },
+    {
+      "name": "Run code analysis on solution",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+F11"
+      }
+    },
+    {
+      "name": "Properties",
+      "context": "Class View context menus",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Enter"
+      }
+    },
+    {
+      "name": "Apply code changes",
+      "context": "Debug",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+F10"
+      }
+    },
+    {
+      "name": "Attach to process",
+      "context": "Debug",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+P"
+      }
+    },
+    {
+      "name": "Autos",
+      "context": "Debug",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+Alt+V",
+          "A"
+        ]
+      }
+    },
+    {
+      "name": "Breakpoints",
+      "context": "Debug",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+B"
+      }
+    },
+    {
+      "name": "Call stack",
+      "context": "Debug",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+C"
+      }
+    },
+    {
+      "name": "Delete all breakpoints",
+      "context": "Debug",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+F9"
+      }
+    },
+    {
+      "name": "Launch",
+      "context": "Debug",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+F2"
+      }
+    },
+    {
+      "name": "Disassembly",
+      "context": "Debug",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+D"
+      }
+    },
+    {
+      "name": "Dom explorer",
+      "context": "Debug",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+Alt+V",
+          "D"
+        ]
+      }
+    },
+    {
+      "name": "Enable breakpoint",
+      "context": "Debug",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+F9"
+      }
+    },
+    {
+      "name": "Exceptions",
+      "context": "Debug",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+E"
+      }
+    },
+    {
+      "name": "Go to previous call or IntelliTrace event",
+      "context": "Debug",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+F11"
+      }
+    },
+    {
+      "name": "Start diagnostics",
+      "context": "Debug",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+F5"
+      }
+    },
+    {
+      "name": "Immediate",
+      "context": "Debug",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+I"
+      }
+    },
+    {
+      "name": "IntelliTrace calls",
+      "context": "Debug",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+Alt+Y",
+          "T"
+        ]
+      }
+    },
+    {
+      "name": "IntelliTrace events",
+      "context": "Debug",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+Alt+Y",
+          "F"
+        ]
+      }
+    },
+    {
+      "name": "JavaScript console",
+      "context": "Debug",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+Alt+V",
+          "C"
+        ]
+      }
+    },
+    {
+      "name": "Locals",
+      "context": "Debug",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+Alt+V",
+          "L"
+        ]
+      }
+    },
+    {
+      "name": "Process combo",
+      "context": "Debug",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+5"
+      }
+    },
+    {
+      "name": "Stack frame combo",
+      "context": "Debug",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+7"
+      }
+    },
+    {
+      "name": "Thread combo",
+      "context": "Debug",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+6"
+      }
+    },
+    {
+      "name": "Toggle current thread flagged state",
+      "context": "Debug",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+8"
+      }
+    },
+    {
+      "name": "Toggle flagged threads",
+      "context": "Debug",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+9"
+      }
+    },
+    {
+      "name": "Memory 1",
+      "context": "Debug",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+Alt+M",
+          "1"
+        ]
+      }
+    },
+    {
+      "name": "Memory 2",
+      "context": "Debug",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+Alt+M",
+          "2"
+        ]
+      }
+    },
+    {
+      "name": "Memory 3",
+      "context": "Debug",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+Alt+M",
+          "3"
+        ]
+      }
+    },
+    {
+      "name": "Memory 4",
+      "context": "Debug",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+Alt+M",
+          "4"
+        ]
+      }
+    },
+    {
+      "name": "Modules",
+      "context": "Debug",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+U"
+      }
+    },
+    {
+      "name": "Parallel stacks",
+      "context": "Debug",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+Shift+D",
+          "S"
+        ]
+      }
+    },
+    {
+      "name": "Parallel watch 1",
+      "context": "Debug",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+Shift+D",
+          "1"
+        ]
+      }
+    },
+    {
+      "name": "Parallel watch 2",
+      "context": "Debug",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+Shift+D",
+          "2"
+        ]
+      }
+    },
+    {
+      "name": "Parallel watch 3",
+      "context": "Debug",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+Shift+D",
+          "3"
+        ]
+      }
+    },
+    {
+      "name": "Parallel watch 4",
+      "context": "Debug",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+Shift+D",
+          "4"
+        ]
+      }
+    },
+    {
+      "name": "Processes",
+      "context": "Debug",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Z"
+      }
+    },
+    {
+      "name": "Quick watch",
+      "context": "Debug",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+F9"
+      }
+    },
+    {
+      "name": "Re attach to process",
+      "context": "Debug",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+P"
+      }
+    },
+    {
+      "name": "Refresh windowsapp",
+      "context": "Debug",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+R"
+      }
+    },
+    {
+      "name": "Registers",
+      "context": "Debug",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+G"
+      }
+    },
+    {
+      "name": "Restart",
+      "context": "Debug",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+F5"
+      }
+    },
+    {
+      "name": "Run to cursor",
+      "context": "Debug",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+F10"
+      }
+    },
+    {
+      "name": "Set next statement",
+      "context": "Debug",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+F10"
+      }
+    },
+    {
+      "name": "Show call stack on code map",
+      "context": "Debug",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+`"
+      }
+    },
+    {
+      "name": "Start",
+      "context": "Debug",
+      "windows": {
+        "type": "keys",
+        "chord": "F5"
+      }
+    },
+    {
+      "name": "Start windows phone application analysis",
+      "context": "Debug",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+F1"
+      }
+    },
+    {
+      "name": "Start without debugging",
+      "context": "Debug",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+F5"
+      }
+    },
+    {
+      "name": "Step into",
+      "context": "Debug",
+      "windows": {
+        "type": "keys",
+        "chord": "F11"
+      }
+    },
+    {
+      "name": "Step into current process",
+      "context": "Debug",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+F11"
+      }
+    },
+    {
+      "name": "Step into specific",
+      "context": "Debug",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+F11"
+      }
+    },
+    {
+      "name": "Step out",
+      "context": "Debug",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+F11"
+      }
+    },
+    {
+      "name": "Step out current process",
+      "context": "Debug",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Alt+F11"
+      }
+    },
+    {
+      "name": "Step over",
+      "context": "Debug",
+      "windows": {
+        "type": "keys",
+        "chord": "F10"
+      }
+    },
+    {
+      "name": "Step over current process",
+      "context": "Debug",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+F10"
+      }
+    },
+    {
+      "name": "Stop debugging",
+      "context": "Debug",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+F5"
+      }
+    },
+    {
+      "name": "Stop performance analysis",
+      "context": "Debug",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+F2"
+      }
+    },
+    {
+      "name": "Tasks",
+      "context": "Debug",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+Shift+D",
+          "K"
+        ]
+      }
+    },
+    {
+      "name": "Threads",
+      "context": "Debug",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+H"
+      }
+    },
+    {
+      "name": "Toggle breakpoint",
+      "context": "Debug",
+      "windows": {
+        "type": "keys",
+        "chord": "F9"
+      }
+    },
+    {
+      "name": "Toggle disassembly",
+      "context": "Debug",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+F11"
+      }
+    },
+    {
+      "name": "Watch 1",
+      "context": "Debug",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+Alt+W",
+          "1"
+        ]
+      }
+    },
+    {
+      "name": "Watch 2",
+      "context": "Debug",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+Alt+W",
+          "2"
+        ]
+      }
+    },
+    {
+      "name": "Watch 3",
+      "context": "Debug",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+Alt+W",
+          "3"
+        ]
+      }
+    },
+    {
+      "name": "Watch 4",
+      "context": "Debug",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+Alt+W",
+          "4"
+        ]
+      }
+    },
+    {
+      "name": "Delete",
+      "context": "Debugger context menus",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+F9",
+          "D"
+        ]
+      }
+    },
+    {
+      "name": "Go to disassembly",
+      "context": "Debugger context menus",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+F9",
+          "A"
+        ]
+      }
+    },
+    {
+      "name": "Go to source code",
+      "context": "Debugger context menus",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+F9",
+          "S"
+        ]
+      }
+    },
+    {
+      "name": "Stop collection",
+      "context": "Diagnostics Hub",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+F2"
+      }
+    },
+    {
+      "name": "Copy",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+C"
+      }
+    },
+    {
+      "name": "Cut",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+X"
+      }
+    },
+    {
+      "name": "Cycle clipboard ring",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+V"
+      }
+    },
+    {
+      "name": "Delete",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Delete"
+      }
+    },
+    {
+      "name": "Duplicate",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+D"
+      }
+    },
+    {
+      "name": "Find",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+F"
+      }
+    },
+    {
+      "name": "Find all references",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+F12"
+      }
+    },
+    {
+      "name": "Find in files",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+F"
+      }
+    },
+    {
+      "name": "Find next",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F3"
+      }
+    },
+    {
+      "name": "Find next selected",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+F3"
+      }
+    },
+    {
+      "name": "Find previous",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+F3"
+      }
+    },
+    {
+      "name": "Find previous selected",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+F3"
+      }
+    },
+    {
+      "name": "Generate method",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+K",
+          "Ctrl+M"
+        ]
+      }
+    },
+    {
+      "name": "Go to",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+G"
+      }
+    },
+    {
+      "name": "Go to all",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+P"
+      }
+    },
+    {
+      "name": "Go to declaration",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+F12"
+      }
+    },
+    {
+      "name": "Go to definition",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F12"
+      }
+    },
+    {
+      "name": "Go to member",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+1",
+          "Ctrl+M"
+        ]
+      }
+    },
+    {
+      "name": "Go to next location",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F8"
+      }
+    },
+    {
+      "name": "Go to prev location",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+F8"
+      }
+    },
+    {
+      "name": "Insert snippet",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+K",
+          "Ctrl+X"
+        ]
+      }
+    },
+    {
+      "name": "Move control down",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Down"
+      }
+    },
+    {
+      "name": "Move control down grid",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Down"
+      }
+    },
+    {
+      "name": "Move control left",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Left"
+      }
+    },
+    {
+      "name": "Move control left grid",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Left"
+      }
+    },
+    {
+      "name": "Move control right",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Right"
+      }
+    },
+    {
+      "name": "Move control right grid",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Right"
+      }
+    },
+    {
+      "name": "Move control up",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Up"
+      }
+    },
+    {
+      "name": "Move control up grid",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Up"
+      }
+    },
+    {
+      "name": "Next bookmark",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+K",
+          "Ctrl+N"
+        ]
+      }
+    },
+    {
+      "name": "Next bookmark in folder",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+Shift+K",
+          "Ctrl+Shift+N"
+        ]
+      }
+    },
+    {
+      "name": "Open file",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+G"
+      }
+    },
+    {
+      "name": "Paste",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+V"
+      }
+    },
+    {
+      "name": "Previous bookmark",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+K",
+          "Ctrl+P"
+        ]
+      }
+    },
+    {
+      "name": "Previous bookmark in folder",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+Shift+K",
+          "Ctrl+Shift+P"
+        ]
+      }
+    },
+    {
+      "name": "Quick find symbol",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+F12"
+      }
+    },
+    {
+      "name": "Redo",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Y"
+      }
+    },
+    {
+      "name": "Refresh remote references",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+J"
+      }
+    },
+    {
+      "name": "Replace",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+H"
+      }
+    },
+    {
+      "name": "Replace in files",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+H"
+      }
+    },
+    {
+      "name": "Select all",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+A"
+      }
+    },
+    {
+      "name": "Select next control",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Tab"
+      }
+    },
+    {
+      "name": "Select previous control",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Tab"
+      }
+    },
+    {
+      "name": "Show tile grid",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Enter"
+      }
+    },
+    {
+      "name": "Size control down",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Down"
+      }
+    },
+    {
+      "name": "Size control down grid",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Down"
+      }
+    },
+    {
+      "name": "Size control left",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Left"
+      }
+    },
+    {
+      "name": "Size control left grid",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Left"
+      }
+    },
+    {
+      "name": "Size control right",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Right"
+      }
+    },
+    {
+      "name": "Size control right grid",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Right"
+      }
+    },
+    {
+      "name": "Size control up",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Up"
+      }
+    },
+    {
+      "name": "Size control up grid",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Up"
+      }
+    },
+    {
+      "name": "Stop search",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+F3",
+          "S"
+        ]
+      }
+    },
+    {
+      "name": "Undo",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Z"
+      }
+    },
+    {
+      "name": "Breakpoint conditions",
+      "context": "Editor context menus",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+F9",
+          "C"
+        ]
+      }
+    },
+    {
+      "name": "Breakpoint edit labels",
+      "context": "Editor context menus",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+F9",
+          "L"
+        ]
+      }
+    },
+    {
+      "name": "Insert temporary breakpoint",
+      "context": "Editor context menus",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Shift+Alt+F9",
+          "T"
+        ]
+      }
+    },
+    {
+      "name": "Show item",
+      "context": "Editor context menus",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+`"
+      }
+    },
+    {
+      "name": "Execute",
+      "context": "Editor context menus",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+F5"
+      }
+    },
+    {
+      "name": "Go to view",
+      "context": "Editor context menus",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+M",
+          "Ctrl+G"
+        ]
+      }
+    },
+    {
+      "name": "Toggle header code file",
+      "context": "Editor context menus",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+K",
+          "Ctrl+O"
+        ]
+      }
+    },
+    {
+      "name": "View call hierarchy",
+      "context": "Editor context menus",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+K",
+          "Ctrl+T"
+        ]
+      }
+    },
+    {
+      "name": "Exit",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+F4"
+      }
+    },
+    {
+      "name": "New file",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+N"
+      }
+    },
+    {
+      "name": "New project",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+N"
+      }
+    },
+    {
+      "name": "New web site",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+N"
+      }
+    },
+    {
+      "name": "Open file",
+      "context": "File",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+O"
+      }
+    },
+    {
+      "name": "Open project",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+O"
+      }
+    },
+    {
+      "name": "Open web site",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+O"
+      }
+    },
+    {
+      "name": "Print",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+P"
+      }
+    },
+    {
+      "name": "Save all",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+S"
+      }
+    },
+    {
+      "name": "Save selected items",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+S"
+      }
+    },
+    {
+      "name": "View in browser",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+W"
+      }
+    },
+    {
+      "name": "Add and remove help content",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+F1"
+      }
+    },
+    {
+      "name": "F1 help",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F1"
+      }
+    },
+    {
+      "name": "View help",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+F1"
+      }
+    },
+    {
+      "name": "Window help",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+F1"
+      }
+    },
+    {
+      "name": "Jump to counter pane",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+R",
+          "Q"
+        ]
+      }
+    },
+    {
+      "name": "Add new diagram",
+      "context": "Other context menus",
+      "windows": {
+        "type": "keys",
+        "chord": "Insert"
+      }
+    },
+    {
+      "name": "Add existing item",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+A"
+      }
+    },
+    {
+      "name": "Add new item",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+A"
+      }
+    },
+    {
+      "name": "Class wizard",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+X"
+      }
+    },
+    {
+      "name": "Override",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Insert"
+      }
+    },
+    {
+      "name": "Preview changes",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+;",
+          "Alt+C"
+        ]
+      }
+    },
+    {
+      "name": "Publish selected files",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+;",
+          "Alt+P"
+        ]
+      }
+    },
+    {
+      "name": "Replace selected files from server",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+;",
+          "Alt+R"
+        ]
+      }
+    },
+    {
+      "name": "Move down",
+      "context": "Project and Solution context menus",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Down"
+      }
+    },
+    {
+      "name": "Move up",
+      "context": "Project and Solution context menus",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Up"
+      }
+    },
+    {
+      "name": "Encapsulate field",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+R",
+          "Ctrl+E"
+        ]
+      }
+    },
+    {
+      "name": "Extract interface",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+R",
+          "Ctrl+I"
+        ]
+      }
+    },
+    {
+      "name": "Extract method",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+R",
+          "Ctrl+M"
+        ]
+      }
+    },
+    {
+      "name": "Remove parameters",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+R",
+          "Ctrl+V"
+        ]
+      }
+    },
+    {
+      "name": "Rename",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+R",
+          "Ctrl+R"
+        ]
+      }
+    },
+    {
+      "name": "Reorder parameters",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+R",
+          "Ctrl+O"
+        ]
+      }
+    },
+    {
+      "name": "Open files filter",
+      "context": "Solution Explorer",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+[",
+          "O"
+        ]
+      }
+    },
+    {
+      "name": "Pending changes filter",
+      "context": "Solution Explorer",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+[",
+          "P"
+        ]
+      }
+    },
+    {
+      "name": "Sync with active document",
+      "context": "Solution Explorer",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+[",
+          "S"
+        ]
+      }
+    },
+    {
+      "name": "Go to git branches",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+0",
+          "Ctrl+N"
+        ]
+      }
+    },
+    {
+      "name": "Go to git changes",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+0",
+          "Ctrl+G"
+        ]
+      }
+    },
+    {
+      "name": "Go to git commits",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+0",
+          "Ctrl+O"
+        ]
+      }
+    },
+    {
+      "name": "Team explorer search",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+'"
+      }
+    },
+    {
+      "name": "Go to builds",
+      "context": "Team Foundation context menus",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+0",
+          "Ctrl+B"
+        ]
+      }
+    },
+    {
+      "name": "Go to connect",
+      "context": "Team Foundation context menus",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+0",
+          "Ctrl+C"
+        ]
+      }
+    },
+    {
+      "name": "Go to documents",
+      "context": "Team Foundation context menus",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+0",
+          "Ctrl+D"
+        ]
+      }
+    },
+    {
+      "name": "Go to home",
+      "context": "Team Foundation context menus",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+0",
+          "Ctrl+H"
+        ]
+      }
+    },
+    {
+      "name": "Go to my work",
+      "context": "Team Foundation context menus",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+0",
+          "Ctrl+M"
+        ]
+      }
+    },
+    {
+      "name": "Go to pending changes",
+      "context": "Team Foundation context menus",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+0",
+          "Ctrl+P"
+        ]
+      }
+    },
+    {
+      "name": "Go to reports",
+      "context": "Team Foundation context menus",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+0",
+          "Ctrl+R"
+        ]
+      }
+    },
+    {
+      "name": "Go to settings",
+      "context": "Team Foundation context menus",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+0",
+          "Ctrl+S"
+        ]
+      }
+    },
+    {
+      "name": "Go to web access",
+      "context": "Team Foundation context menus",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+0",
+          "Ctrl+A"
+        ]
+      }
+    },
+    {
+      "name": "Go to work items",
+      "context": "Team Foundation context menus",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+0",
+          "Ctrl+W"
+        ]
+      }
+    },
+    {
+      "name": "Use coded ui test builder",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+\\",
+          "Ctrl+C"
+        ]
+      }
+    },
+    {
+      "name": "Use existing action recording",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+\\",
+          "Ctrl+A"
+        ]
+      }
+    },
+    {
+      "name": "Debug all tests",
+      "context": "Test Explorer",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+R",
+          "Ctrl+A"
+        ]
+      }
+    },
+    {
+      "name": "Debug all tests in context",
+      "context": "Test Explorer",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+R",
+          "Ctrl+T"
+        ]
+      }
+    },
+    {
+      "name": "Debug last run",
+      "context": "Test Explorer",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+R",
+          "D"
+        ]
+      }
+    },
+    {
+      "name": "Repeat last run",
+      "context": "Test Explorer",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+R",
+          "L"
+        ]
+      }
+    },
+    {
+      "name": "Run all tests",
+      "context": "Test Explorer",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+R",
+          "A"
+        ]
+      }
+    },
+    {
+      "name": "Run all tests in context",
+      "context": "Test Explorer",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+R",
+          "T"
+        ]
+      }
+    },
+    {
+      "name": "Show test explorer",
+      "context": "Test Explorer",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+E",
+          "T"
+        ]
+      }
+    },
+    {
+      "name": "Open tab",
+      "context": "Test Explorer",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+E",
+          "L"
+        ]
+      }
+    },
+    {
+      "name": "Code coverage results",
+      "context": "Test Explorer",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+E",
+          "C"
+        ]
+      }
+    },
+    {
+      "name": "Attach to process",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+P"
+      }
+    },
+    {
+      "name": "Code snippets manager",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+K",
+          "Ctrl+B"
+        ]
+      }
+    },
+    {
+      "name": "Force gc",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+Shift+Alt+F12",
+          "Ctrl+Shift+Alt+F12"
+        ]
+      }
+    },
+    {
+      "name": "All windows",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+M"
+      }
+    },
+    {
+      "name": "Architecture explorer",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+\\",
+          "Ctrl+R"
+        ]
+      }
+    },
+    {
+      "name": "Backward",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Left"
+      }
+    },
+    {
+      "name": "Bookmark window",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+K",
+          "Ctrl+W"
+        ]
+      }
+    },
+    {
+      "name": "Browse next",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+1"
+      }
+    },
+    {
+      "name": "Browse previous",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+2"
+      }
+    },
+    {
+      "name": "Call hierarchy",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+K"
+      }
+    },
+    {
+      "name": "Class view",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+C"
+      }
+    },
+    {
+      "name": "Class view go to search combo",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+K",
+          "Ctrl+V"
+        ]
+      }
+    },
+    {
+      "name": "Code definition window",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+\\",
+          "D"
+        ]
+      }
+    },
+    {
+      "name": "Command window",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+A"
+      }
+    },
+    {
+      "name": "Data sources",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+D"
+      }
+    },
+    {
+      "name": "Document outline",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+T"
+      }
+    },
+    {
+      "name": "Edit label",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F2"
+      }
+    },
+    {
+      "name": "Error list",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+\\",
+          "E"
+        ]
+      }
+    },
+    {
+      "name": "F# interactive",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+F"
+      }
+    },
+    {
+      "name": "Find symbol results",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+F12"
+      }
+    },
+    {
+      "name": "Forward",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Right"
+      }
+    },
+    {
+      "name": "Forward browse context",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+7"
+      }
+    },
+    {
+      "name": "Full screen",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+Enter"
+      }
+    },
+    {
+      "name": "Navigate backward",
+      "context": "View",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+-"
+      }
+    },
+    {
+      "name": "Navigate forward",
+      "context": "View",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+-"
+      }
+    },
+    {
+      "name": "Next error",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+F12"
+      }
+    },
+    {
+      "name": "Notifications",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+W",
+          "N"
+        ]
+      }
+    },
+    {
+      "name": "Object browser",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+J"
+      }
+    },
+    {
+      "name": "Object browser go to search combo",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+K",
+          "Ctrl+R"
+        ]
+      }
+    },
+    {
+      "name": "Output",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+O"
+      }
+    },
+    {
+      "name": "Pop browse context",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+8"
+      }
+    },
+    {
+      "name": "Properties window",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F4"
+      }
+    },
+    {
+      "name": "Property pages",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+F4"
+      }
+    },
+    {
+      "name": "Resource view",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+E"
+      }
+    },
+    {
+      "name": "Server explorer",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+S"
+      }
+    },
+    {
+      "name": "Show smart tag",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+F10"
+      }
+    },
+    {
+      "name": "Solution explorer",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+L"
+      }
+    },
+    {
+      "name": "SQL Server object explorer",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+\\",
+          "Ctrl+S"
+        ]
+      }
+    },
+    {
+      "name": "Task list",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+\\",
+          "T"
+        ]
+      }
+    },
+    {
+      "name": "TFS team explorer",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+\\",
+          "Ctrl+M"
+        ]
+      }
+    },
+    {
+      "name": "Toolbox",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+X"
+      }
+    },
+    {
+      "name": "UML model explorer",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+\\",
+          "Ctrl+U"
+        ]
+      }
+    },
+    {
+      "name": "View code",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F7"
+      }
+    },
+    {
+      "name": "View designer",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+F7"
+      }
+    },
+    {
+      "name": "Web browser",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+R"
+      }
+    },
+    {
+      "name": "Zoom in",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Plus"
+      }
+    },
+    {
+      "name": "Zoom out",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Plus"
+      }
+    },
+    {
+      "name": "Show Test Explorer",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+E",
+          "T"
+        ]
+      }
+    },
+    {
+      "name": "Activate document window",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Esc"
+      }
+    },
+    {
+      "name": "Add tab to selection",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Alt+Space"
+      }
+    },
+    {
+      "name": "Close document window",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+W"
+      }
+    },
+    {
+      "name": "Close tool window",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Esc"
+      }
+    },
+    {
+      "name": "Keep tab open",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Home"
+      }
+    },
+    {
+      "name": "Move to navigation bar",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+F2"
+      }
+    },
+    {
+      "name": "Next document window",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+F6"
+      }
+    },
+    {
+      "name": "Next document window nav",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Tab"
+      }
+    },
+    {
+      "name": "Next pane",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+F6"
+      }
+    },
+    {
+      "name": "Next split pane",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F6"
+      }
+    },
+    {
+      "name": "Next tab",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+PageDown"
+      }
+    },
+    {
+      "name": "Next tab and add to selection",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Alt+PageDown"
+      }
+    },
+    {
+      "name": "Next tool window nav",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+F7"
+      }
+    },
+    {
+      "name": "Previous document window",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+F6"
+      }
+    },
+    {
+      "name": "Previous document window nav",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Tab"
+      }
+    },
+    {
+      "name": "Previous pane",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+F6"
+      }
+    },
+    {
+      "name": "Previous split pane",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+F6"
+      }
+    },
+    {
+      "name": "Previous tab",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+PageUp"
+      }
+    },
+    {
+      "name": "Previous tab and add to selection",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Alt+PageUp"
+      }
+    },
+    {
+      "name": "Previous tool window nav",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+F7"
+      }
+    },
+    {
+      "name": "Quick launch",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Q"
+      }
+    },
+    {
+      "name": "Quick launch previous category",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Q"
+      }
+    },
+    {
+      "name": "Show dock menu",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+-"
+      }
+    },
+    {
+      "name": "Show Ex MDI file list",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Down"
+      }
+    },
+    {
+      "name": "Solution explorer search",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+;"
+      }
+    },
+    {
+      "name": "Window search",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+`"
+      }
+    },
+    {
+      "name": "Down",
+      "context": "ADO.NET Entity Data Model Designer",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Down"
+      }
+    },
+    {
+      "name": "Down 5",
+      "context": "ADO.NET Entity Data Model Designer",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+PageDown"
+      }
+    },
+    {
+      "name": "To bottom",
+      "context": "ADO.NET Entity Data Model Designer",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+End"
+      }
+    },
+    {
+      "name": "To top",
+      "context": "ADO.NET Entity Data Model Designer",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Home"
+      }
+    },
+    {
+      "name": "Up",
+      "context": "ADO.NET Entity Data Model Designer",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Up"
+      }
+    },
+    {
+      "name": "Up 5",
+      "context": "ADO.NET Entity Data Model Designer",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+PageUp"
+      }
+    },
+    {
+      "name": "Rename",
+      "context": "ADO.NET Entity Data Model Designer",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+R",
+          "R"
+        ]
+      }
+    },
+    {
+      "name": "Remove from diagram",
+      "context": "ADO.NET Entity Data Model Designer",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Delete"
+      }
+    },
+    {
+      "name": "Entity data model browser",
+      "context": "ADO.NET Entity Data Model Designer",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+1"
+      }
+    },
+    {
+      "name": "Entity data model mapping details",
+      "context": "ADO.NET Entity Data Model Designer",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+2"
+      }
+    },
+    {
+      "name": "Delete",
+      "context": "Class diagram",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Delete"
+      }
+    },
+    {
+      "name": "Expand collapse base type list",
+      "context": "Class diagram",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+B"
+      }
+    },
+    {
+      "name": "Navigate to lollipop",
+      "context": "Class diagram",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+L"
+      }
+    },
+    {
+      "name": "Remove from diagram",
+      "context": "Class diagram",
+      "windows": {
+        "type": "keys",
+        "chord": "Delete"
+      }
+    },
+    {
+      "name": "View code",
+      "context": "Class diagram",
+      "windows": {
+        "type": "keys",
+        "chord": "Enter"
+      }
+    },
+    {
+      "name": "Copy reference to clipboard",
+      "context": "Coded UI Test Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+C"
+      }
+    },
+    {
+      "name": "Insert delay before",
+      "context": "Coded UI Test Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+D"
+      }
+    },
+    {
+      "name": "Locate all",
+      "context": "Coded UI Test Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+L"
+      }
+    },
+    {
+      "name": "Locate the ui control",
+      "context": "Coded UI Test Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+L"
+      }
+    },
+    {
+      "name": "Move code",
+      "context": "Coded UI Test Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+C"
+      }
+    },
+    {
+      "name": "Split into a new method",
+      "context": "Coded UI Test Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+T"
+      }
+    },
+    {
+      "name": "Insert column",
+      "context": "DataSet Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Insert"
+      }
+    },
+    {
+      "name": "Column",
+      "context": "DataSet Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+L"
+      }
+    },
+    {
+      "name": "Ignore trim whitespace",
+      "context": "Difference Viewer",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+\\",
+          "Ctrl+Space"
+        ]
+      }
+    },
+    {
+      "name": "Inline view",
+      "context": "Difference Viewer",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+\\",
+          "Ctrl+1"
+        ]
+      }
+    },
+    {
+      "name": "Left only view",
+      "context": "Difference Viewer",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+\\",
+          "Ctrl+3"
+        ]
+      }
+    },
+    {
+      "name": "Next difference",
+      "context": "Difference Viewer",
+      "windows": {
+        "type": "keys",
+        "chord": "F8"
+      }
+    },
+    {
+      "name": "Previous difference",
+      "context": "Difference Viewer",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+F8"
+      }
+    },
+    {
+      "name": "Right only view",
+      "context": "Difference Viewer",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+\\",
+          "Ctrl+4"
+        ]
+      }
+    },
+    {
+      "name": "Side by side view",
+      "context": "Difference Viewer",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+\\",
+          "Ctrl+2"
+        ]
+      }
+    },
+    {
+      "name": "Switch between left and right",
+      "context": "Difference Viewer",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+\\",
+          "Ctrl+Tab"
+        ]
+      }
+    },
+    {
+      "name": "Synchronize view toggle",
+      "context": "Difference Viewer",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+\\",
+          "Ctrl+Down"
+        ]
+      }
+    },
+    {
+      "name": "Add comment",
+      "context": "Difference Viewer",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+K"
+      }
+    },
+    {
+      "name": "Edit local file",
+      "context": "Difference Viewer",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+P"
+      }
+    },
+    {
+      "name": "Refresh",
+      "context": "DOM Explorer",
+      "windows": {
+        "type": "keys",
+        "chord": "F5"
+      }
+    },
+    {
+      "name": "Select element",
+      "context": "DOM Explorer",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+B"
+      }
+    },
+    {
+      "name": "Show layout",
+      "context": "DOM Explorer",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+I"
+      }
+    },
+    {
+      "name": "Add node",
+      "context": "Graph Document Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Insert"
+      }
+    },
+    {
+      "name": "Both dependencies",
+      "context": "Graph Document Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "B"
+      }
+    },
+    {
+      "name": "Incoming dependencies",
+      "context": "Graph Document Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "I"
+      }
+    },
+    {
+      "name": "Outgoing dependencies",
+      "context": "Graph Document Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "O"
+      }
+    },
+    {
+      "name": "New comment",
+      "context": "Graph Document Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+K"
+      }
+    },
+    {
+      "name": "Remove",
+      "context": "Graph Document Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Delete"
+      }
+    },
+    {
+      "name": "Rename",
+      "context": "Graph Document Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "F2"
+      }
+    },
+    {
+      "name": "Move pixel selection down",
+      "context": "Graphics Diagnostics",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+Down"
+      }
+    },
+    {
+      "name": "Move pixel selection left",
+      "context": "Graphics Diagnostics",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+Left"
+      }
+    },
+    {
+      "name": "Move pixel selection right",
+      "context": "Graphics Diagnostics",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+Right"
+      }
+    },
+    {
+      "name": "Move pixel selection up",
+      "context": "Graphics Diagnostics",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+Up"
+      }
+    },
+    {
+      "name": "Zoom to actual size",
+      "context": "Graphics Diagnostics",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+0"
+      }
+    },
+    {
+      "name": "Zoom to fit in window",
+      "context": "Graphics Diagnostics",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+9"
+      }
+    },
+    {
+      "name": "Zoom in",
+      "context": "Graphics Diagnostics",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+="
+      }
+    },
+    {
+      "name": "Zoom out",
+      "context": "Graphics Diagnostics",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+-"
+      }
+    },
+    {
+      "name": "Go to controller",
+      "context": "HTML Editor",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+M",
+          "Ctrl+G"
+        ]
+      }
+    },
+    {
+      "name": "Move control down",
+      "context": "HTML Editor Design View",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Down"
+      }
+    },
+    {
+      "name": "Move control up",
+      "context": "HTML Editor Design View",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Up"
+      }
+    },
+    {
+      "name": "Bold",
+      "context": "HTML Editor Design View",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+B"
+      }
+    },
+    {
+      "name": "Convert to hyperlink",
+      "context": "HTML Editor Design View",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+L"
+      }
+    },
+    {
+      "name": "Insert bookmark",
+      "context": "HTML Editor Design View",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+L"
+      }
+    },
+    {
+      "name": "Italic",
+      "context": "HTML Editor Design View",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+I"
+      }
+    },
+    {
+      "name": "Underline",
+      "context": "HTML Editor Design View",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+U"
+      }
+    },
+    {
+      "name": "Add content page",
+      "context": "HTML Editor Design View",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+M",
+          "Ctrl+C"
+        ]
+      }
+    },
+    {
+      "name": "Column to the left",
+      "context": "HTML Editor Design View",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Left"
+      }
+    },
+    {
+      "name": "Column to the right",
+      "context": "HTML Editor Design View",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Right"
+      }
+    },
+    {
+      "name": "Row above",
+      "context": "HTML Editor Design View",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Up"
+      }
+    },
+    {
+      "name": "Row below",
+      "context": "HTML Editor Design View",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Down"
+      }
+    },
+    {
+      "name": "Net nonvisual controls",
+      "context": "HTML Editor Design View",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+N"
+      }
+    },
+    {
+      "name": "Edit master",
+      "context": "HTML Editor Design View",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+M",
+          "Ctrl+M"
+        ]
+      }
+    },
+    {
+      "name": "Next view",
+      "context": "HTML Editor Design View",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+PageDown"
+      }
+    },
+    {
+      "name": "Show smart tag",
+      "context": "HTML Editor Design View",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+F10"
+      }
+    },
+    {
+      "name": "View markup",
+      "context": "HTML Editor Design View",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+F7"
+      }
+    },
+    {
+      "name": "Previous tab",
+      "context": "HTML Editor Design View",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+PageUp"
+      }
+    },
+    {
+      "name": "Go to controller",
+      "context": "HTML Editor Source View",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+M",
+          "Ctrl+G"
+        ]
+      }
+    },
+    {
+      "name": "Next view",
+      "context": "HTML Editor Source View",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+PageDown"
+      }
+    },
+    {
+      "name": "Synchronize views",
+      "context": "HTML Editor Source View",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Y"
+      }
+    },
+    {
+      "name": "View designer",
+      "context": "HTML Editor Source View",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+F7"
+      }
+    },
+    {
+      "name": "Previous tab",
+      "context": "HTML Editor Source View",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+PageUp"
+      }
+    },
+    {
+      "name": "Delete",
+      "context": "Layer diagram",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Delete"
+      }
+    },
+    {
+      "name": "Edit cell",
+      "context": "Managed Resources Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "F2"
+      }
+    },
+    {
+      "name": "Remove",
+      "context": "Managed Resources Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Delete"
+      }
+    },
+    {
+      "name": "Remove row",
+      "context": "Managed Resources Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Delete"
+      }
+    },
+    {
+      "name": "Selection cancel",
+      "context": "Managed Resources Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Esc"
+      }
+    },
+    {
+      "name": "Audio",
+      "context": "Managed Resources Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+4"
+      }
+    },
+    {
+      "name": "Files",
+      "context": "Managed Resources Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+5"
+      }
+    },
+    {
+      "name": "Icons",
+      "context": "Managed Resources Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+3"
+      }
+    },
+    {
+      "name": "Images",
+      "context": "Managed Resources Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+2"
+      }
+    },
+    {
+      "name": "Other",
+      "context": "Managed Resources Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+6"
+      }
+    },
+    {
+      "name": "Strings",
+      "context": "Managed Resources Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+1"
+      }
+    },
+    {
+      "name": "Set focus on left window",
+      "context": "Merge Editor Window",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+1"
+      }
+    },
+    {
+      "name": "Set focus on result window",
+      "context": "Merge Editor Window",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+2"
+      }
+    },
+    {
+      "name": "Set focus on right window",
+      "context": "Merge Editor Window",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+3"
+      }
+    },
+    {
+      "name": "SSDT schema compare compare",
+      "context": "Microsoft SQL Server Data Tools, Schema Compare",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+C"
+      }
+    },
+    {
+      "name": "SSDT schema compare generate script",
+      "context": "Microsoft SQL Server Data Tools, Schema Compare",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+G"
+      }
+    },
+    {
+      "name": "SSDT schema compare next change",
+      "context": "Microsoft SQL Server Data Tools, Schema Compare",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+Plus"
+      }
+    },
+    {
+      "name": "SSDT schema compare previous change",
+      "context": "Microsoft SQL Server Data Tools, Schema Compare",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+Plus"
+      }
+    },
+    {
+      "name": "SSDT schema compare write updates",
+      "context": "Microsoft SQL Server Data Tools, Schema Compare",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+U"
+      }
+    },
+    {
+      "name": "Commit all edits",
+      "context": "Microsoft SQL Server Data Tools, Table Designer",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+U"
+      }
+    },
+    {
+      "name": "Expand wildcards",
+      "context": "Microsoft SQL Server Data Tools, Table Designer",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+R",
+          "E"
+        ]
+      }
+    },
+    {
+      "name": "Fully qualify names",
+      "context": "Microsoft SQL Server Data Tools, Table Designer",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+R",
+          "Q"
+        ]
+      }
+    },
+    {
+      "name": "Move to schema",
+      "context": "Microsoft SQL Server Data Tools, Table Designer",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+R",
+          "M"
+        ]
+      }
+    },
+    {
+      "name": "Rename",
+      "context": "Microsoft SQL Server Data Tools, Table Designer",
+      "windows": {
+        "type": "keys",
+        "chord": "F2"
+      }
+    },
+    {
+      "name": "View file in Script Panel",
+      "context": "Microsoft SQL Server Data Tools, Table Designer",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+PageDown"
+      }
+    },
+    {
+      "name": "Commit all edits",
+      "context": "Microsoft SQL Server Data Tools, T-SQL Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+U"
+      }
+    },
+    {
+      "name": "Execute with debugger",
+      "context": "Microsoft SQL Server Data Tools, T-SQL Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+F5"
+      }
+    },
+    {
+      "name": "Expand wildcards",
+      "context": "Microsoft SQL Server Data Tools, T-SQL Editor",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+R",
+          "E"
+        ]
+      }
+    },
+    {
+      "name": "Fully qualify names",
+      "context": "Microsoft SQL Server Data Tools, T-SQL Editor",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+R",
+          "Q"
+        ]
+      }
+    },
+    {
+      "name": "Move to schema",
+      "context": "Microsoft SQL Server Data Tools, T-SQL Editor",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+R",
+          "M"
+        ]
+      }
+    },
+    {
+      "name": "Rename",
+      "context": "Microsoft SQL Server Data Tools, T-SQL Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "F2"
+      }
+    },
+    {
+      "name": "T SQL editor execute query",
+      "context": "Microsoft SQL Server Data Tools, T-SQL Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+E"
+      }
+    },
+    {
+      "name": "T SQL editor results as file",
+      "context": "Microsoft SQL Server Data Tools, T-SQL Editor",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+D",
+          "F"
+        ]
+      }
+    },
+    {
+      "name": "T SQL editor results as grid",
+      "context": "Microsoft SQL Server Data Tools, T-SQL Editor",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+D",
+          "G"
+        ]
+      }
+    },
+    {
+      "name": "T SQL editor results as text",
+      "context": "Microsoft SQL Server Data Tools, T-SQL Editor",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+D",
+          "T"
+        ]
+      }
+    },
+    {
+      "name": "T SQL editor show estimated plan",
+      "context": "Microsoft SQL Server Data Tools, T-SQL Editor",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+D",
+          "E"
+        ]
+      }
+    },
+    {
+      "name": "T SQL editor toggle execution plan",
+      "context": "Microsoft SQL Server Data Tools, T-SQL Editor",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+D",
+          "A"
+        ]
+      }
+    },
+    {
+      "name": "T SQL editor toggle results pane",
+      "context": "Microsoft SQL Server Data Tools, T-SQL Editor",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+D",
+          "R"
+        ]
+      }
+    },
+    {
+      "name": "T SQL editor clone query",
+      "context": "Microsoft SQL Server Data Tools, T-SQL Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+N"
+      }
+    },
+    {
+      "name": "T SQL editor database combo",
+      "context": "Microsoft SQL Server Data Tools, T-SQL Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+PageDown"
+      }
+    },
+    {
+      "name": "T SQL editor execute query",
+      "context": "Microsoft SQL Server Data Tools, T-SQL PDW Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+E"
+      }
+    },
+    {
+      "name": "T SQL editor results as file",
+      "context": "Microsoft SQL Server Data Tools, T-SQL PDW Editor",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+D",
+          "F"
+        ]
+      }
+    },
+    {
+      "name": "T SQL editor results as grid",
+      "context": "Microsoft SQL Server Data Tools, T-SQL PDW Editor",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+D",
+          "G"
+        ]
+      }
+    },
+    {
+      "name": "T SQL editor results as text",
+      "context": "Microsoft SQL Server Data Tools, T-SQL PDW Editor",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+D",
+          "T"
+        ]
+      }
+    },
+    {
+      "name": "T SQL editor show estimated plan",
+      "context": "Microsoft SQL Server Data Tools, T-SQL PDW Editor",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+D",
+          "E"
+        ]
+      }
+    },
+    {
+      "name": "T SQL editor toggle execution plan",
+      "context": "Microsoft SQL Server Data Tools, T-SQL PDW Editor",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+D",
+          "A"
+        ]
+      }
+    },
+    {
+      "name": "T SQL editor toggle results pane",
+      "context": "Microsoft SQL Server Data Tools, T-SQL PDW Editor",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+D",
+          "R"
+        ]
+      }
+    },
+    {
+      "name": "T SQL editor clone query",
+      "context": "Microsoft SQL Server Data Tools, T-SQL PDW Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+N"
+      }
+    },
+    {
+      "name": "Minimize",
+      "context": "Page Inspector",
+      "windows": {
+        "type": "keys",
+        "chord": "F12"
+      }
+    },
+    {
+      "name": "Cancel retrieving data",
+      "context": "Query Designer",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+T"
+      }
+    },
+    {
+      "name": "Criteria",
+      "context": "Query Designer",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+2"
+      }
+    },
+    {
+      "name": "Diagram",
+      "context": "Query Designer",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+1"
+      }
+    },
+    {
+      "name": "Execute SQL",
+      "context": "Query Designer",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+R"
+      }
+    },
+    {
+      "name": "Goto row",
+      "context": "Query Designer",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+G"
+      }
+    },
+    {
+      "name": "Join mode",
+      "context": "Query Designer",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+J"
+      }
+    },
+    {
+      "name": "Results",
+      "context": "Query Designer",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+4"
+      }
+    },
+    {
+      "name": "Sql",
+      "context": "Query Designer",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+3"
+      }
+    },
+    {
+      "name": "Query results new row",
+      "context": "Query results",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+End"
+      }
+    },
+    {
+      "name": "Query results refresh",
+      "context": "Query results",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+R"
+      }
+    },
+    {
+      "name": "Break line",
+      "context": "Report Designer",
+      "windows": {
+        "type": "keys",
+        "chord": "Enter"
+      }
+    },
+    {
+      "name": "Char left",
+      "context": "Report Designer",
+      "windows": {
+        "type": "keys",
+        "chord": "Left"
+      }
+    },
+    {
+      "name": "Char left extend",
+      "context": "Report Designer",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Left"
+      }
+    },
+    {
+      "name": "Char right",
+      "context": "Report Designer",
+      "windows": {
+        "type": "keys",
+        "chord": "Right"
+      }
+    },
+    {
+      "name": "Char right extend",
+      "context": "Report Designer",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Right"
+      }
+    },
+    {
+      "name": "Insert tab",
+      "context": "Report Designer",
+      "windows": {
+        "type": "keys",
+        "chord": "Tab"
+      }
+    },
+    {
+      "name": "Line down",
+      "context": "Report Designer",
+      "windows": {
+        "type": "keys",
+        "chord": "Down"
+      }
+    },
+    {
+      "name": "Line down extend",
+      "context": "Report Designer",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Down"
+      }
+    },
+    {
+      "name": "Line up",
+      "context": "Report Designer",
+      "windows": {
+        "type": "keys",
+        "chord": "Up"
+      }
+    },
+    {
+      "name": "Line up extend",
+      "context": "Report Designer",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Up"
+      }
+    },
+    {
+      "name": "Move control down",
+      "context": "Report Designer",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Down"
+      }
+    },
+    {
+      "name": "Move control left",
+      "context": "Report Designer",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Left"
+      }
+    },
+    {
+      "name": "Move control right",
+      "context": "Report Designer",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Right"
+      }
+    },
+    {
+      "name": "Move control up",
+      "context": "Report Designer",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Up"
+      }
+    },
+    {
+      "name": "Selection cancel",
+      "context": "Report Designer",
+      "windows": {
+        "type": "keys",
+        "chord": "Esc"
+      }
+    },
+    {
+      "name": "Size control down",
+      "context": "Report Designer",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Down"
+      }
+    },
+    {
+      "name": "Size control left",
+      "context": "Report Designer",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Left"
+      }
+    },
+    {
+      "name": "Size control right",
+      "context": "Report Designer",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Right"
+      }
+    },
+    {
+      "name": "Size control up",
+      "context": "Report Designer",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Up"
+      }
+    },
+    {
+      "name": "Tab left",
+      "context": "Report Designer",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Tab"
+      }
+    },
+    {
+      "name": "Report data",
+      "context": "Report Designer",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+D"
+      }
+    },
+    {
+      "name": "Navigate to code",
+      "context": "Sequence diagram",
+      "windows": {
+        "type": "keys",
+        "chord": "F12"
+      }
+    },
+    {
+      "name": "Delete",
+      "context": "Sequence diagram",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Delete"
+      }
+    },
+    {
+      "name": "Edit cell",
+      "context": "Settings Designer",
+      "windows": {
+        "type": "keys",
+        "chord": "F2"
+      }
+    },
+    {
+      "name": "Remove row",
+      "context": "Settings Designer",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Delete"
+      }
+    },
+    {
+      "name": "Selection cancel",
+      "context": "Settings Designer",
+      "windows": {
+        "type": "keys",
+        "chord": "Esc"
+      }
+    },
+    {
+      "name": "View code",
+      "context": "Settings Designer",
+      "windows": {
+        "type": "keys",
+        "chord": "F7"
+      }
+    },
+    {
+      "name": "View in page inspector",
+      "context": "Solution Explorer",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+K",
+          "Ctrl+G"
+        ]
+      }
+    },
+    {
+      "name": "Quick add new item or class",
+      "context": "Solution Explorer",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+F2"
+      }
+    },
+    {
+      "name": "Delete",
+      "context": "Team Explorer",
+      "windows": {
+        "type": "keys",
+        "chord": "Delete"
+      }
+    },
+    {
+      "name": "Rename",
+      "context": "Team Explorer",
+      "windows": {
+        "type": "keys",
+        "chord": "F2"
+      }
+    },
+    {
+      "name": "Go to team explorer navigation",
+      "context": "Team Explorer",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Home"
+      }
+    },
+    {
+      "name": "Go to team explorer next section content",
+      "context": "Team Explorer",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Down"
+      }
+    },
+    {
+      "name": "Go to team explorer page content",
+      "context": "Team Explorer",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+0"
+      }
+    },
+    {
+      "name": "Go to team explorer previous section content",
+      "context": "Team Explorer",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Up"
+      }
+    },
+    {
+      "name": "Go to team explorer section 1 content",
+      "context": "Team Explorer",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+1"
+      }
+    },
+    {
+      "name": "Go to team explorer section 2 content",
+      "context": "Team Explorer",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+2"
+      }
+    },
+    {
+      "name": "Go to team explorer section 3 content",
+      "context": "Team Explorer",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+3"
+      }
+    },
+    {
+      "name": "Go to team explorer section 4 content",
+      "context": "Team Explorer",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+4"
+      }
+    },
+    {
+      "name": "Go to team explorer section 5 content",
+      "context": "Team Explorer",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+5"
+      }
+    },
+    {
+      "name": "Go to team explorer section 6 content",
+      "context": "Team Explorer",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+6"
+      }
+    },
+    {
+      "name": "Go to team explorer section 7 content",
+      "context": "Team Explorer",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+7"
+      }
+    },
+    {
+      "name": "Go to team explorer section 8 content",
+      "context": "Team Explorer",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+8"
+      }
+    },
+    {
+      "name": "Go to team explorer section 9 content",
+      "context": "Team Explorer",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+9"
+      }
+    },
+    {
+      "name": "Team explorer navigate backward",
+      "context": "Team Explorer",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Left"
+      }
+    },
+    {
+      "name": "Team explorer navigate forward",
+      "context": "Team Explorer",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Right"
+      }
+    },
+    {
+      "name": "TFS context my work page create copy wi",
+      "context": "Team Explorer",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+C"
+      }
+    },
+    {
+      "name": "TFS context my work page new linked wi",
+      "context": "Team Explorer",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+L"
+      }
+    },
+    {
+      "name": "Refresh",
+      "context": "Team Explorer",
+      "windows": {
+        "type": "keys",
+        "chord": "F5"
+      }
+    },
+    {
+      "name": "Open test",
+      "context": "Test Explorer",
+      "windows": {
+        "type": "keys",
+        "chord": "F12"
+      }
+    },
+    {
+      "name": "Break line",
+      "context": "Text Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Enter"
+      }
+    },
+    {
+      "name": "Char left",
+      "context": "Text Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Left"
+      }
+    },
+    {
+      "name": "Char left extend",
+      "context": "Text Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Left"
+      }
+    },
+    {
+      "name": "Char left extend column",
+      "context": "Text Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+Left"
+      }
+    },
+    {
+      "name": "Char right",
+      "context": "Text Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Right"
+      }
+    },
+    {
+      "name": "Char right extend",
+      "context": "Text Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Right"
+      }
+    },
+    {
+      "name": "Char right extend column",
+      "context": "Text Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+Right"
+      }
+    },
+    {
+      "name": "Clear bookmarks",
+      "context": "Text Editor",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+K",
+          "Ctrl+L"
+        ]
+      }
+    },
+    {
+      "name": "Collapse all outlining",
+      "context": "Text Editor",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+M",
+          "Ctrl+A"
+        ]
+      }
+    },
+    {
+      "name": "Collapse current region",
+      "context": "Text Editor",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+M",
+          "Ctrl+S"
+        ]
+      }
+    },
+    {
+      "name": "Collapse tag",
+      "context": "Text Editor",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+M",
+          "Ctrl+T"
+        ]
+      }
+    },
+    {
+      "name": "Collapse to definitions",
+      "context": "Text Editor",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+M",
+          "Ctrl+O"
+        ]
+      }
+    },
+    {
+      "name": "Contract selection",
+      "context": "Text Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+-"
+      }
+    },
+    {
+      "name": "Comment selection",
+      "context": "Text Editor",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+K",
+          "Ctrl+C"
+        ]
+      }
+    },
+    {
+      "name": "Complete word",
+      "context": "Text Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Space"
+      }
+    },
+    {
+      "name": "Copy parameter tip",
+      "context": "Text Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Alt+C"
+      }
+    },
+    {
+      "name": "Decrease filter level",
+      "context": "Text Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Plus"
+      }
+    },
+    {
+      "name": "Delete backwards",
+      "context": "Text Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Backspace"
+      }
+    },
+    {
+      "name": "Delete horizontal white space",
+      "context": "Text Editor",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+K",
+          "Ctrl+Plus"
+        ]
+      }
+    },
+    {
+      "name": "Document end",
+      "context": "Text Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+End"
+      }
+    },
+    {
+      "name": "Document end extend",
+      "context": "Text Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+End"
+      }
+    },
+    {
+      "name": "Document start",
+      "context": "Text Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Home"
+      }
+    },
+    {
+      "name": "Document start extend",
+      "context": "Text Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Home"
+      }
+    },
+    {
+      "name": "Expand all outlining",
+      "context": "Text Editor",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+M",
+          "Ctrl+X"
+        ]
+      }
+    },
+    {
+      "name": "Expand current region",
+      "context": "Text Editor",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+M",
+          "Ctrl+E"
+        ]
+      }
+    },
+    {
+      "name": "Expand selection",
+      "context": "Text Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+="
+      }
+    },
+    {
+      "name": "Expand selection to containing block",
+      "context": "Text Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+]"
+      }
+    },
+    {
+      "name": "Format document",
+      "context": "Text Editor",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+K",
+          "Ctrl+D"
+        ]
+      }
+    },
+    {
+      "name": "Format selection",
+      "context": "Text Editor",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+K",
+          "Ctrl+F"
+        ]
+      }
+    },
+    {
+      "name": "Goto all",
+      "context": "Text Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+T"
+      }
+    },
+    {
+      "name": "Goto brace",
+      "context": "Text Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+]"
+      }
+    },
+    {
+      "name": "Goto brace extend",
+      "context": "Text Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+]"
+      }
+    },
+    {
+      "name": "Goto recent",
+      "context": "Text Editor",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+T",
+          "R"
+        ]
+      }
+    },
+    {
+      "name": "Goto next issue in file",
+      "context": "Text Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+PageDown"
+      }
+    },
+    {
+      "name": "Goto previous issue in file",
+      "context": "Text Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+PageUp"
+      }
+    },
+    {
+      "name": "Hide selection",
+      "context": "Text Editor",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+M",
+          "Ctrl+H"
+        ]
+      }
+    },
+    {
+      "name": "Increase filter level",
+      "context": "Text Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Plus"
+      }
+    },
+    {
+      "name": "Incremental search",
+      "context": "Text Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+I"
+      }
+    },
+    {
+      "name": "Insert carets at all matching",
+      "context": "Text Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+;"
+      }
+    },
+    {
+      "name": "Insert next matching caret",
+      "context": "Text Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+Plus"
+      }
+    },
+    {
+      "name": "Insert tab",
+      "context": "Text Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Tab"
+      }
+    },
+    {
+      "name": "Line cut",
+      "context": "Text Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+L"
+      }
+    },
+    {
+      "name": "Line delete",
+      "context": "Text Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+L"
+      }
+    },
+    {
+      "name": "Line down",
+      "context": "Text Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Down"
+      }
+    },
+    {
+      "name": "Line down extend",
+      "context": "Text Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Down"
+      }
+    },
+    {
+      "name": "Line down extend column",
+      "context": "Text Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+Down"
+      }
+    },
+    {
+      "name": "Line end",
+      "context": "Text Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "End"
+      }
+    },
+    {
+      "name": "Line end extend",
+      "context": "Text Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+End"
+      }
+    },
+    {
+      "name": "Line end extend column",
+      "context": "Text Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+End"
+      }
+    },
+    {
+      "name": "Line open above",
+      "context": "Text Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Enter"
+      }
+    },
+    {
+      "name": "Line open below",
+      "context": "Text Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Enter"
+      }
+    },
+    {
+      "name": "Line start",
+      "context": "Text Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Home"
+      }
+    },
+    {
+      "name": "Line start extend",
+      "context": "Text Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Home"
+      }
+    },
+    {
+      "name": "Line start extend column",
+      "context": "Text Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+Home"
+      }
+    },
+    {
+      "name": "Line transpose",
+      "context": "Text Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+T"
+      }
+    },
+    {
+      "name": "Line up",
+      "context": "Text Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Up"
+      }
+    },
+    {
+      "name": "Line up extend",
+      "context": "Text Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Up"
+      }
+    },
+    {
+      "name": "Line up extend column",
+      "context": "Text Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+Up"
+      }
+    },
+    {
+      "name": "List members",
+      "context": "Text Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+J"
+      }
+    },
+    {
+      "name": "Make lowercase",
+      "context": "Text Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+U"
+      }
+    },
+    {
+      "name": "Make uppercase",
+      "context": "Text Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+U"
+      }
+    },
+    {
+      "name": "Move selected lines down",
+      "context": "Text Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Down"
+      }
+    },
+    {
+      "name": "Move selected lines up",
+      "context": "Text Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Up"
+      }
+    },
+    {
+      "name": "Next highlighted reference",
+      "context": "Text Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Down"
+      }
+    },
+    {
+      "name": "Overtype mode",
+      "context": "Text Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Insert"
+      }
+    },
+    {
+      "name": "Page down",
+      "context": "Text Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "PageDown"
+      }
+    },
+    {
+      "name": "Page down extend",
+      "context": "Text Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+PageDown"
+      }
+    },
+    {
+      "name": "Page up",
+      "context": "Text Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "PageUp"
+      }
+    },
+    {
+      "name": "Page up extend",
+      "context": "Text Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+PageUp"
+      }
+    },
+    {
+      "name": "Parameter info",
+      "context": "Text Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Space"
+      }
+    },
+    {
+      "name": "Paste parameter tip",
+      "context": "Text Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Alt+P"
+      }
+    },
+    {
+      "name": "Peek backward",
+      "context": "Text Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+-"
+      }
+    },
+    {
+      "name": "Peek definition",
+      "context": "Text Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+F12"
+      }
+    },
+    {
+      "name": "Peek forward",
+      "context": "Text Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+="
+      }
+    },
+    {
+      "name": "Previous highlighted reference",
+      "context": "Text Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Up"
+      }
+    },
+    {
+      "name": "Quick info",
+      "context": "Text Editor",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+K",
+          "Ctrl+I"
+        ]
+      }
+    },
+    {
+      "name": "Reverse incremental search",
+      "context": "Text Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+I"
+      }
+    },
+    {
+      "name": "Scroll line down",
+      "context": "Text Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Down"
+      }
+    },
+    {
+      "name": "Scroll line up",
+      "context": "Text Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Up"
+      }
+    },
+    {
+      "name": "Selection cancel",
+      "context": "Text Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Esc"
+      }
+    },
+    {
+      "name": "Select to last go back",
+      "context": "Text Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+="
+      }
+    },
+    {
+      "name": "Show code lens menu",
+      "context": "Text Editor",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+K",
+          "Ctrl+`"
+        ]
+      }
+    },
+    {
+      "name": "Show navigate menu",
+      "context": "Text Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+`"
+      }
+    },
+    {
+      "name": "Stop hiding current",
+      "context": "Text Editor",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+M",
+          "Ctrl+U"
+        ]
+      }
+    },
+    {
+      "name": "Stop outlining",
+      "context": "Text Editor",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+M",
+          "Ctrl+P"
+        ]
+      }
+    },
+    {
+      "name": "Swap anchor",
+      "context": "Text Editor",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+K",
+          "Ctrl+A"
+        ]
+      }
+    },
+    {
+      "name": "Tab left",
+      "context": "Text Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Tab"
+      }
+    },
+    {
+      "name": "Toggle all outlining",
+      "context": "Text Editor",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+M",
+          "Ctrl+L"
+        ]
+      }
+    },
+    {
+      "name": "Toggle bookmark",
+      "context": "Text Editor",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+K",
+          "Ctrl+K"
+        ]
+      }
+    },
+    {
+      "name": "Toggle completion mode",
+      "context": "Text Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Space"
+      }
+    },
+    {
+      "name": "Toggle outlining expansion",
+      "context": "Text Editor",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+M",
+          "Ctrl+M"
+        ]
+      }
+    },
+    {
+      "name": "Toggle task list shortcut",
+      "context": "Text Editor",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+K",
+          "Ctrl+H"
+        ]
+      }
+    },
+    {
+      "name": "Toggle word wrap",
+      "context": "Text Editor",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+E",
+          "Ctrl+W"
+        ]
+      }
+    },
+    {
+      "name": "Uncomment selection",
+      "context": "Text Editor",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+K",
+          "Ctrl+U"
+        ]
+      }
+    },
+    {
+      "name": "View bottom",
+      "context": "Text Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+PageDown"
+      }
+    },
+    {
+      "name": "View bottom extend",
+      "context": "Text Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+PageDown"
+      }
+    },
+    {
+      "name": "View top",
+      "context": "Text Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+PageUp"
+      }
+    },
+    {
+      "name": "View top extend",
+      "context": "Text Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+PageUp"
+      }
+    },
+    {
+      "name": "View white space",
+      "context": "Text Editor",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+R",
+          "Ctrl+W"
+        ]
+      }
+    },
+    {
+      "name": "Word delete to end",
+      "context": "Text Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Delete"
+      }
+    },
+    {
+      "name": "Word delete to start",
+      "context": "Text Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Backspace"
+      }
+    },
+    {
+      "name": "Word next",
+      "context": "Text Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Right"
+      }
+    },
+    {
+      "name": "Word next extend",
+      "context": "Text Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Right"
+      }
+    },
+    {
+      "name": "Word next extend column",
+      "context": "Text Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Alt+Right"
+      }
+    },
+    {
+      "name": "Word previous",
+      "context": "Text Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Left"
+      }
+    },
+    {
+      "name": "Word previous extend",
+      "context": "Text Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Left"
+      }
+    },
+    {
+      "name": "Word previous extend column",
+      "context": "Text Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Alt+Left"
+      }
+    },
+    {
+      "name": "Word transpose",
+      "context": "Text Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+T"
+      }
+    },
+    {
+      "name": "Execute in interactive",
+      "context": "Text Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Enter"
+      }
+    },
+    {
+      "name": "Execute line in interactive",
+      "context": "Text Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+'"
+      }
+    },
+    {
+      "name": "View in page inspector",
+      "context": "Text Editor",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+K",
+          "Ctrl+G"
+        ]
+      }
+    },
+    {
+      "name": "TFS annotate move next region",
+      "context": "Text Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+PageDown"
+      }
+    },
+    {
+      "name": "TFS annotate move previous region",
+      "context": "Text Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+PageUp"
+      }
+    },
+    {
+      "name": "Delete",
+      "context": "UML activity diagram",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Delete"
+      }
+    },
+    {
+      "name": "Delete from model",
+      "context": "UML class diagram",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Delete"
+      }
+    },
+    {
+      "name": "Delete from model",
+      "context": "UML component diagram",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Delete"
+      }
+    },
+    {
+      "name": "Delete from model",
+      "context": "UML use case diagram",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Delete"
+      }
+    },
+    {
+      "name": "New accelerator",
+      "context": "VC Accelerator Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Insert"
+      }
+    },
+    {
+      "name": "Next key typed",
+      "context": "VC Accelerator Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+W"
+      }
+    },
+    {
+      "name": "Move control down",
+      "context": "VC Dialog Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Down"
+      }
+    },
+    {
+      "name": "Move control left",
+      "context": "VC Dialog Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Left"
+      }
+    },
+    {
+      "name": "Move control right",
+      "context": "VC Dialog Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Right"
+      }
+    },
+    {
+      "name": "Move control up",
+      "context": "VC Dialog Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Up"
+      }
+    },
+    {
+      "name": "Scroll column left",
+      "context": "VC Dialog Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Left"
+      }
+    },
+    {
+      "name": "Scroll column right",
+      "context": "VC Dialog Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Right"
+      }
+    },
+    {
+      "name": "Scroll line down",
+      "context": "VC Dialog Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Down"
+      }
+    },
+    {
+      "name": "Scroll line up",
+      "context": "VC Dialog Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Up"
+      }
+    },
+    {
+      "name": "Size control down",
+      "context": "VC Dialog Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Down"
+      }
+    },
+    {
+      "name": "Size control left",
+      "context": "VC Dialog Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Left"
+      }
+    },
+    {
+      "name": "Size control right",
+      "context": "VC Dialog Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Right"
+      }
+    },
+    {
+      "name": "Size control up",
+      "context": "VC Dialog Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Up"
+      }
+    },
+    {
+      "name": "Align bottoms",
+      "context": "VC Dialog Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Down"
+      }
+    },
+    {
+      "name": "Align centers",
+      "context": "VC Dialog Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+F9"
+      }
+    },
+    {
+      "name": "Align lefts",
+      "context": "VC Dialog Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Left"
+      }
+    },
+    {
+      "name": "Align middles",
+      "context": "VC Dialog Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "F9"
+      }
+    },
+    {
+      "name": "Align rights",
+      "context": "VC Dialog Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Right"
+      }
+    },
+    {
+      "name": "Align tops",
+      "context": "VC Dialog Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Up"
+      }
+    },
+    {
+      "name": "Button bottom",
+      "context": "VC Dialog Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+B"
+      }
+    },
+    {
+      "name": "Button right",
+      "context": "VC Dialog Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+R"
+      }
+    },
+    {
+      "name": "Center horizontal",
+      "context": "VC Dialog Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+F9"
+      }
+    },
+    {
+      "name": "Center vertical",
+      "context": "VC Dialog Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+F9"
+      }
+    },
+    {
+      "name": "Check mnemonics",
+      "context": "VC Dialog Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+M"
+      }
+    },
+    {
+      "name": "Size to content",
+      "context": "VC Dialog Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+F7"
+      }
+    },
+    {
+      "name": "Space across",
+      "context": "VC Dialog Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Right"
+      }
+    },
+    {
+      "name": "Space down",
+      "context": "VC Dialog Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Up"
+      }
+    },
+    {
+      "name": "Tab order",
+      "context": "VC Dialog Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+D"
+      }
+    },
+    {
+      "name": "Test dialog",
+      "context": "VC Dialog Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+T"
+      }
+    },
+    {
+      "name": "Toggle guides",
+      "context": "VC Dialog Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+G"
+      }
+    },
+    {
+      "name": "Airbrush tool",
+      "context": "VC Image Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+A"
+      }
+    },
+    {
+      "name": "Brush tool",
+      "context": "VC Image Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+B"
+      }
+    },
+    {
+      "name": "Copy and outline selection",
+      "context": "VC Image Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+U"
+      }
+    },
+    {
+      "name": "Draw opaque",
+      "context": "VC Image Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+J"
+      }
+    },
+    {
+      "name": "Ellipse tool",
+      "context": "VC Image Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+P"
+      }
+    },
+    {
+      "name": "Erase tool",
+      "context": "VC Image Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+I"
+      }
+    },
+    {
+      "name": "Filled ellipse tool",
+      "context": "VC Image Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Alt+P"
+      }
+    },
+    {
+      "name": "Filled rectangle tool",
+      "context": "VC Image Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Alt+R"
+      }
+    },
+    {
+      "name": "Filled rounded rectangle tool",
+      "context": "VC Image Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Alt+W"
+      }
+    },
+    {
+      "name": "Fill tool",
+      "context": "VC Image Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+F"
+      }
+    },
+    {
+      "name": "Flip horizontal",
+      "context": "VC Image Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+H"
+      }
+    },
+    {
+      "name": "Flip vertical",
+      "context": "VC Image Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+H"
+      }
+    },
+    {
+      "name": "Larger brush",
+      "context": "VC Image Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+="
+      }
+    },
+    {
+      "name": "Line tool",
+      "context": "VC Image Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+L"
+      }
+    },
+    {
+      "name": "Magnification tool",
+      "context": "VC Image Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+M"
+      }
+    },
+    {
+      "name": "Magnify",
+      "context": "VC Image Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+M"
+      }
+    },
+    {
+      "name": "New image type",
+      "context": "VC Image Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Insert"
+      }
+    },
+    {
+      "name": "Next color",
+      "context": "VC Image Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+]"
+      }
+    },
+    {
+      "name": "Next right color",
+      "context": "VC Image Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+]"
+      }
+    },
+    {
+      "name": "Outlined ellipse tool",
+      "context": "VC Image Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+P"
+      }
+    },
+    {
+      "name": "Outlined rectangle tool",
+      "context": "VC Image Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+R"
+      }
+    },
+    {
+      "name": "Outlined rounded rectangle tool",
+      "context": "VC Image Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+W"
+      }
+    },
+    {
+      "name": "Pencil tool",
+      "context": "VC Image Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+I"
+      }
+    },
+    {
+      "name": "Previous color",
+      "context": "VC Image Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+["
+      }
+    },
+    {
+      "name": "Previous right color",
+      "context": "VC Image Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+["
+      }
+    },
+    {
+      "name": "Rectangle selection tool",
+      "context": "VC Image Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+S"
+      }
+    },
+    {
+      "name": "Rectangle tool",
+      "context": "VC Image Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+R"
+      }
+    },
+    {
+      "name": "Rotate 90 degrees",
+      "context": "VC Image Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+H"
+      }
+    },
+    {
+      "name": "Rounded rectangle tool",
+      "context": "VC Image Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+W"
+      }
+    },
+    {
+      "name": "Show grid",
+      "context": "VC Image Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+S"
+      }
+    },
+    {
+      "name": "Show tile grid",
+      "context": "VC Image Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Alt+S"
+      }
+    },
+    {
+      "name": "Small brush",
+      "context": "VC Image Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Plus"
+      }
+    },
+    {
+      "name": "Smaller brush",
+      "context": "VC Image Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+-"
+      }
+    },
+    {
+      "name": "Text tool",
+      "context": "VC Image Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+T"
+      }
+    },
+    {
+      "name": "Use selection as brush",
+      "context": "VC Image Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+U"
+      }
+    },
+    {
+      "name": "Zoom in",
+      "context": "VC Image Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Plus"
+      }
+    },
+    {
+      "name": "Zoom out",
+      "context": "VC Image Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Plus"
+      }
+    },
+    {
+      "name": "New string",
+      "context": "VC String Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Insert"
+      }
+    },
+    {
+      "name": "Cancel retrieving data",
+      "context": "View Designer",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+T"
+      }
+    },
+    {
+      "name": "Criteria",
+      "context": "View Designer",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+2"
+      }
+    },
+    {
+      "name": "Diagram",
+      "context": "View Designer",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+1"
+      }
+    },
+    {
+      "name": "Execute SQL",
+      "context": "View Designer",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+R"
+      }
+    },
+    {
+      "name": "Goto row",
+      "context": "View Designer",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+G"
+      }
+    },
+    {
+      "name": "Join mode",
+      "context": "View Designer",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+J"
+      }
+    },
+    {
+      "name": "Results",
+      "context": "View Designer",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+4"
+      }
+    },
+    {
+      "name": "Sql",
+      "context": "View Designer",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+3"
+      }
+    },
+    {
+      "name": "Hide methods pane",
+      "context": "Visual Studio",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+1"
+      }
+    },
+    {
+      "name": "Break line",
+      "context": "Windows Forms Designer",
+      "windows": {
+        "type": "keys",
+        "chord": "Enter"
+      }
+    },
+    {
+      "name": "Char left",
+      "context": "Windows Forms Designer",
+      "windows": {
+        "type": "keys",
+        "chord": "Left"
+      }
+    },
+    {
+      "name": "Char left extend",
+      "context": "Windows Forms Designer",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Left"
+      }
+    },
+    {
+      "name": "Char right",
+      "context": "Windows Forms Designer",
+      "windows": {
+        "type": "keys",
+        "chord": "Right"
+      }
+    },
+    {
+      "name": "Char right extend",
+      "context": "Windows Forms Designer",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Right"
+      }
+    },
+    {
+      "name": "Document end",
+      "context": "Windows Forms Designer",
+      "windows": {
+        "type": "keys",
+        "chord": "End"
+      }
+    },
+    {
+      "name": "Document end extend",
+      "context": "Windows Forms Designer",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+End"
+      }
+    },
+    {
+      "name": "Document start",
+      "context": "Windows Forms Designer",
+      "windows": {
+        "type": "keys",
+        "chord": "Home"
+      }
+    },
+    {
+      "name": "Document start extend",
+      "context": "Windows Forms Designer",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Home"
+      }
+    },
+    {
+      "name": "Insert tab",
+      "context": "Windows Forms Designer",
+      "windows": {
+        "type": "keys",
+        "chord": "Tab"
+      }
+    },
+    {
+      "name": "Line down",
+      "context": "Windows Forms Designer",
+      "windows": {
+        "type": "keys",
+        "chord": "Down"
+      }
+    },
+    {
+      "name": "Line down extend",
+      "context": "Windows Forms Designer",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Up"
+      }
+    },
+    {
+      "name": "Line up",
+      "context": "Windows Forms Designer",
+      "windows": {
+        "type": "keys",
+        "chord": "Up"
+      }
+    },
+    {
+      "name": "Line up extend",
+      "context": "Windows Forms Designer",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Down"
+      }
+    },
+    {
+      "name": "Move control down",
+      "context": "Windows Forms Designer",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Down"
+      }
+    },
+    {
+      "name": "Move control left",
+      "context": "Windows Forms Designer",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Left"
+      }
+    },
+    {
+      "name": "Move control right",
+      "context": "Windows Forms Designer",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Right"
+      }
+    },
+    {
+      "name": "Move control up",
+      "context": "Windows Forms Designer",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Up"
+      }
+    },
+    {
+      "name": "Selection cancel",
+      "context": "Windows Forms Designer",
+      "windows": {
+        "type": "keys",
+        "chord": "Esc"
+      }
+    },
+    {
+      "name": "Size control down",
+      "context": "Windows Forms Designer",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Down"
+      }
+    },
+    {
+      "name": "Size control left",
+      "context": "Windows Forms Designer",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Left"
+      }
+    },
+    {
+      "name": "Size control right",
+      "context": "Windows Forms Designer",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Right"
+      }
+    },
+    {
+      "name": "Size control up",
+      "context": "Windows Forms Designer",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Up"
+      }
+    },
+    {
+      "name": "Tab left",
+      "context": "Windows Forms Designer",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Tab"
+      }
+    },
+    {
+      "name": "Create copy of work item",
+      "context": "Work Item Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+C"
+      }
+    },
+    {
+      "name": "Refresh work item",
+      "context": "Work Item Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "F5"
+      }
+    },
+    {
+      "name": "New linked work item",
+      "context": "Work Item Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+L"
+      }
+    },
+    {
+      "name": "Create copy of work item",
+      "context": "Work Item Query View",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+C"
+      }
+    },
+    {
+      "name": "Indent",
+      "context": "Work Item Query View",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+Right"
+      }
+    },
+    {
+      "name": "Outdent",
+      "context": "Work Item Query View",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+Left"
+      }
+    },
+    {
+      "name": "New linked work item",
+      "context": "Work Item Query View",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+L"
+      }
+    },
+    {
+      "name": "Refresh",
+      "context": "Work Item Query View",
+      "windows": {
+        "type": "keys",
+        "chord": "F5"
+      }
+    },
+    {
+      "name": "Toggle",
+      "context": "Work Item Query View",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+V"
+      }
+    },
+    {
+      "name": "Create copy of work item",
+      "context": "Work Item Results View",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+C"
+      }
+    },
+    {
+      "name": "Indent",
+      "context": "Work Item Results View",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+Right"
+      }
+    },
+    {
+      "name": "Outdent",
+      "context": "Work Item Results View",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+Left"
+      }
+    },
+    {
+      "name": "Goto next work item",
+      "context": "Work Item Results View",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+N"
+      }
+    },
+    {
+      "name": "Goto previous work item",
+      "context": "Work Item Results View",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+P"
+      }
+    },
+    {
+      "name": "New linked work item",
+      "context": "Work Item Results View",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+L"
+      }
+    },
+    {
+      "name": "Refresh",
+      "context": "Work Item Results View",
+      "windows": {
+        "type": "keys",
+        "chord": "F5"
+      }
+    },
+    {
+      "name": "Toggle",
+      "context": "Work Item Results View",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+V"
+      }
+    },
+    {
+      "name": "Complete word",
+      "context": "Workflow Designer",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+K",
+          "W"
+        ]
+      }
+    },
+    {
+      "name": "Decrease filter level",
+      "context": "Workflow Designer",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Plus"
+      }
+    },
+    {
+      "name": "Increase filter level",
+      "context": "Workflow Designer",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Plus"
+      }
+    },
+    {
+      "name": "List members",
+      "context": "Workflow Designer",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+K",
+          "L"
+        ]
+      }
+    },
+    {
+      "name": "Parameter info",
+      "context": "Workflow Designer",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+K",
+          "P"
+        ]
+      }
+    },
+    {
+      "name": "Quick info",
+      "context": "Workflow Designer",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+K",
+          "I"
+        ]
+      }
+    },
+    {
+      "name": "Collapse",
+      "context": "Workflow Designer",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+E",
+          "Ctrl+C"
+        ]
+      }
+    },
+    {
+      "name": "Connect nodes",
+      "context": "Workflow Designer",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+E",
+          "Ctrl+F"
+        ]
+      }
+    },
+    {
+      "name": "Create variable",
+      "context": "Workflow Designer",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+E",
+          "Ctrl+N"
+        ]
+      }
+    },
+    {
+      "name": "Expand all",
+      "context": "Workflow Designer",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+E",
+          "Ctrl+X"
+        ]
+      }
+    },
+    {
+      "name": "Expand in place",
+      "context": "Workflow Designer",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+E",
+          "Ctrl+E"
+        ]
+      }
+    },
+    {
+      "name": "Go to parent",
+      "context": "Workflow Designer",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+E",
+          "Ctrl+P"
+        ]
+      }
+    },
+    {
+      "name": "Move focus",
+      "context": "Workflow Designer",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+E",
+          "Ctrl+M"
+        ]
+      }
+    },
+    {
+      "name": "Navigate through designer",
+      "context": "Workflow Designer",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+F6"
+      }
+    },
+    {
+      "name": "Restore",
+      "context": "Workflow Designer",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+E",
+          "Ctrl+R"
+        ]
+      }
+    },
+    {
+      "name": "Show hide argument designer",
+      "context": "Workflow Designer",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+E",
+          "Ctrl+A"
+        ]
+      }
+    },
+    {
+      "name": "Show hide imports designer",
+      "context": "Workflow Designer",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+E",
+          "Ctrl+I"
+        ]
+      }
+    },
+    {
+      "name": "Show hide overview map",
+      "context": "Workflow Designer",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+E",
+          "Ctrl+O"
+        ]
+      }
+    },
+    {
+      "name": "Show hide variable designer",
+      "context": "Workflow Designer",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+E",
+          "Ctrl+V"
+        ]
+      }
+    },
+    {
+      "name": "Toggle selection",
+      "context": "Workflow Designer",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+E",
+          "Ctrl+S"
+        ]
+      }
+    },
+    {
+      "name": "Fit all",
+      "context": "XAML UI Designer",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+0"
+      }
+    },
+    {
+      "name": "Show handles",
+      "context": "XAML UI Designer",
+      "windows": {
+        "type": "keys",
+        "chord": "F9"
+      }
+    },
+    {
+      "name": "Zoom in",
+      "context": "XAML UI Designer",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+="
+      }
+    },
+    {
+      "name": "Zoom out",
+      "context": "XAML UI Designer",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+-"
+      }
+    },
+    {
+      "name": "Edit text",
+      "context": "XAML UI Designer",
+      "windows": {
+        "type": "keys",
+        "chord": "F2"
+      }
+    },
+    {
+      "name": "All",
+      "context": "XAML UI Designer",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+R"
+      }
+    },
+    {
+      "name": "Run project code",
+      "context": "XAML UI Designer",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+F9"
+      }
+    },
+    {
+      "name": "Hide (Blend only)",
+      "context": "XAML UI Designer",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+H"
+      }
+    },
+    {
+      "name": "Lock (Blend only)",
+      "context": "XAML UI Designer",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+L"
+      }
+    },
+    {
+      "name": "Show (Blend only)",
+      "context": "XAML UI Designer",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+H"
+      }
+    },
+    {
+      "name": "Unlock (Blend only)",
+      "context": "XAML UI Designer",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+L"
+      }
+    },
+    {
+      "name": "Edge left move left",
+      "context": "XAML UI Designer",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Plus"
+      }
+    },
+    {
+      "name": "Edge left move right",
+      "context": "XAML UI Designer",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Plus"
+      }
+    },
+    {
+      "name": "Edge right move left",
+      "context": "XAML UI Designer",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Alt+Plus"
+      }
+    },
+    {
+      "name": "Edge right move right",
+      "context": "XAML UI Designer",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Alt+Plus"
+      }
+    },
+    {
+      "name": "Show property marker menu",
+      "context": "XAML UI Designer",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Space"
+      }
+    },
+    {
+      "name": "Start XSLT debugging",
+      "context": "XML (Text) Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+F5"
+      }
+    },
+    {
+      "name": "Start XSLT without debugging",
+      "context": "XML (Text) Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+F5"
+      }
+    },
+    {
+      "name": "Bottom to top",
+      "context": "XML Schema Designer",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Up"
+      }
+    },
+    {
+      "name": "Left to right",
+      "context": "XML Schema Designer",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Right"
+      }
+    },
+    {
+      "name": "Right to left",
+      "context": "XML Schema Designer",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Left"
+      }
+    },
+    {
+      "name": "Top to bottom",
+      "context": "XML Schema Designer",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Down"
+      }
+    },
+    {
+      "name": "Remove from workspace",
+      "context": "XML Schema Designer",
+      "windows": {
+        "type": "keys",
+        "chord": "Delete"
+      }
+    },
+    {
+      "name": "Show content model view",
+      "context": "XML Schema Designer",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+2"
+      }
+    },
+    {
+      "name": "Show graph view",
+      "context": "XML Schema Designer",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+3"
+      }
+    },
+    {
+      "name": "Show start view",
+      "context": "XML Schema Designer",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+1"
+      }
+    },
+    {
+      "name": "Break at function",
+      "context": "Debug",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+B"
+      }
+    },
+    {
+      "name": "Break line",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Enter"
+      }
+    },
+    {
+      "name": "Collapse to definitions",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+M",
+          "Ctrl+O"
+        ]
+      }
+    },
+    {
+      "name": "Comment selection",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+K",
+          "Ctrl+C"
+        ]
+      }
+    },
+    {
+      "name": "Complete word",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Right"
+      }
+    },
+    {
+      "name": "Format document",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+K",
+          "Ctrl+D"
+        ]
+      }
+    },
+    {
+      "name": "Format selection",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+K",
+          "Ctrl+F"
+        ]
+      }
+    },
+    {
+      "name": "Go to find combo",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+D"
+      }
+    },
+    {
+      "name": "Insert tab",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Tab"
+      }
+    },
+    {
+      "name": "Line cut",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+L"
+      }
+    },
+    {
+      "name": "Line down extend column",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+Down"
+      }
+    },
+    {
+      "name": "Line open above",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Enter"
+      }
+    },
+    {
+      "name": "List members",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+J"
+      }
+    },
+    {
+      "name": "Navigate to",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+P"
+      }
+    },
+    {
+      "name": "Overtype mode",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Insert"
+      }
+    },
+    {
+      "name": "Parameter info",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Space"
+      }
+    },
+    {
+      "name": "Peek definition",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+F12"
+      }
+    },
+    {
+      "name": "Selection cancel",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Esc"
+      }
+    },
+    {
+      "name": "Remove and sort usings",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+R",
+          "Ctrl+G"
+        ]
+      }
+    },
+    {
+      "name": "Tab left",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Tab"
+      }
+    },
+    {
+      "name": "Toggle all outlining",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+M",
+          "Ctrl+L"
+        ]
+      }
+    },
+    {
+      "name": "Toggle bookmark",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+K",
+          "Ctrl+K"
+        ]
+      }
+    },
+    {
+      "name": "Toggle completion mode",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Space"
+      }
+    },
+    {
+      "name": "Toggle line comment",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+/"
+      }
+    },
+    {
+      "name": "Toggle outlining expansion",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+M",
+          "Ctrl+M"
+        ]
+      }
+    },
+    {
+      "name": "Uncomment selection",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+K",
+          "Ctrl+U"
+        ]
+      }
+    },
+    {
+      "name": "Word delete to end",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Delete"
+      }
+    },
+    {
+      "name": "Word delete to start",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Backspace"
+      }
+    },
+    {
+      "name": "Rename",
+      "context": "File",
+      "windows": {
+        "type": "keys",
+        "chord": "F2"
+      }
+    },
+    {
+      "name": "Refresh",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F5"
+      }
+    }
+  ],
+  "defaults": {
+    "TUNE_CW": {
+      "name": "Next document window",
+      "action": {
+        "type": "keys",
+        "chord": "Ctrl+F6"
+      }
+    },
+    "TUNE_CCW": {
+      "name": "Previous document window",
+      "action": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+F6"
+      }
+    },
+    "TUNE_TAP_1F": {
+      "name": "Go to all",
+      "action": {
+        "type": "keys",
+        "chord": "Ctrl+T"
+      }
+    },
+    "TUNE_SWIPE_LEFT": {
+      "name": "Navigate backward",
+      "action": {
+        "type": "keys",
+        "chord": "Ctrl+-"
+      }
+    },
+    "TUNE_SWIPE_RIGHT": {
+      "name": "Navigate forward",
+      "action": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+-"
+      }
+    },
+    "TUNE_SWIPE_UP": {
+      "name": "Go to prev location",
+      "action": {
+        "type": "keys",
+        "chord": "Shift+F8"
+      }
+    },
+    "TUNE_SWIPE_DOWN": {
+      "name": "Go to next location",
+      "action": {
+        "type": "keys",
+        "chord": "F8"
+      }
+    }
+  }
+}

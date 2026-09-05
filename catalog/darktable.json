@@ -1,0 +1,1382 @@
+{
+  "id": "darktable",
+  "name": "darktable",
+  "kind": "app",
+  "category": "Creative",
+  "match": {
+    "windows_exe": [
+      "darktable.exe"
+    ],
+    "macos_bundle": [
+      "org.darktable"
+    ],
+    "window_title": []
+  },
+  "sources": [
+    "https://docs.darktable.org/usermanual/5.6/en/overview/user-interface/keyboard-shortcuts/",
+    "https://docs.darktable.org/usermanual/5.6/en/overview/user-interface/views/",
+    "https://docs.darktable.org/usermanual/5.6/en/overview/user-interface/screen-layout/",
+    "https://docs.darktable.org/usermanual/5.6/en/overview/user-interface/top-panel/",
+    "https://docs.darktable.org/usermanual/5.6/en/overview/user-interface/bottom-panel/",
+    "https://docs.darktable.org/usermanual/5.6/en/overview/user-interface/filmstrip/",
+    "https://docs.darktable.org/usermanual/5.6/en/overview/workflow/import-review/",
+    "https://docs.darktable.org/usermanual/5.6/en/overview/workflow/process/",
+    "https://docs.darktable.org/usermanual/5.6/en/lighttable/overview/",
+    "https://docs.darktable.org/usermanual/5.6/en/lighttable/undo-redo/",
+    "https://docs.darktable.org/usermanual/5.6/en/lighttable/lighttable-modes/filemanager/",
+    "https://docs.darktable.org/usermanual/5.6/en/lighttable/lighttable-modes/zoomable-lighttable/",
+    "https://docs.darktable.org/usermanual/5.6/en/lighttable/lighttable-modes/culling/",
+    "https://docs.darktable.org/usermanual/5.6/en/lighttable/lighttable-modes/full-preview/",
+    "https://docs.darktable.org/usermanual/5.6/en/lighttable/digital-asset-management/star-color/",
+    "https://docs.darktable.org/usermanual/5.6/en/lighttable/digital-asset-management/grouping/",
+    "https://docs.darktable.org/usermanual/5.6/en/darkroom/overview/",
+    "https://docs.darktable.org/usermanual/5.6/en/darkroom/darkroom-view-layout/",
+    "https://docs.darktable.org/usermanual/5.6/en/darkroom/pixelpipe/undo-redo/",
+    "https://docs.darktable.org/usermanual/5.6/en/darkroom/processing-modules/module-controls/",
+    "https://docs.darktable.org/usermanual/5.6/en/darkroom/masking-and-blending/masks/drawn/",
+    "https://docs.darktable.org/usermanual/5.6/en/darkroom/masking-and-blending/masks/parametric/",
+    "https://docs.darktable.org/usermanual/5.6/en/map/overview/",
+    "https://docs.darktable.org/usermanual/5.6/en/slideshow/usage/",
+    "https://docs.darktable.org/usermanual/5.6/en/module-reference/utility-modules/shared/filmstrip/",
+    "https://docs.darktable.org/usermanual/5.6/en/module-reference/utility-modules/shared/scopes/",
+    "https://docs.darktable.org/usermanual/5.6/en/module-reference/utility-modules/shared/tagging/",
+    "https://docs.darktable.org/usermanual/5.6/en/module-reference/utility-modules/shared/metadata-editor/",
+    "https://docs.darktable.org/usermanual/5.6/en/module-reference/utility-modules/shared/geotagging/",
+    "https://docs.darktable.org/usermanual/5.6/en/module-reference/utility-modules/darkroom/color-assessment/",
+    "https://docs.darktable.org/usermanual/5.6/en/module-reference/utility-modules/darkroom/gamut/",
+    "https://docs.darktable.org/usermanual/5.6/en/module-reference/utility-modules/darkroom/soft-proof/",
+    "https://docs.darktable.org/usermanual/5.6/en/module-reference/utility-modules/darkroom/navigation/",
+    "https://docs.darktable.org/usermanual/5.6/en/module-reference/utility-modules/darkroom/raw-overexposed/",
+    "https://docs.darktable.org/usermanual/5.6/en/module-reference/utility-modules/darkroom/history-stack/",
+    "https://docs.darktable.org/usermanual/5.6/en/module-reference/utility-modules/lighttable/timeline/",
+    "https://docs.darktable.org/usermanual/5.6/en/module-reference/utility-modules/lighttable/import/",
+    "https://docs.darktable.org/usermanual/5.6/en/module-reference/utility-modules/lighttable/styles/",
+    "https://docs.darktable.org/usermanual/5.6/en/module-reference/utility-modules/map/map-settings/",
+    "https://docs.darktable.org/usermanual/5.6/en/module-reference/utility-modules/map/locations/",
+    "https://docs.darktable.org/usermanual/5.6/en/module-reference/utility-modules/map/find-location/",
+    "https://docs.darktable.org/usermanual/5.6/en/preferences-settings/shortcuts/",
+    "https://docs.darktable.org/usermanual/5.6/en/preferences-settings/miscellaneous/",
+    "https://docs.darktable.org/usermanual/5.6/en/preferences-settings/overview/",
+    "https://docs.darktable.org/usermanual/5.6/en/preferences-settings/presets/",
+    "https://docs.darktable.org/usermanual/5.6/en/special-topics/midi-device-support/",
+    "https://docs.darktable.org/usermanual/5.6/en/sitemap.xml"
+  ],
+  "note": "Read from the darktable 5.6 user manual (the current released manual). darktable has no single \"default shortcuts\" table: the shortcuts page (preferences & settings > shortcuts) documents how the shortcut system works and only names a handful of predefined bindings, so the default bindings here were collected by walking the whole manual - every page listed in https://docs.darktable.org/usermanual/5.6/en/sitemap.xml was fetched and searched for documented key bindings, and the pages that actually carry one are the pages listed in sources. Note on version aliases: the /usermanual/stable/ alias currently redirects to the 4.8 build, whose pages all return HTTP 404 from docs.darktable.org, and /usermanual/5.0, /5.2 and /5.4 redirect to the development build; the 5.6 tree is the newest one that serves real pages, so 5.6 URLs are cited. Context is the darktable view or module the manual attaches the shortcut to (lighttable, lighttable filemanager, zoomable lighttable, lighttable culling, darkroom, map, slideshow, filmstrip, tagging, metadata editor, module controls, parametric masks, locations, find location, import, styles, timeline, log history, preferences, preferences > presets, shortcut mapping screen); \"\" is used for the shortcuts the manual documents as working in any darktable view (view switching, panel visibility, fullscreen, the H help overlay, the MIDI input-system reset). The lighttable and filmstrip lists are deliberately near-duplicates because the manual documents them separately for each context and they differ: only the filmstrip list carries Ctrl+A / Ctrl+Shift+A / Ctrl+I selection and Ctrl+X \"copies the settings of the last changed module\", and only the lighttable list carries D, W and Ctrl+W. Rows that document a set of keys become one action per key with the key repeated in parentheses - the star ratings 0-5, the two ways to leave sticky preview mode (F and ESC), the slideshow delay keys (+ / up arrow and - / down arrow), the arrow keys that adjust a slider, and the two keys that detach a tag (Delete and BackSpace). macOS values are given only for chords containing Ctrl, because the shortcuts page states as a blanket rule that on macOS shortcuts use cmd instead of ctrl and option instead of alt; no per-shortcut macOS variant is documented anywhere in the manual, so chords without Ctrl carry no mac value. Excluded, and why: everything mouse-driven (click, Ctrl+click, Shift+click, Ctrl+Shift+click, right-click, double-click, click+drag, scroll, Ctrl+scroll, Shift+scroll, Shift+Ctrl+scroll, Shift+Alt+scroll, Ctrl+Alt+wheel, middle-click) - the bulk of what the processing- and utility-module pages document is of this kind; hold-a-key-while-dragging bindings (the \"a\" key that forces pan & zoom in the drawn masks, retouch and tone equalizer modules, Ctrl+Shift held while dragging a module to a new pixelpipe position, Ctrl held while zooming to lift the 100% limit, and Shift or Ctrl held while adjusting to scale a slider's step size by 10x or 0.1x), because the chord grammar cannot express a modifier held across a drag; the brush-mask keys { } < > and the culling mode-switch key <, which are not in the chord grammar's punctuation set; the slideshow \"right shift-key\" and \"left shift-key\" bindings, which the grammar cannot tell apart; and the touchpad pinch and two-finger gestures. Two documented statements conflict over Ctrl+B in the darkroom: the color assessment page and the workflow > process page both give it as the color assessment toggle, while the shortcuts page uses \"ctrl + b\" in an illustrative example of the action views/darkroom/guide lines/toggle. The corroborated color assessment binding is kept and the guide lines toggle is left out as ambiguous. Nothing was carried over from an older manual, and no binding was inferred from darktable's source code or from the in-app shortcut list.",
+  "actions": [
+    {
+      "name": "Show a list of all shortcuts that are applicable to the current view",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "H"
+      }
+    },
+    {
+      "name": "Temporarily expand the centre view to fill the whole window",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Tab"
+      }
+    },
+    {
+      "name": "Toggle fullscreen mode",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F11"
+      }
+    },
+    {
+      "name": "Toggle the top panel",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+T"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+T"
+      }
+    },
+    {
+      "name": "Toggle the bottom panel",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+B"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+B"
+      }
+    },
+    {
+      "name": "Toggle the left panel",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+L"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+L"
+      }
+    },
+    {
+      "name": "Toggle the right panel",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+R"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+R"
+      }
+    },
+    {
+      "name": "Toggle the filmstrip/timeline",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+F"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+F"
+      }
+    },
+    {
+      "name": "Toggle the top banner",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+H"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+H"
+      }
+    },
+    {
+      "name": "Toggle all borders and panel-collapse controls",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "B"
+      }
+    },
+    {
+      "name": "Switch to lighttable",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "L"
+      }
+    },
+    {
+      "name": "Switch to darkroom",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "D"
+      }
+    },
+    {
+      "name": "Switch to map",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "M"
+      }
+    },
+    {
+      "name": "Switch to print",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "P"
+      }
+    },
+    {
+      "name": "Switch to slideshow",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "S"
+      }
+    },
+    {
+      "name": "Switch to tethering",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "T"
+      }
+    },
+    {
+      "name": "Reset the MIDI input system",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Shift+I"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+Shift+I"
+      }
+    },
+    {
+      "name": "Add or remove the red color label",
+      "context": "lighttable",
+      "windows": {
+        "type": "keys",
+        "chord": "F1"
+      }
+    },
+    {
+      "name": "Add or remove the yellow color label",
+      "context": "lighttable",
+      "windows": {
+        "type": "keys",
+        "chord": "F2"
+      }
+    },
+    {
+      "name": "Add or remove the green color label",
+      "context": "lighttable",
+      "windows": {
+        "type": "keys",
+        "chord": "F3"
+      }
+    },
+    {
+      "name": "Add or remove the blue color label",
+      "context": "lighttable",
+      "windows": {
+        "type": "keys",
+        "chord": "F4"
+      }
+    },
+    {
+      "name": "Add or remove the purple color label",
+      "context": "lighttable",
+      "windows": {
+        "type": "keys",
+        "chord": "F5"
+      }
+    },
+    {
+      "name": "Set the star rating (0)",
+      "context": "lighttable",
+      "windows": {
+        "type": "keys",
+        "chord": "0"
+      }
+    },
+    {
+      "name": "Set the star rating (1)",
+      "context": "lighttable",
+      "windows": {
+        "type": "keys",
+        "chord": "1"
+      }
+    },
+    {
+      "name": "Set the star rating (2)",
+      "context": "lighttable",
+      "windows": {
+        "type": "keys",
+        "chord": "2"
+      }
+    },
+    {
+      "name": "Set the star rating (3)",
+      "context": "lighttable",
+      "windows": {
+        "type": "keys",
+        "chord": "3"
+      }
+    },
+    {
+      "name": "Set the star rating (4)",
+      "context": "lighttable",
+      "windows": {
+        "type": "keys",
+        "chord": "4"
+      }
+    },
+    {
+      "name": "Set the star rating (5)",
+      "context": "lighttable",
+      "windows": {
+        "type": "keys",
+        "chord": "5"
+      }
+    },
+    {
+      "name": "Reject the image(s)",
+      "context": "lighttable",
+      "windows": {
+        "type": "keys",
+        "chord": "R"
+      }
+    },
+    {
+      "name": "Duplicate the image(s)",
+      "context": "lighttable",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+D"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+D"
+      }
+    },
+    {
+      "name": "Copy the full history stack",
+      "context": "lighttable",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+C"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+C"
+      }
+    },
+    {
+      "name": "Paste all of the copied history stack",
+      "context": "lighttable",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+V"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+V"
+      }
+    },
+    {
+      "name": "Selectively copy the history stack",
+      "context": "lighttable",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+C"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+C"
+      }
+    },
+    {
+      "name": "Selectively paste from the copied history stack",
+      "context": "lighttable",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+V"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+V"
+      }
+    },
+    {
+      "name": "Open the image in the darkroom view for developing",
+      "context": "lighttable",
+      "windows": {
+        "type": "keys",
+        "chord": "D"
+      }
+    },
+    {
+      "name": "Fully zoom into the current image while the key is pressed",
+      "context": "lighttable",
+      "windows": {
+        "type": "keys",
+        "chord": "W"
+      }
+    },
+    {
+      "name": "Fully zoom into the current image and show areas in focus",
+      "context": "lighttable",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+W"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+W"
+      }
+    },
+    {
+      "name": "Undo the last modification",
+      "context": "lighttable",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Z"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Z"
+      }
+    },
+    {
+      "name": "Redo the last undone modification",
+      "context": "lighttable",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Y"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Y"
+      }
+    },
+    {
+      "name": "Combine the selected images into a group",
+      "context": "lighttable",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+G"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+G"
+      }
+    },
+    {
+      "name": "Remove the selected images from a group",
+      "context": "lighttable",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+G"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+G"
+      }
+    },
+    {
+      "name": "Enter culling in fixed mode",
+      "context": "lighttable",
+      "windows": {
+        "type": "keys",
+        "chord": "X"
+      }
+    },
+    {
+      "name": "Enter culling in dynamic mode",
+      "context": "lighttable",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+X"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+X"
+      }
+    },
+    {
+      "name": "Enable sticky preview mode",
+      "context": "lighttable",
+      "windows": {
+        "type": "keys",
+        "chord": "F"
+      }
+    },
+    {
+      "name": "Return to the original view from sticky preview mode (F)",
+      "context": "lighttable",
+      "windows": {
+        "type": "keys",
+        "chord": "F"
+      }
+    },
+    {
+      "name": "Return to the original view from sticky preview mode (ESC)",
+      "context": "lighttable",
+      "windows": {
+        "type": "keys",
+        "chord": "Esc"
+      }
+    },
+    {
+      "name": "Open the tag text box at the bottom of the central view",
+      "context": "lighttable",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+T"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+T"
+      }
+    },
+    {
+      "name": "Navigate to the previous image",
+      "context": "lighttable filemanager",
+      "windows": {
+        "type": "keys",
+        "chord": "Left"
+      }
+    },
+    {
+      "name": "Navigate to the next image",
+      "context": "lighttable filemanager",
+      "windows": {
+        "type": "keys",
+        "chord": "Right"
+      }
+    },
+    {
+      "name": "Navigate up one row",
+      "context": "lighttable filemanager",
+      "windows": {
+        "type": "keys",
+        "chord": "Up"
+      }
+    },
+    {
+      "name": "Navigate down one row",
+      "context": "lighttable filemanager",
+      "windows": {
+        "type": "keys",
+        "chord": "Down"
+      }
+    },
+    {
+      "name": "Scroll to the top of the collection",
+      "context": "lighttable filemanager",
+      "windows": {
+        "type": "keys",
+        "chord": "Home"
+      }
+    },
+    {
+      "name": "Scroll to the bottom of the collection",
+      "context": "lighttable filemanager",
+      "windows": {
+        "type": "keys",
+        "chord": "End"
+      }
+    },
+    {
+      "name": "Scroll up by a page",
+      "context": "lighttable filemanager",
+      "windows": {
+        "type": "keys",
+        "chord": "PageUp"
+      }
+    },
+    {
+      "name": "Scroll down by a page",
+      "context": "lighttable filemanager",
+      "windows": {
+        "type": "keys",
+        "chord": "PageDown"
+      }
+    },
+    {
+      "name": "Select the image under the pointer",
+      "context": "lighttable filemanager",
+      "windows": {
+        "type": "keys",
+        "chord": "Enter"
+      }
+    },
+    {
+      "name": "Add or remove the image under the pointer from the selection",
+      "context": "lighttable filemanager",
+      "windows": {
+        "type": "keys",
+        "chord": "Space"
+      }
+    },
+    {
+      "name": "Select the image under the pointer",
+      "context": "zoomable lighttable",
+      "windows": {
+        "type": "keys",
+        "chord": "Enter"
+      }
+    },
+    {
+      "name": "Add or remove the image under the pointer from the selection",
+      "context": "zoomable lighttable",
+      "windows": {
+        "type": "keys",
+        "chord": "Space"
+      }
+    },
+    {
+      "name": "Scroll to the previous image of the collection",
+      "context": "lighttable culling",
+      "windows": {
+        "type": "keys",
+        "chord": "Left"
+      }
+    },
+    {
+      "name": "Scroll to the next image of the collection",
+      "context": "lighttable culling",
+      "windows": {
+        "type": "keys",
+        "chord": "Right"
+      }
+    },
+    {
+      "name": "Show the thumbnail overlay on demand",
+      "context": "lighttable culling",
+      "windows": {
+        "type": "keys",
+        "chord": "I"
+      }
+    },
+    {
+      "name": "Undo the last modification",
+      "context": "darkroom",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Z"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Z"
+      }
+    },
+    {
+      "name": "Redo the last undone modification",
+      "context": "darkroom",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Y"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Y"
+      }
+    },
+    {
+      "name": "Toggle color assessment mode",
+      "context": "darkroom",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+B"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+B"
+      }
+    },
+    {
+      "name": "Activate gamut check",
+      "context": "darkroom",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+G"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+G"
+      }
+    },
+    {
+      "name": "Activate soft proof",
+      "context": "darkroom",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+S"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+S"
+      }
+    },
+    {
+      "name": "Toggle the navigation panel",
+      "context": "darkroom",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+N"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+N"
+      }
+    },
+    {
+      "name": "Toggle the visibility of the scopes module",
+      "context": "darkroom",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+H"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+H"
+      }
+    },
+    {
+      "name": "Toggle the raw overexposure indicator",
+      "context": "darkroom",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+O"
+      }
+    },
+    {
+      "name": "View the input/output image data for a color channel",
+      "context": "parametric masks",
+      "windows": {
+        "type": "keys",
+        "chord": "C"
+      }
+    },
+    {
+      "name": "See the resulting mask for a slider overlaid on the image",
+      "context": "parametric masks",
+      "windows": {
+        "type": "keys",
+        "chord": "M"
+      }
+    },
+    {
+      "name": "Toggle a slider's display between linear and log mode",
+      "context": "parametric masks",
+      "windows": {
+        "type": "keys",
+        "chord": "A"
+      }
+    },
+    {
+      "name": "Commit a value typed into a slider's pop-up edit",
+      "context": "module controls",
+      "windows": {
+        "type": "keys",
+        "chord": "Enter"
+      }
+    },
+    {
+      "name": "Adjust the slider value down (Left)",
+      "context": "module controls",
+      "windows": {
+        "type": "keys",
+        "chord": "Left"
+      }
+    },
+    {
+      "name": "Adjust the slider value down (Down)",
+      "context": "module controls",
+      "windows": {
+        "type": "keys",
+        "chord": "Down"
+      }
+    },
+    {
+      "name": "Adjust the slider value up (Right)",
+      "context": "module controls",
+      "windows": {
+        "type": "keys",
+        "chord": "Right"
+      }
+    },
+    {
+      "name": "Adjust the slider value up (Up)",
+      "context": "module controls",
+      "windows": {
+        "type": "keys",
+        "chord": "Up"
+      }
+    },
+    {
+      "name": "Switch the filmstrip on and off",
+      "context": "filmstrip",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+F"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+F"
+      }
+    },
+    {
+      "name": "Select all images in the filmstrip",
+      "context": "filmstrip",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+A"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+A"
+      }
+    },
+    {
+      "name": "Deselect all images",
+      "context": "filmstrip",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+A"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+A"
+      }
+    },
+    {
+      "name": "Invert the current selection",
+      "context": "filmstrip",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+I"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+I"
+      }
+    },
+    {
+      "name": "Add or remove the red color label",
+      "context": "filmstrip",
+      "windows": {
+        "type": "keys",
+        "chord": "F1"
+      }
+    },
+    {
+      "name": "Add or remove the yellow color label",
+      "context": "filmstrip",
+      "windows": {
+        "type": "keys",
+        "chord": "F2"
+      }
+    },
+    {
+      "name": "Add or remove the green color label",
+      "context": "filmstrip",
+      "windows": {
+        "type": "keys",
+        "chord": "F3"
+      }
+    },
+    {
+      "name": "Add or remove the blue color label",
+      "context": "filmstrip",
+      "windows": {
+        "type": "keys",
+        "chord": "F4"
+      }
+    },
+    {
+      "name": "Add or remove the purple color label",
+      "context": "filmstrip",
+      "windows": {
+        "type": "keys",
+        "chord": "F5"
+      }
+    },
+    {
+      "name": "Set the star rating (0)",
+      "context": "filmstrip",
+      "windows": {
+        "type": "keys",
+        "chord": "0"
+      }
+    },
+    {
+      "name": "Set the star rating (1)",
+      "context": "filmstrip",
+      "windows": {
+        "type": "keys",
+        "chord": "1"
+      }
+    },
+    {
+      "name": "Set the star rating (2)",
+      "context": "filmstrip",
+      "windows": {
+        "type": "keys",
+        "chord": "2"
+      }
+    },
+    {
+      "name": "Set the star rating (3)",
+      "context": "filmstrip",
+      "windows": {
+        "type": "keys",
+        "chord": "3"
+      }
+    },
+    {
+      "name": "Set the star rating (4)",
+      "context": "filmstrip",
+      "windows": {
+        "type": "keys",
+        "chord": "4"
+      }
+    },
+    {
+      "name": "Set the star rating (5)",
+      "context": "filmstrip",
+      "windows": {
+        "type": "keys",
+        "chord": "5"
+      }
+    },
+    {
+      "name": "Reject the image(s)",
+      "context": "filmstrip",
+      "windows": {
+        "type": "keys",
+        "chord": "R"
+      }
+    },
+    {
+      "name": "Duplicate the image(s)",
+      "context": "filmstrip",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+D"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+D"
+      }
+    },
+    {
+      "name": "Copy the full history stack",
+      "context": "filmstrip",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+C"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+C"
+      }
+    },
+    {
+      "name": "Paste all of the copied history stack",
+      "context": "filmstrip",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+V"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+V"
+      }
+    },
+    {
+      "name": "Copy the settings of the last changed module to all selected images",
+      "context": "filmstrip",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+X"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+X"
+      }
+    },
+    {
+      "name": "Selectively copy the history stack",
+      "context": "filmstrip",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+C"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+C"
+      }
+    },
+    {
+      "name": "Selectively paste from the copied history stack",
+      "context": "filmstrip",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+V"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+V"
+      }
+    },
+    {
+      "name": "Undo the last modification",
+      "context": "map",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Z"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Z"
+      }
+    },
+    {
+      "name": "Redo the last undone modification",
+      "context": "map",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Y"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Y"
+      }
+    },
+    {
+      "name": "Activate the filmstrip on the lower panel",
+      "context": "map",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+F"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+F"
+      }
+    },
+    {
+      "name": "Toggle the “filtered images” option",
+      "context": "map",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+S"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+S"
+      }
+    },
+    {
+      "name": "Cycle through the thumbnail display options",
+      "context": "map",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+S"
+      }
+    },
+    {
+      "name": "Save changes to a location name",
+      "context": "locations",
+      "windows": {
+        "type": "keys",
+        "chord": "Enter"
+      }
+    },
+    {
+      "name": "Close the location editing window without saving",
+      "context": "locations",
+      "windows": {
+        "type": "keys",
+        "chord": "Esc"
+      }
+    },
+    {
+      "name": "Search for the entered place name or address",
+      "context": "find location",
+      "windows": {
+        "type": "keys",
+        "chord": "Enter"
+      }
+    },
+    {
+      "name": "Navigate to the next tagging view or field",
+      "context": "tagging",
+      "windows": {
+        "type": "keys",
+        "chord": "Tab"
+      }
+    },
+    {
+      "name": "Navigate to the previous tagging view or field",
+      "context": "tagging",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Tab"
+      }
+    },
+    {
+      "name": "Attach the selected tag",
+      "context": "tagging",
+      "windows": {
+        "type": "keys",
+        "chord": "Enter"
+      }
+    },
+    {
+      "name": "Return focus to the text entry field",
+      "context": "tagging",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Enter"
+      }
+    },
+    {
+      "name": "Move from the text entry field to the tag dictionary",
+      "context": "tagging",
+      "windows": {
+        "type": "keys",
+        "chord": "Down"
+      }
+    },
+    {
+      "name": "Detach the selected tag (Delete)",
+      "context": "tagging",
+      "windows": {
+        "type": "keys",
+        "chord": "Delete"
+      }
+    },
+    {
+      "name": "Detach the selected tag (BackSpace)",
+      "context": "tagging",
+      "windows": {
+        "type": "keys",
+        "chord": "Backspace"
+      }
+    },
+    {
+      "name": "Insert a new line in a metadata field",
+      "context": "metadata editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Enter"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Enter"
+      }
+    },
+    {
+      "name": "Save the current field and move to the next field",
+      "context": "metadata editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Tab"
+      }
+    },
+    {
+      "name": "Save the current field and move to the previous field",
+      "context": "metadata editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Tab"
+      }
+    },
+    {
+      "name": "Save the current field without moving the cursor",
+      "context": "metadata editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Enter"
+      }
+    },
+    {
+      "name": "Start and stop auto-advance mode",
+      "context": "slideshow",
+      "windows": {
+        "type": "keys",
+        "chord": "Space"
+      }
+    },
+    {
+      "name": "Leave slideshow mode and return to lighttable view",
+      "context": "slideshow",
+      "windows": {
+        "type": "keys",
+        "chord": "Esc"
+      }
+    },
+    {
+      "name": "Increase delay between each image (+)",
+      "context": "slideshow",
+      "windows": {
+        "type": "keys",
+        "chord": "Plus"
+      }
+    },
+    {
+      "name": "Increase delay between each image (up arrow)",
+      "context": "slideshow",
+      "windows": {
+        "type": "keys",
+        "chord": "Up"
+      }
+    },
+    {
+      "name": "Decrease delay between each image (-)",
+      "context": "slideshow",
+      "windows": {
+        "type": "keys",
+        "chord": "-"
+      }
+    },
+    {
+      "name": "Decrease delay between each image (down arrow)",
+      "context": "slideshow",
+      "windows": {
+        "type": "keys",
+        "chord": "Down"
+      }
+    },
+    {
+      "name": "Switch to the next image of the collection",
+      "context": "slideshow",
+      "windows": {
+        "type": "keys",
+        "chord": "Right"
+      }
+    },
+    {
+      "name": "Switch to the previous image of the collection",
+      "context": "slideshow",
+      "windows": {
+        "type": "keys",
+        "chord": "Left"
+      }
+    },
+    {
+      "name": "Show/hide the timeline module in the bottom panel",
+      "context": "timeline",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+F"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+F"
+      }
+    },
+    {
+      "name": "Import the selected files",
+      "context": "import",
+      "windows": {
+        "type": "keys",
+        "chord": "Enter"
+      }
+    },
+    {
+      "name": "Exit without importing",
+      "context": "import",
+      "windows": {
+        "type": "keys",
+        "chord": "Esc"
+      }
+    },
+    {
+      "name": "Cancel the style creation process",
+      "context": "styles",
+      "windows": {
+        "type": "keys",
+        "chord": "Esc"
+      }
+    },
+    {
+      "name": "Close the preferences dialog",
+      "context": "preferences",
+      "windows": {
+        "type": "keys",
+        "chord": "Esc"
+      }
+    },
+    {
+      "name": "Delete a user-defined preset",
+      "context": "preferences > presets",
+      "windows": {
+        "type": "keys",
+        "chord": "Delete"
+      }
+    },
+    {
+      "name": "Edit a user-defined preset's properties",
+      "context": "preferences > presets",
+      "windows": {
+        "type": "keys",
+        "chord": "Enter"
+      }
+    },
+    {
+      "name": "Delete a user-defined shortcut",
+      "context": "shortcut mapping screen",
+      "windows": {
+        "type": "keys",
+        "chord": "Delete"
+      }
+    },
+    {
+      "name": "Navigate to the previous match",
+      "context": "shortcut mapping screen",
+      "windows": {
+        "type": "keys",
+        "chord": "Up"
+      }
+    },
+    {
+      "name": "Navigate to the next match",
+      "context": "shortcut mapping screen",
+      "windows": {
+        "type": "keys",
+        "chord": "Down"
+      }
+    },
+    {
+      "name": "Copy the selected log entry to the clipboard",
+      "context": "log history",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+C"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+C"
+      }
+    }
+  ],
+  "defaults": {
+    "TUNE_CW": {
+      "name": "Navigate to the next image",
+      "action": {
+        "type": "keys",
+        "chord": "Right"
+      },
+      "accel": "light"
+    },
+    "TUNE_CCW": {
+      "name": "Navigate to the previous image",
+      "action": {
+        "type": "keys",
+        "chord": "Left"
+      },
+      "accel": "light"
+    },
+    "TUNE_TAP_1F": {
+      "name": "Enable sticky preview mode",
+      "action": {
+        "type": "keys",
+        "chord": "F"
+      }
+    },
+    "TUNE_SWIPE_LEFT": {
+      "name": "Undo the last modification",
+      "action": {
+        "type": "keys",
+        "chord": "Ctrl+Z"
+      }
+    },
+    "TUNE_SWIPE_RIGHT": {
+      "name": "Redo the last undone modification",
+      "action": {
+        "type": "keys",
+        "chord": "Ctrl+Y"
+      }
+    }
+  }
+}

@@ -1,0 +1,1508 @@
+{
+  "id": "google_sheets",
+  "name": "Google Sheets",
+  "kind": "site",
+  "category": "Office",
+  "match": {
+    "windows_exe": [
+      "chrome.exe",
+      "msedge.exe",
+      "firefox.exe",
+      "brave.exe",
+      "vivaldi.exe"
+    ],
+    "macos_bundle": [
+      "com.google.Chrome",
+      "com.microsoft.edgemac",
+      "org.mozilla.firefox",
+      "com.brave.Browser",
+      "com.apple.Safari"
+    ],
+    "window_title": [
+      "Google Sheets"
+    ]
+  },
+  "sources": [
+    "https://support.google.com/docs/answer/181110?hl=en&co=GENIE.Platform%3DDesktop"
+  ],
+  "note": "Current web editor, PC/ChromeOS and Mac columns. Where the vendor lists multiple alternate chords for one action, only the primary chord is recorded. 'Insert rows above' and 'Insert columns to the left' share the Ctrl+Alt+= 'open insert menu' shortcut with 'Delete rows'/'Delete columns' sharing Ctrl+Alt+-, so those are recorded once each as menu shortcuts rather than duplicated per direction. Mouse-only shortcuts are omitted.",
+  "actions": [
+    {
+      "name": "Select column",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Space"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Space"
+      }
+    },
+    {
+      "name": "Select row",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Space"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Space"
+      }
+    },
+    {
+      "name": "Select all",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+A"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+A"
+      }
+    },
+    {
+      "name": "Undo",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Z"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Z"
+      }
+    },
+    {
+      "name": "Redo",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Y"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Y"
+      }
+    },
+    {
+      "name": "Find",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+F"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+F"
+      }
+    },
+    {
+      "name": "Find and replace",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+H"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+H"
+      }
+    },
+    {
+      "name": "Fill range",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Enter"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Enter"
+      }
+    },
+    {
+      "name": "Fill down",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+D"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+D"
+      }
+    },
+    {
+      "name": "Fill right",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+R"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+R"
+      }
+    },
+    {
+      "name": "Save",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+S"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+S"
+      }
+    },
+    {
+      "name": "Open",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+O"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+O"
+      }
+    },
+    {
+      "name": "Print",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+P"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+P"
+      }
+    },
+    {
+      "name": "Copy",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+C"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+C"
+      }
+    },
+    {
+      "name": "Cut",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+X"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+X"
+      }
+    },
+    {
+      "name": "Paste",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+V"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+V"
+      }
+    },
+    {
+      "name": "Paste values only",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+V"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+V"
+      }
+    },
+    {
+      "name": "Show common keyboard shortcuts",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+/"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+/"
+      }
+    },
+    {
+      "name": "Insert new sheet",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+F11"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+F11"
+      }
+    },
+    {
+      "name": "Compact controls",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+F"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+F"
+      }
+    },
+    {
+      "name": "Input tools on/off",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+K"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+K"
+      }
+    },
+    {
+      "name": "Select input tools",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Shift+K"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+Shift+K"
+      }
+    },
+    {
+      "name": "Tool finder",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+/"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+/"
+      }
+    },
+    {
+      "name": "Rename sheet",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+1"
+      }
+    },
+    {
+      "name": "Convert range to table",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+T"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+T"
+      }
+    },
+    {
+      "name": "Bold",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+B"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+B"
+      }
+    },
+    {
+      "name": "Underline",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+U"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+U"
+      }
+    },
+    {
+      "name": "Italic",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+I"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+I"
+      }
+    },
+    {
+      "name": "Strikethrough",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+5"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+X"
+      }
+    },
+    {
+      "name": "Center align",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+E"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+E"
+      }
+    },
+    {
+      "name": "Left align",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+L"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+L"
+      }
+    },
+    {
+      "name": "Right align",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+R"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+R"
+      }
+    },
+    {
+      "name": "Apply top border",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+1"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+1"
+      }
+    },
+    {
+      "name": "Apply right border",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+2"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+2"
+      }
+    },
+    {
+      "name": "Apply bottom border",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+3"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+3"
+      }
+    },
+    {
+      "name": "Apply left border",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+4"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+4"
+      }
+    },
+    {
+      "name": "Remove borders",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+6"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+6"
+      }
+    },
+    {
+      "name": "Apply outer border",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+7"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+7"
+      }
+    },
+    {
+      "name": "Insert link",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+K"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+K"
+      }
+    },
+    {
+      "name": "Insert time",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+;"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+;"
+      }
+    },
+    {
+      "name": "Insert date",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+;"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+;"
+      }
+    },
+    {
+      "name": "Insert date and time",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Shift+;"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+Shift+;"
+      }
+    },
+    {
+      "name": "Format as decimal",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+1"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+1"
+      }
+    },
+    {
+      "name": "Format as time",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+2"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+2"
+      }
+    },
+    {
+      "name": "Format as date",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+3"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+3"
+      }
+    },
+    {
+      "name": "Format as currency",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+4"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+4"
+      }
+    },
+    {
+      "name": "Format as percentage",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+5"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+5"
+      }
+    },
+    {
+      "name": "Format as exponent",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+6"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+6"
+      }
+    },
+    {
+      "name": "Clear formatting",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+\\"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+\\"
+      }
+    },
+    {
+      "name": "Move to beginning of row",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Home"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Home"
+      }
+    },
+    {
+      "name": "Move to beginning of sheet",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Home"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Home"
+      }
+    },
+    {
+      "name": "Move to end of row",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "End"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "End"
+      }
+    },
+    {
+      "name": "Move to end of sheet",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+End"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+End"
+      }
+    },
+    {
+      "name": "Scroll to active cell",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Backspace"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Backspace"
+      }
+    },
+    {
+      "name": "Move to next sheet",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Down"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Down"
+      }
+    },
+    {
+      "name": "Move to previous sheet",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Up"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Up"
+      }
+    },
+    {
+      "name": "Display list of sheets",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+K"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+K"
+      }
+    },
+    {
+      "name": "Open hyperlink",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Enter"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Enter"
+      }
+    },
+    {
+      "name": "Open Explore",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Shift+I"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+Shift+I"
+      }
+    },
+    {
+      "name": "Go to next side panel",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+."
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+."
+      }
+    },
+    {
+      "name": "Go to previous side panel",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+,"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+,"
+      }
+    },
+    {
+      "name": "Move focus out of spreadsheet",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Shift+M"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Cmd+Shift+M"
+      }
+    },
+    {
+      "name": "Move to quicksum",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+Q"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+Q"
+      }
+    },
+    {
+      "name": "Move focus to popup",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+Alt+E",
+          "Ctrl+Alt+P"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+Cmd+E",
+          "Ctrl+Cmd+P"
+        ]
+      }
+    },
+    {
+      "name": "Open drop-down menu on filtered cell",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+R"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Cmd+R"
+      }
+    },
+    {
+      "name": "Open revision history",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Shift+H"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+Shift+H"
+      }
+    },
+    {
+      "name": "Close drawing editor",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Esc"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Esc"
+      }
+    },
+    {
+      "name": "Insert or edit note",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+F2"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+F2"
+      }
+    },
+    {
+      "name": "Insert or edit comment",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+M"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+M"
+      }
+    },
+    {
+      "name": "Open comment discussion thread",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Shift+A"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+Shift+A"
+      }
+    },
+    {
+      "name": "Enter current comment",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+Alt+E",
+          "Ctrl+Alt+C"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+Cmd+E",
+          "Ctrl+Cmd+C"
+        ]
+      }
+    },
+    {
+      "name": "Move to next comment",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+Alt+N",
+          "Ctrl+Alt+C"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+Cmd+N",
+          "Ctrl+Cmd+C"
+        ]
+      }
+    },
+    {
+      "name": "Move to previous comment",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+Alt+P",
+          "Ctrl+Alt+C"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+Cmd+P",
+          "Ctrl+Cmd+C"
+        ]
+      }
+    },
+    {
+      "name": "Reply to current comment",
+      "context": "Comment selected",
+      "windows": {
+        "type": "keys",
+        "chord": "R"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "R"
+      }
+    },
+    {
+      "name": "Move to next comment",
+      "context": "Comment selected",
+      "windows": {
+        "type": "keys",
+        "chord": "J"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "J"
+      }
+    },
+    {
+      "name": "Move to previous comment",
+      "context": "Comment selected",
+      "windows": {
+        "type": "keys",
+        "chord": "K"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "K"
+      }
+    },
+    {
+      "name": "Resolve current comment",
+      "context": "Comment selected",
+      "windows": {
+        "type": "keys",
+        "chord": "E"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "E"
+      }
+    },
+    {
+      "name": "Exit current comment",
+      "context": "Comment selected",
+      "windows": {
+        "type": "keys",
+        "chord": "U"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "U"
+      }
+    },
+    {
+      "name": "File menu",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+F"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+F"
+      }
+    },
+    {
+      "name": "Edit menu",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+E"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+E"
+      }
+    },
+    {
+      "name": "View menu",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+V"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+V"
+      }
+    },
+    {
+      "name": "Insert menu",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+I"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+I"
+      }
+    },
+    {
+      "name": "Format menu",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+O"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+O"
+      }
+    },
+    {
+      "name": "Data menu",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+D"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+D"
+      }
+    },
+    {
+      "name": "Tools menu",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+T"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+T"
+      }
+    },
+    {
+      "name": "Open insert menu (insert rows above / columns left)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+="
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+="
+      }
+    },
+    {
+      "name": "Open delete menu (delete selected rows / columns)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+-"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+-"
+      }
+    },
+    {
+      "name": "Form menu",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+M"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+M"
+      }
+    },
+    {
+      "name": "Add-ons menu",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+N"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+N"
+      }
+    },
+    {
+      "name": "Help menu",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+H"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+H"
+      }
+    },
+    {
+      "name": "Accessibility menu",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+A"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+A"
+      }
+    },
+    {
+      "name": "Sheet menu",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+S"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+S"
+      }
+    },
+    {
+      "name": "Context menu",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+F10"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+F10"
+      }
+    },
+    {
+      "name": "Table column menu",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+\\"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+\\"
+      }
+    },
+    {
+      "name": "Insert rows below",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+I",
+          "R",
+          "B"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+Alt+I",
+          "R",
+          "B"
+        ]
+      }
+    },
+    {
+      "name": "Insert columns to the right",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+I",
+          "C",
+          "O"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+Alt+I",
+          "C",
+          "O"
+        ]
+      }
+    },
+    {
+      "name": "Hide row",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+9"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+9"
+      }
+    },
+    {
+      "name": "Unhide row",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+9"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+9"
+      }
+    },
+    {
+      "name": "Hide column",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+0"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+0"
+      }
+    },
+    {
+      "name": "Unhide column",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+0"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+0"
+      }
+    },
+    {
+      "name": "Group rows or columns",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+Right"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+Right"
+      }
+    },
+    {
+      "name": "Ungroup rows or columns",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+Left"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+Left"
+      }
+    },
+    {
+      "name": "Expand grouped rows or columns",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+Down"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+Down"
+      }
+    },
+    {
+      "name": "Collapse grouped rows or columns",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+Up"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+Up"
+      }
+    },
+    {
+      "name": "Show all formulas",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+`"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+`"
+      }
+    },
+    {
+      "name": "Insert array formula",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Enter"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+Enter"
+      }
+    },
+    {
+      "name": "Collapse an expanded array formula",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+E"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+E"
+      }
+    },
+    {
+      "name": "Show / hide formula help",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+F1"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+F1"
+      }
+    },
+    {
+      "name": "Full / compact formula help",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F1"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "F1"
+      }
+    },
+    {
+      "name": "Toggle absolute / relative references",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F4"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "F4"
+      }
+    },
+    {
+      "name": "Toggle formula result previews",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F9"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "F9"
+      }
+    },
+    {
+      "name": "Expand formula bar",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Up"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Up"
+      }
+    },
+    {
+      "name": "Collapse formula bar",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Down"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Down"
+      }
+    },
+    {
+      "name": "Toggle formula range selection",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F2"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "F2"
+      }
+    },
+    {
+      "name": "Turn on screen reader support",
+      "context": "Screen reader",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Z"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+Z"
+      }
+    },
+    {
+      "name": "Enable braille support",
+      "context": "Screen reader",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+H"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+H"
+      }
+    },
+    {
+      "name": "Read column",
+      "context": "Screen reader",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Shift+C"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+Shift+C"
+      }
+    },
+    {
+      "name": "Read row",
+      "context": "Screen reader",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Shift+R"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+Shift+R"
+      }
+    }
+  ],
+  "defaults": {
+    "TUNE_CW": {
+      "name": "Move to next sheet",
+      "action": {
+        "type": "keys",
+        "chord": "Alt+Down"
+      },
+      "accel": "light"
+    },
+    "TUNE_CCW": {
+      "name": "Move to previous sheet",
+      "action": {
+        "type": "keys",
+        "chord": "Alt+Up"
+      },
+      "accel": "light"
+    },
+    "TUNE_TAP_1F": {
+      "name": "Bold",
+      "action": {
+        "type": "keys",
+        "chord": "Ctrl+B"
+      }
+    }
+  }
+}

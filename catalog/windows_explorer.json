@@ -1,0 +1,179 @@
+{
+  "id": "windows_explorer",
+  "name": "File Explorer",
+  "kind": "app",
+  "category": "Files",
+  "match": {
+    "windows_exe": [
+      "explorer.exe"
+    ],
+    "macos_bundle": [],
+    "window_title": []
+  },
+  "sources": [
+    "https://support.microsoft.com/en-us/windows/keyboard-shortcuts-in-windows-dcc61a57-8ff0-cffe-9796-cb9706c75eec"
+  ],
+  "note": "The File Explorer section of Microsoft's shortcuts page, plus F3 and F4, which that page's general section documents as File Explorer commands. Left out because the chord grammar cannot express them: Ctrl+mouse scroll wheel (change the size and appearance of file and folder icons) and the numpad rows Num Lock+asterisk (*), Num Lock+plus (+) and Num Lock+minus (-).",
+  "actions": [
+    {
+      "name": "Select the address bar",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+D"
+      }
+    },
+    {
+      "name": "Select the search box",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+E"
+      }
+    },
+    {
+      "name": "Select the search box (Ctrl+F)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+F"
+      }
+    },
+    {
+      "name": "Open a new window",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+N"
+      }
+    },
+    {
+      "name": "Close the active window",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+W"
+      }
+    },
+    {
+      "name": "Display all folders above the selected folder",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+E"
+      }
+    },
+    {
+      "name": "Create a new folder",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+N"
+      }
+    },
+    {
+      "name": "Display the preview panel",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+P"
+      }
+    },
+    {
+      "name": "Open the Properties dialog box for the selected item",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Enter"
+      }
+    },
+    {
+      "name": "View the next folder",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Right"
+      }
+    },
+    {
+      "name": "View the folder that the folder was in",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Up"
+      }
+    },
+    {
+      "name": "View the previous folder",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Left"
+      }
+    },
+    {
+      "name": "View the previous folder (Backspace)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Backspace"
+      }
+    },
+    {
+      "name": "Display the current selection (if it's collapsed), or select the first subfolder",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Right"
+      }
+    },
+    {
+      "name": "Collapse the current selection (if it's expanded), or select the folder that the folder was in",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Left"
+      }
+    },
+    {
+      "name": "Display the bottom of the active window",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "End"
+      }
+    },
+    {
+      "name": "Display the top of the active window",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Home"
+      }
+    },
+    {
+      "name": "Maximize or minimize the active window",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F11"
+      }
+    },
+    {
+      "name": "Search for a file or folder in File Explorer",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F3"
+      }
+    },
+    {
+      "name": "Display the address bar list in File Explorer",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F4"
+      }
+    }
+  ]
+}

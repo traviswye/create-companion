@@ -1,0 +1,1239 @@
+{
+  "id": "capture_one",
+  "name": "Capture One Pro",
+  "kind": "app",
+  "category": "Creative",
+  "match": {
+    "windows_exe": [
+      "CaptureOne.exe"
+    ],
+    "macos_bundle": [
+      "com.captureone.captureone16"
+    ],
+    "window_title": []
+  },
+  "sources": [
+    "https://support.captureone.com/hc/en-us/sections/360000860078-Keyboard-Shortcuts",
+    "https://support.captureone.com/hc/en-us/articles/360003399778-What-are-the-hotkeys-in-Capture-One",
+    "https://support.captureone.com/hc/en-us/articles/360002490637-Keyboard-shortcut-sets",
+    "https://support.captureone.com/hc/en-us/articles/360002490857-Assigning-shortcuts-to-Cursor-Tools",
+    "https://support.captureone.com/hc/en-us/articles/360015629178-Speed-Edit",
+    "https://support.captureone.com/hc/en-us/articles/360002401957-Copy-and-Apply-adjustments-and-layers",
+    "https://support.captureone.com/hc/en-us/articles/360002468897-The-Viewer-overview",
+    "https://support.captureone.com/hc/en-us/articles/360002470117-Workspace-layouts",
+    "https://support.captureone.com/hc/en-us/articles/360002472897-The-Loupe-tool",
+    "https://support.captureone.com/hc/en-us/articles/360002473237-Viewing-a-magnified-image",
+    "https://support.captureone.com/hc/en-us/articles/360002473598-The-Viewer-modes",
+    "https://support.captureone.com/hc/en-us/articles/360002474418-Full-Screen-mode",
+    "https://support.captureone.com/hc/en-us/articles/360002480737-Adjustment-controls-Undo-Redo-commands",
+    "https://support.captureone.com/hc/en-us/articles/360002481077-Resetting-adjustments",
+    "https://support.captureone.com/hc/en-us/articles/360002485998-Selecting-and-deselecting-the-primary-variant",
+    "https://support.captureone.com/hc/en-us/articles/360002486418-Navigating-image-selections",
+    "https://support.captureone.com/hc/en-us/articles/360002492617-Importing-images-into-a-Catalog",
+    "https://support.captureone.com/hc/en-us/articles/360002524157-Selects-Folder-and-Selects-Collection",
+    "https://support.captureone.com/hc/en-us/articles/360002546518-Deleting-images-and-variants-from-the-Session-Trash",
+    "https://support.captureone.com/hc/en-us/articles/360002547197-Deleting-images-and-their-variants-from-Collections",
+    "https://support.captureone.com/hc/en-us/articles/360002564198-Taking-test-shots",
+    "https://support.captureone.com/hc/en-us/articles/360002582997-The-Crop-Tool",
+    "https://support.captureone.com/hc/en-us/articles/360002583897-Working-with-Guides",
+    "https://support.captureone.com/hc/en-us/articles/360002584057-Straightening-an-image",
+    "https://support.captureone.com/hc/en-us/articles/360002584197-Auto-Rotate-tool",
+    "https://support.captureone.com/hc/en-us/articles/360002587158-Adding-a-Grid",
+    "https://support.captureone.com/hc/en-us/articles/360002587498-Rotating-manually",
+    "https://support.captureone.com/hc/en-us/articles/360002587958-Resetting-the-Rotation-and-Flip-adjustments",
+    "https://support.captureone.com/hc/en-us/articles/360002588058-Keystone-correction",
+    "https://support.captureone.com/hc/en-us/articles/360002590737-Setting-a-custom-white-balance-using-a-gray-card-or-chart",
+    "https://support.captureone.com/hc/en-us/articles/360002598098-Normalizing-images",
+    "https://support.captureone.com/hc/en-us/articles/360002601738-Adjusting-a-color-range",
+    "https://support.captureone.com/hc/en-us/articles/360002602177-Adjusting-contrast-in-the-Exposure-tool",
+    "https://support.captureone.com/hc/en-us/articles/360002603397-Manual-adjustment-of-brightness-and-contrast-in-the-Levels-tool",
+    "https://support.captureone.com/hc/en-us/articles/360002605677-Softening-skin-in-portraits",
+    "https://support.captureone.com/hc/en-us/articles/360002606917-Adjusting-sharpening-in-the-Sharpening-tool",
+    "https://support.captureone.com/hc/en-us/articles/360002616618-Removing-spots-and-sensor-dust",
+    "https://support.captureone.com/hc/en-us/articles/360002618377-Creating-a-Linear-Gradient-Mask",
+    "https://support.captureone.com/hc/en-us/articles/360002619037-Creating-a-Radial-Gradient-Mask",
+    "https://support.captureone.com/hc/en-us/articles/360002622538-Deleting-a-Layer",
+    "https://support.captureone.com/hc/en-us/articles/360002623258-Displaying-masked-areas",
+    "https://support.captureone.com/hc/en-us/articles/360002625697-Repairing-Layers-with-the-Heal-tool",
+    "https://support.captureone.com/hc/en-us/articles/360002625858-Changing-Size-and-Hardness-parameters-of-the-brush",
+    "https://support.captureone.com/hc/en-us/articles/360002626757-Sketching-on-images",
+    "https://support.captureone.com/hc/en-us/articles/360002635578-Repairing-layers-with-the-Clone-tool",
+    "https://support.captureone.com/hc/en-us/articles/360002639978-Exporting-originals",
+    "https://support.captureone.com/hc/en-us/articles/360003108698-Complete-Guide-to-Using-Catalogs",
+    "https://support.captureone.com/hc/en-us/articles/360008695238-Capture-One-20-13-1-0-release-notes",
+    "https://support.captureone.com/hc/en-us/articles/360008828758-Comparing-images-with-the-Before-After-feature",
+    "https://support.captureone.com/hc/en-us/articles/360021057158-Export-Recipes",
+    "https://support.captureone.com/hc/en-us/articles/4403021653649-Export-overview",
+    "https://support.captureone.com/hc/en-us/articles/4403193308049-Magic-Brush",
+    "https://support.captureone.com/hc/en-us/articles/5363647129757-Magic-Eraser",
+    "https://support.captureone.com/hc/en-us/articles/10913734650653-Dust-Removal",
+    "https://support.captureone.com/hc/en-us/articles/10915314545565-Capture-One-23-16-2-0-release-notes",
+    "https://support.captureone.com/hc/en-us/articles/20289944556829-Capture-One-16-4-4-Release-Notes",
+    "https://support.captureone.com/hc/en-us/articles/24441220551965-Capture-One-16-5-4-Release-Notes",
+    "https://support.captureone.com/hc/en-us/articles/30973425948445-Can-t-export-multiple-images-in-Capture-One",
+    "https://support.captureone.com/hc/en-us/articles/4413858775441-Capture-One-22-User-Guide",
+    "https://support.captureone.com/hc/article_attachments/4413885156497/Capture_One_22_User_Guide.pdf"
+  ],
+  "note": "Capture One does not publish its default shortcut set as a document. The vendor's Help Center has a \"Keyboard Shortcuts\" section (sections/360000860078), but its nine articles only explain how to pick, copy, edit and delete shortcut sets; the article \"What are the hotkeys in Capture One?\" answers the question by telling the user to press Edit -> Edit Keyboard Shortcuts -> Summarize..., which generates the list from inside the running application into the default browser. The section index, the whole 1,273-article Help Center corpus (pulled through the Zendesk Help Center API and read article by article), and the Capture One 22 User Guide PDF linked from the Help Center were all searched: there is no Mac-column / Windows-column shortcut table anywhere on support.captureone.com, and the Capture One 4-12, 20, 21 and 22 User Guide PDFs carry no shortcut appendix either. Every action below is therefore a shortcut Capture One states in running prose in one of the listed articles or in the User Guide, transcribed with the vendor's own wording; nothing has been inferred from menu structure, guessed at, or taken from third-party shortcut lists. Only the ninety-odd keys the vendor actually writes down are here, so this file is much shorter than Capture One's real default set: the tool tab keys, the star rating and color tag keys, Preferences/Quit/Open/Close/Print, Cut/Copy/Paste and the Speed Edit keys are all real but are nowhere documented, and were left out rather than reconstructed. A vendor-hosted spreadsheet, learn.captureone.com/wp-content/uploads/sites/2/Bobs-Keyboard-Shortcut-Comparison-Chart.xlsx, does list a full macOS menu set, but it is a user-contributed Lightroom-comparison chart that still shows the pre-Capture One 20 defaults (Hide Viewer as Alt+Cmd+V, where the current default is G), so it was deliberately not used. Where Capture One writes a shortcut as \"Cmd/Ctrl+X (macOS/Windows)\" both platforms are filled in; where it names only one platform only that platform is present - Edit All Selected is documented as Shift+Cmd+E on macOS only, and Clear Compare Variant is documented in the User Guide as \"Cmd-Return/Shift+Enter (Mac/Windows)\", whose Windows half collides with the Windows form of Set as Compare Variant, so only the macOS Cmd+Enter is recorded. Next Collection, Previous Collection, Step in/Expand and Step out/Collapse really are documented as Ctrl+Shift+S / W / D / A on both macOS and Windows. Select First and Select Last use the Home and End forms the vendor spells out for macOS (Command+Home / Command+End, or Command+fn+Left / Command+fn+Right on keyboards without those keys) with the Ctrl equivalents the same article states for Windows; the fn variants are not expressible in the chord grammar and were dropped. Full Screen is F on both platforms; Windows also accepts F11 as a documented secondary shortcut, which the grammar cannot attach to the same action, so it is recorded here in prose only. The six viewer background colors are documented as one range, \"Shift + 1, 2, 3... 6\", without saying which number is which color, so they are listed as six actions with the chord repeated in the name. Draw Mask and Magic Brush both answer to B, Erase Mask and Magic Eraser both answer to E, and Shift+B / Shift+E cycle within those groups - the cycling entries are named after what the vendor says they do because Capture One gives them no command name. Q is documented twice, as Toggle Focus Mask (in the Capture One 20 default-set list) and as the Heal Brush cursor, and S is documented both as the Clone Brush and, inside the Import window, as checkmarking the selected images; the Import window and Export window keys therefore carry a context so they do not collide with the app-wide ones. Spot Removal (O) is kept even though the tool was replaced by Auto Dust Removal in Capture One 23 (16.2), because the vendor still documents it. Deliberately excluded because the chord grammar cannot express them: every mouse and pen gesture Capture One documents for brushes and masks (Ctrl+Opt+left-click and drag on Mac / Alt+right-click and drag on Windows for Size, Hardness, Tolerance, Opacity and Refine Edge, with the Shift+Ctrl+Opt and Shift+right-click variants for the second axis), Cmd/Ctrl-click and Shift-click selection in the Browser, Alt-click on a tool's reset button for a temporary reset, Option/Alt+Space plus scroll for the Loupe size, Alt-click with the Zoom cursor to zoom out, Shift-drag to snap a gradient mask to 45 degrees, Alt or Alt+Shift while drawing a radial mask, holding Alt/Option to toggle a brush into an eraser, Ctrl/right-click context menus, and the Speed Edit interaction as a whole (hold the tool's key, then scroll, drag, or press Space to reset). Also left out: the bare arrow keys that walk the Browser during a Compare Variant (Left/Right/Up/Down on macOS, Ctrl+arrow on Windows) because Capture One gives that behavior no command name; the Pause key in the slide show, which is not in the grammar; Cmd/Ctrl+F, Cmd+Shift+G, Ctrl+Alt+Delete, Command+Option+Esc and Windows+R, which are operating-system or web-browser keys appearing in Capture One's troubleshooting articles rather than Capture One shortcuts; and the example assignments the shortcut-editor articles use to explain customization (P assigned to all pickers so Shift+P cycles them, Alt+Option+0 for a custom crop ratio), which are illustrations rather than defaults. Chords reflect Capture One 16.x (Capture One Pro 2023-2025) together with the Capture One 20 default-set changes the vendor lists; the Capture One 22 User Guide PDF is the newest complete manual Capture One publishes and supplied the Zoom In / Zoom Out, Crop (C), Rotate Snap, Compare Variant, brush-size bracket and Annotations (I / Y / J) entries.",
+  "actions": [
+    {
+      "name": "Undo",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Z"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Z"
+      }
+    },
+    {
+      "name": "Redo",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Y"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+Z"
+      }
+    },
+    {
+      "name": "Select All",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+A"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+A"
+      }
+    },
+    {
+      "name": "Deselect All",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+A"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+A"
+      }
+    },
+    {
+      "name": "New Catalog",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+N"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+N"
+      }
+    },
+    {
+      "name": "Move to Selects Folder",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+J"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+J"
+      }
+    },
+    {
+      "name": "Delete (Move To Catalog/Session Trash)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Backspace"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Backspace"
+      }
+    },
+    {
+      "name": "Capture",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+K"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+K"
+      }
+    },
+    {
+      "name": "Export with previous settings",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+D"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+D"
+      }
+    },
+    {
+      "name": "Open the Export Images window",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Ctrl+D"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+D"
+      }
+    },
+    {
+      "name": "Edit All Selected",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+E"
+      }
+    },
+    {
+      "name": "Copy Adjustments",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Ctrl+C"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+C"
+      }
+    },
+    {
+      "name": "Apply Adjustments",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Ctrl+V"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+V"
+      }
+    },
+    {
+      "name": "Reset",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+R"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+R"
+      }
+    },
+    {
+      "name": "Auto Adjust",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+L"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+L"
+      }
+    },
+    {
+      "name": "Rotate Snap",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Ctrl+L"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+L"
+      }
+    },
+    {
+      "name": "New Variant",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F7"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "F2"
+      }
+    },
+    {
+      "name": "Select First",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Home"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Home"
+      }
+    },
+    {
+      "name": "Select Previous",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Left"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Left"
+      }
+    },
+    {
+      "name": "Select Next",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Right"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Right"
+      }
+    },
+    {
+      "name": "Select Last",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+End"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+End"
+      }
+    },
+    {
+      "name": "Next Set",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Right"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Right"
+      }
+    },
+    {
+      "name": "Previous Set",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Left"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Left"
+      }
+    },
+    {
+      "name": "Next Collection",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+S"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+S"
+      }
+    },
+    {
+      "name": "Previous Collection",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+W"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+W"
+      }
+    },
+    {
+      "name": "Step in/Expand",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+D"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+D"
+      }
+    },
+    {
+      "name": "Step out/Collapse",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+A"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+A"
+      }
+    },
+    {
+      "name": "Set as Compare Variant",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Enter"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Enter"
+      }
+    },
+    {
+      "name": "Clear Compare Variant",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Enter"
+      }
+    },
+    {
+      "name": "Show Exposure Warnings",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+E"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+E"
+      }
+    },
+    {
+      "name": "Grid",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+G"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+G"
+      }
+    },
+    {
+      "name": "Browser",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+B"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+B"
+      }
+    },
+    {
+      "name": "Show/Hide Viewer",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "G"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "G"
+      }
+    },
+    {
+      "name": "Full Screen",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "F"
+      }
+    },
+    {
+      "name": "Exit Full Screen",
+      "context": "Full Screen mode",
+      "windows": {
+        "type": "keys",
+        "chord": "Esc"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Esc"
+      }
+    },
+    {
+      "name": "Terminate the slide show",
+      "context": "Slide show",
+      "windows": {
+        "type": "keys",
+        "chord": "Esc"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Esc"
+      }
+    },
+    {
+      "name": "Proof Margin",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "X"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "X"
+      }
+    },
+    {
+      "name": "Zoom to 100%",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "."
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "."
+      }
+    },
+    {
+      "name": "Zoom to fit",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": ","
+      },
+      "mac": {
+        "type": "keys",
+        "chord": ","
+      }
+    },
+    {
+      "name": "Zoom In",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Plus"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Plus"
+      }
+    },
+    {
+      "name": "Zoom Out",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+-"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+-"
+      }
+    },
+    {
+      "name": "Toggle Focus Mask",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Q"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Q"
+      }
+    },
+    {
+      "name": "Before/After",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Y"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Y"
+      }
+    },
+    {
+      "name": "Before/After Mode",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Y"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Y"
+      }
+    },
+    {
+      "name": "Viewer background color (Shift+1)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+1"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+1"
+      }
+    },
+    {
+      "name": "Viewer background color (Shift+2)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+2"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+2"
+      }
+    },
+    {
+      "name": "Viewer background color (Shift+3)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+3"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+3"
+      }
+    },
+    {
+      "name": "Viewer background color (Shift+4)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+4"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+4"
+      }
+    },
+    {
+      "name": "Viewer background color (Shift+5)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+5"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+5"
+      }
+    },
+    {
+      "name": "Viewer background color (Shift+6)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+6"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+6"
+      }
+    },
+    {
+      "name": "Direct Color Editor",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "D"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "D"
+      }
+    },
+    {
+      "name": "Switch Crop Orientation",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+X"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+X"
+      }
+    },
+    {
+      "name": "Remove Dust",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+O"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+O"
+      }
+    },
+    {
+      "name": "Auto Rotate",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+R"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+R"
+      }
+    },
+    {
+      "name": "Apply Normalization",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+N"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+N"
+      }
+    },
+    {
+      "name": "Select",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "V"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "V"
+      }
+    },
+    {
+      "name": "Pan",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "H"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "H"
+      }
+    },
+    {
+      "name": "Zoom-In cursor",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Z"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Z"
+      }
+    },
+    {
+      "name": "Loupe",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "P"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "P"
+      }
+    },
+    {
+      "name": "Crop",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "C"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "C"
+      }
+    },
+    {
+      "name": "Straighten",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "R"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "R"
+      }
+    },
+    {
+      "name": "Switch between the cursors in the Straighten group",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+R"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+R"
+      }
+    },
+    {
+      "name": "Keystone",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "K"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "K"
+      }
+    },
+    {
+      "name": "White Balance picker",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "W"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "W"
+      }
+    },
+    {
+      "name": "Pick Normalize Color",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "N"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "N"
+      }
+    },
+    {
+      "name": "Spot Removal",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "O"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "O"
+      }
+    },
+    {
+      "name": "Draw Mask",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "B"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "B"
+      }
+    },
+    {
+      "name": "Erase Mask",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "E"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "E"
+      }
+    },
+    {
+      "name": "Magic Brush",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "B"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "B"
+      }
+    },
+    {
+      "name": "Magic Eraser",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "E"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "E"
+      }
+    },
+    {
+      "name": "Switch between the cursor tools sharing the Draw Mask shortcut",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+B"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+B"
+      }
+    },
+    {
+      "name": "Switch between the cursor tools sharing the Erase Mask shortcut",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+E"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+E"
+      }
+    },
+    {
+      "name": "Draw Linear Gradient Mask",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "L"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "L"
+      }
+    },
+    {
+      "name": "Draw Radial Gradient Mask",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "T"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "T"
+      }
+    },
+    {
+      "name": "Heal Brush",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Q"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Q"
+      }
+    },
+    {
+      "name": "Clone Brush",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "S"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "S"
+      }
+    },
+    {
+      "name": "Always Display Mask",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "M"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "M"
+      }
+    },
+    {
+      "name": "Never Display Mask",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "M"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "M"
+      }
+    },
+    {
+      "name": "Display Grayscale Mask",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+M"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+M"
+      }
+    },
+    {
+      "name": "Decrease the brush size",
+      "context": "Brush tools",
+      "windows": {
+        "type": "keys",
+        "chord": "["
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "["
+      }
+    },
+    {
+      "name": "Increase the brush size",
+      "context": "Brush tools",
+      "windows": {
+        "type": "keys",
+        "chord": "]"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "]"
+      }
+    },
+    {
+      "name": "Decrease the brush hardness",
+      "context": "Brush tools",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+["
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+["
+      }
+    },
+    {
+      "name": "Increase the brush hardness",
+      "context": "Brush tools",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+]"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+]"
+      }
+    },
+    {
+      "name": "Annotation pen",
+      "context": "Annotations",
+      "windows": {
+        "type": "keys",
+        "chord": "I"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "I"
+      }
+    },
+    {
+      "name": "Eraser",
+      "context": "Annotations",
+      "windows": {
+        "type": "keys",
+        "chord": "Y"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Y"
+      }
+    },
+    {
+      "name": "Show/hide toggle",
+      "context": "Annotations",
+      "windows": {
+        "type": "keys",
+        "chord": "J"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "J"
+      }
+    },
+    {
+      "name": "Display images in an import Viewer",
+      "context": "Import window",
+      "windows": {
+        "type": "keys",
+        "chord": "G"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "G"
+      }
+    },
+    {
+      "name": "Checkmark all the selected images",
+      "context": "Import window",
+      "windows": {
+        "type": "keys",
+        "chord": "S"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "S"
+      }
+    },
+    {
+      "name": "Uncheck all the selected images",
+      "context": "Import window",
+      "windows": {
+        "type": "keys",
+        "chord": "A"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "A"
+      }
+    },
+    {
+      "name": "Reset the image selection",
+      "context": "Import window",
+      "windows": {
+        "type": "keys",
+        "chord": "X"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "X"
+      }
+    },
+    {
+      "name": "Pick All",
+      "context": "Import window",
+      "windows": {
+        "type": "keys",
+        "chord": "P"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "P"
+      }
+    },
+    {
+      "name": "Toggle between the Viewer and Grid View",
+      "context": "Export window",
+      "windows": {
+        "type": "keys",
+        "chord": "G"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "G"
+      }
+    },
+    {
+      "name": "Alter the value by a larger increment (Up)",
+      "context": "Slider value fields",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Up"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Up"
+      }
+    },
+    {
+      "name": "Alter the value by a larger increment (Down)",
+      "context": "Slider value fields",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Down"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Down"
+      }
+    }
+  ],
+  "defaults": {
+    "TUNE_CW": {
+      "name": "Select Next",
+      "action": {
+        "type": "keys",
+        "chord": "Ctrl+Right"
+      },
+      "accel": "light"
+    },
+    "TUNE_CCW": {
+      "name": "Select Previous",
+      "action": {
+        "type": "keys",
+        "chord": "Ctrl+Left"
+      },
+      "accel": "light"
+    },
+    "TUNE_TAP_1F": {
+      "name": "Before/After",
+      "action": {
+        "type": "keys",
+        "chord": "Y"
+      }
+    },
+    "TUNE_SWIPE_LEFT": {
+      "name": "Undo",
+      "action": {
+        "type": "keys",
+        "chord": "Ctrl+Z"
+      }
+    },
+    "TUNE_SWIPE_RIGHT": {
+      "name": "Redo",
+      "action": {
+        "type": "keys",
+        "chord": "Ctrl+Y"
+      }
+    }
+  }
+}

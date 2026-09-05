@@ -1,0 +1,50 @@
+{
+  "id": "docker_desktop",
+  "name": "Docker Desktop",
+  "kind": "app",
+  "category": "Development",
+  "match": {
+    "windows_exe": [
+      "Docker Desktop.exe"
+    ],
+    "macos_bundle": [
+      "com.docker.docker"
+    ],
+    "window_title": []
+  },
+  "sources": [
+    "https://docs.docker.com/desktop/release-notes/"
+  ],
+  "note": "Docker Desktop has no dedicated keyboard-shortcut reference page. These are the only shortcuts Docker documents, drawn from its official release notes across versions: Zoom in/out/Actual Size added in 4.12.0 (\"Added the ability to zoom in, out or set Docker Desktop to Actual Size. This is done by using keyboard shortcuts ⌘ + / CTRL +, ⌘ - / CTRL -, ⌘ 0 / CTRL 0 on Mac and Windows respectively, or through the View menu on Mac.\"), with the Windows zoom-in chord confirmed literally as ctrl+= in a 4.19.0 bug fix; Restart via ctrl-r on the Dashboard noted in 4.4.2; Quit via Cmd+Q (Mac) / Ctrl+Q (Windows, also Linux) confirmed in the 4.73.0 bug fix. An older 4.8.0 note about an Windows \"Ctrl+W\" shortcut was omitted as superseded/ambiguous next to the more recent, explicit Ctrl+Q quit fix.",
+  "actions": [
+    {
+      "name": "Quit Docker Desktop",
+      "context": "",
+      "windows": { "type": "keys", "chord": "Ctrl+Q" },
+      "mac": { "type": "keys", "chord": "Cmd+Q" }
+    },
+    {
+      "name": "Restart",
+      "context": "Dashboard",
+      "windows": { "type": "keys", "chord": "Ctrl+R" }
+    },
+    {
+      "name": "Zoom in",
+      "context": "Dashboard",
+      "windows": { "type": "keys", "chord": "Ctrl+Plus" },
+      "mac": { "type": "keys", "chord": "Cmd+Plus" }
+    },
+    {
+      "name": "Zoom out",
+      "context": "Dashboard",
+      "windows": { "type": "keys", "chord": "Ctrl+-" },
+      "mac": { "type": "keys", "chord": "Cmd+-" }
+    },
+    {
+      "name": "Actual Size",
+      "context": "Dashboard",
+      "windows": { "type": "keys", "chord": "Ctrl+0" },
+      "mac": { "type": "keys", "chord": "Cmd+0" }
+    }
+  ]
+}

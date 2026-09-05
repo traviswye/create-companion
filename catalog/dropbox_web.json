@@ -1,0 +1,91 @@
+{
+  "id": "dropbox_web",
+  "name": "Dropbox",
+  "kind": "site",
+  "category": "Files",
+  "match": {
+    "windows_exe": [
+      "chrome.exe",
+      "msedge.exe",
+      "firefox.exe",
+      "brave.exe",
+      "vivaldi.exe"
+    ],
+    "macos_bundle": [
+      "com.google.Chrome",
+      "com.microsoft.edgemac",
+      "org.mozilla.firefox",
+      "com.brave.Browser",
+      "com.apple.Safari"
+    ],
+    "window_title": [
+      "Dropbox"
+    ]
+  },
+  "sources": [
+    "https://help.dropbox.com/organize/keyboard-shortcuts"
+  ],
+  "note": "Web only (dropbox.com); the source states these shortcuts work only while viewing the Files tab of dropbox.com, and are the same on Windows and Mac. '?' (shown as \"Access shortcut menu\" in the source, using the un-shifted '/' key's Shift form) is recorded as Shift+/ per this grammar since '?' itself is not an expressible key. Mouse-only selection shortcuts (Shift+Click to select a consecutive range, Ctrl/Cmd+Click to select nonconsecutive items) are skipped as not expressible.",
+  "actions": [
+    {
+      "name": "Move up in the file list",
+      "context": "Files tab",
+      "windows": {
+        "type": "keys",
+        "chord": "Up"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Up"
+      }
+    },
+    {
+      "name": "Move down in the file list",
+      "context": "Files tab",
+      "windows": {
+        "type": "keys",
+        "chord": "Down"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Down"
+      }
+    },
+    {
+      "name": "Open the selected file or folder",
+      "context": "Files tab",
+      "windows": {
+        "type": "keys",
+        "chord": "Enter"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Enter"
+      }
+    },
+    {
+      "name": "Search files and folders",
+      "context": "Files tab",
+      "windows": {
+        "type": "keys",
+        "chord": "/"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "/"
+      }
+    },
+    {
+      "name": "Show the keyboard shortcut menu",
+      "context": "Files tab",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+/"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+/"
+      }
+    }
+  ]
+}

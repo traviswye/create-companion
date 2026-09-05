@@ -1,0 +1,317 @@
+{
+  "id": "solidworks",
+  "name": "SOLIDWORKS",
+  "kind": "app",
+  "category": "CAD / 3D",
+  "match": {
+    "windows_exe": [
+      "SLDWORKS.exe"
+    ],
+    "window_title": []
+  },
+  "sources": [
+    "https://help.solidworks.com/2025/english/SolidWorks/sldworks/c_time_saving_keyboard_shortcuts.htm",
+    "https://help.solidworks.com/2025/english/solidworks/sldworks/r_Keyboard_Shortcuts.htm",
+    "https://files.solidworks.com/supportfiles/Release_Notes/2007/English/quick_reference.pdf"
+  ],
+  "note": "SOLIDWORKS is Windows only, so there is no `mac` entry anywhere. The entries with a context come from the SOLIDWORKS 2025 Help topic \"Selected Keyboard Shortcuts\" and keep that page's area headings; the entries with an empty context come from SOLIDWORKS's published \"SolidWorks Quick Reference - Keyboard Shortcuts\" sheet (document SWQRCENG06060), which is the vendor's own shortcut sheet but is an older edition, so only the rows it does not share with the current Help page are taken from it. SOLIDWORKS ships most of its shortcuts unassigned and the full default list is only printable from Tools > Customize > Keyboard inside the product; this file is therefore the complete published list, not the complete in-product list. Left out because the chord grammar cannot express them: every mouse binding (Alt+drag, Ctrl+drag, Shift+drag, Alt+click, Ctrl+click, Shift+click, right-click and drag, the middle-mouse-button rotate/pan/zoom rows and \"Alt + middle mouse wheel\"); the hold-a-modifier rows (Alt for temporarily hiding a face, Shift+Alt, Ctrl+Shift+Alt, \"Pressing Ctrl while sketching\", \"Shift while dimensioning\"); the arrow-key groups, which name four keys at once (\"Alt + arrow keys\" rotate parallel to the viewing plane, \"Shift + arrow keys\" rotate 90 degrees, \"Ctrl + arrow keys\" pan, \"Shift + arrow keys\" reorient a Routing component, plain \"Arrows\" rotate horizontally or vertically); and \"Alt + 0176 / 0216 / 0181\", which are numeric-keypad Windows symbol codes. No undo/redo shortcut is documented on either source, so no swipe defaults are proposed.",
+  "actions": [
+    {
+      "name": "Hide all components below the pointer",
+      "context": "Assemblies",
+      "windows": {
+        "type": "keys",
+        "chord": "Tab"
+      }
+    },
+    {
+      "name": "Rotate the component 90 degrees while inserting a component",
+      "context": "Assemblies",
+      "windows": {
+        "type": "keys",
+        "chord": "Tab"
+      }
+    },
+    {
+      "name": "Show all components below the pointer",
+      "context": "Assemblies",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Tab"
+      }
+    },
+    {
+      "name": "Rotate the component -90 degrees while inserting a component",
+      "context": "Assemblies",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Tab"
+      }
+    },
+    {
+      "name": "Temporarily display all hidden components as transparent",
+      "context": "Assemblies",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Tab"
+      }
+    },
+    {
+      "name": "Open the shortcut menu and context toolbar",
+      "context": "Assemblies",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+F10"
+      }
+    },
+    {
+      "name": "Copy",
+      "context": "Copy/Paste",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+C"
+      }
+    },
+    {
+      "name": "Paste",
+      "context": "Copy/Paste",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+V"
+      }
+    },
+    {
+      "name": "Change the annotation view plane for a dimension or annotation",
+      "context": "Dimensions and Annotations",
+      "windows": {
+        "type": "keys",
+        "chord": "`"
+      }
+    },
+    {
+      "name": "Zoom in",
+      "context": "Display",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Z"
+      }
+    },
+    {
+      "name": "Zoom out",
+      "context": "Display",
+      "windows": {
+        "type": "keys",
+        "chord": "Z"
+      }
+    },
+    {
+      "name": "Zoom to fit",
+      "context": "Display",
+      "windows": {
+        "type": "keys",
+        "chord": "F"
+      }
+    },
+    {
+      "name": "Open the View Selector",
+      "context": "Display",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Space"
+      }
+    },
+    {
+      "name": "Open the View Selector and Orientation dialog box",
+      "context": "Display",
+      "windows": {
+        "type": "keys",
+        "chord": "Space"
+      }
+    },
+    {
+      "name": "Flip the direction of the forming tool",
+      "context": "Sheet Metal",
+      "windows": {
+        "type": "keys",
+        "chord": "Tab"
+      }
+    },
+    {
+      "name": "Change the XYZ plane when sketching in a 3D sketch",
+      "context": "Sketching",
+      "windows": {
+        "type": "keys",
+        "chord": "Tab"
+      }
+    },
+    {
+      "name": "Rebuild the model",
+      "context": "User Interface",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+B"
+      }
+    },
+    {
+      "name": "Redraw the screen",
+      "context": "User Interface",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+R"
+      }
+    },
+    {
+      "name": "Move among open documents",
+      "context": "User Interface",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Tab"
+      }
+    },
+    {
+      "name": "Repeat the last command",
+      "context": "User Interface",
+      "windows": {
+        "type": "keys",
+        "chord": "Enter"
+      }
+    },
+    {
+      "name": "Open the shortcut bar",
+      "context": "User Interface",
+      "windows": {
+        "type": "keys",
+        "chord": "S"
+      }
+    },
+    {
+      "name": "Previous view",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Z"
+      }
+    },
+    {
+      "name": "Front",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+1"
+      }
+    },
+    {
+      "name": "Left",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+3"
+      }
+    },
+    {
+      "name": "Top",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+5"
+      }
+    },
+    {
+      "name": "Isometric",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+7"
+      }
+    },
+    {
+      "name": "Normal To",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+8"
+      }
+    },
+    {
+      "name": "Toggle Selection Filter Toolbar",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F5"
+      }
+    },
+    {
+      "name": "Toggle Selection Filters",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F6"
+      }
+    },
+    {
+      "name": "Filter Edges",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "E"
+      }
+    },
+    {
+      "name": "Filter Vertices",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "V"
+      }
+    },
+    {
+      "name": "Filter Faces",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "X"
+      }
+    },
+    {
+      "name": "Select/rename in FeatureManager",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F2"
+      }
+    },
+    {
+      "name": "Delete features or entities",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Delete"
+      }
+    }
+  ],
+  "defaults": {
+    "TUNE_CW": {
+      "name": "Zoom in",
+      "action": {
+        "type": "keys",
+        "chord": "Shift+Z"
+      },
+      "accel": "light"
+    },
+    "TUNE_CCW": {
+      "name": "Zoom out",
+      "action": {
+        "type": "keys",
+        "chord": "Z"
+      },
+      "accel": "light"
+    },
+    "TUNE_TAP_1F": {
+      "name": "Zoom to fit",
+      "action": {
+        "type": "keys",
+        "chord": "F"
+      }
+    }
+  }
+}

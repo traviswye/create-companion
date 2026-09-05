@@ -1,0 +1,296 @@
+{
+  "id": "google_calendar",
+  "name": "Google Calendar",
+  "kind": "site",
+  "category": "Productivity",
+  "match": {
+    "windows_exe": [
+      "chrome.exe",
+      "msedge.exe",
+      "firefox.exe",
+      "brave.exe",
+      "vivaldi.exe"
+    ],
+    "macos_bundle": [
+      "com.google.Chrome",
+      "com.microsoft.edgemac",
+      "org.mozilla.firefox",
+      "com.brave.Browser",
+      "com.apple.Safari"
+    ],
+    "window_title": [
+      "Google Calendar"
+    ]
+  },
+  "sources": [
+    "https://support.google.com/calendar/answer/37034?hl=en&co=GENIE.Platform%3DDesktop"
+  ],
+  "note": "Requires Settings > Enable keyboard shortcuts. The vendor also lists 'j' as an alternate for 'next date range' and 'w'/'1'/'2'/etc. as alternates for the view shortcuts; only the primary letter is recorded. As of this writing Google documents no shortcut for the PREVIOUS date range, only next.",
+  "actions": [
+    {
+      "name": "Change your calendar view to the next date range",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "N"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "N"
+      }
+    },
+    {
+      "name": "Refresh your calendar",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "R"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "R"
+      }
+    },
+    {
+      "name": "Move to the current day",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "T"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "T"
+      }
+    },
+    {
+      "name": "Create a calendar section",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Plus"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Plus"
+      }
+    },
+    {
+      "name": "Put your cursor in the search box",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "/"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "/"
+      }
+    },
+    {
+      "name": "Go to the Settings page",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "S"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "S"
+      }
+    },
+    {
+      "name": "Go to a specific date",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "G"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "G"
+      }
+    },
+    {
+      "name": "Day view",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "D"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "D"
+      }
+    },
+    {
+      "name": "Week view",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "W"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "W"
+      }
+    },
+    {
+      "name": "Month view",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "M"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "M"
+      }
+    },
+    {
+      "name": "Custom view",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "X"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "X"
+      }
+    },
+    {
+      "name": "Agenda view",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "A"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "A"
+      }
+    },
+    {
+      "name": "Create a new event",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "C"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "C"
+      }
+    },
+    {
+      "name": "See an event's details",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "E"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "E"
+      }
+    },
+    {
+      "name": "Delete an event",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Delete"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Delete"
+      }
+    },
+    {
+      "name": "Undo",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Z"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Z"
+      }
+    },
+    {
+      "name": "Save event",
+      "context": "Event details page",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+S"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+S"
+      }
+    },
+    {
+      "name": "Return to calendar grid from event details page",
+      "context": "Event details page",
+      "windows": {
+        "type": "keys",
+        "chord": "Esc"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Esc"
+      }
+    },
+    {
+      "name": "Go to next side panel (Tasks / Keep)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+."
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+."
+      }
+    },
+    {
+      "name": "Go to previous side panel (Tasks / Keep)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+,"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+,"
+      }
+    }
+  ],
+  "defaults": {
+    "TUNE_CW": {
+      "name": "Change your calendar view to the next date range",
+      "action": {
+        "type": "keys",
+        "chord": "N"
+      },
+      "accel": "medium"
+    },
+    "TUNE_CCW": {
+      "name": "Move to the current day",
+      "action": {
+        "type": "keys",
+        "chord": "T"
+      },
+      "accel": "none"
+    },
+    "TUNE_TAP_1F": {
+      "name": "Create a new event",
+      "action": {
+        "type": "keys",
+        "chord": "C"
+      }
+    }
+  }
+}

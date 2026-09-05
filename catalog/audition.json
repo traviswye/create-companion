@@ -1,0 +1,421 @@
+{
+  "id": "audition",
+  "name": "Adobe Audition",
+  "kind": "app",
+  "category": "Music",
+  "match": {
+    "windows_exe": [
+      "Adobe Audition.exe"
+    ],
+    "macos_bundle": [
+      "com.adobe.Audition"
+    ],
+    "window_title": []
+  },
+  "sources": [
+    "https://helpx.adobe.com/audition/desktop/keyboard-shortcuts/default-keyboard-shortcuts.html",
+    "https://helpx.adobe.com/audition/using/default-keyboard-shortcuts.html"
+  ],
+  "note": "Every row of Adobe's \"Default keyboard shortcuts\" page for Audition (helpx.adobe.com/audition/using/default-keyboard-shortcuts.html now redirects to the desktop path). The page carries only three tables and 31 rows; their headings are used as the context, with Adobe's leading \"Keys for\" dropped. Four rows are left out because they are mouse gestures, not chords: \"Select the same input or output for all audio tracks\" (Ctrl+Shift-select), \"Activate or deactivate Mute, Solo, Arm For Record, or Monitor Input in all tracks\" (Ctrl+Shift-click), and adjusting knobs in large or small increments (Shift-drag, Ctrl-drag). Where one row documents a pair of keys (\"Ctrl+Alt+up or down arrow\") it is listed as two actions, with the key named in parentheses, because a chord holds a single key; Adobe does not say which half of the described behaviour belongs to which arrow. \"Add marker\" keeps M and drops Adobe's alternative * (asterisk), which is a numeric-keypad key. Adobe prints the macOS column of \"Nudge the selected clip to the right\" as Alt+period rather than Option+period; Alt is Option on macOS, so the chord is the same either way.",
+  "actions": [
+    {
+      "name": "Toggle between Waveform and Multitrack Editor",
+      "context": "Playing and zooming audio",
+      "windows": {
+        "type": "keys",
+        "chord": "1"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "1"
+      }
+    },
+    {
+      "name": "Start and stop playback",
+      "context": "Playing and zooming audio",
+      "windows": {
+        "type": "keys",
+        "chord": "Space"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Space"
+      }
+    },
+    {
+      "name": "Move current-time indicator to beginning of timeline",
+      "context": "Playing and zooming audio",
+      "windows": {
+        "type": "keys",
+        "chord": "Home"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Home"
+      }
+    },
+    {
+      "name": "Move current-time indicator to end of timeline",
+      "context": "Playing and zooming audio",
+      "windows": {
+        "type": "keys",
+        "chord": "End"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "End"
+      }
+    },
+    {
+      "name": "Move current-time indicator to the previous marker, clip, or selection edge",
+      "context": "Playing and zooming audio",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Left"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Left"
+      }
+    },
+    {
+      "name": "Move current-time indicator to next marker, clip, or selection edge",
+      "context": "Playing and zooming audio",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Right"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Right"
+      }
+    },
+    {
+      "name": "Toggle preference for Return CTI To Start Position On Stop",
+      "context": "Playing and zooming audio",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+X"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+X"
+      }
+    },
+    {
+      "name": "Zoom in horizontally",
+      "context": "Playing and zooming audio",
+      "windows": {
+        "type": "keys",
+        "chord": "="
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "="
+      }
+    },
+    {
+      "name": "Zoom in vertically",
+      "context": "Playing and zooming audio",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+="
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+="
+      }
+    },
+    {
+      "name": "Zoom out horizontally",
+      "context": "Playing and zooming audio",
+      "windows": {
+        "type": "keys",
+        "chord": "-"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "-"
+      }
+    },
+    {
+      "name": "Zoom out vertically",
+      "context": "Playing and zooming audio",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+-"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+-"
+      }
+    },
+    {
+      "name": "Add marker",
+      "context": "Playing and zooming audio",
+      "windows": {
+        "type": "keys",
+        "chord": "M"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "M"
+      }
+    },
+    {
+      "name": "Move to the previous marker",
+      "context": "Playing and zooming audio",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Left"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+Left"
+      }
+    },
+    {
+      "name": "Move to the next marker",
+      "context": "Playing and zooming audio",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Right"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+Right"
+      }
+    },
+    {
+      "name": "Repeat the previous command (opening its dialog box and selecting OK)",
+      "context": "Editing audio files",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+R"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+R"
+      }
+    },
+    {
+      "name": "Repeat the previous command (opening its dialog box but not selecting OK)",
+      "context": "Editing audio files",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+R"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+R"
+      }
+    },
+    {
+      "name": "Open the Convert Sample Type dialog box",
+      "context": "Editing audio files",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+T"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+T"
+      }
+    },
+    {
+      "name": "Capture a noise reduction profile for the Noise Reduction effect",
+      "context": "Editing audio files",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+P"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+P"
+      }
+    },
+    {
+      "name": "Activate the left channel of a stereo file for editing",
+      "context": "Editing audio files",
+      "windows": {
+        "type": "keys",
+        "chord": "Up"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Up"
+      }
+    },
+    {
+      "name": "Activate the right channel of a stereo file for editing",
+      "context": "Editing audio files",
+      "windows": {
+        "type": "keys",
+        "chord": "Down"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Down"
+      }
+    },
+    {
+      "name": "Make the spectral display more logarithmic or linear (up arrow)",
+      "context": "Editing audio files",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Up"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+Up"
+      }
+    },
+    {
+      "name": "Make the spectral display more logarithmic or linear (down arrow)",
+      "context": "Editing audio files",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Down"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+Down"
+      }
+    },
+    {
+      "name": "Make the spectral display fully logarithmic or linear (Page Up)",
+      "context": "Editing audio files",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+PageUp"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+PageUp"
+      }
+    },
+    {
+      "name": "Make the spectral display fully logarithmic or linear (Page Down)",
+      "context": "Editing audio files",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+PageDown"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+PageDown"
+      }
+    },
+    {
+      "name": "Increase or decrease spectral resolution (up arrow)",
+      "context": "Editing audio files",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Up"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+Up"
+      }
+    },
+    {
+      "name": "Increase or decrease spectral resolution (down arrow)",
+      "context": "Editing audio files",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Down"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+Down"
+      }
+    },
+    {
+      "name": "Nudge the selected clip to the left",
+      "context": "Mixing multitrack sessions",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+,"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+,"
+      }
+    },
+    {
+      "name": "Nudge the selected clip to the right",
+      "context": "Mixing multitrack sessions",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+."
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+."
+      }
+    },
+    {
+      "name": "Nudge the selected clip up",
+      "context": "Mixing multitrack sessions",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Up"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Up"
+      }
+    },
+    {
+      "name": "Nudge the selected clip down",
+      "context": "Mixing multitrack sessions",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Down"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Down"
+      }
+    }
+  ],
+  "defaults": {
+    "TUNE_CW": {
+      "name": "Zoom in horizontally",
+      "action": {
+        "type": "keys",
+        "chord": "="
+      },
+      "accel": "light"
+    },
+    "TUNE_CCW": {
+      "name": "Zoom out horizontally",
+      "action": {
+        "type": "keys",
+        "chord": "-"
+      },
+      "accel": "light"
+    },
+    "TUNE_TAP_1F": {
+      "name": "Start and stop playback",
+      "action": {
+        "type": "keys",
+        "chord": "Space"
+      }
+    },
+    "TUNE_SWIPE_LEFT": {
+      "name": "Move current-time indicator to beginning of timeline",
+      "action": {
+        "type": "keys",
+        "chord": "Home"
+      }
+    },
+    "TUNE_SWIPE_RIGHT": {
+      "name": "Move current-time indicator to end of timeline",
+      "action": {
+        "type": "keys",
+        "chord": "End"
+      }
+    }
+  }
+}

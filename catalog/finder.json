@@ -1,0 +1,443 @@
+{
+  "id": "finder",
+  "name": "Finder",
+  "kind": "app",
+  "category": "Files",
+  "match": {
+    "windows_exe": [],
+    "macos_bundle": [
+      "com.apple.finder"
+    ],
+    "window_title": []
+  },
+  "sources": [
+    "https://support.apple.com/en-us/102650"
+  ],
+  "note": "The Finder rows of Apple's \"Finder and system shortcuts\" section, plus the Finder-specific rows in the common-shortcuts section. Apple writes Command as Cmd, Option as Alt and Control as Ctrl here; the Mac Delete key (backwards delete) is written Backspace, the name the chord grammar uses. Left out because the chord grammar cannot express them: Control-Shift held for Dock magnification (modifier-only), and the pointer shortcuts - Option or Command while double-clicking, Command or Option while dragging, Option-Command while dragging, Option-click a disclosure triangle, Command-click a window title, and Command or Shift while selecting an item.",
+  "actions": [
+    {
+      "name": "Copy the selected item to the Clipboard",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+C"
+      }
+    },
+    {
+      "name": "Paste the contents of the Clipboard",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+V"
+      }
+    },
+    {
+      "name": "Move the files in the Clipboard from their original location to the current location",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+V"
+      }
+    },
+    {
+      "name": "Duplicate the selected files",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+D"
+      }
+    },
+    {
+      "name": "Eject the selected disk or volume",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+E"
+      }
+    },
+    {
+      "name": "Start a Spotlight search in the Finder window",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+F"
+      }
+    },
+    {
+      "name": "Perform a Spotlight search from a Finder window",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+Space"
+      }
+    },
+    {
+      "name": "Show the Get Info window for a selected file",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+I"
+      }
+    },
+    {
+      "name": "Show the original file for the selected alias",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+R"
+      }
+    },
+    {
+      "name": "Open the Computer window",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+C"
+      }
+    },
+    {
+      "name": "Open the desktop folder",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+D"
+      }
+    },
+    {
+      "name": "Open the Recents window, showing all of the files you viewed or changed recently",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+F"
+      }
+    },
+    {
+      "name": "Open a Go to Folder window",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+G"
+      }
+    },
+    {
+      "name": "Open the Home folder of the current macOS user account",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+H"
+      }
+    },
+    {
+      "name": "Open iCloud Drive",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+I"
+      }
+    },
+    {
+      "name": "Open the Network window",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+K"
+      }
+    },
+    {
+      "name": "Open the Downloads folder",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+L"
+      }
+    },
+    {
+      "name": "Create a new folder",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+N"
+      }
+    },
+    {
+      "name": "Create a new folder that contains the currently selected items",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Cmd+N"
+      }
+    },
+    {
+      "name": "Open the Documents folder",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+O"
+      }
+    },
+    {
+      "name": "Show or hide the Preview pane in Finder windows",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+P"
+      }
+    },
+    {
+      "name": "Open the AirDrop window",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+R"
+      }
+    },
+    {
+      "name": "Show or hide the tab bar in Finder windows",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+T"
+      }
+    },
+    {
+      "name": "Add selected Finder item to the Dock",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Cmd+T"
+      }
+    },
+    {
+      "name": "Open the Utilities folder",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+U"
+      }
+    },
+    {
+      "name": "Add the selected item to the sidebar",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Cmd+T"
+      }
+    },
+    {
+      "name": "Hide or show the path bar in Finder windows",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+P"
+      }
+    },
+    {
+      "name": "Hide or show the Sidebar in Finder windows",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+S"
+      }
+    },
+    {
+      "name": "Hide or show the status bar in Finder windows",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+/"
+      }
+    },
+    {
+      "name": "Show View Options",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+J"
+      }
+    },
+    {
+      "name": "Open the Connect to Server window",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+K"
+      }
+    },
+    {
+      "name": "Make an alias of the selected item",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Cmd+A"
+      }
+    },
+    {
+      "name": "Open a new Finder window",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+N"
+      }
+    },
+    {
+      "name": "Create a new Smart Folder",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+N"
+      }
+    },
+    {
+      "name": "Show or hide the tab bar when a single tab is open in the current Finder window",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+T"
+      }
+    },
+    {
+      "name": "Show or hide the toolbar when a single tab is open in the current Finder window",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+T"
+      }
+    },
+    {
+      "name": "Use Quick Look to preview the selected item",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Space"
+      }
+    },
+    {
+      "name": "Use Quick Look to preview the selected files",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Y"
+      }
+    },
+    {
+      "name": "View a Quick Look slideshow of the selected files",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+Y"
+      }
+    },
+    {
+      "name": "View the items in the Finder window as icons",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+1"
+      }
+    },
+    {
+      "name": "View the items in a Finder window as a list",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+2"
+      }
+    },
+    {
+      "name": "View the items in a Finder window in columns",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+3"
+      }
+    },
+    {
+      "name": "View the items in a Finder window in a gallery",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+4"
+      }
+    },
+    {
+      "name": "Go to the previous folder",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+["
+      }
+    },
+    {
+      "name": "Go to the next folder",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+]"
+      }
+    },
+    {
+      "name": "Open the folder that contains the current folder",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Up"
+      }
+    },
+    {
+      "name": "Open the folder that contains the current folder in a new window",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Cmd+Up"
+      }
+    },
+    {
+      "name": "Open the selected item",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Down"
+      }
+    },
+    {
+      "name": "Open the selected folder",
+      "context": "List view",
+      "mac": {
+        "type": "keys",
+        "chord": "Right"
+      }
+    },
+    {
+      "name": "Close the selected folder",
+      "context": "List view",
+      "mac": {
+        "type": "keys",
+        "chord": "Left"
+      }
+    },
+    {
+      "name": "Move the selected item to the Trash",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Backspace"
+      }
+    },
+    {
+      "name": "Empty the Trash",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+Backspace"
+      }
+    },
+    {
+      "name": "Empty the Trash without confirmation dialog",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+Cmd+Backspace"
+      }
+    }
+  ]
+}

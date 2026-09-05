@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { api } from "./api";
 import { chordFromEvent } from "./keys";
-import { describeAction, eventLabel, type Action, type AppAction, type CatalogEntry, type MediaKey, type ScrollDirection } from "./types";
+import { OS_NAME, actionFor, describeAction, eventLabel, type Action, type AppAction, type CatalogEntry, type MediaKey, type Os, type ScrollDirection } from "./types";
 
 type Tab = "app" | "search" | "shortcut" | "media" | "scroll" | "launch" | "other";
 
@@ -21,6 +21,11 @@ export function ActionPicker(props: {
   catalog: CatalogEntry[];
   appName?: string;
   appActions: AppAction[];
+  /** The running OS: its chord column is offered first. */
+  os: Os;
+  /** Also offer actions documented only for other platforms (tagged). */
+  allPlatforms: boolean;
+  onAllPlatforms: (v: boolean) => void;
   /** `null` action = remove this app-specific mapping (inherit from Default). */
   onPick: (a: Action | null, name?: string) => void;
   onClose: () => void;
@@ -61,13 +66,17 @@ export function ActionPicker(props: {
   }, [armed]);
 
   const needle = q.trim().toLowerCase();
+  const col = `${props.os}:${props.allPlatforms}`;
+  /** The chord for this OS (or, with All platforms, another OS's, tagged). */
+  const forOs = (a: { windows?: Action; mac?: Action; linux?: Action }) => actionFor(a, props.os, props.allPlatforms);
   const appResults = useMemo(
     () =>
       props.appActions
-        .filter((a) => a.windows)
-        .filter((a) => !needle || a.name.toLowerCase().includes(needle) || a.context.toLowerCase().includes(needle) || describeAction(a.windows).toLowerCase().includes(needle))
+        .filter((a) => forOs(a))
+        .filter((a) => !needle || a.name.toLowerCase().includes(needle) || a.context.toLowerCase().includes(needle) || describeAction(forOs(a)?.action).toLowerCase().includes(needle))
         .slice(0, 300),
-    [props.appActions, needle],
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [props.appActions, needle, col],
   );
 
   const categories = useMemo(() => Array.from(new Set(props.catalog.map((c) => c.category))).sort(), [props.catalog]);
@@ -75,11 +84,12 @@ export function ActionPicker(props: {
   const results = useMemo(
     () =>
       props.catalog
-        .filter((c) => c.windows)
+        .filter((c) => forOs(c))
         .filter((c) => cat === "All" || c.category === cat)
-        .filter((c) => !needle || c.name.toLowerCase().includes(needle) || c.id.includes(needle) || describeAction(c.windows).toLowerCase().includes(needle))
+        .filter((c) => !needle || c.name.toLowerCase().includes(needle) || c.id.includes(needle) || describeAction(forOs(c)?.action).toLowerCase().includes(needle))
         .slice(0, 200),
-    [props.catalog, needle, cat],
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [props.catalog, needle, cat, col],
   );
 
   async function pickChord() {
@@ -114,6 +124,14 @@ export function ActionPicker(props: {
               </span>
             )}
           </h3>
+          <div className="seg compact" title="Show only shortcuts that work on this computer, or every platform's">
+            <button className={props.allPlatforms ? "" : "on"} onClick={() => props.onAllPlatforms(false)}>
+              This computer
+            </button>
+            <button className={props.allPlatforms ? "on" : ""} onClick={() => props.onAllPlatforms(true)}>
+              All platforms
+            </button>
+          </div>
           <button className="ghost" onClick={props.onClose}>✕</button>
         </header>
         <div className="mbody">
@@ -132,12 +150,13 @@ export function ActionPicker(props: {
               </div>
               <div className="list">
                 {appResults.map((a) => (
-                  <div key={a.id} className="row" onClick={() => props.onPick(a.windows!, a.name)}>
+                  <div key={a.id} className="row" onClick={() => props.onPick(forOs(a)!.action, a.name)}>
                     <div>
                       {a.name}
                       {a.context && <div className="sub">{a.context}</div>}
                     </div>
-                    <kbd>{describeAction(a.windows)}</kbd>
+                    {forOs(a)?.os && <span className="ostag">{OS_NAME[forOs(a)!.os!]}</span>}
+                    <kbd>{describeAction(forOs(a)?.action)}</kbd>
                   </div>
                 ))}
                 {appResults.length === 0 && <div className="row muted">No matches here. Try All actions or record a shortcut.</div>}
@@ -162,12 +181,13 @@ export function ActionPicker(props: {
               </div>
               <div className="list">
                 {results.map((c) => (
-                  <div key={c.id} className="row" onClick={() => props.onPick(c.windows!, c.name)}>
+                  <div key={c.id} className="row" onClick={() => props.onPick(forOs(c)!.action, c.name)}>
                     <div>
                       {c.name}
                       <div className="sub">{c.category}</div>
                     </div>
-                    <kbd>{describeAction(c.windows)}</kbd>
+                    {forOs(c)?.os && <span className="ostag">{OS_NAME[forOs(c)!.os!]}</span>}
+                    <kbd>{describeAction(forOs(c)?.action)}</kbd>
                   </div>
                 ))}
                 {results.length === 0 && <div className="row muted">No matches. Try the Keyboard shortcut tab.</div>}

@@ -1,0 +1,2224 @@
+{
+  "id": "premiere",
+  "name": "Adobe Premiere Pro",
+  "kind": "app",
+  "category": "Video",
+  "match": {
+    "windows_exe": [
+      "Adobe Premiere Pro.exe"
+    ],
+    "macos_bundle": [
+      "com.adobe.PremierePro.CC",
+      "com.adobe.PremierePro"
+    ],
+    "window_title": []
+  },
+  "sources": [
+    "https://helpx.adobe.com/premiere/desktop/get-started/keyboard-shortcuts/default-keyboard-shortcuts.html",
+    "https://helpx.adobe.com/premiere/desktop/get-started/keyboard-shortcuts/about-keyboard-shortcuts.html"
+  ],
+  "note": "Every row of Adobe's \"Default keyboard shortcuts\" page for Premiere (last updated Jan 7, 2026); helpx.adobe.com/premiere-pro/using/keyboard-shortcuts.html now redirects there. Menu commands carry an empty context, panel commands the panel name. Adobe's macOS column writes \"Delete\" for the backspace key and \"Forward Delete\" for the forward-delete key; those are written here as Backspace and Delete respectively. \"Maximize Frame\" (Window menu) is omitted because the published table prints its key as \"Shift +\" with no key after it. Trailing ellipses in Adobe's command names are dropped. The transport shortcuts kept in `defaults` (J/K/L-style stepping, Space) are not on this page; they are Premiere's long-standing defaults and are retained only as suggested Tune bindings.",
+  "actions": [
+    {
+      "name": "New Project",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+N"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+N"
+      }
+    },
+    {
+      "name": "New Sequence",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+N"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+N"
+      }
+    },
+    {
+      "name": "Open Project",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+O"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+O"
+      }
+    },
+    {
+      "name": "Close",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+W"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+W"
+      }
+    },
+    {
+      "name": "Close Project",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+W"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+W"
+      }
+    },
+    {
+      "name": "Save",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+S"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+S"
+      }
+    },
+    {
+      "name": "Save As",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+S"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+S"
+      }
+    },
+    {
+      "name": "Save a Copy",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+S"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+S"
+      }
+    },
+    {
+      "name": "Import from Media Browser",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+I"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+I"
+      }
+    },
+    {
+      "name": "Import",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+I"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+I"
+      }
+    },
+    {
+      "name": "Export Media",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+M"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+M"
+      }
+    },
+    {
+      "name": "Send to Media Encoder",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+M"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+M"
+      }
+    },
+    {
+      "name": "Get Media File Properties for Selection",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+H"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+H"
+      }
+    },
+    {
+      "name": "Exit",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Q"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Q"
+      }
+    },
+    {
+      "name": "Undo",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Z"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Z"
+      }
+    },
+    {
+      "name": "Redo",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Z"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+Z"
+      }
+    },
+    {
+      "name": "Cut",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+X"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+X"
+      }
+    },
+    {
+      "name": "Copy",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+C"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+C"
+      }
+    },
+    {
+      "name": "Paste",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+V"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+V"
+      }
+    },
+    {
+      "name": "Paste Attributes",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+V"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+V"
+      }
+    },
+    {
+      "name": "Clear",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Delete"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Delete"
+      }
+    },
+    {
+      "name": "Ripple Delete",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Delete"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Delete"
+      }
+    },
+    {
+      "name": "Duplicate",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+/"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+/"
+      }
+    },
+    {
+      "name": "Select All",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+A"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+A"
+      }
+    },
+    {
+      "name": "Deselect All",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+A"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+A"
+      }
+    },
+    {
+      "name": "Find",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+F"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+F"
+      }
+    },
+    {
+      "name": "Edit Original",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+E"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+E"
+      }
+    },
+    {
+      "name": "Keyboard Shortcuts",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+K"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+K"
+      }
+    },
+    {
+      "name": "Make Subclip",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+U"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+U"
+      }
+    },
+    {
+      "name": "Audio Channels",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+G"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+G"
+      }
+    },
+    {
+      "name": "Audio Gain",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "G"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "G"
+      }
+    },
+    {
+      "name": "Speed/Duration",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+R"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+R"
+      }
+    },
+    {
+      "name": "Insert",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": ","
+      },
+      "mac": {
+        "type": "keys",
+        "chord": ","
+      }
+    },
+    {
+      "name": "Overwrite",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "."
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "."
+      }
+    },
+    {
+      "name": "Enable",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+E"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+E"
+      }
+    },
+    {
+      "name": "Link",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+L"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+L"
+      }
+    },
+    {
+      "name": "Group",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+G"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+G"
+      }
+    },
+    {
+      "name": "Ungroup",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+G"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+G"
+      }
+    },
+    {
+      "name": "Render Effects In to Out",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Enter"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Enter"
+      }
+    },
+    {
+      "name": "Match Frame",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "F"
+      }
+    },
+    {
+      "name": "Reverse Match Frame",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+R"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+R"
+      }
+    },
+    {
+      "name": "Add Edit",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+K"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+K"
+      }
+    },
+    {
+      "name": "Add Edit to All Tracks",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+K"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+K"
+      }
+    },
+    {
+      "name": "Trim Edit",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+T"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+T"
+      }
+    },
+    {
+      "name": "Extend Selected Edit to Playhead",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "E"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "E"
+      }
+    },
+    {
+      "name": "Apply Video Transition",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+D"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+D"
+      }
+    },
+    {
+      "name": "Apply Audio Transition",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+D"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+D"
+      }
+    },
+    {
+      "name": "Apply Default Transitions to Selection",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+D"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+D"
+      }
+    },
+    {
+      "name": "Lift",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": ";"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": ";"
+      }
+    },
+    {
+      "name": "Extract",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "'"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "'"
+      }
+    },
+    {
+      "name": "Zoom In",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "="
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "="
+      }
+    },
+    {
+      "name": "Zoom Out",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "-"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "-"
+      }
+    },
+    {
+      "name": "Next in Sequence",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+;"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+;"
+      }
+    },
+    {
+      "name": "Previous in Sequence",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+;"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+;"
+      }
+    },
+    {
+      "name": "Snap in Timeline",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "S"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "S"
+      }
+    },
+    {
+      "name": "Make Subsequence",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+U"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+U"
+      }
+    },
+    {
+      "name": "Add new caption track",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+A"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+A"
+      }
+    },
+    {
+      "name": "Add caption at playhead",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+C"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+C"
+      }
+    },
+    {
+      "name": "Go to the next caption segment",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Down"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+Down"
+      }
+    },
+    {
+      "name": "Go to the previous caption segment",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Up"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+Up"
+      }
+    },
+    {
+      "name": "Mark In",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "I"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "I"
+      }
+    },
+    {
+      "name": "Mark Out",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "O"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "O"
+      }
+    },
+    {
+      "name": "Mark Clip",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "X"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "X"
+      }
+    },
+    {
+      "name": "Mark Selection",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "/"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "/"
+      }
+    },
+    {
+      "name": "Go to In",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+I"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+I"
+      }
+    },
+    {
+      "name": "Go to Out",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+O"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+O"
+      }
+    },
+    {
+      "name": "Clear In",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+I"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+I"
+      }
+    },
+    {
+      "name": "Clear Out",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+O"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+O"
+      }
+    },
+    {
+      "name": "Clear In and Out",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+X"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+X"
+      }
+    },
+    {
+      "name": "Add Marker",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "M"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "M"
+      }
+    },
+    {
+      "name": "Go to Next Marker",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+M"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+M"
+      }
+    },
+    {
+      "name": "Go to Previous Marker",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+M"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+M"
+      }
+    },
+    {
+      "name": "Clear Selected Marker",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+M"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+M"
+      }
+    },
+    {
+      "name": "Clear All Markers",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Shift+M"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+M"
+      }
+    },
+    {
+      "name": "New Layer: Text",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+T"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+T"
+      }
+    },
+    {
+      "name": "New Layer: Rectangle",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+R"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+R"
+      }
+    },
+    {
+      "name": "New Layer: Ellipse",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+E"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+E"
+      }
+    },
+    {
+      "name": "Bring to Front",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+]"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+]"
+      }
+    },
+    {
+      "name": "Bring Forward",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+]"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+]"
+      }
+    },
+    {
+      "name": "Send Backward",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+["
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+["
+      }
+    },
+    {
+      "name": "Send to Back",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+["
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+["
+      }
+    },
+    {
+      "name": "Select Next Layer",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+]"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+]"
+      }
+    },
+    {
+      "name": "Select Previous Layer",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+["
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+["
+      }
+    },
+    {
+      "name": "Workspace: All Panels",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+1"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+1"
+      }
+    },
+    {
+      "name": "Workspace: Assembly",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+2"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+2"
+      }
+    },
+    {
+      "name": "Workspace: Audio",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+3"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+3"
+      }
+    },
+    {
+      "name": "Workspace: Captions and Graphics",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+4"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+4"
+      }
+    },
+    {
+      "name": "Workspace: Color",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+5"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+5"
+      }
+    },
+    {
+      "name": "Workspace: Editing",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+6"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+6"
+      }
+    },
+    {
+      "name": "Workspace: Effects",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+7"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+7"
+      }
+    },
+    {
+      "name": "Workspace: Essential",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+8"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+8"
+      }
+    },
+    {
+      "name": "Workspace: Learning",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+9"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+9"
+      }
+    },
+    {
+      "name": "Reset to Saved Layout",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+0"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+0"
+      }
+    },
+    {
+      "name": "Audio Clip Mixer",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+9"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+9"
+      }
+    },
+    {
+      "name": "Audio Track Mixer",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+6"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+6"
+      }
+    },
+    {
+      "name": "Effect Controls",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+5"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+5"
+      }
+    },
+    {
+      "name": "Effects",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+7"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+7"
+      }
+    },
+    {
+      "name": "Media Browser",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+8"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+8"
+      }
+    },
+    {
+      "name": "Program Monitor",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+4"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+4"
+      }
+    },
+    {
+      "name": "Projects",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+1"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+1"
+      }
+    },
+    {
+      "name": "Source Monitor",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+2"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+2"
+      }
+    },
+    {
+      "name": "Timeline",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+3"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+3"
+      }
+    },
+    {
+      "name": "Show/Hide Tracks",
+      "context": "Audio Track Mixer panel",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+T"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+T"
+      }
+    },
+    {
+      "name": "Loop",
+      "context": "Audio Track Mixer panel",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+L"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+L"
+      }
+    },
+    {
+      "name": "Meter Input(s) Only",
+      "context": "Audio Track Mixer panel",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+I"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+I"
+      }
+    },
+    {
+      "name": "Remove Selected Effect",
+      "context": "Effect Controls panel",
+      "windows": {
+        "type": "keys",
+        "chord": "Backspace"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Backspace"
+      }
+    },
+    {
+      "name": "Loop During Audio-Only Playback",
+      "context": "Effect Controls panel",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+L"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+L"
+      }
+    },
+    {
+      "name": "New Custom Bin",
+      "context": "Effects panel",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+/"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+/"
+      }
+    },
+    {
+      "name": "Delete Custom Item",
+      "context": "Effects panel",
+      "windows": {
+        "type": "keys",
+        "chord": "Backspace"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Backspace"
+      }
+    },
+    {
+      "name": "Step Backward",
+      "context": "History panel",
+      "windows": {
+        "type": "keys",
+        "chord": "Left"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Left"
+      }
+    },
+    {
+      "name": "Step Forward",
+      "context": "History panel",
+      "windows": {
+        "type": "keys",
+        "chord": "Right"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Right"
+      }
+    },
+    {
+      "name": "Delete",
+      "context": "History panel",
+      "windows": {
+        "type": "keys",
+        "chord": "Backspace"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Backspace"
+      }
+    },
+    {
+      "name": "Open in Source Monitor",
+      "context": "Media Browser panel",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+O"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+O"
+      }
+    },
+    {
+      "name": "Select Directory List",
+      "context": "Media Browser panel",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Left"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Left"
+      }
+    },
+    {
+      "name": "Select Media List",
+      "context": "Media Browser panel",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Right"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Right"
+      }
+    },
+    {
+      "name": "Loop",
+      "context": "Metadata panel",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+L"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+L"
+      }
+    },
+    {
+      "name": "Play",
+      "context": "Metadata panel",
+      "windows": {
+        "type": "keys",
+        "chord": "Space"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Space"
+      }
+    },
+    {
+      "name": "Show Rulers",
+      "context": "Program Monitor panel",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+R"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+R"
+      }
+    },
+    {
+      "name": "Show Guides",
+      "context": "Program Monitor panel",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+;"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+;"
+      }
+    },
+    {
+      "name": "Snap in Program Monitor",
+      "context": "Program Monitor panel",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+;"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+;"
+      }
+    },
+    {
+      "name": "Lock Guides",
+      "context": "Program Monitor panel",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Shift+R"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+Cmd+R"
+      }
+    },
+    {
+      "name": "Nudge Selected Object up by five frames",
+      "context": "Program Monitor panel",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Ctrl+Up"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+Up"
+      }
+    },
+    {
+      "name": "Nudge Selected Object right by five frames",
+      "context": "Program Monitor panel",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Ctrl+Right"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+Right"
+      }
+    },
+    {
+      "name": "Nudge Selected Object left by five frames",
+      "context": "Program Monitor panel",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Ctrl+Left"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+Left"
+      }
+    },
+    {
+      "name": "Nudge Selected Object down by five frames",
+      "context": "Program Monitor panel",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Ctrl+Down"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+Down"
+      }
+    },
+    {
+      "name": "Nudge Selected Object up by one frame",
+      "context": "Program Monitor panel",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Up"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Up"
+      }
+    },
+    {
+      "name": "Nudge Selected Object right by one frame",
+      "context": "Program Monitor panel",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Right"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Right"
+      }
+    },
+    {
+      "name": "Nudge Selected Object left by one frame",
+      "context": "Program Monitor panel",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Left"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Left"
+      }
+    },
+    {
+      "name": "Nudge Selected Object down by one frame",
+      "context": "Program Monitor panel",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Down"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Down"
+      }
+    },
+    {
+      "name": "New Bin",
+      "context": "Project panel",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+B"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+B"
+      }
+    },
+    {
+      "name": "Delete",
+      "context": "Project panel",
+      "windows": {
+        "type": "keys",
+        "chord": "Backspace"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Backspace"
+      }
+    },
+    {
+      "name": "List",
+      "context": "Project panel",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+PageUp"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+PageUp"
+      }
+    },
+    {
+      "name": "Icon",
+      "context": "Project panel",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+PageDown"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+PageDown"
+      }
+    },
+    {
+      "name": "Hover Scrub",
+      "context": "Project panel",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+H"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+H"
+      }
+    },
+    {
+      "name": "Delete Selection with Options",
+      "context": "Project panel",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Delete"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Delete"
+      }
+    },
+    {
+      "name": "Extend Selection Down",
+      "context": "Project panel",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Down"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Down"
+      }
+    },
+    {
+      "name": "Extend Selection Left",
+      "context": "Project panel",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Left"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Left"
+      }
+    },
+    {
+      "name": "Extend Selection Right",
+      "context": "Project panel",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Right"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Right"
+      }
+    },
+    {
+      "name": "Extend Selection Up",
+      "context": "Project panel",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Up"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Up"
+      }
+    },
+    {
+      "name": "Move Selection Down",
+      "context": "Project panel",
+      "windows": {
+        "type": "keys",
+        "chord": "Down"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Down"
+      }
+    },
+    {
+      "name": "Move Selection End",
+      "context": "Project panel",
+      "windows": {
+        "type": "keys",
+        "chord": "End"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "End"
+      }
+    },
+    {
+      "name": "Move Selection Home",
+      "context": "Project panel",
+      "windows": {
+        "type": "keys",
+        "chord": "Home"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Home"
+      }
+    },
+    {
+      "name": "Move Selection Left",
+      "context": "Project panel",
+      "windows": {
+        "type": "keys",
+        "chord": "Left"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Left"
+      }
+    },
+    {
+      "name": "Move Selection Page Down",
+      "context": "Project panel",
+      "windows": {
+        "type": "keys",
+        "chord": "PageDown"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "PageDown"
+      }
+    },
+    {
+      "name": "Move Selection Page Up",
+      "context": "Project panel",
+      "windows": {
+        "type": "keys",
+        "chord": "PageUp"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "PageUp"
+      }
+    },
+    {
+      "name": "Move Selection Right",
+      "context": "Project panel",
+      "windows": {
+        "type": "keys",
+        "chord": "Right"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Right"
+      }
+    },
+    {
+      "name": "Move Selection Up",
+      "context": "Project panel",
+      "windows": {
+        "type": "keys",
+        "chord": "Up"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Up"
+      }
+    },
+    {
+      "name": "Next Column Field",
+      "context": "Project panel",
+      "windows": {
+        "type": "keys",
+        "chord": "Tab"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Tab"
+      }
+    },
+    {
+      "name": "Next Row Field",
+      "context": "Project panel",
+      "windows": {
+        "type": "keys",
+        "chord": "Enter"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Enter"
+      }
+    },
+    {
+      "name": "Open in Source Monitor",
+      "context": "Project panel",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+O"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+O"
+      }
+    },
+    {
+      "name": "Previous Column Field",
+      "context": "Project panel",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Tab"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Tab"
+      }
+    },
+    {
+      "name": "Previous Row Field",
+      "context": "Project panel",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Enter"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Enter"
+      }
+    },
+    {
+      "name": "Thumbnail Size Next",
+      "context": "Project panel",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+]"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+]"
+      }
+    },
+    {
+      "name": "Thumbnail Size Previous",
+      "context": "Project panel",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+["
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+["
+      }
+    },
+    {
+      "name": "Toggle View",
+      "context": "Project panel",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+\\"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+\\"
+      }
+    },
+    {
+      "name": "Zoom In",
+      "context": "Project panel",
+      "windows": {
+        "type": "keys",
+        "chord": "="
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "="
+      }
+    },
+    {
+      "name": "Zoom Out",
+      "context": "Project panel",
+      "windows": {
+        "type": "keys",
+        "chord": "-"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "-"
+      }
+    },
+    {
+      "name": "Clear Selection",
+      "context": "Timeline panel",
+      "windows": {
+        "type": "keys",
+        "chord": "Backspace"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Backspace"
+      }
+    },
+    {
+      "name": "Decrease Audio Tracks Height",
+      "context": "Timeline panel",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+-"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+-"
+      }
+    },
+    {
+      "name": "Decrease Video Tracks Height",
+      "context": "Timeline panel",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+-"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+-"
+      }
+    },
+    {
+      "name": "Increase Audio Tracks Height",
+      "context": "Timeline panel",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+="
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+="
+      }
+    },
+    {
+      "name": "Increase Video Tracks Height",
+      "context": "Timeline panel",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+="
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+="
+      }
+    },
+    {
+      "name": "Nudge Clip Selection Left Five Frames",
+      "context": "Timeline panel",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+Left"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+Left"
+      }
+    },
+    {
+      "name": "Nudge Clip Selection Left One Frame",
+      "context": "Timeline panel",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Left"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Left"
+      }
+    },
+    {
+      "name": "Nudge Clip Selection Right Five Frames",
+      "context": "Timeline panel",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+Right"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+Right"
+      }
+    },
+    {
+      "name": "Nudge Clip Selection Right One Frame",
+      "context": "Timeline panel",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Right"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Right"
+      }
+    },
+    {
+      "name": "Ripple Delete",
+      "context": "Timeline panel",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Backspace"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Backspace"
+      }
+    },
+    {
+      "name": "Set Work Area Bar In Point",
+      "context": "Timeline panel",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+["
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+["
+      }
+    },
+    {
+      "name": "Set Work Area Bar Out Point",
+      "context": "Timeline panel",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+]"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+]"
+      }
+    },
+    {
+      "name": "Show Next Screen",
+      "context": "Timeline panel",
+      "windows": {
+        "type": "keys",
+        "chord": "PageDown"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "PageDown"
+      }
+    },
+    {
+      "name": "Show Previous Screen",
+      "context": "Timeline panel",
+      "windows": {
+        "type": "keys",
+        "chord": "PageUp"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "PageUp"
+      }
+    },
+    {
+      "name": "Slide Clip Selection Left Five Frames",
+      "context": "Timeline panel",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+,"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+,"
+      }
+    },
+    {
+      "name": "Slide Clip Selection Left One Frame",
+      "context": "Timeline panel",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+,"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+,"
+      }
+    },
+    {
+      "name": "Slide Clip Selection Right Five Frames",
+      "context": "Timeline panel",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+."
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+."
+      }
+    },
+    {
+      "name": "Slide Clip Selection Right One Frame",
+      "context": "Timeline panel",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+."
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+."
+      }
+    },
+    {
+      "name": "Slip Clip Selection Left Five Frames",
+      "context": "Timeline panel",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Shift+Left"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+Cmd+Left"
+      }
+    },
+    {
+      "name": "Slip Clip Selection Left One Frame",
+      "context": "Timeline panel",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Left"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+Left"
+      }
+    },
+    {
+      "name": "Slip Clip Selection Right Five Frames",
+      "context": "Timeline panel",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Shift+Right"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+Cmd+Right"
+      }
+    },
+    {
+      "name": "Slip Clip Selection Right One Frame",
+      "context": "Timeline panel",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Right"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+Right"
+      }
+    }
+  ],
+  "defaults": {
+    "TUNE_CW": {
+      "name": "Step forward one frame",
+      "action": {
+        "type": "keys",
+        "chord": "Right"
+      },
+      "accel": "medium"
+    },
+    "TUNE_CCW": {
+      "name": "Step back one frame",
+      "action": {
+        "type": "keys",
+        "chord": "Left"
+      },
+      "accel": "medium"
+    },
+    "TUNE_TAP_1F": {
+      "name": "Play / stop",
+      "action": {
+        "type": "keys",
+        "chord": "Space"
+      }
+    },
+    "TUNE_SWIPE_LEFT": {
+      "name": "Step back five frames",
+      "action": {
+        "type": "keys",
+        "chord": "Shift+Left"
+      }
+    },
+    "TUNE_SWIPE_RIGHT": {
+      "name": "Step forward five frames",
+      "action": {
+        "type": "keys",
+        "chord": "Shift+Right"
+      }
+    },
+    "TUNE_SWIPE_UP": {
+      "name": "Zoom in timeline",
+      "action": {
+        "type": "keys",
+        "chord": "="
+      }
+    },
+    "TUNE_SWIPE_DOWN": {
+      "name": "Zoom out timeline",
+      "action": {
+        "type": "keys",
+        "chord": "-"
+      }
+    }
+  }
+}

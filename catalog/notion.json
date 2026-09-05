@@ -1,0 +1,932 @@
+{
+  "id": "notion",
+  "name": "Notion",
+  "kind": "app",
+  "category": "Productivity",
+  "match": {
+    "windows_exe": [
+      "Notion.exe"
+    ],
+    "macos_bundle": [
+      "notion.id"
+    ],
+    "window_title": [
+      "Notion"
+    ]
+  },
+  "sources": [
+    "https://www.notion.com/help/keyboard-shortcuts"
+  ],
+  "note": "Omitted as not chord-expressible: (1) text-wrapping markdown auto-format shortcuts (**bold**, *italic*, `code`, ~strikethrough~) which wrap arbitrary selected text rather than being a fixed key sequence; (2) individual slash-command filters (/text, /page, /bullet, /image, /pdf, etc. — ~30 total) which require typing an arbitrary filter string and choosing from a dynamic list — only the top-level '/' trigger and its Esc-dismiss are included; (3) '@' mention/date/reminder commands — '@' is not in the chord grammar's key set, so only the Esc-to-dismiss shortcut for that menu is included; (4) mouse-involving shortcuts: Option+Shift+Click (open page as new window), Cmd/Ctrl+Click (open link as new tab), Cmd+Shift+Click / Alt+Shift+Click (select entire block), Shift+Click (select block range), Option/Alt+drag (duplicate via drag). Documented alternates not separately listed: bulleted-list markdown can also start with '*' or '+' (only '-' is listed); numbered-list markdown can also start with 'a.' or 'i.' (only '1.' is listed); the OS emoji picker on Windows can also be opened with Win+; (only Win+. is listed). Markdown start-of-line triggers using '#' (H1/H2/H3 headings) and '>' (toggle list) are also documented, but '#' and '>' fall outside the chord grammar's allowed key set, so only the Ctrl/Cmd+Alt+number modifier-shortcut versions of these are included. Arrow-key block navigation is documented generically as 'arrow keys' with no per-direction semantics given, so only Up/Down are included. Pasting a URL over selected text (Cmd/Ctrl+V) to create a link is standard paste behavior, not a distinct shortcut, and is omitted.",
+  "actions": [
+    {
+      "name": "Search within page",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+F"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+F"
+      }
+    },
+    {
+      "name": "Quick find / jump to a page",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+K"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+K"
+      }
+    },
+    {
+      "name": "Quick find / jump to a page (alternate)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+P"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+P"
+      }
+    },
+    {
+      "name": "Copy page URL",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+L"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+L"
+      }
+    },
+    {
+      "name": "Go back a page",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+["
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+["
+      }
+    },
+    {
+      "name": "Go forward a page",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+]"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+]"
+      }
+    },
+    {
+      "name": "Previous database page",
+      "context": "Database peek view",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+K"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+K"
+      }
+    },
+    {
+      "name": "Next database page",
+      "context": "Database peek view",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+J"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+J"
+      }
+    },
+    {
+      "name": "Toggle dark / light mode",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+L"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+L"
+      }
+    },
+    {
+      "name": "Create new page",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+N"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+N"
+      }
+    },
+    {
+      "name": "Open new Notion window",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+N"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+N"
+      }
+    },
+    {
+      "name": "Create new Notion tab",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+T"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+T"
+      }
+    },
+    {
+      "name": "Open emoji picker",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Win+."
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Cmd+Space"
+      }
+    },
+    {
+      "name": "Create bulleted list",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+5"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+5"
+      }
+    },
+    {
+      "name": "Create bulleted list",
+      "context": "Start of line (Markdown)",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "-",
+          "Space"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "-",
+          "Space"
+        ]
+      }
+    },
+    {
+      "name": "Create to-do checkbox",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+4"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+4"
+      }
+    },
+    {
+      "name": "Create to-do checkbox",
+      "context": "Start of line (Markdown)",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "[",
+          "]",
+          "Space"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "[",
+          "]",
+          "Space"
+        ]
+      }
+    },
+    {
+      "name": "Create numbered list",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+6"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+6"
+      }
+    },
+    {
+      "name": "Create numbered list",
+      "context": "Start of line (Markdown)",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "1",
+          ".",
+          "Space"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "1",
+          ".",
+          "Space"
+        ]
+      }
+    },
+    {
+      "name": "Create H1 heading",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+1"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+1"
+      }
+    },
+    {
+      "name": "Create H2 heading",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+2"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+2"
+      }
+    },
+    {
+      "name": "Create H3 heading",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+3"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+3"
+      }
+    },
+    {
+      "name": "Create toggle list",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+7"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+7"
+      }
+    },
+    {
+      "name": "Create text block",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+0"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+0"
+      }
+    },
+    {
+      "name": "Create code block",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+8"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+8"
+      }
+    },
+    {
+      "name": "Turn into new page",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+9"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+9"
+      }
+    },
+    {
+      "name": "Create quote block",
+      "context": "Start of line (Markdown)",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Shift+'",
+          "Space"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Shift+'",
+          "Space"
+        ]
+      }
+    },
+    {
+      "name": "Create divider",
+      "context": "Start of line (Markdown)",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "-",
+          "-",
+          "-"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "-",
+          "-",
+          "-"
+        ]
+      }
+    },
+    {
+      "name": "Insert line",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Enter"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Enter"
+      }
+    },
+    {
+      "name": "Line break within block",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Enter"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Enter"
+      }
+    },
+    {
+      "name": "Create comment",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+M"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+M"
+      }
+    },
+    {
+      "name": "Bold selected text",
+      "context": "Text selected",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+B"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+B"
+      }
+    },
+    {
+      "name": "Italicize selected text",
+      "context": "Text selected",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+I"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+I"
+      }
+    },
+    {
+      "name": "Underline selected text",
+      "context": "Text selected",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+U"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+U"
+      }
+    },
+    {
+      "name": "Strikethrough selected text",
+      "context": "Text selected",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+S"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+S"
+      }
+    },
+    {
+      "name": "Add link to selection",
+      "context": "Text selected",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+K"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+K"
+      }
+    },
+    {
+      "name": "Inline code (selected text)",
+      "context": "Text selected",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+E"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+E"
+      }
+    },
+    {
+      "name": "Indent / nest block",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Tab"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Tab"
+      }
+    },
+    {
+      "name": "Un-nest block",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Tab"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Tab"
+      }
+    },
+    {
+      "name": "Zoom in",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Plus"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Plus"
+      }
+    },
+    {
+      "name": "Zoom out",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+-"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+-"
+      }
+    },
+    {
+      "name": "Go up one level (page hierarchy)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+U"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+U"
+      }
+    },
+    {
+      "name": "Fill cells right",
+      "context": "Table",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+R"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+R"
+      }
+    },
+    {
+      "name": "Fill cells down",
+      "context": "Table",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+D"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+D"
+      }
+    },
+    {
+      "name": "Select current block / clear selection",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Esc"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Esc"
+      }
+    },
+    {
+      "name": "Select block at cursor",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+A"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+A"
+      }
+    },
+    {
+      "name": "Toggle image fullscreen",
+      "context": "Image selected",
+      "windows": {
+        "type": "keys",
+        "chord": "Space"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Space"
+      }
+    },
+    {
+      "name": "Select block above",
+      "context": "Block selected",
+      "windows": {
+        "type": "keys",
+        "chord": "Up"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Up"
+      }
+    },
+    {
+      "name": "Select block below",
+      "context": "Block selected",
+      "windows": {
+        "type": "keys",
+        "chord": "Down"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Down"
+      }
+    },
+    {
+      "name": "Expand selection upward",
+      "context": "Block selected",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Up"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Up"
+      }
+    },
+    {
+      "name": "Expand selection downward",
+      "context": "Block selected",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Down"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Down"
+      }
+    },
+    {
+      "name": "Delete selected blocks",
+      "context": "Block(s) selected",
+      "windows": {
+        "type": "keys",
+        "chord": "Backspace"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Backspace"
+      }
+    },
+    {
+      "name": "Delete selected blocks (alternate)",
+      "context": "Block(s) selected",
+      "windows": {
+        "type": "keys",
+        "chord": "Delete"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Delete"
+      }
+    },
+    {
+      "name": "Duplicate selected blocks",
+      "context": "Block(s) selected",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+D"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+D"
+      }
+    },
+    {
+      "name": "Edit selected block text",
+      "context": "Block selected",
+      "windows": {
+        "type": "keys",
+        "chord": "Enter"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Enter"
+      }
+    },
+    {
+      "name": "Edit / change selected blocks",
+      "context": "Block(s) selected",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+/"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+/"
+      }
+    },
+    {
+      "name": "Edit selected rows or cards",
+      "context": "Database",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+/"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+/"
+      }
+    },
+    {
+      "name": "Move block up",
+      "context": "Block selected",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Up"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+Up"
+      }
+    },
+    {
+      "name": "Move block down",
+      "context": "Block selected",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Down"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+Down"
+      }
+    },
+    {
+      "name": "Move block left",
+      "context": "Block selected",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Left"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+Left"
+      }
+    },
+    {
+      "name": "Move block right",
+      "context": "Block selected",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Right"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+Right"
+      }
+    },
+    {
+      "name": "Expand / close all toggles",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+T"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+T"
+      }
+    },
+    {
+      "name": "Apply last color used",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+H"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+H"
+      }
+    },
+    {
+      "name": "Modify current block",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Enter"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Enter"
+      }
+    },
+    {
+      "name": "Dismiss @-mention menu",
+      "context": "@ mention menu",
+      "windows": {
+        "type": "keys",
+        "chord": "Esc"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Esc"
+      }
+    },
+    {
+      "name": "Open page link / create menu ([[)",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "[",
+          "["
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "[",
+          "["
+        ]
+      }
+    },
+    {
+      "name": "Open page creation menu (+)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Plus"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Plus"
+      }
+    },
+    {
+      "name": "Open block-type menu (/)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "/"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "/"
+      }
+    },
+    {
+      "name": "Dismiss block-type menu",
+      "context": "Slash command menu",
+      "windows": {
+        "type": "keys",
+        "chord": "Esc"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Esc"
+      }
+    }
+  ],
+  "defaults": {
+    "TUNE_CW": {
+      "name": "Zoom in",
+      "action": {
+        "type": "keys",
+        "chord": "Ctrl+Plus"
+      },
+      "accel": "light"
+    },
+    "TUNE_CCW": {
+      "name": "Zoom out",
+      "action": {
+        "type": "keys",
+        "chord": "Ctrl+-"
+      },
+      "accel": "light"
+    },
+    "TUNE_TAP_1F": {
+      "name": "Toggle dark / light mode",
+      "action": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+L"
+      }
+    },
+    "TUNE_SWIPE_LEFT": {
+      "name": "Go back a page",
+      "action": {
+        "type": "keys",
+        "chord": "Ctrl+["
+      }
+    },
+    "TUNE_SWIPE_RIGHT": {
+      "name": "Go forward a page",
+      "action": {
+        "type": "keys",
+        "chord": "Ctrl+]"
+      }
+    }
+  }
+}

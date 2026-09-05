@@ -1,0 +1,865 @@
+{
+  "id": "substance_painter",
+  "name": "Adobe Substance 3D Painter",
+  "kind": "app",
+  "category": "CAD / 3D",
+  "match": {
+    "windows_exe": [
+      "Adobe Substance 3D Painter.exe"
+    ],
+    "macos_bundle": [
+      "com.adobe.substance3d.painter"
+    ],
+    "window_title": []
+  },
+  "sources": [
+    "https://experienceleague.adobe.com/en/docs/substance-3d-painter/using/interface/settings/shortcuts",
+    "https://helpx.adobe.com/substance-3d-painter/interface/settings/shortcuts.html"
+  ],
+  "note": "From the Substance 3D Painter documentation \"Shortcuts\" page, which is split into \"Editable shortcuts\" and \"Non-editable shortcuts\"; both are plain headings rather than modes, so context is \"\". \"Save as project\" is listed with no shortcut and is left out. Left out because the chord grammar cannot express them: every mouse binding (Use tool / paint, Draw straight lines, all Camera rotate / translate / zoom bindings, Stencil rotate / snap rotate / translation / zoom, Change tool Size / Hardness, Change tool Flow / Rotation, Rotate environment, Auto-Focus, Texture set selection, Context menu, Set Clone tool source location, Display mask in viewport, Disable/Enable mask, Drag & drop material) and the modifier-only \"Manipulator constraint/snapping (Shift)\" and \"Manipulator mirror transformation (Ctrl)\".",
+  "actions": [
+    {
+      "name": "Hide UI",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Tab"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Tab"
+      }
+    },
+    {
+      "name": "Undo",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Z"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Z"
+      }
+    },
+    {
+      "name": "Redo",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Y"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Y"
+      }
+    },
+    {
+      "name": "Baking",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F8"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "F8"
+      }
+    },
+    {
+      "name": "Painting",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F9"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "F9"
+      }
+    },
+    {
+      "name": "Rendering (Iray)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F10"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "F10"
+      }
+    },
+    {
+      "name": "Open project",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+O"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+O"
+      }
+    },
+    {
+      "name": "Close project",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+F4"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+W"
+      }
+    },
+    {
+      "name": "Save project",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+S"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+S"
+      }
+    },
+    {
+      "name": "New project",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+N"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+N"
+      }
+    },
+    {
+      "name": "Quit application",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+F4"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Q"
+      }
+    },
+    {
+      "name": "Show/Hide manipulator",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Q"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Q"
+      }
+    },
+    {
+      "name": "Increase manipulator size",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "+"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "+"
+      }
+    },
+    {
+      "name": "Decrease manipulator size",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "-"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "-"
+      }
+    },
+    {
+      "name": "Cycle through manipulation spaces",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "T"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "T"
+      }
+    },
+    {
+      "name": "Toggle warp edition mode",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+V"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+V"
+      }
+    },
+    {
+      "name": "Translate tool",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "W"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "W"
+      }
+    },
+    {
+      "name": "Rotate tool",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "E"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "E"
+      }
+    },
+    {
+      "name": "Scale tool",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "R"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "R"
+      }
+    },
+    {
+      "name": "Surface tool",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+W"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+W"
+      }
+    },
+    {
+      "name": "Symmetry",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "L"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "L"
+      }
+    },
+    {
+      "name": "Pause engine computation",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Esc"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Esc"
+      }
+    },
+    {
+      "name": "Select Paint tool",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "1"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "1"
+      }
+    },
+    {
+      "name": "Select Paint tool + Particles",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+1"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+1"
+      }
+    },
+    {
+      "name": "Select Eraser tool",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "2"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "2"
+      }
+    },
+    {
+      "name": "Select Eraser tool + Particles",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+2"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+2"
+      }
+    },
+    {
+      "name": "Select Projection tool",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "3"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "3"
+      }
+    },
+    {
+      "name": "Select Projection tool + Particles",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+3"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+3"
+      }
+    },
+    {
+      "name": "Select Polygon Fill",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "4"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "4"
+      }
+    },
+    {
+      "name": "Select Smudge tool",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "5"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "5"
+      }
+    },
+    {
+      "name": "Select Clone tool (relative source)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "6"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "6"
+      }
+    },
+    {
+      "name": "Select Clone tool (absolute source)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+6"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+6"
+      }
+    },
+    {
+      "name": "Bake Mesh Maps",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+B"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+B"
+      }
+    },
+    {
+      "name": "Increase tool size",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "]"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "]"
+      }
+    },
+    {
+      "name": "Decrease tool size",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "["
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "["
+      }
+    },
+    {
+      "name": "Invert grayscale tool",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "X"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "X"
+      }
+    },
+    {
+      "name": "Pick stroke material",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "P"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "P"
+      }
+    },
+    {
+      "name": "Lazy Mouse",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "D"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "D"
+      }
+    },
+    {
+      "name": "Hide/ignore excluded geometry",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+H"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+H"
+      }
+    },
+    {
+      "name": "Camera Perspective",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F5"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "F5"
+      }
+    },
+    {
+      "name": "Camera Orthographic",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F6"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "F6"
+      }
+    },
+    {
+      "name": "Display next channel",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "C"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "C"
+      }
+    },
+    {
+      "name": "Display previous channel",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+C"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+C"
+      }
+    },
+    {
+      "name": "Display material",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "M"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "M"
+      }
+    },
+    {
+      "name": "Display next mesh map",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "B"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "B"
+      }
+    },
+    {
+      "name": "Display previous mesh map",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+B"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+B"
+      }
+    },
+    {
+      "name": "Toggle animation",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Space"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Space"
+      }
+    },
+    {
+      "name": "Export textures",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+E"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+E"
+      }
+    },
+    {
+      "name": "Center the whole mesh",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "F"
+      }
+    },
+    {
+      "name": "Toggle quick mask edition",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "U"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "U"
+      }
+    },
+    {
+      "name": "Clear quick mask",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Y"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Y"
+      }
+    },
+    {
+      "name": "Invert quick mask",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "I"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "I"
+      }
+    },
+    {
+      "name": "Viewport layout 3D/2D",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F1"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "F1"
+      }
+    },
+    {
+      "name": "Viewport layout 3D only",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F2"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "F2"
+      }
+    },
+    {
+      "name": "Viewport layout 2D only",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F3"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "F3"
+      }
+    },
+    {
+      "name": "Swap 2D / 3D view",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F4"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "F4"
+      }
+    },
+    {
+      "name": "Texture Set isolate",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Q"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Q"
+      }
+    },
+    {
+      "name": "Ignore stencil mask",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "N"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "N"
+      }
+    },
+    {
+      "name": "Resume previous stroke",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "A"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "A"
+      }
+    },
+    {
+      "name": "Copy layer",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+C"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+C"
+      }
+    },
+    {
+      "name": "Cut layer",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+X"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+X"
+      }
+    },
+    {
+      "name": "Paste layer",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+V"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+V"
+      }
+    },
+    {
+      "name": "Delete layer",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Delete"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Delete"
+      }
+    },
+    {
+      "name": "Duplicate layer",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+D"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+D"
+      }
+    },
+    {
+      "name": "Group layer",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+G"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+G"
+      }
+    },
+    {
+      "name": "Copy layer content",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+C"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+C"
+      }
+    },
+    {
+      "name": "Paste layer content",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+V"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+V"
+      }
+    }
+  ],
+  "defaults": {
+    "TUNE_CW": {
+      "name": "Increase tool size",
+      "action": {
+        "type": "keys",
+        "chord": "]"
+      },
+      "accel": "light"
+    },
+    "TUNE_CCW": {
+      "name": "Decrease tool size",
+      "action": {
+        "type": "keys",
+        "chord": "["
+      },
+      "accel": "light"
+    },
+    "TUNE_TAP_1F": {
+      "name": "Center the whole mesh",
+      "action": {
+        "type": "keys",
+        "chord": "F"
+      }
+    },
+    "TUNE_SWIPE_LEFT": {
+      "name": "Undo",
+      "action": {
+        "type": "keys",
+        "chord": "Ctrl+Z"
+      }
+    },
+    "TUNE_SWIPE_RIGHT": {
+      "name": "Redo",
+      "action": {
+        "type": "keys",
+        "chord": "Ctrl+Y"
+      }
+    }
+  }
+}

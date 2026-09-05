@@ -1,0 +1,1716 @@
+{
+  "id": "android_studio",
+  "name": "Android Studio",
+  "kind": "app",
+  "category": "Development",
+  "match": {
+    "windows_exe": [
+      "studio64.exe"
+    ],
+    "macos_bundle": [
+      "com.google.android.studio"
+    ],
+    "window_title": []
+  },
+  "sources": [
+    "https://developer.android.com/studio/intro/keyboard-shortcuts"
+  ],
+  "note": "From the Android Developers \"Keyboard shortcuts\" reference for Android Studio (default keymap), Windows/Linux and macOS columns; Linux equals Windows so no linux value is stored. The Layout Editor and Navigation Editor sections keep their name as the context and Debug keeps \"Debug\"; the other headings are groupings, so their context is empty. Where Google lists two bindings for one command the first is kept, except for slash-named commands (\"Zoom in/out\", \"Collapse/expand current code block\", \"Collapse/expand all code blocks\", \"Indent/unindent lines\", \"Next/previous highlighted error\"), which are split into the two commands they name. Omitted because the chord grammar cannot express them: \"Search everything (including code and menus)\" (press Shift twice), \"Pan\" (hold Space and drag), \"Select multiple components\" and \"Select multiple destinations\" (Shift-click / Ctrl-click). Android Studio is built on IntelliJ IDEA, so many of these also appear in the IntelliJ entry; this file follows Google's own published list.",
+  "actions": [
+    {
+      "name": "Project",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+1"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+1"
+      }
+    },
+    {
+      "name": "Version Control",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+9"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+9"
+      }
+    },
+    {
+      "name": "Run",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+F10"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+R"
+      }
+    },
+    {
+      "name": "Debug",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+F9"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+D"
+      }
+    },
+    {
+      "name": "Logcat",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+6"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+6"
+      }
+    },
+    {
+      "name": "Return to Editor",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Esc"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Esc"
+      }
+    },
+    {
+      "name": "Hide All Tool Windows",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+F12"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+F12"
+      }
+    },
+    {
+      "name": "Basic Completion",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Space"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Space"
+      }
+    },
+    {
+      "name": "Smart Completion",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Space"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Space"
+      }
+    },
+    {
+      "name": "Statement Completion",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Enter"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+Enter"
+      }
+    },
+    {
+      "name": "Save all",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+S"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+S"
+      }
+    },
+    {
+      "name": "Synchronize",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Y"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+Y"
+      }
+    },
+    {
+      "name": "Maximize/minimize editor",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+F12"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Cmd+F12"
+      }
+    },
+    {
+      "name": "Add to favorites",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+F"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Alt+F"
+      }
+    },
+    {
+      "name": "Inspect current file with current profile",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+I"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Alt+I"
+      }
+    },
+    {
+      "name": "Quick switch scheme",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+`"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+`"
+      }
+    },
+    {
+      "name": "Open settings dialog",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+S"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+,"
+      }
+    },
+    {
+      "name": "Open project structure dialog",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Alt+S"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+;"
+      }
+    },
+    {
+      "name": "Switch between tabs and tool window",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Tab"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Tab"
+      }
+    },
+    {
+      "name": "Find",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+F"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+F"
+      }
+    },
+    {
+      "name": "Find next",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F3"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+G"
+      }
+    },
+    {
+      "name": "Find previous",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+F3"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+G"
+      }
+    },
+    {
+      "name": "Replace",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+R"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+R"
+      }
+    },
+    {
+      "name": "Find action",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+A"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+A"
+      }
+    },
+    {
+      "name": "Search by symbol name",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Alt+N"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+O"
+      }
+    },
+    {
+      "name": "Find class",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+N"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+O"
+      }
+    },
+    {
+      "name": "Find file (instead of class)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+N"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+O"
+      }
+    },
+    {
+      "name": "Find in path",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+F"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+F"
+      }
+    },
+    {
+      "name": "Open file structure dialog",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+F12"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+F12"
+      }
+    },
+    {
+      "name": "Navigate between open editor tabs",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Right"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Right"
+      }
+    },
+    {
+      "name": "Jump to source",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F4"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "F4"
+      }
+    },
+    {
+      "name": "Open current editor tab in new window",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+F4"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+F4"
+      }
+    },
+    {
+      "name": "Recently opened files dialog",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+E"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+E"
+      }
+    },
+    {
+      "name": "Recently edited files dialog",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+E"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+E"
+      }
+    },
+    {
+      "name": "Go to last edit location",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Backspace"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+Delete"
+      }
+    },
+    {
+      "name": "Close active editor tab",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+F4"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+W"
+      }
+    },
+    {
+      "name": "Return to editor window from a tool window",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Esc"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Esc"
+      }
+    },
+    {
+      "name": "Hide active or last active tool window",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Esc"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Esc"
+      }
+    },
+    {
+      "name": "Go to line",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+G"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+L"
+      }
+    },
+    {
+      "name": "Open type hierarchy",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+H"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+H"
+      }
+    },
+    {
+      "name": "Open method hierarchy",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+H"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+H"
+      }
+    },
+    {
+      "name": "Open call hierarchy",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+H"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+H"
+      }
+    },
+    {
+      "name": "Zoom in",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Plus"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Plus"
+      }
+    },
+    {
+      "name": "Zoom out",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+-"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+-"
+      }
+    },
+    {
+      "name": "Fit to screen",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+0"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+0"
+      }
+    },
+    {
+      "name": "Actual size",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+1"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+1"
+      }
+    },
+    {
+      "name": "Toggle between Design and Blueprint modes",
+      "context": "Layout Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "B"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "B"
+      }
+    },
+    {
+      "name": "Toggle between Portrait and Landscape modes",
+      "context": "Layout Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "O"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "O"
+      }
+    },
+    {
+      "name": "Toggle devices",
+      "context": "Layout Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "D"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "D"
+      }
+    },
+    {
+      "name": "Force refresh",
+      "context": "Layout Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "R"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "R"
+      }
+    },
+    {
+      "name": "Toggle render errors panel",
+      "context": "Layout Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "E"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "E"
+      }
+    },
+    {
+      "name": "Delete constraints",
+      "context": "Layout Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Delete"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Delete"
+      }
+    },
+    {
+      "name": "Zoom in",
+      "context": "Layout Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Plus"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Plus"
+      }
+    },
+    {
+      "name": "Zoom out",
+      "context": "Layout Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+-"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+-"
+      }
+    },
+    {
+      "name": "Zoom to fit",
+      "context": "Layout Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+0"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+0"
+      }
+    },
+    {
+      "name": "Go to XML",
+      "context": "Layout Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+B"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+B"
+      }
+    },
+    {
+      "name": "Select all components",
+      "context": "Layout Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+A"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+A"
+      }
+    },
+    {
+      "name": "Zoom in",
+      "context": "Navigation Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Plus"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Plus"
+      }
+    },
+    {
+      "name": "Zoom out",
+      "context": "Navigation Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+-"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+-"
+      }
+    },
+    {
+      "name": "Zoom to fit",
+      "context": "Navigation Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+0"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+0"
+      }
+    },
+    {
+      "name": "Go to XML",
+      "context": "Navigation Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+B"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+B"
+      }
+    },
+    {
+      "name": "Toggle render errors panel",
+      "context": "Navigation Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "E"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "E"
+      }
+    },
+    {
+      "name": "Group into nested graph",
+      "context": "Navigation Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+G"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+G"
+      }
+    },
+    {
+      "name": "Cycle through destinations",
+      "context": "Navigation Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Tab"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Tab"
+      }
+    },
+    {
+      "name": "Select all destinations",
+      "context": "Navigation Editor",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+A"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+A"
+      }
+    },
+    {
+      "name": "Generate code (getters, setters, constructors, hashCode / equals , toString , new file, new class)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Insert"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+N"
+      }
+    },
+    {
+      "name": "Override methods",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+O"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+O"
+      }
+    },
+    {
+      "name": "Implement methods",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+I"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+I"
+      }
+    },
+    {
+      "name": "Surround with ( if...else , try...catch , etc.)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+T"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+T"
+      }
+    },
+    {
+      "name": "Delete line at caret",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Y"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Delete"
+      }
+    },
+    {
+      "name": "Collapse current code block",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+-"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+-"
+      }
+    },
+    {
+      "name": "Expand current code block",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Plus"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Plus"
+      }
+    },
+    {
+      "name": "Collapse all code blocks",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+-"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+-"
+      }
+    },
+    {
+      "name": "Expand all code blocks",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Plus"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+Plus"
+      }
+    },
+    {
+      "name": "Duplicate current line or selection",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+D"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+D"
+      }
+    },
+    {
+      "name": "Basic code completion",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Space"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Space"
+      }
+    },
+    {
+      "name": "Smart code completion (filters the list of methods and variables by expected type)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Space"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Space"
+      }
+    },
+    {
+      "name": "Complete statement",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Enter"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+Enter"
+      }
+    },
+    {
+      "name": "Quick documentation lookup",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Q"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+J"
+      }
+    },
+    {
+      "name": "Show parameters for selected method",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+P"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+P"
+      }
+    },
+    {
+      "name": "Go to declaration (directly)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+B"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+B"
+      }
+    },
+    {
+      "name": "Go to implementations",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+B"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+B"
+      }
+    },
+    {
+      "name": "Go to supermethod/superclass",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+U"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+U"
+      }
+    },
+    {
+      "name": "Open quick definition lookup",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+I"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Y"
+      }
+    },
+    {
+      "name": "Toggle project tool window visibility",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+1"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+1"
+      }
+    },
+    {
+      "name": "Toggle bookmark",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F11"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "F3"
+      }
+    },
+    {
+      "name": "Toggle bookmark with mnemonic",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+F11"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+F3"
+      }
+    },
+    {
+      "name": "Comment/uncomment with line comment",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+/"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+/"
+      }
+    },
+    {
+      "name": "Comment/uncomment with block comment",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+/"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+/"
+      }
+    },
+    {
+      "name": "Select successively increasing code blocks",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+W"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Up"
+      }
+    },
+    {
+      "name": "Decrease current selection to previous state",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+W"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Down"
+      }
+    },
+    {
+      "name": "Move to code block start",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+["
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+["
+      }
+    },
+    {
+      "name": "Move to code block end",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+]"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+]"
+      }
+    },
+    {
+      "name": "Select to the code block start",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+["
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Alt+Cmd+["
+      }
+    },
+    {
+      "name": "Select to the code block end",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+]"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Alt+Cmd+]"
+      }
+    },
+    {
+      "name": "Delete to end of word",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Delete"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Delete"
+      }
+    },
+    {
+      "name": "Delete to start of word",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Backspace"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Delete"
+      }
+    },
+    {
+      "name": "Optimize imports",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+O"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+O"
+      }
+    },
+    {
+      "name": "Project quick fix (show intention actions and quick fixes)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Enter"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Enter"
+      }
+    },
+    {
+      "name": "Reformat code",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+L"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+L"
+      }
+    },
+    {
+      "name": "Auto-indent lines",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+I"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+I"
+      }
+    },
+    {
+      "name": "Indent lines",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Tab"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Tab"
+      }
+    },
+    {
+      "name": "Unindent lines",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Tab"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Tab"
+      }
+    },
+    {
+      "name": "Smart line join",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+J"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+J"
+      }
+    },
+    {
+      "name": "Smart line split",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Enter"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Enter"
+      }
+    },
+    {
+      "name": "Start new line",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Enter"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Enter"
+      }
+    },
+    {
+      "name": "Next highlighted error",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F2"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "F2"
+      }
+    },
+    {
+      "name": "Previous highlighted error",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+F2"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+F2"
+      }
+    },
+    {
+      "name": "Build",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+F9"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+F9"
+      }
+    },
+    {
+      "name": "Build and run",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+F10"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+R"
+      }
+    },
+    {
+      "name": "Apply changes and restart activity",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+F10"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Cmd+R"
+      }
+    },
+    {
+      "name": "Apply code changes",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+F10"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Cmd+R"
+      }
+    },
+    {
+      "name": "Debug",
+      "context": "Debug",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+F9"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+D"
+      }
+    },
+    {
+      "name": "Step over",
+      "context": "Debug",
+      "windows": {
+        "type": "keys",
+        "chord": "F8"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "F8"
+      }
+    },
+    {
+      "name": "Step into",
+      "context": "Debug",
+      "windows": {
+        "type": "keys",
+        "chord": "F7"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "F7"
+      }
+    },
+    {
+      "name": "Smart step into",
+      "context": "Debug",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+F7"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+F7"
+      }
+    },
+    {
+      "name": "Step out",
+      "context": "Debug",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+F8"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+F8"
+      }
+    },
+    {
+      "name": "Run to cursor",
+      "context": "Debug",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+F9"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+F9"
+      }
+    },
+    {
+      "name": "Evaluate expression",
+      "context": "Debug",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+F8"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+F8"
+      }
+    },
+    {
+      "name": "Resume program",
+      "context": "Debug",
+      "windows": {
+        "type": "keys",
+        "chord": "F9"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+R"
+      }
+    },
+    {
+      "name": "Toggle breakpoint",
+      "context": "Debug",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+F8"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+F8"
+      }
+    },
+    {
+      "name": "View breakpoints",
+      "context": "Debug",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+F8"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Cmd+F8"
+      }
+    },
+    {
+      "name": "Copy",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F5"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "F5"
+      }
+    },
+    {
+      "name": "Move",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F6"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "F6"
+      }
+    },
+    {
+      "name": "Safe delete",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Delete"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Delete"
+      }
+    },
+    {
+      "name": "Rename",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+F6"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+F6"
+      }
+    },
+    {
+      "name": "Change signature",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+F6"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+F6"
+      }
+    },
+    {
+      "name": "Inline",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+N"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+N"
+      }
+    },
+    {
+      "name": "Extract method",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+M"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+M"
+      }
+    },
+    {
+      "name": "Extract variable",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+V"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+V"
+      }
+    },
+    {
+      "name": "Extract field",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+F"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+F"
+      }
+    },
+    {
+      "name": "Extract constant",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+C"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+C"
+      }
+    },
+    {
+      "name": "Extract parameter",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+P"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Cmd+P"
+      }
+    },
+    {
+      "name": "Commit project to VCS",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+K"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+K"
+      }
+    },
+    {
+      "name": "Update project from VCS",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+T"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+T"
+      }
+    },
+    {
+      "name": "View recent changes",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+C"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Alt+C"
+      }
+    },
+    {
+      "name": "Open VCS dialog",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+`"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+V"
+      }
+    }
+  ],
+  "defaults": {
+    "TUNE_CW": {
+      "name": "Navigate between open editor tabs (next)",
+      "action": {
+        "type": "keys",
+        "chord": "Alt+Right"
+      }
+    },
+    "TUNE_CCW": {
+      "name": "Navigate between open editor tabs (previous)",
+      "action": {
+        "type": "keys",
+        "chord": "Alt+Left"
+      }
+    },
+    "TUNE_TAP_1F": {
+      "name": "Find action",
+      "action": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+A"
+      }
+    },
+    "TUNE_SWIPE_LEFT": {
+      "name": "Go to last edit location",
+      "action": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Backspace"
+      }
+    },
+    "TUNE_SWIPE_RIGHT": {
+      "name": "Jump to source",
+      "action": {
+        "type": "keys",
+        "chord": "F4"
+      }
+    },
+    "TUNE_SWIPE_UP": {
+      "name": "Previous highlighted error",
+      "action": {
+        "type": "keys",
+        "chord": "Shift+F2"
+      }
+    },
+    "TUNE_SWIPE_DOWN": {
+      "name": "Next highlighted error",
+      "action": {
+        "type": "keys",
+        "chord": "F2"
+      }
+    }
+  }
+}

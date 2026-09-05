@@ -1,0 +1,425 @@
+{
+  "id": "neovim",
+  "name": "Neovim",
+  "kind": "app",
+  "category": "Development",
+  "match": {
+    "windows_exe": [
+      "nvim.exe",
+      "nvim-qt.exe"
+    ],
+    "macos_bundle": [],
+    "window_title": []
+  },
+  "sources": [
+    "https://raw.githubusercontent.com/neovim/neovim/master/runtime/doc/vim_diff.txt",
+    "https://raw.githubusercontent.com/neovim/neovim/master/runtime/doc/diagnostic.txt",
+    "https://raw.githubusercontent.com/neovim/neovim/master/runtime/doc/quickfix.txt",
+    "https://raw.githubusercontent.com/neovim/neovim/master/runtime/doc/tagsrch.txt",
+    "https://raw.githubusercontent.com/neovim/neovim/master/runtime/doc/editing.txt",
+    "https://raw.githubusercontent.com/neovim/neovim/master/runtime/doc/windows.txt",
+    "https://raw.githubusercontent.com/neovim/neovim/master/runtime/doc/insert.txt",
+    "https://raw.githubusercontent.com/neovim/neovim/master/runtime/doc/pattern.txt",
+    "https://raw.githubusercontent.com/neovim/neovim/master/runtime/doc/various.txt",
+    "https://raw.githubusercontent.com/neovim/neovim/master/runtime/doc/change.txt",
+    "https://raw.githubusercontent.com/neovim/neovim/master/runtime/doc/motion.txt",
+    "https://raw.githubusercontent.com/neovim/neovim/master/runtime/doc/lsp.txt",
+    "https://raw.githubusercontent.com/neovim/neovim/master/runtime/doc/treesitter.txt",
+    "https://raw.githubusercontent.com/neovim/neovim/master/runtime/doc/repeat.txt",
+    "https://raw.githubusercontent.com/neovim/neovim/master/runtime/doc/terminal.txt",
+    "https://neovim.io/doc/user/vim_diff.html"
+  ],
+  "note": "This file is a DELTA against catalog/vim.json, which already fully covers Vim's own Normal/Insert/Visual/Command-line commands (Neovim inherits all of those unchanged). Nothing below repeats a shared Vim command; every entry here is something Nvim's own :help vim_diff.txt \"Default mappings\" section (*default-mappings*, https://neovim.io/doc/user/vim_diff.html rendered the same content but returned no readable body to WebFetch/curl in this session, so the raw runtime/doc/vim_diff.txt source on GitHub was used instead) documents as created unconditionally at startup that Vim does not have, plus the doc pages the *default-mappings* tags point into: diagnostic.txt (*diagnostic-defaults*: ]d [d ]D [D CTRL-W_d), quickfix.txt (*[q* *]q* *[Q* *]Q* *[_CTRL-Q* *]_CTRL-Q* *[l* *]l* *[L* *]L* *[_CTRL-L* *]_CTRL-L*), tagsrch.txt (*]t* *[t* *[T* *]T* *]_CTRL-T* *[_CTRL-T*), editing.txt (*]a* *[a* *[A* *]A*), windows.txt (*]b* *[b* *[B* *]B*), insert.txt (*[<Space>* *]<Space>*), pattern.txt (*v_star-default* *v_#-default*), various.txt (*CTRL-L-default*, *gO*, *gc-default* *gcc-default* *v_gc-default*, *K-lsp-default*), change.txt (*Y-default*, *&-default*, *gr-default*), motion.txt (*dir-mappings*, the \"-\" key), lsp.txt (*lsp-defaults* GLOBAL DEFAULTS: gra gri grn grr grt grx i_CTRL-S), and treesitter.txt (*treesitter-defaults*). Also included: repeat.txt's *mcursor*/*multicursor* COMMANDS section, which redefines \"Q\" and its neighbours as built-in Normal/Visual-mode commands (not phrased as *default-mappings* tags, but unconditional built-in bindings all the same, and this is the single biggest behavioral difference from Vim's \"Q\" = Ex mode); and terminal.txt's Input section, which documents CTRL-\\ CTRL-N and CTRL-\\ CTRL-O as the built-in way out of Terminal-mode (catalog/vim.json's own note says it deliberately left out Terminal-Job mode entirely, so this is not a duplicate). Left out on purpose: gc{motion} and the Operator-pending \"gc\" text object (o_gc-default) both require an arbitrary motion/operator argument, excluded the same way vim.json excludes d{motion}; v_@-default (Visual \"@{register}\") requires a register argument, excluded the same way vim.json has no \"@\" entries; i_CTRL-U/i_CTRL-W's documented addition (\"sets a new undo point before deleting\") is a behavioral tweak to keys vim.json already lists with the same chord, not a new binding, so it is not duplicated here; <C-LeftMouse> (mcursor-mouse) is mouse-only; the ALT-h/j/k/l and CTRL-R terminal-mode window-navigation/paste snippets shown in terminal.txt's Input section are `:tnoremap`/`:inoremap` examples for users to add themselves, not shipped defaults, so no Terminal-mode CTRL-W bindings are invented; \"g CTRL-A\" during a multicursor session reuses a chord catalog/vim.json already lists (Normal: dump memory profile; Visual: sequential increment) with a third, count-dependent meaning layered on top, so it is called out here rather than duplicated as a fourth ambiguous entry; \"[count]Q\" (place a cursor at every search match) is a count-modified use of the plain \"Q\" toggle already listed below. The result is intentionally short: Neovim's default keymap is overwhelmingly the same as Vim's, and most of what changes at the default-key level is either version/LSP/treesitter-gated behavior layered onto existing Vim keys (K, CTRL-L, \"gr\", \"an\"/\"in\" fall back to LSP when Treesitter is inactive) rather than brand-new chords, or, like the multicursor and Terminal-mode entries here, genuinely new but few in number. Version: current Nvim master docs as of 2026-09-04; some entries (LSP gra/gri/.../grx, the multicursor Q family) are recent additions and may not exist in older Neovim releases.",
+  "actions": [
+    {
+      "name": "Yank from cursor to end of line (Y is remapped from Vim's \"yy\" synonym to \"y$\")",
+      "context": "Normal",
+      "windows": { "type": "keys", "chord": "Shift+Y" },
+      "mac": { "type": "keys", "chord": "Shift+Y" }
+    },
+    {
+      "name": "Repeat last substitute keeping the same flags (& is remapped to \":&&<CR>\")",
+      "context": "Normal",
+      "windows": { "type": "keys", "chord": "Shift+7" },
+      "mac": { "type": "keys", "chord": "Shift+7" }
+    },
+    {
+      "name": "Redraw the screen, and also clear search highlighting, remove multicursors, and update diffs",
+      "context": "Normal",
+      "windows": { "type": "keys", "chord": "Ctrl+L" },
+      "mac": { "type": "keys", "chord": "Ctrl+L" }
+    },
+    {
+      "name": "Open the parent directory of the current buffer (- is remapped from Vim's cursor-up-to-first-non-blank)",
+      "context": "Normal",
+      "windows": { "type": "keys", "chord": "-" },
+      "mac": { "type": "keys", "chord": "-" }
+    },
+    {
+      "name": "Search forward for the current selection",
+      "context": "Visual",
+      "windows": { "type": "keys", "chord": "Shift+8" },
+      "mac": { "type": "keys", "chord": "Shift+8" }
+    },
+    {
+      "name": "Search backward for the current selection",
+      "context": "Visual",
+      "windows": { "type": "keys", "chord": "Shift+3" },
+      "mac": { "type": "keys", "chord": "Shift+3" }
+    },
+    {
+      "name": "Comment or uncomment [count] lines starting at the cursor",
+      "context": "Normal",
+      "windows": { "type": "sequence", "chords": ["G", "C", "C"] },
+      "mac": { "type": "sequence", "chords": ["G", "C", "C"] }
+    },
+    {
+      "name": "Comment or uncomment the selected line(s)",
+      "context": "Visual",
+      "windows": { "type": "sequence", "chords": ["G", "C"] },
+      "mac": { "type": "sequence", "chords": ["G", "C"] }
+    },
+    {
+      "name": "Show a filetype-specific, navigable outline of the buffer (LSP document symbols, help table of contents, or :Man buffer sections)",
+      "context": "Normal",
+      "windows": { "type": "sequence", "chords": ["G", "Shift+O"] },
+      "mac": { "type": "sequence", "chords": ["G", "Shift+O"] }
+    },
+    {
+      "name": "Jump to the next diagnostic in the buffer",
+      "context": "Normal",
+      "windows": { "type": "sequence", "chords": ["]", "D"] },
+      "mac": { "type": "sequence", "chords": ["]", "D"] }
+    },
+    {
+      "name": "Jump to the previous diagnostic in the buffer",
+      "context": "Normal",
+      "windows": { "type": "sequence", "chords": ["[", "D"] },
+      "mac": { "type": "sequence", "chords": ["[", "D"] }
+    },
+    {
+      "name": "Jump to the last diagnostic in the buffer",
+      "context": "Normal",
+      "windows": { "type": "sequence", "chords": ["]", "Shift+D"] },
+      "mac": { "type": "sequence", "chords": ["]", "Shift+D"] }
+    },
+    {
+      "name": "Jump to the first diagnostic in the buffer",
+      "context": "Normal",
+      "windows": { "type": "sequence", "chords": ["[", "Shift+D"] },
+      "mac": { "type": "sequence", "chords": ["[", "Shift+D"] }
+    },
+    {
+      "name": "Show the diagnostic at the cursor in a floating window",
+      "context": "Normal",
+      "windows": { "type": "sequence", "chords": ["Ctrl+W", "D"] },
+      "mac": { "type": "sequence", "chords": ["Ctrl+W", "D"] }
+    },
+    {
+      "name": "Jump to the next quickfix error (:cnext)",
+      "context": "Normal",
+      "windows": { "type": "sequence", "chords": ["]", "Q"] },
+      "mac": { "type": "sequence", "chords": ["]", "Q"] }
+    },
+    {
+      "name": "Jump to the previous quickfix error (:cprevious)",
+      "context": "Normal",
+      "windows": { "type": "sequence", "chords": ["[", "Q"] },
+      "mac": { "type": "sequence", "chords": ["[", "Q"] }
+    },
+    {
+      "name": "Jump to the next location-list error (:lnext)",
+      "context": "Normal",
+      "windows": { "type": "sequence", "chords": ["]", "L"] },
+      "mac": { "type": "sequence", "chords": ["]", "L"] }
+    },
+    {
+      "name": "Jump to the previous location-list error (:lprevious)",
+      "context": "Normal",
+      "windows": { "type": "sequence", "chords": ["[", "L"] },
+      "mac": { "type": "sequence", "chords": ["[", "L"] }
+    },
+    {
+      "name": "Jump to the first error in the next file with errors, quickfix list (:cnfile)",
+      "context": "Normal",
+      "windows": { "type": "sequence", "chords": ["]", "Ctrl+Q"] },
+      "mac": { "type": "sequence", "chords": ["]", "Ctrl+Q"] }
+    },
+    {
+      "name": "Jump to the last error in the previous file with errors, quickfix list (:cpfile)",
+      "context": "Normal",
+      "windows": { "type": "sequence", "chords": ["[", "Ctrl+Q"] },
+      "mac": { "type": "sequence", "chords": ["[", "Ctrl+Q"] }
+    },
+    {
+      "name": "Jump to the first error in the next file with errors, location list (:lnfile)",
+      "context": "Normal",
+      "windows": { "type": "sequence", "chords": ["]", "Ctrl+L"] },
+      "mac": { "type": "sequence", "chords": ["]", "Ctrl+L"] }
+    },
+    {
+      "name": "Jump to the last error in the previous file with errors, location list (:lpfile)",
+      "context": "Normal",
+      "windows": { "type": "sequence", "chords": ["[", "Ctrl+L"] },
+      "mac": { "type": "sequence", "chords": ["[", "Ctrl+L"] }
+    },
+    {
+      "name": "Jump to the first quickfix error (:crewind)",
+      "context": "Normal",
+      "windows": { "type": "sequence", "chords": ["[", "Shift+Q"] },
+      "mac": { "type": "sequence", "chords": ["[", "Shift+Q"] }
+    },
+    {
+      "name": "Jump to the first location-list error (:lrewind)",
+      "context": "Normal",
+      "windows": { "type": "sequence", "chords": ["[", "Shift+L"] },
+      "mac": { "type": "sequence", "chords": ["[", "Shift+L"] }
+    },
+    {
+      "name": "Jump to the last quickfix error (:clast)",
+      "context": "Normal",
+      "windows": { "type": "sequence", "chords": ["]", "Shift+Q"] },
+      "mac": { "type": "sequence", "chords": ["]", "Shift+Q"] }
+    },
+    {
+      "name": "Jump to the last location-list error (:llast)",
+      "context": "Normal",
+      "windows": { "type": "sequence", "chords": ["]", "Shift+L"] },
+      "mac": { "type": "sequence", "chords": ["]", "Shift+L"] }
+    },
+    {
+      "name": "Jump to the next matching tag (:tnext)",
+      "context": "Normal",
+      "windows": { "type": "sequence", "chords": ["]", "T"] },
+      "mac": { "type": "sequence", "chords": ["]", "T"] }
+    },
+    {
+      "name": "Jump to the previous matching tag (:tprevious)",
+      "context": "Normal",
+      "windows": { "type": "sequence", "chords": ["[", "T"] },
+      "mac": { "type": "sequence", "chords": ["[", "T"] }
+    },
+    {
+      "name": "Jump to the first matching tag (:trewind)",
+      "context": "Normal",
+      "windows": { "type": "sequence", "chords": ["[", "Shift+T"] },
+      "mac": { "type": "sequence", "chords": ["[", "Shift+T"] }
+    },
+    {
+      "name": "Jump to the last matching tag (:tlast)",
+      "context": "Normal",
+      "windows": { "type": "sequence", "chords": ["]", "Shift+T"] },
+      "mac": { "type": "sequence", "chords": ["]", "Shift+T"] }
+    },
+    {
+      "name": "Jump to the next matching tag in the preview window (:ptnext)",
+      "context": "Normal",
+      "windows": { "type": "sequence", "chords": ["]", "Ctrl+T"] },
+      "mac": { "type": "sequence", "chords": ["]", "Ctrl+T"] }
+    },
+    {
+      "name": "Jump to the previous matching tag in the preview window (:ptprevious)",
+      "context": "Normal",
+      "windows": { "type": "sequence", "chords": ["[", "Ctrl+T"] },
+      "mac": { "type": "sequence", "chords": ["[", "Ctrl+T"] }
+    },
+    {
+      "name": "Edit the next file in the argument list (:next)",
+      "context": "Normal",
+      "windows": { "type": "sequence", "chords": ["]", "A"] },
+      "mac": { "type": "sequence", "chords": ["]", "A"] }
+    },
+    {
+      "name": "Edit the previous file in the argument list (:previous)",
+      "context": "Normal",
+      "windows": { "type": "sequence", "chords": ["[", "A"] },
+      "mac": { "type": "sequence", "chords": ["[", "A"] }
+    },
+    {
+      "name": "Edit the first file in the argument list (:rewind)",
+      "context": "Normal",
+      "windows": { "type": "sequence", "chords": ["[", "Shift+A"] },
+      "mac": { "type": "sequence", "chords": ["[", "Shift+A"] }
+    },
+    {
+      "name": "Edit the last file in the argument list (:last)",
+      "context": "Normal",
+      "windows": { "type": "sequence", "chords": ["]", "Shift+A"] },
+      "mac": { "type": "sequence", "chords": ["]", "Shift+A"] }
+    },
+    {
+      "name": "Go to the next buffer in the buffer list (:bnext)",
+      "context": "Normal",
+      "windows": { "type": "sequence", "chords": ["]", "B"] },
+      "mac": { "type": "sequence", "chords": ["]", "B"] }
+    },
+    {
+      "name": "Go to the previous buffer in the buffer list (:bprevious)",
+      "context": "Normal",
+      "windows": { "type": "sequence", "chords": ["[", "B"] },
+      "mac": { "type": "sequence", "chords": ["[", "B"] }
+    },
+    {
+      "name": "Go to the first buffer in the buffer list (:brewind)",
+      "context": "Normal",
+      "windows": { "type": "sequence", "chords": ["[", "Shift+B"] },
+      "mac": { "type": "sequence", "chords": ["[", "Shift+B"] }
+    },
+    {
+      "name": "Go to the last buffer in the buffer list (:blast)",
+      "context": "Normal",
+      "windows": { "type": "sequence", "chords": ["]", "Shift+B"] },
+      "mac": { "type": "sequence", "chords": ["]", "Shift+B"] }
+    },
+    {
+      "name": "Insert an empty line below the cursor without leaving Normal mode",
+      "context": "Normal",
+      "windows": { "type": "sequence", "chords": ["]", "Space"] },
+      "mac": { "type": "sequence", "chords": ["]", "Space"] }
+    },
+    {
+      "name": "Insert an empty line above the cursor without leaving Normal mode",
+      "context": "Normal",
+      "windows": { "type": "sequence", "chords": ["[", "Space"] },
+      "mac": { "type": "sequence", "chords": ["[", "Space"] }
+    },
+    {
+      "name": "LSP code action",
+      "context": "Normal",
+      "windows": { "type": "sequence", "chords": ["G", "R", "A"] },
+      "mac": { "type": "sequence", "chords": ["G", "R", "A"] }
+    },
+    {
+      "name": "LSP code action on the selection",
+      "context": "Visual",
+      "windows": { "type": "sequence", "chords": ["G", "R", "A"] },
+      "mac": { "type": "sequence", "chords": ["G", "R", "A"] }
+    },
+    {
+      "name": "Go to LSP implementation of the symbol under the cursor",
+      "context": "Normal",
+      "windows": { "type": "sequence", "chords": ["G", "R", "I"] },
+      "mac": { "type": "sequence", "chords": ["G", "R", "I"] }
+    },
+    {
+      "name": "LSP rename the symbol under the cursor",
+      "context": "Normal",
+      "windows": { "type": "sequence", "chords": ["G", "R", "N"] },
+      "mac": { "type": "sequence", "chords": ["G", "R", "N"] }
+    },
+    {
+      "name": "List LSP references to the symbol under the cursor",
+      "context": "Normal",
+      "windows": { "type": "sequence", "chords": ["G", "R", "R"] },
+      "mac": { "type": "sequence", "chords": ["G", "R", "R"] }
+    },
+    {
+      "name": "Go to LSP type definition of the symbol under the cursor",
+      "context": "Normal",
+      "windows": { "type": "sequence", "chords": ["G", "R", "T"] },
+      "mac": { "type": "sequence", "chords": ["G", "R", "T"] }
+    },
+    {
+      "name": "Run the LSP code lens under the cursor",
+      "context": "Normal",
+      "windows": { "type": "sequence", "chords": ["G", "R", "X"] },
+      "mac": { "type": "sequence", "chords": ["G", "R", "X"] }
+    },
+    {
+      "name": "Show LSP signature help",
+      "context": "Insert",
+      "windows": { "type": "keys", "chord": "Ctrl+S" },
+      "mac": { "type": "keys", "chord": "Ctrl+S" }
+    },
+    {
+      "name": "Show LSP hover information for the symbol under the cursor (overrides 'keywordprg' lookup when a language server is attached)",
+      "context": "Normal",
+      "windows": { "type": "keys", "chord": "Shift+K" },
+      "mac": { "type": "keys", "chord": "Shift+K" }
+    },
+    {
+      "name": "Select the [count]th parent node (Treesitter, or LSP selection range as fallback)",
+      "context": "Visual",
+      "windows": { "type": "sequence", "chords": ["A", "N"] },
+      "mac": { "type": "sequence", "chords": ["A", "N"] }
+    },
+    {
+      "name": "Select the [count]th previous or first child node (Treesitter, or LSP selection range as fallback)",
+      "context": "Visual",
+      "windows": { "type": "sequence", "chords": ["I", "N"] },
+      "mac": { "type": "sequence", "chords": ["I", "N"] }
+    },
+    {
+      "name": "Select the [count]th next node (Treesitter)",
+      "context": "Visual",
+      "windows": { "type": "sequence", "chords": ["]", "N"] },
+      "mac": { "type": "sequence", "chords": ["]", "N"] }
+    },
+    {
+      "name": "Select the [count]th previous node (Treesitter)",
+      "context": "Visual",
+      "windows": { "type": "sequence", "chords": ["[", "N"] },
+      "mac": { "type": "sequence", "chords": ["[", "N"] }
+    },
+    {
+      "name": "Expand selection to the [count]th next node (Treesitter)",
+      "context": "Visual",
+      "windows": { "type": "sequence", "chords": ["]", "Shift+N"] },
+      "mac": { "type": "sequence", "chords": ["]", "Shift+N"] }
+    },
+    {
+      "name": "Expand selection to the [count]th previous node (Treesitter)",
+      "context": "Visual",
+      "windows": { "type": "sequence", "chords": ["[", "Shift+N"] },
+      "mac": { "type": "sequence", "chords": ["[", "Shift+N"] }
+    },
+    {
+      "name": "Exit Terminal mode to Normal mode",
+      "context": "Terminal",
+      "windows": { "type": "sequence", "chords": ["Ctrl+\\", "Ctrl+N"] },
+      "mac": { "type": "sequence", "chords": ["Ctrl+\\", "Ctrl+N"] }
+    },
+    {
+      "name": "Execute one Normal-mode command, then return to Terminal mode",
+      "context": "Terminal",
+      "windows": { "type": "sequence", "chords": ["Ctrl+\\", "Ctrl+O"] },
+      "mac": { "type": "sequence", "chords": ["Ctrl+\\", "Ctrl+O"] }
+    },
+    {
+      "name": "Toggle a multicursor at the current cursor position (disables follow-mode)",
+      "context": "Normal",
+      "windows": { "type": "keys", "chord": "Shift+Q" },
+      "mac": { "type": "keys", "chord": "Shift+Q" }
+    },
+    {
+      "name": "Place a multicursor on each line of the selection (enables follow-mode)",
+      "context": "Visual",
+      "windows": { "type": "keys", "chord": "Shift+Q" },
+      "mac": { "type": "keys", "chord": "Shift+Q" }
+    },
+    {
+      "name": "Restore the previous multicursors",
+      "context": "Normal",
+      "windows": { "type": "sequence", "chords": ["G", "Shift+Q"] },
+      "mac": { "type": "sequence", "chords": ["G", "Shift+Q"] }
+    },
+    {
+      "name": "Toggle follow-mode (motions replay at every multicursor)",
+      "context": "Normal",
+      "windows": { "type": "sequence", "chords": ["Q", "="] },
+      "mac": { "type": "sequence", "chords": ["Q", "="] }
+    },
+    {
+      "name": "Jump to the [count]th next multicursor, leaving a cursor at the current position",
+      "context": "Normal",
+      "windows": { "type": "sequence", "chords": ["]", "Shift+C"] },
+      "mac": { "type": "sequence", "chords": ["]", "Shift+C"] }
+    },
+    {
+      "name": "Jump to the [count]th previous multicursor, leaving a cursor at the current position",
+      "context": "Normal",
+      "windows": { "type": "sequence", "chords": ["[", "Shift+C"] },
+      "mac": { "type": "sequence", "chords": ["[", "Shift+C"] }
+    }
+  ]
+}

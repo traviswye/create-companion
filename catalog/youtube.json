@@ -1,0 +1,129 @@
+{
+  "id": "youtube",
+  "name": "YouTube",
+  "kind": "site",
+  "category": "Video",
+  "match": {
+    "windows_exe": [
+      "chrome.exe",
+      "msedge.exe",
+      "firefox.exe",
+      "brave.exe",
+      "vivaldi.exe"
+    ],
+    "macos_bundle": [
+      "com.google.Chrome",
+      "com.microsoft.edgemac",
+      "org.mozilla.firefox",
+      "com.brave.Browser",
+      "com.apple.Safari"
+    ],
+    "window_title": [
+      "YouTube"
+    ]
+  },
+  "sources": [
+    "https://support.google.com/youtube/answer/7631406",
+    "https://www.youtube.com (in-page \"Keyboard shortcuts\" dialog, opened with Shift+/)"
+  ],
+  "note": "Not expressible in the chord grammar, so left out: Ctrl/Option+numpad zoom for 360° video, mouse-hover scrubbing, and playlist-only Shift+P (works only inside a playlist). Shorts has no separately documented keyboard shortcuts. 'Jump ahead (over commonly skipped sections)' shares its chord with 'Go to next chapter' per the in-app dialog.",
+  "actions": [
+    { "name": "Toggle play/pause", "context": "", "windows": { "type": "keys", "chord": "K" }, "mac": { "type": "keys", "chord": "K" } },
+    { "name": "Play / pause (seek bar focused)", "context": "", "windows": { "type": "keys", "chord": "Space" }, "mac": { "type": "keys", "chord": "Space" } },
+    { "name": "Rewind 10 seconds", "context": "", "windows": { "type": "keys", "chord": "J" }, "mac": { "type": "keys", "chord": "J" } },
+    { "name": "Fast forward 10 seconds", "context": "", "windows": { "type": "keys", "chord": "L" }, "mac": { "type": "keys", "chord": "L" } },
+    { "name": "Seek back 5 seconds", "context": "", "windows": { "type": "keys", "chord": "Left" }, "mac": { "type": "keys", "chord": "Left" } },
+    { "name": "Seek forward 5 seconds", "context": "", "windows": { "type": "keys", "chord": "Right" }, "mac": { "type": "keys", "chord": "Right" } },
+    { "name": "Previous video", "context": "", "windows": { "type": "keys", "chord": "Shift+P" }, "mac": { "type": "keys", "chord": "Shift+P" } },
+    { "name": "Next video", "context": "", "windows": { "type": "keys", "chord": "Shift+N" }, "mac": { "type": "keys", "chord": "Shift+N" } },
+    { "name": "Previous frame (while paused)", "context": "", "windows": { "type": "keys", "chord": "," }, "mac": { "type": "keys", "chord": "," } },
+    { "name": "Next frame (while paused)", "context": "", "windows": { "type": "keys", "chord": "." }, "mac": { "type": "keys", "chord": "." } },
+    { "name": "Decrease playback rate", "context": "", "windows": { "type": "keys", "chord": "Shift+," }, "mac": { "type": "keys", "chord": "Shift+," } },
+    { "name": "Increase playback rate", "context": "", "windows": { "type": "keys", "chord": "Shift+." }, "mac": { "type": "keys", "chord": "Shift+." } },
+    { "name": "Seek to beginning (0%)", "context": "", "windows": { "type": "keys", "chord": "0" }, "mac": { "type": "keys", "chord": "0" } },
+    { "name": "Seek to 10%", "context": "", "windows": { "type": "keys", "chord": "1" }, "mac": { "type": "keys", "chord": "1" } },
+    { "name": "Seek to 20%", "context": "", "windows": { "type": "keys", "chord": "2" }, "mac": { "type": "keys", "chord": "2" } },
+    { "name": "Seek to 30%", "context": "", "windows": { "type": "keys", "chord": "3" }, "mac": { "type": "keys", "chord": "3" } },
+    { "name": "Seek to 40%", "context": "", "windows": { "type": "keys", "chord": "4" }, "mac": { "type": "keys", "chord": "4" } },
+    { "name": "Seek to 50%", "context": "", "windows": { "type": "keys", "chord": "5" }, "mac": { "type": "keys", "chord": "5" } },
+    { "name": "Seek to 60%", "context": "", "windows": { "type": "keys", "chord": "6" }, "mac": { "type": "keys", "chord": "6" } },
+    { "name": "Seek to 70%", "context": "", "windows": { "type": "keys", "chord": "7" }, "mac": { "type": "keys", "chord": "7" } },
+    { "name": "Seek to 80%", "context": "", "windows": { "type": "keys", "chord": "8" }, "mac": { "type": "keys", "chord": "8" } },
+    { "name": "Seek to 90%", "context": "", "windows": { "type": "keys", "chord": "9" }, "mac": { "type": "keys", "chord": "9" } },
+    { "name": "Seek to start of video", "context": "", "windows": { "type": "keys", "chord": "Home" }, "mac": { "type": "keys", "chord": "Home" } },
+    { "name": "Seek to end of video", "context": "", "windows": { "type": "keys", "chord": "End" }, "mac": { "type": "keys", "chord": "End" } },
+    { "name": "Increase volume 5%", "context": "", "windows": { "type": "keys", "chord": "Up" }, "mac": { "type": "keys", "chord": "Up" } },
+    { "name": "Decrease volume 5%", "context": "", "windows": { "type": "keys", "chord": "Down" }, "mac": { "type": "keys", "chord": "Down" } },
+    { "name": "Toggle full screen", "context": "", "windows": { "type": "keys", "chord": "F" }, "mac": { "type": "keys", "chord": "F" } },
+    { "name": "Toggle theater mode", "context": "", "windows": { "type": "keys", "chord": "T" }, "mac": { "type": "keys", "chord": "T" } },
+    { "name": "Toggle miniplayer", "context": "", "windows": { "type": "keys", "chord": "I" }, "mac": { "type": "keys", "chord": "I" } },
+    { "name": "Close miniplayer or dialog", "context": "", "windows": { "type": "keys", "chord": "Esc" }, "mac": { "type": "keys", "chord": "Esc" } },
+    { "name": "Toggle mute", "context": "", "windows": { "type": "keys", "chord": "M" }, "mac": { "type": "keys", "chord": "M" } },
+    { "name": "Toggle captions", "context": "", "windows": { "type": "keys", "chord": "C" }, "mac": { "type": "keys", "chord": "C" } },
+    { "name": "Increase caption font size", "context": "", "windows": { "type": "keys", "chord": "Plus" }, "mac": { "type": "keys", "chord": "Plus" } },
+    { "name": "Decrease caption font size", "context": "", "windows": { "type": "keys", "chord": "-" }, "mac": { "type": "keys", "chord": "-" } },
+    { "name": "Go to previous chapter", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Left" }, "mac": { "type": "keys", "chord": "Alt+Left" } },
+    { "name": "Go to next chapter", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Right" }, "mac": { "type": "keys", "chord": "Alt+Right" } },
+    { "name": "Jump ahead (over commonly skipped sections)", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Right" }, "mac": { "type": "keys", "chord": "Alt+Right" } },
+    { "name": "Go to search box", "context": "", "windows": { "type": "keys", "chord": "/" }, "mac": { "type": "keys", "chord": "/" } },
+    { "name": "Pan up", "context": "360° video", "windows": { "type": "keys", "chord": "W" }, "mac": { "type": "keys", "chord": "W" } },
+    { "name": "Pan left", "context": "360° video", "windows": { "type": "keys", "chord": "A" }, "mac": { "type": "keys", "chord": "A" } },
+    { "name": "Pan down", "context": "360° video", "windows": { "type": "keys", "chord": "S" }, "mac": { "type": "keys", "chord": "S" } },
+    { "name": "Pan right", "context": "360° video", "windows": { "type": "keys", "chord": "D" }, "mac": { "type": "keys", "chord": "D" } },
+    { "name": "Zoom in", "context": "360° video", "windows": { "type": "keys", "chord": "]" }, "mac": { "type": "keys", "chord": "]" } },
+    { "name": "Zoom out", "context": "360° video", "windows": { "type": "keys", "chord": "[" }, "mac": { "type": "keys", "chord": "[" } }
+  ],
+  "defaults": {
+    "TUNE_CW": {
+      "name": "Seek forward 5 s",
+      "action": {
+        "type": "keys",
+        "chord": "Right"
+      },
+      "accel": "medium"
+    },
+    "TUNE_CCW": {
+      "name": "Seek back 5 s",
+      "action": {
+        "type": "keys",
+        "chord": "Left"
+      },
+      "accel": "medium"
+    },
+    "TUNE_TAP_1F": {
+      "name": "Play / pause",
+      "action": {
+        "type": "keys",
+        "chord": "K"
+      }
+    },
+    "TUNE_SWIPE_LEFT": {
+      "name": "Previous video",
+      "action": {
+        "type": "keys",
+        "chord": "Shift+P"
+      }
+    },
+    "TUNE_SWIPE_RIGHT": {
+      "name": "Next video",
+      "action": {
+        "type": "keys",
+        "chord": "Shift+N"
+      }
+    },
+    "TUNE_SWIPE_UP": {
+      "name": "Playback speed up",
+      "action": {
+        "type": "keys",
+        "chord": "Shift+."
+      }
+    },
+    "TUNE_SWIPE_DOWN": {
+      "name": "Playback speed down",
+      "action": {
+        "type": "keys",
+        "chord": "Shift+,"
+      }
+    }
+  }
+}

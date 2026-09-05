@@ -1,0 +1,51 @@
+{
+  "id": "jira",
+  "name": "Jira",
+  "kind": "site",
+  "category": "Productivity",
+  "match": {
+    "windows_exe": [
+      "chrome.exe",
+      "msedge.exe",
+      "firefox.exe",
+      "brave.exe",
+      "vivaldi.exe"
+    ],
+    "macos_bundle": [
+      "com.google.Chrome",
+      "com.microsoft.edgemac",
+      "org.mozilla.firefox",
+      "com.brave.Browser",
+      "com.apple.Safari"
+    ],
+    "window_title": [
+      "Jira"
+    ]
+  },
+  "sources": [
+    "https://support.atlassian.com/jira-software-cloud/docs/use-keyboard-shortcuts/",
+    "https://support.atlassian.com/jira-software-cloud/docs/what-is-the-command-palette/",
+    "https://support.atlassian.com/jira-service-management-cloud/docs/overview-of-jira-cloud-keyboard-shortcuts/"
+  ],
+  "note": "This is Jira Cloud (Atlassian cloud), the list shown in Jira's own \"?\" (Shift+/) shortcuts dialog: Global shortcuts, Navigating work items, and Work item actions. The command palette chord (Ctrl+K / Cmd+K) is documented separately as the entry point for search and for actions like changing status, moving, deleting, linking/unlinking, and editing components/fix versions/priority; those specific actions are performed by typing their name into the command palette (a text-entry trigger, not a fixed chord) so only the palette-open chord itself is listed. The dialog's team-managed-space sections (Essentials, Board and backlog, Navigate spaces, Navigate work items, Work item actions) are named in the docs but only \"next column\" (N) and \"previous column\" (P), already listed under Navigating work items, and an undocumented \"toggle all swimlanes\" shortcut (no key given, so left out as ambiguous) are called out there. A separate, explicitly-labeled \"old navigation\" support page also documents C (create), / (quick search), / then Enter (advanced search), and . (quick actions to navigate to specific screens) for Jira's legacy navigation; these are superseded by the current \"?\" dialog and command palette and were left out since they don't apply to current default (new) navigation. This is Jira Software Cloud, not Jira Server/Data Center.",
+  "actions": [
+    { "name": "Open keyboard shortcuts dialog", "context": "", "windows": { "type": "keys", "chord": "Shift+/" }, "mac": { "type": "keys", "chord": "Shift+/" } },
+    { "name": "Create a new work item", "context": "", "windows": { "type": "keys", "chord": "C" }, "mac": { "type": "keys", "chord": "C" } },
+    { "name": "Open the command palette", "context": "", "windows": { "type": "keys", "chord": "Ctrl+K" }, "mac": { "type": "keys", "chord": "Cmd+K" } },
+    { "name": "Open the selected work item", "context": "Work item actions", "windows": { "type": "keys", "chord": "O" }, "mac": { "type": "keys", "chord": "O" } },
+    { "name": "Assign the work item to someone", "context": "Work item actions", "windows": { "type": "keys", "chord": "A" }, "mac": { "type": "keys", "chord": "A" } },
+    { "name": "Assign a work item to yourself", "context": "Work item actions", "windows": { "type": "keys", "chord": "I" }, "mac": { "type": "keys", "chord": "I" } },
+    { "name": "Quickly add a comment", "context": "Work item actions", "windows": { "type": "keys", "chord": "M" }, "mac": { "type": "keys", "chord": "M" } },
+    { "name": "Go down", "context": "Navigating work items", "windows": { "type": "keys", "chord": "J" }, "mac": { "type": "keys", "chord": "J" } },
+    { "name": "Go up", "context": "Navigating work items", "windows": { "type": "keys", "chord": "K" }, "mac": { "type": "keys", "chord": "K" } },
+    { "name": "Go to the next column", "context": "Navigating work items", "windows": { "type": "keys", "chord": "N" }, "mac": { "type": "keys", "chord": "N" } },
+    { "name": "Go to the previous column", "context": "Navigating work items", "windows": { "type": "keys", "chord": "P" }, "mac": { "type": "keys", "chord": "P" } }
+  ],
+  "defaults": {
+    "TUNE_CW": { "name": "Go down", "action": { "type": "keys", "chord": "J" }, "accel": "light" },
+    "TUNE_CCW": { "name": "Go up", "action": { "type": "keys", "chord": "K" }, "accel": "light" },
+    "TUNE_TAP_1F": { "name": "Open the selected work item", "action": { "type": "keys", "chord": "O" } },
+    "TUNE_SWIPE_LEFT": { "name": "Go to the previous column", "action": { "type": "keys", "chord": "P" } },
+    "TUNE_SWIPE_RIGHT": { "name": "Go to the next column", "action": { "type": "keys", "chord": "N" } }
+  }
+}

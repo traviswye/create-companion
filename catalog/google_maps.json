@@ -1,0 +1,48 @@
+{
+  "id": "google_maps",
+  "name": "Google Maps",
+  "kind": "site",
+  "category": "Other",
+  "match": {
+    "windows_exe": [
+      "chrome.exe",
+      "msedge.exe",
+      "firefox.exe",
+      "brave.exe",
+      "vivaldi.exe"
+    ],
+    "macos_bundle": [
+      "com.google.Chrome",
+      "com.microsoft.edgemac",
+      "org.mozilla.firefox",
+      "com.brave.Browser",
+      "com.apple.Safari"
+    ],
+    "window_title": [
+      "Google Maps"
+    ]
+  },
+  "sources": [
+    "https://support.google.com/maps/answer/6396990"
+  ],
+  "note": "Source is Google Maps' accessibility help page, which documents only this short list (it also mentions pressing Ctrl+/ inside the map to reveal a live shortcut overlay, but does not enumerate that overlay's contents in text, so nothing further could be extracted without inventing entries). Not expressible, so left out: plain arrow keys / Tab to move keyboard focus onto the map (no modifier, and Tab is generic browser focus traversal), and 'press a number 1-7 to learn about a numbered place' (the numbered places are dynamic per-search results, not a fixed single shortcut).",
+  "actions": [
+    { "name": "Move the map by one square (left)", "context": "Map focused", "windows": { "type": "keys", "chord": "Shift+Left" }, "mac": { "type": "keys", "chord": "Shift+Left" } },
+    { "name": "Move the map by one square (right)", "context": "Map focused", "windows": { "type": "keys", "chord": "Shift+Right" }, "mac": { "type": "keys", "chord": "Shift+Right" } },
+    { "name": "Move the map by one square (up)", "context": "Map focused", "windows": { "type": "keys", "chord": "Shift+Up" }, "mac": { "type": "keys", "chord": "Shift+Up" } },
+    { "name": "Move the map by one square (down)", "context": "Map focused", "windows": { "type": "keys", "chord": "Shift+Down" }, "mac": { "type": "keys", "chord": "Shift+Down" } },
+    { "name": "Zoom in", "context": "Map focused", "windows": { "type": "keys", "chord": "Plus" }, "mac": { "type": "keys", "chord": "Plus" } },
+    { "name": "Zoom out", "context": "Map focused", "windows": { "type": "keys", "chord": "-" }, "mac": { "type": "keys", "chord": "-" } },
+    { "name": "Open the list of keyboard shortcuts", "context": "", "windows": { "type": "keys", "chord": "Ctrl+/" }, "mac": { "type": "keys", "chord": "Cmd+/" } }
+  ],
+  "defaults": {
+    "TUNE_CW": {
+      "name": "Zoom in",
+      "action": { "type": "keys", "chord": "Plus" }
+    },
+    "TUNE_CCW": {
+      "name": "Zoom out",
+      "action": { "type": "keys", "chord": "-" }
+    }
+  }
+}

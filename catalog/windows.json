@@ -1,0 +1,1161 @@
+{
+  "id": "windows",
+  "name": "Windows",
+  "kind": "system",
+  "category": "System",
+  "os": [
+    "windows"
+  ],
+  "sources": [
+    "https://support.microsoft.com/en-us/windows/keyboard-shortcuts-in-windows-dcc61a57-8ff0-cffe-9796-cb9706c75eec",
+    "https://support.microsoft.com/en-us/windows/windows-keyboard-shortcuts-for-accessibility-021bcb62-45c8-e4ef-1e4f-41b8c1fc87fd"
+  ],
+  "note": "Windows 11 / Windows 10. File Explorer shortcuts live in catalog/windows_explorer.json. Left out because the chord grammar cannot express them: PrtScn and Alt+PrtScn (no Print Screen key), Windows key+Pause (no Pause key), the bare Windows key and Ctrl+Shift (modifier-only), \"Alt+underlined letter\", the Windows key+number / Windows key+Shift+number / Windows key+Ctrl+number / Windows key+Alt+number / Windows key+Ctrl+Shift+number families, Ctrl+number in dialog boxes, all open-ended \"arrow keys\" families (Alt+Shift+arrow keys, Ctrl+Shift+arrow keys, Ctrl+arrow keys, Shift with any arrow key, Ctrl+Shift with an arrow key, Ctrl+Alt+arrow keys, Shift+Alt+arrow keys, dialog-box and Command Prompt \"Arrow keys\"), Alt+selection key, the Magnifier reading commands (they use an unspecified \"modifier key\"), the hold/tap accessibility toggles (Right Shift for eight seconds, Shift five times, Num lock for five seconds, left Alt+left Shift+Print screen, left Alt+left Shift+Num lock), the Num Lock+*/+/- File Explorer keys, and every mouse-based shortcut (the whole Taskbar section, Ctrl+mouse scroll wheel, Ctrl+Alt+mouse scroll wheel).",
+  "actions": [
+    {
+      "name": "Cut the selected item",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+X"
+      }
+    },
+    {
+      "name": "Copy the selected item",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+C"
+      }
+    },
+    {
+      "name": "Copy the selected item (Ctrl+Insert)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Insert"
+      }
+    },
+    {
+      "name": "Paste the selected item",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+V"
+      }
+    },
+    {
+      "name": "Paste the selected item (Shift+Insert)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Insert"
+      }
+    },
+    {
+      "name": "Undo an action",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Z"
+      }
+    },
+    {
+      "name": "Switch between open apps",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Tab"
+      }
+    },
+    {
+      "name": "Close the active item, or exit the active app",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+F4"
+      }
+    },
+    {
+      "name": "Lock your PC",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Win+L"
+      }
+    },
+    {
+      "name": "Display and hide the desktop",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Win+D"
+      }
+    },
+    {
+      "name": "Rename the selected item",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F2"
+      }
+    },
+    {
+      "name": "Search for a file or folder in File Explorer",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F3"
+      }
+    },
+    {
+      "name": "Display the address bar list in File Explorer",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F4"
+      }
+    },
+    {
+      "name": "Refresh the active window",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F5"
+      }
+    },
+    {
+      "name": "Refresh the active window (Ctrl+R)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+R"
+      }
+    },
+    {
+      "name": "Cycle through screen elements in a window or on the desktop",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F6"
+      }
+    },
+    {
+      "name": "Activate the Menu bar in the active app",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F10"
+      }
+    },
+    {
+      "name": "Show your password on the sign-in screen",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+F8"
+      }
+    },
+    {
+      "name": "Cycle through items in the order in which they were opened",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Esc"
+      }
+    },
+    {
+      "name": "Display properties for the selected item",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Enter"
+      }
+    },
+    {
+      "name": "Open the shortcut menu for the active window",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Space"
+      }
+    },
+    {
+      "name": "Go back",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Left"
+      }
+    },
+    {
+      "name": "Go forward",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Right"
+      }
+    },
+    {
+      "name": "Move up one screen",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+PageUp"
+      }
+    },
+    {
+      "name": "Move down one screen",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+PageDown"
+      }
+    },
+    {
+      "name": "Close the active document",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+F4"
+      }
+    },
+    {
+      "name": "Select all items in a document or window",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+A"
+      }
+    },
+    {
+      "name": "Delete the selected item and move it to the Recycle Bin",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+D"
+      }
+    },
+    {
+      "name": "Delete the selected item and move it to the Recycle Bin (Delete)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Delete"
+      }
+    },
+    {
+      "name": "Redo an action",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Y"
+      }
+    },
+    {
+      "name": "Move the cursor to the beginning of the next word",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Right"
+      }
+    },
+    {
+      "name": "Move the cursor to the beginning of the previous word",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Left"
+      }
+    },
+    {
+      "name": "Move the cursor to the beginning of the next paragraph",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Down"
+      }
+    },
+    {
+      "name": "Move the cursor to the beginning of the previous paragraph",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Up"
+      }
+    },
+    {
+      "name": "Use the arrow keys to switch between all open apps",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Tab"
+      }
+    },
+    {
+      "name": "Open Start",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Esc"
+      }
+    },
+    {
+      "name": "Open Task Manager",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Esc"
+      }
+    },
+    {
+      "name": "Turn the Chinese input method editor (IME) on or off",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Space"
+      }
+    },
+    {
+      "name": "Display the shortcut menu for the selected item",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+F10"
+      }
+    },
+    {
+      "name": "Delete the selected item without moving it to the Recycle Bin first",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Delete"
+      }
+    },
+    {
+      "name": "Open the next menu to the right, or open a submenu",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Right"
+      }
+    },
+    {
+      "name": "Open the next menu to the left, or close a submenu",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Left"
+      }
+    },
+    {
+      "name": "Stop or leave the current task",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Esc"
+      }
+    },
+    {
+      "name": "Open Action center",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Win+A"
+      }
+    },
+    {
+      "name": "Set focus in the notification area",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Win+B"
+      }
+    },
+    {
+      "name": "Open Cortana in listening mode",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Win+C"
+      }
+    },
+    {
+      "name": "Open the charms menu",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Win+Shift+C"
+      }
+    },
+    {
+      "name": "Open File Explorer",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Win+E"
+      }
+    },
+    {
+      "name": "Open Feedback Hub and take a screenshot",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Win+F"
+      }
+    },
+    {
+      "name": "Open Game bar when a game is open",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Win+G"
+      }
+    },
+    {
+      "name": "Turn HDR on or off",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Win+Alt+B"
+      }
+    },
+    {
+      "name": "Start dictation",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Win+H"
+      }
+    },
+    {
+      "name": "Open Settings",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Win+I"
+      }
+    },
+    {
+      "name": "Set focus to a Windows tip when one is available",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Win+Shift+A"
+      }
+    },
+    {
+      "name": "Open the Connect quick action",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Win+K"
+      }
+    },
+    {
+      "name": "Minimize all windows",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Win+M"
+      }
+    },
+    {
+      "name": "Lock device orientation",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Win+O"
+      }
+    },
+    {
+      "name": "Choose a presentation display mode",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Win+P"
+      }
+    },
+    {
+      "name": "Open Quick Assist",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Win+Ctrl+Q"
+      }
+    },
+    {
+      "name": "Open the Run dialog box",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Win+R"
+      }
+    },
+    {
+      "name": "Open search",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Win+S"
+      }
+    },
+    {
+      "name": "Take a screenshot of part of your screen",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Win+Shift+S"
+      }
+    },
+    {
+      "name": "Cycle through apps on the taskbar",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Win+T"
+      }
+    },
+    {
+      "name": "Open Ease of Access Center",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Win+U"
+      }
+    },
+    {
+      "name": "Open the clipboard",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Win+V"
+      }
+    },
+    {
+      "name": "Cycle through notifications",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Win+Shift+V"
+      }
+    },
+    {
+      "name": "Open the Quick Link menu",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Win+X"
+      }
+    },
+    {
+      "name": "Switch input between Windows Mixed Reality and your desktop",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Win+Y"
+      }
+    },
+    {
+      "name": "Show the commands available in an app in full-screen mode",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Win+Z"
+      }
+    },
+    {
+      "name": "Open emoji panel",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Win+."
+      }
+    },
+    {
+      "name": "Open emoji panel (Win+;)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Win+;"
+      }
+    },
+    {
+      "name": "Temporarily peek at the desktop",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Win+,"
+      }
+    },
+    {
+      "name": "Search for PCs (if you're on a network)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Win+Ctrl+F"
+      }
+    },
+    {
+      "name": "Restore minimized windows on the desktop",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Win+Shift+M"
+      }
+    },
+    {
+      "name": "Open Task view",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Win+Tab"
+      }
+    },
+    {
+      "name": "Maximize the window",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Win+Up"
+      }
+    },
+    {
+      "name": "Remove current app from screen or minimize the desktop window",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Win+Down"
+      }
+    },
+    {
+      "name": "Maximize the app or desktop window to the left side of the screen",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Win+Left"
+      }
+    },
+    {
+      "name": "Maximize the app or desktop window to the right side of the screen",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Win+Right"
+      }
+    },
+    {
+      "name": "Minimize all except the active desktop window (restores all windows on second stroke)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Win+Home"
+      }
+    },
+    {
+      "name": "Stretch the desktop window to the top and bottom of the screen",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Win+Shift+Up"
+      }
+    },
+    {
+      "name": "Restore or minimize active desktop windows vertically, maintaining width",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Win+Shift+Down"
+      }
+    },
+    {
+      "name": "Move an app or window in the desktop from one monitor to another (left)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Win+Shift+Left"
+      }
+    },
+    {
+      "name": "Move an app or window in the desktop from one monitor to another (right)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Win+Shift+Right"
+      }
+    },
+    {
+      "name": "Switch input language and keyboard layout",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Win+Space"
+      }
+    },
+    {
+      "name": "Change to a previously selected input",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Win+Ctrl+Space"
+      }
+    },
+    {
+      "name": "Turn on Narrator",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Win+Ctrl+Enter"
+      }
+    },
+    {
+      "name": "Open Magnifier",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Win+Plus"
+      }
+    },
+    {
+      "name": "Begin IME reconversion",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Win+/"
+      }
+    },
+    {
+      "name": "Open shoulder taps",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Win+Ctrl+V"
+      }
+    },
+    {
+      "name": "Wake PC from blank or black screen",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Win+Ctrl+Shift+B"
+      }
+    },
+    {
+      "name": "Add a virtual desktop",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Win+Ctrl+D"
+      }
+    },
+    {
+      "name": "Switch between virtual desktops you've created on the right",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Win+Ctrl+Right"
+      }
+    },
+    {
+      "name": "Switch between virtual desktops you've created on the left",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Win+Ctrl+Left"
+      }
+    },
+    {
+      "name": "Close the virtual desktop you're using",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Win+Ctrl+F4"
+      }
+    },
+    {
+      "name": "Open taskbar settings",
+      "context": "Taskbar",
+      "windows": {
+        "type": "keys",
+        "chord": "Win+Alt+Enter"
+      }
+    },
+    {
+      "name": "Copy the selected text",
+      "context": "Command Prompt",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+C"
+      }
+    },
+    {
+      "name": "Copy the selected text (Ctrl+Insert)",
+      "context": "Command Prompt",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Insert"
+      }
+    },
+    {
+      "name": "Paste the selected text",
+      "context": "Command Prompt",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+V"
+      }
+    },
+    {
+      "name": "Paste the selected text (Shift+Insert)",
+      "context": "Command Prompt",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Insert"
+      }
+    },
+    {
+      "name": "Enter Mark mode",
+      "context": "Command Prompt",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+M"
+      }
+    },
+    {
+      "name": "Move the cursor by one page up",
+      "context": "Command Prompt",
+      "windows": {
+        "type": "keys",
+        "chord": "PageUp"
+      }
+    },
+    {
+      "name": "Move the cursor by one page down",
+      "context": "Command Prompt",
+      "windows": {
+        "type": "keys",
+        "chord": "PageDown"
+      }
+    },
+    {
+      "name": "Move up one line in the output history",
+      "context": "Command Prompt",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Up"
+      }
+    },
+    {
+      "name": "Move down one line in the output history",
+      "context": "Command Prompt",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Down"
+      }
+    },
+    {
+      "name": "Move the cursor to the beginning of the buffer",
+      "context": "Command Prompt (Mark mode)",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Home"
+      }
+    },
+    {
+      "name": "Move the cursor to the end of the buffer",
+      "context": "Command Prompt (Mark mode)",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+End"
+      }
+    },
+    {
+      "name": "If the command line is empty, move the viewport to the top of the buffer; otherwise delete all the characters to the left of the cursor in the command line",
+      "context": "Command Prompt (History navigation)",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Home"
+      }
+    },
+    {
+      "name": "If the command line is empty, move the viewport to the command line; otherwise delete all the characters to the right of the cursor in the command line",
+      "context": "Command Prompt (History navigation)",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+End"
+      }
+    },
+    {
+      "name": "Display the items in the active list",
+      "context": "Dialog box",
+      "windows": {
+        "type": "keys",
+        "chord": "F4"
+      }
+    },
+    {
+      "name": "Move forward through tabs",
+      "context": "Dialog box",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Tab"
+      }
+    },
+    {
+      "name": "Move back through tabs",
+      "context": "Dialog box",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Tab"
+      }
+    },
+    {
+      "name": "Move forward through options",
+      "context": "Dialog box",
+      "windows": {
+        "type": "keys",
+        "chord": "Tab"
+      }
+    },
+    {
+      "name": "Move back through options",
+      "context": "Dialog box",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Tab"
+      }
+    },
+    {
+      "name": "Select or clear the check box if the active option is a check box",
+      "context": "Dialog box",
+      "windows": {
+        "type": "keys",
+        "chord": "Space"
+      }
+    },
+    {
+      "name": "Open a folder one level up if a folder is selected in the Save As or Open dialog box",
+      "context": "Dialog box",
+      "windows": {
+        "type": "keys",
+        "chord": "Backspace"
+      }
+    },
+    {
+      "name": "Go back to the settings home page",
+      "context": "Settings",
+      "windows": {
+        "type": "keys",
+        "chord": "Backspace"
+      }
+    },
+    {
+      "name": "Turn Magnifier on",
+      "context": "Magnifier",
+      "windows": {
+        "type": "keys",
+        "chord": "Win+Plus"
+      }
+    },
+    {
+      "name": "Turn Magnifier off",
+      "context": "Magnifier",
+      "windows": {
+        "type": "keys",
+        "chord": "Win+Esc"
+      }
+    },
+    {
+      "name": "When Magnifier is on, zoom in",
+      "context": "Magnifier",
+      "windows": {
+        "type": "keys",
+        "chord": "Win+Plus"
+      }
+    },
+    {
+      "name": "When Magnifier is on, zoom out",
+      "context": "Magnifier",
+      "windows": {
+        "type": "keys",
+        "chord": "Win+-"
+      }
+    },
+    {
+      "name": "Open Magnifier settings",
+      "context": "Magnifier",
+      "windows": {
+        "type": "keys",
+        "chord": "Win+Ctrl+M"
+      }
+    },
+    {
+      "name": "Invert colors",
+      "context": "Magnifier",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+I"
+      }
+    },
+    {
+      "name": "Switch to full screen view",
+      "context": "Magnifier",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+F"
+      }
+    },
+    {
+      "name": "Switch to lens view",
+      "context": "Magnifier",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+L"
+      }
+    },
+    {
+      "name": "Switch to docked view",
+      "context": "Magnifier",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+D"
+      }
+    },
+    {
+      "name": "Cycle through views",
+      "context": "Magnifier",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+M"
+      }
+    },
+    {
+      "name": "Resize the lens with the mouse",
+      "context": "Magnifier",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+R"
+      }
+    },
+    {
+      "name": "Quickly see the entire desktop when using full screen view",
+      "context": "Magnifier",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Space"
+      }
+    },
+    {
+      "name": "Toggle between the set magnification level and 1x magnification",
+      "context": "Magnifier",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+-"
+      }
+    },
+    {
+      "name": "Open Search (in most apps)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+E"
+      }
+    },
+    {
+      "name": "Opens Quick Settings",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Win+A"
+      }
+    },
+    {
+      "name": "Turn color filters on or off",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Win+Ctrl+C"
+      }
+    },
+    {
+      "name": "Opens voice typing",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Win+H"
+      }
+    },
+    {
+      "name": "Move keyboard focus to the voice typing dialogue",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Win+Alt+H"
+      }
+    },
+    {
+      "name": "Open Narrator settings",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Win+Ctrl+N"
+      }
+    },
+    {
+      "name": "Turn on Windows Speech Recognition",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Win+Ctrl+S"
+      }
+    },
+    {
+      "name": "Turn on the On-Screen Keyboard",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Win+Ctrl+O"
+      }
+    },
+    {
+      "name": "Opens Accessibility Settings",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Win+U"
+      }
+    },
+    {
+      "name": "Opens Widgets",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Win+W"
+      }
+    }
+  ],
+  "defaults": {
+    "TUNE_CW": {
+      "name": "Volume up",
+      "action": {
+        "type": "media",
+        "key": "volume_up"
+      },
+      "accel": "light"
+    },
+    "TUNE_CCW": {
+      "name": "Volume down",
+      "action": {
+        "type": "media",
+        "key": "volume_down"
+      },
+      "accel": "light"
+    },
+    "TUNE_TAP_1F": {
+      "name": "Mute",
+      "action": {
+        "type": "media",
+        "key": "mute"
+      }
+    }
+  }
+}

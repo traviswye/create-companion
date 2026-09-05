@@ -132,10 +132,15 @@ fn chord_inputs(chord: &ParsedChord) -> Vec<INPUT> {
 }
 
 fn parse(chord: &KeyChord) -> Result<ParsedChord, PlatformError> {
-    chord
+    let parsed: ParsedChord = chord
         .0
         .parse()
-        .map_err(|e| PlatformError::Os(format!("bad chord `{}`: {e}", chord.0)))
+        .map_err(|e| PlatformError::Os(format!("bad chord `{}`: {e}", chord.0)))?;
+    if parsed.mods.fn_key {
+        // Fn is a macOS modifier; Windows has nothing to send it to.
+        return Err(PlatformError::Unsupported);
+    }
+    Ok(parsed)
 }
 
 fn media_vk(key: MediaKey) -> Option<VIRTUAL_KEY> {
@@ -209,13 +214,22 @@ impl ActionSink for SendInputSink {
     }
 
     fn release_modifiers(&mut self, mods: Modifiers) -> Result<(), PlatformError> {
-        let vks: &[VIRTUAL_KEY] = match mods {
-            Modifiers::None => return Ok(()),
-            Modifiers::Shift => &[VK_SHIFT],
-            Modifiers::Ctrl => &[VK_CONTROL],
-            Modifiers::Alt => &[VK_MENU],
-            Modifiers::CtrlShift => &[VK_CONTROL, VK_SHIFT],
-        };
+        let mut vks: Vec<VIRTUAL_KEY> = Vec::with_capacity(4);
+        if mods.ctrl {
+            vks.push(VK_CONTROL);
+        }
+        if mods.shift {
+            vks.push(VK_SHIFT);
+        }
+        if mods.alt {
+            vks.push(VK_MENU);
+        }
+        if mods.meta {
+            vks.push(VK_LWIN);
+        }
+        if vks.is_empty() {
+            return Ok(());
+        }
         let ups: Vec<INPUT> = vks.iter().map(|vk| key_input(*vk, false, true)).collect();
         send(&ups)
     }

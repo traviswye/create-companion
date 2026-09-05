@@ -1,0 +1,85 @@
+{
+  "id": "telegram",
+  "name": "Telegram Desktop",
+  "kind": "app",
+  "category": "Communication",
+  "match": {
+    "windows_exe": ["Telegram.exe"],
+    "macos_bundle": ["ru.keepcoder.Telegram", "org.telegram.desktop"],
+    "window_title": []
+  },
+  "sources": [
+    "https://github.com/telegramdesktop/tdesktop/wiki/Keyboard-Shortcuts",
+    "https://www.itechguides.com/telegram-desktop-keyboard-shortcuts-complete-windows-linux-and-macos-hotkey-reference/",
+    "https://usethekeyboard.com/telegram/",
+    "https://www.pie-menu.com/shortcuts/telegram"
+  ],
+  "note": "No single canonical shortcuts page exists on telegram.org or desktop.telegram.org (the FAQ does not list desktop shortcuts, and Telegram's own in-app reference is a non-linkable Settings panel). Used the 'Keyboard Shortcuts' wiki page of the official telegramdesktop/tdesktop GitHub repository (the open-source project Telegram Desktop ships from) as the primary/canonical list, cross-checked against three independent compilations (itechguides.com, usethekeyboard.com, pie-menu.com) which all mirror it closely. The tdesktop wiki documents Windows/Linux (Ctrl-based) chords only; no source gives an authoritative, independently-verified macOS (Cmd) mapping. Applied the standard Ctrl-to-Cmd substitution (Alt stays Alt/Option) for entries where this is well-established convention with no OS-level conflict (formatting, search, open, quit, lock, minimize, reply, folders, saved messages, archive, quickshare) — corroborated by pie-menu.com's Mac-specific listing and a secondary search summary. Left mac OMITTED for the Ctrl+Tab / Ctrl+Shift+Tab / Ctrl+PageUp / Ctrl+PageDown chat-switching alternates because Cmd+Tab and Cmd+Shift+Tab are intercepted system-wide by macOS as the application switcher, so Telegram's actual Mac binding for those specific alternates is uncertain (kept the Alt+Up/Alt+Down alternate for both platforms since Option+Arrow has no such conflict). Left mac OMITTED for 'Minimize to system tray' (Ctrl+W) since macOS has no system-tray concept and the actual Mac behavior of that chord is undocumented. Skipped as not expressible or too ambiguous: 'Zoom Image/Video In/Out' (Ctrl+Numpad+/Numpad-, numpad-specific keys); 'Open Bot Profile via Inline Message' (Ctrl+Click, a mouse chord); 'Speed up in-Chat Navigation' (Shift+Scroll, a modified scroll — the scroll action type has no modifier field); the entire 'Mouse Shortcuts' section (double-click to reply, drag-to-select/forward, hover-for-info, right-click send variants — all mouse-only); 'Jump directly to the folder' (Ctrl+1-7) and 'Jump directly to pinned chat' (Ctrl+1-5, a second, inconsistent range for the same key-1 physical keys documented elsewhere in the same wiki page) — both are open-ended numbered-key patterns rather than one fixed chord, so per catalog convention (as in slack.json) they are left out; only the two single fixed chords at the edges of that numbering (Ctrl+8 'last folder', Ctrl+9 'archived chat') are kept. 'Minimize to system tray (alt)' (Alt+F4) is Windows-only, a generic OS close-window shortcut the wiki documents as an alternate. The wiki's 'Reply to a Message' and 'Cancel Reply' entries both list Ctrl+Down; modelled as Ctrl+Up = reply to previous message, Ctrl+Down = reply to next message, and Esc = cancel reply/action (dropping the redundant literal Ctrl+Down-as-cancel to avoid a duplicate chord under a different name).",
+  "actions": [
+    { "name": "Move to the chat below", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Tab" } },
+    { "name": "Move to the chat below (alt)", "context": "", "windows": { "type": "keys", "chord": "Ctrl+PageDown" } },
+    { "name": "Move to the chat below (alt 2)", "context": "", "windows": { "type": "keys", "chord": "Alt+Down" }, "mac": { "type": "keys", "chord": "Alt+Down" } },
+    { "name": "Move to the chat above", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Shift+Tab" } },
+    { "name": "Move to the chat above (alt)", "context": "", "windows": { "type": "keys", "chord": "Ctrl+PageUp" } },
+    { "name": "Move to the chat above (alt 2)", "context": "", "windows": { "type": "keys", "chord": "Alt+Up" }, "mac": { "type": "keys", "chord": "Alt+Up" } },
+    { "name": "Exit / go back / cancel current action", "context": "", "windows": { "type": "keys", "chord": "Esc" }, "mac": { "type": "keys", "chord": "Esc" } },
+    { "name": "Send file", "context": "", "windows": { "type": "keys", "chord": "Ctrl+O" }, "mac": { "type": "keys", "chord": "Cmd+O" } },
+
+    { "name": "Move to previous message", "context": "Chat message list", "windows": { "type": "keys", "chord": "Up" }, "mac": { "type": "keys", "chord": "Up" } },
+    { "name": "Move to next message", "context": "Chat message list", "windows": { "type": "keys", "chord": "Down" }, "mac": { "type": "keys", "chord": "Down" } },
+    { "name": "Page up in chat", "context": "Chat message list", "windows": { "type": "keys", "chord": "PageUp" }, "mac": { "type": "keys", "chord": "PageUp" } },
+    { "name": "Page down in chat", "context": "Chat message list", "windows": { "type": "keys", "chord": "PageDown" }, "mac": { "type": "keys", "chord": "PageDown" } },
+
+    { "name": "Suggested stickers: move up", "context": "Sticker suggestions", "windows": { "type": "keys", "chord": "Up" }, "mac": { "type": "keys", "chord": "Up" } },
+    { "name": "Suggested stickers: move down", "context": "Sticker suggestions", "windows": { "type": "keys", "chord": "Down" }, "mac": { "type": "keys", "chord": "Down" } },
+    { "name": "Suggested stickers: move left", "context": "Sticker suggestions", "windows": { "type": "keys", "chord": "Left" }, "mac": { "type": "keys", "chord": "Left" } },
+    { "name": "Suggested stickers: move right", "context": "Sticker suggestions", "windows": { "type": "keys", "chord": "Right" }, "mac": { "type": "keys", "chord": "Right" } },
+    { "name": "Suggested emojis: move left", "context": "Emoji suggestions", "windows": { "type": "keys", "chord": "Left" }, "mac": { "type": "keys", "chord": "Left" } },
+    { "name": "Suggested emojis: move right", "context": "Emoji suggestions", "windows": { "type": "keys", "chord": "Right" }, "mac": { "type": "keys", "chord": "Right" } },
+
+    { "name": "Move to the folder below", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Shift+Down" }, "mac": { "type": "keys", "chord": "Cmd+Shift+Down" } },
+    { "name": "Move to the folder above", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Shift+Up" }, "mac": { "type": "keys", "chord": "Cmd+Shift+Up" } },
+    { "name": "Jump to the last folder", "context": "", "windows": { "type": "keys", "chord": "Ctrl+8" }, "mac": { "type": "keys", "chord": "Cmd+8" } },
+
+    { "name": "Reply to previous message", "context": "Chat", "windows": { "type": "keys", "chord": "Ctrl+Up" }, "mac": { "type": "keys", "chord": "Cmd+Up" } },
+    { "name": "Reply to next message", "context": "Chat", "windows": { "type": "keys", "chord": "Ctrl+Down" }, "mac": { "type": "keys", "chord": "Cmd+Down" } },
+    { "name": "Edit last message sent", "context": "Message compose box, empty", "windows": { "type": "keys", "chord": "Up" }, "mac": { "type": "keys", "chord": "Up" } },
+    { "name": "Delete currently selected message", "context": "Message selected", "windows": { "type": "keys", "chord": "Delete" }, "mac": { "type": "keys", "chord": "Delete" } },
+
+    { "name": "Search selected chat", "context": "", "windows": { "type": "keys", "chord": "Ctrl+F" }, "mac": { "type": "keys", "chord": "Cmd+F" } },
+    { "name": "Exit search", "context": "Search", "windows": { "type": "keys", "chord": "Esc" }, "mac": { "type": "keys", "chord": "Esc" } },
+    { "name": "Search contact", "context": "", "windows": { "type": "keys", "chord": "Ctrl+J" }, "mac": { "type": "keys", "chord": "Cmd+J" } },
+
+    { "name": "Navigate up", "context": "QuickShare panel", "windows": { "type": "keys", "chord": "Up" }, "mac": { "type": "keys", "chord": "Up" } },
+    { "name": "Navigate down", "context": "QuickShare panel", "windows": { "type": "keys", "chord": "Down" }, "mac": { "type": "keys", "chord": "Down" } },
+    { "name": "Select chat", "context": "QuickShare panel", "windows": { "type": "keys", "chord": "Enter" }, "mac": { "type": "keys", "chord": "Enter" } },
+    { "name": "Remove chat", "context": "QuickShare panel", "windows": { "type": "keys", "chord": "Backspace" }, "mac": { "type": "keys", "chord": "Backspace" } },
+    { "name": "Remove chat (alt)", "context": "QuickShare panel", "windows": { "type": "keys", "chord": "Delete" }, "mac": { "type": "keys", "chord": "Delete" } },
+    { "name": "Send message", "context": "QuickShare panel", "windows": { "type": "keys", "chord": "Ctrl+Enter" }, "mac": { "type": "keys", "chord": "Cmd+Enter" } },
+
+    { "name": "Jump to bottom of chat / scroll chat list to top", "context": "", "windows": { "type": "keys", "chord": "Alt+Enter" }, "mac": { "type": "keys", "chord": "Alt+Enter" } },
+    { "name": "Saved messages", "context": "", "windows": { "type": "keys", "chord": "Ctrl+0" }, "mac": { "type": "keys", "chord": "Cmd+0" } },
+    { "name": "Archived chat", "context": "", "windows": { "type": "keys", "chord": "Ctrl+9" }, "mac": { "type": "keys", "chord": "Cmd+9" } },
+
+    { "name": "Minimize to system tray", "context": "", "windows": { "type": "keys", "chord": "Ctrl+W" } },
+    { "name": "Minimize to system tray (alt)", "context": "", "windows": { "type": "keys", "chord": "Alt+F4" } },
+    { "name": "Quit Telegram", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Q" }, "mac": { "type": "keys", "chord": "Cmd+Q" } },
+    { "name": "Lock Telegram", "context": "", "windows": { "type": "keys", "chord": "Ctrl+L" }, "mac": { "type": "keys", "chord": "Cmd+L" } },
+    { "name": "Minimize Telegram", "context": "", "windows": { "type": "keys", "chord": "Ctrl+M" }, "mac": { "type": "keys", "chord": "Cmd+M" } },
+
+    { "name": "Bold", "context": "Message compose box, text selected", "windows": { "type": "keys", "chord": "Ctrl+B" }, "mac": { "type": "keys", "chord": "Cmd+B" } },
+    { "name": "Italic", "context": "Message compose box, text selected", "windows": { "type": "keys", "chord": "Ctrl+I" }, "mac": { "type": "keys", "chord": "Cmd+I" } },
+    { "name": "Create link", "context": "Message compose box, text selected", "windows": { "type": "keys", "chord": "Ctrl+K" }, "mac": { "type": "keys", "chord": "Cmd+K" } },
+    { "name": "Underline", "context": "Message compose box, text selected", "windows": { "type": "keys", "chord": "Ctrl+U" }, "mac": { "type": "keys", "chord": "Cmd+U" } },
+    { "name": "Monospace", "context": "Message compose box, text selected", "windows": { "type": "keys", "chord": "Ctrl+Shift+M" }, "mac": { "type": "keys", "chord": "Cmd+Shift+M" } },
+    { "name": "Null / plain text (clear formatting)", "context": "Message compose box, text selected", "windows": { "type": "keys", "chord": "Ctrl+Shift+N" }, "mac": { "type": "keys", "chord": "Cmd+Shift+N" } },
+    { "name": "Spoiler", "context": "Message compose box, text selected", "windows": { "type": "keys", "chord": "Ctrl+Shift+P" }, "mac": { "type": "keys", "chord": "Cmd+Shift+P" } },
+    { "name": "Strikethrough", "context": "Message compose box, text selected", "windows": { "type": "keys", "chord": "Ctrl+Shift+X" }, "mac": { "type": "keys", "chord": "Cmd+Shift+X" } },
+    { "name": "Quote", "context": "Message compose box, text selected", "windows": { "type": "keys", "chord": "Ctrl+Shift+." }, "mac": { "type": "keys", "chord": "Cmd+Shift+." } }
+  ],
+  "defaults": {
+    "TUNE_CW": { "name": "Move to the chat below (alt 2)", "action": { "type": "keys", "chord": "Alt+Down" }, "accel": "medium" },
+    "TUNE_CCW": { "name": "Move to the chat above (alt 2)", "action": { "type": "keys", "chord": "Alt+Up" }, "accel": "medium" },
+    "TUNE_TAP_1F": { "name": "Exit / go back / cancel current action", "action": { "type": "keys", "chord": "Esc" } }
+  }
+}

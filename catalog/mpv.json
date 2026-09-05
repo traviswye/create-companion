@@ -1,0 +1,977 @@
+{
+  "id": "mpv",
+  "name": "mpv",
+  "kind": "app",
+  "category": "Video",
+  "match": {
+    "windows_exe": [
+      "mpv.exe"
+    ],
+    "macos_bundle": [
+      "io.mpv"
+    ],
+    "window_title": []
+  },
+  "sources": [
+    "https://mpv.io/manual/stable/#keyboard-control"
+  ],
+  "note": "mpv's default bindings are documented per physical key with case treated as significant (an uppercase action requires Shift); bare letter chords below are the lowercase key, Shift+Letter chords are the uppercase key, matching the manual's own notation. Not expressible by the chord grammar, so omitted: the '*' key (increase volume; only its '0' alternate is expressible), curly-brace speed halve/double, angle-bracket playlist backward/forward, underscore cycle-video-tracks, hash cycle-audio-tracks, question-mark toggle-key-binding-overlay, the KP_DIVIDE/KP_MULTIPLY/Ctrl+KP_ADD/KP_SUBTRACT/Alt+KP_ADD/KP_SUBTRACT numpad-key alternates for volume/A-V-sync/zoom, the discouraged single-key aliases the manual itself deprecates (e for pan-and-scan, x for subtitle delay, t for move-subtitles), the MENU multimedia key, and the STOP/PREVIOUS/NEXT/ZOOMIN/ZOOMOUT multimedia keys (no equivalent in this catalog's media-key vocabulary; PREVIOUS/NEXT seek by 1 minute in mpv rather than changing tracks, so they are not mapped to previous_track/next_track). The Cmd+F fullscreen toggle and Cmd+0/1/2 window-resize chords are macOS-only per the manual but no separate mac bindings are given for the rest of the list since the manual documents one shared, platform-independent set.",
+  "actions": [
+    {
+      "name": "Seek backward 5 seconds",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Left"
+      }
+    },
+    {
+      "name": "Seek forward 5 seconds",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Right"
+      }
+    },
+    {
+      "name": "Seek backward 1 second (exact seek)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Left"
+      }
+    },
+    {
+      "name": "Seek forward 1 second (exact seek)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Right"
+      }
+    },
+    {
+      "name": "Seek forward 1 minute",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Up"
+      }
+    },
+    {
+      "name": "Seek backward 1 minute",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Down"
+      }
+    },
+    {
+      "name": "Seek forward 5 seconds (exact seek)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Up"
+      }
+    },
+    {
+      "name": "Seek backward 5 seconds (exact seek)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Down"
+      }
+    },
+    {
+      "name": "Seek to previous subtitle",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Left"
+      }
+    },
+    {
+      "name": "Seek to next subtitle",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Right"
+      }
+    },
+    {
+      "name": "Adjust subtitle delay to show the previous subtitle now",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Left"
+      }
+    },
+    {
+      "name": "Adjust subtitle delay to show the next subtitle now",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Right"
+      }
+    },
+    {
+      "name": "Seek to the beginning of the file",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Home"
+      }
+    },
+    {
+      "name": "Seek to the beginning of the previous chapter",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "PageUp"
+      }
+    },
+    {
+      "name": "Seek to the beginning of the next chapter",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "PageDown"
+      }
+    },
+    {
+      "name": "Seek backward 10 minutes",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+PageUp"
+      }
+    },
+    {
+      "name": "Seek forward 10 minutes",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+PageDown"
+      }
+    },
+    {
+      "name": "Decrease playback speed by 10 percent",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "["
+      }
+    },
+    {
+      "name": "Increase playback speed by 10 percent",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "]"
+      }
+    },
+    {
+      "name": "Reset playback speed to normal",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Backspace"
+      }
+    },
+    {
+      "name": "Undo the last seek",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Backspace"
+      }
+    },
+    {
+      "name": "Mark the current position to seek back to",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Backspace"
+      }
+    },
+    {
+      "name": "Go forward in the playlist",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Enter"
+      }
+    },
+    {
+      "name": "Go to the first playlist entry",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Home"
+      }
+    },
+    {
+      "name": "Go to the last playlist entry",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+End"
+      }
+    },
+    {
+      "name": "Pause / unpause",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "P"
+      }
+    },
+    {
+      "name": "Pause / unpause",
+      "context": "Alternate key",
+      "windows": {
+        "type": "keys",
+        "chord": "Space"
+      }
+    },
+    {
+      "name": "Step forward one frame",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "."
+      }
+    },
+    {
+      "name": "Step backward one frame",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": ","
+      }
+    },
+    {
+      "name": "Stop playing and quit",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Q"
+      }
+    },
+    {
+      "name": "Stop playing, quit, and save the playback position to resume later",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Q"
+      }
+    },
+    {
+      "name": "Decrease volume",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "/"
+      }
+    },
+    {
+      "name": "Decrease volume",
+      "context": "Alternate key",
+      "windows": {
+        "type": "keys",
+        "chord": "9"
+      }
+    },
+    {
+      "name": "Increase volume",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "0"
+      }
+    },
+    {
+      "name": "Mute sound",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "M"
+      }
+    },
+    {
+      "name": "Cycle editions",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+E"
+      }
+    },
+    {
+      "name": "Toggle fullscreen",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F"
+      }
+    },
+    {
+      "name": "Exit fullscreen mode",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Esc"
+      }
+    },
+    {
+      "name": "Toggle stay-on-top",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+T"
+      }
+    },
+    {
+      "name": "Decrease pan-and-scan range",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "W"
+      }
+    },
+    {
+      "name": "Increase pan-and-scan range",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+W"
+      }
+    },
+    {
+      "name": "Show progression bar, elapsed time and total duration on the OSD",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "O"
+      }
+    },
+    {
+      "name": "Show progression bar, elapsed time and total duration on the OSD",
+      "context": "Alternate key",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+P"
+      }
+    },
+    {
+      "name": "Toggle OSD states between normal and playback time/duration",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+O"
+      }
+    },
+    {
+      "name": "Toggle subtitle visibility",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "V"
+      }
+    },
+    {
+      "name": "Toggle secondary subtitle visibility",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+V"
+      }
+    },
+    {
+      "name": "Cycle subtitles",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "J"
+      }
+    },
+    {
+      "name": "Cycle subtitles",
+      "context": "Alternate key",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+J"
+      }
+    },
+    {
+      "name": "Adjust subtitle delay by -0.1 seconds",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Z"
+      }
+    },
+    {
+      "name": "Adjust subtitle delay by +0.1 seconds",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Z"
+      }
+    },
+    {
+      "name": "Switch between applying only ASS style overrides (default) and overriding SSA/ASS subtitle styles almost completely",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "U"
+      }
+    },
+    {
+      "name": "Cycle through which video data gets used for ASS rendering",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+V"
+      }
+    },
+    {
+      "name": "Move subtitles up",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "R"
+      }
+    },
+    {
+      "name": "Move subtitles down",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+R"
+      }
+    },
+    {
+      "name": "Increase subtitle font size by 10 percent",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+G"
+      }
+    },
+    {
+      "name": "Decrease subtitle font size by 10 percent",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F"
+      }
+    },
+    {
+      "name": "Set / clear A-B loop points",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "L"
+      }
+    },
+    {
+      "name": "Toggle infinite looping",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+L"
+      }
+    },
+    {
+      "name": "Increase audio delay (A/V sync) by 0.1 seconds",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl++"
+      }
+    },
+    {
+      "name": "Decrease audio delay (A/V sync) by 0.1 seconds",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+-"
+      }
+    },
+    {
+      "name": "Take a screenshot",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "S"
+      }
+    },
+    {
+      "name": "Take a screenshot, without subtitles",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+S"
+      }
+    },
+    {
+      "name": "Take a screenshot, as the window shows it (with subtitles and OSD)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+S"
+      }
+    },
+    {
+      "name": "Decrease contrast",
+      "context": "Video output must support it",
+      "windows": {
+        "type": "keys",
+        "chord": "1"
+      }
+    },
+    {
+      "name": "Increase contrast",
+      "context": "Video output must support it",
+      "windows": {
+        "type": "keys",
+        "chord": "2"
+      }
+    },
+    {
+      "name": "Decrease brightness",
+      "context": "Video output must support it",
+      "windows": {
+        "type": "keys",
+        "chord": "3"
+      }
+    },
+    {
+      "name": "Increase brightness",
+      "context": "Video output must support it",
+      "windows": {
+        "type": "keys",
+        "chord": "4"
+      }
+    },
+    {
+      "name": "Decrease gamma",
+      "context": "Video output must support it",
+      "windows": {
+        "type": "keys",
+        "chord": "5"
+      }
+    },
+    {
+      "name": "Increase gamma",
+      "context": "Video output must support it",
+      "windows": {
+        "type": "keys",
+        "chord": "6"
+      }
+    },
+    {
+      "name": "Decrease saturation",
+      "context": "Video output must support it",
+      "windows": {
+        "type": "keys",
+        "chord": "7"
+      }
+    },
+    {
+      "name": "Increase saturation",
+      "context": "Video output must support it",
+      "windows": {
+        "type": "keys",
+        "chord": "8"
+      }
+    },
+    {
+      "name": "Activate / deactivate debanding",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "B"
+      }
+    },
+    {
+      "name": "Cycle the deinterlacing filter",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "D"
+      }
+    },
+    {
+      "name": "Cycle aspect ratio override",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+A"
+      }
+    },
+    {
+      "name": "Toggle hardware video decoding",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+H"
+      }
+    },
+    {
+      "name": "Pan the video left",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Left"
+      }
+    },
+    {
+      "name": "Pan the video right",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Right"
+      }
+    },
+    {
+      "name": "Pan the video up",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Up"
+      }
+    },
+    {
+      "name": "Pan the video down",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Down"
+      }
+    },
+    {
+      "name": "Increase video zoom",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt++"
+      }
+    },
+    {
+      "name": "Decrease video zoom",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+-"
+      }
+    },
+    {
+      "name": "Reset the pan/zoom settings",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Backspace"
+      }
+    },
+    {
+      "name": "Resize video window to half its original size",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+0"
+      }
+    },
+    {
+      "name": "Resize video window to its original size",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+1"
+      }
+    },
+    {
+      "name": "Resize video window to double its original size",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+2"
+      }
+    },
+    {
+      "name": "Show the playlist and the current position in it",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F8"
+      }
+    },
+    {
+      "name": "Show the list of audio and subtitle streams",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F9"
+      }
+    },
+    {
+      "name": "Append the file or URL in the clipboard to the playlist",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+V"
+      }
+    },
+    {
+      "name": "Show / toggle an overlay displaying playback statistics",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "I"
+      }
+    },
+    {
+      "name": "Show / toggle an overlay displaying playback statistics",
+      "context": "Alternate key",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+I"
+      }
+    },
+    {
+      "name": "Cycle on-screen-controller visibility between never / auto / always",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Delete"
+      }
+    },
+    {
+      "name": "Show the console",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "`"
+      }
+    },
+    {
+      "name": "Select a playlist entry",
+      "context": "Console menu",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "G",
+          "P"
+        ]
+      }
+    },
+    {
+      "name": "Select a subtitle track",
+      "context": "Console menu",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "G",
+          "S"
+        ]
+      }
+    },
+    {
+      "name": "Select a secondary subtitle track",
+      "context": "Console menu",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "G",
+          "Shift+S"
+        ]
+      }
+    },
+    {
+      "name": "Select an audio track",
+      "context": "Console menu",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "G",
+          "A"
+        ]
+      }
+    },
+    {
+      "name": "Select a video track",
+      "context": "Console menu",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "G",
+          "V"
+        ]
+      }
+    },
+    {
+      "name": "Select a track of any type",
+      "context": "Console menu",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "G",
+          "T"
+        ]
+      }
+    },
+    {
+      "name": "Select a chapter",
+      "context": "Console menu",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "G",
+          "C"
+        ]
+      }
+    },
+    {
+      "name": "Select an MKV edition or DVD/Blu-ray title",
+      "context": "Console menu",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "G",
+          "E"
+        ]
+      }
+    },
+    {
+      "name": "Select a subtitle line to seek to",
+      "context": "Console menu",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "G",
+          "L"
+        ]
+      }
+    },
+    {
+      "name": "Select an audio device",
+      "context": "Console menu",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "G",
+          "D"
+        ]
+      }
+    },
+    {
+      "name": "Select a file from the watch history",
+      "context": "Console menu",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "G",
+          "H"
+        ]
+      }
+    },
+    {
+      "name": "Select a file from watch-later config files to resume playing",
+      "context": "Console menu",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "G",
+          "W"
+        ]
+      }
+    },
+    {
+      "name": "Select a defined input binding",
+      "context": "Console menu",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "G",
+          "B"
+        ]
+      }
+    },
+    {
+      "name": "Show the values of all properties",
+      "context": "Console menu",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "G",
+          "R"
+        ]
+      }
+    },
+    {
+      "name": "Show a menu with miscellaneous entries",
+      "context": "Console menu",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "G",
+          "M"
+        ]
+      }
+    },
+    {
+      "name": "Show a menu with miscellaneous entries",
+      "context": "Console menu alternate key",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+P"
+      }
+    },
+    {
+      "name": "Pause",
+      "context": "Multimedia key",
+      "windows": {
+        "type": "media",
+        "key": "play_pause"
+      }
+    }
+  ],
+  "defaults": {
+    "TUNE_CW": {
+      "name": "Seek forward 5 seconds",
+      "action": {
+        "type": "keys",
+        "chord": "Right"
+      },
+      "accel": "light"
+    },
+    "TUNE_CCW": {
+      "name": "Seek backward 5 seconds",
+      "action": {
+        "type": "keys",
+        "chord": "Left"
+      },
+      "accel": "light"
+    },
+    "TUNE_TAP_1F": {
+      "name": "Pause / unpause",
+      "action": {
+        "type": "keys",
+        "chord": "Space"
+      }
+    },
+    "TUNE_SWIPE_LEFT": {
+      "name": "Seek to the beginning of the previous chapter",
+      "action": {
+        "type": "keys",
+        "chord": "PageUp"
+      }
+    },
+    "TUNE_SWIPE_RIGHT": {
+      "name": "Seek to the beginning of the next chapter",
+      "action": {
+        "type": "keys",
+        "chord": "PageDown"
+      }
+    }
+  }
+}

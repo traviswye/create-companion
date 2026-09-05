@@ -1,0 +1,408 @@
+{
+  "id": "iterm2",
+  "name": "iTerm2",
+  "kind": "app",
+  "category": "Development",
+  "match": {
+    "macos_bundle": [
+      "com.googlecode.iterm2"
+    ],
+    "window_title": []
+  },
+  "sources": [
+    "https://iterm2.com/documentation-one-page.html",
+    "https://iterm2.com/documentation-preferences-keys.html"
+  ],
+  "note": "From the official iTerm2 documentation (one-page manual, current as of iTerm2 3.6.x docs, fetched 2026-09-04). iTerm2's docs do not publish a keyboard-shortcuts cheat sheet; every chord here is one explicitly written out in prose in the General Usage, Highlights for New Users, Shell Integration, and Copy Mode sections, or (for tab/window selection) a direct enumeration of the documented Cmd+number / Cmd+Option+number pattern. Mouse-only bindings are omitted: cmd-click to open a URL/filename, option-drag to upload via scp, quad-click for smart selection, three-finger trackpad swipe/tap gestures, and middle-click to close a tab. Where the docs list several interchangeable keystrokes for one action (e.g. 'Esc, q, C-c, C-g' to exit Copy Mode, or 'h, Left arrow' to move left), only the first-listed keystroke is recorded as the action; the rest are equivalent alternates not listed separately. Two Copy Mode bindings use the literal vi characters '^' (start of indentation) and '$' (end of line), which the chord grammar cannot express (no caret or dollar-sign key token): for start-of-indentation the documented alternate M-m (Alt+M) is used instead, and 'Move to end of line ($)' is left out entirely since it has no alternate binding.",
+  "actions": [
+    {
+      "name": "Toggle Full Screen",
+      "context": "",
+      "mac": { "type": "keys", "chord": "Cmd+Enter" }
+    },
+    {
+      "name": "Use Transparency",
+      "context": "",
+      "mac": { "type": "keys", "chord": "Cmd+U" }
+    },
+    {
+      "name": "Find Cursor",
+      "context": "",
+      "mac": { "type": "keys", "chord": "Cmd+/" }
+    },
+    {
+      "name": "Undo Close",
+      "context": "",
+      "mac": { "type": "keys", "chord": "Cmd+Z" }
+    },
+    {
+      "name": "Start Instant Replay",
+      "context": "",
+      "mac": { "type": "keys", "chord": "Cmd+Alt+B" }
+    },
+    {
+      "name": "Autocomplete",
+      "context": "",
+      "mac": { "type": "keys", "chord": "Cmd+;" }
+    },
+    {
+      "name": "Open Paste History",
+      "context": "",
+      "mac": { "type": "keys", "chord": "Cmd+Shift+H" }
+    },
+    {
+      "name": "Open Quickly",
+      "context": "",
+      "mac": { "type": "keys", "chord": "Cmd+Shift+O" }
+    },
+    {
+      "name": "Open Command History",
+      "context": "",
+      "mac": { "type": "keys", "chord": "Cmd+Shift+;" }
+    },
+    {
+      "name": "Open Recent Directories",
+      "context": "",
+      "mac": { "type": "keys", "chord": "Cmd+Alt+/" }
+    },
+    {
+      "name": "Quit iTerm2",
+      "context": "",
+      "mac": { "type": "keys", "chord": "Cmd+Q" }
+    },
+    {
+      "name": "Set Mark",
+      "context": "",
+      "mac": { "type": "keys", "chord": "Cmd+Shift+M" }
+    },
+    {
+      "name": "Jump to Mark",
+      "context": "",
+      "mac": { "type": "keys", "chord": "Cmd+Shift+J" }
+    },
+    {
+      "name": "Next Mark",
+      "context": "",
+      "mac": { "type": "keys", "chord": "Cmd+Shift+Down" }
+    },
+    {
+      "name": "Previous Mark",
+      "context": "",
+      "mac": { "type": "keys", "chord": "Cmd+Shift+Up" }
+    },
+    {
+      "name": "Alert on Next Mark",
+      "context": "",
+      "mac": { "type": "keys", "chord": "Cmd+Alt+A" }
+    },
+    {
+      "name": "Go to window 1",
+      "context": "",
+      "mac": { "type": "keys", "chord": "Cmd+Alt+1" }
+    },
+    {
+      "name": "Go to window 2",
+      "context": "",
+      "mac": { "type": "keys", "chord": "Cmd+Alt+2" }
+    },
+    {
+      "name": "Go to window 3",
+      "context": "",
+      "mac": { "type": "keys", "chord": "Cmd+Alt+3" }
+    },
+    {
+      "name": "Go to window 4",
+      "context": "",
+      "mac": { "type": "keys", "chord": "Cmd+Alt+4" }
+    },
+    {
+      "name": "Go to window 5",
+      "context": "",
+      "mac": { "type": "keys", "chord": "Cmd+Alt+5" }
+    },
+    {
+      "name": "Go to window 6",
+      "context": "",
+      "mac": { "type": "keys", "chord": "Cmd+Alt+6" }
+    },
+    {
+      "name": "Go to window 7",
+      "context": "",
+      "mac": { "type": "keys", "chord": "Cmd+Alt+7" }
+    },
+    {
+      "name": "Go to window 8",
+      "context": "",
+      "mac": { "type": "keys", "chord": "Cmd+Alt+8" }
+    },
+    {
+      "name": "Go to window 9",
+      "context": "",
+      "mac": { "type": "keys", "chord": "Cmd+Alt+9" }
+    },
+    {
+      "name": "Next tab",
+      "context": "Tabs",
+      "mac": { "type": "keys", "chord": "Cmd+Right" }
+    },
+    {
+      "name": "Previous tab",
+      "context": "Tabs",
+      "mac": { "type": "keys", "chord": "Cmd+Left" }
+    },
+    {
+      "name": "Go to tab 1",
+      "context": "Tabs",
+      "mac": { "type": "keys", "chord": "Cmd+1" }
+    },
+    {
+      "name": "Go to tab 2",
+      "context": "Tabs",
+      "mac": { "type": "keys", "chord": "Cmd+2" }
+    },
+    {
+      "name": "Go to tab 3",
+      "context": "Tabs",
+      "mac": { "type": "keys", "chord": "Cmd+3" }
+    },
+    {
+      "name": "Go to tab 4",
+      "context": "Tabs",
+      "mac": { "type": "keys", "chord": "Cmd+4" }
+    },
+    {
+      "name": "Go to tab 5",
+      "context": "Tabs",
+      "mac": { "type": "keys", "chord": "Cmd+5" }
+    },
+    {
+      "name": "Go to tab 6",
+      "context": "Tabs",
+      "mac": { "type": "keys", "chord": "Cmd+6" }
+    },
+    {
+      "name": "Go to tab 7",
+      "context": "Tabs",
+      "mac": { "type": "keys", "chord": "Cmd+7" }
+    },
+    {
+      "name": "Go to tab 8",
+      "context": "Tabs",
+      "mac": { "type": "keys", "chord": "Cmd+8" }
+    },
+    {
+      "name": "Go to tab 9",
+      "context": "Tabs",
+      "mac": { "type": "keys", "chord": "Cmd+9" }
+    },
+    {
+      "name": "Split Vertically",
+      "context": "Panes",
+      "mac": { "type": "keys", "chord": "Cmd+D" }
+    },
+    {
+      "name": "Split Horizontally",
+      "context": "Panes",
+      "mac": { "type": "keys", "chord": "Cmd+Shift+D" }
+    },
+    {
+      "name": "Maximize/restore active pane",
+      "context": "Panes",
+      "mac": { "type": "keys", "chord": "Cmd+Shift+Enter" }
+    },
+    {
+      "name": "Select pane to the left",
+      "context": "Panes",
+      "mac": { "type": "keys", "chord": "Cmd+Alt+Left" }
+    },
+    {
+      "name": "Select pane to the right",
+      "context": "Panes",
+      "mac": { "type": "keys", "chord": "Cmd+Alt+Right" }
+    },
+    {
+      "name": "Select pane above",
+      "context": "Panes",
+      "mac": { "type": "keys", "chord": "Cmd+Alt+Up" }
+    },
+    {
+      "name": "Select pane below",
+      "context": "Panes",
+      "mac": { "type": "keys", "chord": "Cmd+Alt+Down" }
+    },
+    {
+      "name": "Next split pane (most recently used)",
+      "context": "Panes",
+      "mac": { "type": "keys", "chord": "Cmd+]" }
+    },
+    {
+      "name": "Previous split pane (most recently used)",
+      "context": "Panes",
+      "mac": { "type": "keys", "chord": "Cmd+[" }
+    },
+    {
+      "name": "Find",
+      "context": "Search",
+      "mac": { "type": "keys", "chord": "Cmd+F" }
+    },
+    {
+      "name": "Extend selection end forward one word (mouseless copy)",
+      "context": "Search",
+      "mac": { "type": "keys", "chord": "Tab" }
+    },
+    {
+      "name": "Move selection start left (mouseless copy)",
+      "context": "Search",
+      "mac": { "type": "keys", "chord": "Shift+Tab" }
+    },
+    {
+      "name": "Stop selecting",
+      "context": "Copy Mode",
+      "mac": { "type": "keys", "chord": "Ctrl+Space" }
+    },
+    {
+      "name": "Exit copy mode",
+      "context": "Copy Mode",
+      "mac": { "type": "keys", "chord": "Esc" }
+    },
+    {
+      "name": "Toggle rectangular selection",
+      "context": "Copy Mode",
+      "mac": { "type": "keys", "chord": "Ctrl+V" }
+    },
+    {
+      "name": "Toggle selection by character",
+      "context": "Copy Mode",
+      "mac": { "type": "keys", "chord": "Space" }
+    },
+    {
+      "name": "Toggle selection by line",
+      "context": "Copy Mode",
+      "mac": { "type": "keys", "chord": "Shift+V" }
+    },
+    {
+      "name": "Move left",
+      "context": "Copy Mode",
+      "mac": { "type": "keys", "chord": "H" }
+    },
+    {
+      "name": "Move down",
+      "context": "Copy Mode",
+      "mac": { "type": "keys", "chord": "J" }
+    },
+    {
+      "name": "Move up",
+      "context": "Copy Mode",
+      "mac": { "type": "keys", "chord": "K" }
+    },
+    {
+      "name": "Move right",
+      "context": "Copy Mode",
+      "mac": { "type": "keys", "chord": "L" }
+    },
+    {
+      "name": "Move back one word (symbols are word breaks)",
+      "context": "Copy Mode",
+      "mac": { "type": "keys", "chord": "Alt+Left" }
+    },
+    {
+      "name": "Move forward one word (symbols are word breaks)",
+      "context": "Copy Mode",
+      "mac": { "type": "keys", "chord": "Alt+Right" }
+    },
+    {
+      "name": "Move back one word (symbols are part of the word)",
+      "context": "Copy Mode",
+      "mac": { "type": "keys", "chord": "Shift+B" }
+    },
+    {
+      "name": "Move forward one word (symbols are part of the word)",
+      "context": "Copy Mode",
+      "mac": { "type": "keys", "chord": "Shift+W" }
+    },
+    {
+      "name": "Move to previous mark",
+      "context": "Copy Mode",
+      "mac": { "type": "keys", "chord": "[" }
+    },
+    {
+      "name": "Move to next mark",
+      "context": "Copy Mode",
+      "mac": { "type": "keys", "chord": "]" }
+    },
+    {
+      "name": "Move up one screen",
+      "context": "Copy Mode",
+      "mac": { "type": "keys", "chord": "Ctrl+B" }
+    },
+    {
+      "name": "Move down one screen",
+      "context": "Copy Mode",
+      "mac": { "type": "keys", "chord": "Ctrl+F" }
+    },
+    {
+      "name": "Move to top of visible area",
+      "context": "Copy Mode",
+      "mac": { "type": "keys", "chord": "Shift+H" }
+    },
+    {
+      "name": "Move to middle of visible area",
+      "context": "Copy Mode",
+      "mac": { "type": "keys", "chord": "Shift+M" }
+    },
+    {
+      "name": "Move to bottom of visible area",
+      "context": "Copy Mode",
+      "mac": { "type": "keys", "chord": "Shift+L" }
+    },
+    {
+      "name": "Move to start of indentation",
+      "context": "Copy Mode",
+      "mac": { "type": "keys", "chord": "Alt+M" }
+    },
+    {
+      "name": "Move to start of line",
+      "context": "Copy Mode",
+      "mac": { "type": "keys", "chord": "0" }
+    },
+    {
+      "name": "Move to start of next line",
+      "context": "Copy Mode",
+      "mac": { "type": "keys", "chord": "Enter" }
+    },
+    {
+      "name": "Move to start of document",
+      "context": "Copy Mode",
+      "mac": { "type": "keys", "chord": "G" }
+    },
+    {
+      "name": "Move to end of document",
+      "context": "Copy Mode",
+      "mac": { "type": "keys", "chord": "Shift+G" }
+    },
+    {
+      "name": "Swap cursor and other selection endpoint",
+      "context": "Copy Mode",
+      "mac": { "type": "keys", "chord": "O" }
+    },
+    {
+      "name": "Copy selection",
+      "context": "Copy Mode",
+      "mac": { "type": "keys", "chord": "Ctrl+K" }
+    }
+  ],
+  "defaults": {
+    "TUNE_CW": {
+      "name": "Next tab",
+      "action": { "type": "keys", "chord": "Cmd+Right" }
+    },
+    "TUNE_CCW": {
+      "name": "Previous tab",
+      "action": { "type": "keys", "chord": "Cmd+Left" }
+    },
+    "TUNE_TAP_1F": {
+      "name": "Open Quickly",
+      "action": { "type": "keys", "chord": "Cmd+Shift+O" }
+    }
+  }
+}

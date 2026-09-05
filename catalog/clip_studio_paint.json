@@ -1,0 +1,1170 @@
+{
+  "id": "clip_studio_paint",
+  "name": "CLIP STUDIO PAINT",
+  "kind": "app",
+  "category": "Creative",
+  "match": {
+    "windows_exe": [
+      "CLIPStudioPaint.exe"
+    ],
+    "macos_bundle": [
+      "jp.co.celsys.CLIPStudioPaint"
+    ],
+    "window_title": []
+  },
+  "sources": [
+    "https://help.clip-studio.com/en-us/manual_en/780_shortcuts/780_shortcuts.htm",
+    "https://help.clip-studio.com/en-us/manual_en/780_shortcuts/Menu_Shortcuts.htm",
+    "https://help.clip-studio.com/en-us/manual_en/780_shortcuts/Tool_Shortcuts.htm",
+    "https://help.clip-studio.com/en-us/manual_en/780_shortcuts/Optional_Shortcuts.htm",
+    "https://help.clip-studio.com/en-us/manual_en/780_shortcuts/Shortcuts_usable_during_operation.htm",
+    "https://help.clip-studio.com/en-us/manual_en/720_preferences/Shortcut_Settings.htm",
+    "https://help.clip-studio.com/en-us/manual_en/720_preferences/Modifier_Key_Settings.htm"
+  ],
+  "note": "Every row of the \"Shortcut list\" chapter of the official CLIP STUDIO PAINT user guide (Ver. 4.0 online manual, read 2026-09-04): the Menu Shortcuts, Tool Shortcuts and Optional Shortcuts pages. The manual writes its keys for the Windows version and states in a Memo on both pages that macOS and iPad users \"replace Alt with Option and Ctrl with Command\", so every mac chord here is the documented Windows chord with Ctrl rewritten as Cmd and Alt kept as Alt (Option); no mac chord is guessed at beyond that stated rule. Context is the manual's own menu or palette heading, with the parent submenu appended after \" > \" where the table nests one (Edit Menu > Tonal correction, Layer Menu > Change Selected Layer, Tool Settings palette > Ink, and so on); the Tool Shortcuts page becomes the context \"Tools\", which is also what separates the Fill and Ruler tools from the Fill and Ruler menu commands. Preferences, Shortcut Settings, Modifier Key Settings and Quit CLIP STUDIO PAINT are listed twice by the manual - once under \"CLIP STUDIO PAINT Menu (macOS/iPad)\" and once under the File menu marked (Windows) - and are merged here into one app-wide entry each, since the chords are the same command under the manual's own Ctrl/Command rule. Where the manual lists several alternative keys for one command only the first is kept, one action per command; the dropped alternates are Redo (Ctrl+Shift+Z), Cut (F2), Copy (F3), Paste (F4), Erase (Backspace, Ctrl+Delete, Ctrl+Backspace), Delete Outside Selection (Shift+Backspace), Fill (Alt+Backspace), Invert selected area (Shift+F7) and Save as (Ctrl+Shift+S, Ctrl+Alt+S). Zoom in and Zoom out are listed as \"Ctrl+Num+, Ctrl+;\" and \"Ctrl+Num -, Ctrl+-\"; the numpad form is not expressible in this grammar, so the second, main-row form is used for both. Left out and not invented: the whole \"Shortcuts usable during operation\" page, which is modifier-plus-mouse only - every entry on it is a click, a drag, a right click or the mouse wheel held together with Ctrl/Alt/Shift/Space (Hand = Space+drag, Zoom in = Ctrl+Space+click, Change brush size = Ctrl+Alt+drag, Draw straight line = Shift+drag, and the per-tool tables for the Zoom, Object, Select layer, Light table, Edit Timeline, Move layer, Selection area, Selection pen, Auto select, Pen/Pencil/Brush, Airbrush/Decoration/Eraser, Blend, Copy stamp, Liquify, Fill, Paint unfilled area, Gradient, Freeform gradient, Figure, Frame border, Ruler, Ruler pen, Text, Balloon, Balloon tail, Flash, Correct line, Control point, Redraw vector line, Remove dust and Select dust tools). Also left out: View menu \"Rotate right\" (^) and \"Reset display\" (Ctrl+@), whose keys are JIS-layout keys the grammar has no letter for; Help menu \"Show Menu (Tablet)\" (T1), an edge-keyboard button rather than a keyboard key; and the Window menu \"Canvas (iPad)\" row (Next canvas = Shift+control+Tab, Previous Canvas = control+Tab), because iPad is not a platform this catalog targets - the Windows/Galaxy/Android/Chromebook and macOS rows of the same two commands are the windows and mac chords given here, and the manual's lower-case \"control\" there is the real Control key on macOS, not Command. \"Rotate Left\" is kept with the bare \"-\" the manual prints, even though the neighbouring \"Rotate right\" makes it clear this pair was written for a JIS keyboard. The Shortcut Settings and Modifier Key Settings reference pages were read as well; they describe the editing dialogs and list no further default keys.",
+  "actions": [
+    {
+      "name": "Preferences",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+K"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+K"
+      }
+    },
+    {
+      "name": "Shortcut Settings",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Alt+K"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+Alt+K"
+      }
+    },
+    {
+      "name": "Modifier Key Settings",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Alt+Y"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+Alt+Y"
+      }
+    },
+    {
+      "name": "Quit CLIP STUDIO PAINT",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Q"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Q"
+      }
+    },
+    {
+      "name": "New",
+      "context": "File Menu",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+N"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+N"
+      }
+    },
+    {
+      "name": "Open",
+      "context": "File Menu",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+O"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+O"
+      }
+    },
+    {
+      "name": "Close",
+      "context": "File Menu",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+W"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+W"
+      }
+    },
+    {
+      "name": "Save",
+      "context": "File Menu",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+S"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+S"
+      }
+    },
+    {
+      "name": "Save as",
+      "context": "File Menu",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+S"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Alt+S"
+      }
+    },
+    {
+      "name": "Print",
+      "context": "File Menu",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+P"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+P"
+      }
+    },
+    {
+      "name": "Undo",
+      "context": "Edit Menu",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Z"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Z"
+      }
+    },
+    {
+      "name": "Redo",
+      "context": "Edit Menu",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Y"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Y"
+      }
+    },
+    {
+      "name": "Cut",
+      "context": "Edit Menu",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+X"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+X"
+      }
+    },
+    {
+      "name": "Copy",
+      "context": "Edit Menu",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+C"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+C"
+      }
+    },
+    {
+      "name": "Paste",
+      "context": "Edit Menu",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+V"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+V"
+      }
+    },
+    {
+      "name": "Paste to shown position",
+      "context": "Edit Menu",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+V"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+V"
+      }
+    },
+    {
+      "name": "Erase",
+      "context": "Edit Menu",
+      "windows": {
+        "type": "keys",
+        "chord": "Delete"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Delete"
+      }
+    },
+    {
+      "name": "Delete Outside Selection",
+      "context": "Edit Menu",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Delete"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Delete"
+      }
+    },
+    {
+      "name": "Fill",
+      "context": "Edit Menu",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Delete"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Delete"
+      }
+    },
+    {
+      "name": "Hue/Saturation/Luminosity",
+      "context": "Edit Menu > Tonal correction",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+U"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+U"
+      }
+    },
+    {
+      "name": "Reverse gradient",
+      "context": "Edit Menu > Tonal correction",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+I"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+I"
+      }
+    },
+    {
+      "name": "Scale/Rotate",
+      "context": "Edit Menu > Transform",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+T"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+T"
+      }
+    },
+    {
+      "name": "Free Transform",
+      "context": "Edit Menu > Transform",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+T"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+T"
+      }
+    },
+    {
+      "name": "New Raster Layer",
+      "context": "Layer Menu",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+N"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+N"
+      }
+    },
+    {
+      "name": "Create folder and insert layer",
+      "context": "Layer Menu",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+G"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+G"
+      }
+    },
+    {
+      "name": "Ungroup Layer Folder",
+      "context": "Layer Menu",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+G"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+G"
+      }
+    },
+    {
+      "name": "Clip to Layer Below",
+      "context": "Layer Menu > Layer settings",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+G"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+G"
+      }
+    },
+    {
+      "name": "Merge with layer below",
+      "context": "Layer Menu",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+E"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+E"
+      }
+    },
+    {
+      "name": "Merge selected layers",
+      "context": "Layer Menu",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+E"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Alt+E"
+      }
+    },
+    {
+      "name": "Merge visible layers",
+      "context": "Layer Menu",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+E"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+E"
+      }
+    },
+    {
+      "name": "Layer Above",
+      "context": "Layer Menu > Change Selected Layer",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+]"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+]"
+      }
+    },
+    {
+      "name": "Layer Below",
+      "context": "Layer Menu > Change Selected Layer",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+["
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+["
+      }
+    },
+    {
+      "name": "Select All",
+      "context": "Select Menu",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+A"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+A"
+      }
+    },
+    {
+      "name": "Deselect",
+      "context": "Select Menu",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+D"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+D"
+      }
+    },
+    {
+      "name": "Reselect",
+      "context": "Select Menu",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+D"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+D"
+      }
+    },
+    {
+      "name": "Invert selected area",
+      "context": "Select Menu",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+I"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+I"
+      }
+    },
+    {
+      "name": "Rotate Left",
+      "context": "View Menu > Rotate/Invert",
+      "windows": {
+        "type": "keys",
+        "chord": "-"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "-"
+      }
+    },
+    {
+      "name": "Zoom in",
+      "context": "View Menu",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+;"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+;"
+      }
+    },
+    {
+      "name": "Zoom out",
+      "context": "View Menu",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+-"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+-"
+      }
+    },
+    {
+      "name": "100%",
+      "context": "View Menu",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+0"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+0"
+      }
+    },
+    {
+      "name": "Fit to Screen",
+      "context": "View Menu",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+0"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+0"
+      }
+    },
+    {
+      "name": "Ruler",
+      "context": "View Menu",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+R"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+R"
+      }
+    },
+    {
+      "name": "Snap to Ruler",
+      "context": "View Menu",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+1"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+1"
+      }
+    },
+    {
+      "name": "Snap to Special Ruler",
+      "context": "View Menu",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+2"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+2"
+      }
+    },
+    {
+      "name": "Snap to Grid",
+      "context": "View Menu",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+3"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+3"
+      }
+    },
+    {
+      "name": "Toggle special ruler snapping",
+      "context": "View Menu",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+4"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+4"
+      }
+    },
+    {
+      "name": "Next canvas",
+      "context": "Window Menu",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Tab"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Tab"
+      }
+    },
+    {
+      "name": "Previous Canvas",
+      "context": "Window Menu",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Tab"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Ctrl+Tab"
+      }
+    },
+    {
+      "name": "Show/Hide All Palettes",
+      "context": "Window Menu",
+      "windows": {
+        "type": "keys",
+        "chord": "Tab"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Tab"
+      }
+    },
+    {
+      "name": "Hide Title Bar/Hide Menu Bar",
+      "context": "Window Menu",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Tab"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Tab"
+      }
+    },
+    {
+      "name": "Training and Tutorials",
+      "context": "Help Menu",
+      "windows": {
+        "type": "keys",
+        "chord": "F1"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "F1"
+      }
+    },
+    {
+      "name": "Zoom",
+      "context": "Tools",
+      "windows": {
+        "type": "keys",
+        "chord": "/"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "/"
+      }
+    },
+    {
+      "name": "Move (Hand)",
+      "context": "Tools",
+      "windows": {
+        "type": "keys",
+        "chord": "H"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "H"
+      }
+    },
+    {
+      "name": "Move (Rotate)",
+      "context": "Tools",
+      "windows": {
+        "type": "keys",
+        "chord": "R"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "R"
+      }
+    },
+    {
+      "name": "Operation (Object)",
+      "context": "Tools",
+      "windows": {
+        "type": "keys",
+        "chord": "O"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "O"
+      }
+    },
+    {
+      "name": "Operation (Select layer)",
+      "context": "Tools",
+      "windows": {
+        "type": "keys",
+        "chord": "D"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "D"
+      }
+    },
+    {
+      "name": "Operations (Light table)",
+      "context": "Tools",
+      "windows": {
+        "type": "keys",
+        "chord": "L"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "L"
+      }
+    },
+    {
+      "name": "Operations (Edit timeline)",
+      "context": "Tools",
+      "windows": {
+        "type": "keys",
+        "chord": "L"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "L"
+      }
+    },
+    {
+      "name": "Move layer",
+      "context": "Tools",
+      "windows": {
+        "type": "keys",
+        "chord": "K"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "K"
+      }
+    },
+    {
+      "name": "Selection",
+      "context": "Tools",
+      "windows": {
+        "type": "keys",
+        "chord": "M"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "M"
+      }
+    },
+    {
+      "name": "Auto select",
+      "context": "Tools",
+      "windows": {
+        "type": "keys",
+        "chord": "W"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "W"
+      }
+    },
+    {
+      "name": "Eyedropper",
+      "context": "Tools",
+      "windows": {
+        "type": "keys",
+        "chord": "I"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "I"
+      }
+    },
+    {
+      "name": "Pen",
+      "context": "Tools",
+      "windows": {
+        "type": "keys",
+        "chord": "P"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "P"
+      }
+    },
+    {
+      "name": "Pencil",
+      "context": "Tools",
+      "windows": {
+        "type": "keys",
+        "chord": "P"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "P"
+      }
+    },
+    {
+      "name": "Brush",
+      "context": "Tools",
+      "windows": {
+        "type": "keys",
+        "chord": "B"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "B"
+      }
+    },
+    {
+      "name": "Airbrush",
+      "context": "Tools",
+      "windows": {
+        "type": "keys",
+        "chord": "B"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "B"
+      }
+    },
+    {
+      "name": "Decoration",
+      "context": "Tools",
+      "windows": {
+        "type": "keys",
+        "chord": "B"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "B"
+      }
+    },
+    {
+      "name": "Eraser",
+      "context": "Tools",
+      "windows": {
+        "type": "keys",
+        "chord": "E"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "E"
+      }
+    },
+    {
+      "name": "Blend",
+      "context": "Tools",
+      "windows": {
+        "type": "keys",
+        "chord": "J"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "J"
+      }
+    },
+    {
+      "name": "Distort",
+      "context": "Tools",
+      "windows": {
+        "type": "keys",
+        "chord": "J"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "J"
+      }
+    },
+    {
+      "name": "Fill",
+      "context": "Tools",
+      "windows": {
+        "type": "keys",
+        "chord": "G"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "G"
+      }
+    },
+    {
+      "name": "Gradient",
+      "context": "Tools",
+      "windows": {
+        "type": "keys",
+        "chord": "G"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "G"
+      }
+    },
+    {
+      "name": "Figure",
+      "context": "Tools",
+      "windows": {
+        "type": "keys",
+        "chord": "U"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "U"
+      }
+    },
+    {
+      "name": "Frame border",
+      "context": "Tools",
+      "windows": {
+        "type": "keys",
+        "chord": "U"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "U"
+      }
+    },
+    {
+      "name": "Ruler",
+      "context": "Tools",
+      "windows": {
+        "type": "keys",
+        "chord": "U"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "U"
+      }
+    },
+    {
+      "name": "Text",
+      "context": "Tools",
+      "windows": {
+        "type": "keys",
+        "chord": "T"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "T"
+      }
+    },
+    {
+      "name": "Balloon",
+      "context": "Tools",
+      "windows": {
+        "type": "keys",
+        "chord": "T"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "T"
+      }
+    },
+    {
+      "name": "Correct line/Remove dust",
+      "context": "Tools",
+      "windows": {
+        "type": "keys",
+        "chord": "Y"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Y"
+      }
+    },
+    {
+      "name": "Reduce opacity",
+      "context": "Tool Settings palette > Ink",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+["
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+["
+      }
+    },
+    {
+      "name": "Increase opacity",
+      "context": "Tool Settings palette > Ink",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+]"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+]"
+      }
+    },
+    {
+      "name": "Reduce brush density",
+      "context": "Tool Settings palette > Brush tip",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+O"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+O"
+      }
+    },
+    {
+      "name": "Increase brush density",
+      "context": "Tool Settings palette > Brush tip",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+P"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+P"
+      }
+    },
+    {
+      "name": "Reduce particle density",
+      "context": "Tool Settings palette > Spraying effect",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+K"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+K"
+      }
+    },
+    {
+      "name": "Increase particle density",
+      "context": "Tool Settings palette > Spraying effect",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+L"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+L"
+      }
+    },
+    {
+      "name": "Toggle refer multiple",
+      "context": "Tool Settings palette > Reference",
+      "windows": {
+        "type": "keys",
+        "chord": "0"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "0"
+      }
+    },
+    {
+      "name": "Select smaller preset than current",
+      "context": "Brush Size palette",
+      "windows": {
+        "type": "keys",
+        "chord": "["
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "["
+      }
+    },
+    {
+      "name": "Select larger preset than current",
+      "context": "Brush Size palette",
+      "windows": {
+        "type": "keys",
+        "chord": "]"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "]"
+      }
+    },
+    {
+      "name": "Switch to previous tool",
+      "context": "Tool Group palette",
+      "windows": {
+        "type": "keys",
+        "chord": ","
+      },
+      "mac": {
+        "type": "keys",
+        "chord": ","
+      }
+    },
+    {
+      "name": "Switch to next tool",
+      "context": "Tool Group palette",
+      "windows": {
+        "type": "keys",
+        "chord": "."
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "."
+      }
+    },
+    {
+      "name": "Switch using layer color",
+      "context": "Layer Properties Palette",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+B"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+B"
+      }
+    },
+    {
+      "name": "Switch main color and sub color",
+      "context": "Drawing color",
+      "windows": {
+        "type": "keys",
+        "chord": "X"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "X"
+      }
+    },
+    {
+      "name": "Switch drawing color and transparent color",
+      "context": "Drawing color",
+      "windows": {
+        "type": "keys",
+        "chord": "C"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "C"
+      }
+    }
+  ],
+  "defaults": {
+    "TUNE_CW": {
+      "name": "Select larger preset than current (brush size)",
+      "action": {
+        "type": "keys",
+        "chord": "]"
+      },
+      "accel": "light"
+    },
+    "TUNE_CCW": {
+      "name": "Select smaller preset than current (brush size)",
+      "action": {
+        "type": "keys",
+        "chord": "["
+      },
+      "accel": "light"
+    },
+    "TUNE_TAP_1F": {
+      "name": "Show/Hide All Palettes",
+      "action": {
+        "type": "keys",
+        "chord": "Tab"
+      }
+    },
+    "TUNE_SWIPE_LEFT": {
+      "name": "Undo",
+      "action": {
+        "type": "keys",
+        "chord": "Ctrl+Z"
+      }
+    },
+    "TUNE_SWIPE_RIGHT": {
+      "name": "Redo",
+      "action": {
+        "type": "keys",
+        "chord": "Ctrl+Y"
+      }
+    }
+  }
+}

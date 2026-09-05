@@ -1,0 +1,133 @@
+{
+  "id": "todoist",
+  "name": "Todoist",
+  "kind": "app",
+  "category": "Productivity",
+  "match": {
+    "windows_exe": [
+      "Todoist.exe"
+    ],
+    "macos_bundle": [
+      "com.todoist.mac.Todoist"
+    ],
+    "window_title": [
+      "Todoist"
+    ]
+  },
+  "sources": [
+    "https://www.todoist.com/hc/en-us/articles/205063212-Keyboard-shortcuts"
+  ],
+  "note": "Covers the Todoist web app and Windows/Mac desktop apps (same keymap). Not expressible, so left out: Option/Alt+Click and Cmd/Ctrl+Click mouse-modifier combos, Quick Add's in-field triggers (p1-p4, '#' project, '/' section, '+' assignee, '%' label, '!' reminder, typed dates — these type literal characters into a text field rather than firing a fixed shortcut), and the iOS-only Option+D/P/N/R sort shortcuts (not a supported platform here). 'Go to home' has two documented bindings (H and 'G then H'); both are listed as separate actions since the grammar doesn't support alternates within one action. 'Show/hide sub-tasks' is Shift+E on both platforms per the source despite the Mac column also showing the ⇧ glyph identically. Calendar Layout shortcuts require a Pro/Business plan.",
+  "actions": [
+    { "name": "Quick Add", "context": "", "windows": { "type": "keys", "chord": "Q" }, "mac": { "type": "keys", "chord": "Q" } },
+    { "name": "Search", "context": "", "windows": { "type": "keys", "chord": "/" }, "mac": { "type": "keys", "chord": "/" } },
+    { "name": "Search (alternate)", "context": "", "windows": { "type": "keys", "chord": "F" }, "mac": { "type": "keys", "chord": "F" } },
+    { "name": "Dismiss / Cancel", "context": "", "windows": { "type": "keys", "chord": "Esc" }, "mac": { "type": "keys", "chord": "Esc" } },
+    { "name": "Open/close sidebar", "context": "", "windows": { "type": "keys", "chord": "M" }, "mac": { "type": "keys", "chord": "M" } },
+    { "name": "Show keyboard shortcuts", "context": "", "windows": { "type": "keys", "chord": "Shift+/" }, "mac": { "type": "keys", "chord": "Shift+/" } },
+    { "name": "Open Quick Find", "context": "", "windows": { "type": "keys", "chord": "Ctrl+K" }, "mac": { "type": "keys", "chord": "Cmd+K" } },
+    { "name": "Print", "context": "", "windows": { "type": "keys", "chord": "Ctrl+P" }, "mac": { "type": "keys", "chord": "Cmd+P" } },
+    { "name": "Zoom in", "context": "", "windows": { "type": "keys", "chord": "Ctrl+=" }, "mac": { "type": "keys", "chord": "Cmd+=" } },
+    { "name": "Zoom out", "context": "", "windows": { "type": "keys", "chord": "Ctrl+-" }, "mac": { "type": "keys", "chord": "Cmd+-" } },
+    { "name": "Reset zoom", "context": "", "windows": { "type": "keys", "chord": "Ctrl+0" }, "mac": { "type": "keys", "chord": "Cmd+0" } },
+    { "name": "Open task in project", "context": "", "windows": { "type": "keys", "chord": "Shift+G" }, "mac": { "type": "keys", "chord": "Shift+G" } },
+    { "name": "Move focus up", "context": "", "windows": { "type": "keys", "chord": "Up" }, "mac": { "type": "keys", "chord": "Up" } },
+    { "name": "Move focus up (alternate)", "context": "", "windows": { "type": "keys", "chord": "K" }, "mac": { "type": "keys", "chord": "K" } },
+    { "name": "Move focus down", "context": "", "windows": { "type": "keys", "chord": "Down" }, "mac": { "type": "keys", "chord": "Down" } },
+    { "name": "Move focus down (alternate)", "context": "", "windows": { "type": "keys", "chord": "J" }, "mac": { "type": "keys", "chord": "J" } },
+    { "name": "Move focus right", "context": "", "windows": { "type": "keys", "chord": "Right" }, "mac": { "type": "keys", "chord": "Right" } },
+    { "name": "Move focus left", "context": "", "windows": { "type": "keys", "chord": "Left" }, "mac": { "type": "keys", "chord": "Left" } },
+    { "name": "Go to home", "context": "", "windows": { "type": "keys", "chord": "H" }, "mac": { "type": "keys", "chord": "H" } },
+    { "name": "Go to home (alternate)", "context": "", "windows": { "type": "sequence", "chords": ["G", "H"] }, "mac": { "type": "sequence", "chords": ["G", "H"] } },
+    { "name": "Go to Inbox", "context": "", "windows": { "type": "sequence", "chords": ["G", "I"] }, "mac": { "type": "sequence", "chords": ["G", "I"] } },
+    { "name": "Go to Today", "context": "", "windows": { "type": "sequence", "chords": ["G", "T"] }, "mac": { "type": "sequence", "chords": ["G", "T"] } },
+    { "name": "Go to Upcoming", "context": "", "windows": { "type": "sequence", "chords": ["G", "U"] }, "mac": { "type": "sequence", "chords": ["G", "U"] } },
+    { "name": "Go to labels", "context": "", "windows": { "type": "sequence", "chords": ["G", "L"] }, "mac": { "type": "sequence", "chords": ["G", "L"] } },
+    { "name": "Go to projects", "context": "", "windows": { "type": "sequence", "chords": ["G", "P"] }, "mac": { "type": "sequence", "chords": ["G", "P"] } },
+    { "name": "Go to section", "context": "", "windows": { "type": "sequence", "chords": ["G", "/"] }, "mac": { "type": "sequence", "chords": ["G", "/"] } },
+    { "name": "Open settings", "context": "", "windows": { "type": "sequence", "chords": ["O", "S"] }, "mac": { "type": "sequence", "chords": ["O", "S"] } },
+    { "name": "Open theme", "context": "", "windows": { "type": "sequence", "chords": ["O", "T"] }, "mac": { "type": "sequence", "chords": ["O", "T"] } },
+    { "name": "Open Reporting", "context": "", "windows": { "type": "sequence", "chords": ["G", "A"] }, "mac": { "type": "sequence", "chords": ["G", "A"] } },
+    { "name": "Open Filters & Labels", "context": "", "windows": { "type": "sequence", "chords": ["G", "V"] }, "mac": { "type": "sequence", "chords": ["G", "V"] } },
+    { "name": "Go back", "context": "", "windows": { "type": "keys", "chord": "Alt+Left" }, "mac": { "type": "keys", "chord": "Cmd+[" } },
+    { "name": "Go forward", "context": "", "windows": { "type": "keys", "chord": "Alt+Right" }, "mac": { "type": "keys", "chord": "Cmd+]" } },
+    { "name": "Open Quick Add (global)", "context": "Desktop app, global", "windows": { "type": "keys", "chord": "Ctrl+Space" }, "mac": { "type": "keys", "chord": "Alt+Space" } },
+    { "name": "Quick Ramble (new)", "context": "Desktop app, global", "windows": { "type": "keys", "chord": "Alt+Shift+R" }, "mac": { "type": "keys", "chord": "Alt+Shift+R" } },
+    { "name": "Quick Ramble (existing)", "context": "Desktop app, global", "windows": { "type": "keys", "chord": "Alt+Space" }, "mac": { "type": "keys", "chord": "Shift+Alt+Space" } },
+    { "name": "Show/hide Todoist", "context": "Desktop app, global", "windows": { "type": "keys", "chord": "Win+Alt+S" }, "mac": { "type": "keys", "chord": "Cmd+Ctrl+T" } },
+    { "name": "Add task to bottom", "context": "", "windows": { "type": "keys", "chord": "A" }, "mac": { "type": "keys", "chord": "A" } },
+    { "name": "Add task to top", "context": "", "windows": { "type": "keys", "chord": "Shift+A" }, "mac": { "type": "keys", "chord": "Shift+A" } },
+    { "name": "Save and create new task below", "context": "", "windows": { "type": "keys", "chord": "Enter" }, "mac": { "type": "keys", "chord": "Enter" } },
+    { "name": "Save and create new task below (existing task)", "context": "", "windows": { "type": "keys", "chord": "Shift+Enter" }, "mac": { "type": "keys", "chord": "Shift+Enter" } },
+    { "name": "Save and create new task above", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Enter" }, "mac": { "type": "keys", "chord": "Ctrl+Enter" } },
+    { "name": "Complete task", "context": "", "windows": { "type": "keys", "chord": "E" }, "mac": { "type": "keys", "chord": "E" } },
+    { "name": "Open task", "context": "", "windows": { "type": "keys", "chord": "Enter" }, "mac": { "type": "keys", "chord": "Enter" } },
+    { "name": "Edit task", "context": "", "windows": { "type": "keys", "chord": "Ctrl+E" }, "mac": { "type": "keys", "chord": "Cmd+E" } },
+    { "name": "Edit task (alternate)", "context": "", "windows": { "type": "keys", "chord": "Alt+E" }, "mac": { "type": "keys", "chord": "Cmd+E" } },
+    { "name": "Save edits", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Enter" }, "mac": { "type": "keys", "chord": "Cmd+Enter" } },
+    { "name": "Close task", "context": "", "windows": { "type": "keys", "chord": "Esc" }, "mac": { "type": "keys", "chord": "Esc" } },
+    { "name": "Set date", "context": "", "windows": { "type": "keys", "chord": "T" }, "mac": { "type": "keys", "chord": "T" } },
+    { "name": "Remove date", "context": "", "windows": { "type": "keys", "chord": "Shift+T" }, "mac": { "type": "keys", "chord": "Shift+T" } },
+    { "name": "Set priority 1", "context": "", "windows": { "type": "keys", "chord": "1" }, "mac": { "type": "keys", "chord": "1" } },
+    { "name": "Set priority 2", "context": "", "windows": { "type": "keys", "chord": "2" }, "mac": { "type": "keys", "chord": "2" } },
+    { "name": "Set priority 3", "context": "", "windows": { "type": "keys", "chord": "3" }, "mac": { "type": "keys", "chord": "3" } },
+    { "name": "Set priority 4", "context": "", "windows": { "type": "keys", "chord": "4" }, "mac": { "type": "keys", "chord": "4" } },
+    { "name": "Change priority", "context": "", "windows": { "type": "keys", "chord": "Y" }, "mac": { "type": "keys", "chord": "Y" } },
+    { "name": "Add comment", "context": "", "windows": { "type": "keys", "chord": "C" }, "mac": { "type": "keys", "chord": "C" } },
+    { "name": "Add label", "context": "", "windows": { "type": "keys", "chord": "L" }, "mac": { "type": "keys", "chord": "L" } },
+    { "name": "Assign", "context": "", "windows": { "type": "keys", "chord": "Shift+R" }, "mac": { "type": "keys", "chord": "Shift+R" } },
+    { "name": "Move task", "context": "", "windows": { "type": "keys", "chord": "V" }, "mac": { "type": "keys", "chord": "V" } },
+    { "name": "More actions", "context": "Task", "windows": { "type": "keys", "chord": "." }, "mac": { "type": "keys", "chord": "." } },
+    { "name": "Select task", "context": "", "windows": { "type": "keys", "chord": "X" }, "mac": { "type": "keys", "chord": "X" } },
+    { "name": "Delete", "context": "Task", "windows": { "type": "keys", "chord": "Shift+Delete" }, "mac": { "type": "keys", "chord": "Cmd+Delete" } },
+    { "name": "Copy link", "context": "Task", "windows": { "type": "keys", "chord": "Shift+Ctrl+C" }, "mac": { "type": "keys", "chord": "Shift+Cmd+C" } },
+    { "name": "Move task up", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Up" }, "mac": { "type": "keys", "chord": "Cmd+Up" } },
+    { "name": "Move task down", "context": "", "windows": { "type": "keys", "chord": "Ctrl+Down" }, "mac": { "type": "keys", "chord": "Cmd+Down" } },
+    { "name": "Sort by date", "context": "Task list", "windows": { "type": "keys", "chord": "D" }, "mac": { "type": "keys", "chord": "D" } },
+    { "name": "Sort by priority", "context": "Task list", "windows": { "type": "keys", "chord": "P" }, "mac": { "type": "keys", "chord": "P" } },
+    { "name": "Sort by name", "context": "Task list", "windows": { "type": "keys", "chord": "N" }, "mac": { "type": "keys", "chord": "N" } },
+    { "name": "Sort by assignee", "context": "Task list", "windows": { "type": "keys", "chord": "R" }, "mac": { "type": "keys", "chord": "R" } },
+    { "name": "Increase indent", "context": "Sub-task", "windows": { "type": "keys", "chord": "Ctrl+]" }, "mac": { "type": "keys", "chord": "Ctrl+]" } },
+    { "name": "Decrease indent", "context": "Sub-task", "windows": { "type": "keys", "chord": "Ctrl+[" }, "mac": { "type": "keys", "chord": "Ctrl+[" } },
+    { "name": "Show/hide sub-tasks", "context": "Sub-task", "windows": { "type": "keys", "chord": "Shift+E" }, "mac": { "type": "keys", "chord": "Shift+E" } },
+    { "name": "Change layout", "context": "Project", "windows": { "type": "keys", "chord": "Shift+V" }, "mac": { "type": "keys", "chord": "Shift+V" } },
+    { "name": "Add section", "context": "Project", "windows": { "type": "keys", "chord": "S" }, "mac": { "type": "keys", "chord": "S" } },
+    { "name": "Share project", "context": "Project", "windows": { "type": "keys", "chord": "Shift+S" }, "mac": { "type": "keys", "chord": "Shift+S" } },
+    { "name": "More actions", "context": "Project", "windows": { "type": "keys", "chord": "W" }, "mac": { "type": "keys", "chord": "W" } },
+    { "name": "Open/close Insights", "context": "Project", "windows": { "type": "keys", "chord": "I" }, "mac": { "type": "keys", "chord": "I" } },
+    { "name": "Scroll to top", "context": "Project", "windows": { "type": "keys", "chord": "Ctrl+Home" }, "mac": { "type": "keys", "chord": "Cmd+Up" } },
+    { "name": "Scroll to bottom", "context": "Project", "windows": { "type": "keys", "chord": "Ctrl+End" }, "mac": { "type": "keys", "chord": "Cmd+Down" } },
+    { "name": "Go to today", "context": "Upcoming view", "windows": { "type": "keys", "chord": "Home" }, "mac": { "type": "keys", "chord": "Alt+Shift+Y" } },
+    { "name": "Next week", "context": "Upcoming view", "windows": { "type": "keys", "chord": "Shift+Right" }, "mac": { "type": "keys", "chord": "Shift+Right" } },
+    { "name": "Previous week", "context": "Upcoming view", "windows": { "type": "keys", "chord": "Shift+Left" }, "mac": { "type": "keys", "chord": "Shift+Left" } },
+    { "name": "Go to today", "context": "Calendar layout, Pro/Business", "windows": { "type": "keys", "chord": "T" }, "mac": { "type": "keys", "chord": "T" } },
+    { "name": "Go to today (alternate)", "context": "Calendar layout, Pro/Business", "windows": { "type": "keys", "chord": "Shift+Alt+Y" }, "mac": { "type": "keys", "chord": "Shift+Alt+Y" } },
+    { "name": "Next week", "context": "Calendar layout, Pro/Business", "windows": { "type": "keys", "chord": "Shift+Right" }, "mac": { "type": "keys", "chord": "Shift+Right" } },
+    { "name": "Previous week", "context": "Calendar layout, Pro/Business", "windows": { "type": "keys", "chord": "Shift+Left" }, "mac": { "type": "keys", "chord": "Shift+Left" } },
+    { "name": "Open current view in new window", "context": "Desktop app, multi-window", "windows": { "type": "keys", "chord": "Shift+Ctrl+N" }, "mac": { "type": "keys", "chord": "Shift+Cmd+N" } },
+    { "name": "Open Home view window", "context": "Desktop app, multi-window", "windows": { "type": "keys", "chord": "Shift+Alt+Ctrl+N" }, "mac": { "type": "keys", "chord": "Shift+Alt+Cmd+N" } },
+    { "name": "Float window on top", "context": "Desktop app, multi-window", "windows": { "type": "keys", "chord": "Ctrl+F11" }, "mac": { "type": "keys", "chord": "Alt+Cmd+F" } }
+  ],
+  "defaults": {
+    "TUNE_CW": {
+      "name": "Move focus down",
+      "action": { "type": "keys", "chord": "Down" }
+    },
+    "TUNE_CCW": {
+      "name": "Move focus up",
+      "action": { "type": "keys", "chord": "Up" }
+    },
+    "TUNE_TAP_1F": {
+      "name": "Complete task",
+      "action": { "type": "keys", "chord": "E" }
+    },
+    "TUNE_SWIPE_LEFT": {
+      "name": "Go to Today",
+      "action": { "type": "sequence", "chords": ["G", "T"] }
+    },
+    "TUNE_SWIPE_RIGHT": {
+      "name": "Go to Upcoming",
+      "action": { "type": "sequence", "chords": ["G", "U"] }
+    }
+  }
+}

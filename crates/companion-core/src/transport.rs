@@ -3,9 +3,18 @@
 //!
 //! The [`TransportTable`] is built from config and consulted by the OS hook.
 //! Only keys present in the table are swallowed (scope §17: never globally
-//! eat F17–F24 unless they are configured as Naya transport).
+//! eat F13–F24 unless they are configured as Naya transport).
+//!
+//! Namespaces: any combination of Ctrl, Shift, Alt and Cmd/Win can be held by
+//! the firmware alongside the F-key (they are ordinary HID modifiers), so two
+//! modules can share the same eight keys. Fn is Apple's vendor-page modifier:
+//! only a macOS host can observe it, and only if the firmware emits it. It is
+//! accepted here so a Mac user can try it; the Windows hook never reports it.
+//!
+//! macOS only has key codes for F13–F20; F21–F24 never register there.
 
 use crate::event::SemanticEvent;
+pub use crate::keys::ModifierSet as Modifiers;
 use serde::{Deserialize, Serialize};
 use std::collections::HashMap;
 
@@ -38,6 +47,11 @@ impl FunctionKey {
         0x7C + self as u16
     }
 
+    /// macOS has virtual key codes for F13–F20 only.
+    pub const fn available_on_macos(self) -> bool {
+        (self as u8) <= (FunctionKey::F20 as u8)
+    }
+
     pub const fn from_windows_vk(vk: u16) -> Option<Self> {
         Some(match vk {
             0x7C => Self::F13,
@@ -57,19 +71,6 @@ impl FunctionKey {
     }
 }
 
-/// Modifier namespace held while the F-key arrives. Used to multiplex
-/// several modules onto the same eight keys (scope §5, "Multiple Modules").
-#[derive(Debug, Clone, Copy, PartialEq, Eq, Hash, Default, Serialize, Deserialize)]
-#[serde(rename_all = "snake_case")]
-pub enum Modifiers {
-    #[default]
-    None,
-    Shift,
-    Ctrl,
-    Alt,
-    CtrlShift,
-}
-
 /// One wire-level code as seen by the hook.
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Hash, Serialize, Deserialize)]
 pub struct TransportCode {
@@ -82,7 +83,7 @@ impl TransportCode {
     pub const fn plain(key: FunctionKey) -> Self {
         Self {
             key,
-            mods: Modifiers::None,
+            mods: Modifiers::NONE,
         }
     }
 }
@@ -156,6 +157,8 @@ mod tests {
         assert_eq!(FunctionKey::F24.windows_vk(), 0x87);
         assert_eq!(FunctionKey::from_windows_vk(0x86), Some(FunctionKey::F23));
         assert_eq!(FunctionKey::from_windows_vk(0x70), None); // F1
+        assert!(FunctionKey::F20.available_on_macos());
+        assert!(!FunctionKey::F21.available_on_macos());
     }
 
     #[test]
@@ -175,17 +178,26 @@ mod tests {
         let mut t = TransportTable::new();
         let tune = SemanticEvent::new(Module::Tune, Gesture::SwipeLeft);
         let left = SemanticEvent::new(Module::LeftTouch, Gesture::SwipeLeft);
+        let right = SemanticEvent::new(Module::RightTouch, Gesture::SwipeLeft);
         t.insert(TransportCode::plain(FunctionKey::F20), tune)
             .unwrap();
         t.insert(
             TransportCode {
                 key: FunctionKey::F20,
-                mods: Modifiers::Shift,
+                mods: Modifiers::SHIFT,
             },
             left,
         )
         .unwrap();
-        assert_eq!(t.len(), 2);
+        t.insert(
+            TransportCode {
+                key: FunctionKey::F20,
+                mods: Modifiers::CMD,
+            },
+            right,
+        )
+        .unwrap();
+        assert_eq!(t.len(), 3);
     }
 
     #[test]
@@ -199,5 +211,33 @@ mod tests {
             .insert(TransportCode::plain(FunctionKey::F24), ccw)
             .unwrap_err();
         assert!(matches!(err, TransportError::Duplicate(..)));
+    }
+
+    #[test]
+    fn transport_code_serde_forms() {
+        let c: TransportCode = toml::from_str(
+            r#"key = "F20"
+mods = "cmd+shift""#,
+        )
+        .unwrap();
+        assert_eq!(
+            c.mods,
+            Modifiers {
+                meta: true,
+                shift: true,
+                ..Modifiers::NONE
+            }
+        );
+        let legacy: TransportCode = toml::from_str(
+            r#"key = "F20"
+mods = "ctrl_shift""#,
+        )
+        .unwrap();
+        assert_eq!(legacy.mods, Modifiers::CTRL_SHIFT);
+        let plain: TransportCode = toml::from_str(r#"key = "F24""#).unwrap();
+        assert_eq!(plain.mods, Modifiers::NONE);
+        assert!(toml::to_string(&c)
+            .unwrap()
+            .contains("mods = \"shift+cmd\""));
     }
 }

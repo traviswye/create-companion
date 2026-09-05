@@ -1,0 +1,1206 @@
+{
+  "id": "gmail",
+  "name": "Gmail",
+  "kind": "site",
+  "category": "Communication",
+  "match": {
+    "windows_exe": [
+      "chrome.exe",
+      "msedge.exe",
+      "firefox.exe",
+      "brave.exe",
+      "vivaldi.exe"
+    ],
+    "macos_bundle": [
+      "com.google.Chrome",
+      "com.microsoft.edgemac",
+      "org.mozilla.firefox",
+      "com.brave.Browser",
+      "com.apple.Safari"
+    ],
+    "window_title": [
+      "Gmail"
+    ]
+  },
+  "sources": [
+    "https://support.google.com/mail/answer/6594?hl=en&co=GENIE.Platform%3DDesktop"
+  ],
+  "note": "Most shortcuts under Actions, Jumping, Threadlist Selection, Navigation and Application require Settings > General > Keyboard shortcuts: On. Compose/formatting shortcuts and 'Send' work regardless of that setting. Symbol keys not directly expressible in the chord grammar are written as their US-QWERTY Shift+digit/punctuation equivalent (e.g. '#' = Shift+3, '!' = Shift+1, '?' = Shift+/, '~' = Shift+`, '_' = Shift+-, ':' = Shift+;). Mouse-only shortcuts (drag to reorder, right-click menus) are omitted.",
+  "actions": [
+    {
+      "name": "Previous message in conversation",
+      "context": "Compose",
+      "windows": {
+        "type": "keys",
+        "chord": "P"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "P"
+      }
+    },
+    {
+      "name": "Next message in conversation",
+      "context": "Compose",
+      "windows": {
+        "type": "keys",
+        "chord": "N"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "N"
+      }
+    },
+    {
+      "name": "Focus main window",
+      "context": "Compose",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Esc"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Esc"
+      }
+    },
+    {
+      "name": "Focus latest chat or compose",
+      "context": "Compose",
+      "windows": {
+        "type": "keys",
+        "chord": "Esc"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Esc"
+      }
+    },
+    {
+      "name": "Advance to next chat or compose",
+      "context": "Compose",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+."
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+."
+      }
+    },
+    {
+      "name": "Advance to previous chat or compose",
+      "context": "Compose",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+,"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+,"
+      }
+    },
+    {
+      "name": "Send",
+      "context": "Compose",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Enter"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Enter"
+      }
+    },
+    {
+      "name": "Add cc recipients",
+      "context": "Compose",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+C"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+C"
+      }
+    },
+    {
+      "name": "Add bcc recipients",
+      "context": "Compose",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+B"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+B"
+      }
+    },
+    {
+      "name": "Access custom from",
+      "context": "Compose",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+F"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+F"
+      }
+    },
+    {
+      "name": "Insert a link",
+      "context": "Compose",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+K"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+K"
+      }
+    },
+    {
+      "name": "Go to next misspelled word",
+      "context": "Compose",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+;"
+      }
+    },
+    {
+      "name": "Open spelling suggestions",
+      "context": "Compose",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+M"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+M"
+      }
+    },
+    {
+      "name": "Previous font",
+      "context": "Compose",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+5"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+5"
+      }
+    },
+    {
+      "name": "Next font",
+      "context": "Compose",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+6"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+6"
+      }
+    },
+    {
+      "name": "Decrease text size",
+      "context": "Compose",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+-"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+-"
+      }
+    },
+    {
+      "name": "Increase text size",
+      "context": "Compose",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Plus"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+Plus"
+      }
+    },
+    {
+      "name": "Bold",
+      "context": "Compose",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+B"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+B"
+      }
+    },
+    {
+      "name": "Italics",
+      "context": "Compose",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+I"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+I"
+      }
+    },
+    {
+      "name": "Underline",
+      "context": "Compose",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+U"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+U"
+      }
+    },
+    {
+      "name": "Numbered list",
+      "context": "Compose",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+7"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+7"
+      }
+    },
+    {
+      "name": "Bulleted list",
+      "context": "Compose",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+8"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+8"
+      }
+    },
+    {
+      "name": "Quote",
+      "context": "Compose",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+9"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+9"
+      }
+    },
+    {
+      "name": "Indent less",
+      "context": "Compose",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+["
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+["
+      }
+    },
+    {
+      "name": "Indent more",
+      "context": "Compose",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+]"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+]"
+      }
+    },
+    {
+      "name": "Align left",
+      "context": "Compose",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+L"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+L"
+      }
+    },
+    {
+      "name": "Align center",
+      "context": "Compose",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+E"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+E"
+      }
+    },
+    {
+      "name": "Align right",
+      "context": "Compose",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+R"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+R"
+      }
+    },
+    {
+      "name": "Remove formatting",
+      "context": "Compose",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+\\"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+\\"
+      }
+    },
+    {
+      "name": "Move focus to toolbar",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": ","
+      },
+      "mac": {
+        "type": "keys",
+        "chord": ","
+      }
+    },
+    {
+      "name": "Select conversation",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "X"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "X"
+      }
+    },
+    {
+      "name": "Toggle star / rotate superstars",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "S"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "S"
+      }
+    },
+    {
+      "name": "Archive",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "E"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "E"
+      }
+    },
+    {
+      "name": "Mute conversation",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "M"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "M"
+      }
+    },
+    {
+      "name": "Report as spam",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+1"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+1"
+      }
+    },
+    {
+      "name": "Delete",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+3"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+3"
+      }
+    },
+    {
+      "name": "Reply",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "R"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "R"
+      }
+    },
+    {
+      "name": "Reply in new window",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+R"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+R"
+      }
+    },
+    {
+      "name": "Reply all",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "A"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "A"
+      }
+    },
+    {
+      "name": "Reply all in new window",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+A"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+A"
+      }
+    },
+    {
+      "name": "Forward",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "F"
+      }
+    },
+    {
+      "name": "Forward in new window",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+F"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+F"
+      }
+    },
+    {
+      "name": "Update conversation",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+N"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+N"
+      }
+    },
+    {
+      "name": "Archive and go to next",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "]"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "]"
+      }
+    },
+    {
+      "name": "Archive and go to previous",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "["
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "["
+      }
+    },
+    {
+      "name": "Undo last action",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Z"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Z"
+      }
+    },
+    {
+      "name": "Mark as read",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+I"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+I"
+      }
+    },
+    {
+      "name": "Mark as unread",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+U"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+U"
+      }
+    },
+    {
+      "name": "Mark unread from selected message",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+-"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+-"
+      }
+    },
+    {
+      "name": "Mark as important",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "="
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "="
+      }
+    },
+    {
+      "name": "Mark as not important",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "-"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "-"
+      }
+    },
+    {
+      "name": "Snooze",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "B"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "B"
+      }
+    },
+    {
+      "name": "Expand entire conversation",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": ";"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": ";"
+      }
+    },
+    {
+      "name": "Collapse entire conversation",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+;"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+;"
+      }
+    },
+    {
+      "name": "Add conversation to Tasks",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+T"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+T"
+      }
+    },
+    {
+      "name": "Go to Inbox",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "G",
+          "I"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "G",
+          "I"
+        ]
+      }
+    },
+    {
+      "name": "Go to Starred conversations",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "G",
+          "S"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "G",
+          "S"
+        ]
+      }
+    },
+    {
+      "name": "Go to Snoozed conversations",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "G",
+          "B"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "G",
+          "B"
+        ]
+      }
+    },
+    {
+      "name": "Go to Sent messages",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "G",
+          "T"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "G",
+          "T"
+        ]
+      }
+    },
+    {
+      "name": "Go to Drafts",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "G",
+          "D"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "G",
+          "D"
+        ]
+      }
+    },
+    {
+      "name": "Go to All mail",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "G",
+          "A"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "G",
+          "A"
+        ]
+      }
+    },
+    {
+      "name": "Go to next side panel (Calendar / Keep / Tasks)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+."
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+."
+      }
+    },
+    {
+      "name": "Go to previous side panel (Calendar / Keep / Tasks)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+,"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+,"
+      }
+    },
+    {
+      "name": "Go to Tasks",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "G",
+          "K"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "G",
+          "K"
+        ]
+      }
+    },
+    {
+      "name": "Go to label",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "G",
+          "L"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "G",
+          "L"
+        ]
+      }
+    },
+    {
+      "name": "Select all conversations",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Shift+8",
+          "A"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Shift+8",
+          "A"
+        ]
+      }
+    },
+    {
+      "name": "Deselect all conversations",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Shift+8",
+          "N"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Shift+8",
+          "N"
+        ]
+      }
+    },
+    {
+      "name": "Select read conversations",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Shift+8",
+          "R"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Shift+8",
+          "R"
+        ]
+      }
+    },
+    {
+      "name": "Select unread conversations",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Shift+8",
+          "U"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Shift+8",
+          "U"
+        ]
+      }
+    },
+    {
+      "name": "Select starred conversations",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Shift+8",
+          "S"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Shift+8",
+          "S"
+        ]
+      }
+    },
+    {
+      "name": "Select unstarred conversations",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Shift+8",
+          "T"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "Shift+8",
+          "T"
+        ]
+      }
+    },
+    {
+      "name": "Go to next page",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "G",
+          "N"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "G",
+          "N"
+        ]
+      }
+    },
+    {
+      "name": "Go to previous page",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "G",
+          "P"
+        ]
+      },
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "G",
+          "P"
+        ]
+      }
+    },
+    {
+      "name": "Back to threadlist",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "U"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "U"
+      }
+    },
+    {
+      "name": "Newer conversation",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "K"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "K"
+      }
+    },
+    {
+      "name": "Older conversation",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "J"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "J"
+      }
+    },
+    {
+      "name": "Open conversation",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "O"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "O"
+      }
+    },
+    {
+      "name": "Go to next Inbox section",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "`"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "`"
+      }
+    },
+    {
+      "name": "Go to previous Inbox section",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+`"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+`"
+      }
+    },
+    {
+      "name": "Compose",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "C"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "C"
+      }
+    },
+    {
+      "name": "Compose in new tab",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "D"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "D"
+      }
+    },
+    {
+      "name": "Search mail",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "/"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "/"
+      }
+    },
+    {
+      "name": "Search chat contacts",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Q"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Q"
+      }
+    },
+    {
+      "name": "Open \"more actions\" menu",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "."
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "."
+      }
+    },
+    {
+      "name": "Open \"move to\" menu",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "V"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "V"
+      }
+    },
+    {
+      "name": "Open \"label as\" menu",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "L"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "L"
+      }
+    },
+    {
+      "name": "Open keyboard shortcut help",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+/"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+/"
+      }
+    }
+  ],
+  "defaults": {
+    "TUNE_CW": {
+      "name": "Older conversation",
+      "action": {
+        "type": "keys",
+        "chord": "J"
+      },
+      "accel": "medium"
+    },
+    "TUNE_CCW": {
+      "name": "Newer conversation",
+      "action": {
+        "type": "keys",
+        "chord": "K"
+      },
+      "accel": "medium"
+    },
+    "TUNE_TAP_1F": {
+      "name": "Archive",
+      "action": {
+        "type": "keys",
+        "chord": "E"
+      }
+    },
+    "TUNE_SWIPE_LEFT": {
+      "name": "Archive and go to previous",
+      "action": {
+        "type": "keys",
+        "chord": "["
+      }
+    },
+    "TUNE_SWIPE_RIGHT": {
+      "name": "Archive and go to next",
+      "action": {
+        "type": "keys",
+        "chord": "]"
+      }
+    }
+  }
+}

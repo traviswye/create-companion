@@ -1,16 +1,156 @@
 //! Platform-independent key chord parsing. `"Ctrl+Shift+Tab"` becomes a
 //! [`ParsedChord`]; the platform layer maps [`Key`] to virtual-key codes.
+//!
+//! [`ModifierSet`] doubles as the transport namespace a module's key carries
+//! (`Cmd+F13` from a Touch flashed for macOS) and as the modifiers of an
+//! action chord. `Fn` is a real modifier on macOS (the Globe key) and can be
+//! sent to apps there; as a transport namespace it depends on the firmware
+//! emitting the Apple vendor-page Fn usage (unverified). Windows has no Fn key.
 
+use serde::{Deserialize, Serialize};
 use std::fmt;
 use std::str::FromStr;
 
-#[derive(Debug, Clone, Copy, PartialEq, Eq, Default)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Ord, Hash, Default)]
 pub struct ModifierSet {
     pub ctrl: bool,
     pub shift: bool,
     pub alt: bool,
     /// Windows key / Command key.
     pub meta: bool,
+    /// macOS Fn / Globe key. Sendable to apps on macOS; as a transport
+    /// namespace it needs firmware support (unverified) and a macOS host.
+    pub fn_key: bool,
+}
+
+impl ModifierSet {
+    pub const NONE: Self = Self {
+        ctrl: false,
+        shift: false,
+        alt: false,
+        meta: false,
+        fn_key: false,
+    };
+    pub const SHIFT: Self = Self {
+        shift: true,
+        ..Self::NONE
+    };
+    pub const CTRL: Self = Self {
+        ctrl: true,
+        ..Self::NONE
+    };
+    pub const ALT: Self = Self {
+        alt: true,
+        ..Self::NONE
+    };
+    pub const CMD: Self = Self {
+        meta: true,
+        ..Self::NONE
+    };
+    pub const FN: Self = Self {
+        fn_key: true,
+        ..Self::NONE
+    };
+    pub const CTRL_SHIFT: Self = Self {
+        ctrl: true,
+        shift: true,
+        ..Self::NONE
+    };
+
+    pub fn is_empty(&self) -> bool {
+        *self == Self::NONE
+    }
+
+    /// Fn only exists on macOS hosts (and only if the firmware emits the
+    /// Apple vendor-page Fn usage). Windows never sees it.
+    pub fn requires_macos(&self) -> bool {
+        self.fn_key
+    }
+
+    /// Canonical token names in display order: Ctrl, Shift, Alt, Cmd, Fn.
+    pub fn tokens(&self) -> Vec<&'static str> {
+        let mut v = Vec::with_capacity(5);
+        if self.ctrl {
+            v.push("Ctrl");
+        }
+        if self.shift {
+            v.push("Shift");
+        }
+        if self.alt {
+            v.push("Alt");
+        }
+        if self.meta {
+            v.push("Cmd");
+        }
+        if self.fn_key {
+            v.push("Fn");
+        }
+        v
+    }
+
+    /// Apply one modifier token; returns false if it is not a modifier.
+    fn apply_token(&mut self, tok: &str) -> bool {
+        match tok.to_ascii_uppercase().as_str() {
+            "CTRL" | "CONTROL" => self.ctrl = true,
+            "SHIFT" => self.shift = true,
+            "ALT" | "OPTION" | "OPT" => self.alt = true,
+            "WIN" | "META" | "CMD" | "COMMAND" | "SUPER" => self.meta = true,
+            "FN" | "FUNCTION" | "GLOBE" => self.fn_key = true,
+            _ => return false,
+        }
+        true
+    }
+}
+
+/// Serialized as a lowercase string: `none`, `shift`, `ctrl+shift`, `cmd`,
+/// `fn+shift`. Also accepts the legacy `ctrl_shift` spelling.
+impl fmt::Display for ModifierSet {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        if self.is_empty() {
+            return f.write_str("none");
+        }
+        let lower: Vec<String> = self.tokens().iter().map(|t| t.to_lowercase()).collect();
+        f.write_str(&lower.join("+"))
+    }
+}
+
+#[derive(Debug, thiserror::Error, PartialEq, Eq)]
+#[error("unknown modifier set `{0}`")]
+pub struct ParseModifiersError(pub String);
+
+impl FromStr for ModifierSet {
+    type Err = ParseModifiersError;
+
+    fn from_str(s: &str) -> Result<Self, Self::Err> {
+        let s = s.trim();
+        if s.is_empty() || s.eq_ignore_ascii_case("none") {
+            return Ok(Self::NONE);
+        }
+        let mut set = Self::NONE;
+        for tok in s.split(['+', '_', ' ']) {
+            let tok = tok.trim();
+            if tok.is_empty() {
+                continue;
+            }
+            if !set.apply_token(tok) {
+                return Err(ParseModifiersError(s.to_owned()));
+            }
+        }
+        Ok(set)
+    }
+}
+
+impl Serialize for ModifierSet {
+    fn serialize<S: serde::Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
+        s.collect_str(self)
+    }
+}
+
+impl<'de> Deserialize<'de> for ModifierSet {
+    fn deserialize<D: serde::Deserializer<'de>>(d: D) -> Result<Self, D::Error> {
+        let s = String::deserialize(d)?;
+        s.parse().map_err(serde::de::Error::custom)
+    }
 }
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
@@ -147,18 +287,15 @@ impl FromStr for ParsedChord {
         }
         for tok in tokens {
             let tok = tok.trim();
-            match tok.to_ascii_uppercase().as_str() {
-                "" => continue,
-                "CTRL" | "CONTROL" => mods.ctrl = true,
-                "SHIFT" => mods.shift = true,
-                "ALT" | "OPTION" | "OPT" => mods.alt = true,
-                "WIN" | "META" | "CMD" | "COMMAND" | "SUPER" => mods.meta = true,
-                _ => {
-                    let k = parse_key(tok).ok_or_else(|| ChordError::UnknownKey(tok.to_owned()))?;
-                    if key.replace(k).is_some() {
-                        return Err(ChordError::MultipleKeys(s.to_owned()));
-                    }
-                }
+            if tok.is_empty() {
+                continue;
+            }
+            if mods.apply_token(tok) {
+                continue;
+            }
+            let k = parse_key(tok).ok_or_else(|| ChordError::UnknownKey(tok.to_owned()))?;
+            if key.replace(k).is_some() {
+                return Err(ChordError::MultipleKeys(s.to_owned()));
             }
         }
         let key = key.ok_or_else(|| ChordError::NoKey(s.to_owned()))?;
@@ -168,17 +305,10 @@ impl FromStr for ParsedChord {
 
 impl fmt::Display for ParsedChord {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-        if self.mods.ctrl {
-            f.write_str("Ctrl+")?;
-        }
-        if self.mods.shift {
-            f.write_str("Shift+")?;
-        }
-        if self.mods.alt {
-            f.write_str("Alt+")?;
-        }
-        if self.mods.meta {
-            f.write_str("Win+")?;
+        for t in self.mods.tokens() {
+            // Keep the historical spelling of the meta key on chords.
+            f.write_str(if t == "Cmd" { "Win" } else { t })?;
+            f.write_str("+")?;
         }
         match self.key {
             Key::Letter(c) => write!(f, "{}", c as char),
@@ -212,6 +342,13 @@ mod tests {
 
         let c: ParsedChord = "Ctrl+]".parse().unwrap();
         assert_eq!(c.key, Key::RightBracket);
+
+        let c: ParsedChord = "Fn+C".parse().unwrap();
+        assert!(c.mods.fn_key && !c.mods.ctrl);
+        assert_eq!(c.key, Key::Letter(b'C'));
+
+        let c: ParsedChord = "Cmd+Option+Esc".parse().unwrap();
+        assert!(c.mods.meta && c.mods.alt);
     }
 
     #[test]
@@ -241,9 +378,28 @@ mod tests {
 
     #[test]
     fn display_round_trips() {
-        for s in ["Ctrl+Shift+Tab", "Alt+Left", "Win+D", "F13"] {
+        for s in ["Ctrl+Shift+Tab", "Alt+Left", "Win+D", "F13", "Fn+C"] {
             let c: ParsedChord = s.parse().unwrap();
             assert_eq!(c.to_string(), s);
         }
+    }
+
+    #[test]
+    fn modifier_set_string_forms() {
+        assert_eq!(ModifierSet::NONE.to_string(), "none");
+        assert_eq!(ModifierSet::CTRL_SHIFT.to_string(), "ctrl+shift");
+        assert_eq!(
+            "ctrl_shift".parse::<ModifierSet>().unwrap(),
+            ModifierSet::CTRL_SHIFT
+        );
+        assert_eq!(
+            "Cmd+Shift".parse::<ModifierSet>().unwrap().to_string(),
+            "shift+cmd"
+        );
+        assert_eq!("".parse::<ModifierSet>().unwrap(), ModifierSet::NONE);
+        assert_eq!("fn".parse::<ModifierSet>().unwrap(), ModifierSet::FN);
+        assert!(ModifierSet::FN.requires_macos());
+        assert!(!ModifierSet::CMD.requires_macos());
+        assert!("bogus".parse::<ModifierSet>().is_err());
     }
 }

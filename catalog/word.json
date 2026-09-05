@@ -1,0 +1,3308 @@
+{
+  "id": "word",
+  "name": "Microsoft Word",
+  "kind": "app",
+  "category": "Office",
+  "match": {
+    "windows_exe": [
+      "WINWORD.EXE"
+    ],
+    "macos_bundle": [
+      "com.microsoft.Word"
+    ],
+    "window_title": []
+  },
+  "sources": [
+    "https://support.microsoft.com/en-us/office/keyboard-shortcuts-in-word-95ef89dd-7142-4b50-afb2-f762f663ceb2"
+  ],
+  "note": "From the Microsoft Support article \"Keyboard shortcuts in Word\", Windows and macOS tabs. Ribbon access keys documented as \"Alt, H, F, O\" are written with the leading Alt folded into the first key (Alt+H, then F, then O), which is how Word accepts them and the only form the chord grammar allows. Where Microsoft lists two equivalent bindings the first is kept. The MacBook Fn-key alternatives Microsoft documents for page/document navigation (Cmd+Fn+Up/Down/Left/Right in place of Cmd+PageUp/PageDown/Home/End on keyboards with no dedicated Page Up, Page Down, Home or End keys) are now included as their own actions, since the chord grammar accepts Fn as a mac-only modifier. Omitted because the grammar cannot express them: mouse bindings (Ctrl+Scroll / Cmd+Scroll to zoom, Shift+click to extend a selection), plain \"Arrow keys\" entries, numeric-keypad bindings (select the whole table with Alt+5 on the keypad, ANSI character codes), the international-character and East Asian IME sections (they all end in \"then the letter\"), the copyright/trademark symbol sequences that need parentheses, and open-ended entries such as \"Alt, Q, then enter the search term\" or \"F8 repeatedly\".",
+  "actions": [
+    {
+      "name": "Open a document",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+O"
+      }
+    },
+    {
+      "name": "Create a new document",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+N"
+      }
+    },
+    {
+      "name": "Save the document",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+S"
+      }
+    },
+    {
+      "name": "Close the document",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+W"
+      }
+    },
+    {
+      "name": "Cut the selected content to the Clipboard",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+X"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+X"
+      }
+    },
+    {
+      "name": "Copy the selected content to the Clipboard",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+C"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+C"
+      }
+    },
+    {
+      "name": "Paste the contents of the Clipboard",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+V"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+V"
+      }
+    },
+    {
+      "name": "Paste text only",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+V"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+V"
+      }
+    },
+    {
+      "name": "Select all document content",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+A"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+A"
+      }
+    },
+    {
+      "name": "Apply bold formatting to text",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+B"
+      }
+    },
+    {
+      "name": "Apply italic formatting to text",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+I"
+      }
+    },
+    {
+      "name": "Apply underline formatting to text",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+U"
+      }
+    },
+    {
+      "name": "Decrease the font size by 1 point",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+["
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+["
+      }
+    },
+    {
+      "name": "Increase the font size by 1 point",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+]"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+]"
+      }
+    },
+    {
+      "name": "Center the text",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+E"
+      }
+    },
+    {
+      "name": "Align the text to the left",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+L"
+      }
+    },
+    {
+      "name": "Align the text to the right",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+R"
+      }
+    },
+    {
+      "name": "Cancel a command",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Esc"
+      }
+    },
+    {
+      "name": "Undo the previous action",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Z"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Z"
+      }
+    },
+    {
+      "name": "Redo the previous action, if possible",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Y"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Y"
+      }
+    },
+    {
+      "name": "Zoom in",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Plus"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Plus"
+      }
+    },
+    {
+      "name": "Zoom out",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+-"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+-"
+      }
+    },
+    {
+      "name": "Return back to 100% zoom",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+0"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+0"
+      }
+    },
+    {
+      "name": "Split the document window",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+S"
+      }
+    },
+    {
+      "name": "Remove the document window split",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+C"
+      }
+    },
+    {
+      "name": "Move to the Tell Me or Search field on the Ribbon to search for assistance or Help content",
+      "context": "Ribbon",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Q"
+      }
+    },
+    {
+      "name": "Open the File page to use Backstage view",
+      "context": "Ribbon",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+F"
+      }
+    },
+    {
+      "name": "Open the Home tab to use common formatting commands, paragraph styles, and the Find tool",
+      "context": "Ribbon",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+H"
+      }
+    },
+    {
+      "name": "Open the Insert tab to insert tables, pictures and shapes, headers, or text boxes",
+      "context": "Ribbon",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+N"
+      }
+    },
+    {
+      "name": "Open the Design tab to use themes, colors, and effects, such as page borders",
+      "context": "Ribbon",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+G"
+      }
+    },
+    {
+      "name": "Open the Layout tab to work with page margins, page orientation, indentation, and spacing",
+      "context": "Ribbon",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+P"
+      }
+    },
+    {
+      "name": "Open the References tab to add a table of contents, footnotes, or a table of citations",
+      "context": "Ribbon",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+S"
+      }
+    },
+    {
+      "name": "Open the Mailings tab to manage Mail Merge tasks and to work with envelopes and labels",
+      "context": "Ribbon",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+M"
+      }
+    },
+    {
+      "name": "Open the Review tab to use Spell Check, set proofing languages, and to track and review changes to your document",
+      "context": "Ribbon",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+R"
+      }
+    },
+    {
+      "name": "Open the View tab to choose a document view or mode, such as Read Mode or Outline view. You can also set the zoom magnification and manage multiple document windows",
+      "context": "Ribbon",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+W"
+      }
+    },
+    {
+      "name": "Open the Help box",
+      "context": "Ribbon",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+F1"
+      }
+    },
+    {
+      "name": "Open the Developer box",
+      "context": "Ribbon",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+L"
+      }
+    },
+    {
+      "name": "Select the active tab on the ribbon and activate the access keys",
+      "context": "Ribbon",
+      "windows": {
+        "type": "keys",
+        "chord": "F10"
+      }
+    },
+    {
+      "name": "Move the focus to commands on the ribbon",
+      "context": "Ribbon",
+      "windows": {
+        "type": "keys",
+        "chord": "Tab"
+      }
+    },
+    {
+      "name": "Move between command groupings on the ribbon",
+      "context": "Ribbon",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Left"
+      }
+    },
+    {
+      "name": "Show the tooltip for the ribbon element currently in focus",
+      "context": "Ribbon",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+F10"
+      }
+    },
+    {
+      "name": "Activate the selected button",
+      "context": "Ribbon",
+      "windows": {
+        "type": "keys",
+        "chord": "Space"
+      }
+    },
+    {
+      "name": "Open the list for the selected command",
+      "context": "Ribbon",
+      "windows": {
+        "type": "keys",
+        "chord": "Down"
+      }
+    },
+    {
+      "name": "Open the menu for the selected button",
+      "context": "Ribbon",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Down"
+      }
+    },
+    {
+      "name": "When a menu or submenu is open, move to the next command",
+      "context": "Ribbon",
+      "windows": {
+        "type": "keys",
+        "chord": "Down"
+      }
+    },
+    {
+      "name": "Expand or collapse the ribbon",
+      "context": "Ribbon",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+F1"
+      }
+    },
+    {
+      "name": "Open the context menu",
+      "context": "Ribbon",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+F10"
+      }
+    },
+    {
+      "name": "Move to the submenu when a main menu is open or selected",
+      "context": "Ribbon",
+      "windows": {
+        "type": "keys",
+        "chord": "Right"
+      }
+    },
+    {
+      "name": "Toggle AutoSave on or off",
+      "context": "Ribbon",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+Z",
+          "A"
+        ]
+      }
+    },
+    {
+      "name": "Open the dialog box to rename the document or save it to another location",
+      "context": "Ribbon",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+B"
+      }
+    },
+    {
+      "name": "Move the cursor one word to the left",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Left"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Left"
+      }
+    },
+    {
+      "name": "Move the cursor one word to the right",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Right"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Right"
+      }
+    },
+    {
+      "name": "Move the cursor up by one paragraph",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Up"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Up"
+      }
+    },
+    {
+      "name": "Move the cursor down by one paragraph",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Down"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Down"
+      }
+    },
+    {
+      "name": "Move the cursor to the end of the current line",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "End"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Right"
+      }
+    },
+    {
+      "name": "Move the cursor to the beginning the current line",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Home"
+      }
+    },
+    {
+      "name": "Move the cursor to the top of the screen",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+PageUp"
+      }
+    },
+    {
+      "name": "Move the cursor to the bottom of the screen",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+PageDown"
+      }
+    },
+    {
+      "name": "Move the cursor by scrolling the document view up by one screen",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "PageUp"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "PageUp"
+      }
+    },
+    {
+      "name": "Move the cursor by scrolling the document view down by one screen",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "PageDown"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "PageDown"
+      }
+    },
+    {
+      "name": "Move the cursor to the top of the next page",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+PageDown"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+PageDown"
+      }
+    },
+    {
+      "name": "Move the cursor to the top of the next page (MacBook with no dedicated Page Down key)",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Fn+Down"
+      }
+    },
+    {
+      "name": "Move the cursor to the top of the previous page",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+PageUp"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+PageUp"
+      }
+    },
+    {
+      "name": "Move the cursor to the top of the previous page (MacBook with no dedicated Page Up key)",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Fn+Up"
+      }
+    },
+    {
+      "name": "Move the cursor to the end of the document",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+End"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+End"
+      }
+    },
+    {
+      "name": "Move the cursor to the end of the document (MacBook with no dedicated End key)",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Fn+Right"
+      }
+    },
+    {
+      "name": "Move the cursor to the beginning of the document",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Home"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Home"
+      }
+    },
+    {
+      "name": "Move the cursor to the beginning of the document (MacBook with no dedicated Home key)",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Fn+Left"
+      }
+    },
+    {
+      "name": "Move the cursor to the location of the previous revision",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+F5"
+      }
+    },
+    {
+      "name": "Move the cursor to the location of the last revision made before the document was last closed",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+F5"
+      }
+    },
+    {
+      "name": "Cycle through floating shapes, such as text boxes or images",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+5"
+      }
+    },
+    {
+      "name": "Exit the floating shape navigation and return to the normal navigation",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Esc"
+      }
+    },
+    {
+      "name": "Display the Navigation task pane, to search within the document content",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+F"
+      }
+    },
+    {
+      "name": "Display the Go To dialog box, to navigate to a specific page, bookmark, footnote, table, comment, graphic, or other location",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+G"
+      }
+    },
+    {
+      "name": "Cycle through the locations of the four previous changes made to the document",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Z"
+      }
+    },
+    {
+      "name": "Print the document",
+      "context": "Print preview",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+P"
+      }
+    },
+    {
+      "name": "Switch to print preview",
+      "context": "Print preview",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+I"
+      }
+    },
+    {
+      "name": "Move by one preview page when zoomed out",
+      "context": "Print preview",
+      "windows": {
+        "type": "keys",
+        "chord": "PageUp"
+      }
+    },
+    {
+      "name": "Move to the first preview page when zoomed out",
+      "context": "Print preview",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Home"
+      }
+    },
+    {
+      "name": "Move to the last preview page when zoomed out",
+      "context": "Print preview",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+End"
+      }
+    },
+    {
+      "name": "Select the word to the left",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Left"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+Left"
+      }
+    },
+    {
+      "name": "Select the word to the right",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Right"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+Right"
+      }
+    },
+    {
+      "name": "Select from the current position to the beginning of the current line",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Home"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+Left"
+      }
+    },
+    {
+      "name": "Select from the current position to the end of the current line",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+End"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+Right"
+      }
+    },
+    {
+      "name": "Select from the current position to the beginning of the current paragraph",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Up"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+Up"
+      }
+    },
+    {
+      "name": "Select from the current position to the end of the current paragraph",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Down"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+Down"
+      }
+    },
+    {
+      "name": "Select from the current position to the top of the screen",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+PageUp"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+PageUp"
+      }
+    },
+    {
+      "name": "Select from the current position to the bottom of the screen",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+PageDown"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+PageDown"
+      }
+    },
+    {
+      "name": "Select from the current position to the beginning of the document",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Home"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+Home"
+      }
+    },
+    {
+      "name": "Select from the current position to the end of the document",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+End"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+End"
+      }
+    },
+    {
+      "name": "Select from the current position to the bottom of the window",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Shift+PageDown"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+Shift+PageDown"
+      }
+    },
+    {
+      "name": "Start extending the selection",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F8"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "F8"
+      }
+    },
+    {
+      "name": "Select the nearest character to the left or right",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "F8",
+          "Left"
+        ]
+      }
+    },
+    {
+      "name": "Reduce the selection",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+F8"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+F8"
+      }
+    },
+    {
+      "name": "Select a vertical block of text",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+F8"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+F8"
+      }
+    },
+    {
+      "name": "Stop extending the selection",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Esc"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Esc"
+      }
+    },
+    {
+      "name": "Delete one word to the left",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Backspace"
+      }
+    },
+    {
+      "name": "Delete one word to the right",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Delete"
+      }
+    },
+    {
+      "name": "Open the Clipboard task pane and enable the Office Clipboard, which allows you to copy and paste content between Microsoft 365 apps",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+H",
+          "F",
+          "O"
+        ]
+      }
+    },
+    {
+      "name": "Move the selected content to a specific location",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F2"
+      }
+    },
+    {
+      "name": "Copy the selected content to a specific location",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+F2"
+      }
+    },
+    {
+      "name": "Define an AutoText block with the selected content",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+F3"
+      }
+    },
+    {
+      "name": "Cut the selected content to the Spike",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+F3"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+F3"
+      }
+    },
+    {
+      "name": "Paste the contents of the Spike",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+F3"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+F3"
+      }
+    },
+    {
+      "name": "Copy the selected text formatting",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+C"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+C"
+      }
+    },
+    {
+      "name": "Paste the selected text formatting",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+V"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+V"
+      }
+    },
+    {
+      "name": "Copy the header or footer used in the previous section of the document",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+R"
+      }
+    },
+    {
+      "name": "Display the Replace dialog box, to find and replace text, specific formatting, or special items",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+H"
+      }
+    },
+    {
+      "name": "Display the Object dialog box, to insert a file object into the document",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+N",
+          "J",
+          "J"
+        ]
+      }
+    },
+    {
+      "name": "Insert a SmartArt graphic",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+N",
+          "M"
+        ]
+      }
+    },
+    {
+      "name": "Insert a WordArt graphic",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+N",
+          "W"
+        ]
+      }
+    },
+    {
+      "name": "Center the paragraph",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+E"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+E"
+      }
+    },
+    {
+      "name": "Justify the paragraph",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+J"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+J"
+      }
+    },
+    {
+      "name": "Align the paragraph to the left",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+L"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+L"
+      }
+    },
+    {
+      "name": "Align the paragraph to the right",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+R"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+R"
+      }
+    },
+    {
+      "name": "Indent the paragraph",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+M"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+M"
+      }
+    },
+    {
+      "name": "Remove a paragraph indent",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+M"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+M"
+      }
+    },
+    {
+      "name": "Create a hanging indent",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+T"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+T"
+      }
+    },
+    {
+      "name": "Remove a hanging indent",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+T"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+T"
+      }
+    },
+    {
+      "name": "Remove paragraph formatting",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Q"
+      }
+    },
+    {
+      "name": "Apply single spacing to the paragraph",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+1"
+      }
+    },
+    {
+      "name": "Apply double spacing to the paragraph",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+2"
+      }
+    },
+    {
+      "name": "Apply 1.5-line spacing to the paragraph",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+5"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+5"
+      }
+    },
+    {
+      "name": "Enable AutoFormat",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+K"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+K"
+      }
+    },
+    {
+      "name": "Apply the Normal style",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+N"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+N"
+      }
+    },
+    {
+      "name": "Apply the Heading 1 style",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+1"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+1"
+      }
+    },
+    {
+      "name": "Apply the Heading 2 style",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+2"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+2"
+      }
+    },
+    {
+      "name": "Apply the Heading 3 style",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+3"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+3"
+      }
+    },
+    {
+      "name": "Display the Apply Styles task pane",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+S"
+      }
+    },
+    {
+      "name": "Display the Styles task pane",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+Shift+S"
+      }
+    },
+    {
+      "name": "Display the Font dialog box",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+D"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+D"
+      }
+    },
+    {
+      "name": "Increase the font size",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+."
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+."
+      }
+    },
+    {
+      "name": "Decrease the font size",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+,"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+,"
+      }
+    },
+    {
+      "name": "Switch the text between upper case, lower case, and title case",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+F3"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+F3"
+      }
+    },
+    {
+      "name": "Change the text to all upper case",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+A"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+A"
+      }
+    },
+    {
+      "name": "Hide the selected text",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+H"
+      }
+    },
+    {
+      "name": "Apply bold formatting",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+B"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+B"
+      }
+    },
+    {
+      "name": "Add a bulleted list",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+L"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+L"
+      }
+    },
+    {
+      "name": "Apply underline formatting",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+U"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+U"
+      }
+    },
+    {
+      "name": "Apply underline formatting to the words, but not the spaces",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+W"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+W"
+      }
+    },
+    {
+      "name": "Apply double-underline formatting",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+D"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+D"
+      }
+    },
+    {
+      "name": "Apply italic formatting",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+I"
+      }
+    },
+    {
+      "name": "Apply small caps formatting",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+K"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+K"
+      }
+    },
+    {
+      "name": "Apply subscript formatting",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+-"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+-"
+      }
+    },
+    {
+      "name": "Apply superscript formatting",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Plus"
+      }
+    },
+    {
+      "name": "Remove manual character formatting",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Space"
+      }
+    },
+    {
+      "name": "Change the selected text to the Symbol font",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Q"
+      }
+    },
+    {
+      "name": "Display all nonprinting characters",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+8"
+      }
+    },
+    {
+      "name": "Display the Reveal Formatting task pane",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+F1"
+      }
+    },
+    {
+      "name": "Insert a line break",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Enter"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Enter"
+      }
+    },
+    {
+      "name": "Insert a page break",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Enter"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Enter"
+      }
+    },
+    {
+      "name": "Insert a column break",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Enter"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+Enter"
+      }
+    },
+    {
+      "name": "Insert an optional hyphen",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+-"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+-"
+      }
+    },
+    {
+      "name": "Insert a nonbreaking hyphen",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+-"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+-"
+      }
+    },
+    {
+      "name": "Insert a nonbreaking space",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Space"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Space"
+      }
+    },
+    {
+      "name": "Insert a registered trademark symbol (®)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+R"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+R"
+      }
+    },
+    {
+      "name": "Insert a trademark symbol (™)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+T"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+2"
+      }
+    },
+    {
+      "name": "Insert an ellipsis (…)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+."
+      }
+    },
+    {
+      "name": "Insert a hyperlink",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+K"
+      }
+    },
+    {
+      "name": "Go back one page",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Left"
+      }
+    },
+    {
+      "name": "Go forward one page",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Right"
+      }
+    },
+    {
+      "name": "Refresh the page",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F9"
+      }
+    },
+    {
+      "name": "Move to the next cell in the row and select its content",
+      "context": "Table",
+      "windows": {
+        "type": "keys",
+        "chord": "Tab"
+      }
+    },
+    {
+      "name": "Move to the previous cell in the row and select its content",
+      "context": "Table",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Tab"
+      }
+    },
+    {
+      "name": "Move to the first cell in the row",
+      "context": "Table",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Home"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Home"
+      }
+    },
+    {
+      "name": "Move to the last cell in the row",
+      "context": "Table",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+End"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+End"
+      }
+    },
+    {
+      "name": "Move to the first cell in the column",
+      "context": "Table",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+PageUp"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+PageUp"
+      }
+    },
+    {
+      "name": "Move to the last cell in the column",
+      "context": "Table",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+PageDown"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+PageDown"
+      }
+    },
+    {
+      "name": "Move to the previous row",
+      "context": "Table",
+      "windows": {
+        "type": "keys",
+        "chord": "Up"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Up"
+      }
+    },
+    {
+      "name": "Move to the next row",
+      "context": "Table",
+      "windows": {
+        "type": "keys",
+        "chord": "Down"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Down"
+      }
+    },
+    {
+      "name": "Move one row up",
+      "context": "Table",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+Up"
+      }
+    },
+    {
+      "name": "Move one row down",
+      "context": "Table",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+Down"
+      }
+    },
+    {
+      "name": "Select the content in the next cell",
+      "context": "Table",
+      "windows": {
+        "type": "keys",
+        "chord": "Tab"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Tab"
+      }
+    },
+    {
+      "name": "Select the content in the previous cell",
+      "context": "Table",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Tab"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Tab"
+      }
+    },
+    {
+      "name": "Select a row",
+      "context": "Table",
+      "windows": {
+        "type": "keys",
+        "chord": "Home"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Home"
+      }
+    },
+    {
+      "name": "Insert a new paragraph in a cell",
+      "context": "Table",
+      "windows": {
+        "type": "keys",
+        "chord": "Enter"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Enter"
+      }
+    },
+    {
+      "name": "Insert a tab character in a cell",
+      "context": "Table",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Tab"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Tab"
+      }
+    },
+    {
+      "name": "Open the Review tab",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+R"
+      }
+    },
+    {
+      "name": "Show list of comments",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+R",
+          "P",
+          "1",
+          "L"
+        ]
+      }
+    },
+    {
+      "name": "Insert a comment",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+M"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+A"
+      }
+    },
+    {
+      "name": "Turn change tracking on or off",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+E"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+E"
+      }
+    },
+    {
+      "name": "Close the Reviewing Pane",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+C"
+      }
+    },
+    {
+      "name": "Mark a table of contents entry",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+O"
+      }
+    },
+    {
+      "name": "Mark a table of authorities entry (citation)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+I"
+      }
+    },
+    {
+      "name": "Choose citation options",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+Shift+F12",
+          "Space"
+        ]
+      }
+    },
+    {
+      "name": "Mark an index entry",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+X"
+      }
+    },
+    {
+      "name": "Insert a footnote",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+F"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+F"
+      }
+    },
+    {
+      "name": "Insert an endnote",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+D"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+E"
+      }
+    },
+    {
+      "name": "Go to the next footnote",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+."
+      }
+    },
+    {
+      "name": "Go to the previous footnote",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+,"
+      }
+    },
+    {
+      "name": "Preview the mail merge",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+K"
+      }
+    },
+    {
+      "name": "Merge a document",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+N"
+      }
+    },
+    {
+      "name": "Print the merged document",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+M"
+      }
+    },
+    {
+      "name": "Edit a mail-merge data document",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+E"
+      }
+    },
+    {
+      "name": "Insert a merge field",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+F"
+      }
+    },
+    {
+      "name": "Insert a DATE field",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+D"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+D"
+      }
+    },
+    {
+      "name": "Insert a LISTNUM field",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+L"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+Shift+L"
+      }
+    },
+    {
+      "name": "Insert a PAGE field",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+P"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+P"
+      }
+    },
+    {
+      "name": "Insert a TIME field",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+T"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+T"
+      }
+    },
+    {
+      "name": "Insert an empty field",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+F9"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+F9"
+      }
+    },
+    {
+      "name": "Update the linked information in a Word source document",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+F7"
+      }
+    },
+    {
+      "name": "Update the selected fields",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F9"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "F9"
+      }
+    },
+    {
+      "name": "Unlink a field",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+F9"
+      }
+    },
+    {
+      "name": "Switch between a selected field code and its result",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+F9"
+      }
+    },
+    {
+      "name": "Switch between all field codes and their results",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+F9"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+F9"
+      }
+    },
+    {
+      "name": "Run GOTOBUTTON or MACROBUTTON from a field displaying field results",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+F9"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+F9"
+      }
+    },
+    {
+      "name": "Go to the next field",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F11"
+      }
+    },
+    {
+      "name": "Go to the previous field",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+F11"
+      }
+    },
+    {
+      "name": "Lock a field",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+F11"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+F11"
+      }
+    },
+    {
+      "name": "Unlock a field",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+F11"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+F11"
+      }
+    },
+    {
+      "name": "Display the Language dialog box to set the proofing language",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+R",
+          "U",
+          "L"
+        ]
+      }
+    },
+    {
+      "name": "Set default languages",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+R",
+          "L"
+        ]
+      }
+    },
+    {
+      "name": "Switch to the Read Mode view",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Alt+W",
+          "F"
+        ]
+      }
+    },
+    {
+      "name": "Switch to the Print Layout view",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+P"
+      }
+    },
+    {
+      "name": "Switch to the Outline view",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+O"
+      }
+    },
+    {
+      "name": "Switch to the Draft view",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+N"
+      }
+    },
+    {
+      "name": "Promote a paragraph",
+      "context": "Outline view",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+Left"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Left"
+      }
+    },
+    {
+      "name": "Demote a paragraph",
+      "context": "Outline view",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+Right"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Right"
+      }
+    },
+    {
+      "name": "Demote the paragraph to body text",
+      "context": "Outline view",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+N"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+N"
+      }
+    },
+    {
+      "name": "Move the selected paragraphs up",
+      "context": "Outline view",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+Up"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Up"
+      }
+    },
+    {
+      "name": "Move the selected paragraphs down",
+      "context": "Outline view",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+Down"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Down"
+      }
+    },
+    {
+      "name": "Expand the text under a heading",
+      "context": "Outline view",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+Plus"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+Plus"
+      }
+    },
+    {
+      "name": "Collapse the text under a heading",
+      "context": "Outline view",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+Plus"
+      }
+    },
+    {
+      "name": "Expand or collapse all text or headings",
+      "context": "Outline view",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+A"
+      }
+    },
+    {
+      "name": "Switch between showing the first line of body text and showing all body text",
+      "context": "Outline view",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+L"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+L"
+      }
+    },
+    {
+      "name": "Show all headings with the Heading 1 style",
+      "context": "Outline view",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+1"
+      }
+    },
+    {
+      "name": "Insert a tab character",
+      "context": "Outline view",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Tab"
+      }
+    },
+    {
+      "name": "Move to the beginning of the document",
+      "context": "Read Mode",
+      "windows": {
+        "type": "keys",
+        "chord": "Home"
+      }
+    },
+    {
+      "name": "Move to the end of the document",
+      "context": "Read Mode",
+      "windows": {
+        "type": "keys",
+        "chord": "End"
+      }
+    },
+    {
+      "name": "Exit Read Mode",
+      "context": "Read Mode",
+      "windows": {
+        "type": "keys",
+        "chord": "Esc"
+      }
+    },
+    {
+      "name": "Return to 100% zoom",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+0"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+0"
+      }
+    },
+    {
+      "name": "Displays the Word help task pane",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F1"
+      }
+    },
+    {
+      "name": "Displays or hides context-sensitive help or the Reveal Formatting task pane",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+F1"
+      }
+    },
+    {
+      "name": "Displays or hides the ribbon",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+F1"
+      }
+    },
+    {
+      "name": "Moves to the next field",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+F1"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "F11"
+      }
+    },
+    {
+      "name": "Moves to the previous field",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+F1"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+F11"
+      }
+    },
+    {
+      "name": "Moves the selected text or graphic",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F2"
+      }
+    },
+    {
+      "name": "Copies the selected text or graphic",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+F2"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+F2"
+      }
+    },
+    {
+      "name": "Displays the print preview area on the Print tab in the Backstage view",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+F2"
+      }
+    },
+    {
+      "name": "Saves the document",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+F2"
+      }
+    },
+    {
+      "name": "Displays the Open dialog box",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+F2"
+      }
+    },
+    {
+      "name": "Switches the selected text between upper case, lower case, and title case",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+F3"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+F3"
+      }
+    },
+    {
+      "name": "Cuts the selected content to the Spike",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+F3"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+F3"
+      }
+    },
+    {
+      "name": "Pastes the contents of the Spike",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+F3"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+F3"
+      }
+    },
+    {
+      "name": "Creates a new Building Block",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+F3"
+      }
+    },
+    {
+      "name": "Repeats the last command or action, if possible",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F4"
+      }
+    },
+    {
+      "name": "Repeats the last Find or Go To action",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+F4"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+F4"
+      }
+    },
+    {
+      "name": "Closes the current document",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+F4"
+      }
+    },
+    {
+      "name": "Closes Word",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+F4"
+      }
+    },
+    {
+      "name": "Displays the Go To dialog box",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F5"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "F5"
+      }
+    },
+    {
+      "name": "Moves the cursor to the last change",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+F5"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+F5"
+      }
+    },
+    {
+      "name": "Displays the Bookmark dialog box",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+F5"
+      }
+    },
+    {
+      "name": "Restores the document window size",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+F5"
+      }
+    },
+    {
+      "name": "Switch between the document, task pane, status bar, and ribbon",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F6"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "F6"
+      }
+    },
+    {
+      "name": "Switches between the document, ribbon, status bar, and task pane",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+F6"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+F6"
+      }
+    },
+    {
+      "name": "Switches to the next document window when more than one document is open",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+F6"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+F6"
+      }
+    },
+    {
+      "name": "Switches to the previous document window when more than one document is open",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+F6"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+F6"
+      }
+    },
+    {
+      "name": "Moves from an open dialog box back to the document, for dialog boxes that support this behavior",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+F6"
+      }
+    },
+    {
+      "name": "Displays the Editor task pane to check spelling and grammar in the document or the selected text",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F7"
+      }
+    },
+    {
+      "name": "Displays the Thesaurus task pane",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+F7"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+F7"
+      }
+    },
+    {
+      "name": "Updates the linked information in a Word source document",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+F7"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+F7"
+      }
+    },
+    {
+      "name": "Finds the next spelling or grammatical error",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+F7"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+F7"
+      }
+    },
+    {
+      "name": "Displays the Translator task pane",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+F7"
+      }
+    },
+    {
+      "name": "Extends the selection",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F8"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "F8"
+      }
+    },
+    {
+      "name": "Reduces the selection",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+F8"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+F8"
+      }
+    },
+    {
+      "name": "Turns extend selection mode on and off",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+F8"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+F8"
+      }
+    },
+    {
+      "name": "Displays the Macro dialog box to create, run, edit, or delete a macro",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+F8"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+F8"
+      }
+    },
+    {
+      "name": "Updates the selected fields",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F9"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "F9"
+      }
+    },
+    {
+      "name": "Switches between a field code and its result",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+F9"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+F9"
+      }
+    },
+    {
+      "name": "Inserts an empty field",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+F9"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+F9"
+      }
+    },
+    {
+      "name": "Unlinks the current field",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+F9"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+F9"
+      }
+    },
+    {
+      "name": "Switches between all field codes and their results",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+F9"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+F9"
+      }
+    },
+    {
+      "name": "Runs GOTOBUTTON or MACROBUTTON from a field displaying field results",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+F9"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+F9"
+      }
+    },
+    {
+      "name": "Turns KeyTips on or off",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F10"
+      }
+    },
+    {
+      "name": "Displays the shortcut menu for the selected item",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+F10"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+F10"
+      }
+    },
+    {
+      "name": "Maximizes or restores the document window size",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+F10"
+      }
+    },
+    {
+      "name": "Displays the Selection task pane",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+F10"
+      }
+    },
+    {
+      "name": "Displays the menu or message for available actions, for example, for pasted text or an AutoCorrect change",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+F10"
+      }
+    },
+    {
+      "name": "Locks the current field",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+F11"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+F11"
+      }
+    },
+    {
+      "name": "Unlocks the current field",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+F11"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+F11"
+      }
+    },
+    {
+      "name": "Opens the Microsoft Visual Basic for Applications editor, in which you can create a macro using Visual Basic for Applications (VBA)",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+F11"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+F11"
+      }
+    },
+    {
+      "name": "Displays the Save As dialog box",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "F12"
+      }
+    },
+    {
+      "name": "Displays the Print tab in the Backstage view",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+F12"
+      }
+    },
+    {
+      "name": "Selects the Table of Contents button in the Table of Contents container when the container is active",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Shift+F12"
+      }
+    },
+    {
+      "name": "Display the shortcut menu for the selected item",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+F10"
+      }
+    },
+    {
+      "name": "Display the Go To dialog box",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+G"
+      }
+    },
+    {
+      "name": "Display the Spelling and Grammar dialog box",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+L"
+      }
+    },
+    {
+      "name": "Enable extended selection mode",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "F8"
+      }
+    },
+    {
+      "name": "Switch to the next window",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+`"
+      }
+    },
+    {
+      "name": "Switch to the previous window",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+`"
+      }
+    },
+    {
+      "name": "Display the Save As dialog box",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+S"
+      }
+    },
+    {
+      "name": "Find text (move focus to the Search in Document box)",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+F"
+      }
+    },
+    {
+      "name": "Display the Find and Replace pane",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+H"
+      }
+    },
+    {
+      "name": "Display the Print dialog box",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+P"
+      }
+    },
+    {
+      "name": "Close the current document",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+F4"
+      }
+    },
+    {
+      "name": "Expand or minimize the ribbon",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Alt+R"
+      }
+    },
+    {
+      "name": "Find the next spelling or grammatical error. The Check spelling as you type feature must be enabled",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+F7"
+      }
+    },
+    {
+      "name": "Open the Dictionary",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+F7"
+      }
+    },
+    {
+      "name": "Move the cursor to the beginning of the current line",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Left"
+      }
+    },
+    {
+      "name": "Move the cursor to the previous insertion point",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+F5"
+      }
+    },
+    {
+      "name": "Select the nearest character to the left",
+      "context": "",
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "F8",
+          "Left"
+        ]
+      }
+    },
+    {
+      "name": "Select the nearest character to the right",
+      "context": "",
+      "mac": {
+        "type": "sequence",
+        "chords": [
+          "F8",
+          "Right"
+        ]
+      }
+    },
+    {
+      "name": "Display the Paste Special dialog box",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Ctrl+V"
+      }
+    },
+    {
+      "name": "Create an AutoText entry",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+F3"
+      }
+    },
+    {
+      "name": "Apply single-spacing to the paragraph",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+1"
+      }
+    },
+    {
+      "name": "Apply double-spacing to the paragraph",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+2"
+      }
+    },
+    {
+      "name": "Apply the List style",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+L"
+      }
+    },
+    {
+      "name": "Apply italics formatting",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+I"
+      }
+    },
+    {
+      "name": "Apply strike-through formatting",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+X"
+      }
+    },
+    {
+      "name": "Move to the next cell and select its content",
+      "context": "Table",
+      "mac": {
+        "type": "keys",
+        "chord": "Tab"
+      }
+    },
+    {
+      "name": "Move to the previous cell and select its content",
+      "context": "Table",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+Tab"
+      }
+    },
+    {
+      "name": "Add a new row to the bottom of the table",
+      "context": "Table",
+      "mac": {
+        "type": "keys",
+        "chord": "Tab"
+      }
+    },
+    {
+      "name": "Insert a row",
+      "context": "Table",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Ctrl+I"
+      }
+    },
+    {
+      "name": "Toggle drawing mode",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Ctrl+Z"
+      }
+    },
+    {
+      "name": "Switch between a field code and its result",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Shift+F9"
+      }
+    },
+    {
+      "name": "Collapse text under a heading",
+      "context": "Outline view",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+-"
+      }
+    },
+    {
+      "name": "Expand all body text and headings, or collapse all body text",
+      "context": "Outline view",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Shift+A"
+      }
+    },
+    {
+      "name": "Move to the beginning of a comment",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Home"
+      }
+    },
+    {
+      "name": "Move to the end of a comment",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "End"
+      }
+    },
+    {
+      "name": "Move to the beginning of the list of comments",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Home"
+      }
+    },
+    {
+      "name": "Move to the end of the list of comments",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+End"
+      }
+    },
+    {
+      "name": "Switch the writing direction to right-to-left",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Cmd+Left"
+      }
+    },
+    {
+      "name": "Switch the writing direction to left-to-right",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Ctrl+Cmd+Right"
+      }
+    },
+    {
+      "name": "Undoes the previous action",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "F1"
+      }
+    },
+    {
+      "name": "Cuts the selected content to the Clipboard",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "F2"
+      }
+    },
+    {
+      "name": "Copies the selected content to the Clipboard",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "F3"
+      }
+    },
+    {
+      "name": "Creates an AutoText entry",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+F3"
+      }
+    },
+    {
+      "name": "Pastes the content from the Clipboard",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "F4"
+      }
+    },
+    {
+      "name": "Displays the Bookmark dialog",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+F5"
+      }
+    },
+    {
+      "name": "Displays the Spelling and Grammar dialog box",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "F7"
+      }
+    },
+    {
+      "name": "Opens the Dictionary",
+      "context": "",
+      "mac": {
+        "type": "keys",
+        "chord": "Alt+Shift+F7"
+      }
+    }
+  ],
+  "defaults": {
+    "TUNE_CW": {
+      "name": "Move the cursor to the top of the next page",
+      "action": {
+        "type": "keys",
+        "chord": "Ctrl+PageDown"
+      },
+      "accel": "light"
+    },
+    "TUNE_CCW": {
+      "name": "Move the cursor to the top of the previous page",
+      "action": {
+        "type": "keys",
+        "chord": "Ctrl+PageUp"
+      },
+      "accel": "light"
+    },
+    "TUNE_TAP_1F": {
+      "name": "Save the document",
+      "action": {
+        "type": "keys",
+        "chord": "Ctrl+S"
+      }
+    },
+    "TUNE_SWIPE_LEFT": {
+      "name": "Undo the previous action",
+      "action": {
+        "type": "keys",
+        "chord": "Ctrl+Z"
+      }
+    },
+    "TUNE_SWIPE_RIGHT": {
+      "name": "Redo the previous action",
+      "action": {
+        "type": "keys",
+        "chord": "Ctrl+Y"
+      }
+    }
+  }
+}

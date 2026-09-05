@@ -20,7 +20,7 @@ use std::time::Instant;
 use windows::Win32::Foundation::{LPARAM, LRESULT, WPARAM};
 use windows::Win32::System::Threading::GetCurrentThreadId;
 use windows::Win32::UI::Input::KeyboardAndMouse::{
-    GetAsyncKeyState, VK_CONTROL, VK_MENU, VK_SHIFT,
+    GetAsyncKeyState, VK_CONTROL, VK_LWIN, VK_MENU, VK_RWIN, VK_SHIFT,
 };
 use windows::Win32::UI::WindowsAndMessaging::{
     CallNextHookEx, DispatchMessageW, GetMessageW, PostThreadMessageW, SetWindowsHookExW,
@@ -59,18 +59,12 @@ pub fn set_learn(on: bool) {
 fn current_modifiers() -> Modifiers {
     // SAFETY: GetAsyncKeyState has no preconditions.
     let down = |vk: u16| unsafe { (GetAsyncKeyState(vk as i32) as u16 & 0x8000) != 0 };
-    let ctrl = down(VK_CONTROL.0);
-    let shift = down(VK_SHIFT.0);
-    let alt = down(VK_MENU.0);
-    match (ctrl, shift, alt) {
-        (false, false, false) => Modifiers::None,
-        (false, true, false) => Modifiers::Shift,
-        (true, false, false) => Modifiers::Ctrl,
-        (false, false, true) => Modifiers::Alt,
-        (true, true, false) => Modifiers::CtrlShift,
-        // Unrecognised combination: report as plain and let the decoder
-        // decide (it will log an unmapped transport code).
-        _ => Modifiers::None,
+    Modifiers {
+        ctrl: down(VK_CONTROL.0),
+        shift: down(VK_SHIFT.0),
+        alt: down(VK_MENU.0),
+        meta: down(VK_LWIN.0) || down(VK_RWIN.0),
+        fn_key: false, // Windows has no Fn key at the OS level
     }
 }
 

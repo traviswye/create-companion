@@ -1,0 +1,1786 @@
+{
+  "id": "tmux",
+  "name": "tmux",
+  "kind": "app",
+  "category": "Development",
+  "match": {
+    "windows_exe": [
+      "WindowsTerminal.exe",
+      "wt.exe",
+      "mintty.exe"
+    ],
+    "macos_bundle": [],
+    "window_title": [
+      "tmux"
+    ]
+  },
+  "sources": [
+    "https://raw.githubusercontent.com/tmux/tmux/master/tmux.1",
+    "https://man.openbsd.org/tmux.1",
+    "https://raw.githubusercontent.com/tmux/tmux/master/key-bindings.c"
+  ],
+  "note": "tmux itself has no exe/bundle - it's a program running inside a terminal emulator, so this profile only fires when a Windows terminal's window title contains \"tmux\" (set your pane/window title, e.g. `tmux rename-window tmux` or `set -g set-titles on`). Bindings are taken from the \"DEFAULT KEY BINDINGS\" section of tmux's own man page (tmux.1, upstream git master, dated 2026-09-03) and, for copy mode, the \"WINDOWS AND PANES\" section's copy-mode command table. Every top-level binding is prefix (Ctrl+B by default) then a key, encoded as a 2-step sequence. Copy-mode commands do not use the prefix; tmux keeps two separate copy-mode key tables selected by the `mode-keys` option (emacs is tmux's default) - vi bindings are under context \"Copy Mode (vi)\" and emacs bindings under \"Copy Mode\"; both are listed where the man page documents both. The man page groups \"M-1 to M-7\" (arrange panes in a preset layout) and \"g 1-4 / g Up,Down,Left,Right\" (move a floating pane to a corner/edge) under single collective entries without saying which number maps to which layout/corner; that specific order was cross-checked against tmux's own key-bindings.c defaults (same upstream repo) and is not otherwise documented in the man page prose. The Meta-resizes-as-well variant of the g-corner/edge bindings, and the M-1..M-9 \"repeat count\" bindings inside copy mode, require a following numeric prompt or aren't spelled out as distinct key sequences in the man page text, so they're omitted. The man page also lists `cursor-centre-vertical` with an `(emacs: C-l)` binding, but tmux's own key-bindings.c binds Ctrl+L only to `recentre-top-bottom` in the emacs copy-mode table (not to cursor-centre-vertical) - this looks like a stale/duplicated entry in the man page, so cursor-centre-vertical is listed here with no default key. A handful of bindings exist in tmux's current development source (key-bindings.c) but are not yet documented in the DEFAULT KEY BINDINGS man page section - toggle pane floating/tiled (@), customize-mode (C), spread panes evenly (E), switch to session (BTab), move the visible part of the window (Shift+Up/Down/Left/Right), and reset-follows-cursor (Delete) - these are left out per \"do not invent bindings\" beyond what the man page documents.",
+  "actions": [
+    {
+      "name": "Send the prefix key (Ctrl+B) through to the application",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+B",
+          "Ctrl+B"
+        ]
+      }
+    },
+    {
+      "name": "Rotate the panes in the current window forwards",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+B",
+          "Ctrl+O"
+        ]
+      }
+    },
+    {
+      "name": "Suspend the client",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+B",
+          "Ctrl+Z"
+        ]
+      }
+    },
+    {
+      "name": "Break the current pane out of the window",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+B",
+          "Shift+1"
+        ]
+      }
+    },
+    {
+      "name": "Split the current pane into two, top and bottom",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+B",
+          "Shift+'"
+        ]
+      }
+    },
+    {
+      "name": "List all paste buffers",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+B",
+          "Shift+3"
+        ]
+      }
+    },
+    {
+      "name": "Rename the current session",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+B",
+          "Shift+4"
+        ]
+      }
+    },
+    {
+      "name": "Split the current pane into two, left and right",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+B",
+          "Shift+5"
+        ]
+      }
+    },
+    {
+      "name": "Kill the current window",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+B",
+          "Shift+7"
+        ]
+      }
+    },
+    {
+      "name": "Prompt for a window index to select",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+B",
+          "'"
+        ]
+      }
+    },
+    {
+      "name": "Switch the attached client to the previous session",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+B",
+          "Shift+9"
+        ]
+      }
+    },
+    {
+      "name": "Switch the attached client to the next session",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+B",
+          "Shift+0"
+        ]
+      }
+    },
+    {
+      "name": "Create a new floating pane",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+B",
+          "Shift+8"
+        ]
+      }
+    },
+    {
+      "name": "Rename the current window",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+B",
+          ","
+        ]
+      }
+    },
+    {
+      "name": "Delete the most recently copied buffer of text",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+B",
+          "-"
+        ]
+      }
+    },
+    {
+      "name": "Prompt for an index to move the current window",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+B",
+          "."
+        ]
+      }
+    },
+    {
+      "name": "Select window 0",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+B",
+          "0"
+        ]
+      }
+    },
+    {
+      "name": "Select window 1",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+B",
+          "1"
+        ]
+      }
+    },
+    {
+      "name": "Select window 2",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+B",
+          "2"
+        ]
+      }
+    },
+    {
+      "name": "Select window 3",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+B",
+          "3"
+        ]
+      }
+    },
+    {
+      "name": "Select window 4",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+B",
+          "4"
+        ]
+      }
+    },
+    {
+      "name": "Select window 5",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+B",
+          "5"
+        ]
+      }
+    },
+    {
+      "name": "Select window 6",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+B",
+          "6"
+        ]
+      }
+    },
+    {
+      "name": "Select window 7",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+B",
+          "7"
+        ]
+      }
+    },
+    {
+      "name": "Select window 8",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+B",
+          "8"
+        ]
+      }
+    },
+    {
+      "name": "Select window 9",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+B",
+          "9"
+        ]
+      }
+    },
+    {
+      "name": "Enter the tmux command prompt",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+B",
+          "Shift+;"
+        ]
+      }
+    },
+    {
+      "name": "Move to the previously active pane",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+B",
+          ";"
+        ]
+      }
+    },
+    {
+      "name": "Choose which buffer to paste interactively from a list",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+B",
+          "="
+        ]
+      }
+    },
+    {
+      "name": "List all key bindings",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+B",
+          "Shift+/"
+        ]
+      }
+    },
+    {
+      "name": "Choose a client to detach",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+B",
+          "Shift+D"
+        ]
+      }
+    },
+    {
+      "name": "Switch the attached client back to the last session",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+B",
+          "Shift+L"
+        ]
+      }
+    },
+    {
+      "name": "Enter copy mode to copy text or view the history",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+B",
+          "["
+        ]
+      }
+    },
+    {
+      "name": "Paste the most recently copied buffer of text",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+B",
+          "]"
+        ]
+      }
+    },
+    {
+      "name": "Create a new window",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+B",
+          "C"
+        ]
+      }
+    },
+    {
+      "name": "Detach the current client",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+B",
+          "D"
+        ]
+      }
+    },
+    {
+      "name": "Prompt to search for text in open windows",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+B",
+          "F"
+        ]
+      }
+    },
+    {
+      "name": "Display some information about the current window",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+B",
+          "I"
+        ]
+      }
+    },
+    {
+      "name": "Move to the previously selected window",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+B",
+          "L"
+        ]
+      }
+    },
+    {
+      "name": "Mark the current pane",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+B",
+          "M"
+        ]
+      }
+    },
+    {
+      "name": "Clear the marked pane",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+B",
+          "Shift+M"
+        ]
+      }
+    },
+    {
+      "name": "Change to the next window",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+B",
+          "N"
+        ]
+      }
+    },
+    {
+      "name": "Select the next pane in the current window",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+B",
+          "O"
+        ]
+      }
+    },
+    {
+      "name": "Change to the previous window",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+B",
+          "P"
+        ]
+      }
+    },
+    {
+      "name": "Briefly display pane indexes",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+B",
+          "Q"
+        ]
+      }
+    },
+    {
+      "name": "Force redraw of the attached client",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+B",
+          "R"
+        ]
+      }
+    },
+    {
+      "name": "Select a new session for the attached client interactively",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+B",
+          "S"
+        ]
+      }
+    },
+    {
+      "name": "Show the time",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+B",
+          "T"
+        ]
+      }
+    },
+    {
+      "name": "Change the current pane title",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+B",
+          "Shift+T"
+        ]
+      }
+    },
+    {
+      "name": "Choose the current window interactively",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+B",
+          "W"
+        ]
+      }
+    },
+    {
+      "name": "Kill the current pane",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+B",
+          "X"
+        ]
+      }
+    },
+    {
+      "name": "Toggle zoom state of the current pane",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+B",
+          "Z"
+        ]
+      }
+    },
+    {
+      "name": "Choose a new window and session by fuzzy matching",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+B",
+          "Tab"
+        ]
+      }
+    },
+    {
+      "name": "Swap the current pane with the previous pane",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+B",
+          "Shift+["
+        ]
+      }
+    },
+    {
+      "name": "Swap the current pane with the next pane",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+B",
+          "Shift+]"
+        ]
+      }
+    },
+    {
+      "name": "Show previous messages from tmux, if any",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+B",
+          "Shift+`"
+        ]
+      }
+    },
+    {
+      "name": "Enter copy mode and scroll one page up",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+B",
+          "PageUp"
+        ]
+      }
+    },
+    {
+      "name": "Change to the pane above the current pane",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+B",
+          "Up"
+        ]
+      }
+    },
+    {
+      "name": "Change to the pane below the current pane",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+B",
+          "Down"
+        ]
+      }
+    },
+    {
+      "name": "Change to the pane to the left of the current pane",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+B",
+          "Left"
+        ]
+      }
+    },
+    {
+      "name": "Change to the pane to the right of the current pane",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+B",
+          "Right"
+        ]
+      }
+    },
+    {
+      "name": "Arrange the current window in the next preset layout",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+B",
+          "Space"
+        ]
+      }
+    },
+    {
+      "name": "Move to the next window with a bell or activity marker",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+B",
+          "Alt+N"
+        ]
+      }
+    },
+    {
+      "name": "Rotate the panes in the current window backwards",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+B",
+          "Alt+O"
+        ]
+      }
+    },
+    {
+      "name": "Move to the previous window with a bell or activity marker",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+B",
+          "Alt+P"
+        ]
+      }
+    },
+    {
+      "name": "Resize the current pane up by one cell",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+B",
+          "Ctrl+Up"
+        ]
+      }
+    },
+    {
+      "name": "Resize the current pane down by one cell",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+B",
+          "Ctrl+Down"
+        ]
+      }
+    },
+    {
+      "name": "Resize the current pane left by one cell",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+B",
+          "Ctrl+Left"
+        ]
+      }
+    },
+    {
+      "name": "Resize the current pane right by one cell",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+B",
+          "Ctrl+Right"
+        ]
+      }
+    },
+    {
+      "name": "Resize the current pane up by five cells",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+B",
+          "Alt+Up"
+        ]
+      }
+    },
+    {
+      "name": "Resize the current pane down by five cells",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+B",
+          "Alt+Down"
+        ]
+      }
+    },
+    {
+      "name": "Resize the current pane left by five cells",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+B",
+          "Alt+Left"
+        ]
+      }
+    },
+    {
+      "name": "Resize the current pane right by five cells",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+B",
+          "Alt+Right"
+        ]
+      }
+    },
+    {
+      "name": "Arrange panes in the even-horizontal layout",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+B",
+          "Alt+1"
+        ]
+      }
+    },
+    {
+      "name": "Arrange panes in the even-vertical layout",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+B",
+          "Alt+2"
+        ]
+      }
+    },
+    {
+      "name": "Arrange panes in the main-horizontal layout",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+B",
+          "Alt+3"
+        ]
+      }
+    },
+    {
+      "name": "Arrange panes in the main-vertical layout",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+B",
+          "Alt+4"
+        ]
+      }
+    },
+    {
+      "name": "Arrange panes in the tiled layout",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+B",
+          "Alt+5"
+        ]
+      }
+    },
+    {
+      "name": "Arrange panes in the main-horizontal-mirrored layout",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+B",
+          "Alt+6"
+        ]
+      }
+    },
+    {
+      "name": "Arrange panes in the main-vertical-mirrored layout",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+B",
+          "Alt+7"
+        ]
+      }
+    },
+    {
+      "name": "Move floating pane to top-left corner",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+B",
+          "G",
+          "1"
+        ]
+      }
+    },
+    {
+      "name": "Move floating pane to top-right corner",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+B",
+          "G",
+          "2"
+        ]
+      }
+    },
+    {
+      "name": "Move floating pane to bottom-left corner",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+B",
+          "G",
+          "3"
+        ]
+      }
+    },
+    {
+      "name": "Move floating pane to bottom-right corner",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+B",
+          "G",
+          "4"
+        ]
+      }
+    },
+    {
+      "name": "Move floating pane to top edge",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+B",
+          "G",
+          "Up"
+        ]
+      }
+    },
+    {
+      "name": "Move floating pane to bottom edge",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+B",
+          "G",
+          "Down"
+        ]
+      }
+    },
+    {
+      "name": "Move floating pane to left edge",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+B",
+          "G",
+          "Left"
+        ]
+      }
+    },
+    {
+      "name": "Move floating pane to right edge",
+      "context": "",
+      "windows": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+B",
+          "G",
+          "Right"
+        ]
+      }
+    },
+    {
+      "name": "Append the selection to the top paste buffer and exit copy mode",
+      "context": "Copy Mode (vi)",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+A"
+      }
+    },
+    {
+      "name": "Move the cursor back to the indentation",
+      "context": "Copy Mode (vi)",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+6"
+      }
+    },
+    {
+      "name": "Move the cursor back to the indentation",
+      "context": "Copy Mode",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+M"
+      }
+    },
+    {
+      "name": "Begin selection",
+      "context": "Copy Mode (vi)",
+      "windows": {
+        "type": "keys",
+        "chord": "Space"
+      }
+    },
+    {
+      "name": "Begin selection",
+      "context": "Copy Mode",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Space"
+      }
+    },
+    {
+      "name": "Move to the bottom line",
+      "context": "Copy Mode (vi)",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+L"
+      }
+    },
+    {
+      "name": "Exit copy mode",
+      "context": "Copy Mode (vi)",
+      "windows": {
+        "type": "keys",
+        "chord": "Q"
+      }
+    },
+    {
+      "name": "Exit copy mode",
+      "context": "Copy Mode",
+      "windows": {
+        "type": "keys",
+        "chord": "Esc"
+      }
+    },
+    {
+      "name": "Clear the current selection",
+      "context": "Copy Mode (vi)",
+      "windows": {
+        "type": "keys",
+        "chord": "Esc"
+      }
+    },
+    {
+      "name": "Clear the current selection",
+      "context": "Copy Mode",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+G"
+      }
+    },
+    {
+      "name": "Copy the current selection and exit copy mode",
+      "context": "Copy Mode (vi)",
+      "windows": {
+        "type": "keys",
+        "chord": "Enter"
+      }
+    },
+    {
+      "name": "Copy the current selection and exit copy mode",
+      "context": "Copy Mode",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+W"
+      }
+    },
+    {
+      "name": "Move the cursor down",
+      "context": "Copy Mode (vi)",
+      "windows": {
+        "type": "keys",
+        "chord": "J"
+      }
+    },
+    {
+      "name": "Move the cursor down",
+      "context": "Copy Mode",
+      "windows": {
+        "type": "keys",
+        "chord": "Down"
+      }
+    },
+    {
+      "name": "Move the cursor left",
+      "context": "Copy Mode (vi)",
+      "windows": {
+        "type": "keys",
+        "chord": "H"
+      }
+    },
+    {
+      "name": "Move the cursor left",
+      "context": "Copy Mode",
+      "windows": {
+        "type": "keys",
+        "chord": "Left"
+      }
+    },
+    {
+      "name": "Move the cursor right",
+      "context": "Copy Mode (vi)",
+      "windows": {
+        "type": "keys",
+        "chord": "L"
+      }
+    },
+    {
+      "name": "Move the cursor right",
+      "context": "Copy Mode",
+      "windows": {
+        "type": "keys",
+        "chord": "Right"
+      }
+    },
+    {
+      "name": "Move the cursor up",
+      "context": "Copy Mode (vi)",
+      "windows": {
+        "type": "keys",
+        "chord": "K"
+      }
+    },
+    {
+      "name": "Move the cursor up",
+      "context": "Copy Mode",
+      "windows": {
+        "type": "keys",
+        "chord": "Up"
+      }
+    },
+    {
+      "name": "Move the cursor to the horizontal centre of the pane",
+      "context": "Copy Mode",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+L"
+      }
+    },
+    {
+      "name": "Move the cursor to the end of the line",
+      "context": "Copy Mode (vi)",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+4"
+      }
+    },
+    {
+      "name": "Move the cursor to the end of the line",
+      "context": "Copy Mode",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+E"
+      }
+    },
+    {
+      "name": "Move the cursor to a specific line",
+      "context": "Copy Mode (vi)",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+;"
+      }
+    },
+    {
+      "name": "Move the cursor to a specific line",
+      "context": "Copy Mode",
+      "windows": {
+        "type": "keys",
+        "chord": "G"
+      }
+    },
+    {
+      "name": "Scroll down by half a page",
+      "context": "Copy Mode (vi)",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+D"
+      }
+    },
+    {
+      "name": "Scroll down by half a page",
+      "context": "Copy Mode",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Down"
+      }
+    },
+    {
+      "name": "Scroll up by half a page",
+      "context": "Copy Mode (vi)",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+U"
+      }
+    },
+    {
+      "name": "Scroll up by half a page",
+      "context": "Copy Mode",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+Up"
+      }
+    },
+    {
+      "name": "Scroll to the bottom of the history",
+      "context": "Copy Mode (vi)",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+G"
+      }
+    },
+    {
+      "name": "Scroll to the bottom of the history",
+      "context": "Copy Mode",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+."
+      }
+    },
+    {
+      "name": "Scroll to the top of the history",
+      "context": "Copy Mode (vi)",
+      "windows": {
+        "type": "keys",
+        "chord": "G"
+      }
+    },
+    {
+      "name": "Scroll to the top of the history",
+      "context": "Copy Mode",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+,"
+      }
+    },
+    {
+      "name": "Repeat the last jump",
+      "context": "Copy Mode (vi)",
+      "windows": {
+        "type": "keys",
+        "chord": ";"
+      }
+    },
+    {
+      "name": "Repeat the last jump",
+      "context": "Copy Mode",
+      "windows": {
+        "type": "keys",
+        "chord": ";"
+      }
+    },
+    {
+      "name": "Jump backwards to the specified text",
+      "context": "Copy Mode (vi)",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+F"
+      }
+    },
+    {
+      "name": "Jump backwards to the specified text",
+      "context": "Copy Mode",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+F"
+      }
+    },
+    {
+      "name": "Jump forward to the specified text",
+      "context": "Copy Mode (vi)",
+      "windows": {
+        "type": "keys",
+        "chord": "F"
+      }
+    },
+    {
+      "name": "Jump forward to the specified text",
+      "context": "Copy Mode",
+      "windows": {
+        "type": "keys",
+        "chord": "F"
+      }
+    },
+    {
+      "name": "Repeat the last jump in the reverse direction",
+      "context": "Copy Mode (vi)",
+      "windows": {
+        "type": "keys",
+        "chord": ","
+      }
+    },
+    {
+      "name": "Repeat the last jump in the reverse direction",
+      "context": "Copy Mode",
+      "windows": {
+        "type": "keys",
+        "chord": ","
+      }
+    },
+    {
+      "name": "Jump backwards, but one character less, placing the cursor on the character after the target",
+      "context": "Copy Mode (vi)",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+T"
+      }
+    },
+    {
+      "name": "Jump forward, but one character less, placing the cursor on the character before the target",
+      "context": "Copy Mode (vi)",
+      "windows": {
+        "type": "keys",
+        "chord": "T"
+      }
+    },
+    {
+      "name": "Jump to the last mark",
+      "context": "Copy Mode (vi)",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+X"
+      }
+    },
+    {
+      "name": "Jump to the last mark",
+      "context": "Copy Mode",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+X"
+      }
+    },
+    {
+      "name": "Toggle line numbers in copy mode",
+      "context": "Copy Mode",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+L"
+      }
+    },
+    {
+      "name": "Move to the middle line",
+      "context": "Copy Mode (vi)",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+M"
+      }
+    },
+    {
+      "name": "Move to the middle line",
+      "context": "Copy Mode",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+R"
+      }
+    },
+    {
+      "name": "Move to the next matching bracket",
+      "context": "Copy Mode (vi)",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+5"
+      }
+    },
+    {
+      "name": "Move to the next matching bracket",
+      "context": "Copy Mode",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+F"
+      }
+    },
+    {
+      "name": "Move to the next paragraph",
+      "context": "Copy Mode (vi)",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+]"
+      }
+    },
+    {
+      "name": "Move to the next paragraph",
+      "context": "Copy Mode",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+]"
+      }
+    },
+    {
+      "name": "Move to the next word",
+      "context": "Copy Mode (vi)",
+      "windows": {
+        "type": "keys",
+        "chord": "W"
+      }
+    },
+    {
+      "name": "Move to the end of the next word",
+      "context": "Copy Mode (vi)",
+      "windows": {
+        "type": "keys",
+        "chord": "E"
+      }
+    },
+    {
+      "name": "Move to the end of the next word",
+      "context": "Copy Mode",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+F"
+      }
+    },
+    {
+      "name": "Move to the next word (treating all non-whitespace characters as part of a word)",
+      "context": "Copy Mode (vi)",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+W"
+      }
+    },
+    {
+      "name": "Move to the end of the next word (treating all non-whitespace characters as part of a word)",
+      "context": "Copy Mode (vi)",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+E"
+      }
+    },
+    {
+      "name": "Switch at which end of the selection the cursor sits",
+      "context": "Copy Mode (vi)",
+      "windows": {
+        "type": "keys",
+        "chord": "O"
+      }
+    },
+    {
+      "name": "Scroll down by one page",
+      "context": "Copy Mode (vi)",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+F"
+      }
+    },
+    {
+      "name": "Scroll down by one page",
+      "context": "Copy Mode",
+      "windows": {
+        "type": "keys",
+        "chord": "PageDown"
+      }
+    },
+    {
+      "name": "Scroll up by one page",
+      "context": "Copy Mode (vi)",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+B"
+      }
+    },
+    {
+      "name": "Scroll up by one page",
+      "context": "Copy Mode",
+      "windows": {
+        "type": "keys",
+        "chord": "PageUp"
+      }
+    },
+    {
+      "name": "Move to the previous matching bracket",
+      "context": "Copy Mode",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Alt+B"
+      }
+    },
+    {
+      "name": "Move to the previous paragraph",
+      "context": "Copy Mode (vi)",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+["
+      }
+    },
+    {
+      "name": "Move to the previous paragraph",
+      "context": "Copy Mode",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+["
+      }
+    },
+    {
+      "name": "Move to the previous word",
+      "context": "Copy Mode (vi)",
+      "windows": {
+        "type": "keys",
+        "chord": "B"
+      }
+    },
+    {
+      "name": "Move to the previous word",
+      "context": "Copy Mode",
+      "windows": {
+        "type": "keys",
+        "chord": "Alt+B"
+      }
+    },
+    {
+      "name": "Move to the previous word (treating all non-whitespace characters as part of a word)",
+      "context": "Copy Mode (vi)",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+B"
+      }
+    },
+    {
+      "name": "Toggle rectangle selection mode",
+      "context": "Copy Mode (vi)",
+      "windows": {
+        "type": "keys",
+        "chord": "V"
+      }
+    },
+    {
+      "name": "Toggle rectangle selection mode",
+      "context": "Copy Mode",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+R"
+      }
+    },
+    {
+      "name": "Refresh the content from the pane once",
+      "context": "Copy Mode (vi)",
+      "windows": {
+        "type": "keys",
+        "chord": "R"
+      }
+    },
+    {
+      "name": "Refresh the content from the pane once",
+      "context": "Copy Mode",
+      "windows": {
+        "type": "keys",
+        "chord": "R"
+      }
+    },
+    {
+      "name": "Scroll down",
+      "context": "Copy Mode (vi)",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+E"
+      }
+    },
+    {
+      "name": "Scroll down",
+      "context": "Copy Mode",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Down"
+      }
+    },
+    {
+      "name": "Scroll so that the current line becomes the middle one, keeping the cursor on that line",
+      "context": "Copy Mode (vi)",
+      "windows": {
+        "type": "keys",
+        "chord": "Z"
+      }
+    },
+    {
+      "name": "Scroll up",
+      "context": "Copy Mode (vi)",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Y"
+      }
+    },
+    {
+      "name": "Scroll up",
+      "context": "Copy Mode",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Up"
+      }
+    },
+    {
+      "name": "Repeat the last search",
+      "context": "Copy Mode (vi)",
+      "windows": {
+        "type": "keys",
+        "chord": "N"
+      }
+    },
+    {
+      "name": "Repeat the last search",
+      "context": "Copy Mode",
+      "windows": {
+        "type": "keys",
+        "chord": "N"
+      }
+    },
+    {
+      "name": "Search backwards for the specified text",
+      "context": "Copy Mode (vi)",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+/"
+      }
+    },
+    {
+      "name": "Search backwards incrementally for the specified text",
+      "context": "Copy Mode",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+R"
+      }
+    },
+    {
+      "name": "Search forward for the specified text",
+      "context": "Copy Mode (vi)",
+      "windows": {
+        "type": "keys",
+        "chord": "/"
+      }
+    },
+    {
+      "name": "Search forward incrementally for the specified text",
+      "context": "Copy Mode",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+S"
+      }
+    },
+    {
+      "name": "Repeat the last search in the reverse direction",
+      "context": "Copy Mode (vi)",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+N"
+      }
+    },
+    {
+      "name": "Repeat the last search in the reverse direction",
+      "context": "Copy Mode",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+N"
+      }
+    },
+    {
+      "name": "Select the current line",
+      "context": "Copy Mode (vi)",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+V"
+      }
+    },
+    {
+      "name": "Mark the current line",
+      "context": "Copy Mode (vi)",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+X"
+      }
+    },
+    {
+      "name": "Mark the current line",
+      "context": "Copy Mode",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+X"
+      }
+    },
+    {
+      "name": "Move the cursor to the start of the line",
+      "context": "Copy Mode (vi)",
+      "windows": {
+        "type": "keys",
+        "chord": "0"
+      }
+    },
+    {
+      "name": "Move the cursor to the start of the line",
+      "context": "Copy Mode",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+A"
+      }
+    },
+    {
+      "name": "Toggle the visibility of the position indicator in the top right",
+      "context": "Copy Mode (vi)",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+P"
+      }
+    },
+    {
+      "name": "Toggle the visibility of the position indicator in the top right",
+      "context": "Copy Mode",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+P"
+      }
+    },
+    {
+      "name": "Move to the top line",
+      "context": "Copy Mode (vi)",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+H"
+      }
+    },
+    {
+      "name": "Move to the top line",
+      "context": "Copy Mode",
+      "windows": {
+        "type": "keys",
+        "chord": "Shift+Alt+R"
+      }
+    }
+  ],
+  "defaults": {
+    "TUNE_CW": {
+      "name": "Change to the next window",
+      "action": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+B",
+          "N"
+        ]
+      }
+    },
+    "TUNE_CCW": {
+      "name": "Change to the previous window",
+      "action": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+B",
+          "P"
+        ]
+      }
+    },
+    "TUNE_TAP_1F": {
+      "name": "Enter copy mode to copy text or view the history",
+      "action": {
+        "type": "sequence",
+        "chords": [
+          "Ctrl+B",
+          "["
+        ]
+      }
+    }
+  },
+  "title_required": true
+}
