@@ -38,7 +38,8 @@ export interface Learned {
   seq: number;
 }
 
-const MOD_BUTTON: Record<string, string> = { ctrl: "Ctrl", shift: "Shift", alt: "Alt", cmd: "Cmd / Win", fn: "Fn (macOS)" };
+const MOD_BUTTON: Record<string, string> = { ctrl: "Ctrl", shift: "Shift", alt: "Alt", cmd: "Win", fn: "Fn" };
+const MOD_TITLE: Record<string, string> = { ctrl: "Ctrl", shift: "Shift", alt: "Alt", cmd: "Win on Windows, Cmd on macOS", fn: "Fn (Globe): macOS only, and only if the module firmware can send it" };
 /** Naya keycode tokens for the modifiers a module can send. */
 const NAYA_MOD: Record<string, string> = { ctrl: "LCTRL", shift: "LSHIFT", alt: "LALT", cmd: "LGUI" };
 /** macOS has virtual key codes for F13–F20 only. */
@@ -86,6 +87,7 @@ function ModToggles({ value, onChange }: { value: Mods | undefined; onChange: (v
           key={m}
           type="button"
           className={set.has(m) ? "on" : ""}
+          title={MOD_TITLE[m]}
           onClick={() => {
             const next = new Set(set);
             if (next.has(m)) next.delete(m);

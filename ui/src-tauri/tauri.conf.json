@@ -13,9 +13,9 @@
     "windows": [
       {
         "title": "Create Companion",
-        "width": 1280,
-        "height": 700,
-        "minWidth": 980,
+        "width": 1440,
+        "height": 780,
+        "minWidth": 1040,
         "minHeight": 520,
         "center": true,
         "dragDropEnabled": false
