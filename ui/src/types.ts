@@ -5,6 +5,8 @@ export type Mods = string;
 export interface TransportCode {
   key: string;
   mods?: Mods;
+  /** Streamed gestures only: send every key of the run (default off = collapse to one). */
+  follow?: boolean;
 }
 
 export type MediaKey =
@@ -36,6 +38,8 @@ export interface Binding {
   accel?: Accel;
   /** Plain-English label ("Increase Brush Size"); the action holds the keys. */
   name?: string;
+  /** Streamed gestures only: true = every key fires, false = one per swipe, unset = the input's default. */
+  follow?: boolean | null;
 }
 
 export interface AppMatch {
@@ -182,7 +186,7 @@ export function modsLabel(m: Mods | undefined): string {
 }
 export { MODULES, GESTURES, PAIRS, moduleLabel, gestureLabel, gesturesFor, choicesFor, choiceLabel, halvesOf, isPair, pairOf, eventLabel, eventSortKey, parseEvent, makeEvent, fingerOptions, takesFingers, fingersLabel, nayaBehavior } from "./events";
 export type { GestureChoice, PairId, SortMode } from "./events";
-export { SORT_LABEL, nextSortMode, loadSortMode, storeSortMode, sortEvents } from "./events";
+export { SORT_LABEL, nextSortMode, loadSortMode, storeSortMode, sortEvents, streams } from "./events";
 
 export interface WindowInfo {
   exe: string;

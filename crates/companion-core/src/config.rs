@@ -23,6 +23,11 @@ pub struct EngineSettings {
     /// this many milliseconds before the F-key; a modifier held longer is the
     /// user's and is ignored for decoding. Read at engine start.
     pub namespace_window_ms: u32,
+    /// For a streamed gesture that is not set to follow, keys arriving within
+    /// this many milliseconds of the previous one belong to the same swipe and
+    /// are dropped (the first key already fired). Slow swipes pause up to
+    /// ~200 ms between keys, so keep this above that.
+    pub stream_gap_ms: u32,
 }
 
 impl Default for EngineSettings {
@@ -31,6 +36,7 @@ impl Default for EngineSettings {
             start_at_login: false,
             log_level: "info".into(),
             namespace_window_ms: 100,
+            stream_gap_ms: 300,
         }
     }
 }
@@ -44,7 +50,7 @@ pub struct Config {
     /// Wire code -> semantic event. Keyed by event so each gesture appears
     /// once; duplicate codes are caught when building the table.
     #[serde(default)]
-    pub transport: BTreeMap<SemanticEvent, TransportCode>,
+    pub transport: BTreeMap<SemanticEvent, InputEntry>,
     /// The fallback profile ("System"): used when no app profile binds an event.
     #[serde(default)]
     pub default_profile: Profile,
@@ -73,6 +79,28 @@ fn god_mode_default() -> Profile {
 
 fn current_version() -> u32 {
     CURRENT_SCHEMA_VERSION
+}
+
+/// One configured input: the wire code plus per-input options.
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize)]
+pub struct InputEntry {
+    #[serde(flatten)]
+    pub code: TransportCode,
+    /// For gestures the module streams (see `SemanticEvent::streams`): send
+    /// every key of the run so the action follows the swipe's length. Off
+    /// (the default) collapses a run into one event. A binding may override
+    /// this per profile.
+    #[serde(default, skip_serializing_if = "std::ops::Not::not")]
+    pub follow: bool,
+}
+
+impl From<TransportCode> for InputEntry {
+    fn from(code: TransportCode) -> Self {
+        Self {
+            code,
+            follow: false,
+        }
+    }
 }
 
 #[derive(Debug, thiserror::Error)]
@@ -112,10 +140,15 @@ impl Config {
 
     pub fn transport_table(&self) -> Result<TransportTable, TransportError> {
         let mut t = TransportTable::new();
-        for (ev, code) in &self.transport {
-            t.insert(*code, *ev)?;
+        for (ev, entry) in &self.transport {
+            t.insert(entry.code, *ev)?;
         }
         Ok(t)
+    }
+
+    /// The input-level default for following a streamed gesture.
+    pub fn follow_default(&self, ev: SemanticEvent) -> bool {
+        self.transport.get(&ev).is_some_and(|e| e.follow)
     }
 
     pub fn resolver(&self) -> ProfileResolver {

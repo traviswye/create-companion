@@ -119,6 +119,16 @@ export function pairOf(g: GestureId): PairId | null {
   return null;
 }
 
+/**
+ * Whether the module emits this gesture as a run of keys scaled to finger
+ * travel (measured on the Tune: 2-finger swipes; everything else sends one key).
+ * Mirrors SemanticEvent::streams in companion-core.
+ */
+export function streams(id: string): boolean {
+  const p = parseEvent(id);
+  return !!p && p.gesture.startsWith("SWIPE_") && p.fingers === 2;
+}
+
 /** Finger counts a gesture can be flashed for. Pinch/spread need two hands' worth. */
 export function fingerOptions(g: GestureId): number[] {
   if (!takesFingers(g)) return [];

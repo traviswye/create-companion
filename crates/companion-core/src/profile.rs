@@ -119,6 +119,11 @@ pub struct Binding {
     /// action itself holds the chord. Optional for custom shortcuts.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub name: Option<String>,
+    /// For streamed gestures: `Some(true)` = every key of the run fires the
+    /// action, `Some(false)` = one event per swipe, `None` = the input's
+    /// default (`InputEntry::follow`).
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub follow: Option<bool>,
 }
 
 fn default_true() -> bool {
@@ -264,6 +269,7 @@ mod tests {
             },
             accel: AccelPreset::None,
             name: None,
+            follow: None,
         }
     }
 
@@ -285,6 +291,7 @@ mod tests {
                         },
                         accel: AccelPreset::Light,
                         name: None,
+                        follow: None,
                     },
                 ),
                 (
@@ -295,6 +302,7 @@ mod tests {
                         },
                         accel: AccelPreset::None,
                         name: None,
+                        follow: None,
                     },
                 ),
             ]),
@@ -383,6 +391,7 @@ mod tests {
                 },
                 accel: Default::default(),
                 name: None,
+                follow: None,
             },
         );
         let after = r.binding(&chrome, ev).unwrap().action.clone();

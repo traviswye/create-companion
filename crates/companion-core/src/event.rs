@@ -175,6 +175,18 @@ impl SemanticEvent {
         }
     }
 
+    /// Whether the module emits this gesture as a run of keys scaled to the
+    /// finger travel rather than one key per gesture. Measured on the Tune
+    /// (2026-09-05): two-finger swipes stream (one key per ~1/25 of the pad,
+    /// at most one per touch report); one- and three-finger swipes, taps and
+    /// dial detents send exactly one key. Touch: to be measured.
+    pub fn streams(self) -> bool {
+        matches!(
+            self.gesture,
+            Gesture::SwipeLeft | Gesture::SwipeRight | Gesture::SwipeUp | Gesture::SwipeDown
+        ) && self.fingers == Some(2)
+    }
+
     /// The same gesture with no finger count, used as a lookup fallback.
     pub fn without_fingers(self) -> Self {
         Self {

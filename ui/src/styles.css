@@ -216,3 +216,6 @@ table.map .ev > div:first-child { white-space: nowrap; }
 .sorthead { border: 0; background: transparent; padding: 0; font: inherit; color: inherit; cursor: pointer; text-align: left; }
 .sorthead:hover { color: var(--text); }
 .sorthead .muted { font-weight: 400; }
+
+.follow { display: inline-flex; align-items: center; gap: 5px; font-size: 12px; color: var(--muted); white-space: nowrap; }
+.follow input { margin: 0; }

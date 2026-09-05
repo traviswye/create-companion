@@ -391,6 +391,10 @@ log_level = "info"
 # A modifier (Shift/Ctrl/Alt/Win) is part of a module's key only if it went down
 # within this many ms before the F-key. Held longer = you are holding it; ignored.
 namespace_window_ms = 100
+# A 2-finger swipe on the Tune arrives as a run of keys scaled to the finger travel. Unless an
+# input or binding says "follow", keys within this many ms of the previous one are the same swipe
+# and only the first acts.
+stream_gap_ms = 300
 
 [transport]
 TUNE_CW = { key = "F24" }

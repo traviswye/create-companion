@@ -16,6 +16,7 @@ use companion_platform::{ActionSink, PlatformError, RawTransportEvent};
 use crossbeam_channel::{select, Receiver};
 use std::collections::HashMap;
 use std::sync::{Arc, Mutex};
+use std::time::{Duration, Instant};
 
 /// Messages from the tray / config watcher to the worker.
 #[derive(Debug)]
@@ -56,6 +57,12 @@ pub struct Engine {
     /// Set by `handle` when a decoded event had no binding anywhere, so the
     /// caller can tell the UI ("detected, but nothing is bound for it").
     unbound: Option<(SemanticEvent, String)>,
+    /// Input-level "follow the swipe" defaults for streamed gestures.
+    follow: HashMap<SemanticEvent, bool>,
+    /// Keys of one streamed gesture closer together than this are one swipe.
+    stream_gap: Duration,
+    /// When each streamed gesture last produced a key (for collapsing).
+    last_stream: HashMap<SemanticEvent, Instant>,
 }
 
 impl Engine {
@@ -64,6 +71,13 @@ impl Engine {
             table: cfg.transport_table().context("building transport table")?,
             resolver: cfg.resolver(),
             unbound: None,
+            follow: cfg
+                .transport
+                .iter()
+                .map(|(ev, e)| (*ev, e.follow))
+                .collect(),
+            stream_gap: Duration::from_millis(u64::from(cfg.engine.stream_gap_ms)),
+            last_stream: HashMap::new(),
             rotary: HashMap::new(),
             paused: false,
         })
@@ -73,6 +87,13 @@ impl Engine {
         self.table = cfg.transport_table().context("building transport table")?;
         self.resolver = cfg.resolver();
         self.rotary.clear();
+        self.follow = cfg
+            .transport
+            .iter()
+            .map(|(ev, e)| (*ev, e.follow))
+            .collect();
+        self.stream_gap = Duration::from_millis(u64::from(cfg.engine.stream_gap_ms));
+        self.last_stream.clear();
         Ok(())
     }
 
@@ -152,7 +173,28 @@ impl Engine {
             }
         }
 
-        let repeat = if binding.action.supports_repeat() {
+        // Streamed gestures (a run of keys per swipe): either follow the run,
+        // one action per key with no extra acceleration, or collapse it so
+        // only the first key of the swipe acts.
+        let streamed = event.streams();
+        if streamed {
+            let follow = binding
+                .follow
+                .unwrap_or_else(|| self.follow.get(&event).copied().unwrap_or(false));
+            if !follow {
+                let same_swipe = self
+                    .last_stream
+                    .get(&event)
+                    .is_some_and(|t| raw.at.duration_since(*t) < self.stream_gap);
+                self.last_stream.insert(event, raw.at);
+                if same_swipe {
+                    tracing::debug!(%event, "collapsed: same swipe");
+                    return None;
+                }
+            }
+        }
+
+        let repeat = if binding.action.supports_repeat() && !streamed {
             let curve = AccelCurve::from_preset(binding.accel);
             self.rotary.entry(event).or_default().tick(raw.at, &curve)
         } else {
@@ -463,6 +505,78 @@ mod tests {
     }
 
     #[test]
+    fn streamed_gesture_collapses_unless_told_to_follow() {
+        use std::time::Duration;
+        // A Tune 2-finger swipe arrives as a run of keys ~10 ms apart.
+        let mut cfg = default_config();
+        let ev: SemanticEvent = "TUNE_SWIPE_UP_2F".parse().unwrap();
+        assert!(ev.streams());
+        cfg.transport.insert(
+            ev,
+            TransportCode {
+                key: FunctionKey::F16,
+                mods: Modifiers::SHIFT,
+            }
+            .into(),
+        );
+        cfg.default_profile.bindings.insert(
+            ev,
+            companion_core::profile::Binding {
+                action: Action::Media {
+                    key: companion_core::action::MediaKey::PlayPause,
+                },
+                accel: Default::default(),
+                name: None,
+                follow: None,
+            },
+        );
+        let t0 = Instant::now();
+        let run = |engine: &mut Engine, sink: &mut MockSink, start_ms: u64| {
+            for i in 0..8u64 {
+                let at = t0 + Duration::from_millis(start_ms + i * 10);
+                engine.handle(
+                    press_at(FunctionKey::F16, Modifiers::SHIFT, at),
+                    &AppContext::default(),
+                    sink,
+                );
+            }
+        };
+        let execs = |sink: &MockSink| sink.calls.iter().filter(|c| c.starts_with("exec")).count();
+
+        // Default: collapse. Eight keys in 70 ms -> one action.
+        let mut engine = Engine::new(&cfg).unwrap();
+        let mut sink = MockSink::default();
+        run(&mut engine, &mut sink, 0);
+        assert_eq!(
+            execs(&sink),
+            1,
+            "first key acts, the rest of the swipe is dropped"
+        );
+        // A second swipe after the gap is a new event.
+        run(&mut engine, &mut sink, 1000);
+        assert_eq!(execs(&sink), 2);
+
+        // Input default "follow": every key acts, no acceleration multiplier.
+        cfg.transport.get_mut(&ev).unwrap().follow = true;
+        let mut engine = Engine::new(&cfg).unwrap();
+        let mut sink = MockSink::default();
+        run(&mut engine, &mut sink, 0);
+        assert_eq!(execs(&sink), 8);
+        assert!(sink
+            .calls
+            .iter()
+            .filter(|c| c.starts_with("exec"))
+            .all(|c| c.ends_with("x1")));
+
+        // The binding overrides the input default in either direction.
+        cfg.default_profile.bindings.get_mut(&ev).unwrap().follow = Some(false);
+        let mut engine = Engine::new(&cfg).unwrap();
+        let mut sink = MockSink::default();
+        run(&mut engine, &mut sink, 0);
+        assert_eq!(execs(&sink), 1);
+    }
+
+    #[test]
     fn modifier_namespace_is_released_before_executing() {
         // Left Touch swipe-left on Shift+F20 -> browser back.
         let mut cfg = default_config();
@@ -472,7 +586,8 @@ mod tests {
             TransportCode {
                 key: FunctionKey::F20,
                 mods: Modifiers::SHIFT,
-            },
+            }
+            .into(),
         );
         cfg.default_profile.bindings.insert(
             ev,
@@ -483,6 +598,7 @@ mod tests {
                 },
                 accel: Default::default(),
                 name: None,
+                follow: None,
             },
         );
         let mut engine = Engine::new(&cfg).unwrap();

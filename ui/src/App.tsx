@@ -17,6 +17,7 @@ import {
   loadSortMode,
   storeSortMode,
   sortEvents,
+  streams,
   transportLabel,
   type Accel,
   type Action,
@@ -346,6 +347,17 @@ export default function App() {
       return { ...p, bindings };
     });
     setPicker(null);
+  }
+
+  /** Per-binding "follow the swipe" (null = use the input's default). */
+  function setFollow(ev: string, follow: boolean | null) {
+    update((p) => {
+      if (!p.bindings[ev]) return p;
+      const b = { ...p.bindings[ev] };
+      if (follow === null) delete b.follow;
+      else b.follow = follow;
+      return { ...p, bindings: { ...p.bindings, [ev]: b } };
+    });
   }
 
   function setAccel(ev: string, accel: Accel) {
@@ -735,7 +747,7 @@ export default function App() {
                   </th>
                   <th>Action</th>
                   <th style={{ width: 130 }}>Keys</th>
-                  <th style={{ width: 110 }}>Acceleration</th>
+                  <th style={{ width: 150 }}>Acceleration</th>
                   <th style={{ width: 90 }}></th>
                 </tr>
               </thead>
@@ -779,7 +791,17 @@ export default function App() {
                         )}
                       </td>
                       <td>
-                        {b ? (
+                        {b && streams(ev) ? (
+                          <select
+                            value={b.follow === true ? "follow" : b.follow === false ? "collapse" : "default"}
+                            onChange={(e) => setFollow(ev, e.target.value === "default" ? null : e.target.value === "follow")}
+                            title="The Tune sends a 2-finger swipe as a run of keys scaled to the finger travel. Collapse: one action per swipe. Follow: every key acts, so the action tracks the swipe's length."
+                          >
+                            <option value="default">Input default ({cfg.transport[ev]?.follow ? "follow" : "collapse"})</option>
+                            <option value="collapse">Collapse to one</option>
+                            <option value="follow">Follow the swipe</option>
+                          </select>
+                        ) : b ? (
                           <select value={b.accel ?? "none"} disabled={!repeatable} onChange={(e) => setAccel(ev, e.target.value as Accel)} title={repeatable ? "" : "Only key, media and scroll actions repeat"}>
                             {ACCELS.map((a) => (
                               <option key={a} value={a}>

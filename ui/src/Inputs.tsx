@@ -5,6 +5,7 @@ import {
   buildMods,
   type SortMode,
   sortEvents,
+  streams,
   fingerOptions,
   fingersLabel,
   FUNCTION_KEYS,
@@ -139,6 +140,8 @@ export function Inputs(props: {
   const [newKey, setNewKey] = useState<string>("F13");
   /** Second key of a pair (the `+` half); the first key is the `-` half. */
   const [newKey2, setNewKey2] = useState<string>("F14");
+  /** "Follow the swipe" for a new streamed input. */
+  const [newFollow, setNewFollow] = useState(false);
   const [newMods, setNewMods] = useState<Mods>("none");
   const [msg, setMsg] = useState<{ text: string; ok: boolean } | null>(null);
 
@@ -211,7 +214,12 @@ export function Inputs(props: {
   /** The events the add row would create (two for a pair) with their keys. */
   function pendingRows(): [string, TransportCode][] {
     const keys = [newKey, newKey2];
-    return halvesOf(newGesture).map((g, i) => [makeEvent(newModule, g, newFingers), { key: keys[i], mods: newMods }]);
+    return halvesOf(newGesture).map((g, i) => {
+      const ev = makeEvent(newModule, g, newFingers);
+      const code: TransportCode = { key: keys[i], mods: newMods };
+      if (streams(ev) && newFollow) code.follow = true;
+      return [ev, code];
+    });
   }
 
   function add() {
@@ -399,6 +407,12 @@ export function Inputs(props: {
                         <ModToggles value={t.mods} onChange={(mods) => setCode(ev, { ...t, mods })} />
                         <KeySelect value={t.key} onChange={(key) => setCode(ev, { ...t, key })} />
                         <kbd>{transportLabel(t)}</kbd>
+                        {streams(ev) && (
+                          <label className="follow" title="The Tune sends a 2-finger swipe as a run of keys scaled to how far the fingers travel. Off: one action per swipe. On: every key acts, so volume or scroll follows the swipe. Each profile can override this.">
+                            <input type="checkbox" checked={!!t.follow} onChange={(e) => setCode(ev, { ...t, follow: e.target.checked })} />
+                            follow the swipe
+                          </label>
+                        )}
                       </div>
                     </td>
                     <td className="actions">
@@ -464,6 +478,12 @@ export function Inputs(props: {
                         <KeySelect value={newKey} onChange={setNewKey} />
                         <kbd>{transportLabel({ key: newKey, mods: newMods })}</kbd>
                       </>
+                    )}
+                    {halvesOf(newGesture).some((g) => streams(makeEvent(newModule, g, newFingers))) && (
+                      <label className="follow" title="Off: one action per swipe. On: every key of the run acts.">
+                        <input type="checkbox" checked={newFollow} onChange={(e) => setNewFollow(e.target.checked)} />
+                        follow the swipe
+                      </label>
                     )}
                   </div>
                 </td>
