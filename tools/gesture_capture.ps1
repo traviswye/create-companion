@@ -21,12 +21,12 @@
   powershell -ExecutionPolicy Bypass -File D:\CreateCompanion\tools\gesture_capture.ps1
   powershell -ExecutionPolicy Bypass -File D:\CreateCompanion\tools\gesture_capture.ps1 -Gestures "2-finger swipe up","3-finger tap" -Seconds 4
   powershell -ExecutionPolicy Bypass -File D:\CreateCompanion\tools\gesture_capture.ps1 -Only TUNE_CCW,TUNE_SWIPE_LEFT_2F -Append
-  powershell -ExecutionPolicy Bypass -File D:\CreateCompanion\tools\gesture_capture.ps1 -Plan D:\CreateCompanion\tools\plans\burst-tune.txt -Seconds 4 -Out D:\CreateCompanion\burst-tune.log
+  powershell -ExecutionPolicy Bypass -File D:\CreateCompanion\tools\gesture_capture.ps1 -PlanFile D:\CreateCompanion\tools\plans\burst-tune.txt -Seconds 4 -Out D:\CreateCompanion\burst-tune.log
   python D:\CreateCompanion\tools\keymon_analyze.py D:\CreateCompanion\capture.log
 #>
 param(
   [string[]]$Gestures,
-  [string]$Plan,     # text file, one gesture instruction per line (# comments and blank lines ignored)
+  [string]$PlanFile, # text file, one gesture instruction per line (# comments and blank lines ignored)
   [int]$Seconds = 3,
   [string]$Out = "D:\CreateCompanion\capture.log",
   [string]$Config = "$env:APPDATA\CreateCompanion\config.toml",
@@ -103,9 +103,9 @@ public static class GCap {
 
 # ---- gesture list: from the config unless given ----
 $plan = @()
-if ($Plan) {
-  if (-not (Test-Path $Plan)) { Write-Host "Plan file not found: $Plan" -ForegroundColor Red; exit 1 }
-  foreach ($line in Get-Content $Plan) {
+if ($PlanFile) {
+  if (-not (Test-Path $PlanFile)) { Write-Host "Plan file not found: $PlanFile" -ForegroundColor Red; exit 1 }
+  foreach ($line in Get-Content $PlanFile) {
     $t = $line.Trim()
     if ($t -and -not $t.StartsWith("#")) { $plan += [pscustomobject]@{ Name = $t; Expect = $null; Event = $null } }
   }

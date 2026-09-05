@@ -1,6 +1,6 @@
 # Burst experiment for the Tune: is a 2-finger swipe's stream driven by time, distance, or holding?
 # One line per prompt. Perform each exactly as written, once. Blank lines and # lines are ignored.
-# Run:  powershell -ExecutionPolicy Bypass -File D:\CreateCompanion\tools\gesture_capture.ps1 -Plan D:\CreateCompanion\tools\plans\burst-tune.txt -Seconds 4 -Out D:\CreateCompanion\burst-tune.log
+# Run:  powershell -ExecutionPolicy Bypass -File D:\CreateCompanion\tools\gesture_capture.ps1 -PlanFile D:\CreateCompanion\tools\plans\burst-tune.txt -Seconds 4 -Out D:\CreateCompanion\burst-tune.log
 # Then: python D:\CreateCompanion\tools\keymon_analyze.py D:\CreateCompanion\burst-tune.log
 
 # --- 2 fingers: vary speed and distance independently ---
