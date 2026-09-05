@@ -49,6 +49,11 @@ pub struct Config {
     pub god_mode: Profile,
     #[serde(default)]
     pub profiles: Vec<Profile>,
+    /// Where the System row sits in the UI's Active list: the number of
+    /// enabled app profiles listed above it. Display order only; resolution
+    /// does not depend on it.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub system_position: Option<u32>,
 }
 
 pub const GOD_MODE_NAME: &str = "God Mode";

@@ -36,6 +36,9 @@ const DEFAULT = -1; // selected index for the default profile
 const INPUTS = -2; // the Inputs (transport) editor
 const GOD = -3; // the God Mode override profile
 
+/** A row of the Active list: a profile's config index, or the System row. */
+type NavRow = number | "system";
+
 function isEnabled(p: Profile) {
   return p.enabled !== false;
 }
@@ -125,8 +128,8 @@ export default function App() {
   };
   const [navTab, setNavTab] = useState<NavTab>("active");
   const [navQ, setNavQ] = useState("");
-  const [dragging, setDragging] = useState<number | null>(null);
-  const [dragOver, setDragOver] = useState<number | null>(null);
+  const [dragging, setDragging] = useState<NavRow | null>(null);
+  const [dragOver, setDragOver] = useState<NavRow | null>(null);
   const [allPlatforms, setAllPlatformsState] = useState<boolean>(loadAllPlatforms);
   const setAllPlatforms = (v: boolean) => {
     setAllPlatformsState(v);
@@ -367,22 +370,61 @@ export default function App() {
     if (enabled) setSel(i);
   }
 
-  /** Move profile `from` to sit where `to` is (config order = tie-break priority). */
-  function moveProfile(from: number, to: number) {
-    setCfg((c) => {
-      if (!c) return c;
-      const list = [...c.profiles];
-      const [item] = list.splice(from, 1);
-      list.splice(to, 0, item);
-      return { ...c, profiles: list };
-    });
+  /** The Active list in display order: enabled profiles with the System row among them. */
+  const activeRows = useMemo<NavRow[]>(() => {
+    if (!cfg) return [];
+    const at = Math.min(cfg.system_position ?? 0, nav.active.length);
+    return [...nav.active.slice(0, at), "system", ...nav.active.slice(at)];
+  }, [cfg, nav.active]);
+
+  /**
+   * Drop `from` where `to` is. Every row except God Mode moves. App profile
+   * order is the tie-break priority; the System row's slot is remembered as
+   * display order only.
+   */
+  function moveRow(from: NavRow, to: NavRow) {
+    if (!cfg) return;
+    const fi = activeRows.indexOf(from);
+    const ti = activeRows.indexOf(to);
+    if (fi < 0 || ti < 0 || fi === ti) return;
+    const next = [...activeRows];
+    next.splice(fi, 1);
+    next.splice(ti, 0, from);
+    const shown = new Set(next.filter((r): r is number => r !== "system"));
+    const profiles = [...next.filter((r): r is number => r !== "system").map((i) => cfg.profiles[i]), ...cfg.profiles.filter((_, i) => !shown.has(i))];
+    const system_position = next.indexOf("system");
+    setCfg((c) => (c ? { ...c, profiles, system_position } : c));
     // Keep the selection on the same profile.
-    if (sel === from) setSelRaw(to);
-    else if (sel >= 0) {
-      if (from < sel && to >= sel) setSelRaw(sel - 1);
-      else if (from > sel && to <= sel) setSelRaw(sel + 1);
-    }
+    if (sel >= 0) setSelRaw(profiles.indexOf(cfg.profiles[sel]));
     setSave({ kind: "dirty" });
+  }
+
+  /** Drag-and-drop handlers shared by every movable row. */
+  function dragProps(row: NavRow, enabled: boolean) {
+    return {
+      draggable: enabled,
+      onDragStart: (e: React.DragEvent) => {
+        if (!enabled) return;
+        setDragging(row);
+        e.dataTransfer.effectAllowed = "move";
+      },
+      onDragOver: (e: React.DragEvent) => {
+        if (dragging === null || !enabled) return;
+        e.preventDefault();
+        if (dragOver !== row) setDragOver(row);
+      },
+      onDragLeave: () => dragOver === row && setDragOver(null),
+      onDrop: (e: React.DragEvent) => {
+        e.preventDefault();
+        if (dragging !== null && dragging !== row) moveRow(dragging, row);
+        setDragging(null);
+        setDragOver(null);
+      },
+      onDragEnd: () => {
+        setDragging(null);
+        setDragOver(null);
+      },
+    };
   }
 
   function removeProfile(i: number) {
@@ -423,29 +465,8 @@ export default function App() {
       <div
         className={"profile-item " + (sel === i ? "active " : "") + (liveName === p.name ? "live " : "") + (on ? "" : "dim ") + (dragOver === i ? "dragover" : "")}
         onClick={() => setSel(i)}
-        draggable={draggable}
         title={draggable ? "Drag to change priority: when two profiles match the same window and are equally specific, the higher one wins" : undefined}
-        onDragStart={(e) => {
-          if (!draggable) return;
-          setDragging(i);
-          e.dataTransfer.effectAllowed = "move";
-        }}
-        onDragOver={(e) => {
-          if (dragging === null || !draggable) return;
-          e.preventDefault();
-          if (dragOver !== i) setDragOver(i);
-        }}
-        onDragLeave={() => dragOver === i && setDragOver(null)}
-        onDrop={(e) => {
-          e.preventDefault();
-          if (dragging !== null && dragging !== i) moveProfile(dragging, i);
-          setDragging(null);
-          setDragOver(null);
-        }}
-        onDragEnd={() => {
-          setDragging(null);
-          setDragOver(null);
-        }}
+        {...dragProps(i, !!draggable)}
       >
         <button
           className={"star " + (on ? "on" : "")}
@@ -492,16 +513,25 @@ export default function App() {
                 <span className="name">{cfg.god_mode.name}</span>
                 <span className="badge">{countLabel(undefined, cfg.god_mode)}</span>
               </div>
-              <div className={"profile-item " + (isDefault ? "active " : "") + (liveName === cfg.default_profile.name ? "live" : "")} onClick={() => setSel(DEFAULT)} title="Used whenever no app profile binds a gesture">
-                <span className="star on" title="Always active" style={{ cursor: "default" }}>
-                  ★
-                </span>
-                <span className="name">{cfg.default_profile.name}</span>
-                <span className="badge">{countLabel(apps.find((a) => a.kind === "system" && a.os?.includes(currentOs())), cfg.default_profile)}</span>
-              </div>
-              {nav.active.map((i) => (
-                <ProfileRow key={i} i={i} draggable={!navQ} />
-              ))}
+              {activeRows.map((row) =>
+                row === "system" ? (
+                  <div
+                    key="system"
+                    className={"profile-item " + (isDefault ? "active " : "") + (liveName === cfg.default_profile.name ? "live " : "") + (dragOver === "system" ? "dragover" : "")}
+                    onClick={() => setSel(DEFAULT)}
+                    title="Used whenever no app profile binds a gesture"
+                    {...dragProps("system", !navQ)}
+                  >
+                    <span className="star on" title="Always active" style={{ cursor: "default" }}>
+                      ★
+                    </span>
+                    <span className="name">{cfg.default_profile.name}</span>
+                    <span className="badge">{countLabel(apps.find((a) => a.kind === "system" && a.os?.includes(currentOs())), cfg.default_profile)}</span>
+                  </div>
+                ) : (
+                  <ProfileRow key={row} i={row} draggable={!navQ} />
+                ),
+              )}
               {nav.active.length === 0 && navQ && <div className="nav-empty">No active profile matches "{navQ}".</div>}
               {nav.active.length > 1 && !navQ && <div className="nav-hint">Drag to set priority. Specific rules win first: a site title beats an app, one app beats a group.</div>}
             </>

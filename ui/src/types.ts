@@ -84,6 +84,8 @@ export interface Config {
   /** Overrides every other profile, whatever is in the foreground. */
   god_mode: Profile;
   profiles: Profile[];
+  /** How many enabled app profiles the System row sits below in the Active list. */
+  system_position?: number;
 }
 
 export interface CatalogEntry {
