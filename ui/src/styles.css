@@ -192,3 +192,7 @@ table.map .ev > div:first-child { white-space: nowrap; }
 .nav-platforms { padding: 4px 8px 6px; }
 .modal header .seg { flex: none; }
 .modal .row .ostag { margin-left: auto; margin-right: 8px; }
+
+.topbar .badge { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: .04em; }
+.topbar .spacer { flex: 1; }
+.list .row .ostag { margin-right: 6px; }

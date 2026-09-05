@@ -5,6 +5,7 @@ import { Inputs, type Learned } from "./Inputs";
 import { api } from "./api";
 import {
   OS_NAME,
+  actionFor,
   loadAllPlatforms,
   storeAllPlatforms,
   type Os,
@@ -98,7 +99,13 @@ export default function App() {
   const [path, setPath] = useState("");
   const [catalog, setCatalog] = useState<CatalogEntry[]>([]);
   const [apps, setApps] = useState<AppEntry[]>([]);
-  const [sel, setSel] = useState<number>(DEFAULT);
+  const [sel, setSelRaw] = useState<number>(DEFAULT);
+  /** A catalog entry being looked at from the Available list (not yet a profile). */
+  const [preview, setPreview] = useState<AppEntry | null>(null);
+  const setSel = (i: number) => {
+    setSelRaw(i);
+    setPreview(null);
+  };
   const [navTab, setNavTab] = useState<NavTab>("active");
   const [navQ, setNavQ] = useState("");
   const [allPlatforms, setAllPlatformsState] = useState<boolean>(loadAllPlatforms);
@@ -412,9 +419,10 @@ export default function App() {
                 <ProfileRow key={i} i={i} />
               ))}
               {nav.available.map((a) => (
-                <div key={a.id} className="profile-item dim" onClick={() => activateApp(a)} title="Click the star to activate with its default mappings">
+                <div key={a.id} className={"profile-item dim " + (preview?.id === a.id ? "active" : "")} onClick={() => setPreview(a)} title="Click to look at its shortcuts; click the star to enable">
                   <button
                     className="star"
+                    title="Enable with its default mappings"
                     onClick={(e) => {
                       e.stopPropagation();
                       activateApp(a);
@@ -451,7 +459,9 @@ export default function App() {
       </aside>
 
       <main className="main">
-        {showInputs ? (
+        {preview ? (
+          <CatalogPreview entry={preview} events={events} transport={cfg.transport} os={currentOs()} allPlatforms={allPlatforms} onEnable={() => activateApp(preview)} />
+        ) : showInputs ? (
           <>
             <div className="topbar">
               <h1>Inputs</h1>
@@ -641,6 +651,122 @@ export default function App() {
       )}
       {adding && <AddApp onAdd={addProfile} onClose={() => setAdding(false)} />}
     </div>
+  );
+}
+
+/** Read-only look at a catalog entry before enabling it. */
+function CatalogPreview(props: { entry: AppEntry; events: string[]; transport: Config["transport"]; os: Os; allPlatforms: boolean; onEnable: () => void }) {
+  const { entry: a } = props;
+  const [q, setQ] = useState("");
+  const needle = q.trim().toLowerCase();
+  const chord = (x: { windows?: Action; mac?: Action; linux?: Action }) => actionFor(x, props.os, props.allPlatforms);
+  const rows = a.actions
+    .map((x) => ({ x, c: chord(x) }))
+    .filter(({ c }) => c)
+    .filter(({ x, c }) => !needle || x.name.toLowerCase().includes(needle) || x.context.toLowerCase().includes(needle) || describeAction(c!.action).toLowerCase().includes(needle));
+  const defaults = props.events.filter((ev) => a.defaults[ev]);
+  const platforms = entryPlatforms(a);
+  return (
+    <>
+      <div className="topbar">
+        <h1>{a.name}</h1>
+        <span className="badge">{a.kind === "site" ? "website" : a.kind}</span>
+        {platforms && <span className="ostag">{platforms}</span>}
+        <span className="spacer" />
+        <button className="primary" onClick={props.onEnable} title="Create a profile for this app with the mappings below">
+          ★ Enable
+        </button>
+      </div>
+      <div className="content">
+        <div className="card">
+          <h2>Matches</h2>
+          <div className="body chips">
+            {a.match.windows_exe.map((v) => (
+              <span key={"w" + v} className="chip mono" title="Windows executable">{v}</span>
+            ))}
+            {a.match.macos_bundle.map((v) => (
+              <span key={"m" + v} className="chip mono" title="macOS bundle id">{v}</span>
+            ))}
+            {a.match.window_title.map((v) => (
+              <span key={"t" + v} className="chip" title="Window title contains">title: {v}</span>
+            ))}
+            {a.kind === "system" && <span className="muted">System shortcuts: used by the Default profile.</span>}
+          </div>
+        </div>
+
+        <div className="card">
+          <h2>
+            Default mappings
+            <span className="spacer" />
+            <span className="muted" style={{ textTransform: "none", letterSpacing: 0 }}>
+              {defaults.length ? "What Enable will set up; every row can be changed afterwards" : "No bundled mappings; Enable creates an empty profile that uses Default"}
+            </span>
+          </h2>
+          {defaults.length > 0 && (
+            <div className="tablewrap">
+              <table className="map">
+                <thead>
+                  <tr>
+                    <th style={{ width: "24%" }}>Input</th>
+                    <th>Action</th>
+                    <th style={{ width: 160 }}>Keys</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {defaults.map((ev) => {
+                    const [mod, gesture] = eventLabel(ev);
+                    const b = a.defaults[ev];
+                    return (
+                      <tr key={ev}>
+                        <td className="ev">
+                          <div>{gesture}</div>
+                          <div className="module">
+                            {mod} · <span className="mono">{transportLabel(props.transport[ev])}</span>
+                          </div>
+                        </td>
+                        <td>{b.name ?? (b.action.type === "keys" ? "Custom shortcut" : describeAction(b.action))}</td>
+                        <td>
+                          <kbd>{describeAction(b.action)}</kbd>
+                        </td>
+                      </tr>
+                    );
+                  })}
+                </tbody>
+              </table>
+            </div>
+          )}
+        </div>
+
+        <div className="card">
+          <h2>
+            Shortcuts
+            <span className="spacer" />
+            <span className="muted" style={{ textTransform: "none", letterSpacing: 0 }}>
+              {rows.length === a.actions.length ? `${a.actions.length} documented` : `${rows.length} of ${a.actions.length}`}
+            </span>
+          </h2>
+          <div className="body" style={{ display: "grid", gap: 10 }}>
+            <input placeholder={`Search ${a.name} shortcuts…`} value={q} onChange={(e) => setQ(e.target.value)} />
+            <div className="list" style={{ maxHeight: 420 }}>
+              {rows.slice(0, 400).map(({ x, c }) => (
+                <div key={x.id} className="row" style={{ cursor: "default" }}>
+                  <div>
+                    {x.name}
+                    {x.context && <div className="sub">{x.context}</div>}
+                  </div>
+                  <div>
+                    {c!.os && <span className="ostag">{OS_NAME[c!.os]}</span>}
+                    <kbd>{describeAction(c!.action)}</kbd>
+                  </div>
+                </div>
+              ))}
+              {rows.length === 0 && <div className="row muted">No shortcuts match.</div>}
+              {rows.length > 400 && <div className="row muted">Showing the first 400. Narrow the search to see more.</div>}
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
   );
 }
 
