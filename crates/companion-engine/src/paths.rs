@@ -13,13 +13,20 @@ const LEGACY_DIR_NAME: &str = "NayaCompanion";
 /// logs), so an existing setup survives the rename. Idempotent; never
 /// overwrites a folder that already exists under the new name.
 pub fn migrate_legacy() {
-    for (base, what) in [(dirs::config_dir(), "config"), (dirs::data_local_dir(), "data")] {
+    for (base, what) in [
+        (dirs::config_dir(), "config"),
+        (dirs::data_local_dir(), "data"),
+    ] {
         let Some(base) = base else { continue };
         let old = base.join(LEGACY_DIR_NAME);
         let new = base.join(DIR_NAME);
         if old.is_dir() && !new.exists() {
             match std::fs::rename(&old, &new) {
-                Ok(()) => eprintln!("migrated {what} folder {} -> {}", old.display(), new.display()),
+                Ok(()) => eprintln!(
+                    "migrated {what} folder {} -> {}",
+                    old.display(),
+                    new.display()
+                ),
                 Err(e) => eprintln!("could not migrate {what} folder {}: {e}", old.display()),
             }
         }

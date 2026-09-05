@@ -38,7 +38,9 @@ pub fn set_enabled(enabled: bool) -> Result<(), PlatformError> {
 
 /// Best effort: drop the `NayaCompanion` Run entry (it points at the old exe).
 fn remove_legacy() {
-    let Ok(exe) = std::env::current_exe() else { return };
+    let Ok(exe) = std::env::current_exe() else {
+        return;
+    };
     if let Ok(old) = AutoLaunchBuilder::new()
         .set_app_name(LEGACY_APP_NAME)
         .set_app_path(&exe.to_string_lossy())
