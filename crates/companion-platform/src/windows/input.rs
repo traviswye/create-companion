@@ -104,6 +104,33 @@ fn send(inputs: &[INPUT]) -> Result<(), PlatformError> {
     Ok(())
 }
 
+fn chord_inputs(chord: &ParsedChord) -> Vec<INPUT> {
+    let mut mods: Vec<VIRTUAL_KEY> = Vec::with_capacity(4);
+    if chord.mods.ctrl {
+        mods.push(VK_CONTROL);
+    }
+    if chord.mods.shift {
+        mods.push(VK_SHIFT);
+    }
+    if chord.mods.alt {
+        mods.push(VK_MENU);
+    }
+    if chord.mods.meta {
+        mods.push(VK_LWIN);
+    }
+    let (vk, ext) = vk_for(chord.key);
+    let mut v = Vec::with_capacity(mods.len() * 2 + 2);
+    for m in &mods {
+        v.push(key_input(*m, false, false));
+    }
+    v.push(key_input(vk, ext, false));
+    v.push(key_input(vk, ext, true));
+    for m in mods.iter().rev() {
+        v.push(key_input(*m, false, true));
+    }
+    v
+}
+
 fn parse(chord: &KeyChord) -> Result<ParsedChord, PlatformError> {
     let parsed: ParsedChord = chord
         .0
@@ -129,95 +156,31 @@ fn media_vk(key: MediaKey) -> Option<VIRTUAL_KEY> {
     })
 }
 
-/// Virtual keys for a modifier set, in press order.
-fn mod_vks(m: Modifiers) -> Vec<VIRTUAL_KEY> {
-    let mut v = Vec::with_capacity(4);
-    if m.ctrl {
-        v.push(VK_CONTROL);
-    }
-    if m.shift {
-        v.push(VK_SHIFT);
-    }
-    if m.alt {
-        v.push(VK_MENU);
-    }
-    if m.meta {
-        v.push(VK_LWIN);
-    }
-    v
-}
-
-/// Modifiers in `a` that are not in `b`.
-fn minus(a: Modifiers, b: Modifiers) -> Modifiers {
-    Modifiers {
-        ctrl: a.ctrl && !b.ctrl,
-        shift: a.shift && !b.shift,
-        alt: a.alt && !b.alt,
-        meta: a.meta && !b.meta,
-        fn_key: false,
-    }
-}
-
 #[derive(Debug, Default)]
-pub struct SendInputSink {
-    /// Modifiers a holding `Keys` action left down.
-    held: Modifiers,
-}
-
-impl SendInputSink {
-    /// One chord on top of whatever is held. A holding chord swaps the held
-    /// set for its own modifiers and leaves them down; a plain chord presses
-    /// only the modifiers not already held and releases just those.
-    fn chord(
-        &mut self,
-        parsed: &ParsedChord,
-        repeat: u32,
-        hold: bool,
-    ) -> Result<(), PlatformError> {
-        let mut v: Vec<INPUT> = Vec::new();
-        if hold {
-            // Held modifiers this chord does not use go up first (Alt+Shift+Tab -> Alt+Tab).
-            for vk in mod_vks(minus(self.held, parsed.mods)) {
-                v.push(key_input(vk, false, true));
-            }
-        }
-        let fresh = minus(parsed.mods, self.held);
-        let fresh_vks = mod_vks(fresh);
-        for vk in &fresh_vks {
-            v.push(key_input(*vk, false, false));
-        }
-        let (vk, ext) = vk_for(parsed.key);
-        for _ in 0..repeat {
-            v.push(key_input(vk, ext, false));
-            v.push(key_input(vk, ext, true));
-        }
-        if hold {
-            self.held = Modifiers {
-                fn_key: false,
-                ..parsed.mods
-            };
-        } else {
-            for vk in fresh_vks.iter().rev() {
-                v.push(key_input(*vk, false, true));
-            }
-        }
-        send(&v)
-    }
-}
+pub struct SendInputSink;
 
 impl ActionSink for SendInputSink {
     fn execute(&mut self, action: &Action, repeat: u32) -> Result<(), PlatformError> {
         let repeat = repeat.max(1);
         match action {
             Action::Noop => Ok(()),
-            Action::Release => self.release_held(),
-            Action::Keys { chord, hold_ms } => {
+            // `hold_ms` is stored by the UI but not acted on yet: the sticky
+            // behaviour was rolled back on 2026-09-05 pending a redesign.
+            Action::Release => Ok(()),
+            Action::Keys { chord, .. } => {
                 let parsed = parse(chord)?;
-                self.chord(&parsed, repeat, hold_ms.is_some())
+                let one = chord_inputs(&parsed);
+                let all: Vec<INPUT> = one
+                    .iter()
+                    .cycle()
+                    .take(one.len() * repeat as usize)
+                    .copied()
+                    .collect();
+                send(&all)
             }
             Action::Sequence { chords } => {
                 for c in chords {
-                    self.chord(&parse(c)?, 1, false)?;
+                    send(&chord_inputs(&parse(c)?))?;
                 }
                 Ok(())
             }
@@ -254,26 +217,23 @@ impl ActionSink for SendInputSink {
     }
 
     fn release_modifiers(&mut self, mods: Modifiers) -> Result<(), PlatformError> {
-        // Never let go of a modifier a holding chord is keeping down on purpose.
-        let vks = mod_vks(minus(mods, self.held));
+        let mut vks: Vec<VIRTUAL_KEY> = Vec::with_capacity(4);
+        if mods.ctrl {
+            vks.push(VK_CONTROL);
+        }
+        if mods.shift {
+            vks.push(VK_SHIFT);
+        }
+        if mods.alt {
+            vks.push(VK_MENU);
+        }
+        if mods.meta {
+            vks.push(VK_LWIN);
+        }
         if vks.is_empty() {
             return Ok(());
         }
         let ups: Vec<INPUT> = vks.iter().map(|vk| key_input(*vk, false, true)).collect();
-        send(&ups)
-    }
-
-    fn release_held(&mut self) -> Result<(), PlatformError> {
-        let vks = mod_vks(self.held);
-        self.held = Modifiers::NONE;
-        if vks.is_empty() {
-            return Ok(());
-        }
-        let ups: Vec<INPUT> = vks
-            .iter()
-            .rev()
-            .map(|vk| key_input(*vk, false, true))
-            .collect();
         send(&ups)
     }
 }

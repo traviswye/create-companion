@@ -282,9 +282,7 @@ export function ActionPicker(props: {
                   <input type="number" min={0.2} max={30} step={0.1} value={holdSec} disabled={!hold} onChange={(e) => setHoldSec(Number(e.target.value) || 1.5)} style={{ width: 70 }} />
                   seconds
                 </label>
-                <div className="muted">
-                  For Alt+Tab-style switching: the dial keeps stepping while Alt stays down; the keys are let go after this quiet period, or right away by a "Release held keys" action (under Other) or any gesture bound to one.
-                </div>
+                <div className="muted">Saved with the shortcut; the engine does not act on it yet.</div>
               </div>
               <div className="field">
                 <div className="inline">
@@ -349,12 +347,6 @@ export function ActionPicker(props: {
 
           {tab === "other" && (
             <div className="list">
-              <div className="row" onClick={() => props.onPick({ type: "release" }, "Release held keys")}>
-                <div>
-                  Release held keys
-                  <div className="sub">Let go of modifiers kept down by a "hold" shortcut. In the Alt+Tab switcher this selects the highlighted window.</div>
-                </div>
-              </div>
               <div className="row" onClick={() => props.onPick({ type: "noop" }, "Do nothing")}>
                 <div>
                   Do nothing

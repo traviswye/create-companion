@@ -13,10 +13,9 @@ use companion_core::transport::TransportCode;
 use companion_core::transport::TransportTable;
 use companion_core::Config;
 use companion_platform::{ActionSink, PlatformError, RawTransportEvent};
-use crossbeam_channel::{after, never, select, Receiver};
+use crossbeam_channel::{select, Receiver};
 use std::collections::HashMap;
 use std::sync::{Arc, Mutex};
-use std::time::{Duration, Instant};
 
 /// Messages from the tray / config watcher to the worker.
 #[derive(Debug)]
@@ -169,10 +168,7 @@ impl Engine {
 fn describe(action: &Action) -> String {
     match action {
         Action::Noop => "nothing".into(),
-        Action::Keys { chord, hold_ms } => match hold_ms {
-            Some(ms) => format!("{} (hold {:.1} s)", chord.0, *ms as f32 / 1000.0),
-            None => chord.0.clone(),
-        },
+        Action::Keys { chord, .. } => chord.0.clone(),
         Action::Release => "release held keys".into(),
         Action::Sequence { chords } => chords
             .iter()
@@ -226,22 +222,8 @@ pub fn run(
     let mut last_app: Option<AppIdentity> = None;
     let mut last_profile = String::new();
     let mut learning = false;
-    // When a holding chord (Alt+Tab with hold) leaves modifiers down, let go
-    // of them after its quiet period.
-    let mut hold_until: Option<Instant> = None;
     loop {
-        let hold_timer = match hold_until {
-            Some(t) => after(t.saturating_duration_since(Instant::now())),
-            None => never(),
-        };
         select! {
-            recv(hold_timer) -> _ => {
-                hold_until = None;
-                match sink.release_held() {
-                    Ok(()) => tracing::info!("held modifiers released after the hold period"),
-                    Err(e) => tracing::warn!("could not release held modifiers: {e}"),
-                }
-            }
             recv(control) -> msg => match msg {
                 Ok(Control::Reload(new_cfg)) => {
                     match engine.apply(&new_cfg) {
@@ -318,13 +300,6 @@ pub fn run(
                     update(&|s| s.profile = name.clone());
                 }
                 if let Some(h) = engine.handle(raw, &ctx, &mut sink) {
-                    match &h.action {
-                        Action::Keys { hold_ms: Some(ms), .. } => {
-                            hold_until = Some(Instant::now() + Duration::from_millis(u64::from(*ms)));
-                        }
-                        Action::Release => hold_until = None,
-                        _ => {}
-                    }
                     let action = describe(&h.action);
                     match &h.result {
                         Ok(()) => tracing::info!(event = %h.event, profile = %h.profile, %action, repeat = h.repeat, "executed"),
