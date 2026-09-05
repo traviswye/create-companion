@@ -2,7 +2,7 @@
 
 Generated 2026-09-04 on branch `catalog-expansion` by `tools/gen_presets.py` from `catalog/*.json` (134 source files) plus the ShortcutMapper import.
 
-**160 entries** (109 apps, 47 sites, 4 systems), **22,622 actions**. Validator: 0 errors. QA: 60/60 sampled shortcuts matched their sources across four rounds. Rust gate (`apps_catalog_chords_parse`): every chord parses. Column check: 0 Mac chords in Windows columns and vice versa.
+**160 entries** (109 apps, 47 sites, 4 systems), **22,622 actions**. Validator: 0 errors. QA: 60/60 sampled shortcuts matched their sources across four rounds. QA: 60/60 sampled shortcuts matched their sources across four rounds. Rust gate (`apps_catalog_chords_parse`): every chord parses. Column check: 0 Mac chords in Windows columns and vice versa.
 
 ## Quality checks
 
@@ -286,6 +286,9 @@ Count = actions in the generated catalog. Twins (`<id>_web`) are browser version
 - `jira` (11): This is Jira Cloud (Atlassian cloud), the list shown in Jira's own "?" (Shift+/) shortcuts dialog: Global shortcuts, Navigating work items, and Work item action
 
 ## Caveats worth a human look
+
+- **Fn shortcuts** (macOS Globe key) are included in the `mac` column. The engine can send them on macOS (Phase 5); Windows rejects them.
+- **Task View / DisplayFusion** (added 2026-09-05): Task View is matched by explorer.exe plus the titles "Task View" / "Task Switching" (verified by a foreground probe). DisplayFusion's six default hotkeys are documented; its Alt+Tab handler's navigation keys are not, so that entry's Tune defaults assume stock-switcher keys and need a hands-on check.
 
 - **Fn shortcuts** (macOS Globe key) are included in the `mac` column: Control Center Fn+C, Notification Center Fn+N, Quick Note Fn+Q, Dictation Fn+D, Show Desktop Fn+H, Fn+arrow navigation, and app-specific Fn alternates in Office, FL Studio and others. The engine can send them on macOS (Phase 5); Windows rejects them. Serif (Affinity) restructured its docs, so its Fn rows could not be re-sourced.
 

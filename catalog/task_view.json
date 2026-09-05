@@ -1,0 +1,166 @@
+{
+  "id": "task_view",
+  "name": "Task View",
+  "kind": "app",
+  "category": "System",
+  "title_required": true,
+  "match": {
+    "windows_exe": [
+      "explorer.exe"
+    ],
+    "macos_bundle": [],
+    "window_title": [
+      "Task View",
+      "Task Switching"
+    ]
+  },
+  "sources": [
+    "https://support.microsoft.com/en-us/windows/keyboard-shortcuts-in-windows-dcc61a57-8ff0-cffe-9796-cb9706c75eec",
+    "https://learn.microsoft.com/en-us/windows/whats-new/windows-11-overview"
+  ],
+  "note": "Active only while the Windows window switcher (Win+Tab Task View, or the stock Alt+Tab switcher) is in the foreground, so the same gestures that mean volume on the desktop can mean 'pick a window' here. Third-party Alt+Tab replacements (DisplayFusion) are separate entries because they run in their own process. Window identity comes from a foreground probe on Windows 11 (2026-09-05): Win+Tab focuses explorer.exe (class XamlExplorerHostIslandWindow) titled 'Task View'; the stock Alt+Tab switcher is the same host titled 'Task Switching'.",
+  "actions": [
+    {
+      "name": "Select next window",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Right"
+      }
+    },
+    {
+      "name": "Select previous window",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Left"
+      }
+    },
+    {
+      "name": "Select window above",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Up"
+      }
+    },
+    {
+      "name": "Select window below",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Down"
+      }
+    },
+    {
+      "name": "Switch to selected window",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Enter"
+      }
+    },
+    {
+      "name": "Close selected window",
+      "context": "Task View",
+      "windows": {
+        "type": "keys",
+        "chord": "Delete"
+      }
+    },
+    {
+      "name": "Move between windows and desktops",
+      "context": "Task View",
+      "windows": {
+        "type": "keys",
+        "chord": "Tab"
+      }
+    },
+    {
+      "name": "Switch to next virtual desktop",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Win+Right"
+      }
+    },
+    {
+      "name": "Switch to previous virtual desktop",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Win+Left"
+      }
+    },
+    {
+      "name": "New virtual desktop",
+      "context": "Task View",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Win+D"
+      }
+    },
+    {
+      "name": "Close current virtual desktop",
+      "context": "Task View",
+      "windows": {
+        "type": "keys",
+        "chord": "Ctrl+Win+F4"
+      }
+    },
+    {
+      "name": "Close the switcher",
+      "context": "",
+      "windows": {
+        "type": "keys",
+        "chord": "Esc"
+      }
+    }
+  ],
+  "defaults": {
+    "TUNE_CW": {
+      "name": "Select next window",
+      "action": {
+        "type": "keys",
+        "chord": "Right"
+      },
+      "accel": "none"
+    },
+    "TUNE_CCW": {
+      "name": "Select previous window",
+      "action": {
+        "type": "keys",
+        "chord": "Left"
+      },
+      "accel": "none"
+    },
+    "TUNE_TAP_1F": {
+      "name": "Switch to selected window",
+      "action": {
+        "type": "keys",
+        "chord": "Enter"
+      }
+    },
+    "TUNE_SWIPE_LEFT": {
+      "name": "Previous virtual desktop",
+      "action": {
+        "type": "keys",
+        "chord": "Ctrl+Win+Left"
+      }
+    },
+    "TUNE_SWIPE_RIGHT": {
+      "name": "Next virtual desktop",
+      "action": {
+        "type": "keys",
+        "chord": "Ctrl+Win+Right"
+      }
+    },
+    "TUNE_SWIPE_DOWN": {
+      "name": "Close the switcher",
+      "action": {
+        "type": "keys",
+        "chord": "Esc"
+      }
+    }
+  }
+}
