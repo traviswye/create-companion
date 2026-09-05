@@ -1,0 +1,30 @@
+# Burst experiment for the Tune: is a 2-finger swipe's stream driven by time, distance, or holding?
+# One line per prompt. Perform each exactly as written, once. Blank lines and # lines are ignored.
+# Run:  powershell -ExecutionPolicy Bypass -File D:\CreateCompanion\tools\gesture_capture.ps1 -Plan D:\CreateCompanion\tools\plans\burst-tune.txt -Seconds 4 -Out D:\CreateCompanion\burst-tune.log
+# Then: python D:\CreateCompanion\tools\keymon_analyze.py D:\CreateCompanion\burst-tune.log
+
+# --- 2 fingers: vary speed and distance independently ---
+2-finger swipe up: FAST and SHORT (a quick flick, about 1 cm)
+2-finger swipe up: SLOW and LONG (the whole pad, take about 1.5 s)
+2-finger swipe up: FAST and LONG (the whole pad in one quick motion)
+2-finger swipe up: SLOW and SHORT (about 1 cm, take about 1.5 s)
+
+# --- 2 fingers: does it keep repeating while the fingers rest? ---
+2-finger swipe up, then HOLD both fingers still on the pad for 2 s before lifting
+2 fingers: touch and HOLD still for 2 s without moving, then lift
+2-finger swipe up, then keep moving in tiny circles for 2 s before lifting
+
+# --- 1 finger (axis fields): does distance or speed ever give more than one key? ---
+1-finger swipe up: FAST and SHORT
+1-finger swipe up: SLOW and LONG (the whole pad, about 1.5 s)
+1-finger swipe up, then HOLD the finger still for 2 s before lifting
+
+# --- 3 fingers (keypress fields like the 2-finger ones, but stock-bound to prev/next) ---
+3-finger swipe up: FAST and SHORT
+3-finger swipe up: SLOW and LONG (the whole pad, about 1.5 s)
+
+# --- repeat the four 2-finger speed/distance cases once more for consistency ---
+2-finger swipe up: FAST and SHORT (repeat)
+2-finger swipe up: SLOW and LONG (repeat)
+2-finger swipe up: FAST and LONG (repeat)
+2-finger swipe up: SLOW and SHORT (repeat)
