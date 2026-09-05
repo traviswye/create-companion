@@ -212,3 +212,7 @@ table.map .ev > div:first-child { white-space: nowrap; }
 
 .brand .logo { width: 22px; height: 22px; }
 .brand .dot { margin-left: auto; }
+
+.sorthead { border: 0; background: transparent; padding: 0; font: inherit; color: inherit; cursor: pointer; text-align: left; }
+.sorthead:hover { color: var(--text); }
+.sorthead .muted { font-weight: 400; }

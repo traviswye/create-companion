@@ -1,12 +1,17 @@
-"""Derive every icon the project uses from OpenFlow's Track glyph."""
+"""Derive every icon the project uses from OpenFlow's Touch glyph, darkened to near-black."""
 import os, shutil
 from PIL import Image
 
 os.chdir(r"D:\CreateCompanion")
-SRC = "assets/track.png"  # copied from OpenFlow: frontend/public/modules/track-plain.png
+SRC = "assets/touch.png"  # copied from OpenFlow: frontend/public/modules/touch.png
 os.makedirs("assets", exist_ok=True)
 
 img = Image.open(SRC).convert("RGBA")
+# The source is mid-grey (~#7e7b85); the icon should read as black. Keep the
+# alpha (anti-aliased edges) and replace the colour with a near-black.
+INK = (24, 24, 28)
+r, g, b, a = img.split()
+img = Image.merge("RGBA", (Image.new("L", img.size, INK[0]), Image.new("L", img.size, INK[1]), Image.new("L", img.size, INK[2]), a))
 # Trim to the glyph, then pad to a square with ~8% margin so it sits well in a tray.
 bbox = img.getbbox()
 glyph = img.crop(bbox)

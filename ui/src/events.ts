@@ -156,6 +156,65 @@ export function eventSortKey(id: string): number {
 }
 
 /**
+ * How the Input column is ordered. Clicking the header cycles through these.
+ * Each mode has its own tie-breakers:
+ *   fingers -> module -> gesture      (default: "all my 1-finger moves, then 2-finger…")
+ *   module  -> gesture -> fingers
+ *   gesture -> module  -> fingers
+ *   alpha   -> gesture label A–Z, then module, then fingers
+ */
+export type SortMode = "fingers" | "module" | "gesture" | "alpha";
+export const SORT_MODES: SortMode[] = ["fingers", "module", "gesture", "alpha"];
+export const SORT_LABEL: Record<SortMode, string> = { fingers: "fingers", module: "module", gesture: "gesture", alpha: "A–Z" };
+
+export function nextSortMode(m: SortMode): SortMode {
+  return SORT_MODES[(SORT_MODES.indexOf(m) + 1) % SORT_MODES.length];
+}
+
+const SORT_KEY = "cc.inputSort";
+export function loadSortMode(): SortMode {
+  try {
+    const v = localStorage.getItem(SORT_KEY);
+    return (SORT_MODES as string[]).includes(v ?? "") ? (v as SortMode) : "fingers";
+  } catch {
+    return "fingers";
+  }
+}
+export function storeSortMode(m: SortMode) {
+  try {
+    localStorage.setItem(SORT_KEY, m);
+  } catch {
+    /* per-viewer convenience only */
+  }
+}
+
+export function sortEvents(ids: string[], mode: SortMode): string[] {
+  const parsed = new Map(ids.map((id) => [id, parseEvent(id)] as const));
+  const fingers = (p: ParsedEvent) => p.fingers ?? 0; // dial (no count) sorts first
+  const module = (p: ParsedEvent) => MODULES.indexOf(p.module);
+  const gesture = (p: ParsedEvent) => GESTURES.indexOf(p.gesture);
+  const alpha = (p: ParsedEvent) => gestureLabel(p.gesture).toLowerCase();
+  const keys: Record<SortMode, (p: ParsedEvent) => (number | string)[]> = {
+    fingers: (p) => [fingers(p), module(p), gesture(p)],
+    module: (p) => [module(p), gesture(p), fingers(p)],
+    gesture: (p) => [gesture(p), module(p), fingers(p)],
+    alpha: (p) => [alpha(p), module(p), fingers(p)],
+  };
+  return [...ids].sort((a, b) => {
+    const pa = parsed.get(a);
+    const pb = parsed.get(b);
+    if (!pa || !pb) return pa ? -1 : pb ? 1 : a.localeCompare(b);
+    const ka = keys[mode](pa);
+    const kb = keys[mode](pb);
+    for (let i = 0; i < ka.length; i++) {
+      if (ka[i] < kb[i]) return -1;
+      if (ka[i] > kb[i]) return 1;
+    }
+    return 0;
+  });
+}
+
+/**
  * Naya behavior string for an event, plus the half of a direction pair it is
  * (`"-"` or `"+"`), or null when a finger count is needed but missing.
  * Mirrors SemanticEvent::naya_behavior in companion-core.

@@ -11,7 +11,12 @@ import {
   type Os,
   describeAction,
   eventLabel,
-  eventSortKey,
+  type SortMode,
+  SORT_LABEL,
+  nextSortMode,
+  loadSortMode,
+  storeSortMode,
+  sortEvents,
   transportLabel,
   type Accel,
   type Action,
@@ -251,7 +256,13 @@ export default function App() {
     setSave({ kind: "dirty" });
   }
 
-  const events = useMemo(() => (cfg ? Object.keys(cfg.transport).sort((a, b) => eventSortKey(a) - eventSortKey(b)) : []), [cfg]);
+  /** Order of the Input column on every mapping table; shared with the Inputs page. */
+  const [sortMode, setSortModeState] = useState<SortMode>(loadSortMode);
+  const setSortMode = (m: SortMode) => {
+    setSortModeState(m);
+    storeSortMode(m);
+  };
+  const events = useMemo(() => (cfg ? sortEvents(Object.keys(cfg.transport), sortMode) : []), [cfg, sortMode]);
 
   /**
    * The catalog entry that corresponds to the selected profile: the app's own
@@ -574,7 +585,7 @@ export default function App() {
                   </button>
                 </div>
               )}
-              <Inputs transport={cfg.transport} onChange={setTransport} onRename={renameEvent} engineConnected={engine.connected} learned={learned} suggest={suggest} />
+              <Inputs transport={cfg.transport} onChange={setTransport} onRename={renameEvent} engineConnected={engine.connected} learned={learned} suggest={suggest} sortMode={sortMode} onSortMode={setSortMode} />
             </div>
           </>
         ) : (
@@ -689,7 +700,9 @@ export default function App() {
             <table className="map">
               <thead>
                 <tr>
-                  <th style={{ width: "20%" }}>Input</th>
+                  <th style={{ width: "20%" }}>
+                    <SortHeader mode={sortMode} onChange={setSortMode} />
+                  </th>
                   <th>Action</th>
                   <th style={{ width: 130 }}>Keys</th>
                   <th style={{ width: 110 }}>Acceleration</th>
@@ -791,6 +804,15 @@ export default function App() {
       )}
       {adding && <AddApp onAdd={addProfile} onClose={() => setAdding(false)} />}
     </div>
+  );
+}
+
+/** The Input column header: click to cycle the sort order. */
+export function SortHeader(props: { mode: SortMode; onChange: (m: SortMode) => void }) {
+  return (
+    <button className="sorthead" onClick={() => props.onChange(nextSortMode(props.mode))} title="Click to change the order: fingers → module → gesture → A–Z">
+      Input <span className="muted">by {SORT_LABEL[props.mode]} ▾</span>
+    </button>
   );
 }
 

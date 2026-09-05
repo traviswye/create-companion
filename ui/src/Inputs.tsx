@@ -3,7 +3,8 @@ import { open } from "@tauri-apps/plugin-dialog";
 import { api } from "./api";
 import {
   buildMods,
-  eventSortKey,
+  type SortMode,
+  sortEvents,
   fingerOptions,
   fingersLabel,
   FUNCTION_KEYS,
@@ -28,6 +29,7 @@ import {
   type TransportCode,
 } from "./types";
 import type { GestureId, ModuleId } from "./events";
+import { SortHeader } from "./App";
 
 export interface Learned {
   key: string;
@@ -120,8 +122,11 @@ export function Inputs(props: {
   learned: Learned | null;
   /** A key the keyboard sent that no input uses: prefill the add row with it. */
   suggest?: Learned | null;
+  /** Order of the rows; shared with the profile mapping tables. */
+  sortMode: SortMode;
+  onSortMode: (m: SortMode) => void;
 }) {
-  const events = useMemo(() => Object.keys(props.transport).sort((a, b) => eventSortKey(a) - eventSortKey(b)), [props.transport]);
+  const events = useMemo(() => sortEvents(Object.keys(props.transport), props.sortMode), [props.transport, props.sortMode]);
   const [armed, setArmedState] = useState<string | null>(null); // event being learned, or "new"
   const armedRef = useRef<string | null>(null);
   const setArmed = (v: string | null) => {
@@ -364,7 +369,9 @@ export function Inputs(props: {
           <table className="map">
             <thead>
               <tr>
-                <th style={{ width: "24%" }}>Gesture</th>
+                <th style={{ width: "24%" }}>
+                  <SortHeader mode={props.sortMode} onChange={props.onSortMode} />
+                </th>
                 <th style={{ width: 110 }}>Fingers</th>
                 <th>Sends</th>
                 <th style={{ width: 150 }}></th>
