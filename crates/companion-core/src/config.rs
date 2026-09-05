@@ -19,6 +19,10 @@ pub struct EngineSettings {
     pub start_at_login: bool,
     /// `error` | `warn` | `info` | `debug` | `trace`. `RUST_LOG` overrides.
     pub log_level: String,
+    /// A modifier counts as part of a module's key only if it went down within
+    /// this many milliseconds before the F-key; a modifier held longer is the
+    /// user's and is ignored for decoding. Read at engine start.
+    pub namespace_window_ms: u32,
 }
 
 impl Default for EngineSettings {
@@ -26,6 +30,7 @@ impl Default for EngineSettings {
         Self {
             start_at_login: false,
             log_level: "info".into(),
+            namespace_window_ms: 100,
         }
     }
 }

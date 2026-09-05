@@ -10,7 +10,12 @@ use std::time::Instant;
 /// A swallowed transport key event, forwarded from the hook thread.
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
 pub struct RawTransportEvent {
+    /// The key plus the modifiers the *module* sent with it (pressed within
+    /// the namespace window before the key).
     pub code: TransportCode,
+    /// Modifiers that were already down for longer than the window: the user
+    /// holding a key. Not part of the code; reported so the engine can log it.
+    pub held: Modifiers,
     pub pressed: bool,
     pub at: Instant,
     /// True when the key is in the transport table (and was swallowed).

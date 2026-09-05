@@ -145,6 +145,7 @@ fn main() -> Result<()> {
     }
 
     hook::set_allow_injected(args.allow_injected);
+    hook::set_namespace_window_ms(cfg.engine.namespace_window_ms);
     let mut kb_hook = KeyboardHook::new(ev_tx);
     kb_hook.start().context("installing keyboard hook")?;
 

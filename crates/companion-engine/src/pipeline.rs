@@ -275,6 +275,9 @@ pub fn run(
                         mods: raw.code.mods,
                     });
                 }
+                if raw.pressed && !raw.held.is_empty() {
+                    tracing::info!(?raw.code, held = %raw.held, "modifiers held by the user ignored (down longer than the namespace window)");
+                }
                 if !raw.reserved || !engine.is_assigned(raw.code) {
                     // The keyboard sent an F-key (or a modifier namespace of one)
                     // that no input uses. Never act on it; tell the UI so the
@@ -364,6 +367,7 @@ mod tests {
     fn press_at(key: FunctionKey, mods: Modifiers, at: Instant) -> RawTransportEvent {
         RawTransportEvent {
             code: TransportCode { key, mods },
+            held: Modifiers::NONE,
             pressed: true,
             at,
             reserved: true,
