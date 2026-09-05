@@ -3,7 +3,9 @@
 use crate::PlatformError;
 use auto_launch::{AutoLaunch, AutoLaunchBuilder};
 
-const APP_NAME: &str = "NayaCompanion";
+const APP_NAME: &str = "CreateCompanion";
+/// Run-key entry left by the program's previous name; removed when seen.
+const LEGACY_APP_NAME: &str = "NayaCompanion";
 
 fn launcher() -> Result<AutoLaunch, PlatformError> {
     let exe = std::env::current_exe().map_err(|e| PlatformError::Os(e.to_string()))?;
@@ -22,6 +24,7 @@ pub fn is_enabled() -> Result<bool, PlatformError> {
 
 /// Idempotent: only touches the registry when the state actually changes.
 pub fn set_enabled(enabled: bool) -> Result<(), PlatformError> {
+    remove_legacy();
     let al = launcher()?;
     let now = al
         .is_enabled()
@@ -31,4 +34,18 @@ pub fn set_enabled(enabled: bool) -> Result<(), PlatformError> {
     }
     let r = if enabled { al.enable() } else { al.disable() };
     r.map_err(|e| PlatformError::Os(e.to_string()))
+}
+
+/// Best effort: drop the `NayaCompanion` Run entry (it points at the old exe).
+fn remove_legacy() {
+    let Ok(exe) = std::env::current_exe() else { return };
+    if let Ok(old) = AutoLaunchBuilder::new()
+        .set_app_name(LEGACY_APP_NAME)
+        .set_app_path(&exe.to_string_lossy())
+        .build()
+    {
+        if old.is_enabled().unwrap_or(false) {
+            let _ = old.disable();
+        }
+    }
 }

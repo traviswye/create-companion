@@ -1,4 +1,4 @@
-//! OS-specific glue for Naya Companion. Everything here is behind a trait or a
+//! OS-specific glue for Create Companion. Everything here is behind a trait or a
 //! small function so the engine and core never see a Win32 or Cocoa type.
 //!
 //! Windows implementation: Phase 0/1. macOS: Phase 5.

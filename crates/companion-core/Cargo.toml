@@ -1,6 +1,6 @@
 [package]
 name = "companion-core"
-description = "Platform-independent logic for Naya Companion: transport decoding, semantic events, profiles, actions, config"
+description = "Platform-independent logic for Create Companion: transport decoding, semantic events, profiles, actions, config"
 version.workspace = true
 edition.workspace = true
 license.workspace = true

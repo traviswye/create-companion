@@ -1,13 +1,13 @@
 [package]
-name = "naya-companion"
-description = "Naya Companion background engine: maps Tune/Touch transport keys to per-application actions"
+name = "create-companion"
+description = "Create Companion background engine: maps Tune/Touch transport keys to per-application actions"
 version.workspace = true
 edition.workspace = true
 license.workspace = true
 repository.workspace = true
 
 [[bin]]
-name = "naya-companion"
+name = "create-companion"
 path = "src/main.rs"
 
 [dependencies]

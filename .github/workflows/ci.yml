@@ -1,4 +1,4 @@
-# CI for Naya Companion.
+# CI for Create Companion.
 
 name: ci
 
@@ -45,5 +45,5 @@ jobs:
         working-directory: ui
       - run: npm run build
         working-directory: ui
-      - run: cargo build --release -p naya-companion-ui --features naya-companion-ui/custom-protocol
+      - run: cargo build --release -p create-companion-ui --features create-companion-ui/custom-protocol
         if: matrix.os == 'windows-latest'

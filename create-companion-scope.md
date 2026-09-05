@@ -1,10 +1,10 @@
-# Naya Companion — Scoping Document
+# Create Companion — Scoping Document
 
 ## 1. Project Summary
 
-**Naya Companion** is a lightweight, always-running desktop utility for Windows and macOS that gives the Naya Create's **Tune** and **Touch** modules application-aware behavior without requiring repeated keyboard firmware flashes.
+**Create Companion** is a lightweight, always-running desktop utility for Windows and macOS that gives the Naya Create's **Tune** and **Touch** modules application-aware behavior without requiring repeated keyboard firmware flashes.
 
-The keyboard firmware is configured **once** so a small set of Tune/Touch events emit otherwise-unused function keys, primarily **F17–F24**. Naya Companion intercepts those events, determines which application is currently active, and translates the event into a configurable action appropriate for that application.
+The keyboard firmware is configured **once** so a small set of Tune/Touch events emit otherwise-unused function keys, primarily **F17–F24**. Create Companion intercepts those events, determines which application is currently active, and translates the event into a configurable action appropriate for that application.
 
 Example:
 
@@ -109,8 +109,8 @@ The UI should **not remain resident** after the configuration window closes.
 Architecture:
 
 ```text
-naya-companion      <- always-running background engine
-naya-companion-ui   <- opened only when configuration is needed
+create-companion      <- always-running background engine
+create-companion-ui   <- opened only when configuration is needed
 ```
 
 A single binary may provide both roles if implementation is simpler, provided closing the main window leaves only the lightweight background process active.
@@ -614,7 +614,7 @@ The UI should prioritize quick configuration rather than exposing every low-leve
 Suggested structure:
 
 ```text
-Naya Companion
+Create Companion
 
 Active Profile: Google Chrome
 
@@ -698,7 +698,7 @@ This is especially useful for Touch gesture discovery.
 Optional tray/menu-bar tooltip:
 
 ```text
-Naya Companion
+Create Companion
 Profile: Photoshop
 ```
 
@@ -754,7 +754,7 @@ must remain separate concepts.
 The background app should expose a minimal tray/menu-bar menu:
 
 ```text
-Naya Companion
+Create Companion
 -------------------------
 Active: Photoshop
 Open Configuration
@@ -781,7 +781,7 @@ Diagnostics should be easy to enable during development but should not create co
 Optional user setting:
 
 ```text
-[✓] Start Naya Companion at login
+[✓] Start Create Companion at login
 ```
 
 Requirements:
@@ -836,26 +836,26 @@ Suggested release assets:
 ### Windows
 
 ```text
-NayaCompanion-Setup-x64.exe
+CreateCompanion-Setup-x64.exe
 ```
 
 Optional later:
 
 ```text
-NayaCompanion-Setup-arm64.exe
-NayaCompanion-portable-x64.zip
+CreateCompanion-Setup-arm64.exe
+CreateCompanion-portable-x64.zip
 ```
 
 ### macOS
 
 ```text
-NayaCompanion-universal.dmg
+CreateCompanion-universal.dmg
 ```
 
 or:
 
 ```text
-NayaCompanion-universal.pkg
+CreateCompanion-universal.pkg
 ```
 
 Initial macOS builds may be unsigned during development, but production-quality distribution should eventually use Apple signing/notarization.
@@ -884,7 +884,7 @@ The companion should be fully usable offline after installation.
 
 ## 20. Privacy and Security
 
-Naya Companion should be local-only by default.
+Create Companion should be local-only by default.
 
 Requirements:
 
@@ -893,7 +893,7 @@ Requirements:
 - No cloud service.
 - No keyboard-content logging.
 - Do not record normal keystrokes.
-- Only intercept transport events configured for Naya Companion.
+- Only intercept transport events configured for Create Companion.
 - Do not store foreground-window titles unless explicitly needed.
 - Application identification should normally use process executable or bundle ID only.
 - Scripts/commands should require explicit user configuration.

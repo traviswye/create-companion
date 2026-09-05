@@ -1,15 +1,15 @@
 //! Create Companion background engine.
 //!
 //! ```text
-//! naya-companion                     # tray + engine, config at %APPDATA%\NayaCompanion\config.toml
-//! naya-companion --config path.toml  # use another config file (still hot-reloaded)
-//! naya-companion --no-tray           # console mode, Ctrl+C to quit
-//! naya-companion --print-config      # dump the bundled default config as TOML and exit
-//! naya-companion --allow-injected    # also treat synthetic F-keys as transport (testing)
+//! create-companion                     # tray + engine, config at %APPDATA%\CreateCompanion\config.toml
+//! create-companion --config path.toml  # use another config file (still hot-reloaded)
+//! create-companion --no-tray           # console mode, Ctrl+C to quit
+//! create-companion --print-config      # dump the bundled default config as TOML and exit
+//! create-companion --allow-injected    # also treat synthetic F-keys as transport (testing)
 //! ```
 //!
 //! Logs go to stderr (debug builds / console) and to
-//! `%LOCALAPPDATA%\NayaCompanion\logs\`. `RUST_LOG` overrides the config's level.
+//! `%LOCALAPPDATA%\CreateCompanion\logs\`. `RUST_LOG` overrides the config's level.
 
 #![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
 
@@ -47,7 +47,7 @@ fn parse_args() -> Result<Args> {
             "--no-tray" => args.no_tray = true,
             "-h" | "--help" => {
                 println!(
-                    "naya-companion [--config <file.toml>] [--no-tray] [--print-config] [--allow-injected]"
+                    "create-companion [--config <file.toml>] [--no-tray] [--print-config] [--allow-injected]"
                 );
                 std::process::exit(0);
             }
@@ -101,10 +101,11 @@ fn main() -> Result<()> {
         return Ok(());
     }
 
-    let _instance = match instance::acquire("NayaCompanion.Engine")? {
+    paths::migrate_legacy();
+    let _instance = match instance::acquire("CreateCompanion.Engine")? {
         Some(guard) => guard,
         None => {
-            eprintln!("naya-companion is already running (see the tray icon).");
+            eprintln!("create-companion is already running (see the tray icon).");
             return Ok(());
         }
     };
@@ -115,7 +116,7 @@ fn main() -> Result<()> {
     tracing::info!(
         config = %config_path.display(),
         version = env!("CARGO_PKG_VERSION"),
-        "naya-companion starting"
+        "create-companion starting"
     );
     if created {
         tracing::info!("wrote default configuration (first run)");
@@ -163,7 +164,7 @@ fn main() -> Result<()> {
         let status = Arc::clone(&status);
         let on_status = move || waker.wake();
         std::thread::Builder::new()
-            .name("naya-pipeline".into())
+            .name("cc-pipeline".into())
             .spawn(move || {
                 pipeline::run(
                     cfg,
@@ -197,7 +198,7 @@ fn main() -> Result<()> {
         .context("installing Ctrl+C handler")?;
     }
 
-    tracing::info!(tray = tray.is_some(), "naya-companion running");
+    tracing::info!(tray = tray.is_some(), "create-companion running");
 
     match tray {
         None => {
@@ -263,17 +264,17 @@ fn main() -> Result<()> {
     }
 
     kb_hook.stop();
-    tracing::info!("naya-companion stopped");
+    tracing::info!("create-companion stopped");
     Ok(())
 }
 
-/// Launch the configuration UI (`naya-companion-ui.exe` next to this binary).
+/// Launch the configuration UI (`create-companion-ui.exe` next to this binary).
 /// Falls back to opening the config file when the UI is not installed.
 #[cfg(windows)]
 fn open_ui(config_path: &std::path::Path) {
     let ui = std::env::current_exe()
         .ok()
-        .and_then(|p| p.parent().map(|d| d.join("naya-companion-ui.exe")));
+        .and_then(|p| p.parent().map(|d| d.join("create-companion-ui.exe")));
     match ui {
         Some(exe) if exe.exists() => {
             if let Err(e) = std::process::Command::new(&exe).spawn() {

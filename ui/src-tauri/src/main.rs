@@ -2,5 +2,5 @@
 #![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
 
 fn main() {
-    naya_companion_ui_lib::run()
+    create_companion_ui_lib::run()
 }

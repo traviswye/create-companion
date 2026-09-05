@@ -8,13 +8,13 @@ fn main() {
         use embed_manifest::{embed_manifest, manifest::ActiveCodePage, new_manifest};
         if std::env::var_os("CARGO_CFG_WINDOWS").is_some() {
             let manifest =
-                new_manifest("NayaOS.NayaCompanion").active_code_page(ActiveCodePage::Utf8);
+                new_manifest("CreateCompanion.Engine").active_code_page(ActiveCodePage::Utf8);
             embed_manifest(manifest).expect("embedding the Windows manifest");
             // Product name / description shown by Task Manager and file properties.
             let mut res = winresource::WindowsResource::new();
             res.set("ProductName", "Create Companion")
                 .set("FileDescription", "Create Companion engine")
-                .set("CompanyName", "NayaOS")
+                .set("CompanyName", "Create Companion")
                 .set("LegalCopyright", "MIT");
             if let Err(e) = res.compile() {
                 println!("cargo:warning=version resource not embedded: {e}");

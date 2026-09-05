@@ -5,7 +5,7 @@
 //! Active: Photoshop          (disabled, informational)
 //! Last: TUNE_CW -> ]         (disabled, informational)
 //! ---
-//! Open configuration...        (launches naya-companion-ui)
+//! Open configuration...        (launches create-companion-ui)
 //! Edit configuration file
 //! Open configuration folder
 //! Reload configuration

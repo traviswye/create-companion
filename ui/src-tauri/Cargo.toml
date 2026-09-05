@@ -1,13 +1,13 @@
 [package]
-name = "naya-companion-ui"
-description = "Configuration window for Naya Companion (not resident; the engine is naya-companion)"
+name = "create-companion-ui"
+description = "Configuration window for Create Companion (not resident; the engine is create-companion)"
 version.workspace = true
 edition.workspace = true
 license.workspace = true
 repository.workspace = true
 
 [lib]
-name = "naya_companion_ui_lib"
+name = "create_companion_ui_lib"
 crate-type = ["staticlib", "cdylib", "rlib"]
 
 [features]

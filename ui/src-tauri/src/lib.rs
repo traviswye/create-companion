@@ -22,7 +22,7 @@ const APPS_CATALOG: &str = include_str!("../../../presets/apps.json");
 fn app_catalog() -> Result<serde_json::Value, String> {
     serde_json::from_str(APPS_CATALOG).map_err(err)
 }
-const SOCKET_NAME: &str = "NayaCompanion.sock";
+const SOCKET_NAME: &str = "CreateCompanion.sock";
 
 /// Last known engine state, so a webview that subscribes after the pipe
 /// connected can catch up (`engine_state` command).
@@ -84,10 +84,14 @@ fn write_text_file(path: String, contents: String) -> Result<(), String> {
 }
 
 fn config_file() -> PathBuf {
-    dirs::config_dir()
-        .unwrap_or_else(|| PathBuf::from("."))
-        .join("NayaCompanion")
-        .join("config.toml")
+    let base = dirs::config_dir().unwrap_or_else(|| PathBuf::from("."));
+    let dir = base.join("CreateCompanion");
+    // Same one-time rename the engine performs (see companion-engine paths.rs).
+    let legacy = base.join("NayaCompanion");
+    if legacy.is_dir() && !dir.exists() {
+        let _ = std::fs::rename(&legacy, &dir);
+    }
+    dir.join("config.toml")
 }
 
 fn err(e: impl std::fmt::Display) -> String {
@@ -216,7 +220,7 @@ fn running_windows() -> Vec<WindowInfo> {
     {
         let mut v: Vec<WindowInfo> = companion_platform::windows::visible_windows()
             .into_iter()
-            .filter(|w| !w.exe.eq_ignore_ascii_case("naya-companion-ui.exe"))
+            .filter(|w| !w.exe.eq_ignore_ascii_case("create-companion-ui.exe"))
             .map(|w| WindowInfo {
                 exe: w.exe,
                 title: w.title,

@@ -1,6 +1,6 @@
 [package]
 name = "companion-platform"
-description = "OS-specific input hook, foreground detection and synthetic input for Naya Companion"
+description = "OS-specific input hook, foreground detection and synthetic input for Create Companion"
 version.workspace = true
 edition.workspace = true
 license.workspace = true

@@ -129,7 +129,7 @@ impl InputHook for KeyboardHook {
 
         let (ready_tx, ready_rx) = mpsc::channel::<Result<(), String>>();
         let thread = std::thread::Builder::new()
-            .name("naya-win32-hooks".into())
+            .name("cc-win32-hooks".into())
             .spawn(move || {
                 // SAFETY: standard hook installation + message pump on this thread.
                 unsafe {

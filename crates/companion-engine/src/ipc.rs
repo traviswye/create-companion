@@ -1,4 +1,4 @@
-//! Local IPC for the configuration UI: a named pipe (`\\.\pipe\NayaCompanion.sock`
+//! Local IPC for the configuration UI: a named pipe (`\\.\pipe\CreateCompanion.sock`
 //! on Windows, a Unix socket elsewhere) carrying newline-delimited JSON.
 //!
 //! Engine -> UI (broadcast to every client):
@@ -30,7 +30,7 @@ use serde::{Deserialize, Serialize};
 use std::io::{BufRead, BufReader, Write};
 use std::sync::{Arc, Mutex};
 
-pub const SOCKET_NAME: &str = "NayaCompanion.sock";
+pub const SOCKET_NAME: &str = "CreateCompanion.sock";
 
 #[derive(Debug, Clone, Serialize)]
 #[serde(tag = "type", rename_all = "snake_case")]
@@ -89,7 +89,7 @@ pub fn start(rx: Receiver<IpcMessage>, hello: IpcMessage, ctrl: Sender<Control>)
         let clients = Arc::clone(&clients);
         let last_status = Arc::clone(&last_status);
         std::thread::Builder::new()
-            .name("naya-ipc-accept".into())
+            .name("cc-ipc-accept".into())
             .spawn(move || {
                 for conn in listener.incoming() {
                     let stream = match conn {
@@ -114,7 +114,7 @@ pub fn start(rx: Receiver<IpcMessage>, hello: IpcMessage, ctrl: Sender<Control>)
                         c.push(tx);
                     }
                     std::thread::Builder::new()
-                        .name("naya-ipc-client-w".into())
+                        .name("cc-ipc-client-w".into())
                         .spawn(move || {
                             for line in rx.iter() {
                                 if send.write_all(line.as_bytes()).is_err() {
@@ -125,7 +125,7 @@ pub fn start(rx: Receiver<IpcMessage>, hello: IpcMessage, ctrl: Sender<Control>)
                         .ok();
                     let ctrl = ctrl.clone();
                     std::thread::Builder::new()
-                        .name("naya-ipc-client-r".into())
+                        .name("cc-ipc-client-r".into())
                         .spawn(move || {
                             for line in BufReader::new(recv).lines() {
                                 let Ok(line) = line else { break };
@@ -150,7 +150,7 @@ pub fn start(rx: Receiver<IpcMessage>, hello: IpcMessage, ctrl: Sender<Control>)
 
     // Fan-out loop.
     std::thread::Builder::new()
-        .name("naya-ipc-broadcast".into())
+        .name("cc-ipc-broadcast".into())
         .spawn(move || {
             for msg in rx.iter() {
                 let Ok(mut line) = serde_json::to_string(&msg) else {

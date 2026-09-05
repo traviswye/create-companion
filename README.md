@@ -1,14 +1,14 @@
 # Create Companion
 
-(Repository and binaries keep the `naya-companion` name; the product is **Create Companion**, after the Naya Create keyboard.)
+Named after the Naya Create keyboard it serves. Formerly "Naya Companion"; the engine migrates a `%APPDATA%\NayaCompanion` folder to `%APPDATA%\CreateCompanion` on first start.
 
 Lightweight always-on host engine for the Naya Create's Tune and Touch modules. The keyboard is
 flashed **once** so module gestures emit F17–F24; the companion swallows those keys and turns them
 into per-application actions (Chrome: switch tabs, Photoshop: brush size, desktop: volume).
 
-- Scope: `naya-companion-scope.md`
+- Scope: `create-companion-scope.md`
 - Build plan and phase checklists: `PLAN.md`
-- Part of the [NayaOS](https://github.com/traviswye/NayaOS) preservation effort for the Naya Create keyboard.
+- A sibling of the [NayaOS](https://github.com/traviswye/NayaOS) preservation effort for the Naya Create keyboard (this is its own repository).
 
 ## Status
 
@@ -19,18 +19,18 @@ configured on the host.
 ## Run
 
 ```powershell
-cargo run --release            # tray icon + engine; creates %APPDATA%\NayaCompanion\config.toml on first run
+cargo run --release            # tray icon + engine; creates %APPDATA%\CreateCompanion\config.toml on first run
 cargo run -- --no-tray         # console mode, Ctrl+C to quit
 cargo run -- --config x.toml   # use another config file (still hot-reloaded)
 cargo run -- --print-config    # dump the bundled default config
 cargo run -- --allow-injected  # treat synthetic F-keys as transport (testing without the device)
 ```
 
-- **Config**: `%APPDATA%\NayaCompanion\config.toml`. Edit and save; the engine reloads within
+- **Config**: `%APPDATA%\CreateCompanion\config.toml`. Edit and save; the engine reloads within
   a second. A file that fails to parse is logged and ignored, the previous config stays active.
 - **Tray menu**: active profile and last action, **Open configuration...** (the UI), edit config
   file, open folder, reload, pause, start at login, quit.
-- **Configuration window** (`naya-companion-ui.exe`, Tauri): the left column lists **Active**
+- **Configuration window** (`create-companion-ui.exe`, Tauri): the left column lists **Active**
   profiles and everything **Available** in the catalog (29 apps and sites, 4,969 imported
   shortcuts), with a search box; the star activates an app with its default mappings or disables
   a profile while keeping its mappings. Each mapping shows the plain-English **Action** and the
@@ -41,7 +41,7 @@ cargo run -- --allow-injected  # treat synthetic F-keys as transport (testing wi
   bottom of the list) edits which key each module gesture sends, per gesture and finger count, with
   a Learn button that captures the next F13–F24 press and an "Export for OpenFlow…" that writes
   one `openflow.module-profile` file per module, ready for OpenFlow's Import. The window is not resident; close it and only the engine remains.
-- **Logs**: `%LOCALAPPDATA%\NayaCompanion\logs\companion.log.<date>` (and stderr in debug
+- **Logs**: `%LOCALAPPDATA%\CreateCompanion\logs\companion.log.<date>` (and stderr in debug
   builds). `RUST_LOG=debug` shows every decoded event; otherwise `[engine] log_level` applies.
 - Only F-keys listed under `[transport]` (the Inputs screen) are intercepted. Everything else passes through.
 - **Event names** are `<MODULE>_<GESTURE>[_<n>F]`: `TUNE_CW`, `TUNE_TAP_1F`, `LEFT_TOUCH_SWIPE_UP_3F`.
@@ -90,7 +90,7 @@ Regenerate the bundled presets with `python tools/gen_presets.py`. It reads `ref
 `presets/actions.json` (generic catalog), `presets/apps.json` (per-app catalog with match rules, shortcuts
 and defaults) and `presets/default-config.toml`. See `reference/ATTRIBUTION.md`.
 Your live config is written once, on first run; to pick up new bundled profiles either delete
-`%APPDATA%\NayaCompanion\config.toml` and restart, or copy the pieces you want from
+`%APPDATA%\CreateCompanion\config.toml` and restart, or copy the pieces you want from
 `cargo run -- --print-config`.
 
 ## Layout
@@ -99,7 +99,7 @@ Your live config is written once, on first run; to pick up new bundled profiles 
 |---|---|
 | `crates/companion-core` | OS-free logic: semantic events, transport table, profiles, actions, acceleration, config, chord parsing. Fully unit-tested. |
 | `crates/companion-platform` | Win32 implementation: low-level keyboard hook + foreground watch, `SendInput` executor, autostart, single instance, message loop. macOS later. |
-| `crates/companion-engine` | The `naya-companion` binary: pipeline thread, config watcher, tray, logging. |
+| `crates/companion-engine` | The `create-companion` binary: pipeline thread, config watcher, tray, logging. |
 | `presets/` | Generated action catalog and the default config (`tools/gen_presets.py`). |
 | `ui/` | Configuration window: Tauri 2 shell (`ui/src-tauri`) + Vite/React frontend (`ui/src`). |
 
@@ -110,8 +110,8 @@ cargo test                       # engine + core (the UI crate is not a default 
 cargo clippy --all-targets
 cargo fmt --all
 cd ui; npm install; npm run tauri dev     # UI with hot reload (needs the engine running for live status)
-cd ui; npm run build; cd ..; cargo build --release -p naya-companion -p naya-companion-ui --features naya-companion-ui/custom-protocol
+cd ui; npm run build; cd ..; cargo build --release -p create-companion -p create-companion-ui --features create-companion-ui/custom-protocol
 ```
 
-The engine looks for `naya-companion-ui.exe` next to itself, so build both into the same `target`
+The engine looks for `create-companion-ui.exe` next to itself, so build both into the same `target`
 directory (as above) or install them side by side.

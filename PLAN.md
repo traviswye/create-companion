@@ -1,6 +1,6 @@
-# Naya Companion — Scaffold & Build Plan
+# Create Companion — Scaffold & Build Plan
 
-Companion to `naya-companion-scope.md`. That document says *what*; this one says *how we start*,
+Companion to `create-companion-scope.md`. That document says *what*; this one says *how we start*,
 in what order, and which existing NayaOS assets we reuse. Windows first (the dev machine is
 Windows-only), macOS behind a platform trait from day one.
 
@@ -56,7 +56,7 @@ openflowCompanion/
 │   │       ├── windows/          # WH_KEYBOARD_LL hook, SetWinEventHook(EVENT_SYSTEM_FOREGROUND),
 │   │       │                     #   QueryFullProcessImageNameW, SendInput (keys + wheel + consumer keys)
 │   │       └── macos/            # CGEventTap, NSWorkspace didActivateApplication, CGEventPost (Phase 5)
-│   ├── companion-engine/         # binary: naya-companion (the 24/7 process)
+│   ├── companion-engine/         # binary: create-companion (the 24/7 process)
 │   │   └── src/
 │   │       ├── main.rs           # single-instance guard, hidden startup, wires everything
 │   │       ├── pipeline.rs       # hook -> decoder -> resolver -> executor, on one worker thread
@@ -71,7 +71,7 @@ openflowCompanion/
 │   └── profiles/                 # default.toml, chrome.toml, photoshop.toml, resolve.toml, ...
 ├── tools/
 │   └── gen_presets.py            # pulls from ../docs/reference/*.json -> presets/actions/*.json
-├── ui/                           # Tauri 2 app naya-companion-ui (Phase 2). Not resident.
+├── ui/                           # Tauri 2 app create-companion-ui (Phase 2). Not resident.
 │   ├── src-tauri/                # thin Rust shell: connects to engine IPC, no business logic
 │   └── src/                      # Vite + React (or Svelte): profile list, mapping editor, action picker
 ├── installer/
@@ -83,7 +83,7 @@ openflowCompanion/
 ├── docs/
 │   ├── config-schema.md          # generated from the serde schema
 │   └── flash-once.md             # step-by-step: set the transport on the device with OpenFlow
-├── naya-companion-scope.md
+├── create-companion-scope.md
 └── PLAN.md
 ```
 
@@ -147,8 +147,8 @@ Goal: one Tune firmware mapping behaves differently in two apps.
 ### Phase 1 — Minimal engine — DONE 2026-09-04
 - [x] `companion-core`: transport table, `SemanticEvent`, `Profile` + resolver, `Action` model, TOML config (`[engine]`, `[transport]`, `[default_profile]`, `[[profiles]]`) with validation, chord parser, bundled presets. 20 unit tests.
 - [x] `companion-platform` (Windows): `WH_KEYBOARD_LL` hook + `EVENT_SYSTEM_FOREGROUND` watch on one message-pump thread (cached foreground, no polling), `SendInput` executor incl. hwheel + consumer keys, `release_modifiers`, autostart (HKCU Run via `auto-launch`), single-instance mutex, main-thread message loop + `Waker`.
-- [x] Engine: pipeline thread (`Engine` is OS-free and unit-tested with a mock sink, 5 tests), config watcher with 250 ms debounce and atomic swap (bad config → logged, previous kept), tray (Active/Last, open file/folder, reload, pause, start-at-login, quit), single instance, hidden console in release builds, daily log file in `%LOCALAPPDATA%\NayaCompanion\logs`, `--config` / `--no-tray` / `--print-config` / `--allow-injected`.
-- [x] `tools/gen_presets.py` → `presets/actions.json` (217 catalog actions from `action-chords.json`: Browser, System, Text, VS Code, Terminal, Files, Media, Scroll) and `presets/default-config.toml` (Default + Browser, Photoshop, Lightroom, Premiere, Resolve, Fusion 360, Blender, VS Code, Discord, Spotify). Embedded via `include_str!`, written to `%APPDATA%\NayaCompanion\config.toml` on first run.
+- [x] Engine: pipeline thread (`Engine` is OS-free and unit-tested with a mock sink, 5 tests), config watcher with 250 ms debounce and atomic swap (bad config → logged, previous kept), tray (Active/Last, open file/folder, reload, pause, start-at-login, quit), single instance, hidden console in release builds, daily log file in `%LOCALAPPDATA%\CreateCompanion\logs`, `--config` / `--no-tray` / `--print-config` / `--allow-injected`.
+- [x] `tools/gen_presets.py` → `presets/actions.json` (217 catalog actions from `action-chords.json`: Browser, System, Text, VS Code, Terminal, Files, Media, Scroll) and `presets/default-config.toml` (Default + Browser, Photoshop, Lightroom, Premiere, Resolve, Fusion 360, Blender, VS Code, Discord, Spotify). Embedded via `include_str!`, written to `%APPDATA%\CreateCompanion\config.toml` on first run.
 - [x] Modifier-namespace rule: transport modifiers are released before the mapped chord is sent (`modifier_namespace_is_released_before_executing` test).
 - [x] CI workflow at `.github/workflows/ci.yml` (inactive until the folder is its own repo).
 - [x] Live-verified 2026-09-04: first-run config write, tray start, injected F24 → Ctrl+Tab in Chrome, file edit → "configuration changed, reloading" → "configuration applied", second instance refused, log file created. Release binary 1.3 MB.
@@ -156,8 +156,8 @@ Goal: one Tune firmware mapping behaves differently in two apps.
 - Deferred: `docs/flash-once.md`; macOS CI job allowed to fail until Phase 5.
 
 ### Phase 2 — Configuration UI (Tauri 2) — DONE 2026-09-04
-- [x] `ui/` Tauri 2 + Vite + React/TS app, `naya-companion-ui.exe`. Non-resident: it is a plain window that exits on close. Workspace member but not a default member (needs `ui/dist`); build with `cd ui && npm run tauri build` or `cargo build -p naya-companion-ui` after `npm run build`.
-- [x] Engine IPC (`crates/companion-engine/src/ipc.rs`): named pipe `NayaCompanion.sock` broadcasting newline-delimited JSON — `hello`, `status`, `event`, `config_applied`, `config_rejected`. The UI only listens; config edits go through the file, which the engine hot-reloads.
+- [x] `ui/` Tauri 2 + Vite + React/TS app, `create-companion-ui.exe`. Non-resident: it is a plain window that exits on close. Workspace member but not a default member (needs `ui/dist`); build with `cd ui && npm run tauri build` or `cargo build -p create-companion-ui` after `npm run build`.
+- [x] Engine IPC (`crates/companion-engine/src/ipc.rs`): named pipe `CreateCompanion.sock` broadcasting newline-delimited JSON — `hello`, `status`, `event`, `config_applied`, `config_rejected`. The UI only listens; config edits go through the file, which the engine hot-reloads.
 - [x] Tray: "Open configuration..." launches the UI next to the engine exe (falls back to opening the TOML).
 - [x] Screens: profile list (Default + apps, live profile marked), match rules editor (exe / title / bundle chips), mapping table for every transport event with inherited-from-Default display, acceleration selector, searchable action picker (217-entry catalog by category, keyboard shortcut recorder + typed chord validated by the core parser, media, scroll, launch / command, do-nothing, use-default), add application (running windows via `visible_windows()`, browse for exe, title-contains for websites), remove profile.
 - [x] Detect Input: live `event` messages show "Detected: Tune / Clockwise in Browser → Ctrl+Tab" with a one-click "Change for <profile>" and a row flash.
@@ -251,8 +251,8 @@ rustup default stable-x86_64-pc-windows-msvc
 cd D:\NayaOS\openflowCompanion
 cargo new --lib crates/companion-core
 cargo new --lib crates/companion-platform
-cargo new --bin crates/companion-engine --name naya-companion
+cargo new --bin crates/companion-engine --name create-companion
 # then write the root Cargo.toml [workspace] and rust-toolchain.toml
 ```
 
-Split out of the NayaOS monorepo into its own repository on 2026-09-04 (`traviswye/naya-companion`), so tag-driven release workflows and CI run on their own.
+Split out of the NayaOS monorepo into its own repository on 2026-09-04 (`traviswye/create-companion`), so tag-driven release workflows and CI run on their own.

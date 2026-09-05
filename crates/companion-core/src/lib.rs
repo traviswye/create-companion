@@ -1,6 +1,6 @@
-//! Platform-independent core of Naya Companion.
+//! Platform-independent core of Create Companion.
 //!
-//! Pipeline (see `naya-companion-scope.md` §7 and §23):
+//! Pipeline (see `create-companion-scope.md` §7 and §23):
 //!
 //! ```text
 //! TransportCode (F24, Shift+F19, ...)      -- transport.rs

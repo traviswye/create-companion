@@ -60,7 +60,7 @@ pub fn watch(path: PathBuf, ctrl: Sender<Control>) -> Result<RecommendedWatcher>
 
     let file_name = path.file_name().map(|s| s.to_os_string());
     std::thread::Builder::new()
-        .name("naya-config-watch".into())
+        .name("cc-config-watch".into())
         .spawn(move || {
             let relevant = |ev: &notify::Event| {
                 ev.paths

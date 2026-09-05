@@ -521,7 +521,7 @@ export default function App() {
             ) : (
               <>
                 <span>Turn the dial or swipe the Tune to detect an input.</span>
-                {!engine.connected && <span>· Engine not running: start naya-companion to see live events.</span>}
+                {!engine.connected && <span>· Engine not running: start create-companion to see live events.</span>}
               </>
             )}
           </div>
