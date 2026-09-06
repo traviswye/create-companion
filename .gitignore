@@ -8,3 +8,4 @@ Cargo.lock.bak
 /ui/src-tauri/gen/schemas
 # Screen recordings stay local; the GIFs derived from them live in docs/media
 *.mp4
+/dist-mac
