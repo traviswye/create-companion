@@ -1,0 +1,26 @@
+name: Feature request
+description: Something Create Companion should do that it does not do today.
+labels: [enhancement]
+body:
+  - type: textarea
+    id: idea
+    attributes:
+      label: What would you like it to do?
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: What are you trying to accomplish?
+      description: The situation behind the request helps more than the mechanism.
+    validations:
+      required: true
+  - type: dropdown
+    id: module
+    attributes:
+      label: Module (if relevant)
+      options:
+        - Tune
+        - Touch
+        - Either
+        - Not module-related

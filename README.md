@@ -13,6 +13,7 @@ Windows now; macOS is planned (see [Roadmap](#roadmap)).
 - **[Install](INSTALL.md)** — download, first run, upgrade, uninstall, troubleshooting
 - **[Release notes](CHANGELOG.md)** — what each version contains and its known limitations
 - **Releases** — https://github.com/traviswye/create-companion/releases
+- **Questions and ideas** — [Discussions](https://github.com/traviswye/create-companion/discussions); bugs and catalog requests — [Issues](https://github.com/traviswye/create-companion/issues/new/choose)
 
 ## How it works
 

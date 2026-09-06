@@ -1,0 +1,29 @@
+name: Add an application or website to the catalog
+description: An app or site you want to see under Available, with its documented shortcuts.
+labels: [catalog]
+body:
+  - type: input
+    id: app
+    attributes:
+      label: Application or website
+      placeholder: "Affinity Photo 2 / notion.so"
+    validations:
+      required: true
+  - type: input
+    id: exe
+    attributes:
+      label: How to recognise it
+      description: The executable name on Windows (Task Manager → Details), the bundle id on macOS, or the window-title text for a website.
+      placeholder: "Photo.exe"
+  - type: input
+    id: docs
+    attributes:
+      label: Where the shortcuts are documented
+      description: A link to the vendor's keyboard-shortcut page. Catalog entries cite their sources.
+    validations:
+      required: true
+  - type: textarea
+    id: dial
+    attributes:
+      label: What should the dial do by default?
+      description: Optional. Clockwise / counter-clockwise / tap, in the app's own words ("next photo", "zoom in").

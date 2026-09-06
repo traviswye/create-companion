@@ -1,0 +1,52 @@
+name: Bug report
+description: Something did not work the way the docs say.
+labels: [bug]
+body:
+  - type: input
+    id: version
+    attributes:
+      label: Create Companion version
+      description: From the release you installed, or the tray tooltip.
+      placeholder: "0.1.0"
+    validations:
+      required: true
+  - type: dropdown
+    id: os
+    attributes:
+      label: Operating system
+      options:
+        - Windows 11
+        - Windows 10
+        - macOS (not yet supported, but tell us)
+    validations:
+      required: true
+  - type: dropdown
+    id: module
+    attributes:
+      label: Module
+      options:
+        - Tune
+        - Touch
+        - Both
+        - Not module-related
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: What you did, what you expected, what happened instead. If a gesture did nothing, say what the configuration window showed at the top when you repeated it.
+    validations:
+      required: true
+  - type: textarea
+    id: log
+    attributes:
+      label: Log lines
+      description: The relevant lines from `%LOCALAPPDATA%\CreateCompanion\logs\` (the file is dated). Paste them here.
+      render: text
+  - type: textarea
+    id: config
+    attributes:
+      label: Configuration (optional)
+      description: The relevant part of `%APPDATA%\CreateCompanion\config.toml`, for example the profile or input involved.
+      render: toml
