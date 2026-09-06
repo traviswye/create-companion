@@ -42,5 +42,14 @@ jobs:
         working-directory: ui
       - run: npm run build
         working-directory: ui
+      # The UI bundles the engine as a sidecar; build the engine first and put
+      # it where tauri-build expects it (binaries/<name>-<host triple>).
+      - name: Engine sidecar for the UI build
+        shell: bash
+        run: |
+          cargo build --release -p create-companion
+          triple=$(rustc -vV | sed -n 's/^host: //p')
+          ext=""; [ "$RUNNER_OS" = "Windows" ] && ext=.exe
+          mkdir -p ui/src-tauri/binaries
+          cp "target/release/create-companion$ext" "ui/src-tauri/binaries/create-companion-$triple$ext"
       - run: cargo build --release -p create-companion-ui --features create-companion-ui/custom-protocol
-        if: matrix.os == 'windows-latest'
