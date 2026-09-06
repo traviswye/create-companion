@@ -111,7 +111,11 @@ fn main() -> Result<()> {
     };
 
     let config_path = args.config.clone().unwrap_or_else(paths::config_file);
-    let (cfg, created) = config_store::load_or_create(&config_path)?;
+    let config_store::Loaded {
+        cfg,
+        created,
+        migrated_from,
+    } = config_store::load_or_create(&config_path)?;
     let _log_guard = init_logging(&cfg.engine.log_level)?;
     tracing::info!(
         config = %config_path.display(),
@@ -120,6 +124,13 @@ fn main() -> Result<()> {
     );
     if created {
         tracing::info!("wrote default configuration (first run)");
+    }
+    if let Some(v) = migrated_from {
+        tracing::info!(
+            from = v,
+            to = companion_core::config::CURRENT_SCHEMA_VERSION,
+            "migrated configuration schema (backup kept next to the file)"
+        );
     }
 
     if let Err(e) = autostart::set_enabled(cfg.engine.start_at_login) {

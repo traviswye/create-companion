@@ -10,7 +10,15 @@ use crate::transport::{TransportCode, TransportError, TransportTable};
 use serde::{Deserialize, Serialize};
 use std::collections::BTreeMap;
 
-pub const CURRENT_SCHEMA_VERSION: u32 = 1;
+/// Schema history:
+/// - 1: initial (transport, default_profile "Default", profiles).
+/// - 2 (2026-09-05): fallback profile named "System"; `god_mode` profile;
+///   `system_position`; profile `enabled`; binding `name`, `follow`,
+///   `multiplier`, `hold_ms`; input `follow`; engine `namespace_window_ms`,
+///   `stream_gap_ms`, `[engine.accel]`. Every v2 field has a default, so a v1
+///   file parses as-is; migration renames the fallback profile and stamps the
+///   new version so the file is rewritten in the current shape.
+pub const CURRENT_SCHEMA_VERSION: u32 = 2;
 
 /// Engine-level settings that are not about mappings.
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
@@ -122,20 +130,34 @@ pub enum ConfigError {
 }
 
 impl Config {
+    /// Parse and migrate to the current schema.
     pub fn from_toml(text: &str) -> Result<Self, ConfigError> {
+        Ok(Self::parse(text)?.0)
+    }
+
+    /// Parse and migrate; also reports the schema version the file was in
+    /// when it was older than the current one (so callers can rewrite it).
+    pub fn parse(text: &str) -> Result<(Self, Option<u32>), ConfigError> {
         let mut cfg: Config = toml::from_str(text)?;
         if cfg.schema_version > CURRENT_SCHEMA_VERSION {
             return Err(ConfigError::TooNew(cfg.schema_version));
         }
-        // Migrations. The fallback profile was called "Default" until 2026-09-05.
-        if cfg.default_profile.name.is_empty() || cfg.default_profile.name == "Default" {
-            cfg.default_profile.name = SYSTEM_PROFILE_NAME.to_string();
-        }
-        if cfg.god_mode.name.is_empty() {
-            cfg.god_mode.name = GOD_MODE_NAME.to_string();
-        }
+        let from = (cfg.schema_version < CURRENT_SCHEMA_VERSION).then_some(cfg.schema_version);
+        cfg.migrate();
         cfg.transport_table()?; // validate duplicates eagerly
-        Ok(cfg)
+        Ok((cfg, from))
+    }
+
+    /// Bring any older-or-equal schema up to the current one. Idempotent.
+    fn migrate(&mut self) {
+        // v1 -> v2: the fallback profile was called "Default"; God Mode did not exist.
+        if self.default_profile.name.is_empty() || self.default_profile.name == "Default" {
+            self.default_profile.name = SYSTEM_PROFILE_NAME.to_string();
+        }
+        if self.god_mode.name.is_empty() {
+            self.god_mode.name = GOD_MODE_NAME.to_string();
+        }
+        self.schema_version = CURRENT_SCHEMA_VERSION;
     }
 
     pub fn to_toml(&self) -> Result<String, ConfigError> {
@@ -225,6 +247,21 @@ TUNE_CCW = { key = "F24" }
             Config::from_toml(bad),
             Err(ConfigError::Transport(_))
         ));
+    }
+
+    #[test]
+    fn v1_file_migrates_to_v2() {
+        let (cfg, from) = Config::parse(SAMPLE).unwrap();
+        assert_eq!(from, Some(1));
+        assert_eq!(cfg.schema_version, CURRENT_SCHEMA_VERSION);
+        assert_eq!(cfg.default_profile.name, SYSTEM_PROFILE_NAME);
+        assert_eq!(cfg.god_mode.name, GOD_MODE_NAME);
+        // Rewritten, it is a v2 file that needs no further migration.
+        let text = cfg.to_toml().unwrap();
+        assert!(text.contains("schema_version = 2"));
+        let (again, from2) = Config::parse(&text).unwrap();
+        assert_eq!(from2, None);
+        assert_eq!(again, cfg);
     }
 
     #[test]

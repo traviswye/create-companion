@@ -192,7 +192,7 @@ Goal: one Tune firmware mapping behaves differently in two apps.
 ### Phase 3 — Tune enhancements
 - [x] 2026-09-05 `accel.rs` curves + per-mapping multiplier: `[engine.accel]` holds the light/medium/aggressive curves as `[[interval_ms, repeat], …]` plus `max_repeat` (32); `Binding.multiplier` (default 1) gives N actions per detent before the curve (UI: × field next to the speed preset, also on followed swipes). Streamed gestures skip the speed curve (firmware already scales them).
 - [~] DROPPED by decision 2026-09-05: hold / long-press / double-tap / hold-and-rotate. Probe showed the Tune's tap fires only on finger lift (the lift itself reads as a swipe), and a resting finger does not hold any key; these gestures are the firmware's to define, not the host's.
-- [ ] Config schema v2 with migration.
+- [x] 2026-09-06 Config schema v2 with migration: `CURRENT_SCHEMA_VERSION = 2`; `Config::parse` reports the source version; the engine backs up an older file as `config.backup-v<N>.toml` and rewrites it in the current shape on first start (verified live: v1 → v2, "Default" → "System"). Schema history documented on the constant.
 
 ### Phase 4 — Two Touch modules
 - [ ] Left/Right namespaces in the transport table; conflict detection (same transport code assigned twice → validation error surfaced in the UI).

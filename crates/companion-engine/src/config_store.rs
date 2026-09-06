@@ -10,9 +10,20 @@ use std::path::{Path, PathBuf};
 use std::sync::mpsc;
 use std::time::Duration;
 
+/// What `load_or_create` did, for the caller to log once logging is up.
+pub struct Loaded {
+    pub cfg: Config,
+    /// The bundled default was written because no file existed.
+    pub created: bool,
+    /// The file was in this older schema; it was backed up and rewritten.
+    pub migrated_from: Option<u32>,
+}
+
 /// Read the config, writing the bundled default first if the file is missing.
-/// Returns `(config, created)`; the caller logs `created` once logging is up.
-pub fn load_or_create(path: &Path) -> Result<(Config, bool)> {
+/// A file in an older schema is migrated in memory, backed up next to itself
+/// as `config.backup-v<N>.toml` (first time only) and rewritten in the
+/// current shape.
+pub fn load_or_create(path: &Path) -> Result<Loaded> {
     let mut created = false;
     if !path.exists() {
         if let Some(dir) = path.parent() {
@@ -22,7 +33,23 @@ pub fn load_or_create(path: &Path) -> Result<(Config, bool)> {
             .with_context(|| format!("writing default config to {}", path.display()))?;
         created = true;
     }
-    Ok((load(path)?, created))
+    let text =
+        std::fs::read_to_string(path).with_context(|| format!("reading {}", path.display()))?;
+    let (cfg, migrated_from) =
+        Config::parse(&text).with_context(|| format!("parsing {}", path.display()))?;
+    if let Some(v) = migrated_from {
+        let backup = path.with_file_name(format!("config.backup-v{v}.toml"));
+        if !backup.exists() {
+            std::fs::write(&backup, &text)
+                .with_context(|| format!("backing up {}", backup.display()))?;
+        }
+        save(path, &cfg)?;
+    }
+    Ok(Loaded {
+        cfg,
+        created,
+        migrated_from,
+    })
 }
 
 pub fn load(path: &Path) -> Result<Config> {

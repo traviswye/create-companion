@@ -11,7 +11,7 @@
 #             multiplier = N gives N actions per detent before the curve (default 1).
 #             [engine.accel] tunes the curves: [[interval_ms, repeat], ...] and max_repeat.
 
-schema_version = 1
+schema_version = 2
 
 [engine]
 start_at_login = false
