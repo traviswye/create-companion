@@ -360,6 +360,18 @@ export default function App() {
     });
   }
 
+  /** Actions per detent before acceleration; 1 clears the field. */
+  function setMultiplier(ev: string, n: number) {
+    const m = Math.max(1, Math.min(32, Math.round(n) || 1));
+    update((p) => {
+      if (!p.bindings[ev]) return p;
+      const b = { ...p.bindings[ev] };
+      if (m === 1) delete b.multiplier;
+      else b.multiplier = m;
+      return { ...p, bindings: { ...p.bindings, [ev]: b } };
+    });
+  }
+
   function setAccel(ev: string, accel: Accel) {
     update((p) => (p.bindings[ev] ? { ...p, bindings: { ...p.bindings, [ev]: { ...p.bindings[ev], accel } } } : p));
   }
@@ -747,7 +759,7 @@ export default function App() {
                   </th>
                   <th>Action</th>
                   <th style={{ width: 130 }}>Keys</th>
-                  <th style={{ width: 150 }}>Repeat</th>
+                  <th style={{ width: 190 }}>Repeat</th>
                   <th style={{ width: 90 }}></th>
                 </tr>
               </thead>
@@ -796,23 +808,37 @@ export default function App() {
                             const inputDefault = !!cfg.transport[ev]?.follow;
                             const effective = b.follow ?? inputDefault;
                             return (
-                              <Switch
-                                checked={effective}
-                                on="Follow swipe"
-                                off="One per swipe"
-                                title="The Tune sends a 2-finger swipe as a run of keys scaled to the finger travel. Off: one action per swipe. On: every key acts, so the action tracks the swipe's length. Starts as the input's setting; flipping it here applies to this profile only."
-                                onChange={(v) => setFollow(ev, v === inputDefault ? null : v)}
-                              />
+                              <div className="repeat">
+                                <Switch
+                                  checked={effective}
+                                  on="Follow swipe"
+                                  off="One per swipe"
+                                  title="The Tune sends a 2-finger swipe as a run of keys scaled to the finger travel. Off: one action per swipe. On: every key acts, so the action tracks the swipe's length. Starts as the input's setting; flipping it here applies to this profile only."
+                                  onChange={(v) => setFollow(ev, v === inputDefault ? null : v)}
+                                />
+                                {repeatable && (
+                                  <label className="mult" title="Actions per key of the swipe (or per swipe when collapsed)">
+                                    ×<input type="number" min={1} max={32} value={b.multiplier ?? 1} onChange={(e) => setMultiplier(ev, Number(e.target.value))} />
+                                  </label>
+                                )}
+                              </div>
                             );
                           })()
                         ) : b ? (
-                          <select value={b.accel ?? "none"} disabled={!repeatable} onChange={(e) => setAccel(ev, e.target.value as Accel)} title={repeatable ? "" : "Only key, media and scroll actions repeat"}>
-                            {ACCELS.map((a) => (
-                              <option key={a} value={a}>
-                                {a}
-                              </option>
-                            ))}
-                          </select>
+                          <div className="repeat">
+                            <select value={b.accel ?? "none"} disabled={!repeatable} onChange={(e) => setAccel(ev, e.target.value as Accel)} title={repeatable ? "Speed curve: turning the dial faster repeats the action more per detent" : "Only key, media and scroll actions repeat"}>
+                              {ACCELS.map((a) => (
+                                <option key={a} value={a}>
+                                  {a}
+                                </option>
+                              ))}
+                            </select>
+                            {repeatable && (
+                              <label className="mult" title="Actions per detent before the speed curve (1 = one action per detent)">
+                                ×<input type="number" min={1} max={32} value={b.multiplier ?? 1} onChange={(e) => setMultiplier(ev, Number(e.target.value))} />
+                              </label>
+                            )}
+                          </div>
                         ) : (
                           <span className="muted">—</span>
                         )}

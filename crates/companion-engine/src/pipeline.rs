@@ -5,7 +5,7 @@
 
 use crate::ipc::IpcMessage;
 use anyhow::{Context, Result};
-use companion_core::accel::{AccelCurve, RotaryState};
+use companion_core::accel::{AccelCurve, AccelSettings, RotaryState};
 use companion_core::action::Action;
 use companion_core::event::SemanticEvent;
 use companion_core::profile::{AppContext, AppIdentity, ProfileResolver};
@@ -63,6 +63,8 @@ pub struct Engine {
     stream_gap: Duration,
     /// When each streamed gesture last produced a key (for collapsing).
     last_stream: HashMap<SemanticEvent, Instant>,
+    /// Curve shapes and the repeat cap from `[engine.accel]`.
+    accel: AccelSettings,
 }
 
 impl Engine {
@@ -78,6 +80,7 @@ impl Engine {
                 .collect(),
             stream_gap: Duration::from_millis(u64::from(cfg.engine.stream_gap_ms)),
             last_stream: HashMap::new(),
+            accel: cfg.engine.accel.clone(),
             rotary: HashMap::new(),
             paused: false,
         })
@@ -94,6 +97,7 @@ impl Engine {
             .collect();
         self.stream_gap = Duration::from_millis(u64::from(cfg.engine.stream_gap_ms));
         self.last_stream.clear();
+        self.accel = cfg.engine.accel.clone();
         Ok(())
     }
 
@@ -194,9 +198,17 @@ impl Engine {
             }
         }
 
-        let repeat = if binding.action.supports_repeat() && !streamed {
-            let curve = AccelCurve::from_preset(binding.accel);
-            self.rotary.entry(event).or_default().tick(raw.at, &curve)
+        // Repeat = the binding's multiplier, scaled by the dial's speed curve
+        // (never for streamed gestures: the firmware already scales those),
+        // capped by engine.accel.max_repeat.
+        let repeat = if binding.action.supports_repeat() {
+            let speed = if streamed {
+                1
+            } else {
+                let curve = AccelCurve::from_settings(binding.accel, &self.accel);
+                self.rotary.entry(event).or_default().tick(raw.at, &curve)
+            };
+            (speed * binding.multiplier.max(1)).min(self.accel.max_repeat.max(1))
         } else {
             1
         };
@@ -528,6 +540,7 @@ mod tests {
                 accel: Default::default(),
                 name: None,
                 follow: None,
+                multiplier: 1,
             },
         );
         let t0 = Instant::now();
@@ -599,6 +612,7 @@ mod tests {
                 accel: Default::default(),
                 name: None,
                 follow: None,
+                multiplier: 1,
             },
         );
         let mut engine = Engine::new(&cfg).unwrap();

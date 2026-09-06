@@ -110,8 +110,8 @@ if ($PlanFile) {
     if ($t -and -not $t.StartsWith("#")) { $plan += [pscustomobject]@{ Name = $t; Expect = $null; Event = $null } }
   }
 } elseif ($Gestures) {
-  # -File passes "a,b" as one string: split it
-  foreach ($g in @($Gestures | ForEach-Object { $_ -split "," } | Where-Object { $_.Trim() })) { $plan += [pscustomobject]@{ Name = $g.Trim(); Expect = $null; Event = $null } }
+  # Each -Gestures element is one prompt, commas included (from a PowerShell prompt, "a","b" arrives as two elements).
+  foreach ($g in @($Gestures | Where-Object { $_.Trim() })) { $plan += [pscustomobject]@{ Name = $g.Trim(); Expect = $null; Event = $null } }
 } elseif (Test-Path $Config) {
   $cur = $null
   foreach ($line in Get-Content $Config) {

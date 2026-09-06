@@ -3,6 +3,7 @@
 //! Transport mapping, semantic events, application matching and actions are
 //! kept as separate concepts (scope §14).
 
+use crate::accel::AccelSettings;
 use crate::event::SemanticEvent;
 use crate::profile::{Profile, ProfileResolver};
 use crate::transport::{TransportCode, TransportError, TransportTable};
@@ -28,6 +29,8 @@ pub struct EngineSettings {
     /// are dropped (the first key already fired). Slow swipes pause up to
     /// ~200 ms between keys, so keep this above that.
     pub stream_gap_ms: u32,
+    /// Dial acceleration curves and the repeat cap (`[engine.accel]`).
+    pub accel: AccelSettings,
 }
 
 impl Default for EngineSettings {
@@ -37,6 +40,7 @@ impl Default for EngineSettings {
             log_level: "info".into(),
             namespace_window_ms: 100,
             stream_gap_ms: 300,
+            accel: AccelSettings::default(),
         }
     }
 }

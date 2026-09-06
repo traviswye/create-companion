@@ -21,14 +21,43 @@ pub struct AccelCurve {
     pub steps: Vec<(u64, u32)>,
 }
 
+/// The three preset curves and the overall repeat cap, tunable from the
+/// config (`[engine.accel]`). Each curve is a list of `[interval_ms, repeat]`
+/// pairs: turning faster than `interval_ms` between detents yields `repeat`
+/// actions per detent; the tightest matching pair wins.
+#[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
+#[serde(default)]
+pub struct AccelSettings {
+    pub light: Vec<(u64, u32)>,
+    pub medium: Vec<(u64, u32)>,
+    pub aggressive: Vec<(u64, u32)>,
+    /// Upper bound on actions per detent after the binding's multiplier.
+    pub max_repeat: u32,
+}
+
+impl Default for AccelSettings {
+    fn default() -> Self {
+        Self {
+            light: vec![(150, 2), (80, 3)],
+            // Default curve from scope §11.
+            medium: vec![(250, 2), (150, 4), (80, 8)],
+            aggressive: vec![(250, 3), (150, 6), (80, 12)],
+            max_repeat: 32,
+        }
+    }
+}
+
 impl AccelCurve {
     pub fn from_preset(p: AccelPreset) -> Self {
+        Self::from_settings(p, &AccelSettings::default())
+    }
+
+    pub fn from_settings(p: AccelPreset, s: &AccelSettings) -> Self {
         let steps = match p {
             AccelPreset::None => vec![],
-            AccelPreset::Light => vec![(150, 2), (80, 3)],
-            // Default curve from scope §11.
-            AccelPreset::Medium => vec![(250, 2), (150, 4), (80, 8)],
-            AccelPreset::Aggressive => vec![(250, 3), (150, 6), (80, 12)],
+            AccelPreset::Light => s.light.clone(),
+            AccelPreset::Medium => s.medium.clone(),
+            AccelPreset::Aggressive => s.aggressive.clone(),
         };
         Self { steps }
     }
@@ -76,6 +105,18 @@ mod tests {
         assert_eq!(c.multiplier(Duration::from_millis(200)), 2);
         assert_eq!(c.multiplier(Duration::from_millis(100)), 4);
         assert_eq!(c.multiplier(Duration::from_millis(40)), 8);
+    }
+
+    #[test]
+    fn settings_override_the_curve() {
+        let s = AccelSettings {
+            medium: vec![(500, 10)],
+            ..AccelSettings::default()
+        };
+        let c = AccelCurve::from_settings(AccelPreset::Medium, &s);
+        assert_eq!(c.multiplier(Duration::from_millis(400)), 10);
+        assert_eq!(c.multiplier(Duration::from_millis(600)), 1);
+        assert_eq!(AccelSettings::default().max_repeat, 32);
     }
 
     #[test]

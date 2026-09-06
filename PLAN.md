@@ -190,8 +190,8 @@ Goal: one Tune firmware mapping behaves differently in two apps.
 - [ ] Queued: import/export of a single app profile; per-profile "reset to bundled defaults"; decide whether Learn stays after real-module testing; OpenFlow-side Import for module profiles.
 
 ### Phase 3 — Tune enhancements
-- [ ] `accel.rs` curves + per-mapping multiplier; repeat-count executor.
-- [ ] `state.rs`: press/hold, tap/double-tap/long-press, hold+rotate chords (needs key-up from transport; verify the firmware sends up events for the tap field).
+- [x] 2026-09-05 `accel.rs` curves + per-mapping multiplier: `[engine.accel]` holds the light/medium/aggressive curves as `[[interval_ms, repeat], …]` plus `max_repeat` (32); `Binding.multiplier` (default 1) gives N actions per detent before the curve (UI: × field next to the speed preset, also on followed swipes). Streamed gestures skip the speed curve (firmware already scales them).
+- [~] DROPPED by decision 2026-09-05: hold / long-press / double-tap / hold-and-rotate. Probe showed the Tune's tap fires only on finger lift (the lift itself reads as a swipe), and a resting finger does not hold any key; these gestures are the firmware's to define, not the host's.
 - [ ] Config schema v2 with migration.
 
 ### Phase 4 — Two Touch modules

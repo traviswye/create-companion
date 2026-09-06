@@ -40,6 +40,8 @@ export interface Binding {
   name?: string;
   /** Streamed gestures only: true = every key fires, false = one per swipe, unset = the input's default. */
   follow?: boolean | null;
+  /** Actions per detent (or per key of a followed swipe) before the speed curve. Default 1. */
+  multiplier?: number;
 }
 
 export interface AppMatch {

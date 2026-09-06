@@ -224,3 +224,8 @@ table.map .ev > div:first-child { white-space: nowrap; }
 .switch.on .track { background: var(--accent); }
 .switch.on .knob { left: 16px; }
 .switch.on .switch-label { color: var(--text); }
+
+.repeat { display: flex; align-items: center; gap: 8px; white-space: nowrap; }
+.repeat select { min-width: 84px; }
+.mult { display: inline-flex; align-items: center; gap: 2px; font-size: 12px; color: var(--muted); }
+.mult input { width: 44px; padding: 3px 4px; font-size: 12px; }

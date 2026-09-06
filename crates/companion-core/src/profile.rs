@@ -124,6 +124,18 @@ pub struct Binding {
     /// default (`InputEntry::follow`).
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub follow: Option<bool>,
+    /// Actions per detent (or per key of a followed swipe) before the dial's
+    /// speed curve is applied. 1 = one action per event.
+    #[serde(default = "one", skip_serializing_if = "is_one")]
+    pub multiplier: u32,
+}
+
+fn one() -> u32 {
+    1
+}
+
+fn is_one(n: &u32) -> bool {
+    *n == 1
 }
 
 fn default_true() -> bool {
@@ -270,6 +282,7 @@ mod tests {
             accel: AccelPreset::None,
             name: None,
             follow: None,
+            multiplier: 1,
         }
     }
 
@@ -292,6 +305,7 @@ mod tests {
                         accel: AccelPreset::Light,
                         name: None,
                         follow: None,
+                        multiplier: 1,
                     },
                 ),
                 (
@@ -303,6 +317,7 @@ mod tests {
                         accel: AccelPreset::None,
                         name: None,
                         follow: None,
+                        multiplier: 1,
                     },
                 ),
             ]),
@@ -392,6 +407,7 @@ mod tests {
                 accel: Default::default(),
                 name: None,
                 follow: None,
+                multiplier: 1,
             },
         );
         let after = r.binding(&chrome, ev).unwrap().action.clone();

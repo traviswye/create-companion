@@ -7,7 +7,9 @@
 #             (Windows) or bundle id (macOS), optionally narrowed by a
 #             window_title substring (websites). Unbound events fall back to
 #             default_profile. enabled = false keeps a profile but never matches it.
-# accel:      none | light | medium | aggressive -- repeat count grows with dial speed.
+# accel:      none | light | medium | aggressive -- repeat count grows with dial speed;
+#             multiplier = N gives N actions per detent before the curve (default 1).
+#             [engine.accel] tunes the curves: [[interval_ms, repeat], ...] and max_repeat.
 
 schema_version = 1
 
@@ -21,6 +23,13 @@ namespace_window_ms = 100
 # input or binding says "follow", keys within this many ms of the previous one are the same swipe
 # and only the first acts.
 stream_gap_ms = 300
+
+[engine.accel]
+# Turning faster than interval_ms between detents gives that many actions per detent.
+light = [[150, 2], [80, 3]]
+medium = [[250, 2], [150, 4], [80, 8]]
+aggressive = [[250, 3], [150, 6], [80, 12]]
+max_repeat = 32
 
 [transport]
 TUNE_CW = { key = "F24" }
