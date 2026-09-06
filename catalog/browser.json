@@ -58,7 +58,7 @@
       },
       "mac": {
         "type": "keys",
-        "chord": "Ctrl+T"
+        "chord": "Cmd+T"
       }
     },
     {
@@ -70,7 +70,7 @@
       },
       "mac": {
         "type": "keys",
-        "chord": "Alt+Left"
+        "chord": "Cmd+Left"
       }
     },
     {
@@ -82,7 +82,7 @@
       },
       "mac": {
         "type": "keys",
-        "chord": "Alt+Right"
+        "chord": "Cmd+Right"
       }
     },
     {
@@ -94,7 +94,7 @@
       },
       "mac": {
         "type": "keys",
-        "chord": "Ctrl+="
+        "chord": "Cmd+="
       }
     },
     {
@@ -106,7 +106,7 @@
       },
       "mac": {
         "type": "keys",
-        "chord": "Ctrl+-"
+        "chord": "Cmd+-"
       }
     }
   ],

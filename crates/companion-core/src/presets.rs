@@ -3,7 +3,17 @@
 
 use crate::Config;
 
-pub const DEFAULT_CONFIG_TOML: &str = include_str!("../../../presets/default-config.toml");
+/// The Windows first-run configuration (F17-F24 inputs, Windows chords).
+pub const DEFAULT_CONFIG_TOML_WINDOWS: &str = include_str!("../../../presets/default-config.toml");
+/// The macOS first-run configuration (F13-F20 inputs, Cmd chords).
+pub const DEFAULT_CONFIG_TOML_MACOS: &str =
+    include_str!("../../../presets/default-config.macos.toml");
+
+/// The first-run configuration for the platform this build runs on.
+#[cfg(target_os = "macos")]
+pub const DEFAULT_CONFIG_TOML: &str = DEFAULT_CONFIG_TOML_MACOS;
+#[cfg(not(target_os = "macos"))]
+pub const DEFAULT_CONFIG_TOML: &str = DEFAULT_CONFIG_TOML_WINDOWS;
 
 /// The first-run configuration. Panics only if the bundled file is invalid,
 /// which the test below guards against.
@@ -23,6 +33,32 @@ mod tests {
 
     /// Every chord in the generated app catalog must parse with the engine's
     /// parser, or it would fail the moment a user picked it.
+    #[test]
+    fn both_default_configs_parse_and_fit_their_platform() {
+        let win = Config::from_toml(DEFAULT_CONFIG_TOML_WINDOWS).expect("windows default config");
+        let mac = Config::from_toml(DEFAULT_CONFIG_TOML_MACOS).expect("macos default config");
+        assert_eq!(win.transport.len(), mac.transport.len());
+        // Every macOS input is a key macOS can deliver.
+        for (ev, e) in &mac.transport {
+            assert!(
+                e.code.key.macos_keycode().is_some(),
+                "{ev} uses {:?}",
+                e.code.key
+            );
+        }
+        // Every chord in the macOS profiles parses.
+        for p in &mac.profiles {
+            for (ev, b) in &p.bindings {
+                if let crate::action::Action::Keys { chord, .. } = &b.action {
+                    chord
+                        .0
+                        .parse::<crate::keys::ParsedChord>()
+                        .unwrap_or_else(|e| panic!("{} / {ev}: {e}", p.name));
+                }
+            }
+        }
+    }
+
     #[test]
     fn apps_catalog_chords_parse() {
         let v: serde_json::Value = serde_json::from_str(APPS_CATALOG_JSON).unwrap();

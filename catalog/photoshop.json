@@ -65,7 +65,7 @@
       },
       "mac": {
         "type": "keys",
-        "chord": "Ctrl+Z"
+        "chord": "Cmd+Z"
       }
     },
     {
@@ -77,7 +77,7 @@
       },
       "mac": {
         "type": "keys",
-        "chord": "Ctrl+Shift+Z"
+        "chord": "Cmd+Shift+Z"
       }
     },
     {

@@ -108,8 +108,10 @@ one is missing:
 After granting either one, quit the engine from its menu-bar icon and start it again from
 Applications; macOS applies the permission to a fresh process.
 
-**What's different from Windows.** macOS has no F21–F24, so inputs use F13–F20 (the README's Mac
-defaults). Cmd is the modifier the catalog's Mac shortcuts use, and Fn shortcuts work if the
+**What's different from Windows.** macOS has no F21–F24, so the first-run configuration uses
+F13–F20 (the README's Mac defaults) and Cmd-based shortcuts in the bundled profiles. A
+configuration file created by an earlier Windows-style build keeps its F21–F24 inputs; the log
+says so at start. Fix it under **Inputs**, or delete the file to get the macOS defaults. Cmd is the modifier the catalog's Mac shortcuts use, and Fn shortcuts work if the
 module can send Fn. Files live in `~/Library/Application Support/CreateCompanion/` (configuration)
 and `~/Library/Logs/CreateCompanion/` (logs). Start at login is a per-user LaunchAgent, switched
 from the menu-bar icon. To remove everything, delete the app from Applications and those two

@@ -42,6 +42,8 @@ export interface Binding {
   follow?: boolean | null;
   /** Actions per detent (or per key of a followed swipe) before the speed curve. Default 1. */
   multiplier?: number;
+  /** Catalog defaults only: the macOS action when it differs from `action`. */
+  mac?: Action;
 }
 
 export interface AppMatch {

@@ -149,6 +149,15 @@ fn main() -> Result<()> {
             );
             permissions::request_input_monitoring();
         }
+        for (ev, entry) in &cfg.transport {
+            if entry.code.key.macos_keycode().is_none() {
+                tracing::warn!(
+                    input = %ev,
+                    key = ?entry.code.key,
+                    "macOS never delivers this key; move the input to F13-F20 under Inputs, or delete config.toml to get the macOS defaults"
+                );
+            }
+        }
         if !permissions::accessibility() {
             tracing::warn!(
                 "Accessibility is not granted: actions cannot be sent and window titles cannot be read. \

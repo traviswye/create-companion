@@ -189,6 +189,8 @@ def validate_file(path: Path) -> tuple[list[str], list[str], int]:
                 errs.append(f"{path.name}: defaults[{ev}] needs an `action`")
                 continue
             errs.extend(action_errors(b["action"], f"{path.name} defaults[{ev}]"))
+            if "mac" in b:
+                errs.extend(action_errors(b["mac"], f"{path.name} defaults[{ev}].mac"))
             if "accel" in b and b["accel"] not in ("none", "light", "medium", "aggressive"):
                 errs.append(f"{path.name}: defaults[{ev}].accel must be none|light|medium|aggressive")
 
