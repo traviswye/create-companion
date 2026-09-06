@@ -19,6 +19,10 @@ Windows now; macOS is planned (see [Roadmap](#roadmap)).
 
 ## How it works
 
+![A tap on the Tune opens a new Chrome tab, the dial cycles through tabs, and on a YouTube tab the same tap becomes play/pause and the dial seeks](docs/media/demo.gif)
+
+*One Tune, no reflashing: in Chrome a tap is "new tab" and the dial switches tabs; when the YouTube tab comes to the front the same tap is play/pause and the dial seeks, because the YouTube profile takes over while that page is in front.*
+
 ```
  Tune / Touch  ──USB──►  Windows  ──►  Create Companion engine  ──►  the app in front
  (flashed once:            sees          F23 → "dial counter-clockwise"     receives Ctrl+Shift+Tab
