@@ -1,128 +1,162 @@
 # Create Companion
 
-Named after the Naya Create keyboard it serves. Formerly "Naya Companion"; the engine migrates a `%APPDATA%\NayaCompanion` folder to `%APPDATA%\CreateCompanion` on first start.
+Turn the Naya Create's **Tune** and **Touch** modules into per-application controls.
 
-Lightweight always-on host engine for the Naya Create's Tune and Touch modules. The keyboard is
-flashed **once** so module gestures emit F17–F24; the companion swallows those keys and turns them
-into per-application actions (Chrome: switch tabs, Photoshop: brush size, desktop: volume).
+Flash a module once so its gestures send F-keys, and Create Companion does the rest on the
+computer: it catches those keys, works out which gesture they were, looks at which application is
+in front, and sends the shortcut you chose for it. Turn the dial in Chrome to switch tabs, in
+Photoshop to change brush size, on the desktop to change volume. Change any of it in a
+configuration window, live, without touching the keyboard's firmware again.
 
-- Scope: `create-companion-scope.md`
-- Build plan and phase checklists: `PLAN.md`
-- A sibling of the [NayaOS](https://github.com/traviswye/NayaOS) preservation effort for the Naya Create keyboard (this is its own repository).
+Windows now; macOS is planned (see [Roadmap](#roadmap)).
 
-## Status
+- **[Install](INSTALL.md)** — download, first run, upgrade, uninstall, troubleshooting
+- **[Release notes](CHANGELOG.md)** — what each version contains and its known limitations
+- **Releases** — https://github.com/traviswye/create-companion/releases
+- Part of the [NayaOS](https://github.com/traviswye/NayaOS) preservation effort for the Naya Create keyboard; uses OpenFlow (from that project) to flash the module.
 
-Phases 0–2 complete (Windows): engine + tray + configuration window. The Tune is flashed once
-(F24 = clockwise, F23 = counterclockwise, F22 = tap, F17–F20 = swipes); everything else is
-configured on the host.
+## How it works
 
-## Install (Windows)
-
-Download `Create Companion_<version>_x64-setup.exe` from the GitHub Releases page and run it. It
-installs per user (no admin prompt), puts both the engine and the configuration window in one
-folder, adds a Start Menu entry, and starts the engine. The engine registers itself to start at
-login when the configuration says so. Uninstalling removes the programs and the login entry;
-your configuration and logs stay in `%APPDATA%\CreateCompanion` and `%LOCALAPPDATA%\CreateCompanion`.
-
-Build the installer yourself with `powershell -File tools/build_installer.ps1`; it lands in
-`target/release/bundle/nsis/`.
-
-## Run
-
-```powershell
-cargo run --release            # tray icon + engine; creates %APPDATA%\CreateCompanion\config.toml on first run
-cargo run -- --no-tray         # console mode, Ctrl+C to quit
-cargo run -- --config x.toml   # use another config file (still hot-reloaded)
-cargo run -- --print-config    # dump the bundled default config
-cargo run -- --allow-injected  # treat synthetic F-keys as transport (testing without the device)
+```
+ Tune / Touch  ──USB──►  Windows  ──►  Create Companion engine  ──►  the app in front
+ (flashed once:            sees          F23 → "dial counter-clockwise"     receives Ctrl+Shift+Tab
+  dial CCW = F23)          F23           Chrome is in front → Ctrl+Shift+Tab
 ```
 
-- **Config**: `%APPDATA%\CreateCompanion\config.toml`. Edit and save; the engine reloads within
-  a second. A file that fails to parse is logged and ignored, the previous config stays active.
-- **Tray menu**: active profile and last action, **Open configuration...** (the UI), edit config
-  file, open folder, reload, pause, start at login, quit.
-- **Configuration window** (`create-companion-ui.exe`, Tauri): the left column lists **Active**
-  profiles and everything **Available** in the catalog (29 apps and sites, 4,969 imported
-  shortcuts), with a search box; the star activates an app with its default mappings or disables
-  a profile while keeping its mappings. Each mapping shows the plain-English **Action** and the
-  **Keys** it sends. Click an action to change it: the app's own shortcuts, the generic catalog,
-  a recorded shortcut, media, scroll, launch. Add an application from the running windows or by
-  window title for websites. Edits autosave and the engine applies them live. Turn the dial
-  while it is open and the detected input is shown with a one-click edit. **Inputs** (pinned at the
-  bottom of the list) edits which key each module gesture sends, per gesture and finger count, with
-  a Learn button that captures the next F13–F24 press and an "Export for OpenFlow…" that writes
-  one `openflow.module-profile` file per module, ready for OpenFlow's Import. The window is not resident; close it and only the engine remains.
-- **Logs**: `%LOCALAPPDATA%\CreateCompanion\logs\companion.log.<date>` (and stderr in debug
-  builds). `RUST_LOG=debug` shows every decoded event; otherwise `[engine] log_level` applies.
-- Only F-keys listed under `[transport]` (the Inputs screen) are intercepted. Everything else passes through.
-- **Event names** are `<MODULE>_<GESTURE>[_<n>F]`: `TUNE_CW`, `TUNE_TAP_1F`, `LEFT_TOUCH_SWIPE_UP_3F`.
-  A name without a finger count (`TUNE_SWIPE_LEFT`) is an any-count default; a finger-specific
-  binding wins over it. `TUNE_PRESS` is accepted as the old spelling of `TUNE_TAP_1F`.
-- **Modules side by side**: the whole keyboard is one USB device, so a Tune and a Touch sending the
-  same bare F-key cannot be told apart. Give each module its own modifier namespace when flashing
-  (Tune on plain keys, Left Touch on Shift+F-keys, Right Touch on Ctrl+F-keys); the engine keys its
-  transport table on key plus modifier and releases the modifier before sending the mapped chord.
+1. **Inputs.** The module is flashed so each gesture sends one F-key (F13–F24), optionally with a
+   modifier so two modules can share the same keys (Tune on plain keys, a Touch on Shift+keys).
+   Create Companion intercepts only the keys you tell it about; everything else on the keyboard
+   is untouched.
+2. **Profiles.** A profile is a set of gesture → action bindings for one application or website.
+   The engine picks the profile by the executable in the foreground, or by window title for a
+   site inside a browser. **System** is the fallback for anything without a profile; **God Mode**
+   holds bindings that win everywhere, whatever is in front (window switching, desktops).
+3. **Actions.** A keyboard shortcut, a media key, mouse scroll, launching a program, or a shell
+   command. A catalog of **162 applications, websites and systems with 22,646 documented
+   shortcuts** lets you pick an action by name ("Next tab", "Increase brush size") instead of
+   remembering the keys.
 
-### Catalog
+## Quick start
 
-`catalog/<id>.json` holds one file per application, website or system: match rules, the complete
-documented shortcut list, and default Tune bindings. `tools/gen_presets.py` merges them (plus the
-ShortcutMapper import) into `presets/apps.json`; `tools/validate_catalog.py` checks every file and a
-Rust test parses every chord. Currently 160 entries and 22,579 actions; see `catalog/README.md`
-for the format and `catalog/REPORT.md` for per-entry counts and caveats.
+1. **Install** Create Companion ([INSTALL.md](INSTALL.md)). The engine starts and a dial icon
+   appears in the tray.
+2. **Flash the module.** Open the configuration window (tray icon → *Open configuration…*), go to
+   **Inputs**, and check which key each gesture is expected to send. The defaults for a Tune are:
 
-### Bundled profiles
+   | Gesture | Key |
+   |---|---|
+   | Dial clockwise / counter-clockwise | F24 / F23 |
+   | Tap (1 finger) | F22 |
+   | Swipe left / right / up / down (1 finger) | F20 / F19 / F18 / F17 |
 
-Every profile binds the dial (CW / CCW / press) and the four Tune swipes.
+   Add rows for any other gestures you use (2- and 3-finger taps and swipes, with a modifier if
+   you like), then click **Export for OpenFlow…**. It writes one module-profile file per module;
+   import that in OpenFlow and flash. Or flash the keys by hand in OpenFlow and use **Learn** on
+   each row to capture what the module actually sends.
+3. **Star some apps.** The left column's **Available** tab lists everything in the catalog with
+   its shortcut count. Click a name to preview its shortcuts and the mappings it would set up;
+   click the star to enable it. Starred profiles appear under **Active**.
+4. **Try it.** Turn the dial with the configuration window open: the top of the page shows the
+   gesture it detected, the profile it landed in and the action it ran, with a button to change
+   it. Edits save automatically and the engine applies them within a second.
 
-| Profile | Matches | Dial | Swipes |
-|---|---|---|---|
-| Default | anything else | volume / mute | prev / next track, play-pause, task view |
-| Browser | Chrome, Edge, Firefox, Brave, Vivaldi | tabs / new tab | back / forward, zoom |
-| YouTube | a browser whose title contains "YouTube" | seek / play-pause | prev / next video, speed |
-| Terminal | Windows Terminal, PowerShell, pwsh, cmd | command history / Esc | tabs, font size |
-| Photoshop | Photoshop.exe | brush size / brush tool | undo / redo, hardness |
-| Lightroom | Lightroom, Lightroom Classic | next / prev photo / zoom | undo / redo, pick / reject |
-| Premiere Pro | Adobe Premiere Pro.exe | frame step / play | 5-frame step, timeline zoom |
-| DaVinci Resolve | Resolve.exe | frame step / play | 1 s step, timeline zoom |
-| Fusion 360 | Fusion360.exe | zoom / fit | undo / redo |
-| Blender | blender.exe | frame step / play | undo / redo, keyframes |
-| VS Code | Code.exe | editor tabs / palette | back / forward, problems |
-| Discord | Discord.exe | channels / mute | servers, deafen |
-| Spotify | Spotify.exe | app volume / play | prev / next track, like |
+## The configuration window
 
-**Website profiles** use `window_title = ["..."]` in the `match` table, combined with the browser
-executables. A title rule always beats an executable-only rule, so YouTube wins over Browser when a
-YouTube tab is active. Titles are read from the foreground window only at the moment a dial event
-arrives, only when some profile has a title rule, and are never logged or stored.
+- **Active / Available.** Active profiles are the ones in use. Drag them to set priority for
+  the rare case where two profiles match the same window and are equally specific; a site title
+  always beats an app, and an app naming one executable beats a group naming several. God Mode
+  is pinned at the top; System is the fallback.
+- **Mappings.** One row per input: the plain-English action, the keys it sends, and the
+  **Repeat** column: a speed curve for the dial (turn faster, repeat more) and a multiplier
+  (actions per detent). Rows an app doesn't bind fall through to System; rows God Mode binds are
+  locked everywhere else.
+- **Action picker.** The app's own documented shortcuts, the generic catalog by category, a
+  recorded shortcut (press the keys; it is named automatically when the catalog knows it),
+  media keys, scroll, launch a program, run a command, or "do nothing" to silence a gesture in
+  one app.
+- **This computer / All platforms.** The catalog is filtered to what runs on this OS. Switch to
+  All platforms to see macOS entries and chords too, for example to build a configuration you
+  will move to a Mac.
+- **Inputs.** Which key and modifier each gesture sends, per finger count; Learn; Export for
+  OpenFlow. Two-finger swipes on the Tune arrive as a *run* of keys scaled to how far the fingers
+  travel; by default a run is collapsed to one action, and the **Follow swipe** switch (per input,
+  and per binding in each profile) lets an action such as volume or scroll follow the swipe's length
+  instead.
+- **Messages you may see.** *Received Shift+F16 from the keyboard, but no input uses it*: the
+  module sent a key you have not added under Inputs; the button prefills the add row.
+  *Detected … but nothing is bound for it*: the gesture is known but the active profile and
+  System have no action for it; the button opens the picker.
 
-Regenerate the bundled presets with `python tools/gen_presets.py`. It reads `reference/action-chords.json`
-(NayaOS action vocabulary) and `reference/app-shortcuts.json` (ShortcutMapper, MIT; 20 apps) and writes
-`presets/actions.json` (generic catalog), `presets/apps.json` (per-app catalog with match rules, shortcuts
-and defaults) and `presets/default-config.toml`. See `reference/ATTRIBUTION.md`.
-Your live config is written once, on first run; to pick up new bundled profiles either delete
-`%APPDATA%\CreateCompanion\config.toml` and restart, or copy the pieces you want from
-`cargo run -- --print-config`.
+## Files
 
-## Layout
-
-| Crate | Role |
+| What | Where |
 |---|---|
-| `crates/companion-core` | OS-free logic: semantic events, transport table, profiles, actions, acceleration, config, chord parsing. Fully unit-tested. |
-| `crates/companion-platform` | Win32 implementation: low-level keyboard hook + foreground watch, `SendInput` executor, autostart, single instance, message loop. macOS later. |
-| `crates/companion-engine` | The `create-companion` binary: pipeline thread, config watcher, tray, logging. |
-| `presets/` | Generated action catalog and the default config (`tools/gen_presets.py`). |
-| `ui/` | Configuration window: Tauri 2 shell (`ui/src-tauri`) + Vite/React frontend (`ui/src`). |
+| Configuration (TOML, hot-reloaded) | `%APPDATA%\CreateCompanion\config.toml` |
+| Logs | `%LOCALAPPDATA%\CreateCompanion\logs\` |
+| Installed programs (per-user install) | `%LOCALAPPDATA%\Create Companion\` |
 
-## Develop
+The configuration file is plain TOML and safe to edit by hand; the engine reloads it on save and
+keeps the previous version if the new one fails to parse. Older files are migrated on load and
+the original kept next to them as `config.backup-v<N>.toml`.
 
-```powershell
-cargo test                       # engine + core (the UI crate is not a default member)
-cargo clippy --all-targets
-cargo fmt --all
-cd ui; npm install; npm run tauri dev     # UI with hot reload (needs the engine running for live status)
-cd ui; npm run build; cd ..; cargo build --release -p create-companion -p create-companion-ui --features create-companion-ui/custom-protocol
+## Command line
+
+```
+create-companion                     tray + engine (the normal way; the installer starts this)
+create-companion --no-tray           console mode, Ctrl+C to quit
+create-companion --config x.toml     use another configuration file (still hot-reloaded)
+create-companion --print-config      dump the bundled default configuration
+create-companion --allow-injected    treat synthetic F-keys as gestures (testing without a device)
 ```
 
-The engine looks for `create-companion-ui.exe` next to itself, so build both into the same `target`
-directory (as above) or install them side by side.
+## Building from source
+
+Requirements: Rust (stable, MSVC toolchain), Node.js 22, and on Windows the Visual Studio Build
+Tools. Python 3 for the catalog scripts.
+
+```powershell
+cargo test                         # engine + core
+cargo clippy --all-targets
+cd ui; npm ci; npm run build; cd ..
+cargo build --release -p create-companion -p create-companion-ui --features create-companion-ui/custom-protocol
+target\release\create-companion.exe
+```
+
+The engine looks for `create-companion-ui.exe` next to itself, so build both into the same
+`target` directory as above. `powershell -File tools\build_installer.ps1` produces the installer
+(close the engine and the window first; the build replaces the running executables).
+
+### Repository layout
+
+| Path | Role |
+|---|---|
+| `crates/companion-core` | OS-independent logic: gestures, inputs, profiles, actions, acceleration, configuration, chord parsing. Unit-tested. |
+| `crates/companion-platform` | Win32: low-level keyboard hook, foreground watch, `SendInput`, autostart, single instance. macOS later. |
+| `crates/companion-engine` | The `create-companion` executable: pipeline, config watcher, tray, IPC to the window, logging. |
+| `ui/` | The configuration window: Tauri 2 shell (`ui/src-tauri`) and Vite/React frontend (`ui/src`). |
+| `catalog/` | One JSON file per application, website or system with its documented shortcuts; `catalog/README.md` has the format, `catalog/REPORT.md` the per-entry notes. |
+| `presets/` | Generated from `catalog/` by `tools/gen_presets.py`: the app catalog, the generic action list and the default configuration. |
+| `tools/` | Catalog generator and validator, icon generator, installer build, and capture tools for studying what a module sends (`gesture_capture.ps1`, `keymon.ps1`, `keymon_analyze.py`). |
+
+### Adding an application to the catalog
+
+Create `catalog/<id>.json` following `catalog/README.md` (match rules, sources, the documented
+shortcut list, optional default Tune bindings), run `python tools/validate_catalog.py` and
+`python tools/gen_presets.py`, and open a pull request. Shortcut lists come from the vendor's
+documentation; every entry cites its sources.
+
+## Roadmap
+
+- **Done**: Windows engine, tray, configuration window, 162-entry catalog, Tune inputs with
+  modifier namespaces, God Mode, per-OS catalog filtering, installer and release workflow.
+- **Next**: Touch module support once one is on the bench (the engine already handles its
+  key ranges; what is missing is measurement of how it sends gestures).
+- **Then**: macOS (event tap, menu-bar app, permissions onboarding, dmg).
+
+Design notes and the detailed checklist are in `PLAN.md`; the original scope is
+`create-companion-scope.md`.
+
+## License
+
+MIT. Shortcut data in `catalog/` is compiled from public vendor documentation with sources cited
+in each file; the ShortcutMapper import in `reference/` is MIT (see `reference/ATTRIBUTION.md`).
