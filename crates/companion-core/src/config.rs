@@ -1,4 +1,4 @@
-//! On-disk configuration (TOML). Versioned from day one; see `PLAN.md` §6.
+//! On-disk configuration (TOML). Versioned from day one; see `docs/PLAN.md` §6.
 //!
 //! Transport mapping, semantic events, application matching and actions are
 //! kept as separate concepts (scope §14).

@@ -170,7 +170,7 @@ impl Engine {
         };
 
         // The firmware's namespace modifier is still held; release it before
-        // the action's own chord goes out (PLAN.md Â§4.3).
+        // the action's own chord goes out (docs/PLAN.md §4.3).
         if !raw.code.mods.is_empty() {
             if let Err(e) = sink.release_modifiers(raw.code.mods) {
                 tracing::warn!("could not release transport modifiers: {e}");

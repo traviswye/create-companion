@@ -1,7 +1,7 @@
 //! Low-level keyboard hook (`WH_KEYBOARD_LL`) plus the foreground watch, both
 //! living on one dedicated message-pump thread.
 //!
-//! Design (PLAN.md §4.1): the callback does the bare minimum. It checks a
+//! Design (docs/PLAN.md §4.1): the callback does the bare minimum. It checks a
 //! static reserved-key table, skips events we injected ourselves, works out
 //! which modifiers belong to the key, pushes a [`RawTransportEvent`] onto a
 //! channel and returns `1` so the key never reaches the foreground

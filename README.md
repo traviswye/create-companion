@@ -154,8 +154,8 @@ documentation; every entry cites its sources.
   key ranges; what is missing is measurement of how it sends gestures).
 - **Then**: macOS (event tap, menu-bar app, permissions onboarding, dmg).
 
-Design notes and the detailed checklist are in `PLAN.md`; the original scope is
-`create-companion-scope.md`.
+Design notes and the phase checklist are in `docs/PLAN.md`; the original scope document is
+`docs/scope.md`.
 
 ## License
 

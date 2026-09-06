@@ -44,7 +44,7 @@ pub trait InputHook: Send {
 pub trait ActionSink: Send {
     fn execute(&mut self, action: &Action, repeat: u32) -> Result<(), PlatformError>;
 
-    /// Release the modifier keys a transport namespace holds (PLAN.md §4.3).
+    /// Release the modifier keys a transport namespace holds (docs/PLAN.md §4.3).
     /// With `Shift+F19` the firmware's Shift is still down when we act, so a
     /// mapped `Ctrl+T` would otherwise arrive as `Ctrl+Shift+T`.
     fn release_modifiers(&mut self, mods: Modifiers) -> Result<(), PlatformError>;
