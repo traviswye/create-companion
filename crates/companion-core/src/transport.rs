@@ -47,6 +47,36 @@ impl FunctionKey {
         0x7C + self as u16
     }
 
+    /// The macOS virtual key code (Carbon `kVK_F13`..`kVK_F20`). F21-F24 have
+    /// no key code on macOS; the OS never delivers them.
+    pub const fn macos_keycode(self) -> Option<u16> {
+        Some(match self {
+            FunctionKey::F13 => 105,
+            FunctionKey::F14 => 107,
+            FunctionKey::F15 => 113,
+            FunctionKey::F16 => 106,
+            FunctionKey::F17 => 64,
+            FunctionKey::F18 => 79,
+            FunctionKey::F19 => 80,
+            FunctionKey::F20 => 90,
+            _ => return None,
+        })
+    }
+
+    pub const fn from_macos_keycode(code: u16) -> Option<Self> {
+        Some(match code {
+            105 => FunctionKey::F13,
+            107 => FunctionKey::F14,
+            113 => FunctionKey::F15,
+            106 => FunctionKey::F16,
+            64 => FunctionKey::F17,
+            79 => FunctionKey::F18,
+            80 => FunctionKey::F19,
+            90 => FunctionKey::F20,
+            _ => return None,
+        })
+    }
+
     /// macOS has virtual key codes for F13–F20 only.
     pub const fn available_on_macos(self) -> bool {
         (self as u8) <= (FunctionKey::F20 as u8)

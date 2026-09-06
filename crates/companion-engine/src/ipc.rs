@@ -25,12 +25,32 @@ use crate::pipeline::Control;
 use anyhow::{Context, Result};
 use companion_core::transport::{FunctionKey, Modifiers};
 use crossbeam_channel::{Receiver, Sender};
-use interprocess::local_socket::{prelude::*, GenericNamespaced, ListenerOptions, ToNsName};
+use interprocess::local_socket::{prelude::*, ListenerOptions, Name};
 use serde::{Deserialize, Serialize};
 use std::io::{BufRead, BufReader, Write};
 use std::sync::{Arc, Mutex};
 
 pub const SOCKET_NAME: &str = "CreateCompanion.sock";
+
+/// Where the socket lives: a named pipe on Windows, a socket file in the
+/// configuration folder elsewhere (macOS has no abstract namespace).
+pub fn socket_name() -> Result<Name<'static>> {
+    #[cfg(windows)]
+    {
+        use interprocess::local_socket::{GenericNamespaced, ToNsName};
+        SOCKET_NAME
+            .to_ns_name::<GenericNamespaced>()
+            .context("socket name")
+    }
+    #[cfg(not(windows))]
+    {
+        use interprocess::local_socket::{GenericFilePath, ToFsName};
+        let path = crate::paths::config_dir().join(SOCKET_NAME);
+        // A stale file from a crashed engine would block the bind.
+        let _ = std::fs::remove_file(&path);
+        path.to_fs_name::<GenericFilePath>().context("socket path")
+    }
+}
 
 #[derive(Debug, Clone, Serialize)]
 #[serde(tag = "type", rename_all = "snake_case")]
@@ -83,9 +103,7 @@ type LastStatus = Arc<Mutex<Option<String>>>;
 /// connected clients; `hello` is sent to each client on connect. Commands
 /// from clients are translated into [`Control`] messages on `ctrl`.
 pub fn start(rx: Receiver<IpcMessage>, hello: IpcMessage, ctrl: Sender<Control>) -> Result<()> {
-    let name = SOCKET_NAME
-        .to_ns_name::<GenericNamespaced>()
-        .context("socket name")?;
+    let name = socket_name()?;
     let listener = ListenerOptions::new()
         .name(name)
         .create_sync()

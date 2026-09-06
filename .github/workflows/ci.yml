@@ -31,10 +31,7 @@ jobs:
         shell: bash
       - run: cargo fmt --all -- --check
       - run: cargo clippy --all-targets -- -D warnings
-        # macOS platform code lands in Phase 5; until then the engine only builds on Windows.
-        continue-on-error: ${{ matrix.os == 'macos-latest' }}
       - run: cargo test
-        continue-on-error: ${{ matrix.os == 'macos-latest' }}
       # Configuration UI (Tauri): frontend first, then the Rust shell that embeds it.
       - uses: actions/setup-node@v4
         with:

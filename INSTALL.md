@@ -2,7 +2,7 @@
 
 ## Requirements
 
-- Windows 10 or 11, 64-bit.
+- Windows 10 or 11, 64-bit; or macOS 10.15 or later (Intel or Apple Silicon; see [macOS](#macos) below).
 - A Naya Create keyboard with a Tune or Touch module, and [OpenFlow](https://github.com/traviswye/NayaOS)
   to flash the module once.
 - No administrator rights needed: the installer is per-user.
@@ -84,6 +84,37 @@ Delete those two folders to remove everything.
 - **Windows Defender or SmartScreen flags the installer.** Expected while the installer is
   unsigned; verify the checksum and choose *Run anyway*.
 
+## macOS
+
+Create Companion on macOS is a menu-bar program plus the same configuration window. Download
+`Create Companion_<version>_universal.dmg` from the Releases page, open it, and drag
+**Create Companion** into Applications. One build runs on both Intel and Apple Silicon Macs.
+
+**First launch.** The app is not notarized yet, so Gatekeeper blocks a double-click. Right-click
+(or Control-click) the app in Applications and choose **Open**, then **Open** again in the
+dialog. On macOS 15 and later the first attempt shows a warning instead; go to
+*System Settings → Privacy & Security*, scroll to the message about Create Companion, and choose
+**Open Anyway**. This is needed once.
+
+**Permissions.** macOS gates what the engine does behind two switches in
+*System Settings → Privacy & Security*. The engine asks for them on first start and logs which
+one is missing:
+
+| Permission | Why | Without it |
+|---|---|---|
+| **Input Monitoring** | to see the F-keys the module sends | no gesture is ever detected |
+| **Accessibility** | to send the mapped shortcuts and read window titles for website profiles | gestures are detected but nothing happens |
+
+After granting either one, quit the engine from its menu-bar icon and start it again from
+Applications; macOS applies the permission to a fresh process.
+
+**What's different from Windows.** macOS has no F21–F24, so inputs use F13–F20 (the README's Mac
+defaults). Cmd is the modifier the catalog's Mac shortcuts use, and Fn shortcuts work if the
+module can send Fn. Files live in `~/Library/Application Support/CreateCompanion/` (configuration)
+and `~/Library/Logs/CreateCompanion/` (logs). Start at login is a per-user LaunchAgent, switched
+from the menu-bar icon. To remove everything, delete the app from Applications and those two
+folders, plus `~/Library/LaunchAgents/dev.createcompanion.engine.plist` if start at login was on.
+
 ## Building the installer yourself
 
 ```powershell
@@ -96,3 +127,7 @@ Requires Rust (stable MSVC), Node.js 22 and the Visual Studio Build Tools. The s
 engine, bundles it into the configuration window's Tauri installer, and writes
 `target\release\bundle\nsis\Create Companion_<version>_x64-setup.exe` with a `.sha256` next to it.
 Close any running Create Companion first; the build replaces its executables.
+
+On a Mac, `bash tools/build_installer.sh` does the same with Xcode's command-line tools, Rust
+(both Apple targets are added automatically) and Node.js 22, writing the universal dmg to
+`target/universal-apple-darwin/release/bundle/dmg/`.

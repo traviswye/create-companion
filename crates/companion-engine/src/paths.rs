@@ -2,6 +2,8 @@
 //!
 //! Windows: config `%APPDATA%\CreateCompanion\config.toml`,
 //!          logs   `%LOCALAPPDATA%\CreateCompanion\logs\`.
+//! macOS:   config `~/Library/Application Support/CreateCompanion/config.toml`,
+//!          logs   `~/Library/Logs/CreateCompanion/`.
 
 use std::path::PathBuf;
 
@@ -44,6 +46,12 @@ pub fn config_file() -> PathBuf {
 }
 
 pub fn log_dir() -> PathBuf {
+    #[cfg(target_os = "macos")]
+    {
+        if let Some(home) = dirs::home_dir() {
+            return home.join("Library/Logs").join(DIR_NAME);
+        }
+    }
     dirs::data_local_dir()
         .unwrap_or_else(config_dir)
         .join(DIR_NAME)

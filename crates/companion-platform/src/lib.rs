@@ -1,7 +1,8 @@
 //! OS-specific glue for Create Companion. Everything here is behind a trait or a
 //! small function so the engine and core never see a Win32 or Cocoa type.
 //!
-//! Windows implementation: Phase 0/1. macOS: Phase 5.
+//! Windows and macOS implementations; the hook's decision logic is shared
+//! in `hookcore`.
 
 use companion_core::action::Action;
 use companion_core::transport::{Modifiers, TransportCode};
@@ -50,5 +51,10 @@ pub trait ActionSink: Send {
     fn release_modifiers(&mut self, mods: Modifiers) -> Result<(), PlatformError>;
 }
 
+pub mod hookcore;
+
 #[cfg(windows)]
 pub mod windows;
+
+#[cfg(target_os = "macos")]
+pub mod macos;

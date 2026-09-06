@@ -1,5 +1,11 @@
 # Release notes
 
+## Unreleased
+
+- **macOS** (in testing): menu-bar engine on a CGEvent tap, the same configuration window,
+  universal Intel/Apple Silicon dmg. Needs Input Monitoring and Accessibility; unsigned for now.
+  Inputs use F13–F20 (macOS has no F21–F24).
+
 ## 0.1.0 — first release (Windows)
 
 Create Companion turns the Naya Create's Tune (and, soon, Touch) gestures into per-application

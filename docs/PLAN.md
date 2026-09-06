@@ -200,10 +200,12 @@ Goal: one Tune firmware mapping behaves differently in two apps.
 - [ ] Touch field map confirmation via `tools/naya_module_probe.py` (parent repo) on a docked Touch; extend `flash-once.md`.
 - [ ] Two-Touch profile templates.
 
-### Phase 5 — macOS
-- [ ] `companion-platform/macos`: CGEventTap, NSWorkspace activation notifications, CGEventPost, bundle-ID matching.
-- [ ] Menu-bar app (`LSUIElement`), permission onboarding UI (Input Monitoring / Accessibility), login item.
-- [ ] Universal build + dmg in `release.yml`; unsigned during dev, notarization job gated on secrets.
+### Phase 5 — macOS (branch `macos`, written 2026-09-06 on Windows, type-checked against both Apple targets; needs hands-on testing)
+- [x] `companion-platform/macos`: CGEvent tap on its own run-loop thread (Session tap, swallows reserved F13–F20, re-enables itself after a timeout, ignores our own events via `EventSourceUserData`), NSWorkspace frontmost bundle id, focused-window title via AX, CGEvent posting for chords/scroll, media keys via NSEvent system-defined events, `open -a` for launches, `/bin/sh -c` for commands, LaunchAgent autostart, flock single instance, AppKit event pump for the tray (accessory app, no Dock icon). Hook decision logic (reserved/learn/injected/modifier timing) moved to `companion-platform/hookcore.rs`, shared with Windows.
+- [x] Engine: platform-neutral `main.rs` (`plat` alias), permissions check with System Settings hints on start, `~/Library/Logs/CreateCompanion` logs, socket file in the config folder (no abstract namespace on macOS), tray on both platforms. UI backend: same socket, `create-companion` sidecar name.
+- [x] Build/release: `tools/build_installer.sh` (both targets → lipo → `npm run tauri build --target universal-apple-darwin` → dmg + sha256), `tauri.macos.conf.json` (app + dmg, min 10.15), `release.yml` macOS job attaching the dmg to the same release. CI runs clippy/tests on macOS for real.
+- [ ] **Hands-on on a Mac** (2017 MacBook Ventura + a recent Air): Gatekeeper right-click Open; Input Monitoring / Accessibility prompts and restart; tap sees the Tune's keys; Fn arrives (flag 0x800000 / keycode 63); media keys work; tray menu works from the manual event pump; `Learn`; UI connects over the socket file; start at login via LaunchAgent; the `.app` sidecar path (`Contents/MacOS/create-companion`).
+- [ ] Signing + notarization (Apple Developer account) — later.
 
 ### Phase 6 — Integrations
 - Plugin trait in `action.rs`; first plugins: run script, OBS WebSocket, MIDI. Out of MVP.
