@@ -10,6 +10,8 @@ configuration window, live, without touching the keyboard's firmware again.
 
 Windows now; macOS is planned (see [Roadmap](#roadmap)).
 
+![The configuration window: profiles on the left, one row per gesture, and the action picker](docs/media/configuration-window.gif)
+
 - **[Install](INSTALL.md)** — download, first run, upgrade, uninstall, troubleshooting
 - **[Release notes](CHANGELOG.md)** — what each version contains and its known limitations
 - **Releases** — https://github.com/traviswye/create-companion/releases
