@@ -229,3 +229,8 @@ table.map .ev > div:first-child { white-space: nowrap; }
 .repeat select { min-width: 84px; }
 .mult { display: inline-flex; align-items: center; gap: 2px; font-size: 12px; color: var(--muted); }
 .mult input { width: 44px; padding: 3px 4px; font-size: 12px; }
+
+.searchbox { position: relative; display: flex; flex: 1; }
+.searchbox input { width: 100%; padding-right: 26px; }
+.searchbox .clear { position: absolute; right: 4px; top: 50%; transform: translateY(-50%); border: 0; background: transparent; color: var(--muted); font-size: 16px; line-height: 1; padding: 2px 6px; cursor: pointer; border-radius: 6px; }
+.searchbox .clear:hover { color: var(--text); background: var(--panel-2); }

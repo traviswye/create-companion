@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { api } from "./api";
 import { chordFromEvent } from "./keys";
+import { SearchBox } from "./App";
 import { OS_NAME, actionFor, describeAction, eventLabel, type Action, type AppAction, type CatalogEntry, type MediaKey, type Os, type ScrollDirection } from "./types";
 
 type Tab = "app" | "search" | "shortcut" | "media" | "scroll" | "launch" | "other";
@@ -184,7 +185,7 @@ export function ActionPicker(props: {
           {tab === "app" && (
             <>
               <div className="field">
-                <input ref={searchRef} placeholder={`Search ${props.appName ?? "app"} shortcuts…`} value={q} onChange={(e) => setQ(e.target.value)} />
+                <SearchBox ref={searchRef} placeholder={`Search ${props.appName ?? "app"} shortcuts…`} value={q} onChange={setQ} />
               </div>
               <div className="list">
                 {appResults.map((a) => (
@@ -208,7 +209,7 @@ export function ActionPicker(props: {
           {tab === "search" && (
             <>
               <div className="field">
-                <input ref={searchRef} placeholder="Search actions, e.g. tab, zoom, undo…" value={q} onChange={(e) => setQ(e.target.value)} />
+                <SearchBox ref={searchRef} placeholder="Search actions, e.g. tab, zoom, undo…" value={q} onChange={setQ} />
               </div>
               <div className="tabs">
                 {["All", ...categories].map((c) => (

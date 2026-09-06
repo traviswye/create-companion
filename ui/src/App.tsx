@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { forwardRef, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { ActionPicker } from "./ActionPicker";
 import { AddApp } from "./AddApp";
 import { Inputs, type Learned } from "./Inputs";
@@ -522,7 +522,7 @@ export default function App() {
           />
         </div>
         <div className="nav-tools">
-          <input placeholder="Search apps and sites…" value={navQ} onChange={(e) => setNavQ(e.target.value)} />
+          <SearchBox placeholder="Search apps and sites…" value={navQ} onChange={setNavQ} />
           <div className="seg">
             <button className={navTab === "active" ? "on" : ""} onClick={() => setNavTab("active")}>
               Active
@@ -901,6 +901,34 @@ export default function App() {
   );
 }
 
+/** A search field with a clear button; Escape clears too. */
+export const SearchBox = forwardRef<HTMLInputElement, { value: string; onChange: (v: string) => void; placeholder?: string; autoFocus?: boolean }>(function SearchBox(props, ref) {
+  return (
+    <div className={"searchbox " + (props.value ? "has-value" : "")}>
+      <input
+        ref={ref}
+        type="text"
+        placeholder={props.placeholder}
+        value={props.value}
+        autoFocus={props.autoFocus}
+        onChange={(e) => props.onChange(e.target.value)}
+        onKeyDown={(e) => {
+          if (e.key === "Escape" && props.value) {
+            e.preventDefault();
+            e.stopPropagation();
+            props.onChange("");
+          }
+        }}
+      />
+      {props.value && (
+        <button type="button" className="clear" title="Clear (Esc)" aria-label="Clear search" onMouseDown={(e) => e.preventDefault()} onClick={() => props.onChange("")}>
+          ×
+        </button>
+      )}
+    </div>
+  );
+});
+
 /** A two-state toggle with a label that names the current state. */
 export function Switch(props: { checked: boolean; onChange: (v: boolean) => void; on: string; off: string; title?: string }) {
   return (
@@ -1015,7 +1043,7 @@ function CatalogPreview(props: { entry: AppEntry; events: string[]; transport: C
             </span>
           </h2>
           <div className="body" style={{ display: "grid", gap: 10 }}>
-            <input placeholder={`Search ${a.name} shortcuts…`} value={q} onChange={(e) => setQ(e.target.value)} />
+            <SearchBox placeholder={`Search ${a.name} shortcuts…`} value={q} onChange={setQ} />
             <div className="list" style={{ maxHeight: 420 }}>
               {rows.slice(0, 400).map(({ x, c }) => (
                 <div key={x.id} className="row" style={{ cursor: "default" }}>
