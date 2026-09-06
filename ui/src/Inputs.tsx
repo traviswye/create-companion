@@ -13,7 +13,7 @@ import {
   makeEvent,
   MODULES,
   moduleLabel,
-  nayaBehavior,
+  moduleBehavior,
   choicesFor,
   choiceLabel,
   halvesOf,
@@ -40,20 +40,20 @@ export interface Learned {
 
 const MOD_BUTTON: Record<string, string> = { ctrl: "Ctrl", shift: "Shift", alt: "Alt", cmd: "Win", fn: "Fn" };
 const MOD_TITLE: Record<string, string> = { ctrl: "Ctrl", shift: "Shift", alt: "Alt", cmd: "Win on Windows, Cmd on macOS", fn: "Fn (Globe): macOS only, and only if the module firmware can send it" };
-/** Naya keycode tokens for the modifiers a module can send. */
-const NAYA_MOD: Record<string, string> = { ctrl: "LCTRL", shift: "LSHIFT", alt: "LALT", cmd: "LGUI" };
+/** Module-profile keycode tokens for the modifiers a module can send. */
+const PROFILE_MOD: Record<string, string> = { ctrl: "LCTRL", shift: "LSHIFT", alt: "LALT", cmd: "LGUI" };
 /** macOS has virtual key codes for F13–F20 only. */
 const MAC_OK = new Set(["F13", "F14", "F15", "F16", "F17", "F18", "F19", "F20"]);
 
-/** Naya-style chord token, the vocabulary OpenFlow's encoder speaks. */
-function nayaChord(t: TransportCode): string {
-  const toks = [...parseMods(t.mods)].filter((m) => NAYA_MOD[m]).map((m) => NAYA_MOD[m]);
+/** Module-profile chord token, the vocabulary OpenFlow's encoder speaks. */
+function profileChord(t: TransportCode): string {
+  const toks = [...parseMods(t.mods)].filter((m) => PROFILE_MOD[m]).map((m) => PROFILE_MOD[m]);
   return [...toks, t.key].join(" + ");
 }
 
 /** An OpenFlow module-profile action for one transport code. */
-function nayaAction(t: TransportCode): { actionType: string; actionCode: string } {
-  return parseMods(t.mods).size === 0 ? { actionType: "key", actionCode: t.key } : { actionType: "shortcut_alias", actionCode: nayaChord(t) };
+function profileAction(t: TransportCode): { actionType: string; actionCode: string } {
+  return parseMods(t.mods).size === 0 ? { actionType: "key", actionCode: t.key } : { actionType: "shortcut_alias", actionCode: profileChord(t) };
 }
 
 function KeySelect({ value, onChange }: { value: string; onChange: (v: string) => void }) {
@@ -303,13 +303,13 @@ export function Inputs(props: {
       if (evs.length === 0) continue;
       const bindings: Record<string, { actionType: string; actionCode: string; split?: Record<string, { actionType: string; actionCode: string }> }> = {};
       for (const ev of evs) {
-        const nb = nayaBehavior(ev);
+        const nb = moduleBehavior(ev);
         if (!nb) {
           skipped.push(`${describe(ev)}: set a finger count first`);
           continue;
         }
         if (parseMods(props.transport[ev].mods).has("fn")) skipped.push(`${describe(ev)}: Fn has no keycode in the module profile format; exported without it`);
-        const action = nayaAction(props.transport[ev]);
+        const action = profileAction(props.transport[ev]);
         if (nb.half) {
           const pair = (bindings[nb.behavior] ??= { actionType: "value", actionCode: "", split: {} });
           pair.split![nb.half] = action;

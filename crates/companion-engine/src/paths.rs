@@ -6,7 +6,7 @@
 use std::path::PathBuf;
 
 const DIR_NAME: &str = "CreateCompanion";
-/// The folder name the program used before it was renamed (2026-09-05).
+/// The folder name the program used before it was renamed (2026-09-05); kept only to migrate.
 const LEGACY_DIR_NAME: &str = "NayaCompanion";
 
 /// One-time move of a `NayaCompanion` folder to `CreateCompanion` (config and

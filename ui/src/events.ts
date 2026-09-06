@@ -83,7 +83,7 @@ export function gesturesFor(module: ModuleId): GestureId[] {
 
 /**
  * Gestures the firmware treats as one axis with two directions. Each half is
- * its own transport key, but the user thinks of (and Naya names) the pair:
+ * its own transport key, but the user thinks of (and the module profile names) the pair:
  * `rotate:tune:dial`, `pinch&spread:...`, `vertical:...`, `horizontal:...`.
  * `halves` is [minus, plus].
  */
@@ -225,11 +225,11 @@ export function sortEvents(ids: string[], mode: SortMode): string[] {
 }
 
 /**
- * Naya behavior string for an event, plus the half of a direction pair it is
+ * Module-profile behavior string for an event, plus the half of a direction pair it is
  * (`"-"` or `"+"`), or null when a finger count is needed but missing.
- * Mirrors SemanticEvent::naya_behavior in companion-core.
+ * Mirrors SemanticEvent::module_behavior in companion-core.
  */
-export function nayaBehavior(id: string): { behavior: string; half: "-" | "+" | null } | null {
+export function moduleBehavior(id: string): { behavior: string; half: "-" | "+" | null } | null {
   const p = parseEvent(id);
   if (!p) return null;
   const mod = p.module === "TUNE" ? "tune" : "touch";

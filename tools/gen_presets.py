@@ -3,7 +3,7 @@
 
 Inputs:
   catalog/<id>.json          one file per app / site / system (see catalog/README.md)
-  reference/action-chords.json   NayaFlow's action vocabulary -> generic catalog
+  reference/action-chords.json   action vocabulary (per-platform chords) -> generic catalog
   reference/app-shortcuts.json   ShortcutMapper import (20 apps, MIT) -> merged into apps
 
 Outputs (checked in, regenerate when inputs change):
@@ -22,13 +22,13 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent
 CATALOG = ROOT / "catalog"
-# Snapshot of the NayaOS reference data lives in ./reference; when this folder
-# sits inside the NayaOS monorepo, prefer the live copy there.
+# Reference data lives in ./reference (see reference/ATTRIBUTION.md); a sibling
+# docs/reference folder, if present, is preferred so a shared copy stays live.
 _MONOREPO_REF = ROOT.parent / "docs" / "reference"
 REF = _MONOREPO_REF if (_MONOREPO_REF / "action-chords.json").exists() else ROOT / "reference"
 OUT = ROOT / "presets"
 
-# Naya keycode token -> our chord token (see companion-core/src/keys.rs)
+# Module-profile keycode token -> our chord token (see companion-core/src/keys.rs)
 TOKENS = {
     "LCTRL": "Ctrl", "RCTRL": "Ctrl", "LSHIFT": "Shift", "RSHIFT": "Shift",
     "LALT": "Alt", "RALT": "Alt", "LGUI": "Win", "RGUI": "Win",
@@ -104,7 +104,7 @@ SM_CATEGORY = {
 
 
 def translate(chord: str, mac: bool = False) -> str | None:
-    """Naya token chord -> our chord grammar. On macOS LGUI is the Command key."""
+    """Module-profile token chord -> our chord grammar. On macOS LGUI is the Command key."""
     out = []
     for tok in (t.strip() for t in chord.split("+")):
         if mac and tok in ("LGUI", "RGUI"):

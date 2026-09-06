@@ -3,7 +3,7 @@
 //!
 //! The [`TransportTable`] is built from config and consulted by the OS hook.
 //! Only keys present in the table are swallowed (scope §17: never globally
-//! eat F13–F24 unless they are configured as Naya transport).
+//! eat F13–F24 unless they are configured as module transport).
 //!
 //! Namespaces: any combination of Ctrl, Shift, Alt and Cmd/Win can be held by
 //! the firmware alongside the F-key (they are ordinary HID modifiers), so two

@@ -223,7 +223,7 @@ fn default_config() -> Result<serde_json::Value, String> {
     serde_json::to_value(&cfg).map_err(err)
 }
 
-/// The action catalog generated from the NayaOS reference data.
+/// The action catalog generated from the bundled reference data.
 #[tauri::command]
 fn action_catalog() -> Result<serde_json::Value, String> {
     serde_json::from_str(ACTIONS_CATALOG).map_err(err)

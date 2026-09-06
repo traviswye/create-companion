@@ -262,7 +262,7 @@ winget install Rustlang.Rustup
 rustup default stable-x86_64-pc-windows-msvc
 
 # workspace
-cd D:\NayaOS\openflowCompanion
+cd D:\CreateCompanion
 cargo new --lib crates/companion-core
 cargo new --lib crates/companion-platform
 cargo new --bin crates/companion-engine --name create-companion

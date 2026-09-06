@@ -11,8 +11,8 @@
 //! TUNE_SWIPE_LEFT      no finger count: matches as an "any count" default
 //! ```
 //!
-//! This mirrors Naya's own gesture vocabulary (`swipe_left:tune:3_fingers`,
-//! `rotate:tune:dial` split into `-`/`+`), see [`SemanticEvent::naya_behavior`].
+//! This mirrors the module profile's gesture vocabulary (`swipe_left:tune:3_fingers`,
+//! `rotate:tune:dial` split into `-`/`+`), see [`SemanticEvent::module_behavior`].
 //! Never persist the enum discriminant.
 
 use serde::{Deserialize, Serialize};
@@ -39,8 +39,8 @@ impl Module {
         }
     }
 
-    /// Naya's module token inside a behavior string.
-    pub fn naya_module(self) -> &'static str {
+    /// The module token inside a module-profile behavior string.
+    pub fn module_token(self) -> &'static str {
         match self {
             Module::Tune => "tune",
             Module::LeftTouch | Module::RightTouch => "touch",
@@ -48,7 +48,7 @@ impl Module {
     }
 
     /// `moduleType` for an OpenFlow module profile.
-    pub fn naya_module_type(self) -> &'static str {
+    pub fn module_type_token(self) -> &'static str {
         match self {
             Module::Tune => "TUNE",
             Module::LeftTouch | Module::RightTouch => "TOUCH",
@@ -195,7 +195,7 @@ impl SemanticEvent {
         }
     }
 
-    /// Naya's behavior string for this event, plus which half of a direction
+    /// The module-profile behavior string for this event, plus which half of a direction
     /// pair it is (`Some('-')`, `Some('+')`) when the gesture is one half of
     /// an axis or the dial. `None` when a finger count is required but missing.
     ///
@@ -204,8 +204,8 @@ impl SemanticEvent {
     /// TUNE_CW                 -> ("rotate:tune:dial", Some('+'))
     /// LEFT_TOUCH_SCROLL_UP_2F -> ("vertical:touch:2_fingers", Some('-'))
     /// ```
-    pub fn naya_behavior(self) -> Option<(String, Option<char>)> {
-        let m = self.module.naya_module();
+    pub fn module_behavior(self) -> Option<(String, Option<char>)> {
+        let m = self.module.module_token();
         if matches!(self.gesture, Gesture::Cw | Gesture::Ccw) {
             let half = if self.gesture == Gesture::Cw {
                 '+'
@@ -372,8 +372,8 @@ mod tests {
     }
 
     #[test]
-    fn naya_behaviors() {
-        let b = |s: &str| s.parse::<SemanticEvent>().unwrap().naya_behavior();
+    fn module_behaviors() {
+        let b = |s: &str| s.parse::<SemanticEvent>().unwrap().module_behavior();
         assert_eq!(b("TUNE_TAP_1F"), Some(("tap:tune:1_finger".into(), None)));
         assert_eq!(
             b("TUNE_SWIPE_LEFT_3F"),

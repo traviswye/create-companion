@@ -4,7 +4,7 @@
 
 - Windows 10 or 11, 64-bit.
 - A Naya Create keyboard with a Tune or Touch module, and [OpenFlow](https://github.com/traviswye/NayaOS)
-  (or NayaFlow) to flash the module once.
+  to flash the module once.
 - No administrator rights needed: the installer is per-user.
 
 ## Install

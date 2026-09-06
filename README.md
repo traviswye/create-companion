@@ -13,7 +13,6 @@ Windows now; macOS is planned (see [Roadmap](#roadmap)).
 - **[Install](INSTALL.md)** — download, first run, upgrade, uninstall, troubleshooting
 - **[Release notes](CHANGELOG.md)** — what each version contains and its known limitations
 - **Releases** — https://github.com/traviswye/create-companion/releases
-- Part of the [NayaOS](https://github.com/traviswye/NayaOS) preservation effort for the Naya Create keyboard; uses OpenFlow (from that project) to flash the module.
 
 ## How it works
 
@@ -41,13 +40,14 @@ Windows now; macOS is planned (see [Roadmap](#roadmap)).
 1. **Install** Create Companion ([INSTALL.md](INSTALL.md)). The engine starts and a dial icon
    appears in the tray.
 2. **Flash the module.** Open the configuration window (tray icon → *Open configuration…*), go to
-   **Inputs**, and check which key each gesture is expected to send. The defaults for a Tune are:
+   **Inputs**, and check which key each gesture is expected to send. The defaults for a Tune are
+   below. macOS has no F21–F24, so the Mac set stays within F13–F20:
 
-   | Gesture | Key |
-   |---|---|
-   | Dial clockwise / counter-clockwise | F24 / F23 |
-   | Tap (1 finger) | F22 |
-   | Swipe left / right / up / down (1 finger) | F20 / F19 / F18 / F17 |
+   | Gesture | Windows | macOS |
+   |---|---|---|
+   | Dial clockwise / counter-clockwise | F24 / F23 | F20 / F19 |
+   | Tap (1 finger) | F22 | F18 |
+   | Swipe left / right / up / down (1 finger) | F20 / F19 / F18 / F17 | F17 / F16 / F15 / F14 |
 
    Add rows for any other gestures you use (2- and 3-finger taps and swipes, with a modifier if
    you like), then click **Export for OpenFlow…**. It writes one module-profile file per module;
