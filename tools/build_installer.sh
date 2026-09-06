@@ -3,8 +3,8 @@
 # a dmg containing the configuration window with the engine as its sidecar.
 #
 #   1. cargo build --release -p create-companion for both Apple targets
-#   2. lipo them into ui/src-tauri/binaries/create-companion-universal-apple-darwin
-#      (the sidecar name Tauri expects for a universal build)
+#   2. copy them to ui/src-tauri/binaries/create-companion-<triple> (Tauri builds
+#      the app per architecture and merges the sidecars into the universal bundle)
 #   3. npm run tauri build -- --target universal-apple-darwin
 #   Output: target/universal-apple-darwin/release/bundle/dmg/Create Companion_<version>_universal.dmg
 #
@@ -21,7 +21,12 @@ echo "== engine (both architectures) =="
 cargo build --release -p create-companion --target aarch64-apple-darwin
 cargo build --release -p create-companion --target x86_64-apple-darwin
 
+# Tauri builds the app once per architecture and wants a sidecar named for
+# each; it merges them into the universal bundle itself.
 mkdir -p ui/src-tauri/binaries
+for t in aarch64-apple-darwin x86_64-apple-darwin; do
+  cp "target/$t/release/create-companion" "ui/src-tauri/binaries/create-companion-$t"
+done
 lipo -create \
   target/aarch64-apple-darwin/release/create-companion \
   target/x86_64-apple-darwin/release/create-companion \
