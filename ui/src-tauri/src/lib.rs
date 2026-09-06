@@ -77,6 +77,25 @@ fn engine_send(command: serde_json::Value) -> Result<(), String> {
     tx.flush().map_err(err)
 }
 
+/// Start the engine (`create-companion.exe` next to this executable) if it is
+/// not connected. The engine's single-instance guard makes a duplicate exit.
+#[tauri::command]
+fn start_engine() -> Result<(), String> {
+    let exe = std::env::current_exe()
+        .map_err(err)?
+        .parent()
+        .map(|d| d.join("create-companion.exe"))
+        .ok_or("no parent directory")?;
+    if !exe.exists() {
+        return Err(format!("{} not found", exe.display()));
+    }
+    std::process::Command::new(&exe)
+        .current_dir(exe.parent().unwrap())
+        .spawn()
+        .map(|_| ())
+        .map_err(err)
+}
+
 /// Write a text file chosen through the save dialog (exports).
 #[tauri::command]
 fn write_text_file(path: String, contents: String) -> Result<(), String> {
@@ -326,6 +345,7 @@ pub fn run() {
             engine_state,
             engine_send,
             write_text_file,
+            start_engine,
         ])
         .setup(|app| {
             spawn_engine_listener(app.handle().clone());

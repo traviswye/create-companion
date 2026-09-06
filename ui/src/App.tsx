@@ -514,7 +514,12 @@ export default function App() {
         <div className="brand">
           <img className="logo" src="/icon.png" alt="" />
           Create Companion
-          <span className={"dot " + (engine.connected ? "on" : "")} title={engine.connected ? "Engine connected" : "Engine not running"} />
+          <span
+            className={"dot " + (engine.connected ? "on" : "")}
+            title={engine.connected ? "Engine connected" : "Engine not running: click to start it"}
+            style={engine.connected ? undefined : { cursor: "pointer" }}
+            onClick={() => !engine.connected && api.startEngine().catch((e) => setSave({ kind: "error", msg: `Could not start the engine: ${e}` }))}
+          />
         </div>
         <div className="nav-tools">
           <input placeholder="Search apps and sites…" value={navQ} onChange={(e) => setNavQ(e.target.value)} />
@@ -691,7 +696,14 @@ export default function App() {
             ) : (
               <>
                 <span>Turn the dial or swipe the Tune to detect an input.</span>
-                {!engine.connected && <span>· Engine not running: start create-companion to see live events.</span>}
+                {!engine.connected && (
+                  <>
+                    <span>· Engine not running.</span>
+                    <button className="primary" onClick={() => api.startEngine().catch((e) => setSave({ kind: "error", msg: `Could not start the engine: ${e}` }))}>
+                      Start engine
+                    </button>
+                  </>
+                )}
               </>
             )}
           </div>

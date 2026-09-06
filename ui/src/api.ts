@@ -26,6 +26,7 @@ export const api = {
   engineState: () => invoke<{ connected: boolean; hello?: EngineMsg; status?: EngineMsg }>("engine_state"),
   engineSend: (command: Record<string, unknown>) => invoke<void>("engine_send", { command }),
   writeTextFile: (path: string, contents: string) => invoke<void>("write_text_file", { path, contents }),
+  startEngine: () => invoke<void>("start_engine"),
   onEngine: (cb: (m: EngineMsg) => void): Promise<UnlistenFn> =>
     listen<EngineMsg>("engine", (e) => cb(e.payload)),
 };

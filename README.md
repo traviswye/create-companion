@@ -16,6 +16,17 @@ Phases 0–2 complete (Windows): engine + tray + configuration window. The Tune 
 (F24 = clockwise, F23 = counterclockwise, F22 = tap, F17–F20 = swipes); everything else is
 configured on the host.
 
+## Install (Windows)
+
+Download `Create Companion_<version>_x64-setup.exe` from the GitHub Releases page and run it. It
+installs per user (no admin prompt), puts both the engine and the configuration window in one
+folder, adds a Start Menu entry, and starts the engine. The engine registers itself to start at
+login when the configuration says so. Uninstalling removes the programs and the login entry;
+your configuration and logs stay in `%APPDATA%\CreateCompanion` and `%LOCALAPPDATA%\CreateCompanion`.
+
+Build the installer yourself with `powershell -File tools/build_installer.ps1`; it lands in
+`target/release/bundle/nsis/`.
+
 ## Run
 
 ```powershell
