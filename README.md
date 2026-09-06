@@ -123,8 +123,9 @@ target\release\create-companion.exe
 ```
 
 The engine looks for `create-companion-ui.exe` next to itself, so build both into the same
-`target` directory as above. `powershell -File tools\build_installer.ps1` produces the installer
-(close the engine and the window first; the build replaces the running executables).
+`target` directory as above. Close a running engine and window before building: the UI build copies
+the engine in as its sidecar and both builds replace the running executables.
+`powershell -File tools\build_installer.ps1` produces the installer.
 
 ### Repository layout
 

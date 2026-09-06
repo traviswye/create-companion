@@ -18,6 +18,8 @@ default-members = [
 version = "0.1.0"
 edition = "2021"
 license = "MIT"
+readme = "README.md"
+description = "Create Companion: turns Naya Create Tune/Touch gestures into per-application shortcuts"
 repository = "https://github.com/traviswye/create-companion"
 
 [workspace.dependencies]

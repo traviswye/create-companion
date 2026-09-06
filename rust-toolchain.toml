@@ -1,3 +1,4 @@
+# Create Companion builds on stable Rust (MSVC toolchain on Windows).
 [toolchain]
 channel = "stable"
 components = ["rustfmt", "clippy"]
