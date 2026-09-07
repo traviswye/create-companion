@@ -22,3 +22,12 @@ windows = { version = "0.61", features = [
     "Win32_Security",
     "Win32_System_LibraryLoader",
 ] }
+
+[target.'cfg(target_os = "macos")'.dependencies]
+objc2 = "0.6"
+objc2-foundation = { version = "0.3", features = ["NSString", "NSArray", "NSDictionary", "NSDate", "NSGeometry", "NSObject", "NSValue", "NSRunLoop"] }
+objc2-app-kit = { version = "0.3", features = ["NSWorkspace", "NSRunningApplication", "NSEvent", "NSApplication", "NSResponder", "NSGraphicsContext", "objc2-core-graphics", "objc2-core-foundation"] }
+objc2-core-foundation = { version = "0.3", features = ["CFBase", "CFRunLoop", "CFMachPort", "CFString", "CFDate", "CFDictionary"] }
+objc2-core-graphics = { version = "0.3", features = ["CGEvent", "CGEventTypes", "CGEventSource", "CGRemoteOperation", "libc"] }
+libc = "0.2"
+dirs = "6"

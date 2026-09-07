@@ -385,8 +385,15 @@ export default function App() {
   }
 
   /** Star an app from the catalog: create its profile with the bundled defaults. */
+  /** A catalog default as a binding for this OS: the Mac action on macOS. */
+  function defaultForOs(b: Binding): Binding {
+    const { mac, ...rest } = b;
+    return currentOs() === "macos" && mac ? { ...rest, action: mac } : rest;
+  }
+
   function activateApp(a: AppEntry) {
-    addProfile({ name: a.name, enabled: true, match: { ...a.match }, bindings: { ...a.defaults } });
+    const bindings = Object.fromEntries(Object.entries(a.defaults).map(([ev, b]) => [ev, defaultForOs(b)]));
+    addProfile({ name: a.name, enabled: true, match: { ...a.match }, bindings });
   }
 
   function setEnabled(i: number, enabled: boolean) {
@@ -1012,7 +1019,8 @@ function CatalogPreview(props: { entry: AppEntry; events: string[]; transport: C
                 <tbody>
                   {defaults.map((ev) => {
                     const [mod, gesture] = eventLabel(ev);
-                    const b = a.defaults[ev];
+                    const raw = a.defaults[ev];
+                    const b = props.os === "macos" && raw.mac ? { ...raw, action: raw.mac } : raw;
                     return (
                       <tr key={ev}>
                         <td className="ev">

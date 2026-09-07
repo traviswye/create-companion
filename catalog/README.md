@@ -53,7 +53,7 @@ python tools/validate_catalog.py catalog/x.json  # one file
 | `title_required` | Optional, apps only. `true` means the `window_title` narrows the desktop match (tmux inside a terminal window) instead of describing a web version. Without it, an app that has both an exe rule and a title rule is emitted twice: the desktop app (exe/bundle only) and a `<id>_web` site twin matched by title inside a browser, sharing the same actions. |
 | `sources` | Every URL the shortcuts were taken from. Official documentation first. Required. |
 | `actions` | The complete documented shortcut list. See below. |
-| `defaults` | Optional. Suggested Tune bindings, keyed by event name (`TUNE_CW`, `TUNE_CCW`, `TUNE_TAP_1F`, `TUNE_SWIPE_LEFT/RIGHT/UP/DOWN`). Each is `{ name, action, accel? }`. Only include obvious ones (dial = the app's primary next/previous or zoom, tap = its primary toggle). |
+| `defaults` | Optional. Suggested Tune bindings, keyed by event name (`TUNE_CW`, `TUNE_CCW`, `TUNE_TAP_1F`, `TUNE_SWIPE_LEFT/RIGHT/UP/DOWN`). Each is `{ name, action, accel?, mac? }`; `action` is the Windows chord, `mac` the macOS one when it differs (otherwise the generator borrows the `mac` column of the action with the same `name`, or rewrites Ctrl/Win to Cmd). Only include obvious ones (dial = the app's primary next/previous or zoom, tap = its primary toggle). |
 
 ## Actions
 

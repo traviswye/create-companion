@@ -31,10 +31,7 @@ jobs:
         shell: bash
       - run: cargo fmt --all -- --check
       - run: cargo clippy --all-targets -- -D warnings
-        # macOS platform code lands in Phase 5; until then the engine only builds on Windows.
-        continue-on-error: ${{ matrix.os == 'macos-latest' }}
       - run: cargo test
-        continue-on-error: ${{ matrix.os == 'macos-latest' }}
       # Configuration UI (Tauri): frontend first, then the Rust shell that embeds it.
       - uses: actions/setup-node@v4
         with:
@@ -45,5 +42,14 @@ jobs:
         working-directory: ui
       - run: npm run build
         working-directory: ui
+      # The UI bundles the engine as a sidecar; build the engine first and put
+      # it where tauri-build expects it (binaries/<name>-<host triple>).
+      - name: Engine sidecar for the UI build
+        shell: bash
+        run: |
+          cargo build --release -p create-companion
+          triple=$(rustc -vV | sed -n 's/^host: //p')
+          ext=""; [ "$RUNNER_OS" = "Windows" ] && ext=.exe
+          mkdir -p ui/src-tauri/binaries
+          cp "target/release/create-companion$ext" "ui/src-tauri/binaries/create-companion-$triple$ext"
       - run: cargo build --release -p create-companion-ui --features create-companion-ui/custom-protocol
-        if: matrix.os == 'windows-latest'

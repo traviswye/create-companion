@@ -15,3 +15,5 @@ pub use foreground::{
 };
 pub use hook::KeyboardHook;
 pub use input::SendInputSink;
+/// The action executor under the name the engine uses on every platform.
+pub use input::SendInputSink as Sink;

@@ -24,6 +24,32 @@ fn app_catalog() -> Result<serde_json::Value, String> {
 }
 const SOCKET_NAME: &str = "CreateCompanion.sock";
 
+/// Mirrors the engine's `ipc::socket_name`: a named pipe on Windows, a
+/// socket file in the configuration folder elsewhere.
+fn socket_name() -> Result<interprocess::local_socket::Name<'static>, String> {
+    #[cfg(windows)]
+    {
+        use interprocess::local_socket::{GenericNamespaced, ToNsName};
+        SOCKET_NAME.to_ns_name::<GenericNamespaced>().map_err(err)
+    }
+    #[cfg(not(windows))]
+    {
+        use interprocess::local_socket::{GenericFilePath, ToFsName};
+        let dir = dirs::config_dir()
+            .unwrap_or_else(|| PathBuf::from("."))
+            .join("CreateCompanion");
+        dir.join(SOCKET_NAME)
+            .to_fs_name::<GenericFilePath>()
+            .map_err(err)
+    }
+}
+
+/// File name of the engine next to this executable.
+#[cfg(windows)]
+const ENGINE_EXE: &str = "create-companion.exe";
+#[cfg(not(windows))]
+const ENGINE_EXE: &str = "create-companion";
+
 /// Last known engine state, so a webview that subscribes after the pipe
 /// connected can catch up (`engine_state` command).
 #[derive(Default, Clone, Serialize)]
@@ -84,7 +110,7 @@ fn start_engine() -> Result<(), String> {
     let exe = std::env::current_exe()
         .map_err(err)?
         .parent()
-        .map(|d| d.join("create-companion.exe"))
+        .map(|d| d.join(ENGINE_EXE))
         .ok_or("no parent directory")?;
     if !exe.exists() {
         return Err(format!("{} not found", exe.display()));
@@ -297,9 +323,9 @@ fn spawn_engine_listener(app: AppHandle) {
     std::thread::Builder::new()
         .name("ui-engine-listener".into())
         .spawn(move || {
-            use interprocess::local_socket::{prelude::*, GenericNamespaced, Stream, ToNsName};
+            use interprocess::local_socket::{prelude::*, Stream};
             loop {
-                let Ok(name) = SOCKET_NAME.to_ns_name::<GenericNamespaced>() else {
+                let Ok(name) = socket_name() else {
                     return;
                 };
                 match Stream::connect(name) {

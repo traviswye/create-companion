@@ -2104,6 +2104,10 @@
       "action": {
         "type": "keys",
         "chord": "Ctrl+="
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+="
       }
     },
     "TUNE_SWIPE_DOWN": {
@@ -2111,6 +2115,10 @@
       "action": {
         "type": "keys",
         "chord": "Ctrl+-"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+-"
       }
     }
   }

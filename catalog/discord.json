@@ -529,6 +529,10 @@
       "action": {
         "type": "keys",
         "chord": "Ctrl+Shift+M"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+M"
       }
     },
     "TUNE_SWIPE_LEFT": {
@@ -550,6 +554,10 @@
       "action": {
         "type": "keys",
         "chord": "Ctrl+Shift+D"
+      },
+      "mac": {
+        "type": "keys",
+        "chord": "Cmd+Shift+D"
       }
     }
   }

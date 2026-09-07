@@ -8,7 +8,7 @@ in front, and sends the shortcut you chose for it. Turn the dial in Chrome to sw
 Photoshop to change brush size, on the desktop to change volume. Change any of it in a
 configuration window, live, without touching the keyboard's firmware again.
 
-Windows now; macOS is planned (see [Roadmap](#roadmap)).
+Windows and macOS (macOS is new in 0.2.0; see [Install](INSTALL.md) for the permission steps).
 
 ![The configuration window: profiles on the left, one row per gesture, and the action picker](docs/media/configuration-window.gif)
 
@@ -139,7 +139,7 @@ the engine in as its sidecar and both builds replace the running executables.
 | Path | Role |
 |---|---|
 | `crates/companion-core` | OS-independent logic: gestures, inputs, profiles, actions, acceleration, configuration, chord parsing. Unit-tested. |
-| `crates/companion-platform` | Win32: low-level keyboard hook, foreground watch, `SendInput`, autostart, single instance. macOS later. |
+| `crates/companion-platform` | Per-OS glue. Windows: low-level keyboard hook, foreground watch, `SendInput`. macOS: CGEvent tap, NSWorkspace, CGEvent posting, LaunchAgent. The hook's decision logic is shared. |
 | `crates/companion-engine` | The `create-companion` executable: pipeline, config watcher, tray, IPC to the window, logging. |
 | `ui/` | The configuration window: Tauri 2 shell (`ui/src-tauri`) and Vite/React frontend (`ui/src`). |
 | `catalog/` | One JSON file per application, website or system with its documented shortcuts; `catalog/README.md` has the format, `catalog/REPORT.md` the per-entry notes. |
@@ -157,9 +157,11 @@ documentation; every entry cites its sources.
 
 - **Done**: Windows engine, tray, configuration window, 162-entry catalog, Tune inputs with
   modifier namespaces, God Mode, per-OS catalog filtering, installer and release workflow.
+- **Done in 0.2.0**: macOS. A menu-bar engine on an event tap, the same configuration window,
+  one universal dmg for Intel and Apple Silicon. Unsigned for now; signing and notarization
+  come with an Apple Developer account.
 - **Next**: Touch module support once one is on the bench (the engine already handles its
   key ranges; what is missing is measurement of how it sends gestures).
-- **Then**: macOS (event tap, menu-bar app, permissions onboarding, dmg).
 
 Design notes and the phase checklist are in `docs/PLAN.md`; the original scope document is
 `docs/scope.md`.

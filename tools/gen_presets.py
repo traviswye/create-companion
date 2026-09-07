@@ -240,7 +240,7 @@ def build_apps(generic: list[dict], files: dict[str, dict]) -> list[dict]:
                 "window_title": c.get("match", {}).get("window_title", []),
             },
             "sources": c.get("sources", []),
-            "defaults": c.get("defaults", {}),
+            "defaults": with_mac_defaults(c),
             "actions": [],
         }
         if c.get("os"):
@@ -359,6 +359,11 @@ def toml_value(v) -> str:
     raise TypeError(type(v))
 
 
+def strip_mac(bindings: dict) -> dict:
+    """Config files hold one action per binding; drop the `mac` alternative."""
+    return {ev: {k: v for k, v in b.items() if k != "mac"} for ev, b in bindings.items()}
+
+
 def emit_bindings(prefix: str, bindings: dict) -> list[str]:
     lines = []
     for event, b in bindings.items():
@@ -405,7 +410,12 @@ medium = [[250, 2], [150, 4], [80, 8]]
 aggressive = [[250, 3], [150, 6], [80, 12]]
 max_repeat = 32
 
-[transport]
+"""
+
+# Which F-key each Tune gesture is flashed to, per platform. macOS has no
+# F21-F24, so its set stays inside F13-F20 (the README's defaults table).
+TRANSPORT = {
+    "windows": """[transport]
 TUNE_CW = { key = "F24" }
 TUNE_CCW = { key = "F23" }
 TUNE_TAP_1F = { key = "F22" }
@@ -415,17 +425,74 @@ TUNE_SWIPE_UP = { key = "F18" }
 TUNE_SWIPE_DOWN = { key = "F17" }
 # Touch modules use a modifier namespace on the same keys, e.g.:
 # LEFT_TOUCH_SWIPE_LEFT = { key = "F20", mods = "shift" }
-"""
+""",
+    "macos": """[transport]
+# macOS never delivers F21-F24, so the Tune is flashed to F13-F20 here.
+TUNE_CW = { key = "F20" }
+TUNE_CCW = { key = "F19" }
+TUNE_TAP_1F = { key = "F18" }
+TUNE_SWIPE_LEFT = { key = "F17" }
+TUNE_SWIPE_RIGHT = { key = "F16" }
+TUNE_SWIPE_UP = { key = "F15" }
+TUNE_SWIPE_DOWN = { key = "F14" }
+# Touch modules use a modifier namespace on the same keys, e.g.:
+# LEFT_TOUCH_SWIPE_LEFT = { key = "F17", mods = "shift" }
+""",
+}
 
 
-def build_default_config(files: dict[str, dict]) -> str:
-    L = HEADER.splitlines() + [
+# Windows-only system chords and their macOS equivalents.
+MAC_CHORD_OVERRIDES = {
+    "Win+Tab": "Ctrl+Up",  # Task View -> Mission Control
+}
+
+
+def with_mac_defaults(entry: dict) -> dict:
+    """The entry's defaults with a `mac` action on each keys binding whose
+    macOS chord differs from the Windows one (explicit, catalog row, or
+    Ctrl/Win -> Cmd)."""
+    out = {}
+    for ev, b in entry.get("defaults", {}).items():
+        b = {k: v for k, v in b.items() if k != "mac"} | ({"mac": b["mac"]} if b.get("mac") else {})
+        mac = mac_binding(entry, b)["action"]
+        if mac != b["action"]:
+            b = {**b, "mac": mac}
+        out[ev] = b
+    return out
+
+
+def mac_binding(entry: dict, b: dict) -> dict:
+    """The macOS version of a default binding: the catalog action with the same
+    name in its `mac` column when there is one, otherwise a Ctrl/Win -> Cmd
+    rewrite of the Windows chord. Media and scroll actions are the same on both."""
+    act = b["action"]
+    if b.get("mac"):
+        return {**b, "action": b["mac"]}
+    if act.get("type") != "keys":
+        return b
+    want = b.get("name", "").strip().lower()
+    for a in entry.get("actions", []):
+        if a.get("name", "").strip().lower() == want and a.get("mac"):
+            return {**b, "action": a["mac"]}
+    chord = act["chord"]
+    if chord in MAC_CHORD_OVERRIDES:
+        return {**b, "action": {**act, "chord": MAC_CHORD_OVERRIDES[chord]}}
+    parts = chord.split("+")
+    mods = [("Cmd" if p in ("Ctrl", "Win") else p) for p in parts[:-1]]
+    return {**b, "action": {**act, "chord": "+".join(mods + parts[-1:])}}
+
+
+def build_default_config(files: dict[str, dict], platform: str = "windows") -> str:
+    L = HEADER.splitlines() + TRANSPORT[platform].splitlines() + [
         "",
         "[default_profile]",
         f"name = {toml_str(DEFAULT_PROFILE['name'])}",
         "",
     ]
-    L += emit_bindings("default_profile", DEFAULT_PROFILE["bindings"])
+    system_defaults = DEFAULT_PROFILE["bindings"]
+    if platform == "macos":
+        system_defaults = {ev: mac_binding({}, b) for ev, b in system_defaults.items()}
+    L += emit_bindings("default_profile", strip_mac(system_defaults))
     L += [
         "# God Mode: bindings here override any and every other profile, whatever is in",
         "# the foreground. Only bind gestures you do not plan to use for anything else.",
@@ -443,7 +510,10 @@ def build_default_config(files: dict[str, dict]) -> str:
             m["window_title"] = c["match"]["window_title"]
         L.append("match = " + toml_value(m))
         L.append("")
-        L += emit_bindings("profiles", c.get("defaults", {}))
+        defaults = c.get("defaults", {})
+        if platform == "macos":
+            defaults = {ev: mac_binding(c, b) for ev, b in defaults.items()}
+        L += emit_bindings("profiles", strip_mac(defaults))
     return "\n".join(L).rstrip() + "\n"
 
 
@@ -463,7 +533,8 @@ def main() -> int:
         json.dumps({"_meta": {"source": "tools/gen_presets.py: catalog/*.json + reference/app-shortcuts.json (ShortcutMapper, MIT)",
                               "count": len(apps)},
                     "apps": apps}, separators=(",", ":"), ensure_ascii=False) + "\n", encoding="utf-8")
-    cfg = build_default_config(files)
+    cfg = build_default_config(files, "windows")
+    (OUT / "default-config.macos.toml").write_text(build_default_config(files, "macos"), encoding="utf-8")
     tomllib.loads(cfg)  # syntax check
     (OUT / "default-config.toml").write_text(cfg, encoding="utf-8", newline="\n")
     print(f"actions.json: {len(generic)} actions; default-config.toml: {len(DEFAULT_CONFIG_PROFILES)} app profiles")

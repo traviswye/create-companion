@@ -1,5 +1,40 @@
 # Release notes
 
+## 0.2.0 — macOS arrives; Windows polish
+
+### macOS (first release)
+
+Create Companion now runs on macOS 10.15 and later, Intel and Apple Silicon, from one universal
+dmg. The engine is a menu-bar program built on a CGEvent tap, with the same configuration
+window as Windows.
+
+- Inputs use F13–F20 (macOS has no F21–F24); the first-run configuration and the bundled
+  profiles use Mac shortcuts (Cmd+T, Cmd+Z, Ctrl+Up for Mission Control, and so on).
+- Needs two permissions in *System Settings → Privacy & Security*: **Input Monitoring** to see
+  the module's keys and **Accessibility** to send shortcuts and read window titles. The engine
+  asks on first start; quit and reopen it after granting them.
+- **Not signed or notarized yet.** Gatekeeper blocks the first launch: right-click → Open on
+  Ventura and Sonoma, or *Privacy & Security → Open Anyway* on macOS 15. See INSTALL.md.
+- Start at login is a per-user LaunchAgent. Configuration lives in
+  `~/Library/Application Support/CreateCompanion/`, logs in `~/Library/Logs/CreateCompanion/`.
+- First release on this platform: tested on an Intel MacBook running Ventura. Reports from
+  other machines are welcome in Issues.
+
+### Windows and both platforms
+
+- Every search field has a clear button (and Escape clears it).
+- Starring an app uses the shortcuts for the platform you are on; several first-wave catalog
+  entries had Mac columns that copied the Windows chords (undo/redo, new tab, back/forward,
+  zoom) and are corrected.
+- Issue templates for bugs, catalog requests and feature requests; Discussions enabled.
+- Repository housekeeping: plan and scope documents moved to `docs/`.
+
+### Upgrading
+
+Windows: run the new installer over the old one; it stops the engine, replaces the programs and
+restarts. macOS: drag the new app over the old one in Applications. Configuration files are kept
+on both.
+
 ## 0.1.0 — first release (Windows)
 
 Create Companion turns the Naya Create's Tune (and, soon, Touch) gestures into per-application
