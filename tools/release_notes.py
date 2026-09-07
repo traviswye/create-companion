@@ -28,4 +28,5 @@ if not body:
     sys.exit(1)
 if repo and tag:
     body += f"\n\n---\nInstall instructions: https://github.com/{repo}/blob/{tag}/INSTALL.md\n"
-sys.stdout.write(body + "\n")
+# Windows consoles default to a legacy code page; the notes are UTF-8.
+sys.stdout.buffer.write((body + "\n").encode("utf-8"))
