@@ -8,7 +8,7 @@ in front, and sends the shortcut you chose for it. Turn the dial in Chrome to sw
 Photoshop to change brush size, on the desktop to change volume. Change any of it in a
 configuration window, live, without touching the keyboard's firmware again.
 
-Windows, with macOS in testing (see [Roadmap](#roadmap)).
+Windows and macOS (macOS is new in 0.2.0; see [Install](INSTALL.md) for the permission steps).
 
 ![The configuration window: profiles on the left, one row per gesture, and the action picker](docs/media/configuration-window.gif)
 
@@ -157,8 +157,9 @@ documentation; every entry cites its sources.
 
 - **Done**: Windows engine, tray, configuration window, 162-entry catalog, Tune inputs with
   modifier namespaces, God Mode, per-OS catalog filtering, installer and release workflow.
-- **In testing**: macOS. The engine runs as a menu-bar app on an event tap, with the same
-  configuration window and a universal dmg; it is being verified on real Macs before a release.
+- **Done in 0.2.0**: macOS. A menu-bar engine on an event tap, the same configuration window,
+  one universal dmg for Intel and Apple Silicon. Unsigned for now; signing and notarization
+  come with an Apple Developer account.
 - **Next**: Touch module support once one is on the bench (the engine already handles its
   key ranges; what is missing is measurement of how it sends gestures).
 
