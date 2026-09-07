@@ -393,7 +393,13 @@ pub fn run(
 #[cfg(test)]
 mod tests {
     use super::*;
-    use companion_core::presets::default_config;
+    use companion_core::presets::DEFAULT_CONFIG_TOML_WINDOWS;
+
+    /// The tests press the Windows default keys (F24 = dial clockwise), so
+    /// they pin the Windows configuration whatever platform runs them.
+    fn default_config() -> Config {
+        Config::from_toml(DEFAULT_CONFIG_TOML_WINDOWS).unwrap()
+    }
     use companion_core::transport::{FunctionKey, Modifiers, TransportCode};
     use std::time::Instant;
 
