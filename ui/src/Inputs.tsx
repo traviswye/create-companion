@@ -102,11 +102,16 @@ function ModToggles({ value, onChange }: { value: Mods | undefined; onChange: (v
   );
 }
 
-function FingerSelect({ gesture, value, onChange }: { gesture: GestureId; value: number | null; onChange: (v: number | null) => void }) {
+function FingerSelect({ module, gesture, value, onChange }: { module: ModuleId; gesture: GestureId; value: number | null; onChange: (v: number | null) => void }) {
   if (!takesFingers(gesture)) return <span className="muted">dial</span>;
-  const opts = fingerOptions(gesture);
+  const allowed = fingerOptions(module, gesture);
+  // A row made before a count was withheld keeps showing its value; only new choices are limited.
+  const opts = value && !allowed.includes(value) ? [value, ...allowed] : allowed;
+  const title =
+    "How many fingers the module was flashed for. Blank = any count (needed for export)." +
+    (module === "TUNE" ? "" : " A Touch cannot map 1 finger or a 2-finger tap yet: the module firmware owns those.");
   return (
-    <select value={value ?? ""} onChange={(e) => onChange(e.target.value === "" ? null : Number(e.target.value))} title="How many fingers the module was flashed for. Blank = any count (needed for export).">
+    <select value={value ?? ""} onChange={(e) => onChange(e.target.value === "" ? null : Number(e.target.value))} title={title}>
       <option value="">any fingers</option>
       {opts.map((n) => (
         <option key={n} value={n}>
@@ -261,7 +266,7 @@ export function Inputs(props: {
     setNewKey(free[0] ?? newKey);
     setNewKey2(free[1] ?? free[0] ?? newKey2);
     for (const c of choicesFor(newModule)) {
-      const opts = fingerOptions(halvesOf(c)[0]);
+      const opts = fingerOptions(newModule, halvesOf(c)[0]);
       const counts: (number | null)[] = opts.length === 0 ? [null] : newFingers && opts.includes(newFingers) ? [newFingers, ...opts.filter((n) => n !== newFingers)] : opts;
       for (const n of counts) {
         if (halvesOf(c).every((g) => !t[makeEvent(newModule, g, n)])) {
@@ -405,7 +410,7 @@ export function Inputs(props: {
                       </div>
                     </td>
                     <td>
-                      <FingerSelect gesture={p.gesture} value={p.fingers} onChange={(n) => setFingers(ev, n)} />
+                      <FingerSelect module={p.module} gesture={p.gesture} value={p.fingers} onChange={(n) => setFingers(ev, n)} />
                     </td>
                     <td>
                       <div className="sends">
@@ -420,7 +425,7 @@ export function Inputs(props: {
                           checked={!!t.follow}
                           on="Follow swipe"
                           off="One per swipe"
-                          title="The Tune sends a 2-finger swipe as a run of keys scaled to how far the fingers travel. Off: one action per swipe. On: every key acts, so volume or scroll follows the swipe. This is the default for every profile; a profile can flip it for itself."
+                          title="This gesture arrives as a run of keys scaled to how far the fingers travel (a Tune's 2-finger swipes; a Touch's 2-finger scroll and its 4-finger swipe up or down). Off: one action per swipe. On: every key acts, so volume or scroll follows the swipe. This is the default for every profile; a profile can flip it for itself."
                           onChange={(v) => setCode(ev, { ...t, follow: v })}
                         />
                       ) : (
@@ -446,7 +451,10 @@ export function Inputs(props: {
                       onChange={(e) => {
                         const m = e.target.value as ModuleId;
                         setNewModule(m);
-                        if (!choicesFor(m).includes(newGesture)) setNewGesture("TAP");
+                        const c = choicesFor(m).includes(newGesture) ? newGesture : "TAP";
+                        setNewGesture(c);
+                        const opts = fingerOptions(m, halvesOf(c)[0]);
+                        setNewFingers(opts.length === 0 ? null : newFingers && opts.includes(newFingers) ? newFingers : opts[0]);
                       }}
                     >
                       {MODULES.map((m) => (
@@ -460,7 +468,7 @@ export function Inputs(props: {
                       onChange={(e) => {
                         const c = e.target.value as GestureChoice;
                         setNewGesture(c);
-                        const opts = fingerOptions(halvesOf(c)[0]);
+                        const opts = fingerOptions(newModule, halvesOf(c)[0]);
                         setNewFingers(opts.length === 0 ? null : newFingers && opts.includes(newFingers) ? newFingers : opts[0]);
                       }}
                     >
@@ -473,7 +481,7 @@ export function Inputs(props: {
                   </div>
                 </td>
                 <td>
-                  <FingerSelect gesture={halvesOf(newGesture)[0]} value={newFingers} onChange={setNewFingers} />
+                  <FingerSelect module={newModule} gesture={halvesOf(newGesture)[0]} value={newFingers} onChange={setNewFingers} />
                 </td>
                 <td>
                   <div className="sends">

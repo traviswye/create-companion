@@ -1,0 +1,70 @@
+# Phase 1 for the Touch: what does the PC receive from a Touch on its STOCK profile?
+# No flashing. input_capture.ps1 hooks the keyboard AND the mouse and logs every event
+# (keys with the chord they form, cursor moves with deltas, wheel notches, button clicks)
+# while you perform each gesture once, then says how many events of each kind arrived.
+#
+# Reference map: nayaos/docs/reference/module-profiles/naya-touch-windows.json (17 fields, the
+# "Naya Touch Windows" stock profile). The expect= tokens below are that map: move, wheel,
+# hwheel, click:left|right|middle, a chord such as Ctrl+Tab, or none; several separated by
+# commas. If the map you pull off your module differs, edit the tokens to match.
+#
+# Before you start: park the mouse pointer over this console window or an empty patch of
+# desktop, and keep your hands off the real mouse and keyboard while a capture is running.
+# The hooks pass everything through, so taps are real clicks, 3-finger swipes switch windows
+# and 4-finger swipes switch desktops; click back into this console whenever a gesture takes
+# the focus away. The 4-finger tap opens Task View: press Esc to close it.
+# Gestures marked expect=none (holds, pinch&spread) are recorded for 8 s from the moment you
+# press Enter, since there is no first event to wait for; -NoneSeconds changes that.
+#
+# Redo just the two that were missed on 2026-09-09:
+#       powershell -ExecutionPolicy Bypass -File tools\input_capture.ps1 -Only "pinch","HOLD still" -Out tools\plans\stock-touch.log -Append
+#
+# Run:  powershell -ExecutionPolicy Bypass -File tools\input_capture.ps1 -PlanFile tools\plans\stock-touch.txt -Seconds 4 -Out tools\plans\stock-touch.log
+# Then: python tools\input_analyze.py tools\plans\stock-touch.log
+# A section at a time: add -Only "3 fingers" (and -Append after the first run).
+# Just watch the raw stream instead: powershell -ExecutionPolicy Bypass -File tools\input_capture.ps1 -Stream -Seconds 20
+
+# --- taps: mouse buttons ---
+tap (1 finger) expect=click:left
+tap (2 fingers) expect=click:right
+tap (3 fingers) expect=click:middle
+tap (4 fingers) - opens Task View, press Esc afterwards expect=Win+Tab
+
+# --- 1 finger: the cursor axes (vertical:1_finger, horizontal:1_finger) ---
+1 finger: move up, about half the pad at a normal pace expect=move
+1 finger: move down, about half the pad expect=move
+1 finger: move left, about half the pad expect=move
+1 finger: move right, about half the pad expect=move
+1 finger: SLOW and LONG move up (the whole pad, about 1.5 s) expect=move
+1 finger: FAST and SHORT flick up (about 1 cm) expect=move
+1 finger: touch and HOLD still for 2 s without moving, then lift expect=none
+
+# --- 2 fingers: the scroll axes (vertical:2_fingers, horizontal:2_fingers) and pinch ---
+2 fingers: scroll up, about half the pad at a normal pace expect=wheel
+2 fingers: scroll down, about half the pad expect=wheel
+2 fingers: scroll left, about half the pad expect=hwheel
+2 fingers: scroll right, about half the pad expect=hwheel
+2 fingers: SLOW and LONG scroll up (the whole pad, about 1.5 s) expect=wheel
+2 fingers: FAST and SHORT flick up (about 1 cm) expect=wheel
+2 fingers: scroll up, then HOLD both fingers still for 2 s before lifting expect=wheel
+2 fingers: pinch, then spread back out (one pinch&spread axis; stock binds nothing to it) expect=none
+
+# --- 3 fingers: window-switching chords (focus moves; click back into this console after each) ---
+3 fingers: swipe up expect=Shift+Alt+Esc
+3 fingers: swipe down expect=Alt+Esc
+3 fingers: swipe left expect=Ctrl+Shift+Tab
+3 fingers: swipe right expect=Ctrl+Tab
+3 fingers: SLOW and LONG swipe right (the whole pad, about 1.5 s - does the chord repeat?) expect=Ctrl+Tab
+3 fingers: FAST and SHORT flick right (about 1 cm) expect=Ctrl+Tab
+
+# --- 4 fingers: desktop chords (Ctrl+Win+Left/Right only switch if you have more than one virtual desktop) ---
+4 fingers: swipe up expect=Alt+PgUp
+4 fingers: swipe down expect=Alt+PgDn
+4 fingers: swipe left expect=Ctrl+Win+Left
+4 fingers: swipe right expect=Ctrl+Win+Right
+4 fingers: SLOW and LONG swipe up (does the chord repeat?) expect=Alt+PgUp
+
+# --- not in the stock map: does the firmware send anything for these at all? ---
+double tap (1 finger) - stock has no double-tap field, so expect two plain clicks expect=click:left
+1 finger: a quick flick up then lift - is there a swipe event separate from the cursor moves? expect=move
+2 fingers: tap then immediately swipe up (a tap-and-drag) expect=click:right,wheel

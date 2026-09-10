@@ -1,0 +1,68 @@
+# Touch census (Phase 2): the same gestures as Phase 1, with the Touch flashed so its fields send
+# modifier + F-key instead of their stock actions. Does each gesture send ONE key or a RUN, and
+# does a keypress binding change how a field behaves? Phase 1 on the stock profile (2026-09-09):
+# 4-finger swipe up/down streamed chords, 3-finger swipes and 4-finger left/right sent one,
+# 2-finger scroll streamed wheel reports, 1-finger motion was cursor reports, pinch&spread and
+# holds sent nothing.
+#
+# WHAT IS FLASHED (2026-09-10, tools\plans\census-touch.module-profile.json, 13 keys):
+#   Ctrl+ = 2 fingers:  F13 scroll up   F14 scroll down   F15 scroll left   F16 scroll right   (the vertical / horizontal axis halves)
+#   Alt+  = 3 fingers:  F13 swipe up   F14 swipe down   F15 swipe left   F16 swipe right   F22 tap
+#   Alt+  = 4 fingers:  F18 swipe up   F19 swipe down   F20 swipe left   F21 swipe right   F22 tap
+#   NOTE: the 3-finger tap and the 4-finger tap share Alt+F22. Fine for this census (every capture
+#   is labelled by its prompt), but a 4-finger tap that also trips the 3-finger field is invisible.
+#
+# NOT FLASHED, on purpose: everything at 1 finger (cursor axes, tap) and the 2-finger tap. NayaFlow
+# disables mapping those fields and OpenFlow mirrors that until a test probe writes to them and
+# shows a binding takes. So 1-finger motion is still the firmware cursor, 1-finger tap a left
+# click, 2-finger tap a right click. 1- and 2-finger swipes, double taps and pinch&spread have no
+# known device field yet (candidates: unbound slots 0x11/0x12/0x14/0x1a/0x1f-0x21, keypress fields
+# 0x22/0x23). The full target map is tools\plans\census-touch.full.module-profile.json.
+# The expect= values below are for THIS flash: a 2-finger swipe has no field, so the 2-finger axis
+# answers it; a double tap is two taps; pinch&spread stays silent; 1 finger is stock.
+#
+# With the 2-finger axes flashed as keys nothing scrolls any more; a wheel event in the log is a
+# leftover, and a cursor move during a 2/3/4-finger gesture is 1-finger leakage while fingers land.
+#
+# Run (same logger as Phase 1, so leakage is visible too):
+#       powershell -ExecutionPolicy Bypass -File tools\input_capture.ps1 -PlanFile tools\plans\census-touch.txt -Seconds 4 -Out tools\plans\census-touch.log; python tools\input_analyze.py tools\plans\census-touch.log
+# Or with the F-key tool, whose analyzer also checks the modifier timing the engine relies on:
+#       powershell -ExecutionPolicy Bypass -File tools\gesture_capture.ps1 -PlanFile tools\plans\census-touch.txt -Seconds 4 -Out tools\plans\census-touch.log; python tools\keymon_analyze.py tools\plans\census-touch.log
+# A section at a time: -Only "2 fingers" / "3 fingers" / "4 fingers" / "1 finger" (-Append after the first).
+
+# --- 2 fingers (Ctrl+F13-F16 = the scroll axes; tap not flashed) ---
+2 fingers: scroll up, normal pace, about half the pad (a run of wheel reports on stock) expect=Ctrl+F13
+2 fingers: scroll down, normal pace, about half the pad expect=Ctrl+F14
+2 fingers: scroll left, normal pace, about half the pad expect=Ctrl+F15
+2 fingers: scroll right, normal pace, about half the pad expect=Ctrl+F16
+2 fingers: FAST and SHORT flick up (about 1 cm) expect=Ctrl+F13
+2 fingers: SLOW and LONG scroll up (the whole pad, about 1.5 s) expect=Ctrl+F13
+2 fingers: scroll up, then HOLD both fingers still for 2 s before lifting expect=Ctrl+F13
+2 fingers: touch and HOLD still for 2 s without moving, then lift expect=none
+2 fingers: tap (not flashed: still a right click) expect=click:right
+2 fingers: double tap (no field: two right clicks) expect=click:right
+2 fingers: pinch, then spread back out (no field: expect silence) expect=none
+
+# --- 3 fingers (Alt+F13-F16 swipes, Alt+F22 tap) ---
+3 fingers: swipe up, normal pace, about half the pad expect=Alt+F13
+3 fingers: swipe down, normal pace, about half the pad expect=Alt+F14
+3 fingers: swipe left, normal pace, about half the pad expect=Alt+F15
+3 fingers: swipe right, normal pace, about half the pad expect=Alt+F16
+3 fingers: SLOW and LONG swipe right (the whole pad, about 1.5 s: still one key?) expect=Alt+F16
+3 fingers: FAST and SHORT flick right (about 1 cm) expect=Alt+F16
+3 fingers: tap expect=Alt+F22
+3 fingers: double tap (no field: two taps) expect=Alt+F22
+
+# --- 4 fingers (Alt+F18-F21 swipes, Alt+F22 tap) ---
+4 fingers: swipe up, normal pace, about half the pad (a run of 8 chords on stock) expect=Alt+F18
+4 fingers: swipe down, normal pace, about half the pad (a run of 7 chords on stock) expect=Alt+F19
+4 fingers: swipe left, normal pace, about half the pad expect=Alt+F20
+4 fingers: swipe right, normal pace, about half the pad expect=Alt+F21
+4 fingers: SLOW and LONG swipe up (the whole pad, about 1.5 s: how many keys?) expect=Alt+F18
+4 fingers: FAST and SHORT flick up (about 1 cm) expect=Alt+F18
+4 fingers: tap expect=Alt+F22
+4 fingers: double tap (no field: two taps) expect=Alt+F22
+
+# --- 1 finger: not flashed, a control that stock behaviour is untouched by the flash ---
+1 finger: move up, about half the pad (still the firmware cursor) expect=move
+1 finger: tap (still a left click) expect=click:left

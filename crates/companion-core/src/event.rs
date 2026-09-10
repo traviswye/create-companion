@@ -176,15 +176,38 @@ impl SemanticEvent {
     }
 
     /// Whether the module emits this gesture as a run of keys scaled to the
-    /// finger travel rather than one key per gesture. Measured on the Tune
-    /// (2026-09-05): two-finger swipes stream (one key per ~1/25 of the pad,
-    /// at most one per touch report); one- and three-finger swipes, taps and
-    /// dial detents send exactly one key. Touch: to be measured.
+    /// finger travel rather than one key per gesture.
+    ///
+    /// Tune (measured 2026-09-05): two-finger swipes stream (one key per
+    /// ~1/25 of the pad, at most one per touch report); one- and three-finger
+    /// swipes, taps and dial detents send exactly one key.
+    ///
+    /// Touch (measured 2026-09-10, `tools/plans/census-touch.log`): the
+    /// two-finger scroll axes stream one key per report in every direction
+    /// (9–11 keys for half the pad, none while the fingers rest), and the
+    /// four-finger swipes up and down stream scaled to distance (1 key for a
+    /// flick, 5–6 for half the pad, 10 for the whole pad). Three-finger swipes
+    /// at any speed, the four-finger swipes left and right, and every tap send
+    /// exactly one key. The Touch's two-finger swipe fields have no known
+    /// device slot yet; they are treated like its scroll axes, which is what a
+    /// two-finger motion is on that module.
     pub fn streams(self) -> bool {
-        matches!(
+        let swipe = matches!(
             self.gesture,
             Gesture::SwipeLeft | Gesture::SwipeRight | Gesture::SwipeUp | Gesture::SwipeDown
-        ) && self.fingers == Some(2)
+        );
+        let scroll = matches!(
+            self.gesture,
+            Gesture::ScrollLeft | Gesture::ScrollRight | Gesture::ScrollUp | Gesture::ScrollDown
+        );
+        match self.module {
+            Module::Tune => swipe && self.fingers == Some(2),
+            Module::LeftTouch | Module::RightTouch => {
+                ((swipe || scroll) && self.fingers == Some(2))
+                    || (matches!(self.gesture, Gesture::SwipeUp | Gesture::SwipeDown)
+                        && self.fingers == Some(4))
+            }
+        }
     }
 
     /// The same gesture with no finger count, used as a lookup fallback.
@@ -368,6 +391,44 @@ mod tests {
             "TUNE_TAP_0F",
         ] {
             assert!(bad.parse::<SemanticEvent>().is_err(), "{bad}");
+        }
+    }
+
+    #[test]
+    fn streams_per_module() {
+        let s = |e: &str| e.parse::<SemanticEvent>().unwrap().streams();
+        // Tune: two-finger swipes only.
+        for e in ["TUNE_SWIPE_UP_2F", "TUNE_SWIPE_LEFT_2F"] {
+            assert!(s(e), "{e}");
+        }
+        for e in [
+            "TUNE_SWIPE_UP_1F",
+            "TUNE_SWIPE_UP_3F",
+            "TUNE_TAP_2F",
+            "TUNE_CW",
+        ] {
+            assert!(!s(e), "{e}");
+        }
+        // Touch: two-finger motion in any direction, and the four-finger swipes up and down.
+        for e in [
+            "LEFT_TOUCH_SCROLL_UP_2F",
+            "LEFT_TOUCH_SCROLL_LEFT_2F",
+            "RIGHT_TOUCH_SWIPE_DOWN_2F",
+            "LEFT_TOUCH_SWIPE_UP_4F",
+            "RIGHT_TOUCH_SWIPE_DOWN_4F",
+        ] {
+            assert!(s(e), "{e}");
+        }
+        for e in [
+            "LEFT_TOUCH_SWIPE_UP_3F",
+            "LEFT_TOUCH_SWIPE_LEFT_4F",
+            "LEFT_TOUCH_SWIPE_RIGHT_4F",
+            "LEFT_TOUCH_TAP_4F",
+            "LEFT_TOUCH_SCROLL_UP_1F",
+            "LEFT_TOUCH_PINCH_2F",
+            "LEFT_TOUCH_SWIPE_UP",
+        ] {
+            assert!(!s(e), "{e}");
         }
     }
 

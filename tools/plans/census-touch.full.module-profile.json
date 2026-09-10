@@ -1,0 +1,174 @@
+{
+  "format": "openflow.module-profile",
+  "version": 1,
+  "moduleType": "TOUCH",
+  "name": "Create Companion Touch census (full target map)",
+  "bindings": {
+    "vertical:touch:1_finger": {
+      "actionType": "value",
+      "actionCode": "LSHIFT + F13 - LSHIFT + F14",
+      "split": {
+        "-": {
+          "actionType": "shortcut_alias",
+          "actionCode": "LSHIFT + F13"
+        },
+        "+": {
+          "actionType": "shortcut_alias",
+          "actionCode": "LSHIFT + F14"
+        }
+      }
+    },
+    "horizontal:touch:1_finger": {
+      "actionType": "value",
+      "actionCode": "LSHIFT + F15 - LSHIFT + F16",
+      "split": {
+        "-": {
+          "actionType": "shortcut_alias",
+          "actionCode": "LSHIFT + F15"
+        },
+        "+": {
+          "actionType": "shortcut_alias",
+          "actionCode": "LSHIFT + F16"
+        }
+      }
+    },
+    "swipe_up:touch:1_finger": {
+      "actionType": "shortcut_alias",
+      "actionCode": "LSHIFT + F17"
+    },
+    "swipe_down:touch:1_finger": {
+      "actionType": "shortcut_alias",
+      "actionCode": "LSHIFT + F18"
+    },
+    "swipe_left:touch:1_finger": {
+      "actionType": "shortcut_alias",
+      "actionCode": "LSHIFT + F19"
+    },
+    "swipe_right:touch:1_finger": {
+      "actionType": "shortcut_alias",
+      "actionCode": "LSHIFT + F20"
+    },
+    "tap:touch:1_finger": {
+      "actionType": "shortcut_alias",
+      "actionCode": "LSHIFT + F21"
+    },
+    "double_tap:touch:1_finger": {
+      "actionType": "shortcut_alias",
+      "actionCode": "LSHIFT + F22"
+    },
+    "vertical:touch:2_fingers": {
+      "actionType": "value",
+      "actionCode": "LCTRL + F13 - LCTRL + F14",
+      "split": {
+        "-": {
+          "actionType": "shortcut_alias",
+          "actionCode": "LCTRL + F13"
+        },
+        "+": {
+          "actionType": "shortcut_alias",
+          "actionCode": "LCTRL + F14"
+        }
+      }
+    },
+    "horizontal:touch:2_fingers": {
+      "actionType": "value",
+      "actionCode": "LCTRL + F15 - LCTRL + F16",
+      "split": {
+        "-": {
+          "actionType": "shortcut_alias",
+          "actionCode": "LCTRL + F15"
+        },
+        "+": {
+          "actionType": "shortcut_alias",
+          "actionCode": "LCTRL + F16"
+        }
+      }
+    },
+    "swipe_up:touch:2_fingers": {
+      "actionType": "shortcut_alias",
+      "actionCode": "LCTRL + F17"
+    },
+    "swipe_down:touch:2_fingers": {
+      "actionType": "shortcut_alias",
+      "actionCode": "LCTRL + F18"
+    },
+    "swipe_left:touch:2_fingers": {
+      "actionType": "shortcut_alias",
+      "actionCode": "LCTRL + F19"
+    },
+    "swipe_right:touch:2_fingers": {
+      "actionType": "shortcut_alias",
+      "actionCode": "LCTRL + F20"
+    },
+    "tap:touch:2_fingers": {
+      "actionType": "shortcut_alias",
+      "actionCode": "LCTRL + F21"
+    },
+    "double_tap:touch:2_fingers": {
+      "actionType": "shortcut_alias",
+      "actionCode": "LCTRL + F22"
+    },
+    "pinch&spread:touch:2_fingers": {
+      "actionType": "value",
+      "actionCode": "LCTRL + F23 - LCTRL + F24",
+      "split": {
+        "-": {
+          "actionType": "shortcut_alias",
+          "actionCode": "LCTRL + F23"
+        },
+        "+": {
+          "actionType": "shortcut_alias",
+          "actionCode": "LCTRL + F24"
+        }
+      }
+    },
+    "swipe_up:touch:3_fingers": {
+      "actionType": "shortcut_alias",
+      "actionCode": "LALT + F13"
+    },
+    "swipe_down:touch:3_fingers": {
+      "actionType": "shortcut_alias",
+      "actionCode": "LALT + F14"
+    },
+    "swipe_left:touch:3_fingers": {
+      "actionType": "shortcut_alias",
+      "actionCode": "LALT + F15"
+    },
+    "swipe_right:touch:3_fingers": {
+      "actionType": "shortcut_alias",
+      "actionCode": "LALT + F16"
+    },
+    "tap:touch:3_fingers": {
+      "actionType": "shortcut_alias",
+      "actionCode": "LALT + F17"
+    },
+    "swipe_up:touch:4_fingers": {
+      "actionType": "shortcut_alias",
+      "actionCode": "LALT + F18"
+    },
+    "swipe_down:touch:4_fingers": {
+      "actionType": "shortcut_alias",
+      "actionCode": "LALT + F19"
+    },
+    "swipe_left:touch:4_fingers": {
+      "actionType": "shortcut_alias",
+      "actionCode": "LALT + F20"
+    },
+    "swipe_right:touch:4_fingers": {
+      "actionType": "shortcut_alias",
+      "actionCode": "LALT + F21"
+    },
+    "tap:touch:4_fingers": {
+      "actionType": "shortcut_alias",
+      "actionCode": "LALT + F22"
+    },
+    "double_tap:touch:3_fingers": {
+      "actionType": "shortcut_alias",
+      "actionCode": "LALT + F23"
+    },
+    "double_tap:touch:4_fingers": {
+      "actionType": "shortcut_alias",
+      "actionCode": "LALT + F24"
+    }
+  }
+}

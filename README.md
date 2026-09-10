@@ -85,8 +85,9 @@ Windows and macOS (macOS is new in 0.2.0; see [Install](INSTALL.md) for the perm
   All platforms to see macOS entries and chords too, for example to build a configuration you
   will move to a Mac.
 - **Inputs.** Which key and modifier each gesture sends, per finger count; Learn; Export for
-  OpenFlow. Two-finger swipes on the Tune arrive as a *run* of keys scaled to how far the fingers
-  travel; by default a run is collapsed to one action, and the **Follow swipe** switch (per input,
+  OpenFlow. Some gestures arrive as a *run* of keys scaled to how far the fingers travel: the
+  Tune's two-finger swipes, and on a Touch the two-finger scroll in any direction and the
+  four-finger swipes up and down. By default a run is collapsed to one action, and the **Follow swipe** switch (per input,
   and per binding in each profile) lets an action such as volume or scroll follow the swipe's length
   instead.
 - **Messages you may see.** *Received Shift+F16 from the keyboard, but no input uses it*: the
@@ -144,7 +145,7 @@ the engine in as its sidecar and both builds replace the running executables.
 | `ui/` | The configuration window: Tauri 2 shell (`ui/src-tauri`) and Vite/React frontend (`ui/src`). |
 | `catalog/` | One JSON file per application, website or system with its documented shortcuts; `catalog/README.md` has the format, `catalog/REPORT.md` the per-entry notes. |
 | `presets/` | Generated from `catalog/` by `tools/gen_presets.py`: the app catalog, the generic action list and the default configuration. |
-| `tools/` | Catalog generator and validator, icon generator, installer build, and capture tools for studying what a module sends (`gesture_capture.ps1`, `keymon.ps1`, `keymon_analyze.py`). |
+| `tools/` | Catalog generator and validator, icon generator, installer build, and capture tools for studying what a module sends: `input_capture.ps1` logs every keyboard and mouse event from a stock-profile module, `gesture_capture.ps1` counts F-keys from a flashed one, `keymon.ps1` is a raw key monitor, and `input_analyze.py` / `keymon_analyze.py` read their logs; gesture plans live in `tools/plans/`. |
 
 ### Adding an application to the catalog
 

@@ -1,5 +1,24 @@
 # Release notes
 
+## Unreleased
+
+- **Touch runs.** The collapse / *Follow swipe* handling now knows which Touch gestures arrive
+  as a run of keys: two-finger scroll (and swipe) in any direction, and the four-finger swipes
+  up and down. Three-finger swipes, four-finger left and right, and every tap are single keys
+  and are left alone. Measured on a Touch on 2026-09-10 (`tools/plans/census-touch.log`); the
+  Tune's rule (two-finger swipes) is unchanged. The Inputs page offers *Follow swipe* on those rows.
+- **Inputs, what the add row offers.** Double tap and the split scroll axes (*Scroll up & down*,
+  *Scroll left & right*) are withheld on every module: the engine only relays a double tap the
+  firmware sends, and no module has such a field; a two-finger motion is added as a swipe.
+  Pinch & spread is offered at 2 fingers only. Adding a Left or Right Touch input no longer
+  offers 1 finger, or a 2-finger tap: the Touch firmware owns those fields (cursor, left and
+  right click) and ignores a key written to them, and NayaFlow refuses to map them. Existing
+  rows keep their values.
+- **Capture tools.** `tools/input_capture.ps1` logs every keyboard and mouse event a module on
+  its stock profile sends, one capture per gesture, with `tools/input_analyze.py` to read the
+  log; `tools/gesture_capture.ps1` and `keymon_analyze.py` end with a once-or-run summary and
+  accept `expect=` in plan files. Gesture plans for the Tune and the Touch live in `tools/plans/`.
+
 ## 0.2.0 — macOS arrives; Windows polish
 
 ### macOS (first release)

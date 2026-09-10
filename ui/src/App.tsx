@@ -832,7 +832,7 @@ export default function App() {
                                   checked={effective}
                                   on="Follow swipe"
                                   off="One per swipe"
-                                  title="The Tune sends a 2-finger swipe as a run of keys scaled to the finger travel. Off: one action per swipe. On: every key acts, so the action tracks the swipe's length. Starts as the input's setting; flipping it here applies to this profile only."
+                                  title="This gesture arrives as a run of keys scaled to the finger travel (a Tune's 2-finger swipes; a Touch's 2-finger scroll and its 4-finger swipe up or down). Off: one action per swipe. On: every key acts, so the action tracks the swipe's length. Starts as the input's setting; flipping it here applies to this profile only."
                                   onChange={(v) => setFollow(ev, v === inputDefault ? null : v)}
                                 />
                                 {repeatable && (

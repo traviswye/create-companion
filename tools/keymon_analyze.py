@@ -14,6 +14,9 @@ bursts (runs of F13-F24 events with gaps under 300 ms). For each group it prints
   - the largest gap between a modifier press and the F-key that followed it
   - every F-key press whose modifier had already been down longer than the
     window when it arrived, i.e. what the engine would treat as user-held
+It ends with a summary table, one row per group: presses, span, keys (with the
+modifier that was down), and ONCE / STREAM / NONE, so a census of a module's
+gestures answers "one key or a run?" at a glance.
 """
 import re
 import sys
@@ -52,6 +55,19 @@ def is_f(e):
     return 0x7C <= e["vk"] <= 0x87
 
 
+def keys_seen(b):
+    """The distinct keys a group delivered, each as key or mods+key with the modifiers down at that instant."""
+    seen = set()
+    held = {}
+    for e in b:
+        if e["key"] in MODS:
+            held[e["key"].lstrip("LR")] = e["down"]
+        elif is_f(e) and e["down"]:
+            mods = "+".join(sorted(k for k, d in held.items() if d))
+            seen.add(f"{mods}+{e['key']}" if mods else e["key"])
+    return seen
+
+
 def groups(events):
     """(label, expect, events) per gesture section, or per timing burst."""
     if any(e.get("marker") for e in events):
@@ -88,9 +104,11 @@ def analyze(path, window):
         print("no keymon lines found in", path)
         return
     print(f"{len([e for e in events if not e.get('marker')])} events, window {window} ms\n")
+    rows = []  # (presses, span_ms, keys, shape, verdict, label) for the summary table
     for label, expect, b in groups(events):
         if not b:
             print(f"{label}: no events captured\n")
+            rows.append((0, 0, "", "NONE", "", label))
             continue
         f_down = [e for e in b if is_f(e) and e["down"]]
         mod_down = [e for e in b if e["key"] in MODS and e["down"]]
@@ -120,18 +138,14 @@ def analyze(path, window):
         span = b[-1]["ms"] - b[0]["ms"]
         lag = max(e["lag"] for e in b)
         print(f"{label}: {len(f_down)} F-key presses ({', '.join(keys)}) over {span} ms, max delivery lag {lag} ms")
+        seen = keys_seen(b)
+        verdict = ""
         if expect:
             # what arrived, as key or mods+key, against what the config says this gesture sends
-            seen = set()
-            held = {}
-            for e in b:
-                if e["key"] in MODS:
-                    held[e["key"].lstrip("LR")] = e["down"]
-                elif is_f(e) and e["down"]:
-                    mods = "+".join(sorted(k for k, d in held.items() if d))
-                    seen.add(f"{mods}+{e['key']}" if mods else e["key"])
             verdict = "MATCH" if seen == {expect} else "MISMATCH"
             print(f"  expected {expect}, got {', '.join(sorted(seen)) or 'nothing'}: {verdict}")
+        shape = "NONE" if not f_down else "ONCE" if len(f_down) == 1 else f"STREAM x{len(f_down)}"
+        rows.append((len(f_down), span, ", ".join(sorted(seen)), shape, verdict, label))
         if len(f_down) > 1:
             gaps_between = [f_down[i]["ms"] - f_down[i - 1]["ms"] for i in range(1, len(f_down))]
             print(f"  {len(f_down)} presses from one gesture: gaps between presses {min(gaps_between)}-{max(gaps_between)} ms (a firmware burst if you performed it once)")
@@ -145,6 +159,23 @@ def analyze(path, window):
         elif pattern == "SPANNING":
             print("  spanning but every key landed inside the window; a longer run would not")
         print()
+    summary(rows)
+
+
+def summary(rows):
+    """One line per group: did the gesture send one key or a run?"""
+    if not rows:
+        return
+    kw = max(4, *(len(r[2]) for r in rows))
+    print("Summary: presses per gesture (ONCE = one key per gesture, STREAM = a run of keys from one gesture)")
+    print(f"  {'presses':>7}  {'span ms':>7}  {'keys':<{kw}}  {'verdict':<16}  gesture")
+    for presses, span, keys, shape, verdict, label in rows:
+        print(f"  {presses:>7}  {span:>7}  {keys:<{kw}}  {(shape + ' ' + verdict).strip():<16}  {label}")
+    once = sum(1 for r in rows if r[3] == "ONCE")
+    streams = [r for r in rows if r[3].startswith("STREAM")]
+    print(f"  {once} gesture(s) sent one key, {len(streams)} sent a run.")
+    if streams:
+        print("  Runs: " + "; ".join(f"{r[5]} ({r[0]})" for r in streams))
 
 
 if __name__ == "__main__":

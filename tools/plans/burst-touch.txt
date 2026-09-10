@@ -1,0 +1,61 @@
+# Burst experiment for the Touch (Phase 2, after the census): for the gestures that send a RUN
+# of keys, is the run driven by time, distance, or holding? Mirrors burst-tune.txt (2026-09-05),
+# where the Tune's 2-finger swipes streamed 5-27 presses scaled to travel and everything else
+# sent exactly one key. Phase 1 on the stock profile (2026-09-09) found the Touch's 4-finger
+# swipe up/down send a run of chords (8 presses in 277 ms) while 3-finger swipes and 4-finger
+# left/right send one, and a single slow swipe up gave only 2 presses, so speed vs distance is
+# the open question.
+#
+# Uses the 2026-09-10 flash (census-touch.module-profile.json: 2-finger axes Ctrl+F13-F16,
+# 3-finger swipes Alt+F13-F16, 4-finger swipes Alt+F18-F21), no re-flash. 1-finger fields, the
+# 2-finger swipe fields and pinch&spread are not flashed (see census-touch.txt), so their
+# sections are under "Later:" and wait for the full map.
+#
+# Run:  powershell -ExecutionPolicy Bypass -File tools\input_capture.ps1 -PlanFile tools\plans\burst-touch.txt -Seconds 4 -Out tools\plans\burst-touch.log; python tools\input_analyze.py tools\plans\burst-touch.log
+# Or:   powershell -ExecutionPolicy Bypass -File tools\gesture_capture.ps1 -PlanFile tools\plans\burst-touch.txt -Seconds 4 -Out tools\plans\burst-touch.log; python tools\keymon_analyze.py tools\plans\burst-touch.log
+# A section at a time: -Only "4 fingers" / "2 fingers" / "3 fingers" / "Later" (-Append after the first).
+
+# --- 4 fingers: swipe up = Alt+F18, the run seen in Phase 1. Vary speed and distance independently ---
+4 fingers: swipe up: FAST and SHORT (a quick flick, about 1 cm) expect=Alt+F18
+4 fingers: swipe up: SLOW and LONG (the whole pad, take about 1.5 s) expect=Alt+F18
+4 fingers: swipe up: FAST and LONG (the whole pad in one quick motion) expect=Alt+F18
+4 fingers: swipe up: SLOW and SHORT (about 1 cm, take about 1.5 s) expect=Alt+F18
+4 fingers: swipe up, then HOLD all four fingers still on the pad for 2 s before lifting expect=Alt+F18
+4 fingers: touch and HOLD still for 2 s without moving, then lift expect=none
+4 fingers: swipe down: FAST and SHORT expect=Alt+F19
+4 fingers: swipe down: SLOW and LONG (the whole pad, about 1.5 s) expect=Alt+F19
+4 fingers: swipe up: FAST and SHORT (repeat) expect=Alt+F18
+4 fingers: swipe up: SLOW and LONG (repeat) expect=Alt+F18
+4 fingers: swipe up: FAST and LONG (repeat) expect=Alt+F18
+4 fingers: swipe up: SLOW and SHORT (repeat) expect=Alt+F18
+
+# --- 2 fingers: vertical axis up = Ctrl+F13 (a run of wheel reports on stock) ---
+2 fingers: scroll up: FAST and SHORT (a quick flick, about 1 cm) expect=Ctrl+F13
+2 fingers: scroll up: SLOW and LONG (the whole pad, take about 1.5 s) expect=Ctrl+F13
+2 fingers: scroll up: FAST and LONG (the whole pad in one quick motion) expect=Ctrl+F13
+2 fingers: scroll up: SLOW and SHORT (about 1 cm, take about 1.5 s) expect=Ctrl+F13
+2 fingers: scroll up, then HOLD both fingers still on the pad for 2 s before lifting expect=Ctrl+F13
+2 fingers: touch and HOLD still for 2 s without moving, then lift expect=none
+2 fingers: scroll up, then keep moving in tiny circles for 2 s before lifting
+2 fingers: scroll left: FAST and SHORT expect=Ctrl+F15
+2 fingers: scroll left: SLOW and LONG (the whole pad, about 1.5 s) expect=Ctrl+F15
+
+# --- 3 fingers: swipe up = Alt+F13 (one chord on stock, even slow and long) ---
+3 fingers: swipe up: FAST and SHORT expect=Alt+F13
+3 fingers: swipe up: SLOW and LONG (the whole pad, about 1.5 s) expect=Alt+F13
+
+# --- Later: needs the full map (census-touch.full.module-profile.json) once the 1-finger fields are probed and the swipe / pinch&spread fields found ---
+Later: 1-finger move up on the vertical axis: FAST and SHORT expect=Shift+F13
+Later: 1-finger move up on the vertical axis: SLOW and LONG (the whole pad, about 1.5 s) expect=Shift+F13
+Later: 1-finger move up on the vertical axis, then HOLD the finger still for 2 s before lifting expect=Shift+F13
+Later: 1-finger swipe up: FAST and SHORT expect=Shift+F17
+Later: 1-finger swipe up: SLOW and LONG expect=Shift+F17
+Later: 2-finger swipe up: FAST and SHORT expect=Ctrl+F17
+Later: 2-finger swipe up: SLOW and LONG (the whole pad, about 1.5 s) expect=Ctrl+F17
+Later: 2-finger swipe up: FAST and LONG expect=Ctrl+F17
+Later: 2-finger swipe up: SLOW and SHORT expect=Ctrl+F17
+Later: 2-finger swipe up with the 2-finger axes ALSO flashed: does one motion fire both Ctrl+F17 and Ctrl+F13? expect=Ctrl+F17
+Later: pinch: FAST and SMALL (a quick close, about 1 cm) expect=Ctrl+F23
+Later: pinch: SLOW and WIDE (fingers from the edges to touching, about 1.5 s) expect=Ctrl+F23
+Later: spread: SLOW and WIDE (about 1.5 s) expect=Ctrl+F24
+Later: pinch, then spread back out, in one continuous motion without lifting

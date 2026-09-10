@@ -596,6 +596,72 @@ mod tests {
     }
 
     #[test]
+    fn touch_runs_collapse_like_tune_swipes() {
+        use std::time::Duration;
+        // A Touch 4-finger swipe up arrives as 5-6 keys 30-70 ms apart (census 2026-09-10);
+        // its 3-finger swipes send one key and must not be touched by the collapse.
+        let mut cfg = default_config();
+        let run_ev: SemanticEvent = "LEFT_TOUCH_SWIPE_UP_4F".parse().unwrap();
+        let one_ev: SemanticEvent = "LEFT_TOUCH_SWIPE_UP_3F".parse().unwrap();
+        assert!(run_ev.streams() && !one_ev.streams());
+        for (ev, key) in [(run_ev, FunctionKey::F18), (one_ev, FunctionKey::F13)] {
+            cfg.transport.insert(
+                ev,
+                TransportCode {
+                    key,
+                    mods: Modifiers::SHIFT,
+                }
+                .into(),
+            );
+            cfg.default_profile.bindings.insert(
+                ev,
+                companion_core::profile::Binding {
+                    action: Action::Media {
+                        key: companion_core::action::MediaKey::PlayPause,
+                    },
+                    accel: Default::default(),
+                    name: None,
+                    follow: None,
+                    multiplier: 1,
+                },
+            );
+        }
+        let t0 = Instant::now();
+        let execs = |sink: &MockSink| sink.calls.iter().filter(|c| c.starts_with("exec")).count();
+        let mut engine = Engine::new(&cfg).unwrap();
+        let mut sink = MockSink::default();
+        for i in 0..6u64 {
+            engine.handle(
+                press_at(
+                    FunctionKey::F18,
+                    Modifiers::SHIFT,
+                    t0 + Duration::from_millis(i * 40),
+                ),
+                &AppContext::default(),
+                &mut sink,
+            );
+        }
+        assert_eq!(
+            execs(&sink),
+            1,
+            "six keys 40 ms apart are one 4-finger swipe"
+        );
+        // Two 3-finger swipes 100 ms apart are two gestures: not streamed, so nothing is dropped.
+        for ms in [1000, 1100] {
+            engine.handle(
+                press_at(
+                    FunctionKey::F13,
+                    Modifiers::SHIFT,
+                    t0 + Duration::from_millis(ms),
+                ),
+                &AppContext::default(),
+                &mut sink,
+            );
+        }
+        assert_eq!(execs(&sink), 3);
+    }
+
+    #[test]
     fn modifier_namespace_is_released_before_executing() {
         // Left Touch swipe-left on Shift+F20 -> browser back.
         let mut cfg = default_config();

@@ -13,27 +13,36 @@
   (%APPDATA%\CreateCompanion\config.toml) with the key it is supposed to send,
   so each capture also says MATCH or MISMATCH. Override with -Gestures.
 
+  A plan file (-PlanFile) has one prompt per line; a line may end in "expect=<key>"
+  (e.g. "tap (2 fingers) expect=Shift+F14") to get the same MATCH / MISMATCH check.
+  Plans for the Tune and the Touch live in tools/plans/.
+
   Output: a log with one "### gesture: <name>" header per gesture, ready for
-  tools/keymon_analyze.py. The engine keeps running; this hook passes keys on.
-  Run in your own PowerShell window.
+  tools/keymon_analyze.py, and a summary table: presses per gesture, ONCE or
+  STREAM. The engine keeps running; this hook passes keys on. Run in your own
+  PowerShell window from the repository root.
 
 .EXAMPLE
-  powershell -ExecutionPolicy Bypass -File D:\CreateCompanion\tools\gesture_capture.ps1
-  powershell -ExecutionPolicy Bypass -File D:\CreateCompanion\tools\gesture_capture.ps1 -Gestures "2-finger swipe up","3-finger tap" -Seconds 4
-  powershell -ExecutionPolicy Bypass -File D:\CreateCompanion\tools\gesture_capture.ps1 -Only TUNE_CCW,TUNE_SWIPE_LEFT_2F -Append
-  powershell -ExecutionPolicy Bypass -File D:\CreateCompanion\tools\gesture_capture.ps1 -PlanFile D:\CreateCompanion\tools\plans\burst-tune.txt -Seconds 4 -Out D:\CreateCompanion\burst-tune.log
-  python D:\CreateCompanion\tools\keymon_analyze.py D:\CreateCompanion\capture.log
+  powershell -ExecutionPolicy Bypass -File tools\gesture_capture.ps1
+  powershell -ExecutionPolicy Bypass -File tools\gesture_capture.ps1 -Gestures "2-finger swipe up","3-finger tap" -Seconds 4
+  powershell -ExecutionPolicy Bypass -File tools\gesture_capture.ps1 -Only TUNE_CCW,TUNE_SWIPE_LEFT_2F -Append
+  powershell -ExecutionPolicy Bypass -File tools\gesture_capture.ps1 -PlanFile tools\plans\burst-tune.txt -Seconds 4 -Out tools\plans\burst-tune.log
+  powershell -ExecutionPolicy Bypass -File tools\gesture_capture.ps1 -PlanFile tools\plans\census-touch.txt -Only "Round 1" -Seconds 4 -Out tools\plans\census-touch.log
+  python tools\keymon_analyze.py capture.log
 #>
 param(
   [string[]]$Gestures,
   [string]$PlanFile, # text file, one gesture instruction per line (# comments and blank lines ignored)
   [int]$Seconds = 3,
-  [string]$Out = "D:\CreateCompanion\capture.log",
+  [string]$Out,      # default: capture.log in the repository root
   [string]$Config = "$env:APPDATA\CreateCompanion\config.toml",
   [string[]]$Only,   # event ids or name fragments to test, e.g. TUNE_CCW,"swipe down (1"
   [switch]$Append,   # add to the log instead of starting a new one
   [switch]$DryRun    # print the gesture plan and exit
 )
+$repoRoot = Split-Path $PSScriptRoot -Parent
+if (-not $Out) { $Out = Join-Path $repoRoot "capture.log" }
+$analyzer = Join-Path $PSScriptRoot "keymon_analyze.py"
 
 Add-Type -TypeDefinition @'
 using System;
@@ -107,7 +116,10 @@ if ($PlanFile) {
   if (-not (Test-Path $PlanFile)) { Write-Host "Plan file not found: $PlanFile" -ForegroundColor Red; exit 1 }
   foreach ($line in Get-Content $PlanFile) {
     $t = $line.Trim()
-    if ($t -and -not $t.StartsWith("#")) { $plan += [pscustomobject]@{ Name = $t; Expect = $null; Event = $null } }
+    if (-not $t -or $t.StartsWith("#")) { continue }
+    $expect = $null
+    if ($t -match '^(.*?)\s+expect=(\S+)$') { $t = $Matches[1]; $expect = $Matches[2] }
+    $plan += [pscustomobject]@{ Name = $t; Expect = $expect; Event = $null }
   }
 } elseif ($Gestures) {
   # Each -Gestures element is one prompt, commas included (from a PowerShell prompt, "a","b" arrives as two elements).
@@ -160,6 +172,7 @@ function WaitKey {
   return [Console]::ReadKey($true)
 }
 
+$results = @()
 try {
   $n = 0
   foreach ($g in $plan) {
@@ -169,7 +182,11 @@ try {
     Write-Host "      Enter = ready, S = skip, Q = quit" -ForegroundColor DarkGray
     $k = WaitKey
     if ($k.Key -eq "Q") { break }
-    if ($k.Key -eq "S") { "### gesture: $($g.Name) [skipped]" | Out-File $Out -Append -Encoding utf8; continue }
+    if ($k.Key -eq "S") {
+      "### gesture: $($g.Name) [skipped]" | Out-File $Out -Append -Encoding utf8
+      $results += [pscustomobject]@{ Gesture = $g.Name; Presses = "-"; SpanMs = "-"; Keys = ""; Verdict = "skipped" }
+      continue
+    }
     [GCap]::Reset()
     Write-Host "      Go: perform the gesture once..." -ForegroundColor Green
     # wait for the first F-key, then keep recording for $Seconds after it
@@ -179,6 +196,7 @@ try {
       [GCap]::Stop()
       Write-Host "      nothing arrived in 30 s" -ForegroundColor Red
       "### gesture: $($g.Name) [no keys in 30 s]" | Out-File $Out -Append -Encoding utf8
+      $results += [pscustomobject]@{ Gesture = $g.Name; Presses = 0; SpanMs = "-"; Keys = ""; Verdict = "NONE" }
       continue
     }
     $stopAt = [GCap]::FirstF + ($Seconds * 1000)
@@ -195,8 +213,26 @@ try {
     if ($g.Expect) { $verdict = if ($keys -contains $g.Expect -and $keys.Count -eq 1) { "MATCH" } else { "MISMATCH" } }
     Write-Host ("      {0} F-key press(es): {1}  {2}" -f $fdown.Count, ($keys -join ", "), $verdict) -ForegroundColor $(if ($verdict -eq "MISMATCH") { "Red" } else { "White" })
     Write-Host ""
+    # span between the first and last F-key press, from the line timestamps
+    $span = "-"
+    if ($fdown.Count -gt 1) {
+      $t0 = [datetime]::ParseExact($fdown[0].Substring(0, 12), "HH:mm:ss.fff", $null)
+      $t1 = [datetime]::ParseExact($fdown[-1].Substring(0, 12), "HH:mm:ss.fff", $null)
+      $span = [int]($t1 - $t0).TotalMilliseconds
+    } elseif ($fdown.Count -eq 1) { $span = 0 }
+    $shape = if ($fdown.Count -eq 0) { "NONE" } elseif ($fdown.Count -eq 1) { "ONCE" } else { "STREAM x$($fdown.Count)" }
+    $results += [pscustomobject]@{ Gesture = $g.Name; Presses = $fdown.Count; SpanMs = $span; Keys = ($keys -join ", "); Verdict = (@($shape, $verdict) | Where-Object { $_ }) -join " " }
   }
 } finally {
   [void][GCap]::UnhookWindowsHookEx([GCap]::Hook)
-  Write-Host "Done. Analyze with: python D:\CreateCompanion\tools\keymon_analyze.py $Out" -ForegroundColor Cyan
+  if ($results.Count -gt 0) {
+    Write-Host ""
+    Write-Host "Summary: presses per gesture (ONCE = one key per gesture, STREAM = a run of keys from one gesture)" -ForegroundColor Cyan
+    $results | Format-Table -AutoSize -Property @{ n = "Presses"; e = { $_.Presses }; a = "right" }, @{ n = "Span ms"; e = { $_.SpanMs }; a = "right" }, Keys, Verdict, Gesture | Out-String -Width 200 | Write-Host
+    $streams = @($results | Where-Object { $_.Verdict -like "STREAM*" })
+    $once = @($results | Where-Object { $_.Verdict -like "ONCE*" })
+    Write-Host ("  {0} gesture(s) sent one key, {1} sent a run." -f $once.Count, $streams.Count) -ForegroundColor White
+    if ($streams.Count -gt 0) { Write-Host ("  Runs: " + (($streams | ForEach-Object { "$($_.Gesture) ($($_.Presses))" }) -join "; ")) -ForegroundColor Yellow }
+  }
+  Write-Host "Done. Analyze with: python $analyzer $Out" -ForegroundColor Cyan
 }

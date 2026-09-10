@@ -106,9 +106,17 @@ export function isPair(c: GestureChoice): c is PairId {
 export function halvesOf(c: GestureChoice): GestureId[] {
   return isPair(c) ? [...PAIRS[c].halves] : [c];
 }
+/**
+ * Not offered in the add row (decision 2026-09-10), on either module. Double tap: the engine
+ * only ever relays a key the firmware sends for it, and no module has a double-tap field.
+ * Split scroll axes: withheld; a two-finger motion is added as a swipe instead. The events
+ * still parse and an existing row keeps working.
+ */
+const WITHHELD: ReadonlySet<GestureChoice> = new Set<GestureChoice>(["DOUBLE_TAP", "SCROLL_V", "SCROLL_H"]);
+
 export function choicesFor(module: ModuleId): GestureChoice[] {
   const pairs = (Object.keys(PAIRS) as PairId[]).filter((p) => PAIRS[p].halves.every((g) => gestureAvailable(module, g)));
-  return [...DISCRETE, ...pairs];
+  return [...DISCRETE, ...pairs].filter((c) => !WITHHELD.has(c));
 }
 export function choiceLabel(c: GestureChoice): string {
   return isPair(c) ? PAIRS[c].label : gestureLabel(c);
@@ -120,19 +128,33 @@ export function pairOf(g: GestureId): PairId | null {
 }
 
 /**
- * Whether the module emits this gesture as a run of keys scaled to finger
- * travel (measured on the Tune: 2-finger swipes; everything else sends one key).
- * Mirrors SemanticEvent::streams in companion-core.
+ * Whether the module emits this gesture as a run of keys scaled to finger travel.
+ * Tune (measured 2026-09-05): 2-finger swipes. Touch (measured 2026-09-10): 2-finger motion in
+ * any direction (the scroll axes, and the swipe fields when they exist) and the 4-finger swipes
+ * up and down. Everything else sends one key. Mirrors SemanticEvent::streams in companion-core.
  */
 export function streams(id: string): boolean {
   const p = parseEvent(id);
-  return !!p && p.gesture.startsWith("SWIPE_") && p.fingers === 2;
+  if (!p) return false;
+  const swipe = p.gesture.startsWith("SWIPE_");
+  if (p.module === "TUNE") return swipe && p.fingers === 2;
+  return ((swipe || p.gesture.startsWith("SCROLL_")) && p.fingers === 2) || ((p.gesture === "SWIPE_UP" || p.gesture === "SWIPE_DOWN") && p.fingers === 4);
 }
 
-/** Finger counts a gesture can be flashed for. Pinch/spread need two hands' worth. */
-export function fingerOptions(g: GestureId): number[] {
+/**
+ * Finger counts a gesture can be flashed for on this module. Pinch & spread is a two-finger
+ * gesture on every module (the only `pinch&spread` field either device carries is the 2-finger
+ * one). On a Touch, nothing at 1 finger and no 2-finger tap: the module firmware owns those
+ * fields (cursor, left click, right click) and ignores a key written to them (probe
+ * 2026-09-10: a key in the 2-finger tap field read back fine, the tap still right-clicked).
+ * NayaFlow refuses to map them and OpenFlow mirrors that, so the Inputs page does not offer
+ * them either. The events themselves still parse, so an existing row keeps its value.
+ */
+export function fingerOptions(module: ModuleId, g: GestureId): number[] {
   if (!takesFingers(g)) return [];
-  return g === "PINCH" || g === "SPREAD" ? [2, 3, 4] : [1, 2, 3, 4];
+  if (g === "PINCH" || g === "SPREAD") return [2];
+  if (module === "TUNE") return [1, 2, 3, 4];
+  return [2, 3, 4].filter((n) => !(g === "TAP" && n === 2));
 }
 
 export function moduleLabel(m: string): string {
