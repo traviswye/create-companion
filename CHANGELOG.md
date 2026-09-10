@@ -2,15 +2,15 @@
 
 ## 0.3.0 — Touch support
 
-The Touch module is measured on real hardware and the engine, the Inputs page and the capture
-tools know how it behaves. Flash a Touch so its fields send modifier + F-keys (the 2-finger
+The Touch module is measured on real hardware, and the engine and the Inputs page
+know how it behaves. Flash a Touch so its fields send modifier + F-keys (the 2-finger
 scroll axes, the 3-finger swipes and tap, the 4-finger swipes and tap are the fields OpenFlow
 can map today) and add them under Inputs like any Tune gesture.
 
 - **Touch runs.** The collapse / *Follow swipe* handling now knows which Touch gestures arrive
   as a run of keys: two-finger scroll (and swipe) in any direction, and the four-finger swipes
   up and down. Three-finger swipes, four-finger left and right, and every tap are single keys
-  and are left alone. Measured on a Touch on 2026-09-10 (`tools/plans/census-touch.log`); the
+  and are left alone. Measured on a Touch on 2026-09-10; the
   Tune's rule (two-finger swipes) is unchanged. The Inputs page offers *Follow swipe* on those rows.
 - **Inputs, what the add row offers.** Double tap and the split scroll axes (*Scroll up & down*,
   *Scroll left & right*) are withheld on every module: the engine only relays a double tap the
@@ -19,6 +19,7 @@ can map today) and add them under Inputs like any Tune gesture.
   offers 1 finger, or a 2-finger tap: the Touch firmware owns those fields (cursor, left and
   right click) and ignores a key written to them, and NayaFlow refuses to map them. Existing
   rows keep their values.
+
 ### Known limitations
 
 - A Touch cannot yet be mapped at 1 finger (cursor and left click) or for the 2-finger tap
