@@ -1,5 +1,10 @@
 # Release notes
 
+<!-- Each "## <version>" section becomes the GitHub Release body (tools/release_notes.py).
+     Describe what a user of the installed app sees. Developer tooling under tools/ (capture
+     scripts, gesture plans, generators) stays in the repository for contributors, never ships
+     in an installer, and is never mentioned here; the release job refuses a section that does. -->
+
 ## 0.3.0 — Touch support
 
 The Touch module is measured on real hardware, and the engine and the Inputs page

@@ -26,6 +26,15 @@ body = "\n".join(out).strip("\n")
 if not body:
     print(f"CHANGELOG.md has no section for {version}", file=sys.stderr)
     sys.exit(1)
+# Release notes describe what a user of the installed app sees. Developer tooling under
+# tools/ (capture scripts, plans, generators) is for people working on the app; it is
+# documented in the README's repository layout and docs/PLAN.md, never in a release.
+tooling = [line for line in body.splitlines() if "tools/" in line or "tools\\" in line]
+if tooling:
+    print(f"CHANGELOG.md section {version} mentions developer tooling; keep tools/ out of release notes:", file=sys.stderr)
+    for line in tooling:
+        print("  " + line.strip(), file=sys.stderr)
+    sys.exit(1)
 if repo and tag:
     body += f"\n\n---\nInstall instructions: https://github.com/{repo}/blob/{tag}/INSTALL.md\n"
 # Windows consoles default to a legacy code page; the notes are UTF-8.
