@@ -19,11 +19,6 @@ can map today) and add them under Inputs like any Tune gesture.
   offers 1 finger, or a 2-finger tap: the Touch firmware owns those fields (cursor, left and
   right click) and ignores a key written to them, and NayaFlow refuses to map them. Existing
   rows keep their values.
-- **Capture tools.** `tools/input_capture.ps1` logs every keyboard and mouse event a module on
-  its stock profile sends, one capture per gesture, with `tools/input_analyze.py` to read the
-  log; `tools/gesture_capture.ps1` and `keymon_analyze.py` end with a once-or-run summary and
-  accept `expect=` in plan files. Gesture plans for the Tune and the Touch live in `tools/plans/`.
-
 ### Known limitations
 
 - A Touch cannot yet be mapped at 1 finger (cursor and left click) or for the 2-finger tap
