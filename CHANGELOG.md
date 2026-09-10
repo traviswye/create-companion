@@ -1,6 +1,11 @@
 # Release notes
 
-## Unreleased
+## 0.3.0 — Touch support
+
+The Touch module is measured on real hardware and the engine, the Inputs page and the capture
+tools know how it behaves. Flash a Touch so its fields send modifier + F-keys (the 2-finger
+scroll axes, the 3-finger swipes and tap, the 4-finger swipes and tap are the fields OpenFlow
+can map today) and add them under Inputs like any Tune gesture.
 
 - **Touch runs.** The collapse / *Follow swipe* handling now knows which Touch gestures arrive
   as a run of keys: two-finger scroll (and swipe) in any direction, and the four-finger swipes
@@ -18,6 +23,20 @@
   its stock profile sends, one capture per gesture, with `tools/input_analyze.py` to read the
   log; `tools/gesture_capture.ps1` and `keymon_analyze.py` end with a once-or-run summary and
   accept `expect=` in plan files. Gesture plans for the Tune and the Touch live in `tools/plans/`.
+
+### Known limitations
+
+- A Touch cannot yet be mapped at 1 finger (cursor and left click) or for the 2-finger tap
+  (right click): the module firmware owns those fields and ignores a key written to them. Its
+  1- and 2-finger swipe fields, double tap and pinch & spread have no known device field yet.
+- macOS has no F21–F24; keep a Touch's keys within F13–F20 there.
+- Installers are still unsigned on both platforms (SmartScreen warning, Gatekeeper right-click → Open).
+
+### Upgrading
+
+Windows: run the new installer over the old one; it stops the engine, replaces the programs and
+restarts. macOS: drag the new app over the old one in Applications. The configuration file
+format is unchanged; nothing is migrated.
 
 ## 0.2.0 — macOS arrives; Windows polish
 
