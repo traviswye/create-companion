@@ -1,27 +1,47 @@
-# Create Companion
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="docs/media/banner-dark.png">
+    <img src="docs/media/banner-light.png" width="760" alt="Create Companion">
+  </picture>
+</p>
 
-Turn the Naya Create's **Tune** and **Touch** modules into per-application controls.
+<p align="center">
+  <b>Turn the Naya Create's Tune and Touch gestures into per-application shortcuts.</b><br>
+  Flash a module once. Decide what its gestures do per app, live, on the computer.
+</p>
 
-Flash a module once so its gestures send F-keys, and Create Companion does the rest on the
-computer: it catches those keys, works out which gesture they were, looks at which application is
-in front, and sends the shortcut you chose for it. Turn the dial in Chrome to switch tabs, in
-Photoshop to change brush size, on the desktop to change volume. Change any of it in a
-configuration window, live, without touching the keyboard's firmware again.
+<p align="center">
+  <a href="https://github.com/traviswye/create-companion/releases/latest"><img alt="Latest release" src="https://img.shields.io/github/v/release/traviswye/create-companion?style=flat-square&label=release&color=e06000"></a>
+  <a href="https://github.com/traviswye/create-companion/releases"><img alt="Downloads" src="https://img.shields.io/github/downloads/traviswye/create-companion/total?style=flat-square&color=555"></a>
+  <img alt="Windows and macOS" src="https://img.shields.io/badge/platforms-Windows%20%7C%20macOS-555?style=flat-square">
+  <a href="LICENSE"><img alt="MIT license" src="https://img.shields.io/badge/license-MIT-555?style=flat-square"></a>
+</p>
 
-Windows and macOS (macOS is new in 0.2.0; see [Install](INSTALL.md) for the permission steps).
+<p align="center">
+  <a href="https://github.com/traviswye/create-companion/releases/latest"><img alt="Download for Windows" src="https://img.shields.io/badge/Download-Windows%2010%20%2F%2011-0078D4?style=for-the-badge&logo=windows&logoColor=white"></a>&nbsp;
+  <a href="https://github.com/traviswye/create-companion/releases/latest"><img alt="Download for macOS" src="https://img.shields.io/badge/Download-macOS%2010.15%2B-1c1c1e?style=for-the-badge&logo=apple&logoColor=white"></a>
+</p>
 
-![The configuration window: profiles on the left, one row per gesture, and the action picker](docs/media/configuration-window.gif)
+<p align="center"><a href="INSTALL.md">Install guide</a> · <a href="CHANGELOG.md">Release notes</a> · <a href="https://github.com/traviswye/create-companion/discussions">Discussions</a> · <a href="https://github.com/traviswye/create-companion/issues/new/choose">Report a bug or request an app</a></p>
 
-- **[Install](INSTALL.md)** — download, first run, upgrade, uninstall, troubleshooting
-- **[Release notes](CHANGELOG.md)** — what each version contains and its known limitations
-- **Releases** — https://github.com/traviswye/create-companion/releases
-- **Questions and ideas** — [Discussions](https://github.com/traviswye/create-companion/discussions); bugs and catalog requests — [Issues](https://github.com/traviswye/create-companion/issues/new/choose)
+<p align="center">
+  <img src="docs/media/demo.gif" width="880" alt="A tap on the Tune opens a new Chrome tab, the dial cycles through tabs, and on a YouTube tab the same tap becomes play/pause and the dial seeks">
+</p>
+
+<p align="center"><i>One Tune, no reflashing: in Chrome a tap is "new tab" and the dial switches tabs. When the YouTube tab comes to the front, the same tap is play/pause and the dial seeks.</i></p>
+
+## Highlights
+
+| | |
+|---|---|
+| **Per-app profiles** | The dial means "next tab" in Chrome, "brush size" in Photoshop, "volume" on the desktop. Sites inside a browser get their own profile by window title. |
+| **A catalog of 160+ apps and sites** | Pick actions by name ("Increase brush size") from 22,000+ documented shortcuts, filtered to your OS. Or record any key combination. |
+| **Tune and Touch** | Dial, taps and swipes by finger count, with modifier namespaces so two modules share the same keys. Two-finger swipes can follow the swipe or fire once. |
+| **Live configuration** | A configuration window that shows every gesture as it happens, saves as you edit, and never needs the module reflashed. |
+| **God Mode and System** | Bindings that win everywhere (window switching, desktops) and a fallback for everything else. |
+| **Windows and macOS** | One installer per platform, per-user, no admin. macOS ships as a universal Intel/Apple Silicon build. |
 
 ## How it works
-
-![A tap on the Tune opens a new Chrome tab, the dial cycles through tabs, and on a YouTube tab the same tap becomes play/pause and the dial seeks](docs/media/demo.gif)
-
-*One Tune, no reflashing: in Chrome a tap is "new tab" and the dial switches tabs; when the YouTube tab comes to the front the same tap is play/pause and the dial seeks, because the YouTube profile takes over while that page is in front.*
 
 ```
  Tune / Touch  ──USB──►  Windows  ──►  Create Companion engine  ──►  the app in front
@@ -68,6 +88,8 @@ Windows and macOS (macOS is new in 0.2.0; see [Install](INSTALL.md) for the perm
    it. Edits save automatically and the engine applies them within a second.
 
 ## The configuration window
+
+![The configuration window: profiles on the left, one row per gesture, and the action picker](docs/media/configuration-window.gif)
 
 - **Active / Available.** Active profiles are the ones in use. Drag them to set priority for
   the rare case where two profiles match the same window and are equally specific; a site title
