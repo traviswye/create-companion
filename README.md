@@ -6,7 +6,7 @@
 </p>
 
 <p align="center">
-  <b>Your modules, your apps, dynamic gestures for whatever you're working on.</b><br>
+  <b>Your Modules. Your Apps. Dynamic Gestures.</b> For whatever you're working on.<br>
   Flash a Naya Create module once. Decide what its gestures do in each app, live, on the computer.
 </p>
 

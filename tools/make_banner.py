@@ -15,7 +15,7 @@ from PIL import Image, ImageDraw, ImageFont
 ROOT = Path(__file__).resolve().parent.parent
 os.chdir(ROOT)
 
-TAGLINE = ("Your modules, your apps, dynamic gestures,", "for whatever you're working on.")
+TAGLINE = ("Your Modules. Your Apps. Dynamic Gestures.", "For whatever you're working on.")
 PLATFORMS = "Windows  -  macOS  -  Naya Create Tune & Touch"
 
 ICON = Image.open("assets/icon.png").convert("RGBA")
@@ -56,13 +56,15 @@ def render(out: Path, w: int, h: int, theme: str, scale: float = 1.0, extra: str
     f_small = font(int(27 * scale))
     top = (h - int(330 * scale)) // 2
     d.text((x, top), "Create Companion", font=f_title, fill=c["ink"])
+    # Tagline: the three-beat line, the accent rule right under it, then the
+    # second line, then the platforms.
     y = top + int(122 * scale)
-    for line in TAGLINE:
-        d.text((x, y), line, font=f_tag, fill=c["muted"])
-        y += int(46 * scale)
-    y += int(14 * scale)
+    d.text((x, y), TAGLINE[0], font=f_tag, fill=c["ink"])
+    y += int(56 * scale)
     d.rounded_rectangle((x, y, x + int(90 * scale), y + int(6 * scale)), radius=3, fill=c["accent"])
-    y += int(30 * scale)
+    y += int(22 * scale)
+    d.text((x, y), TAGLINE[1], font=f_tag, fill=c["muted"])
+    y += int(66 * scale)
     d.text((x, y), PLATFORMS + extra, font=f_small, fill=c["muted"])
 
     img.save(out, optimize=True)
