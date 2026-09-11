@@ -15,8 +15,8 @@ from PIL import Image, ImageDraw, ImageFont
 ROOT = Path(__file__).resolve().parent.parent
 os.chdir(ROOT)
 
-TAGLINE = ("Your modules, your apps,", "dynamic gestures for whatever you're working on.")
-PLATFORMS = "Windows  ·  macOS  ·  Tune and Touch"
+TAGLINE = ("Your modules, your apps, dynamic gestures,", "for whatever you're working on.")
+PLATFORMS = "Windows  -  macOS  -  Naya Create Tune & Touch"
 
 ICON = Image.open("assets/icon.png").convert("RGBA")
 THEMES = {
@@ -71,4 +71,4 @@ def render(out: Path, w: int, h: int, theme: str, scale: float = 1.0, extra: str
 
 render(Path("docs/media/banner-dark.png"), 1600, 520, "dark", scale=1.12)
 render(Path("docs/media/banner-light.png"), 1600, 520, "light", scale=1.12)
-render(Path("docs/media/social-preview.png"), 1280, 640, "dark", scale=0.86, extra="  ·  MIT")
+render(Path("docs/media/social-preview.png"), 1280, 640, "dark", scale=0.86, extra="  -  MIT")
