@@ -32,7 +32,7 @@
 
 ## Highlights
 
-| | |
+| Feature | What it means for you |
 |---|---|
 | **Per-app profiles** | The dial means "next tab" in Chrome, "brush size" in Photoshop, "volume" on the desktop. Sites inside a browser get their own profile by window title. |
 | **A catalog of 160+ apps and sites** | Pick actions by name ("Increase brush size") from 22,000+ documented shortcuts, filtered to your OS. Or record any key combination. |
@@ -178,13 +178,13 @@ documentation; every entry cites its sources.
 
 ## Roadmap
 
-- **Done**: Windows engine, tray, configuration window, 162-entry catalog, Tune inputs with
-  modifier namespaces, God Mode, per-OS catalog filtering, installer and release workflow.
-- **Done in 0.2.0**: macOS. A menu-bar engine on an event tap, the same configuration window,
-  one universal dmg for Intel and Apple Silicon. Unsigned for now; signing and notarization
-  come with an Apple Developer account.
-- **Next**: Touch module support once one is on the bench (the engine already handles its
-  key ranges; what is missing is measurement of how it sends gestures).
+- **Shipped**: Windows and macOS engines with the same configuration window; the 160+ entry
+  catalog; Tune and Touch inputs with modifier namespaces; God Mode and System; per-OS
+  filtering; installers and a tag-driven release workflow.
+- **Next**: code signing and notarization once an Apple Developer certificate and a Windows
+  certificate exist, so installs stop needing the SmartScreen and Gatekeeper workarounds; more
+  Touch fields as OpenFlow exposes them.
+- **Later**: Linux.
 
 Design notes and the phase checklist are in `docs/PLAN.md`; the original scope document is
 `docs/scope.md`.
