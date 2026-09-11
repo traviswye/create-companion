@@ -6,8 +6,8 @@
 </p>
 
 <p align="center">
-  <b>Turn the Naya Create's Tune and Touch gestures into per-application shortcuts.</b><br>
-  Flash a module once. Decide what its gestures do per app, live, on the computer.
+  <b>Your modules, your apps, dynamic gestures for whatever you're working on.</b><br>
+  Flash a Naya Create module once. Decide what its gestures do in each app, live, on the computer.
 </p>
 
 <p align="center">
