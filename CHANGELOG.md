@@ -5,6 +5,15 @@
      scripts, gesture plans, generators) stays in the repository for contributors, never ships
      in an installer, and is never mentioned here; the release job refuses a section that does. -->
 
+## Unreleased
+
+- **Pinch and spread can be bound on their own.** They are the two halves of one field, and
+  either half works alone, so the Inputs add row now offers **Pinch** and **Spread** as well as
+  the combined **Pinch & spread**. Two fingers only, on the Tune and on a Touch.
+- Both send a run of keys scaled to how far the fingers travel, like a two-finger swipe, so
+  those rows carry the **One per swipe / Follow swipe** switch. One per swipe is the default:
+  the gesture fires its action once.
+
 ## 0.3.0 — Touch support
 
 The Touch module is measured on real hardware, and the engine and the Inputs page

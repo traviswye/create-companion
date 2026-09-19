@@ -191,6 +191,10 @@ impl SemanticEvent {
     /// exactly one key. The Touch's two-finger swipe fields have no known
     /// device slot yet; they are treated like its scroll axes, which is what a
     /// two-finger motion is on that module.
+    ///
+    /// Pinch and spread stream on both modules (2026-09-18): they are the two
+    /// halves of one `pinch&spread` axis, so each runs a burst of keys scaled
+    /// to how far the fingers travel, exactly like a two-finger swipe.
     pub fn streams(self) -> bool {
         let swipe = matches!(
             self.gesture,
@@ -200,10 +204,12 @@ impl SemanticEvent {
             self.gesture,
             Gesture::ScrollLeft | Gesture::ScrollRight | Gesture::ScrollUp | Gesture::ScrollDown
         );
+        // The two halves of the `pinch&spread` axis, on either module.
+        let pinch = matches!(self.gesture, Gesture::Pinch | Gesture::Spread);
         match self.module {
-            Module::Tune => swipe && self.fingers == Some(2),
+            Module::Tune => (swipe || pinch) && self.fingers == Some(2),
             Module::LeftTouch | Module::RightTouch => {
-                ((swipe || scroll) && self.fingers == Some(2))
+                ((swipe || scroll || pinch) && self.fingers == Some(2))
                     || (matches!(self.gesture, Gesture::SwipeUp | Gesture::SwipeDown)
                         && self.fingers == Some(4))
             }
@@ -397,8 +403,13 @@ mod tests {
     #[test]
     fn streams_per_module() {
         let s = |e: &str| e.parse::<SemanticEvent>().unwrap().streams();
-        // Tune: two-finger swipes only.
-        for e in ["TUNE_SWIPE_UP_2F", "TUNE_SWIPE_LEFT_2F"] {
+        // Tune: two-finger swipes, and the two halves of pinch & spread.
+        for e in [
+            "TUNE_SWIPE_UP_2F",
+            "TUNE_SWIPE_LEFT_2F",
+            "TUNE_PINCH_2F",
+            "TUNE_SPREAD_2F",
+        ] {
             assert!(s(e), "{e}");
         }
         for e in [
@@ -416,6 +427,8 @@ mod tests {
             "RIGHT_TOUCH_SWIPE_DOWN_2F",
             "LEFT_TOUCH_SWIPE_UP_4F",
             "RIGHT_TOUCH_SWIPE_DOWN_4F",
+            "LEFT_TOUCH_PINCH_2F",
+            "RIGHT_TOUCH_SPREAD_2F",
         ] {
             assert!(s(e), "{e}");
         }
@@ -425,7 +438,7 @@ mod tests {
             "LEFT_TOUCH_SWIPE_RIGHT_4F",
             "LEFT_TOUCH_TAP_4F",
             "LEFT_TOUCH_SCROLL_UP_1F",
-            "LEFT_TOUCH_PINCH_2F",
+            "LEFT_TOUCH_PINCH_3F",
             "LEFT_TOUCH_SWIPE_UP",
         ] {
             assert!(!s(e), "{e}");

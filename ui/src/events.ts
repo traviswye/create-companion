@@ -97,7 +97,12 @@ export type PairId = keyof typeof PAIRS;
 /** What the add row offers: a discrete gesture or a pair. */
 export type GestureChoice = GestureId | PairId;
 
-const DISCRETE: GestureId[] = ["TAP", "DOUBLE_TAP", "SWIPE_LEFT", "SWIPE_RIGHT", "SWIPE_UP", "SWIPE_DOWN"];
+/**
+ * Gestures the add row offers on their own. Pinch and spread are the two halves of one
+ * `pinch&spread` field, and either half works bound alone, so both are offered here as well
+ * as together under "Pinch & spread".
+ */
+const DISCRETE: GestureId[] = ["TAP", "DOUBLE_TAP", "SWIPE_LEFT", "SWIPE_RIGHT", "SWIPE_UP", "SWIPE_DOWN", "PINCH", "SPREAD"];
 
 export function isPair(c: GestureChoice): c is PairId {
   return c in PAIRS;
@@ -115,8 +120,9 @@ export function halvesOf(c: GestureChoice): GestureId[] {
 const WITHHELD: ReadonlySet<GestureChoice> = new Set<GestureChoice>(["DOUBLE_TAP", "SCROLL_V", "SCROLL_H"]);
 
 export function choicesFor(module: ModuleId): GestureChoice[] {
+  const discrete = DISCRETE.filter((g) => gestureAvailable(module, g));
   const pairs = (Object.keys(PAIRS) as PairId[]).filter((p) => PAIRS[p].halves.every((g) => gestureAvailable(module, g)));
-  return [...DISCRETE, ...pairs].filter((c) => !WITHHELD.has(c));
+  return [...discrete, ...pairs].filter((c) => !WITHHELD.has(c));
 }
 export function choiceLabel(c: GestureChoice): string {
   return isPair(c) ? PAIRS[c].label : gestureLabel(c);
@@ -131,14 +137,17 @@ export function pairOf(g: GestureId): PairId | null {
  * Whether the module emits this gesture as a run of keys scaled to finger travel.
  * Tune (measured 2026-09-05): 2-finger swipes. Touch (measured 2026-09-10): 2-finger motion in
  * any direction (the scroll axes, and the swipe fields when they exist) and the 4-finger swipes
- * up and down. Everything else sends one key. Mirrors SemanticEvent::streams in companion-core.
+ * up and down. Pinch and spread stream on both modules (2026-09-18): each is one half of the
+ * `pinch&spread` axis and runs a burst scaled to the fingers' travel. Everything else sends one
+ * key. Mirrors SemanticEvent::streams in companion-core.
  */
 export function streams(id: string): boolean {
   const p = parseEvent(id);
   if (!p) return false;
   const swipe = p.gesture.startsWith("SWIPE_");
-  if (p.module === "TUNE") return swipe && p.fingers === 2;
-  return ((swipe || p.gesture.startsWith("SCROLL_")) && p.fingers === 2) || ((p.gesture === "SWIPE_UP" || p.gesture === "SWIPE_DOWN") && p.fingers === 4);
+  const pinch = p.gesture === "PINCH" || p.gesture === "SPREAD";
+  if (p.module === "TUNE") return (swipe || pinch) && p.fingers === 2;
+  return ((swipe || pinch || p.gesture.startsWith("SCROLL_")) && p.fingers === 2) || ((p.gesture === "SWIPE_UP" || p.gesture === "SWIPE_DOWN") && p.fingers === 4);
 }
 
 /**
