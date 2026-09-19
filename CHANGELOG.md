@@ -7,9 +7,11 @@
 
 ## Unreleased
 
-- **Pinch and spread can be bound on their own.** They are the two halves of one field, and
-  either half works alone, so the Inputs add row now offers **Pinch** and **Spread** as well as
-  the combined **Pinch & spread**. Two fingers only, on the Tune and on a Touch.
+- **Pinch and spread are separate inputs.** They are the two halves of one field and each
+  needs its own key, so the Inputs add row now offers **Pinch** and **Spread** on their own and
+  no longer offers the combined **Pinch & spread**: a single key for both halves could not tell
+  a pinch from a spread. Two fingers only, on the Tune and on a Touch. An existing combined
+  pair keeps working; its two rows are what the separate choices create anyway.
 - Both send a run of keys scaled to how far the fingers travel, like a two-finger swipe, so
   those rows carry the **One per swipe / Follow swipe** switch. One per swipe is the default:
   the gesture fires its action once.

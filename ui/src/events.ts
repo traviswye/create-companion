@@ -89,6 +89,8 @@ export function gesturesFor(module: ModuleId): GestureId[] {
  */
 export const PAIRS = {
   ROTATE: { label: "Dial (rotate)", halves: ["CCW", "CW"] as [GestureId, GestureId] },
+  // Not offered as a choice (see WITHHELD); kept so a pinch or spread row can name the
+  // device field it comes from, and so an older configuration still reads correctly.
   PINCH_SPREAD: { label: "Pinch & spread", halves: ["PINCH", "SPREAD"] as [GestureId, GestureId] },
   SCROLL_V: { label: "Scroll up & down", halves: ["SCROLL_UP", "SCROLL_DOWN"] as [GestureId, GestureId] },
   SCROLL_H: { label: "Scroll left & right", halves: ["SCROLL_LEFT", "SCROLL_RIGHT"] as [GestureId, GestureId] },
@@ -99,8 +101,8 @@ export type GestureChoice = GestureId | PairId;
 
 /**
  * Gestures the add row offers on their own. Pinch and spread are the two halves of one
- * `pinch&spread` field, and either half works bound alone, so both are offered here as well
- * as together under "Pinch & spread".
+ * `pinch&spread` field; each is bound to its own key, so each is offered here and the
+ * combined choice is withheld (see `WITHHELD`).
  */
 const DISCRETE: GestureId[] = ["TAP", "DOUBLE_TAP", "SWIPE_LEFT", "SWIPE_RIGHT", "SWIPE_UP", "SWIPE_DOWN", "PINCH", "SPREAD"];
 
@@ -112,12 +114,14 @@ export function halvesOf(c: GestureChoice): GestureId[] {
   return isPair(c) ? [...PAIRS[c].halves] : [c];
 }
 /**
- * Not offered in the add row (decision 2026-09-10), on either module. Double tap: the engine
- * only ever relays a key the firmware sends for it, and no module has a double-tap field.
- * Split scroll axes: withheld; a two-finger motion is added as a swipe instead. The events
- * still parse and an existing row keeps working.
+ * Not offered in the add row, on either module. Double tap: the engine only ever relays a key
+ * the firmware sends for it, and no module has a double-tap field. Split scroll axes: a
+ * two-finger motion is added as a swipe instead. Pinch & spread (2026-09-18): a combined
+ * choice is meaningless, because one key for both halves would make a pinch and a spread
+ * indistinguishable; each half needs its own key, which is what adding **Pinch** and
+ * **Spread** separately does. The events still parse, and an existing row keeps working.
  */
-const WITHHELD: ReadonlySet<GestureChoice> = new Set<GestureChoice>(["DOUBLE_TAP", "SCROLL_V", "SCROLL_H"]);
+const WITHHELD: ReadonlySet<GestureChoice> = new Set<GestureChoice>(["DOUBLE_TAP", "SCROLL_V", "SCROLL_H", "PINCH_SPREAD"]);
 
 export function choicesFor(module: ModuleId): GestureChoice[] {
   const discrete = DISCRETE.filter((g) => gestureAvailable(module, g));

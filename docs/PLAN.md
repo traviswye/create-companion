@@ -195,9 +195,12 @@ Goal: one Tune firmware mapping behaves differently in two apps.
 - [~] DROPPED by decision 2026-09-05: hold / long-press / double-tap / hold-and-rotate. Probe showed the Tune's tap fires only on finger lift (the lift itself reads as a swipe), and a resting finger does not hold any key; these gestures are the firmware's to define, not the host's.
 - [x] 2026-09-06 Config schema v2 with migration: `CURRENT_SCHEMA_VERSION = 2`; `Config::parse` reports the source version; the engine backs up an older file as `config.backup-v<N>.toml` and rewrites it in the current shape on first start (verified live: v1 → v2, "Default" → "System"). Schema history documented on the constant.
 
-- [x] 2026-09-18 **Pinch and spread bindable alone.** Either half of the `pinch&spread` axis
-  works bound on its own, so `DISCRETE` in `ui/src/events.ts` offers `PINCH` and `SPREAD`
-  alongside the `PINCH_SPREAD` pair (2 fingers only, both modules, unchanged by `fingerOptions`).
+- [x] 2026-09-18 **Pinch and spread are separate inputs.** Each half of the `pinch&spread`
+  axis needs its own key, so `DISCRETE` in `ui/src/events.ts` offers `PINCH` and `SPREAD`
+  (2 fingers only, both modules, unchanged by `fingerOptions`) and `PINCH_SPREAD` joins
+  `WITHHELD`: a combined choice could only ever write one key for both halves, which cannot
+  distinguish them. The `PAIRS` entry stays so a row still names its device field and the
+  OpenFlow export still writes the `-`/`+` halves.
   Both stream: `SemanticEvent::streams()` and its TS mirror now return true for pinch/spread at
   2 fingers on either module, so the Inputs row and each profile binding get the
   collapse / *Follow swipe* switch. Tests: `streams_per_module`.
